@@ -6,7 +6,7 @@ using Android.Views;
 using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Services.Platform;
 using OvulaeShared.Enums.User;
-using Plugin.Firebase.Core.Platforms.Android;
+//using Plugin.Firebase.Core.Platforms.Android;
 
 namespace OvulaeApp
 {
@@ -27,7 +27,7 @@ namespace OvulaeApp
 
             base.OnCreate(savedInstanceState);
 
-            CrossFirebase.Initialize(this);
+            //CrossFirebase.Initialize(this);
 
             Window.SetSoftInputMode(SoftInput.AdjustResize);
 

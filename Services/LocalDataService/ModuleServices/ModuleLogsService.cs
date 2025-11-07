@@ -73,6 +73,23 @@ namespace OvulaeApp.Services.LocalDataService.ModuleServices
             return null;
         }
 
+        public PregnancyLogEntryItem GetPregnancyLogByEntryId(int entryId)
+        {
+            try
+            {
+                if (PregnancyLogs != null && PregnancyLogs.Id > 0)
+                {
+                    var log = PregnancyLogs.Entries.FirstOrDefault(x => x.EntryId == entryId);
+                    return log;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting pregnancy log for Id {entryId}: {ex.Message}");
+            }
+            return null;
+        }
+
         public async Task<GenericResult> UpdatePregnancyLog(PregnancyLogEntryItem updateTodayLog)
         {
             try
@@ -121,6 +138,40 @@ namespace OvulaeApp.Services.LocalDataService.ModuleServices
             }
             catch
             {
+            }
+            return null;
+        }
+
+        public PeriodLogEntry GetPeriodLogByDate(DateTime date)
+        {
+            try
+            {
+                if (PeriodLogs != null && PeriodLogs.Id > 0)
+                {
+                    var log = PeriodLogs.Logs.FirstOrDefault(x => x.LogDate.Date == date.Date);
+                    return log;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting period log for date {date}: {ex.Message}");
+            }
+            return null;
+        }
+
+        public PeriodLogEntry GetPeriodLogByEntryId(int entryId)
+        {
+            try
+            {
+                if (PeriodLogs != null && PeriodLogs.Id > 0)
+                {
+                    var log = PeriodLogs.Logs.FirstOrDefault(x => x.EntryId == entryId);
+                    return log;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting period log for Id {entryId}: {ex.Message}");
             }
             return null;
         }
@@ -177,6 +228,40 @@ namespace OvulaeApp.Services.LocalDataService.ModuleServices
             return null;
         }
 
+        public OvulationCycleLog GetOvulationLogByDate(DateTime date)
+        {
+            try
+            {
+                if (OvulationLogs != null && OvulationLogs.Id > 0)
+                {
+                    var log = OvulationLogs.CycleTrackingHistory.FirstOrDefault(x => x.LogDate.Date == date.Date);
+                    return log;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting ovulation log for date {date}: {ex.Message}");
+            }
+            return null;
+        }
+
+        public OvulationCycleLog GetOvulationLogByEntryId(int entryId)
+        {
+            try
+            {
+                if (OvulationLogs != null && OvulationLogs.Id > 0)
+                {
+                    var log = OvulationLogs.CycleTrackingHistory.FirstOrDefault(x => x.EntryId == entryId);
+                    return log;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting ovulation log for Id {entryId}: {ex.Message}");
+            }
+            return null;
+        }
+
         public async Task<GenericResult> UpdateTodayOvulationLog(OvulationCycleLog updateTodayLog)
         {
             try
@@ -225,6 +310,40 @@ namespace OvulaeApp.Services.LocalDataService.ModuleServices
             }
             catch
             {
+            }
+            return null;
+        }
+
+        public MenopauseLogEntry GetMenopauseLogByDate(DateTime date)
+        {
+            try
+            {
+                if (OvulationLogs != null && OvulationLogs.Id > 0)
+                {
+                    var log = MenopauseLogs.Entries.FirstOrDefault(x => x.LogDate.Date == date.Date);
+                    return log;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting menopause log for date {date}: {ex.Message}");
+            }
+            return null;
+        }
+
+        public MenopauseLogEntry GetMenopauseLogByEntryId(int entryId)
+        {
+            try
+            {
+                if (MenopauseLogs != null && MenopauseLogs.Id > 0)
+                {
+                    var log = MenopauseLogs.Entries.FirstOrDefault(x => x.EntryId == entryId);
+                    return log;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting menopause log for Id {entryId}: {ex.Message}");
             }
             return null;
         }

@@ -1,29 +1,26 @@
 ﻿using CommunityToolkit.Maui.Views;
-using OvulaeApp.Helpers.Enums;
 using OvulaeApp.Helpers.Pages.DayLogging;
 using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Services.LocalDataService.CycleServices;
 using OvulaeApp.Services.LocalDataService.ModuleServices;
 using OvulaeApp.Services.LocalDataService.UsersServices;
+using OvulaeApp.ViewModels.OvulationTracker;
 using OvulaeApp.Views.Components.Modals;
-using OvulaeApp.Views.PregnancyTracker.Dashboard;
-using OvulaeShared.Enums;
-using OvulaeShared.Enums.App;
 using OvulaeShared.Helpers.CommonFunctions;
 using OvulaeShared.Helpers.ModuleHelpers.DayLogging;
-using OvulaeShared.Models.Ovulation;
 
 namespace OvulaeApp.Views.OvulationTracker.Dashboard
 {
+    [QueryProperty(nameof(EntryId), "entryId")]
     public partial class OvulationDashboardDayLoggerPage : ContentPage
     {
+        public int EntryId { get; set; }
+
         private readonly IModuleLogsService _moduleLogsService;
         private readonly IUserLocalService _userService;
         private readonly ICycleService _cycleService;
 
-        private OvulationCycleLog todayLog;
-
-        public string DateString => $"Date: {DateTime.Now:dd/MM/yyyy}";
+        private OvulationLoggerViewModel viewModel;
 
         public bool _isNavigating { get; set; }
 
@@ -41,20 +38,33 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
         {
             base.OnAppearing();
             LoadExistingLog();
-            InitializeComponents();
         }
 
         private void LoadExistingLog()
         {
             try
             {
-                todayLog = _moduleLogsService.GetTodayOvulationLog();
-                if (todayLog == null)
+                // Initialize view model
+                viewModel = new OvulationLoggerViewModel(_moduleLogsService);
+                BindingContext = viewModel;
+
+                if (EntryId > 0)
                 {
-                    todayLog = DefaultValueHelper.CreateWithDefaults<OvulationCycleLog>();
-                    todayLog.PhaseName = _cycleService.GetCurrentPhase().GetDisplayName();
-                    todayLog.LogDate = DateTime.Now;
+                    viewModel.CurrentLogEntry = _moduleLogsService.GetOvulationLogByEntryId(EntryId);
                 }
+
+                UpdateDayNavigationButtons();
+                LoadCurrentLogData();
+
+                // Initialize loaders
+                BaseTabs.SetLoaders(Spinner, AppLoader);
+                SideMenu.ConfigureComponents(Spinner, AppLoader, PregnancyTrackerOnBoard, PeriodTrackerOnBoard, ModuleTrackerSwitch, YesNoPopup, MenopauseTrackerOnBoard);
+                Header.SetLoaders(Spinner, AppLoader);
+
+                Header.OpenSideMenuCommand = new Command(async () =>
+                {
+                    await SideMenu.OpenAsync();
+                });
             }
             catch (Exception ex)
             {
@@ -76,10 +86,12 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
             };
         }
 
-        private void InitializeComponents()
+        private void LoadCurrentLogData()
         {
             try
             {
+                var todayLog = viewModel.CurrentLogEntry;
+
                 var lastPeriodDate = LocalStorageService.UserCycleProfile.LastPeriodDate.Value;
                 var daysSinceLastPeriod = (DateTime.Today - lastPeriodDate).TotalDays;
                 var customLMP = daysSinceLastPeriod > 7;
@@ -136,19 +148,56 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
                 PeriodFlowData.IsVisible = isPeriodDay;
                 CustomLMPContainer.IsVisible = isPeriodDay && PeriodLMPComponent.SelectedItems.Contains("🗓️ Different date...");
 
-                // Initialize loaders
-                BaseTabs.SetLoaders(Spinner, AppLoader);
-                SideMenu.ConfigureComponents(Spinner, AppLoader, PregnancyTrackerOnBoard, PeriodTrackerOnBoard, ModuleTrackerSwitch, YesNoPopup, MenopauseTrackerOnBoard);
-                Header.SetLoaders(Spinner, AppLoader);
-
-                Header.OpenSideMenuCommand = new Command(async () =>
-                {
-                    await SideMenu.OpenAsync();
-                });
+                UpdateRatingContainersVisibility();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Initialization error: {ex.Message}");
+            }
+        }
+
+        private void UpdateDayNavigationButtons()
+        {
+            // Hide next day button if we're already at today
+            NextDayBtn.IsVisible = viewModel.CurrentDate < DateTime.Today;
+
+            // Always show previous day button (unless you want to limit how far back they can go)
+            PrevDayBtn.IsVisible = true;
+        }
+
+        private async void NavigateDays_Tapped(object sender, TappedEventArgs e)
+        {
+            if (_isNavigating) return;
+
+            _isNavigating = true;
+
+            try
+            {
+                await Spinner.ShowSpinnerAsync();
+
+                if (sender is Border border)
+                {
+                    if (border == PrevDayBtnBrd)
+                    {
+                        viewModel.GoToPreviousDay();
+                    }
+                    else if (border == NextDayBtnBrd)
+                    {
+                        viewModel.GoToNextDay();
+                    }
+
+                    UpdateDayNavigationButtons();
+                    LoadCurrentLogData();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to navigate days: {ex.Message}");
+            }
+            finally
+            {
+                await Spinner.HideSpinnerAsync();
+                _isNavigating = false;
             }
         }
 
@@ -169,6 +218,61 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
             LogManualSymptom.IsVisible = ManualSymptomsSwitch.IsToggled;
         }
 
+        private void UpdateLogEntryFromUI()
+        {
+            var todayLog = viewModel.CurrentLogEntry;
+
+            // Update model from UI
+            todayLog.Moods = MoodsComponent.SelectedItems.ToList();
+            todayLog.Symptoms = SymptomsComponent.SelectedItems.ToList();
+
+            if (ManualSymptomsSwitch.IsToggled && !string.IsNullOrEmpty(LogManualSymptomText.Text))
+            {
+                todayLog.Symptoms.Add(LogManualSymptomText.Text);
+            }
+
+            todayLog.Emotions = EmotionsComponent.SelectedItems.ToList();
+            todayLog.Cravings = CravingsComponent.SelectedItems.ToList();
+            todayLog.LifestyleFactors = LifestyleComponent.SelectedItems.ToList();
+            todayLog.CervicalMucusType = CervicalMucusComponent.SelectedItems.FirstOrDefault();
+            todayLog.LHTestResult = LHTestComponent.SelectedItems.FirstOrDefault();
+            todayLog.IntercourseTiming = IntercourseComponent.SelectedItems.FirstOrDefault();
+            todayLog.EnergyLevel = EnergyComponent.SelectedItems.FirstOrDefault();
+            todayLog.ContraceptiveMethod = ContraceptionComponent.SelectedItems.FirstOrDefault();
+            todayLog.CervixPosition = CervixPositionComponent.SelectedItems.FirstOrDefault();
+            todayLog.CervixFeel = CervixFeelComponent.SelectedItems.FirstOrDefault();
+            todayLog.Notes = ReflectionText.Text;
+            todayLog.HadBleeding = PeriodTodayComponent.SelectedItems.Contains("✅ Yes");
+            todayLog.BleedingColor = BloodColorComponent.SelectedItems.FirstOrDefault();
+            todayLog.FlowIntensityOption = FlowIntensityComponent.SelectedItems.FirstOrDefault();
+            todayLog.PainLevel = PainLevelComponent.SelectedItems.FirstOrDefault();
+            todayLog.BleedingPresence = BleedingPresenceComponent.SelectedItems.FirstOrDefault();
+
+            todayLog.HadBowelMovements = BowelMovementsExistComponent.SelectedItems.Contains(CycleTrackerDayLogItems.HadPeriodBowelMovementOptions[0]) ? true :
+                                         BowelMovementsExistComponent.SelectedItems.Contains(CycleTrackerDayLogItems.HadPeriodBowelMovementOptions[1]) ? false : (bool?)null;
+
+            todayLog.BowelMovementsRegularity = BowelMovementsRegularityComponent.SelectedItems.FirstOrDefault();
+            todayLog.BowelMovementsFrequency = BowelMovementsFrequencyComponent.SelectedItems.FirstOrDefault();
+
+            // Set ratings
+            todayLog.MoodsRating = MoodsComponent.SelectedItems.Count() > 0 ? MoodRating.SelectedRating : 0;
+            todayLog.SymptomsRating = SymptomsComponent.SelectedItems.Count() > 0 ? SymptomsRating.SelectedRating : 0;
+            todayLog.EmotionsRating = EmotionsComponent.SelectedItems.Count() > 0 ? EmotionsRating.SelectedRating : 0;
+            todayLog.CravingsRating = CravingsComponent.SelectedItems.Count() > 0 ? CravingsRating.SelectedRating : 0;
+            todayLog.EnergyRating = EnergyComponent.SelectedItems.Count() > 0 ? EnergyRating.SelectedRating : 0;
+            todayLog.LifestyleRating = LifestyleComponent.SelectedItems.Count() > 0 ? LifestyleRating.SelectedRating : 0;
+            todayLog.BreastTendernessRating = BreastTendernessRating.SelectedRating;
+
+            // Set notes
+            todayLog.MoodsNotes = MoodNotes.Text;
+            todayLog.SymptomsNotes = SymptomsNotes.Text;
+            todayLog.EmotionsNotes = EmotionsNotes.Text;
+            todayLog.CravingsNotes = CravingsNotes.Text;
+            todayLog.EnergyNotes = EnergyNotes.Text;
+            todayLog.LifestyleNotes = LifestyleNotes.Text;
+            todayLog.BreastTendernessNotes = BreastTendernessNotes.Text;
+        }
+
         private async void SaveTodaysLogs_Clicked(object sender, EventArgs e)
         {
             if (_isNavigating)
@@ -180,62 +284,13 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
             {
                 await AppLoader.ShowAsync("Saving your data...");
 
-                // Update model from UI
-                todayLog.Moods = MoodsComponent.SelectedItems.ToList();
-                todayLog.Symptoms = SymptomsComponent.SelectedItems.ToList();
+                // Update the viewModel's CurrentLogEntry from UI
+                UpdateLogEntryFromUI();
 
-                if (ManualSymptomsSwitch.IsToggled && !string.IsNullOrEmpty(LogManualSymptomText.Text))
-                {
-                    todayLog.Symptoms.Add(LogManualSymptomText.Text);
-                }
+                // Save through viewModel
+                var success = await viewModel.SaveCurrentLog();
 
-                todayLog.Emotions = EmotionsComponent.SelectedItems.ToList();
-                todayLog.Cravings = CravingsComponent.SelectedItems.ToList();
-                todayLog.LifestyleFactors = LifestyleComponent.SelectedItems.ToList();
-                todayLog.CervicalMucusType = CervicalMucusComponent.SelectedItems.FirstOrDefault();
-                todayLog.LHTestResult = LHTestComponent.SelectedItems.FirstOrDefault();
-                todayLog.IntercourseTiming = IntercourseComponent.SelectedItems.FirstOrDefault();
-                todayLog.EnergyLevel = EnergyComponent.SelectedItems.FirstOrDefault();
-                todayLog.ContraceptiveMethod = ContraceptionComponent.SelectedItems.FirstOrDefault();
-                todayLog.CervixPosition = CervixPositionComponent.SelectedItems.FirstOrDefault();
-                todayLog.CervixFeel = CervixFeelComponent.SelectedItems.FirstOrDefault();
-                todayLog.Notes = ReflectionText.Text;
-                todayLog.HadBleeding = PeriodTodayComponent.SelectedItems.Contains("✅ Yes");
-                todayLog.BleedingColor = BloodColorComponent.SelectedItems.FirstOrDefault();
-                todayLog.FlowIntensityOption = FlowIntensityComponent.SelectedItems.FirstOrDefault();
-                todayLog.PainLevel = PainLevelComponent.SelectedItems.FirstOrDefault();
-                todayLog.BleedingPresence = BleedingPresenceComponent.SelectedItems.FirstOrDefault();
-
-                todayLog.HadBowelMovements = BowelMovementsExistComponent.SelectedItems.Contains(CycleTrackerDayLogItems.HadPeriodBowelMovementOptions[0]) ? true :
-                                             BowelMovementsExistComponent.SelectedItems.Contains(CycleTrackerDayLogItems.HadPeriodBowelMovementOptions[1]) ? false : (bool?)null;
-
-                todayLog.BowelMovementsRegularity = BowelMovementsRegularityComponent.SelectedItems.FirstOrDefault();
-                todayLog.BowelMovementsFrequency = BowelMovementsFrequencyComponent.SelectedItems.FirstOrDefault();
-
-                // Set ratings
-                todayLog.MoodsRating = MoodsComponent.SelectedItems.Count() > 0 ? MoodRating.SelectedRating : 0;
-                todayLog.SymptomsRating = SymptomsComponent.SelectedItems.Count() > 0 ? SymptomsRating.SelectedRating : 0;
-                todayLog.EmotionsRating = EmotionsComponent.SelectedItems.Count() > 0 ? EmotionsRating.SelectedRating : 0;
-                todayLog.CravingsRating = CravingsComponent.SelectedItems.Count() > 0 ? CravingsRating.SelectedRating : 0;
-                todayLog.EnergyRating = EnergyComponent.SelectedItems.Count() > 0 ? EnergyRating.SelectedRating : 0;
-                todayLog.LifestyleRating = LifestyleComponent.SelectedItems.Count() > 0 ? LifestyleRating.SelectedRating : 0;
-                todayLog.BreastTendernessRating = BreastTendernessRating.SelectedRating;
-
-                // Set notes
-                todayLog.MoodsNotes = MoodNotes.Text;
-                todayLog.SymptomsNotes = SymptomsNotes.Text;
-                todayLog.EmotionsNotes = EmotionsNotes.Text;
-                todayLog.CravingsNotes = CravingsNotes.Text;
-                todayLog.EnergyNotes = EnergyNotes.Text;
-                todayLog.LifestyleNotes = LifestyleNotes.Text;
-                todayLog.BreastTendernessNotes = BreastTendernessNotes.Text;
-
-                DefaultValueHelper.SetDefaults(todayLog);
-
-                // Save to database
-                var result = await _moduleLogsService.UpdateTodayOvulationLog(todayLog);
-
-                if (result.Success)
+                if (success)
                 {
                     await Shell.Current.CurrentPage.ShowPopupAsync(new BrandedAlertPopup("Saved", "Your data was saved successfully!", "OK"));
                 }
@@ -277,7 +332,7 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
             BowelMovementsFrequencyComponent.IsVisible = hasBowelMovements;
         }
 
-        private void SelectComponent_SelectionChanged(object sender, IEnumerable<string> e)
+        private void UpdateRatingContainersVisibility()
         {
             MoodRatingsContainer.IsVisible = MoodsComponent.SelectedItems.Count() > 0;
             SymptomsContainerRating.IsVisible = SymptomsComponent.SelectedItems.Count() > 0;
@@ -286,6 +341,11 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
             EnergyContainerRating.IsVisible = EnergyComponent.SelectedItems.Count() > 0;
             LifestyleContainerRating.IsVisible = LifestyleComponent.SelectedItems.Count() > 0;
             //IntercourseContainerRating.IsVisible = IntercourseComponent.SelectedItems.Count() > 0;
+        }
+
+        private void SelectComponent_SelectionChanged(object sender, IEnumerable<string> e)
+        {
+            UpdateRatingContainersVisibility();
         }
     }
 }

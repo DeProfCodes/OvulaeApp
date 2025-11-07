@@ -48,7 +48,7 @@ using Microsoft.Maui.LifecycleEvents;
 #if ANDROID
 using Microsoft.Maui.Handlers;
 using Android.Content.Res;
-using Plugin.Firebase.Core.Platforms.Android;
+//using Plugin.Firebase.Core.Platforms.Android;
 #endif
 
 #if IOS
@@ -91,7 +91,7 @@ namespace OvulaeApp
                 {
                     android.OnCreate((activity, bundle) =>
                     {
-                        CrossFirebase.Initialize(activity);
+                        //CrossFirebase.Initialize(activity);
                     });
                 });
 #elif IOS

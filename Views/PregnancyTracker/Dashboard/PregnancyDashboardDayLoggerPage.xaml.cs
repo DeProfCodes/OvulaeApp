@@ -18,10 +18,10 @@ using static OvulaeShared.Helpers.API.OvulaeApiEndPoints;
 
 namespace OvulaeApp.Views.PregnancyTracker.Dashboard
 {
-    [QueryProperty(nameof(SelectedDate), "selectedDate")]
+    [QueryProperty(nameof(EntryId), "entryId")]
     public partial class PregnancyDashboardDayLoggerPage : ContentPage
     {
-        public string SelectedDate { get; set; }
+        public int EntryId { get; set; }
 
         private readonly IModuleLogsService _moduleLogsServ;
         private readonly IUserLocalService _userSer;
@@ -51,13 +51,9 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
                 viewModel = new PregnancyLoggerViewModel(_moduleLogsServ);
                 BindingContext = viewModel;
 
-                // Handle date from query parameters (for notifications)
-                if (!string.IsNullOrEmpty(SelectedDate))
+                if (EntryId > 0)
                 {
-                    if (DateTime.TryParse(SelectedDate, out DateTime targetDate))
-                    {
-                        viewModel.CurrentDate = targetDate.Date;
-                    }
+                    viewModel.CurrentLogEntry = _moduleLogsServ.GetPregnancyLogByEntryId(EntryId);
                 }
 
                 UpdateDayNavigationButtons();

@@ -13,7 +13,7 @@ using OvulaeShared.Enums;
 using OvulaeShared.Enums.App;
 using OvulaeShared.Models.User;
 using OvulaeShared.Services.APIs.Users;
-using Plugin.Firebase.CloudMessaging;
+//using Plugin.Firebase.CloudMessaging;
 
 namespace OvulaeApp.Services.Notifications
 {
@@ -28,6 +28,7 @@ namespace OvulaeApp.Services.Notifications
 
         public async Task InitializeFirebase()
         {
+            /*
             var fcm = CrossFirebaseCloudMessaging.Current;
 
             // 1️⃣ Subscribe to TokenChanged event
@@ -118,6 +119,7 @@ namespace OvulaeApp.Services.Notifications
                     });
                 }
             }
+            */
         }
 
         private async Task NavigateToLogDetail(string moduleName, string entryId)

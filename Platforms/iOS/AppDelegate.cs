@@ -1,8 +1,8 @@
 ﻿using BranchSDK;
 using Foundation;
 using OvulaeApp.Services.LocalDataService;
-using Plugin.Firebase.CloudMessaging;
-using Plugin.Firebase.Core.Platforms.iOS;
+//using Plugin.Firebase.CloudMessaging;
+//using Plugin.Firebase.Core.Platforms.iOS;
 using UIKit;
 
 namespace OvulaeApp
@@ -19,8 +19,8 @@ namespace OvulaeApp
                 Branch.EnableLogging = true; // turn off in release
                 BranchIOS.Init("key_live_fxwnSISmLMaw01sWCZ6xMopcDDdna5R8", launchOptions, this);
 
-                CrossFirebase.Initialize();
-                FirebaseCloudMessagingImplementation.Initialize();
+                //CrossFirebase.Initialize();
+                //FirebaseCloudMessagingImplementation.Initialize();
 
                 return base.FinishedLaunching(application, launchOptions);
             }

@@ -459,7 +459,7 @@
                 x:Name="BaseTabs"
                 Padding="0,0"
                 ActiveTab="None"
-                IsVisible="{Binding ShowTabs}" />
+                IsVisible="True" />
 
         </Grid>
 

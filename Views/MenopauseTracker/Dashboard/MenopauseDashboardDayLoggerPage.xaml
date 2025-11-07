@@ -73,32 +73,103 @@
                             </VerticalStackLayout>
                         </Border>
 
-                        <VerticalStackLayout
-                            Margin="0,20,0,0">
-                            <Label
-                                Text="📝 Log My Day"
-                                FontSize="20"
-                                FontAttributes="Bold"
-                                HorizontalTextAlignment="Center"
-                                TextColor="{StaticResource ThemeClrMain}"
-                                Margin="0" />
-                            <HorizontalStackLayout
-                                HorizontalOptions="Center">
+                        <!-- Date Navigation -->
+                        <Border
+                            Background="Transparent"
+                            Margin="0,0,0,0"
+                            ZIndex="1000"
+                            Stroke="Transparent"
+                            Padding="5,3">
+                            <Grid
+                                ColumnDefinitions="*,Auto,*">
+                                <!-- Previous Day Button -->
+                                <VerticalStackLayout
+                                    x:Name="PrevDayBtn"
+                                    Grid.Column="0"
+                                    HorizontalOptions="Start">
+                                    <Border
+                                        x:Name="PrevDayBtnBrd"
+                                        HeightRequest="40"
+                                        WidthRequest="40"
+                                        Stroke="Transparent"
+                                        StrokeThickness="1"
+                                        Padding="2,4"
+                                        Margin="0,0,0,0"
+                                        StrokeShape="RoundRectangle 8">
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="NavigateDays_Tapped" />
+                                        </Border.GestureRecognizers>
+                                        <Image
+                                            Source="left_chev.png"
+                                            Aspect="AspectFit"
+                                            HorizontalOptions="CenterAndExpand" />
+                                    </Border>
+                                    <Label
+                                        x:Name="PrevDayText"
+                                        FontSize="10"
+                                        HorizontalTextAlignment="Center"
+                                        FontAttributes="Italic,Bold"
+                                        TextColor="{StaticResource ThemeClrMainDark}"
+                                        Margin="0,0,0,0"
+                                        Text="{Binding PreviousDateText}" />
+                                </VerticalStackLayout>
+
+                                <!-- Current Date Display -->
                                 <Label
-                                    Text="Date: "
-                                    FontSize="12"
-                                    FontAttributes="Italic"
-                                    TextColor="{StaticResource ThemeGray2}"
-                                    Margin="0,10,0,0" />
-                                <Label
-                                    x:Name="LogDate"
-                                    FontSize="12"
-                                    FontAttributes="Italic"
-                                    TextColor="{StaticResource ThemeGray2}"
-                                    Margin="0,10,0,0" />
-                            </HorizontalStackLayout>
-                            
-                        </VerticalStackLayout>
+                                    x:Name="CurrentDateDisplay"
+                                    Grid.Column="1"
+                                    FontSize="28"
+                                    TextTransform="Uppercase"
+                                    FontAttributes="Bold"
+                                    FontFamily="FredokaBold"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalOptions="Start"
+                                    Padding="0,3,0,0"
+                                    TextColor="{StaticResource ThemeClrMain}"
+                                    Margin="0,0,0,0"
+                                    Text="{Binding DisplayDate}" />
+                                <!-- Next Day Button -->
+                                <VerticalStackLayout
+                                    Grid.Column="2"
+                                    x:Name="NextDayBtn"
+                                    HorizontalOptions="End">
+                                    <Border
+                                        x:Name="NextDayBtnBrd"
+                                        HeightRequest="40"
+                                        WidthRequest="40"
+                                        Stroke="Transparent"
+                                        StrokeThickness="1"
+                                        Padding="2,4"
+                                        StrokeShape="RoundRectangle 8">
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="NavigateDays_Tapped" />
+                                        </Border.GestureRecognizers>
+                                        <Image
+                                            Source="right_chev.png"
+                                            Aspect="AspectFit"
+                                            HorizontalOptions="CenterAndExpand" />
+                                    </Border>
+                                    <Label
+                                        x:Name="NextDayText"
+                                        FontSize="10"
+                                        HorizontalTextAlignment="Center"
+                                        FontAttributes="Italic,Bold"
+                                        TextColor="{StaticResource ThemeClrMainDark}"
+                                        Margin="0,0,0,0"
+                                        Text="{Binding NextDateText}" />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Border>
+                        <Border
+                            Stroke="{StaticResource ThemeClrMain}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 12"
+                            Background="{StaticResource ThemeClrMain}"
+                            Margin="50,0,50,0">
+
+                        </Border>
 
                         <!-- Moods -->
                         <dashComp:MultiSelectLogItemComponent

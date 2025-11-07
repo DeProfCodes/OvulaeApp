@@ -196,12 +196,13 @@ namespace OvulaeApp.Views.PregnancyTracker.Onboarding
                 }
                 else if (vm.CurrentIndex == vm.Slides.Count - 1)
                 {
+                    /*
                     LocalStorageService.OnboardingData.QuestionAndAnswers.AddRange(
                         new QnA { Question = "PregnantQuestion", Answer = "Yes, I'm Pregnant" },
                         new QnA { Question = "FirstPregnancyQuestion", Answer = FirstPregnancyOptions.SelectedValue },
                         new QnA { Question = "HelpWithPregnancyQuestion", Answer = string.Join(",", AssistanceOptionsCheck.SelectedItems) }
                     );
-
+                    */
                     LocalStorageService.UserCycleProfile.FirstPregnancy = FirstPregnancyOptions.SelectedValue == "Yes, this is my first";
 
                     LocalStorageService.UserBodyMetrics.Year = vm.SelectedYear;

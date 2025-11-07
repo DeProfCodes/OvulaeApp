@@ -1,11 +1,11 @@
 ﻿using Android.Content;
-using Com.Android.Installreferrer.Api;
+//using Com.Android.Installreferrer.Api;
 
 namespace OvulaeApp.Services.Platform
 {
-    public class InstallReferrerService : Java.Lang.Object, IInstallReferrerStateListener
+    public class InstallReferrerService //: Java.Lang.Object, IInstallReferrerStateListener
     {
-        private InstallReferrerClient _referrerClient;
+        //private InstallReferrerClient _referrerClient;
         private Action<string> _onReferrerReceived;
 
         public void GetReferrer(Context context, Action<string> onReferrerReceived)
@@ -13,8 +13,8 @@ namespace OvulaeApp.Services.Platform
             try
             {
                 _onReferrerReceived = onReferrerReceived;
-                _referrerClient = InstallReferrerClient.NewBuilder(context).Build();
-                _referrerClient.StartConnection(this);
+                //_referrerClient = InstallReferrerClient.NewBuilder(context).Build();
+                //_referrerClient.StartConnection(this);
             }
             catch
             {
@@ -26,6 +26,7 @@ namespace OvulaeApp.Services.Platform
         {
             try
             {
+                /*
                 if (responseCode == InstallReferrerClient.InstallReferrerResponse.Ok)
                 {
                     var referrer = _referrerClient.InstallReferrer.InstallReferrer;
@@ -35,6 +36,7 @@ namespace OvulaeApp.Services.Platform
                 {
                     _onReferrerReceived?.Invoke(null);
                 }
+                */
             }
             catch
             {
