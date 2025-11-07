@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="OvulaeApp.Views.Components.Controls.DotSlider"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="RootSlider"
+    xmlns:vm="clr-namespace:OvulaeApp.Views.Components.Controls"
+    HorizontalOptions="Center"
+    VerticalOptions="Start">
+
+    <Grid>
+
+        <!-- Dot Mode -->
+        <HorizontalStackLayout
+            x:Name="DotsContainer"
+            Spacing="10"
+            Margin="0,0,0,0">
+        </HorizontalStackLayout>
+        
+        <!-- Loader Mode -->
+        <Grid
+            x:Name="LoaderContainer"
+            IsVisible="False"
+            VerticalOptions="Center">
+
+            <BoxView
+                x:Name="LoaderBackground"
+                HorizontalOptions="FillAndExpand" />
+
+            <BoxView
+                x:Name="LoaderProgress"
+                HorizontalOptions="Start"
+                WidthRequest="0" />
+        </Grid>
+    </Grid>
+    
+</ContentView>

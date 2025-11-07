@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.MenopauseTracker.Dashboard.MenopauseStageDetailsPage"
+    xmlns:viewmodels="clr-namespace:OvulaeApp.ViewModels.Module"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:dashComp2="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:models="clr-namespace:OvulaeApp.Models.Dashboard.Education"
+    x:DataType="viewmodels:ModulePhaseDetailsViewModel"
+    Background="White">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+                    <VerticalStackLayout
+                        Padding="0">
+
+                        <Border
+                            Margin="0,-2"
+                            Padding="0,5"
+                            Stroke="Transparent">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.25"
+                                    Offset="0,4"
+                                    Radius="10" />
+                            </Border.Shadow>
+                            <Border.Background>
+                                <LinearGradientBrush
+                                    StartPoint="0,0"
+                                    EndPoint="1,1">
+                                    <GradientStop
+                                        Color="{StaticResource ThemeClrMain}"
+                                        Offset="0.0" />
+                                    <GradientStop
+                                        Color="{StaticResource ThemeClrMain}"
+                                        Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <VerticalStackLayout>
+                                <Label
+                                    Text="{Binding PhaseTitle}"
+                                    FontSize="25"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource White}"
+                                    Margin="0,5,0,10"
+                                    HorizontalTextAlignment="Center"
+                                    IsVisible="False"/>
+                                <!-- Hero Image -->
+                                <Image
+                                    Source="{Binding HeroImage}"
+                                    Aspect="AspectFit" />
+
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <Label
+                            Text="{Binding PhaseTitle}"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource ThemeClrMain}"
+                            Margin="20,20,20,0"
+                            HorizontalTextAlignment="Center" />
+
+                        <Label
+                            Text="{Binding Description}"
+                            FontSize="12"
+                            HorizontalTextAlignment="Center"
+                            TextColor="{StaticResource ThemeGray2}"
+                            FontAttributes="Italic"
+                            Margin="20,15,20,20" />
+
+                        <Border
+                            Padding="20,10"
+                            Stroke="Transparent"
+                            Background="{StaticResource ThemeClrPurple}">
+                            <VerticalStackLayout>
+                                <Label
+                                    Text="Key Changes"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource ThemeClr2}"
+                                    Margin="0,0,0,10" />
+                                <CollectionView
+                                    ItemsSource="{Binding KeyChanges}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate
+                                            x:DataType="x:String">
+                                            <Label
+                                                Text="{Binding .}"
+                                                FontSize="13"
+                                                TextColor="Black"
+                                                Margin="0,0,0,10" />
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </VerticalStackLayout>
+                        </Border>
+                        <Border
+                            Margin="0,-2,0,0"
+                            Padding="20,0"
+                            Stroke="Transparent"
+                            Background="{StaticResource ThemeClrLight}">
+                            <VerticalStackLayout>
+                                <Label
+                                    Text="Tips"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource ThemeClr2}"
+                                    Margin="0,10,0,10" />
+                                <CollectionView
+                                    ItemsSource="{Binding Tips}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate
+                                            x:DataType="x:String">
+                                            <Label
+                                                Text="{Binding .}"
+                                                FontSize="13"
+                                                TextColor="Black"
+                                                Margin="0,0,0,10" />
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <Border
+                            Margin="0,-2,0,0"
+                            Padding="20,0"
+                            Stroke="Transparent"
+                            Background="{StaticResource White}">
+                            <VerticalStackLayout>
+                                <Label
+                                    Text="🧠 Did You Know?"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource ThemeClr2}"
+                                    Margin="0,10,0,10" />
+                                <CollectionView
+                                    ItemsSource="{Binding Insights}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate
+                                            x:DataType="x:String">
+                                            <Label
+                                                Text="{Binding .}"
+                                                FontSize="13"
+                                                TextColor="{StaticResource ThemeGray2}"
+                                                FontAttributes="Italic"
+                                                Margin="0,0,0,10" />
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </VerticalStackLayout>
+                        </Border>
+
+
+                        <Image
+                            Source="logo_icon.png"
+                            WidthRequest="45"
+                            Aspect="AspectFit"
+                            Margin="0,20,0,30" />
+
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="Learn" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoPopup"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+
+</ContentPage>

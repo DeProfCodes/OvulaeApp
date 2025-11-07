@@ -1,0 +1,41 @@
+﻿<ContentView
+    x:Class="OvulaeApp.Views.Components.Dashboard.EducationCoverItem"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="Root">
+
+    <Border
+        Margin="0,0,5,0"
+        Stroke="{Binding CoverStroke, Source={x:Reference Root}}"
+        Background="{Binding CoverBackground, Source={x:Reference Root}}"
+        StrokeShape="RoundRectangle 8"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        Padding="0,0">
+
+
+        <VerticalStackLayout>
+            <Grid
+                ColumnDefinitions="*,Auto">
+                <Image
+                    Source="{Binding ThumbnailSource}"
+                    Aspect="Fill"
+                    WidthRequest="150"
+                    HeightRequest="160"
+                    Margin="0,0,-28,0"
+                    Grid.Column="0" />
+
+                <Border
+                    VerticalOptions="Start"
+                    Padding="2,1,5,1"
+                    Stroke="Transparent"
+                    Grid.Column="1">
+                    <Image
+                        Source="{Binding Bookmarked}"
+                        WidthRequest="20"
+                        Aspect="AspectFit" />
+                </Border>
+            </Grid>
+        </VerticalStackLayout>
+    </Border>
+</ContentView>

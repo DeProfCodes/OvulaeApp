@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.GoalSetting.BodyMetricsPage"
+    Background="White"
+    xmlns:viewmodels="clr-namespace:OvulaeApp.ViewModels.Shared"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <viewmodels:NavigationsViewModel
+                x:Key="NavigationsVM" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="*,Auto">
+                <VerticalStackLayout
+                    Grid.Row="0"
+                    Spacing="20"
+                    Padding="20,0">
+                    <!-- Bottom Logo -->
+                    <Image
+                        Source="logo_main.png"
+                        WidthRequest="128"
+                        Aspect="AspectFit"
+                        HorizontalOptions="Center"
+                        Margin="0,40,0,10" />
+
+                    <VerticalStackLayout>
+                        <Label
+                            Text="Tell us a little about your body"
+                            Style="{StaticResource Headline}"
+                            FontSize="22" />
+                        <Label
+                            Text="*This helps us personalize your insights, predictions, and wellness support."
+                            FontSize="12"
+                            HorizontalTextAlignment="Center"
+                            FontAttributes="Italic"
+                            TextColor="Black"
+                            Margin="5,7,5,7" />
+                    </VerticalStackLayout>
+
+                    <!-- Age -->
+                    <VerticalStackLayout
+                        Spacing="5">
+                        <Label
+                            Text="How old are you?"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Start"
+                            TextColor="Black"
+                            FontFamily="Arial Black"
+                            Margin="0,7,0,7" />
+
+                        <Grid
+                            ColumnDefinitions="*,*">
+                            <Label
+                                Grid.Column="0"
+                                Text="Select your birth year"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="End"
+                                VerticalTextAlignment="Center"
+                                TextColor="{StaticResource ThemeGray2}"
+                                Margin="0,7,0,7" />
+
+                            <Border
+                                Grid.Column="1"
+                                HorizontalOptions="Center"
+                                StrokeShape="RoundRectangle 5"
+                                Padding="10,5,5,5"
+                                WidthRequest="115"
+                                BackgroundColor="{StaticResource ThemeGray}"
+                                Stroke="Transparent"
+                                Margin="0">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="YearBorder_Tapped" />
+                                </Border.GestureRecognizers>
+                                <HorizontalStackLayout>
+                                    <Image
+                                        Source="calendar.png"
+                                        WidthRequest="18"
+                                        Aspect="AspectFit"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        Text="{Binding SelectedYear}"
+                                        FontSize="18"
+                                        FontAttributes="Bold"
+                                        FontFamily="Arial Black"
+                                        TextColor="{x:StaticResource ThemeClrMain}"
+                                        VerticalOptions="Center"
+                                        Padding="10,0,8,0" />
+                                    <Image
+                                        Source="chev_down.png"
+                                        WidthRequest="18"
+                                        Aspect="AspectFit"
+                                        Margin="0,4,0,0"
+                                        VerticalOptions="Center" />
+                                </HorizontalStackLayout>
+                            </Border>
+
+                        </Grid>
+
+                    </VerticalStackLayout>
+
+                    <!-- Weight -->
+                    <VerticalStackLayout
+                        Spacing="10">
+                        <Label
+                            Text="What's your current weight?"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Start"
+                            TextColor="Black"
+                            FontFamily="Arial Black"
+                            Margin="0,7,0,7" />
+                        <VerticalStackLayout>
+                            <Grid
+                                ColumnDefinitions="Auto,*,*">
+                                <Label
+                                    Grid.Column="0"
+                                    Text="Enter weight"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="Start"
+                                    VerticalTextAlignment="Center"
+                                    TextColor="{StaticResource ThemeGray2}"
+                                    Margin="5,7,0,7" />
+
+                                <Border
+                                    Grid.Column="1"
+                                    HorizontalOptions="Center"
+                                    StrokeShape="RoundRectangle 5"
+                                    Padding="0,0,0,0"
+                                    HeightRequest="35"
+                                    WidthRequest="95"
+                                    BackgroundColor="{StaticResource ThemeClrLight}"
+                                    Stroke="{StaticResource ThemeClrMain}"
+                                    Margin="0">
+                                    <Grid
+                                        ColumnDefinitions="*,*,*">
+                                        <Border
+                                            x:Name="wDOWN"
+                                            Grid.Column="0"
+                                            WidthRequest="30"
+                                            StrokeShape="RoundRectangle 5"
+                                            Padding="5,5,5,5"
+                                            BackgroundColor="{StaticResource ThemeClrLight}"
+                                            Stroke="Transparent"
+                                            Margin="0">
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="WeightStepper_Tapped" />
+                                            </Border.GestureRecognizers>
+                                            <Image
+                                                Source="chev_down.png"
+                                                WidthRequest="15"
+                                                Aspect="AspectFit"
+                                                Margin="0,4,0,0"
+                                                VerticalOptions="Center" />
+                                        </Border>
+                                        <Border
+                                            Grid.Column="1"
+                                            WidthRequest="35"
+                                            Padding="0,5,0,5"
+                                            BackgroundColor="{StaticResource ThemeLightGray}"
+                                            Stroke="Transparent"
+                                            Margin="0">
+                                            <Entry
+                                                x:Name="Weight"
+                                                Text="80"
+                                                FontSize="14"
+                                                MaxLength="3"
+                                                HeightRequest="20"
+                                                FontAttributes="Bold"
+                                                FontFamily="Arial Black"
+                                                HorizontalOptions="Center"
+                                                HorizontalTextAlignment="Center"
+                                                Placeholder=""
+                                                Keyboard="Numeric"
+                                                TextChanged="Entries_TextChanged"
+                                                Unfocused="Entries_Unfocused"
+                                                TextColor="{StaticResource ThemeClr2}" />
+                                        </Border>
+                                        <Border
+                                            x:Name="wUP"
+                                            Grid.Column="2"
+                                            WidthRequest="30"
+                                            HorizontalOptions="Start"
+                                            StrokeShape="RoundRectangle 5"
+                                            Padding="5,5,5,5"
+                                            BackgroundColor="{StaticResource ThemeClrLight}"
+                                            Stroke="Transparent"
+                                            Margin="0">
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="WeightStepper_Tapped" />
+                                            </Border.GestureRecognizers>
+                                            <Image
+                                                Source="chev_up.png"
+                                                WidthRequest="15"
+                                                Aspect="AspectFit"
+                                                Margin="0,0,0,0"
+                                                VerticalOptions="Center" />
+                                        </Border>
+                                    </Grid>
+                                </Border>
+
+                                <VerticalStackLayout
+                                    Grid.Column="2"
+                                    Margin="0,-12,0,0">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Metric / Imperial"
+                                        FontSize="10"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center"
+                                        TextColor="{StaticResource Black}"
+                                        Margin="0,0,0,0" />
+                                    <Border
+                                        Grid.Column="0"
+                                        Padding="0"
+                                        WidthRequest="100"
+                                        BackgroundColor="Transparent"
+                                        Stroke="{StaticResource ThemeClrMain}"
+                                        Margin="0">
+                                        <Grid
+                                            ColumnDefinitions="Auto,Auto">
+                                            <Border
+                                                Grid.Column="0"
+                                                x:Name="msKG"
+                                                HorizontalOptions="Center"
+                                                WidthRequest="50"
+                                                Padding="5,5,5,5"
+                                                BackgroundColor="{StaticResource ThemeClrMain}"
+                                                Stroke="{StaticResource ThemeClrMain}"
+                                                Margin="0">
+                                                <Border.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Tapped="MeasurementType_Tapped" />
+                                                </Border.GestureRecognizers>
+                                                <Label
+                                                    x:Name="msKGLabel"
+                                                    HorizontalOptions="Center"
+                                                    Text="kg"
+                                                    FontSize="14"
+                                                    FontFamily="Arial Black"
+                                                    FontAttributes="Bold"
+                                                    TextColor="White"
+                                                    Margin="0,0,0,0" />
+                                            </Border>
+                                            <Border
+                                                Grid.Column="1"
+                                                x:Name="msLBS"
+                                                HorizontalOptions="Center"
+                                                Padding="5,5,5,5"
+                                                WidthRequest="50"
+                                                Margin="-2,0,0,0"
+                                                BackgroundColor="Transparent"
+                                                Stroke="Transparent">
+                                                <Border.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Tapped="MeasurementType_Tapped" />
+                                                </Border.GestureRecognizers>
+                                                <Label
+                                                    x:Name="msLBSLabel"
+                                                    HorizontalOptions="Center"
+                                                    Text="lbs"
+                                                    FontSize="14"
+                                                    FontAttributes="Bold"
+                                                    FontFamily="Arial Black"
+                                                    TextColor="{StaticResource ThemeGray2}"
+                                                    Margin="0,0,0,0" />
+                                            </Border>
+                                        </Grid>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                            </Grid>
+                            <HorizontalStackLayout
+                                HorizontalOptions="Center"
+                                Margin="0,7,0,7">
+                                <Label
+                                    Text="You have selected "
+                                    FontSize="10"
+                                    TextColor="Black"
+                                    Margin="0,0,0,0" />
+                                <Label
+                                    x:Name="WeightValLabel"
+                                    Text="80"
+                                    FontSize="10"
+                                    FontAttributes="Bold"
+                                    FontFamily="Arial Black"
+                                    TextColor="{StaticResource ThemeClr2}"
+                                    Margin="0,0,0,0" />
+                                <Label
+                                    x:Name="WeightMeasureLabel"
+                                    Text="kg"
+                                    FontSize="10"
+                                    FontAttributes="Bold"
+                                    FontFamily="Arial Black"
+                                    TextColor="{StaticResource ThemeClrMain}"
+                                    Margin="2,0,0,0" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                    <!-- Height -->
+                    <VerticalStackLayout
+                        Spacing="10">
+                        <Label
+                            Text="What's your height?"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            FontFamily="Arial Black"
+                            HorizontalTextAlignment="Start"
+                            TextColor="Black"
+                            Margin="0,7,0,7" />
+
+                        <VerticalStackLayout>
+                            <Grid
+                                ColumnDefinitions="Auto,*,*">
+                                <Label
+                                    Grid.Column="0"
+                                    Text="Enter height"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="Start"
+                                    VerticalTextAlignment="Center"
+                                    TextColor="{StaticResource ThemeGray2}"
+                                    Margin="5,7,0,7" />
+
+                                <Border
+                                    Grid.Column="1"
+                                    HorizontalOptions="Center"
+                                    StrokeShape="RoundRectangle 5"
+                                    Padding="0,0,0,0"
+                                    HeightRequest="35"
+                                    WidthRequest="95"
+                                    BackgroundColor="{StaticResource ThemeClrLight}"
+                                    Stroke="{StaticResource ThemeClrMain}"
+                                    Margin="0">
+                                    <Grid
+                                        ColumnDefinitions="*,*,*">
+                                        <Border
+                                            x:Name="hDOWN"
+                                            Grid.Column="0"
+                                            WidthRequest="30"
+                                            StrokeShape="RoundRectangle 5"
+                                            Padding="5,5,5,5"
+                                            BackgroundColor="{StaticResource ThemeClrLight}"
+                                            Stroke="Transparent"
+                                            Margin="0">
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="HeightStepper_Tapped" />
+                                            </Border.GestureRecognizers>
+                                            <Image
+                                                Source="chev_down.png"
+                                                WidthRequest="15"
+                                                Aspect="AspectFit"
+                                                Margin="0,4,0,0"
+                                                VerticalOptions="Center" />
+                                        </Border>
+                                        <Border
+                                            Grid.Column="1"
+                                            WidthRequest="35"
+                                            Padding="0,5,0,5"
+                                            BackgroundColor="{StaticResource ThemeLightGray}"
+                                            Stroke="Transparent"
+                                            Margin="0">
+                                            <Entry
+                                                x:Name="Height"
+                                                Text="165"
+                                                MaxLength="3"
+                                                FontSize="14"
+                                                HeightRequest="20"
+                                                FontAttributes="Bold"
+                                                FontFamily="Arial Black"
+                                                HorizontalTextAlignment="Center"
+                                                Placeholder=""
+                                                Keyboard="Numeric"
+                                                TextChanged="Entries_TextChanged"
+                                                Unfocused="Entries_Unfocused"
+                                                TextColor="{StaticResource ThemeClr2}" />
+                                        </Border>
+                                        <Border
+                                            x:Name="hUP"
+                                            Grid.Column="2"
+                                            WidthRequest="30"
+                                            HorizontalOptions="Start"
+                                            StrokeShape="RoundRectangle 5"
+                                            Padding="5,5,5,5"
+                                            BackgroundColor="{StaticResource ThemeClrLight}"
+                                            Stroke="Transparent"
+                                            Margin="0">
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="HeightStepper_Tapped" />
+                                            </Border.GestureRecognizers>
+                                            <Image
+                                                Source="chev_up.png"
+                                                WidthRequest="15"
+                                                Aspect="AspectFit"
+                                                Margin="0,0,0,0"
+                                                VerticalOptions="Center" />
+                                        </Border>
+                                    </Grid>
+                                </Border>
+
+                                <VerticalStackLayout
+                                    Grid.Column="2"
+                                    Margin="0,-12,0,0">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Metric / Imperial"
+                                        FontSize="10"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center"
+                                        TextColor="{StaticResource Black}"
+                                        Margin="0,0,0,0" />
+                                    <Border
+                                        Grid.Column="0"
+                                        Padding="0"
+                                        WidthRequest="100"
+                                        BackgroundColor="Transparent"
+                                        Stroke="{StaticResource ThemeClrMain}"
+                                        Margin="0">
+                                        <Grid
+                                            ColumnDefinitions="Auto,Auto">
+                                            <Border
+                                                x:Name="msCM"
+                                                Grid.Column="0"
+                                                HorizontalOptions="Center"
+                                                WidthRequest="50"
+                                                Padding="5,5,5,5"
+                                                BackgroundColor="{StaticResource ThemeClrMain}"
+                                                Stroke="{StaticResource ThemeClrMain}"
+                                                Margin="0">
+                                                <Border.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Tapped="MeasurementType_Tapped" />
+                                                </Border.GestureRecognizers>
+                                                <Label
+                                                    x:Name="msCMLabel"
+                                                    HorizontalOptions="Center"
+                                                    Text="cm"
+                                                    FontSize="14"
+                                                    FontFamily="Arial Black"
+                                                    FontAttributes="Bold"
+                                                    TextColor="White"
+                                                    Margin="0,0,0,0" />
+                                            </Border>
+                                            <Border
+                                                x:Name="msIN"
+                                                Grid.Column="1"
+                                                HorizontalOptions="Center"
+                                                Padding="5,5,5,5"
+                                                WidthRequest="50"
+                                                Margin="-2,0,0,0"
+                                                BackgroundColor="Transparent"
+                                                Stroke="Transparent">
+                                                <Border.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Tapped="MeasurementType_Tapped" />
+                                                </Border.GestureRecognizers>
+                                                <Label
+                                                    x:Name="msINLabel"
+                                                    HorizontalOptions="Center"
+                                                    Text="ft/in"
+                                                    FontSize="14"
+                                                    FontAttributes="Bold"
+                                                    FontFamily="Arial Black"
+                                                    TextColor="{StaticResource ThemeGray2}"
+                                                    Margin="0,0,0,0" />
+                                            </Border>
+                                        </Grid>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                            </Grid>
+                            <HorizontalStackLayout
+                                HorizontalOptions="Center"
+                                Margin="0,7,0,7">
+                                <Label
+                                    Text="You have selected "
+                                    FontSize="10"
+                                    TextColor="Black"
+                                    Margin="0,0,0,0" />
+                                <Label
+                                    x:Name="HeightValLabel"
+                                    Text="165"
+                                    FontSize="10"
+                                    FontAttributes="Bold"
+                                    FontFamily="Arial Black"
+                                    TextColor="{StaticResource ThemeClr2}"
+                                    Margin="0,0,0,0" />
+                                <Label
+                                    x:Name="HeightMeasureLabel"
+                                    Text="cm"
+                                    FontSize="10"
+                                    FontAttributes="Bold"
+                                    FontFamily="Arial Black"
+                                    TextColor="{StaticResource ThemeClrMain}"
+                                    Margin="2,0,0,0" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+
+                <!-- Bottom Button -->
+                <Button
+                    x:Name="LoginBtn"
+                    Grid.Row="1"
+                    Text="Next"
+                    Style="{StaticResource ThemeButton}"
+                    Margin="20,0,20,10"
+                    Clicked="NextButtonClicked" />
+            </Grid>
+        </ContentView>
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <customCtrl:YearPicker
+            x:Name="MyYearPicker"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

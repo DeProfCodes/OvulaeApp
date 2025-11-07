@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Components.Controls.Buttons.GradientButton"
+    x:Name="Root">
+
+    <Border
+        x:Name="MainBorder"
+        Stroke="{Binding Stroke, Source={x:Reference Root}}"
+        StrokeThickness="{Binding StrokeThickness, Source={x:Reference Root}}"
+        HorizontalOptions="{Binding HorizontalOptions, Source={x:Reference Root}}"
+        WidthRequest="{Binding WidthRequest, Source={x:Reference Root}}"
+        HeightRequest="{Binding HeightRequest, Source={x:Reference Root}}">
+
+        <Border.StrokeShape>
+            <RoundRectangle
+                CornerRadius="{Binding CornerRadius, Source={x:Reference Root}}" />
+        </Border.StrokeShape>
+        <Border.Background>
+            <LinearGradientBrush
+                StartPoint="0,0"
+                EndPoint="1,1">
+                <GradientStop
+                    Color="{Binding GradientColorLeft, Source={x:Reference Root}}"
+                    Offset="0.0" />
+                <GradientStop
+                    Color="{Binding GradientColorRight, Source={x:Reference Root}}"
+                    Offset="1.0" />
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Border.Shadow>
+            <Shadow
+                Brush="{Binding ShadowBrush, Source={x:Reference Root}}"
+                Opacity="{Binding ShadowOpacity, Source={x:Reference Root}}"
+                Radius="5"
+                Offset="0,4" />
+        </Border.Shadow>
+        
+        <Border.GestureRecognizers>
+            <TapGestureRecognizer
+                Tapped="OnTappedInternal" />
+        </Border.GestureRecognizers>
+
+        <Grid
+            Padding="{Binding ButtonPadding, Source={x:Reference Root}}"
+            ColumnDefinitions="*"
+            VerticalOptions="Center"
+            HorizontalOptions="Fill">
+
+            <HorizontalStackLayout
+                Grid.Column="0"
+                HorizontalOptions="CenterAndExpand">
+            <!-- Icon -->
+            <Image
+                IsVisible="{Binding HasImageIcon, Source={x:Reference Root}}"
+                Source="{Binding ImageIconSource, Source={x:Reference Root}}"
+                WidthRequest="{Binding ImageIconWidth, Source={x:Reference Root}}"
+                HeightRequest="{Binding ImageIconHeight, Source={x:Reference Root}}"
+                VerticalOptions="Center"
+                Aspect="AspectFit"
+                Margin="{Binding IconMargin, Source={x:Reference Root}}" />
+
+            <!-- Text -->
+            <Label
+                Text="{Binding Text, Source={x:Reference Root}}"
+                FontSize="{Binding FontSize, Source={x:Reference Root}}"
+                FontAttributes="{Binding FontAttributes, Source={x:Reference Root}}"
+                TextColor="{Binding ButtonTextColor, Source={x:Reference Root}}"
+                VerticalOptions="Center"
+                HorizontalOptions="Fill"
+                LineBreakMode="WordWrap"
+                MaxLines="2" />
+            </HorizontalStackLayout>
+        </Grid>
+    </Border>
+</ContentView>

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Education.EducationReferencesPage"
+    Background="White"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Education"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:dashComp3="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    x:DataType="vm:EducationReferencesViewModel">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body: CollectionView is the ONLY scroller -->
+                <CollectionView
+                    Grid.Row="1"
+                    ItemsSource="{Binding References}"
+                    SelectionMode="None">
+                    <CollectionView.Header>
+                        <VerticalStackLayout
+                            Margin="20,10"
+                            HorizontalOptions="Center">
+                            <Label
+                                Text="All References"
+                                FontSize="35"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource ThemeClrMain}" />
+                            <Border
+                                HeightRequest="3"
+                                Background="{StaticResource ThemeClrMain}"
+                                Stroke="{StaticResource ThemeClrMain}"
+                                Margin="0,1,0,0" />
+                        </VerticalStackLayout>
+                    </CollectionView.Header>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate
+                            x:DataType="vm:EducationReferenceLinkViewModel">
+                            <!-- Flatter template for speed -->
+                            <VerticalStackLayout
+                                Padding="20,0"
+                                Margin="0,20,0,0">
+                                <Label
+                                    FontSize="14"
+                                    FontAttributes="Italic"
+                                    TextColor="{StaticResource Black}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span
+                                                TextColor="{StaticResource Black}"
+                                                Text="{Binding Prefix}" />
+                                            <Span
+                                                TextColor="{StaticResource Black}"
+                                                Text="{Binding Reference}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <!-- Lightweight open link action -->
+                                <Border
+                                    Padding="5,5"
+                                    Margin="-5,0"
+                                    Stroke="Transparent">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:EducationReferencesViewModel}}, Path=OpenReferenceCommand}"
+                                            CommandParameter="{Binding URL}" />
+                                    </Border.GestureRecognizers>
+                                    <Label
+                                        Text="{Binding URL}"
+                                        FontSize="11"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource ThemeClr3}" />
+                                </Border>
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                    <CollectionView.Footer>
+                        <VerticalStackLayout
+                            Margin="20,30,20,20"
+                            Spacing="6">
+                            <Label
+                                Text="✅ This information has been reviewed and approved by:"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource ThemeClrMain}" />
+                            <Label
+                                Text="Dr. Elmarie Wypkema, OB/GYN"
+                                FontSize="14"
+                                FontAttributes="Bold" />
+                            <Label
+                                Text="Obstetrician &amp; Gynaecologist"
+                                FontSize="11" />
+                            <Label
+                                Text="Medical license number (HPCSA): MP0282324"
+                                FontSize="12"
+                                FontAttributes="Italic" />
+                            <Label
+                                Text="Practice number: 1607189"
+                                FontSize="11"
+                                FontAttributes="Italic" />
+                            <Image
+                                Source="logo_icon.png"
+                                WidthRequest="45"
+                                Aspect="AspectFit"
+                                Margin="0,16,0,0" />
+                        </VerticalStackLayout>
+                    </CollectionView.Footer>
+                </CollectionView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="Learn" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

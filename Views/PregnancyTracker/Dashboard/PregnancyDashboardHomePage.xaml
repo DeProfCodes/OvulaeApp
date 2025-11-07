@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.PregnancyTracker.Dashboard.PregnancyDashboardHomePage"
+    Background="White"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.PregnancyTracker"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:models="clr-namespace:OvulaeApp.Models.Dashboard.Education"
+    xmlns:dietModel="clr-namespace:OvulaeShared.ViewModel.Diet;assembly=OvulaeShared"
+    xmlns:dashComp2="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:dashComp3="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    x:DataType="vm:PregnancyDashboardViewModel">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+                    <VerticalStackLayout>
+
+                        <dashComp2:DashboardTrackerHeroView
+                            HeightRequest="360"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Start"
+                            IsPregnancyTracker="True"
+                            StartColor="#72231d"
+                            MiddleColor="#c2422b"
+                            EndColor="#72231d" />
+
+                        <VerticalStackLayout
+                            Margin="0,-360,0,60">
+                            <!-- Weeks Nav Border -->
+                            <Border
+                                Background="Transparent"
+                                Margin="0,3,0,0"
+                                ZIndex="1000"
+                                Stroke="Transparent"
+                                Padding="5,3">
+                                <Grid
+                                    ColumnDefinitions="*,Auto,*">
+                                    <VerticalStackLayout
+                                        x:Name="PrevWeekBtn"
+                                        Grid.Column="0"
+                                        HorizontalOptions="Start">
+                                        <Border
+                                            x:Name="PrevWeekBtnBrd"
+                                            HeightRequest="40"
+                                            WidthRequest="40"
+                                            Stroke="Transparent"
+                                            StrokeThickness="1"
+                                            Padding="2,4"
+                                            Margin="0,0,0,0"
+                                            StrokeShape="RoundRectangle 8">
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="NavigateWeeks_Tapped" />
+                                            </Border.GestureRecognizers>
+                                            <Image
+                                                Source="left_chev_white.png"
+                                                Aspect="AspectFit"
+                                                HorizontalOptions="CenterAndExpand" />
+                                        </Border>
+                                        <Label
+                                            x:Name="PrevWeekText"
+                                            FontSize="8"
+                                            HorizontalTextAlignment="Center"
+                                            FontAttributes="Italic"
+                                            TextColor="white"
+                                            Margin="0,0,0,0" />
+                                    </VerticalStackLayout>
+                                    <Label
+                                        x:Name="CurrentWeek"
+                                        Grid.Column="1"
+                                        FontSize="32"
+                                        TextTransform="Uppercase"
+                                        FontAttributes="Bold"
+                                        FontFamily="FredokaBold"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalOptions="Center"
+                                        TextColor="white"
+                                        Margin="0,0,0,10" />
+                                    <VerticalStackLayout
+                                        Grid.Column="2"
+                                        x:Name="NextWeekBtn"
+                                        HorizontalOptions="End">
+                                        <Border
+                                            x:Name="NextWeekBtnBrd"
+                                            HeightRequest="40"
+                                            WidthRequest="40"
+                                            Stroke="Transparent"
+                                            StrokeThickness="1"
+                                            Padding="2,4"
+                                            StrokeShape="RoundRectangle 8">
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="NavigateWeeks_Tapped" />
+                                            </Border.GestureRecognizers>
+                                            <Image
+                                                Source="right_chev_white.png"
+                                                Aspect="AspectFit"
+                                                HorizontalOptions="CenterAndExpand" />
+                                        </Border>
+                                        <Label
+                                            x:Name="NextWeekText"
+                                            FontSize="8"
+                                            HorizontalTextAlignment="Center"
+                                            FontAttributes="Italic"
+                                            TextColor="white"
+                                            Margin="0,0,0,0" />
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </Border>
+                            <!-- Dashboard Image -->
+
+                            <Image
+                                Source="{Binding HeroImage}"
+                                Aspect="AspectFit"
+                                WidthRequest="260"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="CenterAndExpand" />
+
+                            <!-- Read More Button -->
+                            <VerticalStackLayout
+                                Padding="20,0">
+                                <Label
+                                    Text="{Binding CurrentWeekData.PregnancyKeyFeatures}"
+                                    FontSize="18"
+                                    FontFamily="ChewyFont"
+                                    HorizontalTextAlignment="Center"
+                                    TextColor="white"
+                                    Margin="0,5,0,5" />
+                                <Border
+                                    Stroke="Transparent"
+                                    Background="{StaticResource ThemeClr2}"
+                                    Padding="15,5"
+                                    HorizontalOptions="Center"
+                                    StrokeShape="RoundRectangle 12"
+                                    Margin="0,10,0,0">
+                                    <Border.Shadow>
+                                        <Shadow
+                                            Brush="yellow"
+                                            Opacity="0.45"
+                                            Offset="0,4"
+                                            Radius="10" />
+                                    </Border.Shadow>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="ReadMoreBabyInfo_Tapped" />
+                                    </Border.GestureRecognizers>
+                                    <HorizontalStackLayout>
+                                        <Label
+                                            Text="Read More"
+                                            FontSize="13"
+                                            HorizontalTextAlignment="Center"
+                                            FontAttributes="Bold"
+                                            TextColor="white"
+                                            Margin="0,0,0,0" />
+                                        <Image
+                                            Source="right_chev_white.png"
+                                            WidthRequest="6"
+                                            Margin="5,2,0,0"
+                                            HorizontalOptions="CenterAndExpand" />
+                                    </HorizontalStackLayout>
+                                </Border>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                        
+                        <!-- Highlight Text -->
+                        <VerticalStackLayout
+                            Padding="20,0"
+                            Margin="0,-10,0,20">
+                            <Label
+                                Text="{Binding CurrentWeekData.Title}"
+                                FontSize="20"
+                                HorizontalTextAlignment="Center"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                Margin="0,0,0,0" />
+                            <Label
+                                Text="{Binding CurrentWeekData.PregnancyHighlight}"
+                                FontSize="13"
+                                HorizontalTextAlignment="Center"
+                                FontAttributes="Italic, Bold"
+                                TextColor="{StaticResource ThemeClr2}"
+                                Margin="0,10,0,0" />
+                            <Label
+                                Text="{Binding CurrentWeekData.Description}"
+                                FontSize="12"
+                                HorizontalTextAlignment="Center"
+                                FontAttributes="Italic"
+                                TextColor="{StaticResource ThemeGray2}"
+                                Margin="0,10,0,0" />
+                        </VerticalStackLayout>
+
+                        <!-- Quick Links -->
+                        <VerticalStackLayout
+                            Margin="0,0,0,0"
+                            IsVisible="{Binding IsMainUser}">
+                            <Label
+                                Text="Today Quick Links"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                Margin="20,0,20,0" />
+
+                            <Border
+                                Padding="15,13"
+                                Margin="0,5,0,0"
+                                Background="{StaticResource ThemeLightGray}"
+                                Stroke="Transparent">
+                                <VerticalStackLayout>
+                                    <Grid
+                                        ColumnDefinitions="*,*,*">
+                                        <!-- Quick Link 1 -->
+                                        <Border
+                                            Grid.Column="0"
+                                            x:Name="QLinksSymptoms"
+                                            Background="{StaticResource ThemeClrLight}"
+                                            Stroke="Transparent"
+                                            StrokeShape="RoundRectangle 8"
+                                            Padding="0,5"
+                                            Margin="0,0,5,0">
+                                            <Border.Shadow>
+                                                <Shadow
+                                                    Brush="Black"
+                                                    Opacity="0.2"
+                                                    Offset="0,4"
+                                                    Radius="6" />
+                                            </Border.Shadow>
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="QuickLinks_Tapped" />
+                                            </Border.GestureRecognizers>
+                                            <VerticalStackLayout>
+                                                <Image
+                                                    Source="expected_symptoms.png"
+                                                    Aspect="AspectFit"
+                                                    WidthRequest="67"
+                                                    HeightRequest="67" />
+                                                <Label
+                                                    Text="Today Symptoms"
+                                                    FontSize="10"
+                                                    FontAttributes="Bold"
+                                                    HorizontalTextAlignment="Center"
+                                                    TextColor="Black"
+                                                    Margin="0,5,0,5" />
+                                            </VerticalStackLayout>
+                                        </Border>
+                                        <!-- Quick Link 2 -->
+                                        <Border
+                                            Grid.Column="1"
+                                            x:Name="QLinksTips"
+                                            Background="{StaticResource ThemeClrLight}"
+                                            Stroke="Transparent"
+                                            StrokeShape="RoundRectangle 8"
+                                            Padding="0,5">
+                                            <Border.Shadow>
+                                                <Shadow
+                                                    Brush="Black"
+                                                    Opacity="0.2"
+                                                    Offset="0,4"
+                                                    Radius="6" />
+                                            </Border.Shadow>
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="QuickLinks_Tapped" />
+                                            </Border.GestureRecognizers>
+                                            <VerticalStackLayout>
+                                                <Image
+                                                    Source="today_tips.png"
+                                                    Aspect="AspectFit"
+                                                    WidthRequest="67"
+                                                    HeightRequest="67" />
+                                                <Label
+                                                    Text="Today Tips"
+                                                    FontSize="10"
+                                                    FontAttributes="Bold"
+                                                    HorizontalTextAlignment="Center"
+                                                    TextColor="Black"
+                                                    Margin="0,5,0,5" />
+                                            </VerticalStackLayout>
+                                        </Border>
+                                        <!-- Quick Link 3 -->
+                                        <Border
+                                            Grid.Column="2"
+                                            x:Name="QLinksPregEd"
+                                            Background="{StaticResource ThemeClrLight}"
+                                            Stroke="Transparent"
+                                            StrokeShape="RoundRectangle 8"
+                                            Padding="0,5"
+                                            Margin="5,0,0,0">
+                                            <Border.Shadow>
+                                                <Shadow
+                                                    Brush="Black"
+                                                    Opacity="0.2"
+                                                    Offset="0,4"
+                                                    Radius="6" />
+                                            </Border.Shadow>
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="QuickLinks_Tapped" />
+                                            </Border.GestureRecognizers>
+                                            <VerticalStackLayout>
+                                                <Image
+                                                    Source="preg_edu.png"
+                                                    Aspect="AspectFit"
+                                                    WidthRequest="67"
+                                                    HeightRequest="67" />
+                                                <Label
+                                                    Text="PregEd"
+                                                    FontSize="10"
+                                                    FontAttributes="Bold"
+                                                    HorizontalTextAlignment="Center"
+                                                    TextColor="Black"
+                                                    Margin="0,5,0,5" />
+                                            </VerticalStackLayout>
+                                        </Border>
+                                    </Grid>
+                                    <!-- Log My Day -->
+                                    <VerticalStackLayout
+                                        Margin="0,10,0,0">
+                                        <Border
+                                            x:Name="QLinkLogDay"
+                                            Background="{StaticResource ThemeClrPurple}"
+                                            Stroke="Transparent"
+                                            StrokeShape="RoundRectangle 20"
+                                            Padding="6">
+                                            <Border.Shadow>
+                                                <Shadow
+                                                    Brush="Black"
+                                                    Opacity="0.2"
+                                                    Offset="0,4"
+                                                    Radius="6" />
+                                            </Border.Shadow>
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="QuickLinks_Tapped" />
+                                            </Border.GestureRecognizers>
+                                            <HorizontalStackLayout
+                                                HorizontalOptions="Center">
+                                                <Image
+                                                    Source="log_edit2.png"
+                                                    Aspect="AspectFit"
+                                                    WidthRequest="20"
+                                                    HeightRequest="20" />
+                                                <Label
+                                                    Text="LOG MY DAY"
+                                                    FontSize="20"
+                                                    FontFamily="Arial Black"
+                                                    FontAttributes="Bold"
+                                                    HorizontalTextAlignment="Center"
+                                                    VerticalOptions="Center"
+                                                    TextColor="Black"
+                                                    Margin="10,5,0,5" />
+                                            </HorizontalStackLayout>
+                                        </Border>
+                                        <Label
+                                            Text="*Log symptoms, moods, and more"
+                                            FontSize="10"
+                                            FontAttributes="Italic"
+                                            HorizontalTextAlignment="Center"
+                                            VerticalOptions="Center"
+                                            TextColor="{StaticResource ThemeGray2}"
+                                            Margin="0,2,0,0" />
+                                    </VerticalStackLayout>
+                                </VerticalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <!-- Week X Recommendations -->
+                        <VerticalStackLayout
+                            Margin="0,-10,0,0">
+                            
+                            <VerticalStackLayout
+                                Margin="0,0,0,0">
+                                <Border
+                                    Margin="0,5,0,0"
+                                    Background="{StaticResource ThemeLightGray}"
+                                    Stroke="Transparent"
+                                    Padding="0,10">
+                                    <VerticalStackLayout>
+                                        <dashComp2:EducationalBooksListingRow
+                                            x:Name="RecommendedRow"
+                                            ListingTitle="Recommened Articles For You"
+                                            LabelTextColor="{StaticResource ThemeClrMain}"
+                                            LabelFontSize="16"
+                                            Title="{Binding EducationGroupsCovers[0].CoversHeading}"
+                                            Items="{Binding EducationGroupsCovers[0].EducationCovers}"
+                                            LabelMargin="20,0,0,0"
+                                            CoverStroke="Transparent"/>
+                                    </VerticalStackLayout>
+                                </Border>
+                            </VerticalStackLayout>
+
+                        </VerticalStackLayout>
+
+
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="Home" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoPopup"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

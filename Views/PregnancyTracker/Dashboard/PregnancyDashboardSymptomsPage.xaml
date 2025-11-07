@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.PregnancyTracker.Dashboard.PregnancyDashboardSymptomsPage"
+    Background="White"
+    xmlns:viewmodels="clr-namespace:OvulaeApp.ViewModels.Shared"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:models="clr-namespace:OvulaeShared.Models.Symptoms;assembly=OvulaeShared"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.PregnancyTracker"
+    x:DataType="vm:PregnancySymptomsViewModel">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+                    <VerticalStackLayout>
+
+                        <Border
+                            Margin="0,-2"
+                            Padding="0,0"
+                            Stroke="Transparent"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand">
+                            <VerticalStackLayout>
+                                <!-- Hero Image -->
+                                <Image
+                                    Source="symptoms.png"
+                                    Aspect="AspectFit"
+                                     />
+
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!--Symptoms -->
+                        <VerticalStackLayout
+                            Margin="0,20,0,0">
+                            <Label
+                                Text="Expected Symptoms"
+                                FontSize="18"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Center"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                Margin="20,0,20,10" />
+
+                            <Label
+                                Text="{Binding MainData.SymptomsGroup.Title}"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Center"
+                                TextColor="{StaticResource Black}"
+                                Margin="20,0,20,0" />
+
+                            <Label
+                                Text="{Binding MainData.SymptomsGroup.Description}"
+                                FontSize="11"
+                                FontAttributes="Italic"
+                                HorizontalTextAlignment="Center"
+                                TextColor="{StaticResource ThemeGray2}"
+                                Margin="20,2,20,10" />
+
+                            <Border
+                                Padding="20,0"
+                                Margin="0,5,0,0"
+                                Background="Transparent"
+                                Stroke="Transparent">
+
+                                <CollectionView
+                                    Margin="0,10,0,0"
+                                    ItemsSource="{Binding MainData.SymptomItems}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate
+                                            x:DataType="models:SymptomItem">
+                                            <VerticalStackLayout
+                                                Spacing="5"
+                                                Margin="0,0,0,20">
+                                                <Label
+                                                    Text="{Binding Title}"
+                                                    FontSize="16"
+                                                    FontAttributes="Bold"
+                                                    TextColor="Black"
+                                                    Margin="0,0,0,0" />
+                                                <Label
+                                                    Text="{Binding Description}"
+                                                    FontSize="14"
+                                                    LineBreakMode="WordWrap"
+                                                    FontAttributes="Italic"
+                                                    TextColor="{StaticResource ThemeGray2}"
+                                                    Margin="0,0,0,0" />
+                                            </VerticalStackLayout>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <!-- Did you know?  -->
+                        <Border
+                            Padding="20,10"
+                            Margin="0,25,0,0"
+                            Background="{StaticResource ThemeClrLight}"
+                            Stroke="Transparent">
+                            <VerticalStackLayout>
+                                <Label
+                                    Text="Is This Normal❓"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="Center"
+                                    TextColor="{StaticResource ThemeClrMain}"
+                                    Margin="0,0,20,0" />
+
+                                <Label
+                                    Text="ℹ️ Tip: If symptoms feel severe or unusual, consult your doctor. Every pregnancy is different."
+                                    FontSize="12"
+                                    FontAttributes="None"
+                                    TextColor="{StaticResource ThemeClr2}"
+                                    Margin="0,20,20,0" />
+
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- Information Approved -> Coming Soon -->
+                        <VerticalStackLayout
+                            Margin="20,40,20,0"
+                            IsVisible="False">
+                            <Label
+                                Text="✅ This information has been reviewed and approved by:"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                Margin="0,0,20,0" />
+
+                            <Label
+                                Text="{Binding OurGynacologist}"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                TextColor="Black"
+                                Margin="0,20,20,0" />
+
+                            <Label
+                                Text="(Specialist in Maternal &amp; Fetal Health)"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                TextColor="Black"
+                                Margin="0,5,0,20" />
+
+                            <Image
+                                Source="logo_icon.png"
+                                WidthRequest="45"
+                                Aspect="AspectFit"
+                                Margin="0,20,0,20" />
+
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="Learn" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

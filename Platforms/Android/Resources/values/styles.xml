@@ -1,0 +1,30 @@
+﻿<resources>
+	<!-- Base application theme -->
+	<style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+		<!-- Status bar color (time, battery, icons) -->
+		<item name="android:statusBarColor">@color/colorPrimary</item>
+	</style>
+
+	<!-- Splash screen theme -->
+	<style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+		<item name="android:windowBackground">@drawable/splash</item>
+		<!-- System bar visibility -->
+		<item name="android:windowFullscreen">false</item>
+		<!-- Important -->
+		<item name="android:windowTranslucentStatus">false</item>
+		<!-- Important -->
+		<item name="android:windowTranslucentNavigation">false</item>
+		<!-- Important -->
+
+		<!-- System bar coloring -->
+		<item name="android:statusBarColor">@color/colorPrimary</item>
+		<item name="android:navigationBarColor">@color/colorPrimary</item>
+		<item name="android:windowDrawsSystemBarBackgrounds">true</item>
+		<!-- Important -->
+
+		<!-- Other flags -->
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowActionBar">false</item>
+	</style>
+</resources>

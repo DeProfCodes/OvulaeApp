@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Shared"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Marketing"
+    x:DataType="vm:ModuleAdFeatureViewModel"
+    x:Class="OvulaeApp.Views.Marketing.AdModuleFeaturePage"
+    x:Name="Root"
+    ZIndex="300">
+
+    <AbsoluteLayout>
+        <!-- Premium Gradient Background -->
+        <BoxView
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <BoxView.Background>
+                <LinearGradientBrush
+                    StartPoint="0,0"
+                    EndPoint="1,1">
+                    <GradientStop
+                        Color="{StaticResource ThemeClrPurple}"
+                        Offset="0.4" />
+                    <GradientStop
+                        Color="{StaticResource White}"
+                        Offset="0.5" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+
+        <Grid
+            BackgroundColor="{StaticResource ThemeClrPurple}"
+            RowDefinitions="*,Auto"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+
+            <VerticalStackLayout
+                Spacing="5"
+                Grid.Row="0">
+                
+                <VerticalStackLayout
+                    Padding="10,5"
+                    Spacing="5">
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0">
+                        <Label
+                            Text="{Binding MainTitle}"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center"
+                            TextColor="{StaticResource ThemeClr3}">
+                        </Label>
+                        <Image
+                            Source="{Binding FeatureImageSource}"
+                            WidthRequest="20"
+                            Margin="10,0,0,0" />
+                    </HorizontalStackLayout>
+
+                    <Label
+                        Text="{Binding SubTitle}"
+                        FontSize="12"
+                        TextColor="#666"
+                        HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+
+                <Border
+                    Stroke="Transparent"
+                    Background="{StaticResource ThemeClrMainDark}"
+                    VerticalOptions="FillAndExpand"
+                    HeightRequest="500"
+                    >
+                    <!-- Carousel -->
+                    <Grid
+                        RowDefinitions="Auto,*">
+
+                        <IndicatorView
+                            Grid.Row="0"
+                            x:Name="CarouselIndicators"
+                            IndicatorColor="White"
+                            SelectedIndicatorColor="{StaticResource ThemeClr3}"
+                            HorizontalOptions="Center"
+                            Margin="0,5,0,15" />
+
+                        <ContentView
+                            Grid.Row="1"
+                            x:Name="CarouselWrapper">
+                            <Grid
+                                ColumnDefinitions="Auto,*,Auto">
+
+                                <custButtons:GradientButton
+                                    Grid.Column="0"
+                                    CornerRadius="50"
+                                    HasImageIcon="True"
+                                    IconMargin="0"
+                                    VerticalOptions="Center"
+                                    ImageIconWidth="15"
+                                    ImageIconHeight="15"
+                                    HeightRequest="35"
+                                    Margin="5,0,0,0"
+                                    ImageIconSource="left_chev_white.png"
+                                    Stroke="{StaticResource ThemeClrLight2}"
+                                    GradientColorLeft="{StaticResource ThemeClrMain}"
+                                    GradientColorRight="{StaticResource ThemeClrMain}"
+                                    TappedWithParameter="NextBackCouraselBtnTapped"
+                                    CommandParameter="prev" />
+
+                                <CarouselView
+                                    Grid.Column="1"
+                                    x:Name="ModuleFeatureCarousel"
+                                    ItemsSource="{Binding FeaturesImages}"
+                                    IndicatorView="CarouselIndicators"
+                                    Loop="True">
+
+                                    <CarouselView.ItemTemplate>
+                                        <DataTemplate
+                                            x:DataType="x:String">
+                                            <Border
+                                                HorizontalOptions="CenterAndExpand"
+                                                VerticalOptions="StartAndExpand"
+                                                StrokeShape="RoundRectangle 12"
+                                                Stroke="{StaticResource ThemeClrLight2}"
+                                                StrokeThickness="2">
+                                                <Border.Shadow>
+                                                    <Shadow
+                                                        Brush="{StaticResource Black}"
+                                                        Opacity="0.0"
+                                                        Offset="0,4"
+                                                        Radius="0" />
+                                                </Border.Shadow>
+                                                <Image
+                                                    Source="{Binding .}"
+                                                    Aspect="AspectFit"/>
+                                            </Border>
+                                        </DataTemplate>
+                                    </CarouselView.ItemTemplate>
+                                </CarouselView>
+
+                                <custButtons:GradientButton
+                                    Grid.Column="2"
+                                    CornerRadius="50"
+                                    IconMargin="0"
+                                    HeightRequest="35"
+                                    HasImageIcon="True"
+                                    ImageIconWidth="15"
+                                    ImageIconHeight="15"
+                                    Margin="0,0,5,0"
+                                    Stroke="{StaticResource ThemeClrLight2}"
+                                    ImageIconSource="right_chev_white.png"
+                                    GradientColorLeft="{StaticResource ThemeClrMain}"
+                                    GradientColorRight="{StaticResource ThemeClrMain}"
+                                    TappedWithParameter="NextBackCouraselBtnTapped"
+                                    CommandParameter="next" />
+                            </Grid>
+                        </ContentView>
+                    </Grid>
+                </Border>
+            </VerticalStackLayout>
+            <Border
+                Grid.Row="2"
+                Background="{StaticResource ThemeClrLightBackground}"
+                Stroke="Transparent">
+                <Border.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Opacity="0.3"
+                        Radius="4"
+                        Offset="0,0" />
+                </Border.Shadow>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center"
+                        Margin="-12,0,0,10">
+                        <Border
+                            Stroke="Transparent"
+                            Padding="5,5"
+                            x:Name="DotBackButton2">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="OnBackTapped" />
+                            </Border.GestureRecognizers>
+                            <Image
+                                x:Name="BackDotBtn"
+                                Source="left_chev_edge.png"
+                                WidthRequest="20"
+                                HeightRequest="20"
+                                Aspect="AspectFit"
+                                Margin="0,0,0,0"
+                                VerticalOptions="Center" />
+                        </Border>
+                        <customCtrl:DotSlider
+                            VerticalOptions="Center"
+                            ActiveIndex="{Binding Source={x:Reference Root}, Path=DotCurrentIndex}"
+                            DotCount="{Binding Source={x:Reference Root}, Path=DotTotalIndices}"
+                            VisualMode="Loader"
+                            LoaderHeight="3"
+                            ActiveDotColor="{StaticResource ThemeClr3}"
+                            InactiveDotSize="14" />
+                    </HorizontalStackLayout>
+                    <custButtons:GradientButton
+                        Text="NEXT"
+                        Grid.Row="1"
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        ButtonPadding="20,13"
+                        Margin="20,0,20,10"
+                        Stroke="Transparent"
+                        CornerRadius="15"
+                        ShadowOpacity="0.4"
+                        ButtonTextColor="White"
+                        GradientColorLeft="{StaticResource ThemeClr3}"
+                        GradientColorRight="{StaticResource ThemeClr2}"
+                        Tapped="OnNextClicked" />
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </AbsoluteLayout>
+</ContentView>

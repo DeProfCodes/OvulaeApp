@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Components.Controls.DatePicker"
+    x:Name="Root">
+
+    <Border
+        x:Name="PickerContainer"
+        HorizontalOptions="{Binding HorizontalOptions, Source={x:Reference Root}}"
+        Stroke="{Binding Stroke, Source={x:Reference Root}}"
+        StrokeThickness="{Binding StrokeThickness, Source={x:Reference Root}}"
+        Margin="{Binding Margin, Source={x:Reference Root}}"
+        Padding="{Binding Padding, Source={x:Reference Root}}"
+        Background="{Binding PickerBackground, Source={x:Reference Root}}"
+        WidthRequest="{Binding WidthRequest, Source={x:Reference Root}}"
+        HeightRequest="{Binding HeightRequest, Source={x:Reference Root}}">
+        <Border.StrokeShape>
+            <RoundRectangle
+                CornerRadius="{Binding CornerRadius, Source={x:Reference Root}}" />
+        </Border.StrokeShape>
+        <HorizontalStackLayout>
+            <DatePicker
+                x:Name="InnerDatePicker"
+                Date="{Binding SelectedDate, Source={x:Reference Root}, Mode=TwoWay}"
+                TextColor="{Binding DateColor, Source={x:Reference Root}}"
+                FontAttributes="Bold"
+                FontFamily="Arial Black"
+                FontSize="{Binding FontSize, Source={x:Reference Root}}" />
+            <Image
+                Source="{Binding DropdownIconSource, Source={x:Reference Root}}"
+                WidthRequest="15"
+                Aspect="AspectFit"
+                VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnIconTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+        </HorizontalStackLayout>
+    </Border>
+</ContentView>

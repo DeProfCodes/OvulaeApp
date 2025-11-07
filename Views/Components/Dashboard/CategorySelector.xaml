@@ -1,0 +1,16 @@
+﻿<ContentView
+    x:Class="OvulaeApp.Views.Components.Dashboard.CategorySelector"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="Root">
+
+    <ScrollView
+        Orientation="Horizontal"
+        Margin="0,0,0,0"
+        Padding="{Binding Padding, Source={x:Reference Root}}"
+        HorizontalOptions="{Binding HorizontalOptions, Source={x:Reference Root}}">
+        <HorizontalStackLayout
+            x:Name="CategoryStack"
+            Spacing="{Binding ItemSpacing, Source={x:Reference Root}}" />
+    </ScrollView>
+</ContentView>

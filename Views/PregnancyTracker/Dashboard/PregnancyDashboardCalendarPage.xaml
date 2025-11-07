@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.PregnancyTracker.Dashboard.PregnancyDashboardCalendarPage"
+    Background="White"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:models="clr-namespace:OvulaeApp.ViewModels.Calendar"
+    xmlns:symptoms="clr-namespace:OvulaeShared.Models.Symptoms;assembly=OvulaeShared"
+    xmlns:tips="clr-namespace:OvulaeShared.Models.Tips;assembly=OvulaeShared"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.PregnancyTracker"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    x:DataType="vm:PregnancyCalendarPageViewModel">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+                    <VerticalStackLayout
+                        Background="{StaticResource White}">
+                        <Border
+                            Margin="0,10,0,0"
+                            Stroke="Transparent">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="{StaticResource ThemeClrMainDark}"
+                                    Opacity="0.15"
+                                    Offset="0,15"
+                                    Radius="8" />
+                            </Border.Shadow>
+                            <Label
+                                Grid.Column="1"
+                                Text="Pregnancy Calendar 🤰🏼"
+                                FontSize="22"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource ThemeClr3}"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+                        </Border>
+                        
+                        
+                        <VerticalStackLayout
+                            Background="{StaticResource ThemeLightGray}"
+                            Margin="0,20,0,0"
+                            Padding="0,8,0,0">
+
+                            <!-- Calendar Nav -->
+                            <Border
+                                Stroke="Transparent"
+                                Background="Transparent"
+                                Margin="0,0,0,4">
+                                <Grid
+                                    ColumnDefinitions="Auto,*,Auto"
+                                    Margin="10,0,10,0">
+                                    <Border
+                                        Grid.Column="0"
+                                        Padding="15,5"
+                                        HorizontalOptions="Start"
+                                        Stroke="Transparent">
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="PreviousMonth_Tapped" />
+                                        </Border.GestureRecognizers>
+                                        <Image
+                                            x:Name="LeftIconImage"
+                                            Source="left_chev_edge.png"
+                                            WidthRequest="18"
+                                            Aspect="AspectFit"
+                                            HorizontalOptions="Start">
+                                        </Image>
+                                    </Border>
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding CurrentMonthTitle}"
+                                        TextTransform="Uppercase"
+                                        FontSize="20"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource ThemeClrMain}"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        Margin="0,0,0,0" />
+                                    <Border
+                                        Grid.Column="2"
+                                        Padding="15,5"
+                                        HorizontalOptions="End"
+                                        Stroke="Transparent">
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="NextMonth_Tapped" />
+                                        </Border.GestureRecognizers>
+                                        <Image
+                                            x:Name="RightIconImage"
+                                            Source="right_chev_edge.png"
+                                            WidthRequest="18"
+                                            Aspect="AspectFit"
+                                            HorizontalOptions="End">
+                                        </Image>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                            <!-- Week Days -->
+                            <Grid
+                                Margin="0,0,0,0"
+                                Padding="10"
+                                ColumnDefinitions="*,*,*,*,*,*,*"
+                                Background="{StaticResource ThemeClrMain}">
+                                <Label
+                                    Grid.Column="0"
+                                    Text="S"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    HorizontalOptions="Center" />
+                                <Label
+                                    Grid.Column="1"
+                                    Text="M"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    HorizontalOptions="Center" />
+                                <Label
+                                    Grid.Column="2"
+                                    Text="T"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    HorizontalOptions="Center" />
+                                <Label
+                                    Grid.Column="3"
+                                    Text="W"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    HorizontalOptions="Center" />
+                                <Label
+                                    Grid.Column="4"
+                                    Text="T"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    HorizontalOptions="Center" />
+                                <Label
+                                    Grid.Column="5"
+                                    Text="F"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    HorizontalOptions="Center" />
+                                <Label
+                                    Grid.Column="6"
+                                    Text="S"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    HorizontalTextAlignment="Center"
+                                    HorizontalOptions="Center" />
+                            </Grid>
+                        </VerticalStackLayout>
+                        
+                        <Border
+                            Stroke="Transparent"
+                            Margin="0,0,0,0"
+                            Padding="5,0,5,0"
+                            Background="{StaticResource ThemeLightGray}">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="{StaticResource ThemeClrMainDark}"
+                                    Opacity="0.55"
+                                    Offset="0,4"
+                                    Radius="8" />
+                            </Border.Shadow>
+                            <CollectionView
+                                ItemsSource="{Binding CurrentMonth.DaysFlatList}"
+                                SelectionMode="None">
+                                <CollectionView.ItemsLayout>
+                                    <GridItemsLayout
+                                        Orientation="Vertical"
+                                        Span="7"
+                                        HorizontalItemSpacing="1"
+                                        VerticalItemSpacing="1"/>
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate
+                                        x:DataType="models:CalendarDayViewModel">
+                                        <Border
+                                            Stroke="{Binding EventBorderColor}"
+                                            Background="{Binding BackgroundColor}"
+                                            StrokeShape="RoundRectangle 5"
+                                            Padding="4,3"
+                                            HeightRequest="60">
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PregnancyCalendarPageViewModel}}, Path=SelectDayCommand}"
+                                                    CommandParameter="{Binding}" />
+                                            </Border.GestureRecognizers>
+                                            <VerticalStackLayout
+                                                Spacing="2"
+                                                HorizontalOptions="Center"
+                                                VerticalOptions="Center">
+                                                <!-- Day Number -->
+                                                <Label
+                                                    Text="{Binding DayNumber}"
+                                                    FontSize="12"
+                                                    FontAttributes="Bold"
+                                                    HorizontalOptions="Center"
+                                                    VerticalOptions="Center"
+                                                    IsVisible="True" />
+
+                                                <!-- Fruit Emoji -->
+                                                <Label
+                                                    Text="{Binding EventEmoji}"
+                                                    FontSize="18"
+                                                    HorizontalOptions="Center"
+                                                    VerticalOptions="Center"
+                                                    IsVisible="{Binding IsEventEmojiVisible}" />
+
+                                                <!-- Week Marker (W, 1, 8) -->
+                                                <Label
+                                                    Text="{Binding WeekMarkerText}"
+                                                    FontSize="10"
+                                                    FontAttributes="Italic, Bold"
+                                                    TextColor="White"
+                                                    HorizontalOptions="Center"
+                                                    VerticalOptions="Center"
+                                                    IsVisible="{Binding ShowWeekMarker}" />
+                                            </VerticalStackLayout>
+                                        </Border>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </Border>
+
+                        <HorizontalStackLayout
+                            Margin="0,10,0,0"
+                            HorizontalOptions="Center">
+                            <Label
+                                Text="This Month"
+                                FontSize="14"
+                                FontAttributes="Italic"
+                                VerticalOptions="Center"
+                                TextColor="Black"
+                                Margin="10,0,5,0" />
+
+                            <Border
+                                Padding="15,5"
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 12"
+                                WidthRequest="250">
+                                <CollectionView
+                                    ItemsSource="{Binding PregnancyWeekLegends}"
+                                    SelectionMode="None"
+                                    ItemsLayout="VerticalGrid, 2"
+                                    Margin="0"
+                                    VerticalOptions="Start">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate
+                                            x:DataType="vm:PregnancyWeekLegendItem">
+                                            <Grid
+                                                ColumnDefinitions="*,*"
+                                                Margin="2,2,10,0">
+                                                <Label
+                                                    Grid.Column="0"
+                                                    Text="{Binding WeekNumber, StringFormat='Week {0} {1}'}"
+                                                    FontSize="12"
+                                                    Margin="0,0,0,0"
+                                                    FontAttributes="Bold"
+                                                    TextColor="Black">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span
+                                                                Text="{Binding WeekNumber, StringFormat='W{0} '}"
+                                                                TextColor="Black" />
+                                                            <Span
+                                                                Text="{Binding FruitEmoji}" />
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                                <BoxView
+                                                    Grid.Column="1"
+                                                    HeightRequest="13"
+                                                    WidthRequest="40"
+                                                    Color="{Binding BackgroundColor}"
+                                                    CornerRadius="2.5"
+                                                    Margin="10,0,0,0" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </Border>
+                        </HorizontalStackLayout>
+                        
+                        <Label
+                            Grid.Column="1"
+                            Text="{Binding FooterMessage}"
+                            FontSize="16"
+                            FontAttributes="Bold, Italic"
+                            TextColor="{StaticResource ThemeClrMainDark}"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"
+                            Margin="20,20,20,0" />
+
+                        <custButtons:GradientButton
+                            Text="Edit Pregnancy Dates"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            Margin="0,15,0,15"
+                            CornerRadius="25"
+                            ButtonPadding="15,7"
+                            HorizontalOptions="Center"
+                            ImageIconSource="edit_white_icon.png"
+                            HasImageIcon="True"
+                            IconMargin="0,0,10,0"
+                            ButtonTextColor="White"
+                            GradientColorLeft="{StaticResource ThemeClr3}"
+                            GradientColorRight="{StaticResource ThemeClr2}"
+                            Tapped="EditCycleDaysTapped" />
+                        
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="Track" />
+
+            </Grid>
+        </ContentView>
+        <!-- Bottom Tray -->
+        <components:BottomSheetTray
+            x:Name="DayDetailsTray"
+            Title="Pregnancy Day Details"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+
+            <components:BottomSheetTray.TrayContent>
+                <Grid
+                    RowDefinitions="Auto,*">
+                    <VerticalStackLayout
+                        Grid.Row="0">
+                        <Label
+                            Text="{Binding Source={x:Reference Name=MainPageContainer}, Path=BindingContext.SelectedDayTitle}"
+                            FontSize="20"
+                            TextColor="{StaticResource ThemeClrMain}"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center" />
+                        <BoxView
+                            HeightRequest="1"
+                            Color="{StaticResource ThemeClrMain}"
+                            Opacity="1"
+                            HorizontalOptions="FillAndExpand"
+                            Margin="10,5,0,5" />
+                    </VerticalStackLayout>
+
+                    <ScrollView
+                        Grid.Row="1">
+                        <VerticalStackLayout
+                            Padding="10,0">
+
+                            <!-- Pregnancy Highlight -->
+                            <VerticalStackLayout
+                                Margin="0,5,0,0">
+                                <Label
+                                    Text="🤰🏼 Pregnancy Highlight"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="Center"
+                                    FontSize="16"
+                                    TextColor="{StaticResource ThemeClr2}" />
+                                <Label
+                                    Text="{Binding Source={x:Reference Name=MainPageContainer}, Path=BindingContext.SelectedDayHighlight}"
+                                    FontSize="12"
+                                    HorizontalTextAlignment="Center"
+                                    TextColor="{StaticResource ThemeGray2}"
+                                    Margin="20,10,0,0" />
+                            </VerticalStackLayout>
+
+                            <BoxView
+                                HeightRequest="1"
+                                Color="{StaticResource ThemeClr3}"
+                                WidthRequest="280"
+                                Opacity="0.4"
+                                HorizontalOptions="Center"
+                                Margin="20,10,20,0" />
+                            
+                            <!-- Baby Development -->
+                            <VerticalStackLayout
+                                Margin="0,10,0,0">
+                                <Label
+                                    Text="👶 Baby Development"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    HorizontalTextAlignment="Center"
+                                    TextColor="{StaticResource ThemeClr2}"
+                                    Margin="0,0,0,0" />
+                                <VerticalStackLayout
+                                    Margin="10,10,0,0">
+                                    <Label
+                                        Text="Baby Changes"
+                                        FontSize="13"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center"
+                                        TextColor="{StaticResource ThemeClr3}" />
+                                    <VerticalStackLayout
+                                        HorizontalOptions="Center">
+                                        <Label
+                                            Text="{Binding Source={x:Reference Name=MainPageContainer}, Path=BindingContext.SelectedDayBabyFeatures}"
+                                            FontSize="11"
+                                            Margin="0,5,0,0"
+                                            FontAttributes="Italic"
+                                            LineHeight="1.4"
+                                            TextColor="{StaticResource ThemeGray2}" />
+                                        <Label
+                                            Text="Mother Changes"
+                                            FontSize="13"
+                                            FontAttributes="Bold"
+                                            HorizontalTextAlignment="Center"
+                                            TextColor="{StaticResource ThemeClr3}"
+                                            IsVisible="{Binding Source={x:Reference Name=MainPageContainer}, Path=BindingContext.ShowMotherChanges}"
+                                            Margin="0,10,0,0"/>
+                                        <Label
+                                            Text="{Binding Source={x:Reference Name=MainPageContainer}, Path=BindingContext.SelectedDayMotherChanges}"
+                                            FontSize="11"
+                                            FontAttributes="Italic"
+                                            Margin="0,5,0,0"
+                                            LineHeight="1.4"
+                                            IsVisible="{Binding Source={x:Reference Name=MainPageContainer}, Path=BindingContext.ShowMotherChanges}"
+                                            TextColor="{StaticResource ThemeGray2}" />
+                                    </VerticalStackLayout>
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+
+                            <BoxView
+                                HeightRequest="1"
+                                Color="{StaticResource ThemeClr3}"
+                                WidthRequest="280"
+                                Opacity="0.4"
+                                HorizontalOptions="Center"
+                                Margin="20,10,20,0" />
+                            
+                            <!-- Symptoms -->
+                            <VerticalStackLayout>
+                                <Label
+                                    Text="🩺 Symptoms"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Margin="0,10,0,0"
+                                    HorizontalTextAlignment="Center"
+                                    TextColor="{StaticResource ThemeClr2}" />
+                                <VerticalStackLayout
+                                    Margin="10,5,0,0">
+                                    <Label
+                                        Text="{Binding Source={x:Reference Name=MainPageContainer}, Path=BindingContext.SelectedDaySymptomsTitle}"
+                                        FontSize="13"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center"
+                                        TextColor="{StaticResource ThemeClr3}"
+                                        Margin="0,10,0,0"/>
+                                    <Label
+                                        Text="{Binding Source={x:Reference Name=MainPageContainer}, Path=BindingContext.SelectedDaySymptomsDescription}"
+                                        FontSize="11"
+                                        HorizontalTextAlignment="Center"
+                                        Margin="0,5,0,0"
+                                        FontAttributes="Bold,Italic" 
+                                        TextColor="{StaticResource ThemeGray2}" />
+                                    <CollectionView
+                                        ItemsSource="{Binding Source={x:Reference Name=MainPageContainer}, Path=BindingContext.SelectedDaySymptomItems}"
+                                        SelectionMode="None"
+                                        Margin="0,0,0,0">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate
+                                                x:DataType="symptoms:SymptomItem">
+                                                <VerticalStackLayout
+                                                    Spacing="2"
+                                                    Margin="0,15,0,0"
+                                                    HorizontalOptions="Center"
+                                                    WidthRequest="300">
+                                                    <Label
+                                                        Text="{Binding Title}"
+                                                        FontAttributes="Bold"
+                                                        TextColor="{StaticResource ThemeClrMainDark}"
+                                                        FontSize="12"
+                                                        HorizontalOptions="Start"/>
+                                                    <Label
+                                                        Text="{Binding Description}"
+                                                        FontSize="11"
+                                                        TextColor="Gray"
+                                                        FontAttributes="Italic"
+                                                        HorizontalTextAlignment="Start"
+                                                        HorizontalOptions="Start"
+                                                        Margin="0,3,0,0" />
+                                                </VerticalStackLayout>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+
+                            <BoxView
+                                HeightRequest="1"
+                                Color="{StaticResource ThemeClr3}"
+                                WidthRequest="280"
+                                Opacity="0.4"
+                                HorizontalOptions="Center"
+                                Margin="20,10,20,5" />
+                            
+                            <!-- Tips -->
+                            <VerticalStackLayout>
+                                <Label
+                                    Text="💡 Tips"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    HorizontalTextAlignment="Center"
+                                    Margin="0,5,0,0"
+                                    TextColor="{StaticResource ThemeClr2}" />
+                                <VerticalStackLayout
+                                    Margin="10,5,0,10">
+                                    <Label
+                                        Text="{Binding Source={x:Reference Name=MainPageContainer}, Path=BindingContext.SelectedDayDoctorTip}"
+                                        FontSize="11"
+                                        TextColor="{StaticResource ThemeGray2}"
+                                        FontAttributes="Italic"
+                                        HorizontalTextAlignment="Center"
+                                        Margin="0,5,0,0"/>
+
+                                    <CollectionView
+                                        ItemsSource="{Binding Source={x:Reference Name=MainPageContainer}, Path=BindingContext.SelectedDayTipItems}"
+                                        SelectionMode="None"
+                                        Margin="0,15,0,0">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate
+                                                x:DataType="tips:TipItem">
+                                                <VerticalStackLayout
+                                                    Spacing="2"
+                                                    HorizontalOptions="Center"
+                                                    WidthRequest="300">
+                                                    <Label
+                                                        Text="{Binding Title}"
+                                                        FontAttributes="Bold"
+                                                        FontSize="12"
+                                                        TextColor="{StaticResource ThemeClrMainDark}"/>
+                                                    <Label
+                                                        Text="{Binding Description}"
+                                                        FontSize="11"
+                                                        TextColor="Gray"
+                                                        FontAttributes="Italic"
+                                                        Margin="15,0,15,10"/>
+                                                </VerticalStackLayout>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </ScrollView>
+                </Grid>
+            </components:BottomSheetTray.TrayContent>
+        </components:BottomSheetTray>
+
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:EditPregnancyDatesModal
+            x:Name="EditPregnancyModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Components.Tabs.DashboardHeader"
+    x:Name="Root">
+
+    <Border
+        x:Name="MenuBtn"
+        Padding="5,5"
+        StrokeThickness="1"
+        Margin="0,0,0,0"
+        Background="{StaticResource ThemeClrMain}"
+        Stroke="{StaticResource ThemeClrPurple}">
+        <Grid
+            ColumnDefinitions="*,*,*">
+            <!-- Left Icon -->
+            <Border
+                Grid.Column="0"
+                Margin="10,4"
+                Padding="8,4"
+                StrokeShape="RoundRectangle 8"
+                HorizontalOptions="Start"
+                Stroke="white">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding OpenSideMenuCommand, Source={x:Reference Root}}" />
+                </Border.GestureRecognizers>
+                <Image
+                    x:Name="LeftIconImage"
+                    WidthRequest="20"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Start">
+                </Image>
+            </Border>
+
+            <!-- Center Logo -->
+            <Border
+                Grid.Column="1"
+                Padding="10,5"
+                HorizontalOptions="Center"
+                Stroke="Transparent">
+                <Image
+                    Source="logo_icon_white.png"
+                    WidthRequest="35"
+                    Aspect="AspectFit" />
+            </Border>
+
+            <!-- Right Icon -->
+            <Border
+                x:Name="SettingsBtn"
+                Grid.Column="2"
+                Padding="10,5"
+                HorizontalOptions="End"
+                Stroke="Transparent">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="SettingsIconTapped" />
+                </Border.GestureRecognizers>
+                <Image
+                    Source="settings_fill_icon_white.png"
+                    WidthRequest="25"
+                    Aspect="AspectFit">
+                </Image>
+            </Border>
+        </Grid>
+    </Border>
+
+</ContentView>

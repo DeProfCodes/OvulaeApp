@@ -1,0 +1,19 @@
+﻿<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:drawable="@color/colorPrimary" />
+	<item>
+		<inset
+            android:insetTop="0dp"
+			android:insetLeft="0dp"
+			android:insetRight="0dp"
+			android:insetBottom="200dp">
+
+			<bitmap
+                android:src="@drawable/logo_white"
+                android:gravity="center"
+                android:tileMode="disabled"
+				android:width="200dp"
+				android:height="200dp"
+				android:filter="true"/>
+		</inset>
+	</item>
+</layer-list>

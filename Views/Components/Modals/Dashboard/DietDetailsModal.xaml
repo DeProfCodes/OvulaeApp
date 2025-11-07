@@ -1,0 +1,101 @@
+﻿<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Class="OvulaeApp.Views.Components.Modals.Dashboard.DietDetailsModal"
+    x:Name="Root"
+    Background="#80000000">
+
+    <!-- Fullscreen blocker -->
+    <Grid
+        BackgroundColor="#80000000"
+        InputTransparent="False"
+        HorizontalOptions="Fill"
+        VerticalOptions="Fill">
+
+        <Border
+            Background="White"
+            Padding="0"
+            StrokeShape="RoundRectangle 16"
+            Stroke="{StaticResource ThemeClr2}"
+            StrokeThickness="2"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="320"
+            HeightRequest="300">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+                <Grid
+                    Grid.Row="0"
+                    ColumnDefinitions="*,Auto"
+                    Background="#FFF5FF"
+                    Padding="10">
+                    <Label
+                        Grid.Column="0"
+                        x:Name="ModalTitle"
+                        Text="Title"
+                        Padding="4,0,0,0"
+                        TextColor="{StaticResource ThemeClrMain}"
+                        HorizontalTextAlignment="Start"
+                        FontSize="16"
+                        FontAttributes="Bold" />
+                    <Border
+                        Grid.Column="1"
+                        StrokeShape="RoundRectangle 5"
+                        Stroke="Transparent"
+                        Background="{StaticResource ThemeClrMain}"
+                        Padding="10,1,10,1"
+                        HeightRequest="25">
+                        <Label
+                            Text="X"
+                            TextColor="White"
+                            FontFamily="Arial Black"
+                            HorizontalTextAlignment="Start"
+                            FontSize="14"
+                            FontAttributes="Bold" />
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="CloseButton_Tapped" />
+                        </Border.GestureRecognizers>
+                    </Border>
+                </Grid>
+
+                <ScrollView
+                    Grid.Row="1">
+
+                    <VerticalStackLayout
+                        x:Name="DietListLayout" />
+
+                </ScrollView>
+
+                <Border
+                    Grid.Row="2"
+                    StrokeShape="RoundRectangle 5"
+                    Stroke="Transparent"
+                    Background="{StaticResource ThemeLightGray}"
+                    Margin="0,0,0,0">
+                    <Border
+                        Grid.Row="2"
+                        StrokeShape="RoundRectangle 5"
+                        HorizontalOptions="Center"
+                        Stroke="Transparent"
+                        Background="{StaticResource ThemeClrMain}"
+                        Padding="15,5,15,5"
+                        Margin="0,5,0,5">
+                        <Label
+                            x:Name="CloseBtnTxt"
+                            Text="Close"
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            FontFamily="Arial Black"
+                            TextColor="White" />
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="CloseButton_Tapped" />
+                        </Border.GestureRecognizers>
+                    </Border>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentView>

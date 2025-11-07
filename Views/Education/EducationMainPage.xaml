@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Education.EducationMainPage"
+    Background="White"
+    x:Name="RootPage"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Education"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:dashComp3="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:models="clr-namespace:OvulaeApp.Models.Dashboard.Education"
+    xmlns:conv="clr-namespace:OvulaeApp.Helpers.UI.Convertors"
+    x:DataType="vm:EducationCoverViewModel">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:LeftPaddingConverter
+                x:Key="LeftPaddingConverter" />
+            <!-- Your other resources -->
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+                    <VerticalStackLayout>
+
+                        <!--Search Entry -->
+                        <Border
+                            Background="{StaticResource ThemeLightGray}"
+                            Margin="20,20,20,0"
+                            Stroke="Transparent"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="10,0">
+                            <Grid
+                                ColumnDefinitions="Auto,*,Auto">
+
+                                <Image
+                                    Grid.Column="0"
+                                    Source="search_icon.png"
+                                    Aspect="AspectFit"
+                                    WidthRequest="25"
+                                    HorizontalOptions="CenterAndExpand" />
+
+                                <Entry
+                                    Grid.Column="1"
+                                    x:Name="SearchTextBox"
+                                    Placeholder="Search"
+                                    HorizontalOptions="StartAndExpand"
+                                    Margin="10,0"
+                                    FontSize="16"
+                                    TextColor="Black"
+                                    TextChanged="Searchbox_TextChanged" />
+
+                                <Border
+                                    Grid.Column="2"
+                                    Padding="5,0"
+                                    Margin="0,0,0,0"
+                                    Stroke="Transparent"
+                                    HorizontalOptions="End">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="SeachboxCancelTextSearch_Tapped" />
+                                    </Border.GestureRecognizers>
+                                    <Image
+                                        x:Name="SearchBoxCloseBtn"
+                                        Source="close_icon.png"
+                                        Aspect="AspectFit"
+                                        WidthRequest="20"
+                                        IsVisible="False" />
+                                </Border>
+                            </Grid>
+                        </Border>
+
+                        <VerticalStackLayout
+                            Padding="0,0"
+                            Margin="0,20,0,0">
+                            <Label
+                                Text="Category Filters"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                TextColor="Black"
+                                Margin="20,0,20,0" />
+
+                            <dashComp:CategorySelector
+                                Categories="{Binding Categories}"
+                                DefaultSelectedIndex="0"
+                                Margin="0,10,0,0"
+                                Padding="7,0,7,0"
+                                FontSize="12"
+                                IsCategoryFilter="True"
+                                ActiveCategoryBackgroundColor="{StaticResource ThemeClr2}"
+                                ActiveCategoryTextColor="White"
+                                InActiveCategoryStrokeColor="{StaticResource ThemeClr2}"
+                                InActiveCategoryTextColor="{StaticResource ThemeClr2}"
+                                CategoryTappedCommand="{Binding OnCategoryTappedCommand}"
+                                />
+
+                        </VerticalStackLayout>
+
+                        <CollectionView
+                            Margin="0,10,0,0"
+                            ItemsSource="{Binding EducationGroupsCovers}"
+                            HorizontalScrollBarVisibility="Never">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate
+                                    x:DataType="models:EducationCoverGroup">
+                                    <dashComp:EducationalBooksListing
+                                        x:Name="EducationBulkBooks"
+                                        Title="{Binding CoversHeading}"
+                                        Items="{Binding EducationCovers}"
+                                        LabelTextColor="{StaticResource ThemeClrMain}"
+                                        CoverTappedCommand="{Binding BindingContext.OnCoverTappedCommand, Source={x:Reference Name=RootPage}}"
+                                        LabelMargin="20,0,0,0"
+                                        LabelFontSize="16"
+                                        CoverStroke="Transparent" />
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                        <!-- Information Approved  -->
+                        <!-- Information Approved  -->
+                        <VerticalStackLayout
+                            Margin="20,40,20,0"
+                            IsVisible="True">
+                            <Label
+                                Text="✅ This information has been reviewed and approved by:"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                Margin="0,0,20,0" />
+
+                            <Label
+                                Text="Dr. Elmarie Wypkema, OB/GYN"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                TextColor="Black"
+                                Margin="0,20,20,0" />
+
+                            <Label
+                                Text="Obstetrician &amp; Gynaecologist"
+                                FontSize="11"
+                                TextColor="Black"
+                                Margin="0,5,0,0" />
+                            <Label
+                                Text="Medical license number (HPCSA): MP0282324"
+                                FontSize="12"
+                                FontAttributes="Italic"
+                                TextColor="Black"
+                                Margin="0,5,0,0" />
+                            <Label
+                                Text="Practice number: 1607189"
+                                FontSize="11"
+                                TextColor="Black"
+                                FontAttributes="Italic"
+                                Margin="0,5,0,0" />
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Margin="20,15,20,0"
+                            IsVisible="True">
+                            <Label
+                                Text="Disclaimer"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                TextColor="{StaticResource Black}"
+                                Margin="0,0,20,0" />
+                            <Label
+                                Text="This app is NOT a medical device, and is NOT intended as a replacement for medical advice of any kind."
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                TextColor="{StaticResource Black}"
+                                Margin="0,10,20,0" />
+                            <Label
+                                Text="Any information given in Ovulae App, including all educational books and tracking information, is purely informational."
+                                FontSize="14"
+                                FontFamily="Arial Black"
+                                TextColor="{StaticResource Black}"
+                                Margin="0,10,20,0" />
+                            <Label
+                                Text="If you think you may have a medical emergency, call your doctor or local emergency service immediately."
+                                FontSize="14"
+                                FontFamily="Arial Black"
+                                TextColor="{StaticResource Black}"
+                                Margin="0,10,20,0" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Margin="20">
+                            <Label
+                                Text="📚 View scientific sources for this content"
+                                FontAttributes="Bold"
+                                TextColor="Blue" />
+
+                            <custButtons:GradientButton
+                                Text="VIEW ALL REFERENCES"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                CornerRadius="10"
+                                HeightRequest="45"
+                                HorizontalOptions="Center"
+                                ButtonPadding="30,0"
+                                Margin="0,10,0,0"
+                                IsVisible="True"
+                                HasImageIcon="False"
+                                ImageIconWidth="20"
+                                ImageIconHeight="20"
+                                ImageIconSource="mail_purple_icon.png"
+                                Stroke="Transparent"
+                                ButtonTextColor="White"
+                                GradientColorLeft="{StaticResource ThemeClr3}"
+                                GradientColorRight="{StaticResource ThemeClr2}"
+                                Tapped="ViewAllReferencesTapped" />
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="Learn" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

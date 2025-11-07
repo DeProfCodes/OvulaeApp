@@ -1,0 +1,1049 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.OvulationTracker.Onboarding.OvulationOnboardRenderPage"
+    Background="White"
+    xmlns:viewmodels="clr-namespace:OvulaeApp.ViewModels.Shared"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.OvulationTracker"
+    x:DataType="vm:OvulationOnboardViewModel"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:sharedComp="clr-namespace:OvulaeApp.Views.Components.Shared"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    xmlns:adPages="clr-namespace:OvulaeApp.Views.Marketing"
+    Shell.NavBarIsVisible="False">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Title -->
+                <VerticalStackLayout
+                    Grid.Row="0"
+                    Padding="20,0"
+                    Margin="0,20,0,0">
+                    <HorizontalStackLayout>
+                        <Image
+                            Grid.Row="2"
+                            Source="ovulation_icon.png"
+                            WidthRequest="28"
+                            Aspect="AspectFit"
+                            Margin="0,0,0,0" />
+                        <Label
+                            Text="Ovulation &amp; Fertility Tracker"
+                            TextColor="#FF66C4"
+                            FontAttributes="Bold"
+                            FontSize="21"
+                            FontFamily="Arial Black"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            Margin="10,0,0,0" />
+                    </HorizontalStackLayout>
+                    <Border
+                        HeightRequest="2"
+                        Stroke="#FF66C4"
+                        BackgroundColor="#FF66C4"
+                        StrokeThickness="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        Margin="0,5" />
+                </VerticalStackLayout>
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1"
+                    Margin="0,0,0,5">
+                    <VerticalStackLayout
+                        Grid.Row="1"
+                        Spacing="20"
+                        Padding="20">
+
+                        <Label
+                            Text="{Binding CurrentSlide.Title}"
+                            Style="{StaticResource Headline}"
+                            HorizontalOptions="Center"
+                            FontSize="18"
+                            Margin="0,0,0,0" />
+
+                        <Label
+                            Text="{Binding CurrentSlide.Subtitle}"
+                            FontSize="12"
+                            HorizontalTextAlignment="Center"
+                            TextColor="{StaticResource ThemeGray2}"
+                            Margin="0,0,0,0" />
+
+                        <!-- Cycle Experience -->
+                        <VerticalStackLayout
+                            Margin="0,20"
+                            IsVisible="{Binding Slides[1].ShowSlide}"
+                            Spacing="10">
+                            <Label
+                                Text="Choose all that apply to your current experience."
+                                FontSize="16"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Center"
+                                FontFamily="Arial Black"
+                                Margin="0,0,0,5" />
+
+                            <sharedComp:SelectComponentCheck
+                                x:Name="CycleExperienceCheck"
+                                ItemsSource="{Binding CycleExperiences}"
+                                IsMultiSelect="False"
+                                OptionSpacing="10"
+                                FontSize="14"
+                                SelectionChanged="MultiSelect_SelectionChanged"
+                                EnableSelectedTextFormating="True" />
+                        </VerticalStackLayout>
+
+                        <!-- Age -->
+                        <VerticalStackLayout
+                            Spacing="5"
+                            IsVisible="{Binding Slides[2].ShowSlide}">
+                            <Label
+                                Text="How old are you?"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Start"
+                                TextColor="Black"
+                                FontFamily="Arial Black"
+                                Margin="0,7,0,7" />
+
+                            <Grid
+                                ColumnDefinitions="*,*">
+                                <Label
+                                    Grid.Column="0"
+                                    Text="Select your birth year"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="End"
+                                    VerticalTextAlignment="Center"
+                                    TextColor="{StaticResource ThemeGray2}"
+                                    Margin="0,7,0,7" />
+
+                                <Border
+                                    Grid.Column="1"
+                                    HorizontalOptions="Center"
+                                    StrokeShape="RoundRectangle 5"
+                                    Padding="10,5,5,5"
+                                    WidthRequest="115"
+                                    BackgroundColor="{StaticResource ThemeGray}"
+                                    Stroke="Transparent"
+                                    Margin="0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="YearBorder_Tapped" />
+                                    </Border.GestureRecognizers>
+                                    <HorizontalStackLayout>
+                                        <Image
+                                            Source="calendar.png"
+                                            WidthRequest="18"
+                                            Aspect="AspectFit"
+                                            VerticalOptions="Center" />
+                                        <Label
+                                            Text="{Binding SelectedYear}"
+                                            FontSize="18"
+                                            FontAttributes="Bold"
+                                            FontFamily="Arial Black"
+                                            TextColor="{x:StaticResource ThemeClrMain}"
+                                            VerticalOptions="Center"
+                                            Padding="10,0,8,0" />
+                                        <Image
+                                            Source="chev_down.png"
+                                            WidthRequest="18"
+                                            Aspect="AspectFit"
+                                            Margin="0,4,0,0"
+                                            VerticalOptions="Center" />
+                                    </HorizontalStackLayout>
+                                </Border>
+
+                            </Grid>
+
+                        </VerticalStackLayout>
+
+                        <!-- Weight-->
+                        <VerticalStackLayout
+                            IsVisible="{Binding Slides[4].ShowSlide}">
+
+                            <Label
+                                Grid.Column="0"
+                                Text="Enter Weight &amp; Unit (kg/lbs)"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                TextColor="Black"
+                                Margin="5,7,0,25" />
+                            <Grid
+                                ColumnDefinitions="*,*">
+                                <Label
+                                    Grid.Column="0"
+                                    Text="Enter weight"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="End"
+                                    VerticalTextAlignment="Center"
+                                    TextColor="{StaticResource ThemeGray2}"
+                                    Margin="0,7,0,7" />
+
+                                <customCtrl:NumericStepper
+                                    x:Name="WeightValue"
+                                    Grid.Column="1"
+                                    Value="80"
+                                    Min="40"
+                                    Max="250"
+                                    FontSize="14" />
+
+                            </Grid>
+                            <Grid
+                                ColumnDefinitions="*,*"
+                                Margin="0,40,0,0">
+                                <Label
+                                    Grid.Column="0"
+                                    Text="Measurement Unit"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="End"
+                                    VerticalTextAlignment="Center"
+                                    TextColor="{StaticResource ThemeGray2}"
+                                    Margin="0,7,0,7" />
+
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    Margin="0,-12,0,0">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Metric / Imperial"
+                                        FontSize="10"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center"
+                                        TextColor="{StaticResource Black}"
+                                        Margin="0,0,0,0" />
+                                    <Border
+                                        Grid.Column="0"
+                                        Padding="0"
+                                        WidthRequest="100"
+                                        BackgroundColor="Transparent"
+                                        Stroke="{StaticResource ThemeClrMain}"
+                                        Margin="0">
+                                        <Grid
+                                            ColumnDefinitions="Auto,Auto">
+                                            <Border
+                                                Grid.Column="0"
+                                                x:Name="msKG"
+                                                HorizontalOptions="Center"
+                                                WidthRequest="50"
+                                                Padding="5,5,5,5"
+                                                BackgroundColor="{StaticResource ThemeClrMain}"
+                                                Stroke="{StaticResource ThemeClrMain}"
+                                                Margin="0">
+                                                <Border.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Tapped="MeasurementType_Tapped" />
+                                                </Border.GestureRecognizers>
+                                                <Label
+                                                    x:Name="msKGLabel"
+                                                    HorizontalOptions="Center"
+                                                    Text="kg"
+                                                    FontSize="14"
+                                                    FontFamily="Arial Black"
+                                                    FontAttributes="Bold"
+                                                    TextColor="White"
+                                                    Margin="0,0,0,0" />
+                                            </Border>
+                                            <Border
+                                                Grid.Column="1"
+                                                x:Name="msLBS"
+                                                HorizontalOptions="Center"
+                                                Padding="5,5,5,5"
+                                                WidthRequest="50"
+                                                Margin="-2,0,0,0"
+                                                BackgroundColor="Transparent"
+                                                Stroke="Transparent">
+                                                <Border.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Tapped="MeasurementType_Tapped" />
+                                                </Border.GestureRecognizers>
+                                                <Label
+                                                    x:Name="msLBSLabel"
+                                                    HorizontalOptions="Center"
+                                                    Text="lbs"
+                                                    FontSize="14"
+                                                    FontAttributes="Bold"
+                                                    FontFamily="Arial Black"
+                                                    TextColor="{StaticResource ThemeGray2}"
+                                                    Margin="0,0,0,0" />
+                                            </Border>
+                                        </Grid>
+                                    </Border>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </VerticalStackLayout>
+
+                        <!-- Height -->
+                        <VerticalStackLayout
+                            IsVisible="{Binding Slides[5].ShowSlide}">
+
+                            <Label
+                                Grid.Column="0"
+                                Text="Enter Height &amp; Unit (cm/in)"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                TextColor="Black"
+                                Margin="5,7,0,25" />
+                            <Grid
+                                ColumnDefinitions="*,*">
+                                <Label
+                                    Grid.Column="0"
+                                    Text="Enter height"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="End"
+                                    VerticalTextAlignment="Center"
+                                    TextColor="{StaticResource ThemeGray2}"
+                                    Margin="0,7,0,7" />
+
+                                <customCtrl:NumericStepper
+                                    x:Name="HeightValue"
+                                    Grid.Column="1"
+                                    Value="160"
+                                    Min="40"
+                                    Max="300"
+                                    FontSize="14" />
+
+                            </Grid>
+                            <Grid
+                                ColumnDefinitions="*,*"
+                                Margin="0,40,0,0">
+                                <Label
+                                    Grid.Column="0"
+                                    Text="Measurement Unit"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="End"
+                                    VerticalTextAlignment="Center"
+                                    TextColor="{StaticResource ThemeGray2}"
+                                    Margin="0,7,0,7" />
+
+                                <VerticalStackLayout
+                                    Grid.Column="2"
+                                    Margin="0,-12,0,0">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Metric / Imperial"
+                                        FontSize="10"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center"
+                                        TextColor="{StaticResource Black}"
+                                        Margin="0,0,0,0" />
+                                    <Border
+                                        Grid.Column="0"
+                                        Padding="0"
+                                        WidthRequest="100"
+                                        BackgroundColor="Transparent"
+                                        Stroke="{StaticResource ThemeClrMain}"
+                                        Margin="0">
+                                        <Grid
+                                            ColumnDefinitions="Auto,Auto">
+                                            <Border
+                                                x:Name="msCM"
+                                                Grid.Column="0"
+                                                HorizontalOptions="Center"
+                                                WidthRequest="50"
+                                                Padding="5,5,5,5"
+                                                BackgroundColor="{StaticResource ThemeClrMain}"
+                                                Stroke="{StaticResource ThemeClrMain}"
+                                                Margin="0">
+                                                <Border.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Tapped="MeasurementType_Tapped" />
+                                                </Border.GestureRecognizers>
+                                                <Label
+                                                    x:Name="msCMLabel"
+                                                    HorizontalOptions="Center"
+                                                    Text="cm"
+                                                    FontSize="14"
+                                                    FontFamily="Arial Black"
+                                                    FontAttributes="Bold"
+                                                    TextColor="White"
+                                                    Margin="0,0,0,0" />
+                                            </Border>
+                                            <Border
+                                                x:Name="msIN"
+                                                Grid.Column="1"
+                                                HorizontalOptions="Center"
+                                                Padding="5,5,5,5"
+                                                WidthRequest="50"
+                                                Margin="-2,0,0,0"
+                                                BackgroundColor="Transparent"
+                                                Stroke="Transparent">
+                                                <Border.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Tapped="MeasurementType_Tapped" />
+                                                </Border.GestureRecognizers>
+                                                <Label
+                                                    x:Name="msINLabel"
+                                                    HorizontalOptions="Center"
+                                                    Text="ft/in"
+                                                    FontSize="14"
+                                                    FontAttributes="Bold"
+                                                    FontFamily="Arial Black"
+                                                    TextColor="{StaticResource ThemeGray2}"
+                                                    Margin="0,0,0,0" />
+                                            </Border>
+                                        </Grid>
+                                    </Border>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </VerticalStackLayout>
+
+                        <!-- Blood Type -->
+                        <VerticalStackLayout
+                            Margin="0,20,0,0"
+                            x:Name="BloodTypeEdit"
+                            IsVisible="{Binding Slides[7].ShowSlide}">
+                            <Label
+                                Text="What is your blood type?"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <sharedComp:SelectComponent2
+                                x:Name="BloodTypeOption"
+                                OptionList="A+|A−|B+|B-|AB+|AB-|O+|O-"
+                                IsHorizontal="True"
+                                OptionSpacing="4"
+                                EnableWrapping="True"
+                                OptionFontSize="11"
+                                BorderPadding="8,5"
+                                SelectionType="Single"
+                                OptionCornerRadius="5"
+                                Margin="0,10,0,0" />
+
+                        </VerticalStackLayout>
+
+                        <!-- How are you feeling -->
+                        <VerticalStackLayout
+                            Spacing="10"
+                            IsVisible="{Binding Slides[8].ShowSlide}">
+                            <Label
+                                Text="Pick anything you’ve noticed recently."
+                                FontSize="14"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                Margin="0,0,0,5" />
+
+                            <sharedComp:SelectComponent
+                                x:Name="HowAreYouFeelingOption"
+                                OptionList="Cramps|Fatigue|Skin changes|Mood swings or anxiety|Lower sex drive|No symptoms|Not Sure"
+                                OptionSpacing="10"
+                                FontSize="16"
+                                SelectionType="Multiple"
+                                SelectionChanged="MultiSelect_SelectionChanged" />
+                        </VerticalStackLayout>
+
+                        <!-- Health Conditions -->
+                        <VerticalStackLayout
+                            Spacing="10"
+                            IsVisible="{Binding Slides[10].ShowSlide}">
+                            <Label
+                                Text="Do any of these health conditions apply to you?"
+                                FontSize="14"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                Margin="0,0,0,5" />
+
+                            <sharedComp:SelectComponent
+                                x:Name="HealthConditionsOptions"
+                                OptionsSource="{Binding HealthConditionsOptions}"
+                                OptionSpacing="10"
+                                FontSize="16"
+                                SelectionType="Multiple"/>
+                        </VerticalStackLayout>
+
+                        <!-- PCOS -->
+                        <VerticalStackLayout
+                            Spacing="10"
+                            IsVisible="{Binding Slides[11].ShowSlide}">
+
+                            <Label
+                                Text="How long have you had PCOS?"
+                                FontSize="18"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center"
+                                FontFamily="Arial Black"
+                                Margin="0,0,0,5" />
+
+                            <VerticalStackLayout
+                                Margin="0,5,0,0">
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Enter Years"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="End"
+                                        VerticalTextAlignment="Center"
+                                        TextColor="{StaticResource ThemeGray2}"
+                                        Margin="0,7,0,7" />
+
+                                    <customCtrl:NumericStepper
+                                        Grid.Column="1"
+                                        x:Name="PcosDurationYear"
+                                        Value="0"
+                                        Min="0"
+                                        Max="80"
+                                        ValueChanged="PcosDurationValueChanged"
+                                        FontSize="14" />
+
+                                </Grid>
+
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout
+                                Margin="0,0,0,0">
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Enter Months"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="End"
+                                        VerticalTextAlignment="Center"
+                                        TextColor="{StaticResource ThemeGray2}"
+                                        Margin="0,7,0,7" />
+                                    <customCtrl:NumericStepper
+                                        Grid.Column="1"
+                                        x:Name="PcosDurationMonth"
+                                        Value="1"
+                                        Min="0"
+                                        Max="80"
+                                        ValueChanged="PcosDurationValueChanged"
+                                        FontSize="14" />
+
+                                </Grid>
+
+                            </VerticalStackLayout>
+
+                            <Label
+                                x:Name="PCOSDurationFullText"
+                                Text="*1 month"
+                                FontSize="14"
+                                FontAttributes="Italic"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                Margin="0,0,0,7" />
+
+                            <VerticalStackLayout
+                                Margin="0,15,0,0">
+                                <Label
+                                    Text="Are you following diet for PCOS?"
+                                    FontSize="18"
+                                    HorizontalOptions="Center"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource Black}" />
+
+                                <sharedComp:SelectComponent
+                                    x:Name="PCOSDiet"
+                                    OptionList="Yes|No"
+                                    OptionSpacing="4"
+                                    FontSize="14"
+                                    SelectionType="Single"
+                                    Margin="0,20,0,0" />
+                            </VerticalStackLayout>
+
+                        </VerticalStackLayout>
+
+                        <!-- ENDO -->
+                        <VerticalStackLayout
+                            Spacing="10"
+                            IsVisible="{Binding Slides[12].ShowSlide}">
+
+                            <Label
+                                Text="How long have you had Endometriosis?"
+                                FontSize="16"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center"
+                                FontFamily="Arial Black"
+                                Margin="0,0,0,5" />
+
+                            <VerticalStackLayout
+                                Margin="0,5,0,0">
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Enter Years"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="End"
+                                        VerticalTextAlignment="Center"
+                                        TextColor="{StaticResource ThemeGray2}"
+                                        Margin="0,7,0,7" />
+
+                                    <customCtrl:NumericStepper
+                                        Grid.Column="1"
+                                        x:Name="ENDODurationYear"
+                                        Value="0"
+                                        Min="0"
+                                        Max="80"
+                                        ValueChanged="EndoDurationValueChanged"
+                                        FontSize="14" />
+
+                                </Grid>
+
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout
+                                Margin="0,0,0,0">
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Enter Months"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="End"
+                                        VerticalTextAlignment="Center"
+                                        TextColor="{StaticResource ThemeGray2}"
+                                        Margin="0,7,0,7" />
+                                    <customCtrl:NumericStepper
+                                        Grid.Column="1"
+                                        x:Name="ENDODurationMonth"
+                                        Value="1"
+                                        Min="0"
+                                        Max="80"
+                                        ValueChanged="EndoDurationValueChanged"
+                                        FontSize="14" />
+
+                                </Grid>
+
+                            </VerticalStackLayout>
+
+                            <Label
+                                x:Name="ENDODurationFullText"
+                                Text="*1 month"
+                                FontSize="14"
+                                FontAttributes="Italic"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                Margin="0,0,0,7" />
+
+                            <VerticalStackLayout
+                                Margin="0,15,0,0">
+                                <Label
+                                    Text="Are you following diet for Endometriosis?"
+                                    FontSize="16"
+                                    HorizontalOptions="Center"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource Black}" />
+
+                                <sharedComp:SelectComponent
+                                    x:Name="ENDODiet"
+                                    OptionList="Yes|No"
+                                    OptionSpacing="4"
+                                    FontSize="14"
+                                    SelectionType="Single"
+                                    Margin="0,20,0,0" />
+                            </VerticalStackLayout>
+
+                        </VerticalStackLayout>
+
+                        <!-- Birth Control -->
+                        <VerticalStackLayout
+                            Margin="0,20"
+                            IsVisible="{Binding Slides[13].ShowSlide}"
+                            Spacing="10">
+                            <Label
+                                Text="Are you currently using any birth control methods?"
+                                FontSize="14"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                Margin="0,0,0,5" />
+
+                            <Label
+                                Text="Hormonal Methods"
+                                FontSize="14"
+                                TextColor="{StaticResource ThemeGray2}"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                Margin="0,0,0,5" />
+
+                            <sharedComp:SelectComponentCheck
+                                x:Name="BirthControlHormonalCheck"
+                                ItemsSource="{Binding BirthControl[0]}"
+                                IsMultiSelect="True"
+                                OptionSpacing="10"
+                                FontSize="16"
+                                EnableSelectedTextFormating="True"
+                                ShowSelectAllButton="False" />
+
+                            <Label
+                                Text="Non-Hormonal Methods"
+                                FontSize="14"
+                                TextColor="{StaticResource ThemeGray2}"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                Margin="0,0,0,5" />
+
+                            <sharedComp:SelectComponentCheck
+                                x:Name="BirthControlCheck"
+                                ItemsSource="{Binding BirthControl[1]}"
+                                IsMultiSelect="True"
+                                OptionSpacing="10"
+                                FontSize="16"
+                                EnableSelectedTextFormating="True"
+                                ShowSelectAllButton="False" />
+
+                            <Label
+                                Text="Other"
+                                FontSize="14"
+                                TextColor="{StaticResource ThemeGray2}"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                Margin="0,0,0,5" />
+
+                            <sharedComp:SelectComponentCheck
+                                x:Name="OtherBirthControlCheck"
+                                ItemsSource="{Binding BirthControl[2]}"
+                                IsMultiSelect="True"
+                                OptionSpacing="10"
+                                FontSize="16"
+                                EnableSelectedTextFormating="True"
+                                ShowSelectAllButton="False" />
+
+                        </VerticalStackLayout>
+
+                        <!-- When did you last period start ? -->
+                        <VerticalStackLayout
+                            Margin="0,30"
+                            IsVisible="{Binding Slides[15].ShowSlide}">
+                            <Grid
+                                ColumnDefinitions="*,*">
+                                <Label
+                                    Grid.Column="0"
+                                    Text="Select Date"
+                                    FontSize="16"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource ThemeGray2}"
+                                    Margin="0,0,0,0" />
+
+                                <customCtrl:DatePicker
+                                    Grid.Column="1"
+                                    x:Name="LastPeriodDate"
+                                    HorizontalOptions="Start"
+                                    DateColor="{StaticResource ThemeClrMain}"
+                                    FontSize="16" />
+                            </Grid>
+                        </VerticalStackLayout>
+
+                        <!-- How Long is your cycle? -->
+                        <VerticalStackLayout
+                            Margin="0,30"
+                            IsVisible="{Binding Slides[16].ShowSlide}">
+                            <Grid
+                                ColumnDefinitions="*,*">
+                                <Label
+                                    Grid.Column="0"
+                                    Text="Enter Days"
+                                    FontSize="16"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource ThemeGray2}"
+                                    Margin="0,0,0,0" />
+
+                                <customCtrl:NumericStepper
+                                    Grid.Column="1"
+                                    x:Name="CycleLength"
+                                    Value="21"
+                                    Min="5"
+                                    Max="30"
+                                    FontSize="14" />
+
+                            </Grid>
+                            <Label
+                                Text="Don't worry — you can update this anytime."
+                                FontSize="12"
+                                FontAttributes="Italic"
+                                HorizontalTextAlignment="Center"
+                                VerticalOptions="Center"
+                                TextColor="{StaticResource ThemeGray2}"
+                                Margin="0,15,0,0" />
+                        </VerticalStackLayout>
+
+                        <!-- Period Length ? -->
+                        <VerticalStackLayout
+                            Margin="0,30"
+                            IsVisible="{Binding Slides[17].ShowSlide}">
+                            <Label
+                                Text="How many days does your period usually last?"
+                                FontSize="14"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                Margin="0,0,0,20" />
+                            <Grid
+                                ColumnDefinitions="*,*">
+                                <Label
+                                    Grid.Column="0"
+                                    Text="Enter Days"
+                                    FontSize="16"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource ThemeGray2}"
+                                    Margin="0,0,0,0" />
+
+                                <customCtrl:NumericStepper
+                                    x:Name="PeriodDuration"
+                                    Grid.Column="1"
+                                    Min="1"
+                                    Value="6"
+                                    FontSize="16" />
+                            </Grid>
+                            <Label
+                                Text="*This helps us understand your bleeding pattern."
+                                FontSize="12"
+                                TextColor="{StaticResource ThemeGray2}"
+                                FontFamily="Arial Black"
+                                FontAttributes="Italic"
+                                HorizontalOptions="Center"
+                                Margin="0,15,0,5" />
+                        </VerticalStackLayout>
+
+                        <!-- Enable notifications -->
+                        <VerticalStackLayout
+                            Margin="0,20"
+                            IsVisible="{Binding Slides[19].ShowSlide}"
+                            Spacing="10">
+
+                            <HorizontalStackLayout>
+                                <Label
+                                    Text="Enable Notifications"
+                                    FontSize="16"
+                                    TextColor="{StaticResource ThemeClrMain}"
+                                    FontAttributes="Bold"
+                                    FontFamily="Arial Black"
+                                    Margin="0,0,0,5" />
+                                <Image
+                                    Source="bell.png"
+                                    WidthRequest="15"
+                                    Aspect="AspectFit"
+                                    Margin="5,0,0,0"
+                                    VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+
+                            <VerticalStackLayout
+                                Spacing="20"
+                                Margin="10,20,0,0">
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Remind me to log daily"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black"
+                                        Margin="0,0,0,0" />
+                                    <customCtrl:Switch
+                                        Grid.Column="1"
+                                        x:Name="NotificationLogSymptoms"
+                                        Margin="0,0,0,0" />
+                                </Grid>
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Alert me during fertile days"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black"
+                                        Margin="0,0,0,0" />
+                                    <customCtrl:Switch
+                                        Grid.Column="1"
+                                        x:Name="NotificationWeeklyUpdates"
+                                        Margin="0,0,0,0" />
+                                </Grid>
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Weekly fertility insights"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black"
+                                        Margin="0,0,0,0" />
+                                    <customCtrl:Switch
+                                        Grid.Column="1"
+                                        x:Name="NotificationEduTips"
+                                        Margin="0,0,0,0" />
+                                </Grid>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+                </ScrollView>
+                <!-- Dot & Next Btn -->
+                <Border
+                    Grid.Row="2"
+                    Background="{StaticResource ThemeClrLightBackground}"
+                    Stroke="Transparent">
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.3"
+                            Radius="4"
+                            Offset="0,0" />
+                    </Border.Shadow>
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout
+                            HorizontalOptions="Center"
+                            Margin="-12,0,0,10">
+                            <Border
+                                Stroke="Transparent"
+                                Padding="5,5"
+                                x:Name="DotBackButton">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="GoBackDotButtonTapped" />
+                                </Border.GestureRecognizers>
+                                <Image
+                                    Source="left_chev_edge.png"
+                                    WidthRequest="20"
+                                    HeightRequest="20"
+                                    Aspect="AspectFit"
+                                    Margin="0,0,0,0"
+                                    IsVisible="{Binding ShowDotBackButton}"
+                                    VerticalOptions="Center" />
+                            </Border>
+                            <customCtrl:DotSlider
+                                VerticalOptions="Center"
+                                DotCount="20"
+                                ActiveIndex="{Binding DotCurrentIndex}"
+                                VisualMode="Loader"
+                                LoaderHeight="3"
+                                ActiveDotColor="{StaticResource ThemeClr3}"
+                                InactiveDotSize="14" />
+                        </HorizontalStackLayout>
+                        <custButtons:GradientButton
+                            x:Name="NextOnboardBtn"
+                            Text="NEXT"
+                            Grid.Row="1"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            ButtonPadding="20,13"
+                            Margin="20,0,20,10"
+                            Stroke="Transparent"
+                            CornerRadius="15"
+                            ShadowOpacity="0.4"
+                            ButtonTextColor="White"
+                            IsButtonEnabled="{Binding CurrentSlide.IsNextEnabled}"
+                            GradientColorLeft="{StaticResource ThemeClr3}"
+                            GradientColorRight="{StaticResource ThemeClr2}"
+                            Tapped="NextOnboardBtn_Clicked" />
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </ContentView>
+
+        <!-- Intra Marketing Pages -->
+        <adPages:AdBenefitsPage
+            x:Name="BenefitsAdPage"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            NextClicked="NextOnboardBtn_Clicked"
+            BackClicked="IntraMarketingPageContainer_BackClicked"
+            DotCurrentIndex="0"
+            DotTotalIndices="20"
+            IsVisible="False" />
+
+        <adPages:AdModuleFeaturePage
+            x:Name="DashboardAdPage"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            NextClicked="NextOnboardBtn_Clicked"
+            BackClicked="IntraMarketingPageContainer_BackClicked"
+            DotCurrentIndex="3"
+            DotTotalIndices="20"
+            FeatureType="Dashboard"
+            IsVisible="False" />
+
+        <adPages:AdModuleFeaturePage
+            x:Name="CalendarAdPage"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            NextClicked="NextOnboardBtn_Clicked"
+            BackClicked="IntraMarketingPageContainer_BackClicked"
+            DotCurrentIndex="6"
+            DotTotalIndices="20"
+            FeatureType="Calendar"
+            IsVisible="False" />
+
+        <adPages:AdModuleFeaturePage
+            x:Name="ChatBotAdPage"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            NextClicked="NextOnboardBtn_Clicked"
+            BackClicked="IntraMarketingPageContainer_BackClicked"
+            DotCurrentIndex="9"
+            DotTotalIndices="20"
+            FeatureType="ChatBot"
+            IsVisible="False" />
+
+        <adPages:AdModuleFeaturePage
+            x:Name="EducationBooksAdPage"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            NextClicked="NextOnboardBtn_Clicked"
+            BackClicked="IntraMarketingPageContainer_BackClicked"
+            DotCurrentIndex="14"
+            DotTotalIndices="20"
+            FeatureType="EducationalBooks"
+            IsVisible="False" />
+
+        <adPages:AdModuleFeaturePage
+            x:Name="PartnerShareAdPage"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            NextClicked="NextOnboardBtn_Clicked"
+            BackClicked="IntraMarketingPageContainer_BackClicked"
+            DotCurrentIndex="18"
+            DotTotalIndices="20"
+            FeatureType="PartnerShare"
+            IsVisible="False" />
+
+        <!-- END/Intra Marketing Pages -->
+        
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="AppSpinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <customCtrl:YearPicker
+            x:Name="MyYearPicker"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

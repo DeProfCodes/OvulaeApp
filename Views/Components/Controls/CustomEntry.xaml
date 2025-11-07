@@ -1,0 +1,50 @@
+﻿<ContentView
+    x:Class="OvulaeApp.Views.Components.Controls.CustomEntry"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="Root">
+
+    <Border
+        x:Name="RootBorder"
+        Stroke="{Binding BorderStroke, Source={x:Reference Root}}"
+        Margin="{Binding BorderMargin, Source={x:Reference Root}}"
+        Padding="{Binding BorderPadding, Source={x:Reference Root}}"
+        Background="{Binding EntryBackgroundColor, Source={x:Reference Root}}"
+        HeightRequest="{Binding BorderHeightRequest, Source={x:Reference Root}}"
+        WidthRequest="{Binding BorderWidthRequest, Source={x:Reference Root}}"
+        HorizontalOptions="{Binding BorderHorizontalOptions, Source={x:Reference Root}}">
+        <Border.StrokeShape>
+            <RoundRectangle
+                CornerRadius="{Binding BorderCornerRadius, Source={x:Reference Root}}" />
+        </Border.StrokeShape>
+
+        <HorizontalStackLayout>
+            <!-- Editable Entry -->
+            <Entry
+                x:Name="InternalEntry"
+                IsVisible="{Binding ShowEntry, Source={x:Reference Root}}"
+                Text="{Binding Text, Source={x:Reference Root}, Mode=TwoWay}"
+                Placeholder="{Binding Placeholder, Source={x:Reference Root}}"
+                Margin="{Binding EntryMargin, Source={x:Reference Root}}"
+                TextColor="{Binding EntryTextColor, Source={x:Reference Root}}"
+                FontSize="{Binding EntryFontSize, Source={x:Reference Root}}"
+                Keyboard="{Binding EntryKeyboard, Source={x:Reference Root}}"
+                IsReadOnly="{Binding IsReadOnly, Source={x:Reference Root}}"
+                IsEnabled="{Binding IsEntryEnabled, Source={x:Reference Root}}"
+                HorizontalTextAlignment="Start" />
+
+            <!-- Readonly Label with Ellipsis -->
+            <Label
+                IsVisible="{Binding ShowLabel, Source={x:Reference Root}}"
+                Text="{Binding Text, Source={x:Reference Root}}"
+                TextColor="{Binding EntryTextColor, Source={x:Reference Root}}"
+                FontSize="{Binding EntryFontSize, Source={x:Reference Root}}"
+                LineBreakMode="TailTruncation"
+                MaxLines="1"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
+                WidthRequest="{Binding BorderWidthRequest, Source={x:Reference Root}}"
+                Margin="{Binding EntryMargin, Source={x:Reference Root}}" />
+        </HorizontalStackLayout>
+    </Border>
+</ContentView>

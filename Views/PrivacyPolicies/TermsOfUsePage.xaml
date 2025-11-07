@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.PrivacyPolicy.TermsOfUsePage"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    BackgroundColor="White"
+    Shell.NavBarIsVisible="False">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <Grid
+            RowDefinitions="Auto,*,Auto"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+
+            <!-- Header -->
+            <dashTabs:DashboardHeader
+                Grid.Row="0"
+                x:Name="Header"
+                LeftIconType="Menu"/>
+
+            <ScrollView
+                Grid.Row="1"
+                Padding="20">
+                <VerticalStackLayout
+                    Spacing="20">
+
+                    <!-- Title -->
+                    <Label
+                        Text="📜 Terms of Use"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+
+                    <!-- Effective Date -->
+                    <Label
+                        Text="Effective Date: 18 June 2025"
+                        FontSize="14"
+                        TextColor="Gray" />
+
+                    <!-- Intro -->
+                    <Label
+                        Text="These Terms of Use govern your use of the Ovulae mobile application and website (“Ovulae”, “we”, “us”, or “our”). By accessing or using Ovulae, you agree to comply with these terms. If you do not agree, you may not use the app or website."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <!-- 1. App Purpose -->
+                    <Label
+                        Text="1. App Purpose 🎯"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="Ovulae is designed to support women across all stages of reproductive health by providing tools for cycle tracking, fertility prediction, pregnancy guidance, symptom logging, chronic condition education (e.g., PCOS, Endometriosis), and wellness tips. It is intended for informational purposes only and not as a substitute for professional medical advice."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <!-- 2. User Responsibilities -->
+                    <Label
+                        Text="2. User Responsibilities 🧍‍♀️"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+
+                    <VerticalStackLayout
+                        Spacing="5">
+                        <HorizontalStackLayout
+                            Spacing="10">
+                            <Label
+                                Text="✅" />
+                            <Label
+                                Text="Provide accurate and truthful information when using Ovulae."
+                                FontSize="14"
+                                TextColor="Black" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout
+                            Spacing="10">
+                            <Label
+                                Text="🔒" />
+                            <Label
+                                Text="Maintain the confidentiality of your login credentials."
+                                FontSize="14"
+                                TextColor="Black" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout
+                            Spacing="10">
+                            <Label
+                                Text="🚫" />
+                            <Label
+                                Text="Do not use Ovulae for unlawful purposes or to disrupt others' access."
+                                FontSize="14"
+                                TextColor="Black" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <!-- 3. Medical Disclaimer -->
+                    <Label
+                        Text="3. Medical Disclaimer ⚕️"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="Ovulae does not provide medical advice, diagnosis, or treatment. All content is educational. Always consult a qualified healthcare provider before making decisions based on app content."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <!-- 4. Partner Sharing -->
+                    <Label
+                        Text="4. Partner Sharing and Data Export 🤝"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="Users may optionally share data with trusted individuals or healthcare providers. Ovulae is not responsible for how exported data is handled after sharing."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <!-- 5. Intellectual Property -->
+                    <Label
+                        Text="5. Intellectual Property 💡"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="All content, designs, and code in Ovulae are protected and owned by the company. Unauthorized use is prohibited."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <!-- 6. Modifications -->
+                    <Label
+                        Text="6. Modification of Terms 🔁"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="We may update these terms from time to time. Continued use indicates acceptance. Major changes may be communicated via email or in-app notifications."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <!-- 7. Account Termination -->
+                    <Label
+                        Text="7. Account Termination 🚫"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="We reserve the right to suspend or terminate accounts for violations. We may discontinue features or the app without prior notice."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <!-- 8. Payment -->
+                    <Label
+                        Text="8. Payment &amp; Subscriptions 💳"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="Some features within Ovulae may require in-app purchases or active subscriptions. All payments are securely processed via our trusted third-party payment provider, Paystack. We do not store or directly handle any credit card or banking details on our servers."
+                        FontSize="14"
+                        TextColor="Black" />
+                    <Label
+                        Text="All transactions are subject to Paystack’s terms of service and refund policies. Please review their policies before making a purchase."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <!-- 9. Limitation of Liability -->
+                    <Label
+                        Text="9. Limitation of Liability ⚠️"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="Ovulae is provided “as is”. We are not liable for any damages arising from its use or your reliance on its data."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <!-- 10. Governing Law -->
+                    <Label
+                        Text="10. Governing Law ⚖️"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="These terms are governed by South African law. Legal disputes will be resolved in South African courts."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <!-- 11. Contact -->
+                    <Label
+                        Text="11. Contact Us 📩"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="For any queries regarding these Terms:"
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <Border
+                        Stroke="#E0DFF3"
+                        StrokeThickness="1"
+                        BackgroundColor="#F5F3FF"
+                        Padding="15"
+                        StrokeShape="RoundRectangle 10">
+                        <VerticalStackLayout
+                            Spacing="5">
+                            <HorizontalStackLayout>
+                                <Label
+                                    Text="📧 Email: "
+                                    FontSize="14"
+                                    TextColor="Black" />
+                                <Label
+                                    Text=" support@ovulae.com"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource ThemeClr2}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="OnSupportEmailTapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout
+                                Margin="0,8,0,0">
+                                <Label
+                                    Text="🌐 Website: "
+                                    FontSize="14"
+                                    TextColor="Black" />
+                                <Label
+                                    Text="https://ovulae.com"
+                                    FontSize="14"
+                                    FontAttributes="Italic"
+                                    TextDecorations="Underline"
+                                    TextColor="{StaticResource ThemeClr2}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="OnWebsiteTapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout
+                                Margin="0,8,0,0">
+                                <Label
+                                    Text="🔗 Terms URL: "
+                                    FontSize="14"
+                                    TextColor="Black" />
+                                <Label
+                                    Text="https://ovulae.com/terms"
+                                    FontSize="14"
+                                    Margin="3,0,0,0"
+                                    FontAttributes="Italic"
+                                    TextDecorations="Underline"
+                                    TextColor="{StaticResource ThemeClr2}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="OnTermsLinkTapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Image
+                        Source="logo_icon.png"
+                        WidthRequest="50"
+                        Aspect="AspectFit"
+                        HorizontalOptions="Center"
+                        Margin="0,20,0,20" />
+                </VerticalStackLayout>
+            </ScrollView>
+            <!-- Bottom Tabs -->
+            <dashTabs:DashboardBottomTab
+                Grid.Row="2"
+                ActiveTab="None"
+                x:Name="BaseTabs"
+                Padding="0,0" />
+        </Grid>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

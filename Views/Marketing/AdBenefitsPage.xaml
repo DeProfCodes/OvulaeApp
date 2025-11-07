@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Shared"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Marketing"
+    x:DataType="vm:OvulaeModuleBenefitsViewModel"
+    x:Class="OvulaeApp.Views.Marketing.AdBenefitsPage"
+    x:Name="Root">
+
+    <AbsoluteLayout>
+        <!-- Premium Gradient Background -->
+        <BoxView
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <BoxView.Background>
+                <LinearGradientBrush
+                    StartPoint="0,0"
+                    EndPoint="1,1">
+                    <GradientStop
+                        Color="{StaticResource ThemeClrPurple}"
+                        Offset="0.4" />
+                    <GradientStop
+                        Color="{StaticResource ThemeClrLight}"
+                        Offset="0.5" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+
+        <Grid
+            RowDefinitions="*,Auto"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+
+            <ScrollView
+                Grid.Row="0">
+
+                <VerticalStackLayout
+                    Padding="10,20,10,30"
+                    Spacing="20">
+
+                    <!-- Emotional Header -->
+                    <VerticalStackLayout
+                        Spacing="10">
+                        <Image
+                            Source="logo_main.png"
+                            HeightRequest="45"
+                            HorizontalOptions="Center" />
+
+                        <Label
+                            Text="{Binding MainTitle}"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            LineHeight="1.2"
+                            HorizontalTextAlignment="Center"
+                            TextColor="{StaticResource ThemeClrMainDark}">
+                        </Label>
+
+                        <Label
+                            Text="{Binding Subtitle}"
+                            FontSize="14"
+                            TextColor="#666"
+                            HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout
+                        Spacing="15">
+
+                        <Border
+                            StrokeShape="RoundRectangle 20"
+                            BackgroundColor="{StaticResource ThemeClrLight}"
+                            Padding="0"
+                            Stroke="{StaticResource ThemeClr2}">
+                            <Grid
+                                ColumnDefinitions="*,*"
+                                ColumnSpacing="0">
+                                <!-- Problems Column -->
+                                <Border
+                                    Grid.Column="0"
+                                    BackgroundColor="{StaticResource ThemeClrLight2}"
+                                    StrokeShape="RoundRectangle 20,0,20,0"
+                                    Padding="10,10"
+                                    Margin="2,2,2,-10"
+                                    Stroke="Transparent">
+                                    <VerticalStackLayout
+                                        Spacing="10">
+                                        <VerticalStackLayout
+                                            Spacing="10">
+                                            <Image
+                                                Source="close_icon.png"
+                                                HeightRequest="25" />
+                                            <Label
+                                                Text="Without Ovulae"
+                                                FontSize="14"
+                                                HorizontalTextAlignment="Center"
+                                                FontAttributes="Bold" />
+                                        </VerticalStackLayout>
+
+                                        <CollectionView
+                                            ItemsSource="{Binding ProblemsSolutions}">
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate
+                                                    x:DataType="vm:ProblemSolutionGroup">
+                                                    <components:IconListItem
+                                                        Icon="{Binding ProblemIcon}"
+                                                        Text="{Binding Problem}"
+                                                        Margin="0,0,0,10" />
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                        
+                                    </VerticalStackLayout>
+                                </Border>
+
+                                <!-- Solutions Column -->
+                                <Border
+                                    Grid.Column="1"
+                                    BackgroundColor="{StaticResource ThemeClrMainLight}"
+                                    Stroke="Transparent"
+                                    StrokeShape="RoundRectangle 0,20,0,20"
+                                    Margin="2,2,2,-10"
+                                    Padding="10,10">
+                                    <VerticalStackLayout
+                                        Spacing="10">
+                                        <VerticalStackLayout
+                                            Spacing="10">
+                                            <Image
+                                                Source="logo_icon.png"
+                                                HeightRequest="25" />
+                                            <Label
+                                                Text="With Ovulae"
+                                                FontSize="14"
+                                                HorizontalOptions="Center"
+                                                FontAttributes="Bold" />
+                                        </VerticalStackLayout>
+
+                                        <CollectionView
+                                            ItemsSource="{Binding ProblemsSolutions}">
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate
+                                                    x:DataType="vm:ProblemSolutionGroup">
+                                                    <components:IconListItem
+                                                        Icon="{Binding SolutionIcon}"
+                                                        Text="{Binding Solution}"
+                                                        Margin="0,0,0,10" />
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                         
+                                    </VerticalStackLayout>
+                                </Border>
+                            </Grid>
+                        </Border>
+
+                        <!-- Unique Selling Points -->
+                        <Border
+                            StrokeShape="RoundRectangle 15"
+                            BackgroundColor="#F0F7FF"
+                            Padding="20,10"
+                            Stroke="{StaticResource ThemeClrMain}"
+                            StrokeThickness="0.5">
+                            <VerticalStackLayout
+                                Spacing="15">
+                                <Label
+                                    Text="Why Many Women Choose Ovulae:"
+                                    FontSize="16"
+                                    HorizontalOptions="CenterAndExpand"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource ThemeClrMainDark}" />
+
+                                <HorizontalStackLayout
+                                    Spacing="10"
+                                    HorizontalOptions="CenterAndExpand">
+                                    <components:FeatureBadge
+                                        Icon="medical_report_icon.png"
+                                        Title="Accurate Insights"
+                                        Subtitle="" />
+
+                                    <components:FeatureBadge
+                                        Icon="settings_security.png"
+                                        Title="Secure &amp; Private"
+                                        Subtitle="" />
+
+                                    <components:FeatureBadge
+                                        Icon="smart_tracking_purple_icon.png"
+                                        Title="Smart Tracking"
+                                        Subtitle="" />
+
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Border>
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </ScrollView>
+            <Border
+                Grid.Row="2"
+                Background="{StaticResource ThemeClrLightBackground}"
+                Stroke="Transparent">
+                <Border.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Opacity="0.3"
+                        Radius="4"
+                        Offset="0,0" />
+                </Border.Shadow>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center"
+                        Margin="-12,0,0,10">
+                        <Border
+                            Stroke="Transparent"
+                            Padding="5,5"
+                            x:Name="DotBackButton2">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="OnBackTapped" />
+                            </Border.GestureRecognizers>
+                            <Image
+                                x:Name="BackDotBtn"
+                                Source="left_chev_edge.png"
+                                WidthRequest="20"
+                                HeightRequest="20"
+                                Aspect="AspectFit"
+                                Margin="0,0,0,0"
+                                VerticalOptions="Center" />
+                        </Border>
+                        <customCtrl:DotSlider
+                            VerticalOptions="Center"
+                            ActiveIndex="{Binding Source={x:Reference Root}, Path=DotCurrentIndex}"
+                            DotCount="{Binding Source={x:Reference Root}, Path=DotTotalIndices}"
+                            VisualMode="Loader"
+                            LoaderHeight="3"
+                            ActiveDotColor="{StaticResource ThemeClr3}"
+                            InactiveDotSize="14" />
+                    </HorizontalStackLayout>
+                    <custButtons:GradientButton
+                        Text="NEXT"
+                        Grid.Row="1"
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        ButtonPadding="20,13"
+                        Margin="20,0,20,10"
+                        Stroke="Transparent"
+                        CornerRadius="15"
+                        ShadowOpacity="0.4"
+                        ButtonTextColor="White"
+                        GradientColorLeft="{StaticResource ThemeClr3}"
+                        GradientColorRight="{StaticResource ThemeClr2}"
+                        Tapped="OnNextClicked" />
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </AbsoluteLayout>
+</ContentView>

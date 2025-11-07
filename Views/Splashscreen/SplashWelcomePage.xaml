@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Splashscreen.SplashWelcomePage"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons">
+
+    <ContentPage.Background>
+        <LinearGradientBrush
+            StartPoint="1,0"
+            EndPoint="0,1">
+            <GradientStop
+                Color="{StaticResource ThemeClrMainLight}"
+                Offset="0.4" />
+            <GradientStop
+                Color="{StaticResource ThemeClrPurple}"
+                Offset="0.7" />
+            <!-- Soft pink -->
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <Grid
+        RowDefinitions="*,Auto,Auto"
+        Padding="30,30,30,0">
+
+        <!-- Scrollable Content -->
+        <ScrollView
+            Grid.Row="0">
+            <VerticalStackLayout
+                Spacing="25">
+                <Label
+                    Text="Welcome to Ovulae"
+                    Style="{StaticResource Headline}"
+                    TextColor="{StaticResource ThemeClrMainDark}"
+                    SemanticProperties.HeadingLevel="Level1" />
+
+                <Label
+                    Text="Track. Learn. Thrive — from period to pregnancy and beyond."
+                    Style="{StaticResource MediumText}"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center" />
+
+                <Border
+                    StrokeShape="RoundRectangle 20"
+                    Background="Transparent"
+                    StrokeThickness="1"
+                    Stroke="Transparent"
+                    VerticalOptions="Center">
+                    <Image
+                        Source="splash_features_5.png"
+                        Aspect="AspectFit" />
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+
+
+        <!-- Bottom Button -->
+        <Button
+            Grid.Row="2"
+            IsVisible="False"
+            Text="Get Started"
+            Style="{StaticResource ThemeButton}"
+            Margin="0,0,0,20"
+            Clicked="GetStartedClicked"/>
+
+        <custButtons:GradientButton
+            x:Name="EditDetailsBtn"
+            Text="GET STARTED"
+            Grid.Row="2"
+            FontAttributes="Bold"
+            FontSize="16"
+            IsFullWidth="True"
+            ButtonPadding="20,13"
+            Margin="0,10,0,15"
+            Stroke="Transparent"
+            StrokeThickness="1.5"
+            CornerRadius="15"
+            ShadowOpacity="0.4"
+            ButtonTextColor="White"
+            GradientColorLeft="{StaticResource ThemeClr3}"
+            GradientColorRight="{StaticResource ThemeClr2}"
+            Tapped="GetStartedClicked" />
+        
+    </Grid>
+
+</ContentPage>

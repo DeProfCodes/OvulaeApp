@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Subscription.PaymentWalliOSPage"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Subscription"
+    x:DataType="vm:PaywallViewModel">
+
+    <AbsoluteLayout>
+        <!-- Softer Medical Gradient -->
+        <BoxView
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <BoxView.Background>
+                <LinearGradientBrush
+                    StartPoint="1,0"
+                    EndPoint="0,1">
+                    <GradientStop
+                        Color="#f7f0ff"
+                        Offset="0.6" />
+                    <GradientStop
+                        Color="{StaticResource ThemeClrPurple}"
+                        Offset="0.4" />
+                    <!-- Soft pink -->
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+
+        <Grid
+            RowDefinitions="Auto,*,Auto"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+
+            <ScrollView
+                Grid.Row="1"
+                Padding="20,10">
+                <VerticalStackLayout
+                    Spacing="15">
+                    <!-- Trust-Building Header -->
+                    <VerticalStackLayout
+                        Spacing="8">
+                        <Image
+                            Source="logo_main.png"
+                            HeightRequest="50"
+                            HorizontalOptions="Center" />
+
+                        <Label
+                            Text="OB-GYN Approved Premium"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            TextColor="{StaticResource ThemeClrMainDark}" />
+
+                        <Label
+                            Text="Used by 15,000+ women in South Africa"
+                            FontSize="14"
+                            IsVisible="False"
+                            HorizontalOptions="Center"
+                            TextColor="#666" />
+                    </VerticalStackLayout>
+
+                    <!-- Premium Badge -->
+                    <Border
+                        StrokeShape="RoundRectangle 20"
+                        Padding="15"
+                        BackgroundColor="{StaticResource ThemeClrMainLight}"
+                        Stroke="{StaticResource ThemeClrMain}"
+                        StrokeThickness="0.5">
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="Black"
+                                Opacity="0.1"
+                                Offset="0,3"
+                                Radius="4" />
+                        </Border.Shadow>
+                        <HorizontalStackLayout
+                            Spacing="10">
+                            <Image
+                                Source="verified_icon2.png"
+                                HeightRequest="30" />
+                            <Label
+                                Text="Verified by Gynaecologist"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                    </Border>
+
+                    <Border
+                        StrokeShape="RoundRectangle 15"
+                        Padding="15,10"
+                        Stroke="{StaticResource ThemeClrMain}"
+                        BackgroundColor="{StaticResource ThemeClrMainLight}"
+                        StrokeThickness="0.5">
+                        <VerticalStackLayout
+                            Spacing="4">
+                            <!-- Headline: Emphasize ALL features -->
+                            <Label
+                                Text="ALL Premium Features • ONE LOW PRICE"
+                                FontSize="14"
+                                HorizontalTextAlignment="Center"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <!-- Subheader: Add clarity -->
+                            <Label
+                                Text="No extra costs for fertility, pregnancy, or menopause tools"
+                                FontSize="10"
+                                HorizontalTextAlignment="Center"
+                                TextColor="#666"
+                                FontAttributes="Italic"
+                                Margin="0,0,0,5" />
+
+                            <VerticalStackLayout
+                                IsVisible="{Binding ShowPremium}">
+                                <Label
+                                    HorizontalOptions="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span
+                                                Text="{Binding MonthlyPrice}"
+                                                FontSize="32"
+                                                FontAttributes="Bold"
+                                                TextColor="Black" />
+                                            <Span
+                                                Text=" / month"
+                                                FontSize="16"
+                                                TextColor="#666" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label
+                                    Text="{Binding DailyPrice}"
+                                    FontSize="12"
+                                    HorizontalOptions="Center"
+                                    TextColor="{StaticResource ThemeClr3}" />
+                            </VerticalStackLayout>
+                            
+                            <VerticalStackLayout
+                                IsVisible="{Binding ShowFreeTrial}">
+
+                                <Border
+                                    x:Name="BorderFreeTrial"
+                                    Background="{StaticResource ThemeClrPurple}"
+                                    Stroke="{StaticResource ThemeClr3}"
+                                    StrokeShape="RoundRectangle 8"
+                                    Margin="0,10,0,0"
+                                    Padding="0,5">
+                                    <VerticalStackLayout>
+                                        <Grid>
+                                            <Label
+                                                Text="7 Days Free Trial"
+                                                FontSize="24"
+                                                HorizontalOptions="Center"
+                                                FontAttributes="Bold" />
+                                        </Grid>
+                                        <Label
+                                            FontSize="11"
+                                            HorizontalOptions="Center">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span
+                                                        Text="Free Trial for 7 days, then "
+                                                        TextColor="{StaticResource ThemeClr3}" />
+                                                    <Span
+                                                        Text="{Binding MonthlyPrice}"
+                                                        TextColor="{StaticResource ThemeClr3}"
+                                                        FontAttributes="Bold" />
+                                                    <Span
+                                                        Text=" / month after that."
+                                                        TextColor="{StaticResource ThemeClr3}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label
+                                            Text="Apple may place a small temporary authorization hold to verify your payment method. This isn’t a charge and will be released automatically by your bank."
+                                            FontSize="8"
+                                            Margin="10,5,10,0"
+                                            HorizontalTextAlignment="Center"
+                                            FontAttributes="Italic"
+                                            TextColor="{StaticResource ThemeGray2}" />
+                                        <Label
+                                            Text="Customers must cancel at least 24 hours before the trial ends to avoid being charged."
+                                            FontSize="8"
+                                            Margin="10,5,10,0"
+                                            HorizontalTextAlignment="Center"
+                                            TextColor="Crimson" />
+                                    </VerticalStackLayout>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <!-- Add a checkmark list of key features -->
+                            <Grid
+                                Margin="0,5,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+                                        Width="*" />
+                                    <ColumnDefinition
+                                        Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <VerticalStackLayout
+                                    Spacing="3"
+                                    Grid.Column="0">
+                                    <Label
+                                        Text="✓ Period Tracker"
+                                        FontSize="9" />
+                                    <Label
+                                        Text="✓ Fertility Insights"
+                                        FontSize="9" />
+                                    <Label
+                                        Text="✓ Pregnancy Tools"
+                                        FontSize="9" />
+                                </VerticalStackLayout>
+                                <VerticalStackLayout
+                                    Spacing="3"
+                                    Grid.Column="1">
+                                    <Label
+                                        Text="✓ Menopause Support"
+                                        FontSize="9" />
+                                    <Label
+                                        Text="✓ Health Education"
+                                        FontSize="9" />
+                                    <Label
+                                        Text="✓ No Ads"
+                                        FontSize="9" />
+                                </VerticalStackLayout>
+                            </Grid>
+
+                            <!-- Guarantee -->
+                            <Label
+                                Text="Cancel anytime - No commitments"
+                                FontSize="10"
+                                HorizontalOptions="Center"
+                                TextColor="#666"
+                                Margin="0,4,0,0" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- High-Value Features -->
+                    <VerticalStackLayout
+                        Spacing="8">
+                        <Label
+                            Text="Premium Includes:"
+                            FontSize="18"
+                            FontAttributes="Bold" />
+
+                        <Border
+                            StrokeShape="RoundRectangle 10"
+                            Padding="5,10"
+                            BackgroundColor="#F5F9FF"
+                            Stroke="{StaticResource ThemeClrMain}"
+                            StrokeThickness="0.5">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.15"
+                                    Offset="0,2"
+                                    Radius="4" />
+                            </Border.Shadow>
+                            <VerticalStackLayout>
+                                <HorizontalStackLayout
+                                    Spacing="5"
+                                    HorizontalOptions="Center">
+                                    <VerticalStackLayout>
+                                        <Image
+                                            Source="period_tracker_badge.png"
+                                            HeightRequest="57" />
+                                        <Label
+                                            Text="Period"
+                                            FontSize="7"
+                                            HorizontalOptions="Center"
+                                            Margin="0,0,0,0"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeClrMain}" />
+                                        <Label
+                                            Text="Tracker"
+                                            FontSize="8"
+                                            HorizontalOptions="Center"
+                                            Margin="0,-2,0,0"
+                                            TextColor="{StaticResource ThemeClrMain}" />
+                                    </VerticalStackLayout>
+                                    <VerticalStackLayout>
+                                        <Image
+                                            Source="fertility_tracker_badge.png"
+                                            HeightRequest="57" />
+                                        <Label
+                                            Text="Fertility"
+                                            FontSize="7"
+                                            HorizontalOptions="Center"
+                                            Margin="0,0,0,0"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeClrMain}" />
+                                        <Label
+                                            Text="Tracker"
+                                            FontSize="7"
+                                            HorizontalOptions="Center"
+                                            Margin="0,-2,0,0"
+                                            TextColor="{StaticResource ThemeClrMain}" />
+                                    </VerticalStackLayout>
+                                    <VerticalStackLayout>
+                                        <Image
+                                            Source="pregnancy_tracker_badge.png"
+                                            HeightRequest="57" />
+                                        <Label
+                                            Text="Pregnancy"
+                                            FontSize="7"
+                                            HorizontalOptions="Center"
+                                            Margin="0,0,0,0"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeClrMain}" />
+                                        <Label
+                                            Text="Tracker"
+                                            FontSize="7"
+                                            HorizontalOptions="Center"
+                                            Margin="0,-2,0,0"
+                                            TextColor="{StaticResource ThemeClrMain}" />
+                                    </VerticalStackLayout>
+                                    <VerticalStackLayout>
+                                        <Image
+                                            Source="menopause_tracker_badge.png"
+                                            HeightRequest="57" />
+                                        <Label
+                                            Text="Menopause"
+                                            FontSize="7"
+                                            HorizontalOptions="Center"
+                                            Margin="0,0,0,0"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeClrMain}" />
+                                        <Label
+                                            Text="Tracker"
+                                            FontSize="7"
+                                            HorizontalOptions="Center"
+                                            Margin="0,-2,0,0"
+                                            TextColor="{StaticResource ThemeClrMain}" />
+                                    </VerticalStackLayout>
+                                    <VerticalStackLayout>
+                                        <Image
+                                            Source="pcos_education_badge.png"
+                                            HeightRequest="57" />
+                                        <Label
+                                            Text="Women Health"
+                                            FontSize="7"
+                                            HorizontalOptions="Center"
+                                            Margin="0,0,0,0"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeClrMain}" />
+                                        <Label
+                                            Text="Education"
+                                            FontSize="7"
+                                            HorizontalOptions="Center"
+                                            Margin="0,-2,0,0"
+                                            TextColor="{StaticResource ThemeClrMain}" />
+                                    </VerticalStackLayout>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- Feature 1: Instant Gynaecology Chat -->
+                        <Border
+                            StrokeShape="RoundRectangle 10"
+                            Padding="15"
+                            BackgroundColor="#F5F9FF"
+                            Stroke="{StaticResource ThemeClrMain}"
+                            StrokeThickness="0.5">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.15"
+                                    Offset="0,2"
+                                    Radius="4" />
+                            </Border.Shadow>
+                            <HorizontalStackLayout
+                                Spacing="10">
+                                <Image
+                                    Source="dr_chat_icon.png"
+                                    HeightRequest="30" />
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="Instant Gynaecology Chat"
+                                        FontAttributes="Bold" />
+                                    <Label
+                                        Text="Get answers from certified OB/GYNs within 24hrs"
+                                        FontSize="11"
+                                        LineBreakMode="WordWrap"
+                                        Margin="0,3,0,0"
+                                        TextColor="#666" />
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                        </Border>
+
+                        <!-- Feature 2: Personalized Reports -->
+                        <Border
+                            StrokeShape="RoundRectangle 10"
+                            Padding="15"
+                            BackgroundColor="#F5F9FF"
+                            Stroke="{StaticResource ThemeClrMain}"
+                            StrokeThickness="0.5">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.15"
+                                    Offset="0,2"
+                                    Radius="4" />
+                            </Border.Shadow>
+                            <HorizontalStackLayout
+                                Spacing="10">
+                                <Image
+                                    Source="partner_share.png"
+                                    HeightRequest="30" />
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="Share Your Journey Together 💖"
+                                        FontAttributes="Bold" />
+                                    <Label
+                                        Text="Invite your partner to join your cycle journey—free"
+                                        FontSize="11"
+                                        Margin="0,3,0,0"
+                                        TextColor="#666" />
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                        </Border>
+
+                        <!-- Standard Features List -->
+                        <VerticalStackLayout
+                            Spacing="8"
+                            Padding="10,0">
+                            <HorizontalStackLayout
+                                Spacing="10">
+                                <Image
+                                    Source="circle_check_purple_icon.png"
+                                    HeightRequest="18" />
+                                <Label
+                                    Text="Ad-free experience with dark mode"
+                                    FontSize="14" />
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout
+                                Spacing="10">
+                                <Image
+                                    Source="circle_check_purple_icon.png"
+                                    HeightRequest="18" />
+                                <Label
+                                    Text="Priority customer support"
+                                    FontSize="14" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                    <!-- Security & CTA -->
+                    <VerticalStackLayout
+                        Spacing="8"
+                        Margin="0,-10,0,0">
+                        <Border
+                            StrokeShape="RoundRectangle 10"
+                            Padding="15,5"
+                            Stroke="{StaticResource ThemeClrMain}"
+                            BackgroundColor="Transparent">
+                            <HorizontalStackLayout
+                                Spacing="10">
+                                <Image
+                                    Source="secure_lock_icon.png"
+                                    HeightRequest="24" />
+                                <Label
+                                    VerticalOptions="Center"
+                                    Text="Your payment is 100% secure and encrypted"
+                                    FontSize="13" />
+                            </HorizontalStackLayout>
+                        </Border>
+
+                        <Border
+                            StrokeShape="RoundRectangle 10"
+                            Padding="15"
+                            BackgroundColor="{StaticResource ThemeLightGray}"
+                            Stroke="{StaticResource ThemeClr3}"
+                            StrokeThickness="1.5">
+
+                            <VerticalStackLayout
+                                Spacing="12">
+
+                                <!-- Apple-required subscription details -->
+                                <VerticalStackLayout
+                                    Spacing="4">
+                                    <Label
+                                        Text="Your plan"
+                                        FontAttributes="Bold"
+                                        FontSize="13" />
+                                    <!-- Bind these to your product info -->
+                                    <Label
+                                        Text="Monthly Premium"
+                                        FontSize="12"
+                                        TextColor="#333" />
+                                    <Label
+                                        Text="1 Month"
+                                        FontSize="12"
+                                        TextColor="#333" />
+                                    <Label
+                                        x:Name="SubscriptionAmount"
+                                        Text=""
+                                        FontSize="12"
+                                        TextColor="#333" />
+                                    <!-- Optional but helpful -->
+                                    <Label
+                                        Text="Auto-renews until canceled. Manage or cancel anytime in your Apple ID settings."
+                                        FontSize="11"
+                                        TextColor="#666" />
+                                </VerticalStackLayout>
+
+                                <!-- Legal links (functional, tappable) -->
+                                <VerticalStackLayout
+                                    Spacing="4"
+                                    Margin="0,6,0,0">
+                                    <Label
+                                        Text="Legal"
+                                        FontAttributes="Bold"
+                                        FontSize="13" />
+                                    <HorizontalStackLayout
+                                        Spacing="12">
+                                        <Label
+                                            Text="Privacy Policy"
+                                            TextDecorations="Underline"
+                                            TextColor="{StaticResource ThemeClr3}"
+                                            FontSize="12">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="OpenPrivacyPolicy" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+
+                                        <Label
+                                            Text="Terms of Use"
+                                            TextDecorations="Underline"
+                                            TextColor="{StaticResource ThemeClr3}"
+                                            FontSize="12">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="OpenTermsOfUse" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+
+                                        <Label
+                                            Text="Apple EULA"
+                                            TextDecorations="Underline"
+                                            TextColor="{StaticResource ThemeClr3}"
+                                            FontSize="12">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="OpenAppleEula" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <custButtons:GradientButton
+                            x:Name="CheckoutBtn"
+                            Text="PAY NOW"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            CornerRadius="10"
+                            HeightRequest="50"
+                            ImageIconSource="lock_white_icon.png"
+                            HasImageIcon="False"
+                            IconMargin="0,0,10,0"
+                            ButtonTextColor="White"
+                            GradientColorLeft="{StaticResource ThemeClr3}"
+                            GradientColorRight="{StaticResource ThemeClr2}"
+                            Tapped="ContinueToPaymentTapped" />
+
+                        <custButtons:GradientButton
+                            Text="BACK TO LOGIN"
+                            FontSize="14"
+                            CornerRadius="10"
+                            HeightRequest="35"
+                            Stroke="{StaticResource ThemeClr3}"
+                            ButtonTextColor="{StaticResource ThemeClr3}"
+                            GradientColorLeft="Transparent"
+                            GradientColorRight="Transparent"
+                            Tapped="BackToLoginTapped" />
+
+                        <custButtons:GradientButton
+                            Text="DELETE YOUR ACCOUNT NOW"
+                            FontSize="14"
+                            CornerRadius="10"
+                            HeightRequest="35"
+                            Stroke="Crimson"
+                            ButtonTextColor="Crimson"
+                            GradientColorLeft="Transparent"
+                            GradientColorRight="Transparent"
+                            Tapped="DeleteMyAccountTapped" />
+
+                        <Label
+                            Text="7-day money-back guarantee • Cancel anytime"
+                            FontSize="12"
+                            HorizontalOptions="Center"
+                            TextColor="#666"
+                            IsVisible="False" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:CurrencyExchangeModal
+            x:Name="CurrencyExchangeModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

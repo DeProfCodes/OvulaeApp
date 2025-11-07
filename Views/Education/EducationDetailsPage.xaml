@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Education.EducationDetailsPage"
+    Background="White"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Education"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:dashComp3="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:models="clr-namespace:OvulaeShared.Models.Education;assembly=OvulaeShared"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    x:DataType="vm:EducationDetailsViewModel">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+                    <VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Margin="0,10,0,0">
+
+                            <!-- Page Title -->
+                            <VerticalStackLayout>
+                                <Label
+                                    Text="{Binding EduData.Book.Title}"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="Center"
+                                    TextColor="{StaticResource ThemeClrMain}"
+                                    Margin="20,0,20,10" />
+
+                                <dashComp:CategorySelector
+                                    HorizontalOptions="Center"
+                                    Categories="{Binding EduData.Book.Categories}"
+                                    DefaultSelectedIndex="0"
+                                    FontSize="10"
+                                    Padding="20,0,20,0"
+                                    IsCategoryFilter="False"
+                                    ActiveCategoryBackgroundColor="{StaticResource ThemeClr2}"
+                                    ActiveCategoryTextColor="White" />
+
+                            </VerticalStackLayout>
+
+                            <Border
+                                Grid.Column="2"
+                                Padding="0,0"
+                                Margin="0,20,0,0"
+                                Stroke="Transparent"
+                                HeightRequest="250"
+                                StrokeShape="RoundRectangle 15"
+                                HorizontalOptions="CenterAndExpand">
+                                <Image
+                                    Source="{Binding EduData.Book.CoverImgSrc}"
+                                    Aspect="AspectFit"
+                                    IsVisible="True" />
+                            </Border>
+                            
+                            <CollectionView
+                                ItemsSource="{Binding EduData.BookContents}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate
+                                        x:DataType="models:EducationItem">
+                                        <dashComp:EducationCardGroupView
+                                            Title="{Binding Title}"
+                                            Description="{Binding Description}"
+                                            EducationCards="{Binding RawContentsItems}"
+                                            SuperTitleFontSize="16"
+                                            SuperTitleTextColor="{StaticResource ThemeClrMain}"
+                                            DescriptionFontSize="12"
+                                            DescriptionTextColor="{StaticResource ThemeGray2}"
+                                            CardTitleFontSize="14"
+                                            CardTitleColor="Black"
+                                            BulletFontSize="12"
+                                            BulletTextColor="{StaticResource ThemeGray2}"
+                                            BulletFontAttributes="None" />
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+                        </VerticalStackLayout>
+
+                        <!-- Diagram  -->
+                        <CollectionView
+                            ItemsSource="{Binding EduData.Diagrams}"
+                            Margin="20,20,20,0">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate
+                                    x:DataType="models:EducationDiagram">
+                                    <VerticalStackLayout
+                                        Spacing="10">
+                                        <Label
+                                            Text="{Binding Heading}"
+                                            FontSize="16"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeClrMain}"
+                                            Margin="0,0,20,10" />
+
+                                        <Image
+                                            Source="{Binding FileName}"
+                                            Aspect="AspectFit"
+                                            HorizontalOptions="CenterAndExpand" />
+                                    </VerticalStackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                        <HorizontalStackLayout
+                            Padding="20,20,20,0"
+                            IsVisible="Hidden">
+                            <Border
+                                Padding="4"
+                                Stroke="Transparent">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="LikeArticle_Tapped" />
+                                </Border.GestureRecognizers>
+                                <Image
+                                    x:Name="LikeArticleImg"
+                                    Source="love_icon.png"
+                                    Aspect="AspectFit"
+                                    WidthRequest="25" />
+                            </Border>
+                            <Label
+                                Text="Save this article"
+                                FontSize="20"
+                                VerticalOptions="Center"
+                                TextColor="{StaticResource ThemeGray2}"
+                                Margin="10,-5,0,0" />
+                        </HorizontalStackLayout>
+                        <!-- Information Approved  -->
+                        <VerticalStackLayout
+                            Margin="20,40,20,0"
+                            IsVisible="True">
+                            <Label
+                                Text="✅ This information has been reviewed and approved by:"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                Margin="0,0,20,0" />
+
+                            <Label
+                                Text="Dr. Elmarie Wypkema, OB/GYN"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                TextColor="Black"
+                                Margin="0,20,20,0" />
+
+                            <Label
+                                Text="Obstetrician &amp; Gynaecologist"
+                                FontSize="11"
+                                TextColor="Black"
+                                Margin="0,5,0,0" />
+                            <Label
+                                Text="Medical license number (HPCSA): MP0282324"
+                                FontSize="12"
+                                FontAttributes="Italic"
+                                TextColor="Black"
+                                Margin="0,5,0,0" />
+                            <Label
+                                Text="Practice number: 1607189"
+                                FontSize="11"
+                                TextColor="Black"
+                                FontAttributes="Italic"
+                                Margin="0,5,0,0" />
+
+                        </VerticalStackLayout>
+                        
+                        <VerticalStackLayout
+                            Margin="20,15,20,0"
+                            IsVisible="True">
+                            <Label
+                                Text="Disclaimer"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                TextColor="{StaticResource Black}"
+                                Margin="0,0,20,0" />
+                            <Label
+                                Text="This app is NOT a medical device, and is NOT intended as a replacement for medical advice of any kind."
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                TextColor="{StaticResource Black}"
+                                Margin="0,10,20,0" />
+                            <Label
+                                Text="Any information given in Ovulae App, including all educational books and tracking information, is purely informational."
+                                FontSize="14"
+                                FontFamily="Arial Black"
+                                TextColor="{StaticResource Black}"
+                                Margin="0,10,20,0" />
+                            <Label
+                                Text="If you think you may have a medical emergency, call your doctor or local emergency service immediately."
+                                FontSize="14"
+                                FontFamily="Arial Black"
+                                TextColor="{StaticResource Black}"
+                                Margin="0,10,20,0" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Margin="20">
+                            <Label
+                                Text="📚 View scientific sources for this content"
+                                FontAttributes="Bold"
+                                TextColor="Blue" />
+                        
+                            <custButtons:GradientButton
+                                Text="VIEW ALL REFERENCES"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                CornerRadius="10"
+                                HeightRequest="45"
+                                HorizontalOptions="Center"
+                                ButtonPadding="30,0"
+                                Margin="0,10,0,0"
+                                IsVisible="True"
+                                HasImageIcon="False"
+                                ImageIconWidth="20"
+                                ImageIconHeight="20"
+                                ImageIconSource="mail_purple_icon.png"
+                                Stroke="Transparent"
+                                ButtonTextColor="White"
+                                GradientColorLeft="{StaticResource ThemeClr3}"
+                                GradientColorRight="{StaticResource ThemeClr2}"
+                                Tapped="ViewAllReferencesTapped" />
+                        </VerticalStackLayout>
+                        
+                        <Image
+                            Source="logo_icon.png"
+                            WidthRequest="45"
+                            Aspect="AspectFit"
+                            Margin="0,20,0,20" />
+                        
+                    </VerticalStackLayout>
+                    
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="Learn" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

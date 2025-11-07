@@ -1,0 +1,1001 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Settings.EditSettingsPages.GeneralSettings.EditSettingsAffiliateInfoPage"
+    Background="White"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashModals="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:sharedComp="clr-namespace:OvulaeApp.Views.Components.Shared"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Settings"
+    x:DataType="vm:EditSettingsAffilateViewModel">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style
+                x:Key="MenuDivider"
+                TargetType="Border">
+                <Setter
+                    Property="HeightRequest"
+                    Value="0.35" />
+                <Setter
+                    Property="Stroke"
+                    Value="{StaticResource ThemeClrMain}" />
+                <Setter
+                    Property="Opacity"
+                    Value="1" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="Fill" />
+                <Setter
+                    Property="Margin"
+                    Value="20,0,10,0" />
+            </Style>
+            <Style
+                x:Key="SettingsGroupContainerStyle"
+                TargetType="Border">
+                <Setter
+                    Property="BackgroundColor"
+                    Value="{StaticResource ThemeLightGray}" />
+                <Setter
+                    Property="Stroke"
+                    Value="Transparent" />
+                <Setter
+                    Property="Padding"
+                    Value="10,15,10,10" />
+                <Setter
+                    Property="Margin"
+                    Value="0,10,0,10" />
+                <Setter
+                    Property="StrokeShape">
+                    <Setter.Value>
+                        <RoundRectangle
+                            CornerRadius="10" />
+                    </Setter.Value>
+                </Setter>
+                <Setter
+                    Property="Shadow">
+                    <Setter.Value>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.3"
+                            Offset="0,4"
+                            Radius="6" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style
+                x:Key="DetailsSeparator"
+                TargetType="Border">
+                <Setter
+                    Property="HeightRequest"
+                    Value="0.3" />
+                <Setter
+                    Property="Stroke"
+                    Value="{StaticResource ThemeClr3}" />
+                <Setter
+                    Property="Background"
+                    Value="{StaticResource ThemeClr3}" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="Fill" />
+                <Setter
+                    Property="Opacity"
+                    Value="0.45" />
+            </Style>
+            <Style
+                x:Key="FormLabelStyle"
+                TargetType="Label">
+                <Setter
+                    Property="FontSize"
+                    Value="13" />
+                <Setter
+                    Property="TextColor"
+                    Value="{StaticResource Black}" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="HorizontalTextAlignment"
+                    Value="Center" />
+            </Style>
+            <Style
+                x:Key="ChangeButtonStyle"
+                TargetType="custButtons:GradientButton">
+                <Setter
+                    Property="FontAttributes"
+                    Value="Bold" />
+                <Setter
+                    Property="FontSize"
+                    Value="10" />
+                <Setter
+                    Property="ButtonPadding"
+                    Value="5,5" />
+                <Setter
+                    Property="Margin"
+                    Value="0,0,0,0" />
+                <Setter
+                    Property="Stroke"
+                    Value="Transparent" />
+                <Setter
+                    Property="StrokeThickness"
+                    Value="1.5" />
+                <Setter
+                    Property="CornerRadius"
+                    Value="5" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="End" />
+                <Setter
+                    Property="ShadowOpacity"
+                    Value="0.1" />
+                <Setter
+                    Property="ButtonTextColor"
+                    Value="White" />
+                <Setter
+                    Property="GradientColorLeft"
+                    Value="{StaticResource ThemeClr2}" />
+                <Setter
+                    Property="GradientColorRight"
+                    Value="{StaticResource ThemeClr2}" />
+            </Style>
+            <Style
+                x:Key="FormLabelValueStyle"
+                TargetType="Label">
+                <Setter
+                    Property="FontSize"
+                    Value="13" />
+                <Setter
+                    Property="FontAttributes"
+                    Value="Bold,Italic" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="HorizontalTextAlignment"
+                    Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+
+
+                    <Grid
+                        RowDefinitions="Auto,*"
+                        Background="whitesmoke">
+
+                        <!-- Page Title -->
+                        <VerticalStackLayout
+                            Grid.Row="0">
+                            <HorizontalStackLayout
+                                Padding="10,10">
+                                <Border
+                                    x:Name="BackBtnBorder"
+                                    Padding="5,5"
+                                    StrokeShape="RoundRectangle 10"
+                                    Background="Transparent"
+                                    Margin="0,0,0,0"
+                                    Stroke="Transparent">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="BackButtonTapped" />
+                                    </Border.GestureRecognizers>
+                                    <Image
+                                        Source="left_chev_edge.png"
+                                        WidthRequest="20"
+                                        HeightRequest="20" />
+                                </Border>
+                                <Label
+                                    x:Name="PageTitleLabel"
+                                    Text="Affiliates Management"
+                                    FontSize="24"
+                                    FontAttributes="Bold"
+                                    VerticalOptions="Center"
+                                    Margin="10,-3,0,0"
+                                    TextColor="{StaticResource ThemeClrMain}" />
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Grid.Row="1"
+                            Padding="15,0"
+                            Margin="0,0"
+                            Background="#ECE5DD">
+
+                            <Border
+                                Style="{StaticResource SettingsGroupContainerStyle}">
+                                <VerticalStackLayout
+                                    Spacing="7">
+
+                                    <Label
+                                        Text="Affiliate Partnership"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="Center" />
+
+                                    <Border
+                                        Style="{StaticResource DetailsSeparator}"
+                                        Margin="0,10,0,0" />
+
+                                    <!-- No Affiliate -->
+                                    <VerticalStackLayout
+                                        x:Name="NoAffiliateOption"
+                                        IsVisible="False">
+
+                                        <Label
+                                            Text="You are currently not an affiliate member, if you wish to join our affiliate program please click the button below to submit your application for review."
+                                            FontSize="11"
+                                            Padding="10"
+                                            TextColor="{StaticResource Gray600}"
+                                            FontAttributes="Italic"
+                                            HorizontalTextAlignment="Center" />
+
+                                        <custButtons:GradientButton
+                                            x:Name="JoinAffiliatesBtn"
+                                            Text="Join Affiliate Programme"
+                                            FontAttributes="Bold"
+                                            FontSize="13"
+                                            ButtonPadding="20,10"
+                                            Margin="0,20,0,15"
+                                            Stroke="Transparent"
+                                            StrokeThickness="1.5"
+                                            CornerRadius="25"
+                                            HorizontalOptions="Center"
+                                            ShadowOpacity="0.0"
+                                            ButtonTextColor="White"
+                                            GradientColorLeft="{StaticResource ThemeClrMain}"
+                                            GradientColorRight="{StaticResource ThemeClrMain}"
+                                            IsButtonEnabled="true"
+                                            Tapped="JoinAffiliateProgrammeTapped" />
+
+                                    </VerticalStackLayout>
+
+                                    <!-- Existing Affiliate -->
+                                    <VerticalStackLayout
+                                        x:Name="ExistingAffiliateOption"
+                                        IsVisible="True"
+                                        Margin="0,0,0,0">
+
+                                        <Label
+                                            Text="You are currently an affiliate member."
+                                            FontSize="12"
+                                            Padding="10"
+                                            TextColor="{StaticResource Black}"
+                                            FontAttributes="Italic"
+                                            HorizontalTextAlignment="Center" />
+
+                                        <Grid
+                                            ColumnDefinitions="*,*,*"
+                                            Margin="0,10,0,10">
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="Platform"
+                                                FontAttributes="Bold"
+                                                TextColor="{StaticResource ThemeClrMainDark}"
+                                                Style="{StaticResource FormLabelStyle}" />
+
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="Joins"
+                                                FontAttributes="Bold"
+                                                TextColor="{StaticResource ThemeClrMainDark}"
+                                                Style="{StaticResource FormLabelValueStyle}" />
+
+                                            <Label
+                                                Grid.Column="2"
+                                                Text="Share"
+                                                FontAttributes="Bold"
+                                                TextColor="{StaticResource ThemeClrMainDark}"
+                                                Style="{StaticResource FormLabelValueStyle}" />
+
+                                        </Grid>
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}"
+                                            Margin="0,0,0,0" />
+
+                                        <VerticalStackLayout
+                                            Spacing="5"
+                                            Margin="0,10,0,0">
+                                            <Grid
+                                                ColumnDefinitions="*,*,*">
+                                                <Label
+                                                    Grid.Column="0"
+                                                    Text="Android"
+                                                    Style="{StaticResource FormLabelStyle}" />
+
+                                                <Label
+                                                    Grid.Column="1"
+                                                    Text="{Binding AffiliateDetails.AndroidJoins}"
+                                                    TextColor="{StaticResource ThemeClr3}"
+                                                    Style="{StaticResource FormLabelValueStyle}" />
+
+                                                <custButtons:GradientButton
+                                                    Grid.Column="2"
+                                                    Text="invite"
+                                                    ButtonPadding="12,5"
+                                                    HeightRequest="35"
+                                                    WidthRequest="100"
+                                                    HasImageIcon="False"
+                                                    ImageIconSource="share_icon.png"
+                                                    Style="{StaticResource ChangeButtonStyle}"
+                                                    TappedWithParameter="ShareReferalLinkTapped"
+                                                    CommandParameter="android" />
+
+                                            </Grid>
+
+                                            <Border
+                                                Style="{StaticResource DetailsSeparator}" />
+
+                                            <Grid
+                                                ColumnDefinitions="*,*,*">
+                                                <Label
+                                                    Grid.Column="0"
+                                                    Text="iOS"
+                                                    Style="{StaticResource FormLabelStyle}" />
+
+                                                <Label
+                                                    Grid.Column="1"
+                                                    Text="{Binding AffiliateDetails.IOSJoins}"
+                                                    TextColor="{StaticResource ThemeClr3}"
+                                                    Style="{StaticResource FormLabelValueStyle}" />
+
+                                                <custButtons:GradientButton
+                                                    Grid.Column="2"
+                                                    Text="invite"
+                                                    ButtonPadding="12,5"
+                                                    HeightRequest="35"
+                                                    WidthRequest="100"
+                                                    Style="{StaticResource ChangeButtonStyle}"
+                                                    TappedWithParameter="ShareReferalLinkTapped"
+                                                    CommandParameter="ios" />
+
+                                            </Grid>
+
+                                            <Border
+                                                Style="{StaticResource DetailsSeparator}" />
+
+                                        </VerticalStackLayout>
+
+                                        <custButtons:GradientButton
+                                            x:Name="ViewMoreAffDetailsBtn"
+                                            Text="View More Details"
+                                            FontAttributes="Bold"
+                                            FontSize="13"
+                                            ButtonPadding="20,10"
+                                            Margin="0,10,0,15"
+                                            StrokeThickness="1.5"
+                                            CornerRadius="25"
+                                            HorizontalOptions="Center"
+                                            ShadowOpacity="0.0"
+                                            ButtonTextColor="White"
+                                            GradientColorLeft="{StaticResource ThemeClrMain}"
+                                            GradientColorRight="{StaticResource ThemeClrMain}"
+                                            IsButtonEnabled="true"
+                                            Tapped="ViewMoreAffiliateDetails" />
+
+                                    </VerticalStackLayout>
+
+                                    <!-- Pending Affiliate -->
+                                    <VerticalStackLayout
+                                        x:Name="ApplicationSentAffiliate">
+
+                                        <Label
+                                            Text="We have received your application for Affiliate Programme and you will be notified when there is an update"
+                                            FontSize="12"
+                                            Padding="10"
+                                            TextColor="{StaticResource Black}"
+                                            FontAttributes="Italic"
+                                            HorizontalTextAlignment="Center" />
+
+                                        <custButtons:GradientButton
+                                            x:Name="EditApplicationBtn"
+                                            Text="Edit Your Application"
+                                            FontAttributes="Bold"
+                                            FontSize="13"
+                                            ButtonPadding="20,10"
+                                            Margin="0,10,0,15"
+                                            StrokeThickness="1.5"
+                                            CornerRadius="25"
+                                            HorizontalOptions="Center"
+                                            ShadowOpacity="0.0"
+                                            ButtonTextColor="White"
+                                            GradientColorLeft="{StaticResource ThemeClrMain}"
+                                            GradientColorRight="{StaticResource ThemeClrMain}"
+                                            IsButtonEnabled="true"
+                                            Tapped="EditApplication_Tapped" />
+
+                                    </VerticalStackLayout>
+
+                                </VerticalStackLayout>
+
+                            </Border>
+
+                            <Border
+                                x:Name="FormBorder"
+                                Style="{StaticResource SettingsGroupContainerStyle}"
+                                IsVisible="False">
+
+                                <VerticalStackLayout>
+
+                                    <Grid
+                                        ColumnDefinitions="*,Auto">
+
+                                        <Label
+                                            Grid.Column="0"
+                                            x:Name="EditFormTitle"
+                                            FontSize="16"
+                                            FontAttributes="Bold"
+                                            Margin="0,0,-30,0"
+                                            HorizontalOptions="Center"
+                                            TextColor="{StaticResource ThemeClrMain}" />
+
+                                        <custButtons:GradientButton
+                                            Text="X"
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            FontSize="10"
+                                            ButtonPadding="5,0"
+                                            Margin="0,0,0,0"
+                                            Stroke="Transparent"
+                                            StrokeThickness="1.5"
+                                            CornerRadius="5"
+                                            HorizontalOptions="End"
+                                            ShadowOpacity="0"
+                                            ButtonTextColor="White"
+                                            GradientColorLeft="{StaticResource ThemeClrMain}"
+                                            GradientColorRight="{StaticResource ThemeClrMain}"
+                                            IsButtonEnabled="True"
+                                            IsVisible="True"
+                                            Tapped="EditFormCloseButtonTapped" />
+                                    </Grid>
+
+                                    <VerticalStackLayout
+                                        x:Name="AffiliateJoinSection"
+                                        IsVisible="False"
+                                        Spacing="7">
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}"
+                                            Margin="0,10,0,0" />
+
+                                        <VerticalStackLayout
+                                            Padding="5,0">
+                                            <Label
+                                                Text="Select your social media"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Start"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <sharedComp:SelectComponent2
+                                                x:Name="AffiliateSocialsOptions"
+                                                OptionList="Facebook|Tiktok|X|Instagram|YouTube"
+                                                IsHorizontal="True"
+                                                SelectionChanged="AffiliateSocialChoicesChanged"
+                                                OptionSpacing="5"
+                                                OptionFontSize="11"
+                                                BorderPadding="8,5"
+                                                SelectionType="Multiple"
+                                                OptionCornerRadius="5"
+                                                Margin="0,10,0,0" />
+
+                                        </VerticalStackLayout>
+
+                                        <!-- Facebook -->
+                                        <VerticalStackLayout
+                                            Margin="10,10,0,0"
+                                            x:Name="AffiliateFacebook">
+
+                                            <Label
+                                                Text="Facebook profile link"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Start"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <customCtrl:CustomEntry
+                                                Text="{Binding AffiliateFacebook.Handle, Mode=TwoWay}"
+                                                Placeholder="Enter your facebook link"
+                                                BorderStroke="{StaticResource ThemeClrMain}"
+                                                EntryTextColor="Black"
+                                                EntryFontSize="14"
+                                                EntryPadding="5"
+                                                BorderCornerRadius="4"
+                                                BorderWidthRequest="250"
+                                                BorderMargin="0,5,0,0" />
+
+                                            <Label
+                                                Text="How many followers do you have?"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Start"
+                                                Margin="0,5,0,0"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <customCtrl:CustomEntry
+                                                Text="{Binding AffiliateFacebook.FollowersCount, Mode=TwoWay}"
+                                                Placeholder="Enter number of followers"
+                                                BorderStroke="{StaticResource ThemeClrMain}"
+                                                EntryTextColor="Black"
+                                                EntryFontSize="14"
+                                                BorderHeightRequest="40"
+                                                BorderCornerRadius="4"
+                                                BorderHorizontalOptions="StartAndExpand"
+                                                EntryKeyboard="Numeric"
+                                                BorderMargin="0,0,0,0" />
+
+                                        </VerticalStackLayout>
+
+                                        <!-- Tiktok -->
+                                        <VerticalStackLayout
+                                            Margin="10,15,0,0"
+                                            x:Name="AffiliateTiktok">
+
+                                            <Label
+                                                Text="Tiktok profile link"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Start"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <customCtrl:CustomEntry
+                                                Text="{Binding AffiliateTiktok.Handle, Mode=TwoWay}"
+                                                Placeholder="Enter your tiktok link"
+                                                BorderStroke="{StaticResource ThemeClrMain}"
+                                                EntryTextColor="Black"
+                                                EntryFontSize="14"
+                                                BorderHeightRequest="40"
+                                                BorderWidthRequest="250"
+                                                BorderCornerRadius="4"
+                                                BorderMargin="0,0,0,0" />
+
+                                            <Label
+                                                Text="How many followers do you have?"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Start"
+                                                Margin="0,5,0,0"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <customCtrl:CustomEntry
+                                                Text="{Binding AffiliateTiktok.FollowersCount, Mode=TwoWay}"
+                                                Placeholder="Enter number of followers"
+                                                BorderStroke="{StaticResource ThemeClrMain}"
+                                                EntryTextColor="Black"
+                                                EntryFontSize="14"
+                                                BorderHeightRequest="40"
+                                                BorderWidthRequest="250"
+                                                BorderCornerRadius="4"
+                                                EntryKeyboard="Numeric"
+                                                BorderMargin="0,0,0,0" />
+
+                                        </VerticalStackLayout>
+
+                                        <!-- X -->
+                                        <VerticalStackLayout
+                                            Margin="10,15,0,0"
+                                            x:Name="AffiliateX">
+
+                                            <Label
+                                                Text="X profile link"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Start"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <customCtrl:CustomEntry
+                                                Text="{Binding AffiliateX.Handle, Mode=TwoWay}"
+                                                Placeholder="Enter your X profile link"
+                                                BorderStroke="{StaticResource ThemeClrMain}"
+                                                EntryTextColor="Black"
+                                                EntryFontSize="14"
+                                                BorderHeightRequest="40"
+                                                BorderWidthRequest="250"
+                                                BorderCornerRadius="4"
+                                                BorderMargin="0,0,0,0" />
+
+                                            <Label
+                                                Text="How many followers do you have?"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Start"
+                                                Margin="0,5,0,0"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <customCtrl:CustomEntry
+                                                Text="{Binding AffiliateX.FollowersCount, Mode=TwoWay}"
+                                                Placeholder="Enter number of followers"
+                                                BorderStroke="{StaticResource ThemeClrMain}"
+                                                EntryTextColor="Black"
+                                                EntryFontSize="14"
+                                                BorderHeightRequest="40"
+                                                BorderWidthRequest="250"
+                                                BorderCornerRadius="4"
+                                                EntryKeyboard="Numeric"
+                                                BorderMargin="0,0,0,0" />
+
+                                        </VerticalStackLayout>
+
+                                        <!-- Instagram -->
+                                        <VerticalStackLayout
+                                            Margin="10,15,0,0"
+                                            x:Name="AffiliateInstagram">
+
+                                            <Label
+                                                Text="Instagram profile link"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Start"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <customCtrl:CustomEntry
+                                                Text="{Binding AffiliateInstagram.Handle, Mode=TwoWay}"
+                                                Placeholder="Enter your Instagram profile link"
+                                                BorderStroke="{StaticResource ThemeClrMain}"
+                                                EntryTextColor="Black"
+                                                EntryFontSize="14"
+                                                BorderHeightRequest="40"
+                                                BorderWidthRequest="250"
+                                                BorderCornerRadius="4"
+                                                BorderMargin="0,0,0,0" />
+
+                                            <Label
+                                                Text="How many followers do you have?"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Start"
+                                                Margin="0,5,0,0"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <customCtrl:CustomEntry
+                                                Text="{Binding AffiliateInstagram.FollowersCount, Mode=TwoWay}"
+                                                Placeholder="Enter number of followers"
+                                                BorderStroke="{StaticResource ThemeClrMain}"
+                                                EntryTextColor="Black"
+                                                EntryFontSize="14"
+                                                BorderHeightRequest="40"
+                                                BorderWidthRequest="250"
+                                                BorderCornerRadius="4"
+                                                EntryKeyboard="Numeric"
+                                                BorderMargin="0,0,0,0" />
+
+                                        </VerticalStackLayout>
+
+                                        <!-- YouTubeTube -->
+                                        <VerticalStackLayout
+                                            Margin="10,15,0,0"
+                                            x:Name="AffiliateYouTube">
+
+                                            <Label
+                                                Text="YouTube profile link"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Start"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <customCtrl:CustomEntry
+                                                Text="{Binding AffiliateYoutube.Handle, Mode=TwoWay}"
+                                                Placeholder="Enter your YoutTube profile link"
+                                                BorderStroke="{StaticResource ThemeClrMain}"
+                                                EntryTextColor="Black"
+                                                EntryFontSize="14"
+                                                BorderHeightRequest="40"
+                                                BorderWidthRequest="250"
+                                                BorderCornerRadius="4"
+                                                BorderMargin="0,0,0,0" />
+
+                                            <Label
+                                                Text="How many followers do you have?"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Start"
+                                                Margin="0,5,0,0"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <customCtrl:CustomEntry
+                                                Text="{Binding AffiliateYoutube.FollowersCount, Mode=TwoWay}"
+                                                Placeholder="Enter number of followers"
+                                                BorderStroke="{StaticResource ThemeClrMain}"
+                                                EntryTextColor="Black"
+                                                EntryFontSize="14"
+                                                BorderHeightRequest="40"
+                                                BorderWidthRequest="250"
+                                                BorderCornerRadius="4"
+                                                EntryKeyboard="Numeric"
+                                                BorderMargin="0,0,0,0" />
+
+                                        </VerticalStackLayout>
+
+                                        <custButtons:GradientButton
+                                            x:Name="SubmitJoinAffilate"
+                                            Text="Send Application"
+                                            IsVisible="False"
+                                            FontAttributes="Bold"
+                                            FontSize="13"
+                                            ButtonPadding="0,10"
+                                            WidthRequest="200"
+                                            Margin="0,20,0,10"
+                                            Stroke="Transparent"
+                                            StrokeThickness="1.5"
+                                            CornerRadius="25"
+                                            HorizontalOptions="Center"
+                                            ShadowOpacity="0.0"
+                                            ButtonTextColor="White"
+                                            GradientColorLeft="{StaticResource ThemeClrMain}"
+                                            GradientColorRight="{StaticResource ThemeClrMain}"
+                                            IsButtonEnabled="true"
+                                            Tapped="SubmitJoinAffilate_Tapped" />
+
+                                    </VerticalStackLayout>
+
+                                    <VerticalStackLayout
+                                        Padding="5,0"
+                                        x:Name="AffiliateMoreDetails"
+                                        IsVisible="False">
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}"
+                                            Margin="0,10,0,0" />
+
+                                        <VerticalStackLayout
+                                            Margin="0,10,0,0">
+                                            <Label
+                                                Text="Android Referal Link"
+                                                FontSize="12"
+                                                Margin="0,10,0,0"
+                                                FontAttributes="Bold"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <Grid
+                                                ColumnDefinitions="*,Auto">
+                                                <customCtrl:CustomEntry
+                                                    Grid.Column="0"
+                                                    Text="{Binding AffiliateDetails.AndroidJoinLink}"
+                                                    BorderStroke="{StaticResource ThemeClrMain}"
+                                                    EntryTextColor="Black"
+                                                    EntryBackgroundColor="{StaticResource ThemeGray}"
+                                                    IsFullWidth="True"
+                                                    EntryFontSize="12"
+                                                    BorderHeightRequest="30"
+                                                    EntryPadding="0,5,1,1"
+                                                    BorderCornerRadius="4"
+                                                    BorderPadding="-5,0,0,0"
+                                                    IsReadOnly="True"
+                                                    BorderMargin="0,0,0,0" />
+                                                <custButtons:GradientButton
+                                                    Text="copy"
+                                                    Grid.Column="1"
+                                                    FontAttributes="Bold"
+                                                    FontSize="10"
+                                                    ButtonPadding="5,0"
+                                                    Margin="0,0,0,0"
+                                                    Stroke="Transparent"
+                                                    StrokeThickness="1.5"
+                                                    CornerRadius="5"
+                                                    HorizontalOptions="End"
+                                                    ShadowOpacity="0"
+                                                    ButtonTextColor="White"
+                                                    GradientColorLeft="{StaticResource ThemeClrMain}"
+                                                    GradientColorRight="{StaticResource ThemeClrMain}"
+                                                    IsButtonEnabled="True"
+                                                    IsVisible="True" />
+                                            </Grid>
+                                        </VerticalStackLayout>
+
+                                        <VerticalStackLayout
+                                            Margin="0,20,0,0">
+                                            <Label
+                                                Text="iOS Referal Link"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <Grid
+                                                ColumnDefinitions="*,Auto">
+                                                <customCtrl:CustomEntry
+                                                    Grid.Column="0"
+                                                    Text="{Binding AffiliateDetails.IOSJoinLink}"
+                                                    BorderStroke="{StaticResource ThemeClrMain}"
+                                                    EntryTextColor="Black"
+                                                    EntryBackgroundColor="{StaticResource ThemeGray}"
+                                                    IsFullWidth="True"
+                                                    EntryFontSize="12"
+                                                    BorderHeightRequest="30"
+                                                    EntryPadding="0,5,1,1"
+                                                    BorderCornerRadius="4"
+                                                    BorderPadding="-5,0,0,0"
+                                                    IsReadOnly="True"
+                                                    BorderMargin="0,0,0,0" />
+                                                <custButtons:GradientButton
+                                                    Text="copy"
+                                                    Grid.Column="1"
+                                                    FontAttributes="Bold"
+                                                    FontSize="10"
+                                                    ButtonPadding="5,0"
+                                                    Margin="0,0,0,0"
+                                                    Stroke="Transparent"
+                                                    StrokeThickness="1.5"
+                                                    CornerRadius="5"
+                                                    HorizontalOptions="End"
+                                                    ShadowOpacity="0"
+                                                    ButtonTextColor="White"
+                                                    GradientColorLeft="{StaticResource ThemeClrMain}"
+                                                    GradientColorRight="{StaticResource ThemeClrMain}"
+                                                    IsButtonEnabled="True"
+                                                    IsVisible="True" />
+                                            </Grid>
+                                        </VerticalStackLayout>
+
+                                        <VerticalStackLayout
+                                            IsVisible="True"
+                                            Margin="0,20,0,0">
+
+                                            <Border
+                                                Style="{StaticResource DetailsSeparator}"
+                                                Margin="0,0,0,0" />
+
+                                            <VerticalStackLayout
+                                                Spacing="8"
+                                                Margin="0,10,0,0">
+                                                <Grid
+                                                    ColumnDefinitions="*,*">
+                                                    <Label
+                                                        Grid.Column="0"
+                                                        Text="Total Referred Users"
+                                                        Style="{StaticResource FormLabelStyle}" />
+
+                                                    <Label
+                                                        Grid.Column="1"
+                                                        Text="{Binding AffiliateDetails.AndroidJoins}"
+                                                        TextColor="{StaticResource ThemeClr3}"
+                                                        Style="{StaticResource FormLabelValueStyle}" />
+
+                                                </Grid>
+
+                                                <Border
+                                                    Style="{StaticResource DetailsSeparator}" />
+
+                                                <Grid
+                                                    ColumnDefinitions="*,*">
+                                                    <Label
+                                                        Grid.Column="0"
+                                                        Text="Total Earned Amount"
+                                                        Style="{StaticResource FormLabelStyle}" />
+
+                                                    <Label
+                                                        Grid.Column="1"
+                                                        Text="{Binding AffiliateDetails.TotalRevenue}"
+                                                        TextColor="{StaticResource ThemeClr3}"
+                                                        Style="{StaticResource FormLabelValueStyle}" />
+
+                                                </Grid>
+
+                                                <Border
+                                                    Style="{StaticResource DetailsSeparator}" />
+
+                                            </VerticalStackLayout>
+
+                                            <VerticalStackLayout
+                                                Margin="0,25,0,0">
+
+                                                <Label
+                                                    Text="If you wish to view more information on your affiliate account please click the button below to redirect to dashboard"
+                                                    FontSize="10"
+                                                    TextColor="{StaticResource ThemeGray2}"
+                                                    FontAttributes="Italic"
+                                                    Style="{StaticResource FormLabelStyle}" />
+
+                                                <custButtons:GradientButton
+                                                    Text="Open Dashboard"
+                                                    FontAttributes="Bold"
+                                                    FontSize="13"
+                                                    ButtonPadding="20,10"
+                                                    StrokeThickness="1.5"
+                                                    CornerRadius="10"
+                                                    HorizontalOptions="Center"
+                                                    ShadowOpacity="0.0"
+                                                    ButtonTextColor="White"
+                                                    GradientColorLeft="{StaticResource ThemeClrMain}"
+                                                    GradientColorRight="{StaticResource ThemeClrMain}"
+                                                    IsButtonEnabled="true"
+                                                    Tapped="GoToDashboardPage" />
+
+                                            </VerticalStackLayout>
+
+                                        </VerticalStackLayout>
+                                    </VerticalStackLayout>
+
+                                </VerticalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
+
+                    </Grid>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="None" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:MultiPurposeChangeModal
+            x:Name="ChangeRequestModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <customCtrl:YearPicker
+            x:Name="MyYearPicker"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

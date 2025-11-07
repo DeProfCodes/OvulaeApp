@@ -1,0 +1,39 @@
+﻿<ContentView
+    x:Class="OvulaeApp.Views.Components.Dashboard.EducationCardGroupView"
+    x:Name="Root"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <VerticalStackLayout
+        Spacing="10">
+        <!-- Super Title and Description -->
+        <VerticalStackLayout
+            Margin="20,20,0,10">
+            <Label
+                x:Name="TitleLabel"
+                Text="{Binding Title, Source={x:Reference Root}}"
+                FontSize="{Binding SuperTitleFontSize, Source={x:Reference Root}}"
+                FontAttributes="Bold"
+                TextColor="{Binding SuperTitleTextColor, Source={x:Reference Root}}" />
+
+            <Label
+                x:Name="DescriptionLabel"
+                Text="{Binding Description, Source={x:Reference Root}}"
+                FontSize="{Binding DescriptionFontSize, Source={x:Reference Root}}"
+                Margin="0,3,0,0"
+                TextColor="{Binding DescriptionTextColor, Source={x:Reference Root}}" />
+        </VerticalStackLayout>
+
+        <!-- Cards -->
+        <Border
+            Padding="20,10"
+            Margin="0,0,0,0"
+            Background="{StaticResource ThemeLightGray}"
+            Stroke="Transparent">
+            <VerticalStackLayout
+                x:Name="CardListLayout"
+                Margin="0,0,0,0"
+                Spacing="20" />
+        </Border>
+    </VerticalStackLayout>
+</ContentView>

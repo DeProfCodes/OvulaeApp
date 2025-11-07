@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Settings.EditSettingsPages.PregnancySettings.EditSettingsPregnancyBabyInfoPage"
+    Background="White"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashModals="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:sharedComp="clr-namespace:OvulaeApp.Views.Components.Shared"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Settings"
+    x:DataType="vm:EditSettingsPregnancySettingsViewModel">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style
+                x:Key="MenuDivider"
+                TargetType="Border">
+                <Setter
+                    Property="HeightRequest"
+                    Value="0.35" />
+                <Setter
+                    Property="Stroke"
+                    Value="{StaticResource ThemeClrMain}" />
+                <Setter
+                    Property="Opacity"
+                    Value="1" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="Fill" />
+                <Setter
+                    Property="Margin"
+                    Value="20,0,10,0" />
+            </Style>
+            <Style
+                x:Key="SettingsGroupContainerStyle"
+                TargetType="Border">
+                <Setter
+                    Property="BackgroundColor"
+                    Value="{StaticResource ThemeLightGray}" />
+                <Setter
+                    Property="Stroke"
+                    Value="Transparent" />
+                <Setter
+                    Property="Padding"
+                    Value="10,15,10,10" />
+                <Setter
+                    Property="Margin"
+                    Value="0,10,0,10" />
+                <Setter
+                    Property="StrokeShape">
+                    <Setter.Value>
+                        <RoundRectangle
+                            CornerRadius="10" />
+                    </Setter.Value>
+                </Setter>
+                <Setter
+                    Property="Shadow">
+                    <Setter.Value>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.3"
+                            Offset="0,4"
+                            Radius="6" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style
+                x:Key="DetailsSeparator"
+                TargetType="Border">
+                <Setter
+                    Property="HeightRequest"
+                    Value="0.3" />
+                <Setter
+                    Property="Stroke"
+                    Value="{StaticResource ThemeClr3}" />
+                <Setter
+                    Property="Background"
+                    Value="{StaticResource ThemeClr3}" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="Fill" />
+                <Setter
+                    Property="Opacity"
+                    Value="0.45" />
+            </Style>
+            <Style
+                x:Key="FormLabelStyle"
+                TargetType="Label">
+                <Setter
+                    Property="FontSize"
+                    Value="13" />
+                <Setter
+                    Property="TextColor"
+                    Value="{StaticResource Black}" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="HorizontalTextAlignment"
+                    Value="Center" />
+            </Style>
+            <Style
+                x:Key="ChangeButtonStyle"
+                TargetType="custButtons:GradientButton">
+                <Setter
+                    Property="FontAttributes"
+                    Value="Bold" />
+                <Setter
+                    Property="FontSize"
+                    Value="10" />
+                <Setter
+                    Property="ButtonPadding"
+                    Value="5,5" />
+                <Setter
+                    Property="Margin"
+                    Value="0,0,0,0" />
+                <Setter
+                    Property="Stroke"
+                    Value="Transparent" />
+                <Setter
+                    Property="StrokeThickness"
+                    Value="1.5" />
+                <Setter
+                    Property="CornerRadius"
+                    Value="5" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="End" />
+                <Setter
+                    Property="ShadowOpacity"
+                    Value="0.1" />
+                <Setter
+                    Property="ButtonTextColor"
+                    Value="White" />
+                <Setter
+                    Property="GradientColorLeft"
+                    Value="{StaticResource ThemeClr2}" />
+                <Setter
+                    Property="GradientColorRight"
+                    Value="{StaticResource ThemeClr2}" />
+            </Style>
+            <Style
+                x:Key="FormLabelValueStyle"
+                TargetType="Label">
+                <Setter
+                    Property="FontSize"
+                    Value="13" />
+                <Setter
+                    Property="FontAttributes"
+                    Value="Bold,Italic" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="HorizontalTextAlignment"
+                    Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+
+                        
+                    <Grid
+                        RowDefinitions="Auto,*"
+                        Background="whitesmoke">
+
+                        <!-- Page Title -->
+                        <VerticalStackLayout
+                            Grid.Row="0">
+                            <HorizontalStackLayout
+                                Padding="10,10">
+                                <Border
+                                    x:Name="BackBtnBorder"
+                                    Padding="5,5"
+                                    StrokeShape="RoundRectangle 10"
+                                    Background="Transparent"
+                                    Margin="0,0,0,0"
+                                    Stroke="Transparent">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="BackButtonTapped" />
+                                    </Border.GestureRecognizers>
+                                    <Image
+                                        Source="left_chev_edge.png"
+                                        WidthRequest="20"
+                                        HeightRequest="20"/>
+                                </Border>
+                                <Label
+                                    x:Name="PageTitleLabel"
+                                    Text="Baby Details"
+                                    FontSize="24"
+                                    FontAttributes="Bold"
+                                    VerticalOptions="Center"
+                                    Margin="10,-3,0,0"
+                                    TextColor="{StaticResource ThemeClrMain}" />
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Grid.Row="1"
+                            Padding="15,0"
+                            Margin="0,0"
+                            Background="#ECE5DD">
+                            
+                            <Border
+                                Style="{StaticResource SettingsGroupContainerStyle}">
+                                <VerticalStackLayout>
+
+                                    <VerticalStackLayout
+                                        Spacing="7">
+                                        <Label
+                                            Text="Your Baby Details"
+                                            FontSize="18"
+                                            FontAttributes="Bold"
+                                            HorizontalTextAlignment="Center" />
+
+                                        <Label
+                                            Text="These baby details are **Optional** and just for your own journey tracking."
+                                            FontSize="10"
+                                            FontAttributes="Italic"
+                                            TextColor="{StaticResource ThemeGray2}"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="10,0"
+                                            Margin="0,10"/>
+                                        
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}" />
+                                        
+                                        <Grid
+                                            ColumnDefinitions="*,*,*">
+                                           
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="Baby name"
+                                                Style="{StaticResource FormLabelStyle}" />
+
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="Lerato"
+                                                TextColor="{Binding LMPDateProp.Color}"
+                                                Style="{StaticResource FormLabelValueStyle}" />
+
+                                            <custButtons:GradientButton
+                                                Grid.Column="2"
+                                                Text="change"
+                                                Style="{StaticResource ChangeButtonStyle}"
+                                                TappedWithParameter="UpdateSingleItem"
+                                                CommandParameter="BabyName" />
+
+                                        </Grid>
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}" />
+
+                                        <Grid
+                                            ColumnDefinitions="*,*,*"
+                                            Margin="0,0,0,0">
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="Gender"
+                                                Style="{StaticResource FormLabelStyle}" />
+
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="Girl 🩷"
+                                                TextColor="{Binding PregnancyCurrentWeekProp.Color}"
+                                                Style="{StaticResource FormLabelValueStyle}" />
+
+                                            <custButtons:GradientButton
+                                                Grid.Column="2"
+                                                Text="change"
+                                                Style="{StaticResource ChangeButtonStyle}"
+                                                TappedWithParameter="UpdateSingleItem"
+                                                CommandParameter="BabyGender" />
+
+                                        </Grid>
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}" />
+                                        
+                                    </VerticalStackLayout>
+
+                                    <custButtons:GradientButton
+                                        x:Name="EditDetailsBtn"
+                                        Text="Edit Details"
+                                        FontAttributes="Bold"
+                                        FontSize="13"
+                                        ButtonPadding="20,10"
+                                        Margin="0,10,0,0"
+                                        Stroke="Transparent"
+                                        StrokeThickness="1.5"
+                                        CornerRadius="25"
+                                        HorizontalOptions="Center"
+                                        ShadowOpacity="0.4"
+                                        ButtonTextColor="White"
+                                        GradientColorLeft="{StaticResource ThemeClr3}"
+                                        GradientColorRight="{StaticResource ThemeClr2}"
+                                        IsButtonEnabled="True"
+                                        Tapped="EditDetailsButtonTapped" />
+
+                                </VerticalStackLayout>
+                            </Border>
+
+                            <Border
+                                x:Name="FormBorder"
+                                Style="{StaticResource SettingsGroupContainerStyle}"
+                                IsVisible="False">
+
+                                <VerticalStackLayout>
+
+                                    <Grid
+                                        ColumnDefinitions="*,Auto">
+
+                                        <Label
+                                            Grid.Column="0"
+                                            Text="Edit Baby Info"
+                                            FontSize="15"
+                                            FontAttributes="Bold"
+                                            Margin="0,0,-30,0"
+                                            HorizontalOptions="Center"
+                                            TextColor="{StaticResource ThemeClrMain}" />
+
+                                        <custButtons:GradientButton
+                                            Text="X"
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            FontSize="10"
+                                            Padding="5,0"
+                                            Margin="0,0,0,0"
+                                            Stroke="Transparent"
+                                            StrokeThickness="1.5"
+                                            CornerRadius="5"
+                                            HorizontalOptions="End"
+                                            ShadowOpacity="0"
+                                            ButtonTextColor="White"
+                                            GradientColorLeft="{StaticResource ThemeClrMain}"
+                                            GradientColorRight="{StaticResource ThemeClrMain}"
+                                            IsButtonEnabled="True"
+                                            IsVisible="True"
+                                            Tapped="CloseModalPage" />
+                                    </Grid>
+
+                                    <VerticalStackLayout
+                                        Padding="5,0">
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}"
+                                            Margin="0,10,0,0" />
+
+                                        <VerticalStackLayout
+                                            Margin="0,20,0,0"
+                                            x:Name="BabyCountEdit"
+                                            IsVisible="False">
+
+                                            <Label
+                                                Text="How many babies are you expecting or have? 👶"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <sharedComp:SelectComponent2
+                                                x:Name="BabyCountOptions"
+                                                OptionList="1 (Single)|2 (Twins)|3 (Triplets)|More"
+                                                IsHorizontal="True"
+                                                OptionSpacing="5"
+                                                OptionFontSize="11"
+                                                BorderPadding="8,5"
+                                                SelectionType="Single"
+                                                OptionCornerRadius="5"
+                                                Margin="0,10,0,0" />
+                                        </VerticalStackLayout>
+                                        
+                                        <VerticalStackLayout
+                                            Margin="0,20,0,0"
+                                            x:Name="BabyNameEdit"
+                                            IsVisible="False">
+                                            <Label
+                                                Text="What is the name of your baby?😊"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <customCtrl:CustomEntry
+                                                Text=""
+                                                Placeholder="Enter your baby's name"
+                                                BorderStroke="{StaticResource ThemeClrMain}"
+                                                EntryTextColor="Black"
+                                                EntryFontSize="14"
+                                                EntryPadding="5"
+                                                IsFullWidth="True"
+                                                BorderCornerRadius="4"
+                                                BorderWidthRequest="250"
+                                                BorderMargin="0,5,0,0" />
+
+                                        </VerticalStackLayout>
+
+                                        <VerticalStackLayout
+                                            Margin="0,20,0,0"
+                                            x:Name="BabyGenderEdit"
+                                            IsVisible="False">
+                                            
+                                            <Label
+                                                Text="What is the gender of your baby?🩷🩵"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <sharedComp:SelectComponent2
+                                                x:Name="AffiliateSocialsOptions"
+                                                OptionList="It's a Boy🩵|It's a Girl🩷"
+                                                IsHorizontal="True"
+                                                OptionSpacing="5"
+                                                OptionFontSize="11"
+                                                BorderPadding="8,5"
+                                                SelectionType="Single"
+                                                OptionCornerRadius="5"
+                                                Margin="0,10,0,0" />
+
+                                        </VerticalStackLayout>
+
+                                        <Border
+                                            Margin="0,20,0,0"
+                                            Style="{StaticResource DetailsSeparator}" />
+
+                                        <custButtons:GradientButton
+                                            Grid.Column="1"
+                                            Text="Update Settings"
+                                            FontAttributes="Bold"
+                                            FontSize="13"
+                                            ButtonPadding="20,10"
+                                            Margin="0,0,0,0"
+                                            Stroke="Transparent"
+                                            StrokeThickness="1.5"
+                                            CornerRadius="5"
+                                            HorizontalOptions="Center"
+                                            ShadowOpacity="0.0"
+                                            ButtonTextColor="White"
+                                            GradientColorLeft="{StaticResource ThemeClrMain}"
+                                            GradientColorRight="{StaticResource ThemeClrMain}"
+                                            IsButtonEnabled="True"
+                                            Tapped="EditDetailsButtonTapped" />
+
+                                    </VerticalStackLayout>
+
+                                </VerticalStackLayout>
+                            </Border>
+                            
+                        </VerticalStackLayout>
+
+                    </Grid>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="None" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:MultiPurposeChangeModal
+            x:Name="ChangeRequestModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <customCtrl:YearPicker
+            x:Name="MyYearPicker"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

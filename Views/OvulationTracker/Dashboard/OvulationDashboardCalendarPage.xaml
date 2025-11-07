@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.OvulationTracker.Dashboard.OvulationDashboardCalendarPage"
+    Background="White"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:models="clr-namespace:OvulaeApp.ViewModels.Calendar"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Shared"
+    xmlns:dashCard="clr-namespace:OvulaeApp.ViewModels.Module"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    x:DataType="vm:PeriodOvulationCalendarPageViewModel">
+
+    <AbsoluteLayout>
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+                    <VerticalStackLayout>
+                        <!-- Page Title -->
+                        <Border
+                            Margin="0,10,0,0"
+                            Stroke="Transparent">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="{StaticResource ThemeClrMainDark}"
+                                    Opacity="0.15"
+                                    Offset="0,15"
+                                    Radius="8" />
+                            </Border.Shadow>
+                            <Label
+                                Text="Ovulation Calendar 👶🏼"
+                                FontSize="22"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource ThemeClr3}"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+                        </Border>
+
+                        <!-- Calendar Navigation -->
+                        <VerticalStackLayout
+                            Background="{StaticResource ThemeLightGray}"
+                            Margin="0,20,0,0"
+                            Padding="0,8,0,0">
+                            <Border
+                                Stroke="Transparent"
+                                Background="Transparent"
+                                Margin="0,0,0,4">
+                                <Grid
+                                    ColumnDefinitions="Auto,*,Auto"
+                                    Margin="10,0,10,0">
+                                    <Border
+                                        Grid.Column="0"
+                                        Padding="15,5"
+                                        HorizontalOptions="Start"
+                                        Stroke="Transparent">
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="PreviousMonth_Tapped" />
+                                        </Border.GestureRecognizers>
+                                        <Image
+                                            Source="left_chev_edge.png"
+                                            WidthRequest="18"
+                                            Aspect="AspectFit" />
+                                    </Border>
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding CurrentMonthTitle}"
+                                        TextTransform="Uppercase"
+                                        FontSize="20"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource ThemeClrMain}"
+                                        HorizontalOptions="Center" />
+                                    <Border
+                                        Grid.Column="2"
+                                        Padding="15,5"
+                                        HorizontalOptions="End"
+                                        Stroke="Transparent">
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="NextMonth_Tapped" />
+                                        </Border.GestureRecognizers>
+                                        <Image
+                                            Source="right_chev_edge.png"
+                                            WidthRequest="18"
+                                            Aspect="AspectFit" />
+                                    </Border>
+                                </Grid>
+                            </Border>
+
+                            <!-- Week Day Headers -->
+                            <Grid
+                                Padding="10"
+                                ColumnDefinitions="*,*,*,*,*,*,*"
+                                Background="{StaticResource ThemeClrMain}">
+                                <Label
+                                    Grid.Column="0"
+                                    Text="S"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    HorizontalOptions="Center" />
+                                <Label
+                                    Grid.Column="1"
+                                    Text="M"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    HorizontalOptions="Center" />
+                                <Label
+                                    Grid.Column="2"
+                                    Text="T"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    HorizontalOptions="Center" />
+                                <Label
+                                    Grid.Column="3"
+                                    Text="W"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    HorizontalOptions="Center" />
+                                <Label
+                                    Grid.Column="4"
+                                    Text="T"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    HorizontalOptions="Center" />
+                                <Label
+                                    Grid.Column="5"
+                                    Text="F"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    HorizontalOptions="Center" />
+                                <Label
+                                    Grid.Column="6"
+                                    Text="S"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    HorizontalOptions="Center" />
+                            </Grid>
+                        </VerticalStackLayout>
+
+                        <!-- Calendar Grid -->
+                        <Border
+                            Stroke="Transparent"
+                            Margin="0,0,0,0"
+                            Padding="5,0,5,0"
+                            Background="{StaticResource ThemeLightGray}">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="{StaticResource ThemeClrMainDark}"
+                                    Opacity="0.55"
+                                    Offset="0,4"
+                                    Radius="8" />
+                            </Border.Shadow>
+                            <CollectionView
+                                ItemsSource="{Binding CurrentMonth.DaysFlatList}"
+                                SelectionMode="None">
+                                <CollectionView.ItemsLayout>
+                                    <GridItemsLayout
+                                        Orientation="Vertical"
+                                        Span="7" 
+                                        HorizontalItemSpacing="1"
+                                        VerticalItemSpacing="1"/>
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate
+                                        x:DataType="models:CalendarDayViewModel">
+                                        <Border
+                                            Stroke="{Binding EventBorderColor}"
+                                            Background="{Binding BackgroundColor}"
+                                            StrokeShape="RoundRectangle 5"
+                                            Padding="4,3"
+                                            HeightRequest="60">
+
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PeriodOvulationCalendarPageViewModel}}, Path=SelectDayCommand}"
+                                                    CommandParameter="{Binding}" />
+                                            </Border.GestureRecognizers>
+                                            <VerticalStackLayout
+                                                Spacing="2"
+                                                HorizontalOptions="Center"
+                                                VerticalOptions="Start">
+                                                <Label
+                                                    Text="{Binding DayNumber}"
+                                                    FontSize="12"
+                                                    FontAttributes="Bold"
+                                                    HorizontalOptions="Center" />
+                                                <Label
+                                                    Text="{Binding EventEmoji}"
+                                                    FontSize="18"
+                                                    HorizontalOptions="Center"
+                                                    IsVisible="{Binding IsEventEmojiVisible}" />
+                                                <Label
+                                                    Text="{Binding WeekMarkerText}"
+                                                    FontSize="10"
+                                                    FontAttributes="Italic, Bold"
+                                                    TextColor="{Binding WeekMarkerTextColor}"
+                                                    HorizontalOptions="Center"
+                                                    IsVisible="{Binding ShowWeekMarker}" />
+                                            </VerticalStackLayout>
+                                        </Border>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </Border>
+
+                        <HorizontalStackLayout
+                            HorizontalOptions="Center"
+                            Margin="0,10,0,0">
+                            <Label
+                                Text="Phases"
+                                FontSize="14"
+                                FontAttributes="Italic"
+                                VerticalOptions="Center"
+                                TextColor="Black"
+                                Margin="10,0,5,0" />
+                            <Border
+                                Padding="15,5"
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 12">
+                                <VerticalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <Grid
+                                            ColumnDefinitions="*,*,*,*"
+                                            RowDefinitions="Auto,Auto">
+                                            <Label
+                                                Grid.Column="0"
+                                                Grid.Row="0"
+                                                Text="Menstrual 🩸"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                TextColor="Black"
+                                                Margin="0,0,0,0" />
+                                            <BoxView
+                                                Grid.Column="1"
+                                                Grid.Row="0"
+                                                HeightRequest="13"
+                                                WidthRequest="40"
+                                                Color="#FFCDD2"
+                                                CornerRadius="2.5"
+                                                Margin="5,0,0,0" />
+                                            <Label
+                                                Grid.Column="2"
+                                                Grid.Row="0"
+                                                Text="Follicular 🌱"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                TextColor="Black"
+                                                Margin="10,0,0,0" />
+                                            <BoxView
+                                                Grid.Column="3"
+                                                Grid.Row="0"
+                                                HeightRequest="13"
+                                                WidthRequest="40"
+                                                Color="#C8E6C9"
+                                                CornerRadius="2.5"
+                                                Margin="5,0,0,0" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                Text="Ovulation 👶🏼"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                TextColor="Black"
+                                                Margin="0,5,0,0" />
+                                            <BoxView
+                                                Grid.Row="1"
+                                                Grid.Column="1"
+                                                HeightRequest="13"
+                                                WidthRequest="40"
+                                                Color="{StaticResource ThemeClr2}"
+                                                CornerRadius="2.5"
+                                                Margin="5,5,0,0" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="2"
+                                                Text="Luteal 🌙"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                TextColor="Black"
+                                                Margin="10,5,0,0" />
+                                            <BoxView
+                                                Grid.Row="1"
+                                                Grid.Column="3"
+                                                HeightRequest="13"
+                                                WidthRequest="40"
+                                                Color="#FFF9C4"
+                                                CornerRadius="2.5"
+                                                Margin="5,5,0,0" />
+                                        </Grid>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            </Border>
+                        </HorizontalStackLayout>
+                        <Label
+                            Text="{Binding FooterMessage}"
+                            FontSize="14"
+                            FontAttributes="Bold, Italic"
+                            TextColor="{StaticResource ThemeClrMainDark}"
+                            HorizontalTextAlignment="Center"
+                            Margin="20,20,20,0" />
+
+                        <custButtons:GradientButton
+                            Text="Edit Cycle Days"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            Margin="0,15,0,15"
+                            CornerRadius="25"
+                            ButtonPadding="15,7"
+                            HorizontalOptions="Center"
+                            ImageIconSource="edit_white_icon.png"
+                            HasImageIcon="True"
+                            IconMargin="0,0,10,0"
+                            ButtonTextColor="White"
+                            GradientColorLeft="{StaticResource ThemeClr3}"
+                            GradientColorRight="{StaticResource ThemeClr2}"
+                            Tapped="EditCycleDaysTapped" />
+                        
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="Track" />
+            </Grid>
+        </ContentView>
+
+        <!-- Bottom Tray for Phase Details -->
+        <components:BottomSheetTray
+            x:Name="DayDetailsTray"
+            Title="Phase Details"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <components:BottomSheetTray.TrayContent>
+
+                <Grid
+                    RowDefinitions="Auto,*">
+
+                    <VerticalStackLayout
+                        Grid.Row="0">
+                        <Label
+                            Text="{Binding Source={x:Reference MainPageContainer}, Path=BindingContext.SelectedPhaseTitle}"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource ThemeClr3}"
+                            HorizontalTextAlignment="Center"
+                            Margin="0,0,0,10" />
+                        <BoxView
+                            HeightRequest="0.5"
+                            WidthRequest="320"
+                            Color="{StaticResource ThemeClr3}"
+                            CornerRadius="2.5"
+                            Margin="5,0,0,5" />
+                    </VerticalStackLayout>
+                    <ScrollView
+                        Grid.Row="1"
+                        Padding="10">
+                        <VerticalStackLayout>
+                            <Label
+                                Text="{Binding Source={x:Reference MainPageContainer}, Path=BindingContext.SelectedPhaseDescription}"
+                                FontSize="12"
+                                TextColor="{StaticResource ThemeGray2}"
+                                HorizontalTextAlignment="Center"
+                                Margin="0,0,0,10" />
+
+                            <Label 
+                                Text="Tips"
+                                HorizontalTextAlignment="Center"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                TextColor="{StaticResource ThemeClr2}"
+                                Margin="0,0,0,5"/>
+                            <CollectionView
+                                ItemsSource="{Binding Source={x:Reference MainPageContainer}, Path=BindingContext.SelectedPhaseCards}"
+                                SelectionMode="None">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate
+                                        x:DataType="dashCard:ModuleDashboardCard">
+                                        <Border
+                                            Margin="0,5,0,5"
+                                            Stroke="{StaticResource ThemeClr3}"
+                                            StrokeShape="RoundRectangle 16"
+                                            Padding="10">
+                                            <Border.Background>
+                                                <LinearGradientBrush
+                                                    StartPoint="0,0"
+                                                    EndPoint="1,1">
+                                                    <GradientStop
+                                                        Color="{StaticResource ThemeClr3}"
+                                                        Offset="0.0" />
+                                                    <GradientStop
+                                                        Color="{StaticResource ThemeClrMain}"
+                                                        Offset="1.0" />
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                            <VerticalStackLayout>
+                                                <Label
+                                                    Text="{Binding Title}"
+                                                    FontSize="16"
+                                                    FontAttributes="Bold"
+                                                    TextColor="White"
+                                                    HorizontalTextAlignment="Center" />
+                                                <Image
+                                                    Source="{Binding ImageSource}"
+                                                    Aspect="AspectFit"
+                                                    HeightRequest="60"
+                                                    WidthRequest="60"
+                                                    HorizontalOptions="Center" />
+                                                <Label
+                                                    Text="{Binding Subtitle}"
+                                                    FontSize="13"
+                                                    TextColor="{StaticResource White}"
+                                                    HorizontalTextAlignment="Center" />
+                                                <Label
+                                                    Text="{Binding Tip}"
+                                                    FontSize="12"
+                                                    FontAttributes="Italic,Bold"
+                                                    TextColor="Yellow"
+                                                    Margin="0,2,0,0"
+                                                    HorizontalTextAlignment="Center" />
+                                            </VerticalStackLayout>
+                                        </Border>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </VerticalStackLayout>
+                    </ScrollView>
+                </Grid>
+            </components:BottomSheetTray.TrayContent>
+        </components:BottomSheetTray>
+
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoPopup"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:EditCycleLengthsModal
+            x:Name="EditCyclesModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

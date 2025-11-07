@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Components.Controls.Switch"
+    x:Name="RootSwitch"
+    HeightRequest="25"
+    WidthRequest="53">
+
+    <Border
+        Stroke="Transparent"
+        Background="Transparent"
+        StrokeShape="RoundRectangle 15">
+        <Grid
+            x:Name="SwitchContainer"
+            BackgroundColor="{Binding TrackColor}"
+            Padding="3"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="25"
+            WidthRequest="53"
+            Background="{Binding TrackColor}">
+            <!-- Track -->
+            <Border
+                x:Name="Track"
+                BackgroundColor="{Binding TrackColor}"
+                StrokeThickness="0"
+                Stroke="Transparent"
+                StrokeShape="RoundRectangle 32" />
+
+            <!-- Thumb -->
+            <Border
+                x:Name="Thumb"
+                WidthRequest="22"
+                HeightRequest="22"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 28"
+                Stroke="Transparent"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                TranslationX="0">
+            </Border>
+
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="OnToggleTapped" />
+            </Grid.GestureRecognizers>
+        </Grid>
+    </Border>
+</ContentView>

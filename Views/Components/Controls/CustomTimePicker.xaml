@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Components.Controls.CustomTimePicker"
+    x:Name="Root">
+
+    <Border
+        HorizontalOptions="Start"
+        Stroke="Transparent"
+        Background="{StaticResource ThemeLightGray}"
+        StrokeShape="RoundRectangle 8"
+        Padding="12,0">
+        <Border.GestureRecognizers>
+            <TapGestureRecognizer
+                Tapped="OnIconTapped" />
+        </Border.GestureRecognizers>
+        <Border.Shadow>
+            <Shadow
+                Brush="Black"
+                Opacity="0.2"
+                Offset="0,3"
+                Radius="6" />
+        </Border.Shadow>
+        <HorizontalStackLayout>
+            <TimePicker
+                x:Name="InnerTimePicker"
+                Time="{Binding SelectedTime, Source={x:Reference Root}, Mode=TwoWay}"
+                TextColor="{Binding TimeColor, Source={x:Reference Root}}"
+                FontAttributes="Bold"
+                FontFamily="Arial Black"
+                Format="HH:mm"
+                Margin="0,-5,0,-5"
+                FontSize="{Binding FontSize, Source={x:Reference Root}}" />
+            <Image
+                Source="chev_down.png"
+                WidthRequest="15"
+                Aspect="AspectFit"
+                Margin="5,0,0,0"
+                VerticalOptions="Center" />
+        </HorizontalStackLayout>
+    </Border>
+</ContentView>

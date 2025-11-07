@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Dashboard.PartnerSharingPage"
+    Background="White"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:dashComp3="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashModals="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:conv="clr-namespace:OvulaeApp.Helpers.UI.Convertors.Chat"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Shared"
+    x:Name="Root"
+    x:DataType="vm:PartnerSharingViewModel">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:BoolSelectorConverter
+                x:Key="InverseBoolConverter"
+                TrueValue="False"
+                FalseValue="True" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <Grid
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            RowDefinitions="Auto,*,Auto">
+
+            <!-- Header -->
+            <dashTabs:DashboardHeader
+                Grid.Row="0"
+                x:Name="Header"
+                LeftIconType="Menu" />
+
+            <!-- Body -->
+            <ScrollView
+                Grid.Row="1">
+                <VerticalStackLayout
+                    Padding="20,10">
+
+                    <!-- Title -->
+                    <Label
+                        Text="{Binding Title}"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource ThemeClr3}"
+                        HorizontalOptions="Center" />
+
+                    <Border
+                        HorizontalOptions="Center"
+                        Padding="25,10"
+                        StrokeShape="RoundRectangle 25"
+                        Stroke="Transparent"
+                        Margin="0,15,0,0">
+                        <Border.Background>
+                            <RadialGradientBrush
+                                Center="0.5,0.5"
+                                Radius="0.5">
+                                <GradientStop
+                                    Color="#0097b2"
+                                    Offset="0.0" />
+                                <GradientStop
+                                    Color="#7ed957"
+                                    Offset="1.0" />
+                            </RadialGradientBrush>
+                        </Border.Background>
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="Black"
+                                Opacity="0.4"
+                                Offset="0,4"
+                                Radius="6" />
+                        </Border.Shadow>
+                        <Image
+                            Source="{Binding HeroImage}"
+                            Aspect="AspectFit" />
+                    </Border>
+
+                    <!-- If not sharing -->
+                    <VerticalStackLayout
+                        Spacing="8"
+                        Padding="10,0"
+                        Margin="0,15,0,0"
+                        IsVisible="{Binding IsSharing, Converter={StaticResource InverseBoolConverter}}">
+
+                        <Label
+                            Text="{Binding SubTitleNotSharing}"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource ThemeClr2}"
+                            HorizontalTextAlignment="Center"
+                            Margin="0,4,0,0" />
+
+                        <!-- Intro Paragraph -->
+                        <Label
+                            Text="Partner Sharing in Ovulae helps you and your partner stay connected, informed, and supported throughout your journey. Here’s how it can help:"
+                            FontSize="12"
+                            TextColor="{StaticResource Black}"
+                            HorizontalTextAlignment="Center"
+                            Margin="0,0,0,0" />
+
+
+                        <!-- CTA Button -->
+                        <Border
+                            x:Name="QLinkLogDay"
+                            Stroke="Transparent"
+                            StrokeShape="RoundRectangle 25"
+                            StrokeThickness="1.2"
+                            Padding="15,8"
+                            Margin="0,5,0,0"
+                            HorizontalOptions="Center">
+                            <Border.Background>
+                                <LinearGradientBrush
+                                    StartPoint="0,0"
+                                    EndPoint="1,1">
+                                    <GradientStop
+                                        Color="{StaticResource ThemeClr3}"
+                                        Offset="0.0" />
+                                    <GradientStop
+                                        Color="{StaticResource ThemeClr2}"
+                                        Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.4"
+                                    Offset="0,4"
+                                    Radius="6" />
+                            </Border.Shadow>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="ShareWithYourPartnerTapped" />
+                            </Border.GestureRecognizers>
+                            <HorizontalStackLayout
+                                Spacing="8"
+                                HorizontalOptions="Center">
+
+                                <Image
+                                    Source="partner_sharing_side_icon.png"
+                                    Aspect="AspectFit"
+                                    WidthRequest="20"
+                                    HeightRequest="20"
+                                    VerticalOptions="Center" />
+
+                                <Label
+                                    Text="Invite Your Partner"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    VerticalOptions="Center"
+                                    FontFamily="Arial" />
+                            </HorizontalStackLayout>
+                        </Border>
+
+                        <!-- Section Title -->
+                        <Label
+                            Text="Benefits of Sharing"
+                            FontSize="22"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource ThemeClr3}"
+                            HorizontalTextAlignment="Center"
+                            Margin="0,15,0,0" />
+
+                        <Label
+                            Text="🔒 Secure Sharing"
+                            FontSize="15"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource ThemeClrMain}"
+                            HorizontalTextAlignment="Start"
+                            Margin="0,10,0,0" />
+                        <Label
+                            Text="Your cycle milestones and fertile window insights are shared securely with your partner."
+                            FontSize="13"
+                            FontAttributes="Italic"
+                            TextColor="{StaticResource ThemeGray2}"
+                            HorizontalTextAlignment="Start" />
+
+                        <Label
+                            Text="💞 Stay Connected"
+                            FontSize="15"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource ThemeClrMain}"
+                            HorizontalTextAlignment="Start"
+                            Margin="0,15,0,0" />
+                        <Label
+                            Text="Your partner stays emotionally connected and informed throughout your journey."
+                            FontSize="13"
+                            FontAttributes="Italic"
+                            TextColor="{StaticResource ThemeGray2}"
+                            HorizontalTextAlignment="Start" />
+
+                        <Label
+                            Text="🆓 100% Free"
+                            FontSize="15"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource ThemeClrMain}"
+                            HorizontalTextAlignment="Start"
+                            Margin="0,15,0,0" />
+                        <Label
+                            Text="Partner Sharing is completely free with your Ovulae app."
+                            FontSize="13"
+                            FontAttributes="Italic"
+                            TextColor="{StaticResource ThemeGray2}"
+                            HorizontalTextAlignment="Start" />
+
+                        <Label
+                            Text="🎛️ Full Control"
+                            FontSize="15"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource ThemeClrMain}"
+                            HorizontalTextAlignment="Start"
+                            Margin="0,15,0,0" />
+                        <Label
+                            Text="You choose exactly what your partner can view and can update or stop sharing anytime."
+                            FontSize="13"
+                            FontAttributes="Italic"
+                            TextColor="{StaticResource ThemeGray2}"
+                            HorizontalTextAlignment="Start" />
+
+                    </VerticalStackLayout>
+
+                    <!-- If sharing with a partner -->
+                    <StackLayout
+                        x:Name="PartnerDetailsView"
+                        IsVisible="{Binding IsSharing}"
+                        Margin="0,15,0,0">
+
+                        <Label
+                            Text="{Binding SubTitleSharing}"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center"
+                            TextColor="{StaticResource ThemeClrMainDark}" />
+
+                        <Border
+                            Stroke="Transparent"
+                            Background="{StaticResource ThemeClrPurple}"
+                            StrokeShape="RoundRectangle 12"
+                            Padding="15,5"
+                            Margin="0,10,0,0">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.2"
+                                    Offset="0,4"
+                                    Radius="6" />
+                            </Border.Shadow>
+                            <VerticalStackLayout>
+                                <Label
+                                    Text="Partner Details"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="Center"
+                                    Margin="0,0,0,10"
+                                    TextColor="{StaticResource Black}" />
+                                <Grid
+                                    RowDefinitions="28,28,28,28,28,Auto"
+                                    ColumnDefinitions="Auto, *">
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Text="Name"
+                                        FontSize="14"
+                                        FontAttributes="Italic"
+                                        TextColor="{StaticResource ThemeGray2}" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Text="{Binding Fullname}"
+                                        FontSize="14"
+                                        Margin="0,0,10,0"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="End"
+                                        TextColor="{StaticResource ThemeClr3}" />
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Text="Email"
+                                        FontSize="14"
+                                        FontAttributes="Italic"
+                                        TextColor="{StaticResource ThemeGray2}" />
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{Binding Email}"
+                                        FontSize="14"
+                                        Margin="0,0,10,0"
+                                        HorizontalTextAlignment="End"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource ThemeClr3}" />
+                                    <Label
+                                        Grid.Row="2"
+                                        Grid.Column="0"
+                                        Text="Phone"
+                                        FontSize="14"
+                                        FontAttributes="Italic"
+                                        TextColor="{StaticResource ThemeGray2}" />
+                                    <Label
+                                        Grid.Row="2"
+                                        Grid.Column="1"
+                                        Text="{Binding PhoneNumber}"
+                                        FontSize="14"
+                                        Margin="0,0,10,0"
+                                        HorizontalTextAlignment="End"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource ThemeClr3}" />
+                                    <Label
+                                        Grid.Row="3"
+                                        Grid.Column="0"
+                                        Text="Date Shared"
+                                        FontSize="14"
+                                        FontAttributes="Italic"
+                                        TextColor="{StaticResource ThemeGray2}" />
+                                    <Label
+                                        Grid.Row="3"
+                                        Grid.Column="1"
+                                        Text="{Binding Date}"
+                                        FontSize="14"
+                                        Margin="0,0,10,0"
+                                        HorizontalTextAlignment="End"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource ThemeClr3}" />
+                                    <Label
+                                        Grid.Row="4"
+                                        Grid.Column="0"
+                                        Text="Status"
+                                        FontSize="14"
+                                        FontAttributes="Italic"
+                                        TextColor="{StaticResource ThemeGray2}" />
+                                    <Label
+                                        Grid.Row="4"
+                                        Grid.Column="1"
+                                        Text="{Binding Status}"
+                                        FontSize="14"
+                                        Margin="0,0,10,0"
+                                        HorizontalTextAlignment="End"
+                                        FontAttributes="Bold">
+
+                                        <Label.Style>
+                                            <Style
+                                                TargetType="Label">
+                                                <Setter
+                                                    Property="TextColor"
+                                                    Value="Green" />
+                                                <Style.Triggers>
+                                                    <DataTrigger
+                                                        TargetType="Label"
+                                                        Binding="{Binding Revoked}"
+                                                        Value="True">
+                                                        <Setter
+                                                            Property="TextColor"
+                                                            Value="Red" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Label.Style>
+                                    </Label>
+                                    <Label
+                                        Grid.Row="5"
+                                        Grid.Column="0"
+                                        Text="Date Revoked"
+                                        FontSize="14"
+                                        FontAttributes="Italic"
+                                        IsVisible="{Binding Revoked}"
+                                        TextColor="{StaticResource ThemeGray2}" />
+                                    <Label
+                                        Grid.Row="5"
+                                        Grid.Column="1"
+                                        Text="{Binding RevokeDate}"
+                                        FontSize="14"
+                                        Margin="0,0,10,0"
+                                        HorizontalTextAlignment="End"
+                                        FontAttributes="Bold"
+                                        IsVisible="{Binding Revoked}"
+                                        TextColor="{StaticResource ThemeClr3}" />
+                                </Grid>
+                                <Border
+                                    Padding="12,5"
+                                    StrokeShape="RoundRectangle 25"
+                                    Stroke="Transparent"
+                                    HorizontalOptions="Center"
+                                    Margin="0,20,0,0"
+                                    IsVisible="{Binding Revoked}">
+                                    <Border.Background>
+                                        <LinearGradientBrush
+                                            StartPoint="0,0"
+                                            EndPoint="1,1">
+                                            <GradientStop
+                                                Color="Crimson"
+                                                Offset="0.0" />
+                                            <GradientStop
+                                                Color="Tomato"
+                                                Offset="1.0" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border.Shadow>
+                                        <Shadow
+                                            Brush="Black"
+                                            Opacity="0.4"
+                                            Offset="0,4"
+                                            Radius="6" />
+                                    </Border.Shadow>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="OnDeletePartnerClicked" />
+                                    </Border.GestureRecognizers>
+                                    <HorizontalStackLayout>
+                                        <Image
+                                            Source="close_icon_white.png"
+                                            Aspect="AspectFit"
+                                            WidthRequest="10"
+                                            HeightRequest="10"
+                                            VerticalOptions="Center" />
+                                        <Label
+                                            Text="Delete"
+                                            FontSize="12"
+                                            VerticalOptions="Center"
+                                            TextColor="White"
+                                            FontAttributes="Bold"
+                                            Margin="7,0,0,0" />
+                                    </HorizontalStackLayout>
+                                </Border>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- Permissions -->
+                        <VerticalStackLayout
+                            Margin="5,20,5,0"
+                            IsVisible="False">
+                            <Label
+                                Text="Partner Access Permissions:"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                Margin="0,0,0,10"
+                                TextColor="{StaticResource ThemeClrMain}" />
+                            <Grid
+                                ColumnDefinitions="*,Auto">
+                                <Label
+                                    Text="View Cycle Milestones"
+                                    Grid.Column="0"
+                                    FontSize="14"
+                                    VerticalOptions="Center"
+                                    TextColor="Black" />
+                                <customCtrl:Switch
+                                    x:Name="a2"
+                                    Grid.Column="1" />
+                            </Grid>
+                            <Grid
+                                ColumnDefinitions="*,Auto"
+                                Margin="0,5,0,0">
+                                <Label
+                                    Text="View Fertile Window Insights"
+                                    Grid.Column="0"
+                                    FontSize="14"
+                                    VerticalOptions="Center"
+                                    TextColor="Black" />
+                                <customCtrl:Switch
+                                    x:Name="b2"
+                                    Grid.Column="1" />
+                            </Grid>
+                            <Grid
+                                ColumnDefinitions="*,Auto"
+                                Margin="0,5,0,0">
+                                <Label
+                                    Text="View Symptom Logs"
+                                    Grid.Column="0"
+                                    FontSize="14"
+                                    VerticalOptions="Center"
+                                    TextColor="Black" />
+                                <customCtrl:Switch
+                                    x:Name="c2"
+                                    Grid.Column="1" />
+                            </Grid>
+                        </VerticalStackLayout>
+
+                        <Border
+                            x:Name="SaveChangesButton"
+                            IsVisible="False"
+                            Padding="15,8"
+                            StrokeShape="RoundRectangle 25"
+                            HorizontalOptions="Center"
+                            Margin="0,20,0,0"
+                            Stroke="Transparent">
+                            <Border.Background>
+                                <LinearGradientBrush
+                                    StartPoint="0,0"
+                                    EndPoint="1,1">
+                                    <GradientStop
+                                        Color="{StaticResource ThemeClrMain}"
+                                        Offset="0.0" />
+                                    <GradientStop
+                                        Color="{StaticResource ThemeClr2}"
+                                        Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.4"
+                                    Offset="0,4"
+                                    Radius="6" />
+                            </Border.Shadow>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="SavePermissionsButton" />
+                            </Border.GestureRecognizers>
+                            <Label
+                                Text="Save Changes"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                VerticalOptions="Center"
+                                TextColor="White" />
+                        </Border>
+
+                        <Border
+                            Padding="12,8"
+                            StrokeShape="RoundRectangle 25"
+                            Stroke="Transparent"
+                            HorizontalOptions="Center"
+                            Margin="0,20,0,0"
+                            IsVisible="{Binding Revoked, Converter={StaticResource InverseBoolConverter}}">
+                            <Border.Background>
+                                <LinearGradientBrush
+                                    StartPoint="0,0"
+                                    EndPoint="1,1">
+                                    <GradientStop
+                                        Color="Crimson"
+                                        Offset="0.0" />
+                                    <GradientStop
+                                        Color="Tomato"
+                                        Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.4"
+                                    Offset="0,4"
+                                    Radius="6" />
+                            </Border.Shadow>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="OnRevokePartnerClicked" />
+                            </Border.GestureRecognizers>
+                            <HorizontalStackLayout>
+                                <Image
+                                    Source="close_icon_white.png"
+                                    Aspect="AspectFit"
+                                    WidthRequest="15"
+                                    HeightRequest="15"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    Text="Revoke Partner Access"
+                                    FontSize="16"
+                                    VerticalOptions="Center"
+                                    TextColor="White"
+                                    FontAttributes="Bold"
+                                    Margin="7,0,0,0" />
+                            </HorizontalStackLayout>
+                        </Border>
+
+                        <Border
+                            Padding="12,8"
+                            StrokeShape="RoundRectangle 25"
+                            Stroke="Transparent"
+                            HorizontalOptions="Center"
+                            Margin="0,20,0,0"
+                            IsVisible="{Binding Revoked}">
+                            <Border.Background>
+                                <LinearGradientBrush
+                                    StartPoint="0,0"
+                                    EndPoint="1,1">
+                                    <GradientStop
+                                        Color="#7ed957"
+                                        Offset="0.0" />
+                                    <GradientStop
+                                        Color="DarkGreen"
+                                        Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.4"
+                                    Offset="0,4"
+                                    Radius="6" />
+                            </Border.Shadow>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="OnReActivatePartnerClicked" />
+                            </Border.GestureRecognizers>
+                            <HorizontalStackLayout>
+                                <Image
+                                    Source="partner_sharing_side_icon.png"
+                                    Aspect="AspectFit"
+                                    WidthRequest="15"
+                                    HeightRequest="15"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    Text="ReActivate Partner Access"
+                                    FontSize="16"
+                                    VerticalOptions="Center"
+                                    TextColor="White"
+                                    FontAttributes="Bold"
+                                    Margin="7,0,0,0" />
+                            </HorizontalStackLayout>
+                        </Border>
+
+                        <Border
+                            Stroke="Transparent"
+                            StrokeShape="RoundRectangle 25"
+                            StrokeThickness="1.2"
+                            Padding="15,8"
+                            Margin="0,5,0,0"
+                            HorizontalOptions="Center"
+                            IsVisible="{Binding Revoked}">
+                            <Border.Background>
+                                <LinearGradientBrush
+                                    StartPoint="0,0"
+                                    EndPoint="1,1">
+                                    <GradientStop
+                                        Color="{StaticResource ThemeClr3}"
+                                        Offset="0.0" />
+                                    <GradientStop
+                                        Color="{StaticResource ThemeClr2}"
+                                        Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.4"
+                                    Offset="0,4"
+                                    Radius="6" />
+                            </Border.Shadow>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="ShareWithYourPartnerTapped" />
+                            </Border.GestureRecognizers>
+                            <HorizontalStackLayout
+                                Spacing="8"
+                                HorizontalOptions="Center">
+
+                                <Image
+                                    Source="partner_sharing_side_icon.png"
+                                    Aspect="AspectFit"
+                                    WidthRequest="20"
+                                    HeightRequest="20"
+                                    VerticalOptions="Center" />
+
+                                <Label
+                                    Text="Invite New Partner"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    VerticalOptions="Center"
+                                    FontFamily="Arial" />
+                            </HorizontalStackLayout>
+                        </Border>
+
+                    </StackLayout>
+
+                    <Image
+                        Source="logo_icon.png"
+                        WidthRequest="45"
+                        Aspect="AspectFit"
+                        Margin="0,20,0,10" />
+
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <!-- Bottom Tabs -->
+            <dashTabs:DashboardBottomTab
+                Grid.Row="2"
+                x:Name="BaseTabs"
+                Padding="0,0"
+                ActiveTab="None" />
+
+        </Grid>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PartnerSharingModal
+            x:Name="PartnerSharing"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

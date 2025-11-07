@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.PregnancyTracker.Dashboard.PregnancyDashboardTipsPage"
+    Background="White"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashComp5="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:models="clr-namespace:OvulaeApp.ViewModels.Tips"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.PregnancyTracker"
+    x:DataType="vm:PregnancyTipsViewModel">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+                    <VerticalStackLayout>
+
+                        <Border
+                            Margin="0,-2"
+                            Padding="0,0"
+                            Stroke="Transparent"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand">
+                            <VerticalStackLayout>
+                                <!-- Hero Image -->
+                                <Image
+                                    Source="tips.png"
+                                    Aspect="AspectFit"/>
+
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!--Symptoms -->
+                        <VerticalStackLayout
+                            Margin="0,20,0,0">
+                            <Label
+                                Text="{Binding Title}"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Center"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                Margin="20,0,20,10" />
+
+                            <Label
+                                Text="*Select the tips you have followed"
+                                FontSize="14"
+                                FontAttributes="Italic"
+                                HorizontalTextAlignment="Center"
+                                TextColor="Black"
+                                Margin="20,0,20,10" />
+
+                            <Border
+                                Padding="20,0"
+                                Margin="0,5,0,0"
+                                Background="{StaticResource ThemeLightGray}"
+                                Stroke="Transparent">
+
+                                <VerticalStackLayout
+                                    Margin="0,20,0,20"
+                                    Spacing="20">
+
+                                    <CollectionView
+                                        ItemsSource="{Binding TipsData}"
+                                        x:Name="PregnancyTips">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate
+                                                x:DataType="models:TipViewModel">
+                                                <dashComp5:TipCheckboxCard
+                                                    TitleText="{Binding TipItem.Title}"
+                                                    SubText="{Binding TipItem.Description}"
+                                                    IsChecked="{Binding IsChecked}"
+                                                    Margin="0,10,0,0"
+                                                    TitleTextColor="Black"
+                                                    CheckedTextColor="{StaticResource ThemeClr2}"
+                                                    SubTextColor="{StaticResource ThemeClr3}"
+                                                    ContainerBGColor="{StaticResource ThemeGray}"
+                                                    TitleLabelFontSize="18"
+                                                    SubTextFontSize="12"
+                                                    CheckboxSize="18"
+                                                    Changed="TipCheckboxCard_Changed" />
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+
+                                    <VerticalStackLayout>
+                                        <custCtrl:CustomProgressBar
+                                            x:Name="TipsCompleteBar"
+                                            Progress="40"
+                                            HeightRequest="15"
+                                            WidthRequest="250" />
+                                        <Label
+                                            x:Name="TipsCompleteCount"
+                                            Text="0/8 tips completed today!"
+                                            FontSize="14"
+                                            FontAttributes="Bold"
+                                            HorizontalTextAlignment="Center"
+                                            TextColor="Black"
+                                            Margin="0,5,0,0" />
+                                    </VerticalStackLayout>
+
+                                    <Button
+                                        Text="Save"
+                                        Style="{StaticResource ThemeButton}"
+                                        WidthRequest="100"
+                                        Clicked="SaveTips_Clicked" />
+
+                                </VerticalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <!-- Tip From Dr  -->
+                        <VerticalStackLayout
+                            Margin="20,20,20,0"
+                            IsVisible="False">
+                            <Label
+                                Text="{Binding DrDetails}"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Center"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                Margin="0,0,20,0" />
+
+                            <Label
+                                Text="{Binding MainData.TipsGroup.TipFromDoctor}"
+                                FontSize="12"
+                                FontAttributes="Italic"
+                                HorizontalTextAlignment="Center"
+                                TextColor="{StaticResource ThemeGray2}"
+                                Margin="0,20,20,0" />
+
+
+                        </VerticalStackLayout>
+
+                        <Border
+                            Padding="20,20"
+                            Margin="0,20,0,0"
+                            Background="{StaticResource ThemeClrPurple}"
+                            Stroke="Transparent">
+                            <VerticalStackLayout>
+                                <Label
+                                    Text="✨ Come back tomorrow for new tips!"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="Center"
+                                    TextColor="Black"
+                                    Margin="0,0,20,0" />
+                                <HorizontalStackLayout>
+                                    <Label
+                                        Text="🔔 Enable Daily Tip Reminders"
+                                        FontSize="16"
+                                        HorizontalTextAlignment="Center"
+                                        TextColor="Black"
+                                        Margin="0,20,20,0" />
+                                    <custCtrl:Switch
+                                        Margin="0,20,20,0" />
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- Information Approved  -->
+                        <VerticalStackLayout
+                            Margin="20,40,20,0"
+                            IsVisible="False">
+                            <Label
+                                Text="✅ This information has been reviewed and approved by:"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                Margin="0,0,20,0" />
+
+                            <Label
+                                Text="{Binding Gynacologist}"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                TextColor="Black"
+                                Margin="0,20,20,0" />
+
+                            <Label
+                                Text="(Specialist in Maternal &amp; Fetal Health)"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                TextColor="Black"
+                                Margin="0,5,0,20" />
+
+                            <Image
+                                Source="logo_icon.png"
+                                WidthRequest="45"
+                                Aspect="AspectFit"
+                                Margin="0,20,0,20" />
+
+
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="Learn" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

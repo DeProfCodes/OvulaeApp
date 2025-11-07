@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Components.Modals.SpinnerLoader"
+    x:Name="SpinnerLoaderRoot"
+    IsVisible="False"
+    BackgroundColor="#80000000"
+    InputTransparent="False">
+    <!-- dimmed background -->
+
+    <Grid>
+        <!-- Input-blocking layer -->
+        <BoxView
+            BackgroundColor="Transparent"
+            InputTransparent="False"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill">
+        </BoxView>
+
+        <Border
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Padding="10,20,10,0"
+            BackgroundColor="Transparent"
+            Stroke="Transparent"
+            WidthRequest="250"
+            HeightRequest="150"
+            StrokeShape="RoundRectangle 20"
+            Opacity="1">
+            <VerticalStackLayout
+                Spacing="15">
+                <ActivityIndicator
+                    IsRunning="True"
+                    Color="{StaticResource ThemeClrMain}"
+                    WidthRequest="60"
+                    HeightRequest="60">
+                    <ActivityIndicator.Scale>
+                        <OnPlatform
+                            x:TypeArguments="x:Double">
+                            <On
+                                Platform="iOS"
+                                Value="2" />
+                            <On
+                                Platform="Android"
+                                Value="1" />
+                        </OnPlatform>
+                    </ActivityIndicator.Scale>
+                </ActivityIndicator>
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+</ContentView>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "601572384547",
+    "project_id": "ovulaenotifications",
+    "storage_bucket": "ovulaenotifications.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601572384547:android:e1679acb6da2272ac07696",
+        "android_client_info": {
+          "package_name": "com.ovulae.org.ovulaeapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6KozdP5x_NDtEiDseskTAJibcAKnPqts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

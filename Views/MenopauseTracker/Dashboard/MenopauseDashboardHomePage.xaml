@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.MenopauseTracker.Dashboard.MenopauseDashboardHomePage"
+    Background="White"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.MenopauseTracker"
+    xmlns:moduleVm="clr-namespace:OvulaeApp.ViewModels.Module"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:dashComp2="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:dashComp3="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:models="clr-namespace:OvulaeApp.Models.Dashboard.Education"
+    xmlns:conv="clr-namespace:OvulaeApp.Helpers.UI.Convertors"
+    xmlns:dietModel="clr-namespace:OvulaeShared.ViewModel.Diet;assembly=OvulaeShared"
+    x:DataType="vm:MenopauseTrackViewModel">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:MultiBoolAndConverter
+                x:Key="MultiBoolAndConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+                    <VerticalStackLayout>
+
+                        <dashComp2:DashboardTrackerHeroView
+                            HeightRequest="360"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Start"
+                            IsPregnancyTracker="False"
+                            StartColor="{StaticResource ThemeClrMain}"
+                            EndColor="{StaticResource ThemeClrMain}" />
+
+                        <VerticalStackLayout
+                            Margin="0,-360,0,60"
+                            Spacing="6">
+
+                            <VerticalStackLayout
+                                x:Name="PeriodTrackerHeadSet">
+                                <!-- Title -->
+                                <Border
+                                    BackgroundColor="{StaticResource ThemeClr2}"
+                                    StrokeThickness="0.5"
+                                    StrokeShape="RoundRectangle 20"
+                                    Padding="12,6"
+                                    Stroke="{StaticResource ThemeClrMain}"
+                                    Margin="20,10,20,0"
+                                    HorizontalOptions="Center">
+                                    <Label
+                                        Text="{Binding CurrentPhaseNameTitle}"
+                                        FontSize="18"
+                                        FontAttributes="Bold"
+                                        TextColor="White"
+                                        CharacterSpacing="0.3"
+                                        HorizontalTextAlignment="Center" />
+                                </Border>
+
+                                <Label
+                                    Text=""
+                                    FontSize="12"
+                                    FontAttributes="Italic"
+                                    TextColor="{StaticResource ThemeClr3}"
+                                    CharacterSpacing="0.3"
+                                    Margin="0,5,0,0"
+                                    HorizontalTextAlignment="Center" />
+
+                                <Label
+                                    Text="{Binding CurrentPhaseSubtitle}"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource White}"
+                                    CharacterSpacing="0.3"
+                                    Margin="0,5,0,0"
+                                    HorizontalTextAlignment="Center" />
+                                
+                                <!-- Carousel -->
+                                <ContentView
+                                    x:Name="CarouselWrapper">
+                                    <CarouselView
+                                        x:Name="StageTipsCarousel"
+                                        ItemsSource="{Binding ModuleData.PhaseHighlights}"
+                                        HeightRequest="140"
+                                        IndicatorView="CarouselIndicators"
+                                        Loop="True"
+                                        HorizontalOptions="FillAndExpand"
+                                        Margin="20,10,20,5">
+
+                                        <CarouselView.ItemTemplate>
+                                            <DataTemplate
+                                                x:DataType="moduleVm:ModuleDashboardCard">
+                                                <Border
+                                                    Background="{StaticResource ThemeClrPurple}"
+                                                    Stroke="Transparent"
+                                                    StrokeThickness="1"
+                                                    StrokeShape="RoundRectangle 12"
+                                                    Padding="8,8,8,0"
+                                                    Margin="0,0,0,0">
+                                                    <VerticalStackLayout
+                                                        Spacing="4">
+                                                        <Label
+                                                            Text="{Binding Title}"
+                                                            FontSize="16"
+                                                            FontAttributes="Bold"
+                                                            TextColor="Black"
+                                                            HorizontalTextAlignment="Center" />
+                                                        <Image
+                                                            Source="{Binding ImageSource}"
+                                                            Aspect="AspectFit"
+                                                            WidthRequest="60"
+                                                            HeightRequest="60" />
+                                                        <Label
+                                                            Text="{Binding Subtitle}"
+                                                            FontSize="13"
+                                                            TextColor="{StaticResource ThemeGray2}"
+                                                            HorizontalTextAlignment="Center" />
+                                                    </VerticalStackLayout>
+                                                </Border>
+                                            </DataTemplate>
+                                        </CarouselView.ItemTemplate>
+                                    </CarouselView>
+                                </ContentView>
+
+                                <IndicatorView
+                                    x:Name="CarouselIndicators"
+                                    IndicatorColor="White"
+                                    SelectedIndicatorColor="{StaticResource ThemeClr2}"
+                                    HorizontalOptions="Center"
+                                    Margin="0,2,0,10" />
+
+                                <Grid
+                                    ColumnDefinitions="Auto,*,Auto"
+                                    Margin="0,0,0,0">
+                                    <Border
+                                        Grid.Column="0"
+                                        BackgroundColor="Transparent"
+                                        StrokeThickness="1"
+                                        Padding="10,6"
+                                        Stroke="Transparent"
+                                        WidthRequest="35"
+                                        Margin="5,0,0,0"
+                                        HorizontalOptions="Start">
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Command="{Binding GoToPreviousPhaseCommand}" />
+                                        </Border.GestureRecognizers>
+                                        <Image
+                                            Source="left_chev_white.png"
+                                            HeightRequest="22"
+                                            Margin="0,0,0,0"
+                                            VerticalOptions="Center"
+                                            Grid.Column="1" />
+                                    </Border>
+                                    <Border
+                                    Grid.Column="1"
+                                    Stroke="Transparent"
+                                    Background="{StaticResource ThemeClr2}"
+                                    Padding="15,4"
+                                    StrokeShape="RoundRectangle 8"
+                                    Margin="0,0,0,0"
+                                    HeightRequest="28"
+                                    HorizontalOptions="Center">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="ReadMoreLinkTapped" />
+                                    </Border.GestureRecognizers>
+                                    <Grid
+                                        ColumnDefinitions="*,Auto"
+                                        HorizontalOptions="Center">
+                                        <Label
+                                            Text="Read More"
+                                            FontSize="12"
+                                            FontAttributes="Bold"
+                                            TextColor="White"
+                                            HorizontalOptions="Center" />
+                                        <Image
+                                            Source="right_chev_white.png"
+                                            HeightRequest="11"
+                                            Margin="10,2,0,0"
+                                            VerticalOptions="Center"
+                                            Grid.Column="1" />
+                                    </Grid>
+                                </Border>
+                                    <Border
+                                        Grid.Column="2"
+                                        BackgroundColor="Transparent"
+                                        StrokeThickness="1"
+                                        Padding="10,6"
+                                        Stroke="Transparent"
+                                        WidthRequest="35"
+                                        Margin="0,0,0,0"
+                                        HorizontalOptions="Start">
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Command="{Binding GoToNextPhaseCommand}" />
+                                        </Border.GestureRecognizers>
+                                        <Image
+                                            Source="right_chev_white.png"
+                                            HeightRequest="22"
+                                            Margin="0,0,0,0"
+                                            VerticalOptions="Center"
+                                            Grid.Column="1" />
+                                    </Border>
+                                </Grid>
+                                <Label
+                                    Text="RESET"
+                                    FontSize="13"
+                                    Margin="0,5,0,0"
+                                    TextColor="{StaticResource ThemeClr3}"
+                                    FontAttributes="Bold"
+                                    TextDecorations="Underline"
+                                    IsVisible="{Binding ResetPhaseButtonVisible}"
+                                    HorizontalTextAlignment="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding GoToCurrentPhaseCommand}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </VerticalStackLayout>
+
+                        </VerticalStackLayout>
+
+                        <!-- Highlight Text -->
+                        <VerticalStackLayout
+                            Padding="20,0"
+                            Margin="0,0,0,0">
+                            <Label
+                                Text="{Binding CurrentPhaseNameTitle}"
+                                FontSize="20"
+                                HorizontalTextAlignment="Center"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                Margin="0,0,0,0" />
+                            <Label
+                                Text="{Binding ModuleData.PhaseSummary}"
+                                FontSize="12"
+                                HorizontalTextAlignment="Center"
+                                FontAttributes="Italic"
+                                TextColor="{StaticResource Black}"
+                                Margin="0,15,0,0" />
+                        </VerticalStackLayout>
+
+                        <!-- Log My Day -->
+                        <VerticalStackLayout
+                            Margin="0,20,0,0"
+                            Spacing="4"
+                            IsVisible="True"
+                            HorizontalOptions="Center">
+
+                            <!-- CTA Button -->
+                            <Border
+                                x:Name="QLinkLogDay"
+                                Background="{StaticResource ThemeClrMain}"
+                                Stroke="Transparent"
+                                StrokeShape="RoundRectangle 12"
+                                StrokeThickness="1.2"
+                                Padding="25,6"
+                                HorizontalOptions="Center">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="LogMyDayTapped" />
+                                </Border.GestureRecognizers>
+                                <Border.Shadow>
+                                    <Shadow
+                                        Brush="Black"
+                                        Opacity="0.2"
+                                        Offset="0,4"
+                                        Radius="6" />
+                                </Border.Shadow>
+                                <HorizontalStackLayout
+                                    Spacing="8"
+                                    HorizontalOptions="Center">
+
+                                    <Image
+                                        Source="log_edit2.png"
+                                        Aspect="AspectFit"
+                                        WidthRequest="20"
+                                        HeightRequest="20"
+                                        VerticalOptions="Center" />
+
+                                    <Label
+                                        Text="Log My Day"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        VerticalOptions="Center"
+                                        FontFamily="Arial" />
+                                </HorizontalStackLayout>
+                            </Border>
+
+                            <!-- Description -->
+                            <Label
+                                Text="Track your hot flashes, mood shifts, sleep &amp; more ✨"
+                                FontSize="11"
+                                FontAttributes="Italic"
+                                HorizontalTextAlignment="Center"
+                                TextColor="{StaticResource ThemeGray2}" />
+                            
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Margin="0,5,0,0">
+                            <Border
+                                Margin="0,5,0,0"
+                                Background="WhiteSmoke"
+                                Stroke="Transparent"
+                                StrokeShape="RoundRectangle 12"
+                                Padding="0,0">
+                                <VerticalStackLayout>
+                                    <dashComp2:EducationalBooksListingRow
+                                        x:Name="RecommendedRow"
+                                        ListingTitle="Recommened Articles For You"
+                                        LabelTextColor="{StaticResource ThemeClrMain}"
+                                        LabelFontSize="16"
+                                        Title="{Binding EducationGroupsCovers[0].CoversHeading}"
+                                        Items="{Binding EducationGroupsCovers[0].EducationCovers}"
+                                        LabelMargin="20,0,0,0"
+                                        CoverStroke="Transparent" />
+                                </VerticalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="Home" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoPopup"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>
+
+

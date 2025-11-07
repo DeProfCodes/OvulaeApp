@@ -1,0 +1,1255 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.PregnancyTracker.Dashboard.PregnancyDashboardDayLoggerPage"
+    Background="White"
+    xmlns:viewmodels="clr-namespace:OvulaeApp.ViewModels.Shared"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:dashComp2="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <Grid
+            RowDefinitions="Auto,*,Auto"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+
+            <!-- Header -->
+            <dashTabs:DashboardHeader
+                Grid.Row="0"
+                x:Name="Header"
+                LeftIconType="Menu" />
+
+            <!-- Body -->
+            <ScrollView
+                Grid.Row="1">
+                <VerticalStackLayout>
+
+                    <Border
+                        Margin="0,-2"
+                        Padding="0,0"
+                        Stroke="Transparent"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand">
+                        <VerticalStackLayout>
+                            <!-- Hero Image -->
+                            <Image
+                                Source="day_logger.png"
+                                Aspect="AspectFit" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Date Navigation -->
+                    <Border
+                        Background="Transparent"
+                        Margin="0,0,0,0"
+                        ZIndex="1000"
+                        Stroke="Transparent"
+                        Padding="5,3">
+                        <Grid
+                            ColumnDefinitions="*,Auto,*">
+                            <!-- Previous Day Button -->
+                            <VerticalStackLayout
+                                x:Name="PrevDayBtn"
+                                Grid.Column="0"
+                                HorizontalOptions="Start">
+                                <Border
+                                    x:Name="PrevDayBtnBrd"
+                                    HeightRequest="40"
+                                    WidthRequest="40"
+                                    Stroke="Transparent"
+                                    StrokeThickness="1"
+                                    Padding="2,4"
+                                    Margin="0,0,0,0"
+                                    StrokeShape="RoundRectangle 8">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="NavigateDays_Tapped" />
+                                    </Border.GestureRecognizers>
+                                    <Image
+                                        Source="left_chev.png"
+                                        Aspect="AspectFit"
+                                        HorizontalOptions="CenterAndExpand" />
+                                </Border>
+                                <Label
+                                    x:Name="PrevDayText"
+                                    FontSize="10"
+                                    HorizontalTextAlignment="Center"
+                                    FontAttributes="Italic,Bold"
+                                    TextColor="{StaticResource ThemeClrMainDark}"
+                                    Margin="0,0,0,0"
+                                    Text="{Binding PreviousDateText}" />
+                            </VerticalStackLayout>
+
+                            <!-- Current Date Display -->
+                            <Label
+                                x:Name="CurrentDateDisplay"
+                                Grid.Column="1"
+                                FontSize="28"
+                                TextTransform="Uppercase"
+                                FontAttributes="Bold"
+                                FontFamily="FredokaBold"
+                                HorizontalTextAlignment="Center"
+                                VerticalOptions="Start"
+                                Padding="0,3,0,0"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                Margin="0,0,0,0"
+                                Text="{Binding DisplayDate}" />
+                            <!-- Next Day Button -->
+                            <VerticalStackLayout
+                                Grid.Column="2"
+                                x:Name="NextDayBtn"
+                                HorizontalOptions="End">
+                                <Border
+                                    x:Name="NextDayBtnBrd"
+                                    HeightRequest="40"
+                                    WidthRequest="40"
+                                    Stroke="Transparent"
+                                    StrokeThickness="1"
+                                    Padding="2,4"
+                                    StrokeShape="RoundRectangle 8">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="NavigateDays_Tapped" />
+                                    </Border.GestureRecognizers>
+                                    <Image
+                                        Source="right_chev.png"
+                                        Aspect="AspectFit"
+                                        HorizontalOptions="CenterAndExpand" />
+                                </Border>
+                                <Label
+                                    x:Name="NextDayText"
+                                    FontSize="10"
+                                    HorizontalTextAlignment="Center"
+                                    FontAttributes="Italic,Bold"
+                                    TextColor="{StaticResource ThemeClrMainDark}"
+                                    Margin="0,0,0,0"
+                                    Text="{Binding NextDateText}" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+                    <Border
+                        Stroke="{StaticResource ThemeClrMain}"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 12"
+                        Background="{StaticResource ThemeClrMain}"
+                        Margin="50,0,50,0">
+                        
+                    </Border>
+
+                    <Border
+                        Stroke="{StaticResource ThemeClr2}"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 12"
+                        Background="{StaticResource ThemeClrMain}"
+                        Margin="15,20,15,0"
+                        x:Name="DoctorNotesContainer"
+                        IsVisible="False"
+                        Padding="20,5,20,20">
+
+                        <VerticalStackLayout>
+                            <Label
+                                TextColor="Yellow"
+                                Text="Doctor's Notes: IMPORTANT!"
+                                FontAttributes="Bold"
+                                FontSize="18"
+                                HorizontalOptions="Center"/>
+                            <Label
+                                TextColor="{StaticResource Black}"
+                                Text="Added on 06/11/2025, 14:56"
+                                FontAttributes="Italic"
+                                FontSize="10"
+                                HorizontalOptions="Center" />
+                            <Label
+                                x:Name="DoctorsNotes" 
+                                TextColor="White"
+                                Margin="0,20,0,0"
+                                Text="This is Doctor's notes some asdhjk  asyd asfncaslk  aslkjhdk asljhdkjlsah kasjhd kasjhdfkjash jkhfkshajkfhsdjkhfjksdhjgfksdhjkfgvhdsjkghfksdjhgdkjs gfsd kskdgfjkdsfkhsdjk hf sdkjfh "
+                                />
+                        </VerticalStackLayout>
+                        
+                    </Border>
+                    
+                    <!-- Moods -->
+                    <VerticalStackLayout>
+
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="MoodsComponent"
+                            Margin="20,20,20,0"
+                            Title="Select your mood today"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            UnselectedTextColor="Black"
+                            IsSingleSelect="True"
+                            SelectionChanged="SelectComponent_SelectionChanged"
+                            UnselectedColor="{StaticResource ThemeGray}"
+                            ItemFontSize="12" />
+
+                        <VerticalStackLayout
+                            x:Name="MoodRatingsContainer"
+                            IsVisible="False"
+                            Margin="20,10,20,0"
+                            Spacing="5">
+
+                            <Label
+                                Text="Rate 1-10"
+                                FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Start"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <custCtrl:Ratings
+                                x:Name="MoodRating"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Border
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 8"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start"
+                                Padding="5">
+                                <Editor
+                                    x:Name="MoodNotes"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    Text=""
+                                    FontSize="14"
+                                    AutoSize="TextChanges"
+                                    Placeholder="Enter anything to add..." />
+                            </Border>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                    <!-- Symptoms -->
+                    <VerticalStackLayout
+                        Margin="20,20,20,0">
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="SymptomsComponent"
+                            Title="Any symptoms you experienced today?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            UnselectedTextColor="Black"
+                            SelectionChanged="SelectComponent_SelectionChanged"
+                            UnselectedColor="{StaticResource ThemeGray}"
+                            ItemFontSize="12" />
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label
+                                    Text="Enter Manually?"
+                                    FontSize="14"
+                                    HorizontalTextAlignment="Center"
+                                    TextColor="Black"
+                                    Margin="10,20,20,0" />
+                                <custCtrl:Switch
+                                    x:Name="ManualSymptomsSwitch"
+                                    Margin="0,20,20,0"
+                                    Toggled="EnterSymptomsManuallySwitch_Toggled" />
+                            </HorizontalStackLayout>
+                            <Border
+                                x:Name="LogManualSymptom"
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 12"
+                                Margin="10,10,0,0"
+                                WidthRequest="250"
+                                HeightRequest="40"
+                                HorizontalOptions="Start"
+                                IsVisible="False">
+                                <Entry
+                                    x:Name="LogManualSymptomText"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    FontSize="14"
+                                    Placeholder="Enter symptoms experienced" />
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Margin="0,10,0,0"
+                            Spacing="7"
+                            x:Name="SymptomsContainerRating"
+                            IsVisible="False">
+
+                            <Label
+                                Text="Rate 1-10"
+                                FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Start"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <custCtrl:Ratings
+                                x:Name="SymptomsRating"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Border
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 8"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start"
+                                Padding="5">
+                                <Editor
+                                    x:Name="SymptomsNotes"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    Text=""
+                                    FontSize="14"
+                                    AutoSize="TextChanges"
+                                    Placeholder="Enter anything to add..." />
+                            </Border>
+
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                    <!-- Complete Pregnancy -->
+                    <Border
+                        Background="{StaticResource ThemeClrPurple}"
+                        Stroke="Transparent"
+                        Padding="0,0"
+                        Margin="0,10,0,0">
+                        <VerticalStackLayout
+                            Margin="0,10,0,10">
+                            <Border
+                                Background="{StaticResource ThemeClrLight2}"
+                                Stroke="Transparent"
+                                StrokeShape="RoundRectangle 12"
+                                StrokeThickness="1.2"
+                                Padding="15,10"
+                                Margin="0,10,0,10"
+                                HorizontalOptions="Center">
+                                <Border.Shadow>
+                                    <Shadow
+                                        Brush="Black"
+                                        Opacity="0.2"
+                                        Offset="0,4"
+                                        Radius="6" />
+                                </Border.Shadow>
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="GivenBirthTapped" />
+                                </Border.GestureRecognizers>
+                                <HorizontalStackLayout
+                                    Spacing="8"
+                                    HorizontalOptions="Center">
+
+                                    <Label
+                                        Text="Complete Pregnancy"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        VerticalOptions="Center"
+                                        FontFamily="Arial" />
+                                </HorizontalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Baby Movements -->
+                    <VerticalStackLayout>
+
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="BabyMovementsComponent"
+                            Margin="20,25,20,0"
+                            Title="Did You Feel Any Baby Movements Today?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            SelectionChanged="SelectComponent_SelectionChanged"
+                            UnselectedTextColor="Black"
+                            UnselectedColor="{StaticResource ThemeGray}"
+                            ItemFontSize="12" />
+
+                        <VerticalStackLayout
+                            x:Name="BabyMovementsRatingsContainer"
+                            IsVisible="False"
+                            Margin="20,10,20,0"
+                            Spacing="5">
+
+                            <Label
+                                Text="Rate 1-10"
+                                FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Start"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <custCtrl:Ratings
+                                x:Name="BabyMovementsRatings"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Border
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 8"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start"
+                                Padding="5">
+                                <Editor
+                                    x:Name="BabyMovementsNotes"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    Text=""
+                                    FontSize="14"
+                                    AutoSize="TextChanges"
+                                    Placeholder="Enter anything to add..." />
+                            </Border>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                    <!-- Enter Message -->
+                    <VerticalStackLayout
+                        Margin="20,20,20,0">
+                        <Label
+                            Text="Write a short reflection, thought, or memory from today"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            TextColor="Black"
+                            Margin="0,20,20,0" />
+                        <Border
+                            Stroke="{StaticResource ThemeClrMain}"
+                            StrokeShape="RoundRectangle 8"
+                            Margin="0,10,0,0"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Start"
+                            Padding="5">
+                            <Editor
+                                x:Name="ReflectionText"
+                                Margin="10,0"
+                                TextColor="Black"
+                                Text=""
+                                FontSize="14"
+                                AutoSize="TextChanges"
+                                Placeholder="Enter a short update of your day" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- Activities -->
+                    <VerticalStackLayout>
+
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="ActivitiesComponent"
+                            Margin="20,25,20,0"
+                            Title="Did you do any of these today?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            UnselectedTextColor="Black"
+                            SelectionChanged="SelectComponent_SelectionChanged"
+                            UnselectedColor="{StaticResource ThemeGray}"
+                            ItemFontSize="12" />
+
+                        <VerticalStackLayout
+                            x:Name="ActivitiesRatingsContainer"
+                            IsVisible="False"
+                            Margin="20,10,20,0"
+                            Spacing="5">
+
+                            <Label
+                                Text="Rate 1-10"
+                                FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Start"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <custCtrl:Ratings
+                                x:Name="ActivitiesRatings"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Border
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 8"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start"
+                                Padding="5">
+                                <Editor
+                                    x:Name="ActivitiesNotes"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    Text=""
+                                    FontSize="14"
+                                    AutoSize="TextChanges"
+                                    Placeholder="Enter anything to add..." />
+                            </Border>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                    <!-- Vitamin -->
+                    <VerticalStackLayout>
+
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="VitaminComponent"
+                            Margin="20,25,20,0"
+                            Title="Did you take any vitamins or supplements today?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            UnselectedTextColor="Black"
+                            SelectionChanged="SelectComponent_SelectionChanged"
+                            UnselectedColor="{StaticResource ThemeGray}"
+                            ItemFontSize="12" />
+
+                        <VerticalStackLayout
+                            x:Name="VitaminsRatingsContainer"
+                            IsVisible="False"
+                            Margin="20,10,20,0"
+                            Spacing="5">
+
+                            <Label
+                                Text="Rate 1-10"
+                                FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Start"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <custCtrl:Ratings
+                                x:Name="VitaminsRatings"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Border
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 8"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start"
+                                Padding="5">
+                                <Editor
+                                    x:Name="VitaminsNotes"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    Text=""
+                                    FontSize="14"
+                                    AutoSize="TextChanges"
+                                    Placeholder="Enter anything to add..." />
+                            </Border>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                    <dashComp:MultiSelectLogItemComponent
+                        x:Name="CheckupsComponent"
+                        Margin="20,25,20,0"
+                        Title="Did you attend any checkups or prenatal visits today?"
+                        SelectedColor="{StaticResource ThemeClrLight2}"
+                        SelectedTextColor="Black"
+                        UnselectedTextColor="Black"
+                        UnselectedColor="{StaticResource ThemeGray}"
+                        ItemFontSize="12" />
+
+                    <dashComp:MultiSelectLogItemComponent
+                        x:Name="UTIComponent"
+                        Margin="20,25,20,0"
+                        IsSingleSelect="True"
+                        Title="Do you get UTI's often?"
+                        SelectedColor="{StaticResource ThemeClrLight2}"
+                        SelectedTextColor="Black"
+                        UnselectedTextColor="Black"
+                        UnselectedColor="{StaticResource ThemeGray}"
+                        ItemFontSize="12" />
+
+                    <dashComp:MultiSelectLogItemComponent
+                        x:Name="WaterIntakeComponent"
+                        Margin="20,25,20,0"
+                        Title="Did you drink water today? How many cups?"
+                        SelectedColor="{StaticResource ThemeClrLight2}"
+                        SelectedTextColor="Black"
+                        UnselectedTextColor="Black"
+                        IsSingleSelect="True"
+                        UnselectedColor="{StaticResource ThemeGray}"
+                        ItemFontSize="12" />
+
+                    <!-- Sleep -->
+                    <VerticalStackLayout>
+
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="SleepComponent"
+                            Margin="20,25,20,0"
+                            Title="How was your sleep today?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            IsSingleSelect="True"
+                            UnselectedTextColor="Black"
+                            SelectionChanged="SelectComponent_SelectionChanged"
+                            UnselectedColor="{StaticResource ThemeGray}"
+                            ItemFontSize="12" />
+
+                        <VerticalStackLayout
+                            x:Name="SleepRatingsContainer"
+                            IsVisible="False"
+                            Margin="20,10,20,0"
+                            Spacing="5">
+
+                            <Label
+                                Text="Rate 1-10"
+                                FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Start"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <custCtrl:Ratings
+                                x:Name="SleepRatings"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Border
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 8"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start"
+                                Padding="5">
+                                <Editor
+                                    x:Name="SleepNotes"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    Text=""
+                                    FontSize="14"
+                                    AutoSize="TextChanges"
+                                    Placeholder="Enter anything to add..." />
+                            </Border>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                    <!-- Blood Pressure -->
+                    <VerticalStackLayout
+                        Margin="20,25,20,0">
+
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="BloodPressureDailyComponent"
+                            Title="Do you take daily blood pressure readings?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            UnselectedTextColor="Black"
+                            IsSingleSelect="True"
+                            SelectionChanged="BloodPressureDailyComponent_SelectionChanged"
+                            UnselectedColor="{StaticResource ThemeGray}"
+                            ItemFontSize="12" />
+
+                        <Border
+                            x:Name="BloodPressureReadingsContainer"
+                            IsVisible="False"
+                            Stroke="{StaticResource ThemeClrMain}"
+                            StrokeThickness="2"
+                            Background="{StaticResource ThemeClrMainLight}"
+                            StrokeShape="RoundRectangle 8"
+                            Margin="0,5,0,0"
+                            Padding="20,5,20,10">
+                            
+                            <VerticalStackLayout>
+
+                                <Label
+                                    Text="Take blood pressure readings"
+                                    FontSize="14"
+                                    VerticalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource Black}" />
+
+                                <Grid
+                                    Margin="0,10,0,0"
+                                    ColumnDefinitions="*,Auto,*">
+
+                                    <VerticalStackLayout
+                                        Grid.Column="0"
+                                        HorizontalOptions="End">
+
+                                        <Label
+                                            Text="Systolic (mmHg)"
+                                            FontSize="11"
+                                            Grid.Row="0"
+                                            VerticalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeGray2}"/>
+
+                                        <custCtrl:NumericStepper
+                                            x:Name="BpSystolicValue"
+                                            Value="80"
+                                            Min="80"
+                                            Max="200"
+                                            Margin="0,1,0,0"
+                                            ValueChanged="BpValue_ValueChanged"
+                                            OuterStroke="{StaticResource ThemeClr3}"
+                                            EntryTextColor="DarkBlue"
+                                            OuterBackground="{StaticResource ThemeClr3}"
+                                            EntryBackground="White"
+                                            DecreaseBackground="{StaticResource ThemeClr3}"
+                                            DecreaseIconSource="chev_down_white.png"
+                                            IncreaseBackground="{StaticResource ThemeClr3}"
+                                            IncreaseIconSource="chev_up_white.png"
+                                            HorizontalOptions="Center"
+                                            FontSize="14" />
+                                    </VerticalStackLayout>
+
+                                    <Label
+                                        Text="/"
+                                        Grid.Column="1"
+                                        FontSize="35"
+                                        VerticalOptions="Center"
+                                        Margin="3,10,3,0"
+                                        HorizontalTextAlignment="Start"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource ThemeClr3}" />
+
+                                    <VerticalStackLayout
+                                        Grid.Column="2"
+                                        HorizontalOptions="Start">
+                                        <Label
+                                            Text="Diastolic (mmHg)"
+                                            FontSize="12"
+                                            Grid.Row="0"
+                                            VerticalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeGray2}" />
+
+                                        <custCtrl:NumericStepper
+                                            x:Name="BpDiastolicValue"
+                                            Value="50"
+                                            Min="50"
+                                            Max="130"
+                                            ValueChanged="BpValue_ValueChanged"
+                                            OuterStroke="{StaticResource ThemeClr3}"
+                                            EntryTextColor="DarkBlue"
+                                            OuterBackground="{StaticResource ThemeClr3}"
+                                            EntryBackground="White"
+                                            DecreaseBackground="{StaticResource ThemeClr3}"
+                                            DecreaseIconSource="chev_down_white.png"
+                                            IncreaseBackground="{StaticResource ThemeClr3}"
+                                            IncreaseIconSource="chev_up_white.png"
+                                            HorizontalOptions="Center"
+                                            FontSize="14"
+                                            Margin="0,1,0,0" />
+                                    </VerticalStackLayout>
+                                </Grid>
+                                <Label
+                                    x:Name="BpText"
+                                    Text="*This reads 180/50 mmHg"
+                                    FontSize="11"
+                                    FontAttributes="Italic"
+                                    Margin="0,3,0,0"
+                                    VerticalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    TextColor="{StaticResource ThemeClr3}" />
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="BloodPressureMedicationComponent"
+                            Margin="0,10,0,0"
+                            Title="Are you on Blood pressure medication?"
+                            IsSingleSelect="True"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            UnselectedTextColor="Black"
+                            UnselectedColor="{StaticResource ThemeGray}"
+                            ItemFontSize="12" />
+
+                    </VerticalStackLayout>
+
+                    <!-- Discomforts -->
+                    <VerticalStackLayout>
+
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="DiscomfortsComponent"
+                            Margin="20,25,20,0"
+                            Title="Did you experience any discomforts today?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            UnselectedTextColor="Black"
+                            SelectionChanged="SelectComponent_SelectionChanged"
+                            UnselectedColor="{StaticResource ThemeGray}"
+                            ItemFontSize="12" />
+
+                        <VerticalStackLayout
+                            x:Name="DiscomfortRatingsContainer"
+                            IsVisible="False"
+                            Margin="20,10,20,0"
+                            Spacing="5">
+
+                            <Label
+                                Text="Rate 1-10"
+                                FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Start"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <custCtrl:Ratings
+                                x:Name="DiscomfortRatings"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Border
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 8"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start"
+                                Padding="5">
+                                <Editor
+                                    x:Name="DiscomfortNotes"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    Text=""
+                                    FontSize="14"
+                                    AutoSize="TextChanges"
+                                    Placeholder="Enter anything to add..." />
+                            </Border>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                    <!-- Bleeding -->
+                    <VerticalStackLayout>
+
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="BleedingComponent"
+                            Margin="20,25,20,0"
+                            Title="Did you notice any bleeding or spotting today?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            UnselectedTextColor="Black"
+                            SelectionChanged="SelectComponent_SelectionChanged"
+                            IsSingleSelect="True"
+                            UnselectedColor="{StaticResource ThemeGray}"
+                            ItemFontSize="12" />
+
+                        <VerticalStackLayout
+                            x:Name="BleedingRatingsContainer"
+                            IsVisible="False"
+                            Margin="20,10,20,0"
+                            Spacing="5">
+
+                            <Label
+                                Text="Rate 1-10"
+                                FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Start"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <custCtrl:Ratings
+                                x:Name="BleedingRatings"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Border
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 8"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start"
+                                Padding="5">
+                                <Editor
+                                    x:Name="BleedingNotes"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    Text=""
+                                    FontSize="14"
+                                    AutoSize="TextChanges"
+                                    Placeholder="Enter anything to add..." />
+                            </Border>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                    <!-- Stress -->
+                    <VerticalStackLayout>
+
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="StressComponent"
+                            Margin="20,25,20,0"
+                            Title="How would you describe your stress levels today?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            UnselectedTextColor="Black"
+                            IsSingleSelect="True"
+                            SelectionChanged="SelectComponent_SelectionChanged"
+                            UnselectedColor="{StaticResource ThemeGray}"
+                            ItemFontSize="12" />
+
+                        <VerticalStackLayout
+                            x:Name="StressRatingsContainer"
+                            IsVisible="False"
+                            Margin="20,10,20,0"
+                            Spacing="5">
+
+                            <Label
+                                Text="Rate 1-10"
+                                FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Start"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <custCtrl:Ratings
+                                x:Name="StressRatings"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Border
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 8"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start"
+                                Padding="5">
+                                <Editor
+                                    x:Name="StressNotes"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    Text=""
+                                    FontSize="14"
+                                    AutoSize="TextChanges"
+                                    Placeholder="Enter anything to add..." />
+                            </Border>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                    <!-- Brest Feeling -->
+                    <VerticalStackLayout>
+
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="BrestFeelingComponent"
+                            Margin="20,25,20,0"
+                            Title="How are your breasts feeling today?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            UnselectedTextColor="Black"
+                            IsSingleSelect="True"
+                            SelectionChanged="SelectComponent_SelectionChanged"
+                            UnselectedColor="{StaticResource ThemeGray}"
+                            ItemFontSize="12" />
+
+                        <VerticalStackLayout
+                            x:Name="BrestFeelingRatingsContainer"
+                            IsVisible="False"
+                            Margin="20,10,20,0"
+                            Spacing="5">
+
+                            <Label
+                                Text="Rate 1-10"
+                                FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Start"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <custCtrl:Ratings
+                                x:Name="BrestFeelingRatings"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Border
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 8"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start"
+                                Padding="5">
+                                <Editor
+                                    x:Name="BrestFeelingNotes"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    Text=""
+                                    FontSize="14"
+                                    AutoSize="TextChanges"
+                                    Placeholder="Enter anything to add..." />
+                            </Border>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                    <dashComp:MultiSelectLogItemComponent
+                        x:Name="NightUrinationComponent"
+                        Margin="20,25,20,0"
+                        Title="How often do you wake to wee throughout the night?"
+                        SelectedColor="{StaticResource ThemeClrLight2}"
+                        SelectedTextColor="Black"
+                        UnselectedTextColor="Black"
+                        IsSingleSelect="True"
+                        UnselectedColor="{StaticResource ThemeGray}"
+                        ItemFontSize="12" />
+
+                    <!-- Cravings -->
+                    <VerticalStackLayout>
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="CravingsComponent"
+                            Title="Any cravings today?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            UnselectedTextColor="Black"
+                            ItemFontSize="12"
+                            SelectionChanged="SelectComponent_SelectionChanged"
+                            Margin="20,20,20,0" />
+
+                        <VerticalStackLayout
+                            x:Name="CravingsContainerRating"
+                            IsVisible="False"
+                            Margin="20,10,20,0"
+                            Spacing="10">
+
+                            <Label
+                                Text="Rate 1-10"
+                                FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Start"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <custCtrl:Ratings
+                                x:Name="CravingsRating"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Border
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 8"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start"
+                                Padding="5">
+                                <Editor
+                                    x:Name="CravingsNotes"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    Text=""
+                                    FontSize="14"
+                                    AutoSize="TextChanges"
+                                    Placeholder="Enter anything to add..." />
+                            </Border>
+
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                    <!-- Appetite -->
+                    <VerticalStackLayout>
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="AppetiteComponent"
+                            Margin="20,25,20,0"
+                            Title="How was your appetite today?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            UnselectedTextColor="Black"
+                            SelectionChanged="SelectComponent_SelectionChanged"
+                            IsSingleSelect="True"
+                            UnselectedColor="{StaticResource ThemeGray}"
+                            ItemFontSize="12" />
+
+                        <VerticalStackLayout
+                            x:Name="AppetiteContainerRating"
+                            IsVisible="False"
+                            Margin="20,10,20,0"
+                            Spacing="10">
+
+                            <Label
+                                Text="Rate 1-10"
+                                FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Start"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <custCtrl:Ratings
+                                x:Name="AppetiteRating"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Border
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 8"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start"
+                                Padding="5">
+                                <Editor
+                                    x:Name="AppetiteNotes"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    Text=""
+                                    FontSize="14"
+                                    AutoSize="TextChanges"
+                                    Placeholder="Enter anything to add..." />
+                            </Border>
+
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                    <!-- Energy -->
+                    <VerticalStackLayout>
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="EnergyComponent"
+                            Margin="20,25,20,10"
+                            Title="How was your energy level today?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            IsSingleSelect="True"
+                            UnselectedTextColor="Black"
+                            UnselectedColor="{StaticResource ThemeGray}"
+                            SelectionChanged="SelectComponent_SelectionChanged"
+                            ItemFontSize="12" />
+                        <VerticalStackLayout
+                            x:Name="EnergyContainerRating"
+                            IsVisible="False"
+                            Margin="20,10,20,0"
+                            Spacing="10">
+
+                            <Label
+                                Text="Rate 1-10"
+                                FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Start"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Black}" />
+
+                            <custCtrl:Ratings
+                                x:Name="EnergyRating"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+
+                            <Border
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 8"
+                                Margin="0,0,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start"
+                                Padding="5">
+                                <Editor
+                                    x:Name="EnergyNotes"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    Text=""
+                                    FontSize="14"
+                                    AutoSize="TextChanges"
+                                    Placeholder="Enter anything to add..." />
+                            </Border>
+
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                    <!-- Period Bowel Movements -->
+                    <VerticalStackLayout>
+
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="BowelMovementsExistComponent"
+                            Title="Have you had bowel movements today?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            SelectedTextColor="Black"
+                            ItemFontSize="12"
+                            IsSingleSelect="True"
+                            SelectionChanged="BowelMovementsExistComponent_SelectionChanged"
+                            Margin="20,20,20,0" />
+
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="BowelMovementsRegularityComponent"
+                            Title="How are your bowel movements?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            ItemFontSize="12"
+                            SelectedTextColor="Black"
+                            IsSingleSelect="True"
+                            IsVisible="False"
+                            Margin="20,20,20,0" />
+
+                        <dashComp:MultiSelectLogItemComponent
+                            x:Name="BowelMovementsFrequencyComponent"
+                            Title="How many times per day?"
+                            SelectedColor="{StaticResource ThemeClrLight2}"
+                            ItemFontSize="12"
+                            SelectedTextColor="Black"
+                            IsSingleSelect="True"
+                            IsVisible="False"
+                            Margin="20,20,20,0" />
+
+                    </VerticalStackLayout>
+
+                    <Button
+                        Margin="20,30,20,30"
+                        Style="{StaticResource ThemeButton}"
+                        Text="save my day"
+                        Clicked="SaveTodaysLogs_Clicked" />
+
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <!-- Bottom Tabs -->
+            <dashTabs:DashboardBottomTab
+                Grid.Row="2"
+                x:Name="BaseTabs"
+                Padding="0,0"
+                ActiveTab="Learn" />
+
+        </Grid>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp2:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp2:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp2:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp2:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

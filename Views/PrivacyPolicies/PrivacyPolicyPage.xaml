@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.PrivacyPolicy.PrivacyPolicyPage"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    BackgroundColor="White"
+    Shell.NavBarIsVisible="False">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <Grid
+            RowDefinitions="Auto,*,Auto"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+
+            <!-- Header -->
+            <dashTabs:DashboardHeader
+                Grid.Row="0"
+                x:Name="Header"
+                LeftIconType="Menu"/>
+
+            <ScrollView
+                Grid.Row="1"
+                Padding="20">
+                <VerticalStackLayout
+                    Spacing="20">
+
+                    <!-- Title -->
+                    <Label
+                        Text="🛡️ Privacy Policy"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+
+                    <Label
+                        Text="Effective Date: 18 June 2025"
+                        FontSize="14"
+                        TextColor="Gray" />
+
+                    <!-- Introduction -->
+                    <Label
+                        Text="At Ovulae, your privacy and the protection of your personal and health data are of the utmost importance. This Privacy Policy outlines how we collect, use, and safeguard your information across our mobile app and website."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <Label
+                        Text="We comply with GDPR, POPIA, and CCPA regulations where applicable."
+                        FontSize="12"
+                        FontAttributes="Italic"
+                        TextColor="#999" />
+
+                    <!-- 1. Information We Collect -->
+                    <Label
+                        Text="1. Information We Collect 📂"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <VerticalStackLayout
+                        Spacing="5">
+                        <Label
+                            Text="👤 Account details: Name, email (encrypted password)"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="🩸 Menstrual &amp; ovulation data (flow, cramps, etc.)"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="🤰 Pregnancy symptoms &amp; trimester logs"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="🌅 Perimenopause and lifestyle tracking"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="📊 Chronic conditions like PCOS, Endometriosis"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="😊 Mood, mental wellness, and energy levels"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="📘 Activity within education and app features"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="📄 Exported summaries for consultations"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="💞 Optional partner access (if enabled)"
+                            FontSize="14"
+                            TextColor="Black" />
+                    </VerticalStackLayout>
+
+                    <!-- 2. How We Use It -->
+                    <Label
+                        Text="2. How We Use Your Information 💡"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <VerticalStackLayout
+                        Spacing="5">
+                        <Label
+                            Text="📆 Cycle prediction and wellness insights"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="🔔 Personalized reminders and education"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="📈 Feature improvements via analytics (anonymized)"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="📤 Exported logs for your doctor (if shared)"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="👫 Partner access when explicitly granted"
+                            FontSize="14"
+                            TextColor="Black" />
+                    </VerticalStackLayout>
+
+                    <!-- 3. Data Sharing -->
+                    <Label
+                        Text="3. Data Sharing and Disclosure 🔒"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="We do NOT sell or share your personal or health data under any circumstances without your explicit consent. Period. ✋"
+                        FontSize="14"
+                        FontAttributes="Bold"
+                        TextColor="Black" />
+                    <VerticalStackLayout
+                        Spacing="5">
+                        <Label
+                            Text="📤 When you export and share logs yourself"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="👫 When you invite a trusted partner"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="⚖️ When required by law"
+                            FontSize="14"
+                            TextColor="Black" />
+                    </VerticalStackLayout>
+
+                    <!-- 4. Data Security -->
+                    <Label
+                        Text="4. Data Storage &amp; Security 🔐"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <VerticalStackLayout
+                        Spacing="5">
+                        <Label
+                            Text="🛡️ Stored securely on encrypted US-based servers"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="🔒 SSL/TLS encryption in transit + at rest"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="🧱 Protected infrastructure (.NET 9 / EF Core)"
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="🚫 Never publicly accessible unless YOU share"
+                            FontSize="14"
+                            TextColor="Black" />
+                    </VerticalStackLayout>
+
+                    <!-- 5. Notifications -->
+                    <Label
+                        Text="5. Notifications 📲"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="We may send cycle reminders, tips, and prompts. You may disable notifications via your device settings at any time."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <!-- 6. Your Rights -->
+                    <Label
+                        Text="6. Your Rights ✅"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="You may access, update, or delete your data by emailing:"
+                        FontSize="14"
+                        TextColor="Black" />
+                    <Label
+                        Text="privacy@ovulae.com"
+                        FontSize="14"
+                        TextColor="{StaticResource ThemeClr2}"
+                        FontAttributes="Bold"
+                        TextDecorations="Underline">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="OnPrivacyEmailTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <!-- 7. Children's Privacy -->
+                    <Label
+                        Text="7. Children’s Privacy 👶"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="Ovulae is for users 13+. We do not knowingly collect data from anyone under 13. If such data is discovered, it will be deleted immediately."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <!-- 8. Policy Updates -->
+                    <Label
+                        Text="8. Updates to This Policy 🔁"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="We may revise this policy from time to time. Major changes will be announced in-app and always available at:"
+                        FontSize="14"
+                        TextColor="Black" />
+                    <Label
+                        Text="https://ovulae.com/privacy"
+                        FontSize="14"
+                        TextColor="{StaticResource ThemeClr2}"
+                        TextDecorations="Underline"
+                        FontAttributes="Bold">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="OnPrivacyLinkTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <!-- 9. Contact Us -->
+                    <Label
+                        Text="9. Contact Us 📬"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+                    <Label
+                        Text="For any privacy concerns or questions:"
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <Border
+                        Stroke="#E0DFF3"
+                        StrokeThickness="1"
+                        BackgroundColor="#F5F3FF"
+                        Padding="15"
+                        StrokeShape="RoundRectangle 10">
+                        <VerticalStackLayout
+                            Spacing="5">
+                            <HorizontalStackLayout>
+                                <Label
+                                    Text="📧 Email: "
+                                    FontSize="14"
+                                    TextColor="Black" />
+                                <Label
+                                    Text=" privacy@ovulae.com"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource ThemeClr2}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="OnPrivacyEmailTapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout
+                                Margin="0,8,0,0">
+                                <Label
+                                    Text="🌐 Website: "
+                                    FontSize="14"
+                                    TextColor="Black" />
+                                <Label
+                                    Text="https://ovulae.com"
+                                    FontSize="14"
+                                    FontAttributes="Italic"
+                                    TextDecorations="Underline"
+                                    TextColor="{StaticResource ThemeClr2}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="OnWebsiteTapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </HorizontalStackLayout>
+                            <VerticalStackLayout
+                                Margin="0,8,0,0">
+                                <Label
+                                    Text="🔗 Privacy Policy URL:"
+                                    FontSize="14"
+                                    TextColor="Black">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="OnPrivacyLinkTapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label
+                                    Text="https://ovulae.com/privacy"
+                                    FontSize="14"
+                                    Margin="20,0,0,0"
+                                    FontAttributes="Italic"
+                                    TextDecorations="Underline"
+                                    TextColor="{StaticResource ThemeClr2}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="OnPrivacyLinkTapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Image
+                        Source="logo_icon.png"
+                        WidthRequest="50"
+                        Aspect="AspectFit"
+                        HorizontalOptions="Center"
+                        Margin="0,5,0,0" />
+                </VerticalStackLayout>
+            </ScrollView>
+            <!-- Bottom Tabs -->
+            <dashTabs:DashboardBottomTab
+                Grid.Row="2"
+                x:Name="BaseTabs"
+                Padding="0,0"
+                ActiveTab="None"/>
+        </Grid>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

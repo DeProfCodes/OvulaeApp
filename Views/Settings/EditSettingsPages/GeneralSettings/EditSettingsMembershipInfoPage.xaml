@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Settings.EditSettingsPages.GeneralSettings.EditSettingsMembershipInfoPage"
+    Background="White"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashModals="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:sharedComp="clr-namespace:OvulaeApp.Views.Components.Shared"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Settings"
+    x:DataType="vm:EditSettingsSubscriptionViewModel">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style
+                x:Key="MenuDivider"
+                TargetType="Border">
+                <Setter
+                    Property="HeightRequest"
+                    Value="0.35" />
+                <Setter
+                    Property="Stroke"
+                    Value="{StaticResource ThemeClrMain}" />
+                <Setter
+                    Property="Opacity"
+                    Value="1" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="Fill" />
+                <Setter
+                    Property="Margin"
+                    Value="20,0,10,0" />
+            </Style>
+            <Style
+                x:Key="SettingsGroupContainerStyle"
+                TargetType="Border">
+                <Setter
+                    Property="BackgroundColor"
+                    Value="{StaticResource ThemeLightGray}" />
+                <Setter
+                    Property="Stroke"
+                    Value="Transparent" />
+                <Setter
+                    Property="Padding"
+                    Value="10,15,10,10" />
+                <Setter
+                    Property="Margin"
+                    Value="0,10,0,10" />
+                <Setter
+                    Property="StrokeShape">
+                    <Setter.Value>
+                        <RoundRectangle
+                            CornerRadius="10" />
+                    </Setter.Value>
+                </Setter>
+                <Setter
+                    Property="Shadow">
+                    <Setter.Value>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.3"
+                            Offset="0,4"
+                            Radius="6" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style
+                x:Key="DetailsSeparator"
+                TargetType="Border">
+                <Setter
+                    Property="HeightRequest"
+                    Value="0.3" />
+                <Setter
+                    Property="Stroke"
+                    Value="{StaticResource ThemeClr3}" />
+                <Setter
+                    Property="Background"
+                    Value="{StaticResource ThemeClr3}" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="Fill" />
+                <Setter
+                    Property="Opacity"
+                    Value="0.45" />
+            </Style>
+            <Style
+                x:Key="FormLabelStyle"
+                TargetType="Label">
+                <Setter
+                    Property="FontSize"
+                    Value="13" />
+                <Setter
+                    Property="TextColor"
+                    Value="{StaticResource Black}" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="HorizontalTextAlignment"
+                    Value="Center" />
+            </Style>
+            <Style
+                x:Key="ChangeButtonStyle"
+                TargetType="custButtons:GradientButton">
+                <Setter
+                    Property="FontAttributes"
+                    Value="Bold" />
+                <Setter
+                    Property="FontSize"
+                    Value="10" />
+                <Setter
+                    Property="ButtonPadding"
+                    Value="5,5" />
+                <Setter
+                    Property="Margin"
+                    Value="0,0,0,0" />
+                <Setter
+                    Property="Stroke"
+                    Value="Transparent" />
+                <Setter
+                    Property="StrokeThickness"
+                    Value="1.5" />
+                <Setter
+                    Property="CornerRadius"
+                    Value="5" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="End" />
+                <Setter
+                    Property="ShadowOpacity"
+                    Value="0.1" />
+                <Setter
+                    Property="ButtonTextColor"
+                    Value="White" />
+                <Setter
+                    Property="GradientColorLeft"
+                    Value="{StaticResource ThemeClr2}" />
+                <Setter
+                    Property="GradientColorRight"
+                    Value="{StaticResource ThemeClr2}" />
+            </Style>
+            <Style
+                x:Key="FormLabelValueStyle"
+                TargetType="Label">
+                <Setter
+                    Property="FontSize"
+                    Value="13" />
+                <Setter
+                    Property="FontAttributes"
+                    Value="Bold,Italic" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="HorizontalTextAlignment"
+                    Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+
+                        
+                    <Grid
+                        RowDefinitions="Auto,*"
+                        Background="whitesmoke">
+
+                        <!-- Page Title -->
+                        <VerticalStackLayout
+                            Grid.Row="0">
+                            <HorizontalStackLayout
+                                Padding="10,10">
+                                <Border
+                                    x:Name="BackBtnBorder"
+                                    Padding="5,5"
+                                    StrokeShape="RoundRectangle 10"
+                                    Background="Transparent"
+                                    Margin="0,0,0,0"
+                                    Stroke="Transparent">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="BackButtonTapped" />
+                                    </Border.GestureRecognizers>
+                                    <Image
+                                        Source="left_chev_edge.png"
+                                        WidthRequest="20"
+                                        HeightRequest="20"/>
+                                </Border>
+                                <Label
+                                    x:Name="PageTitleLabel"
+                                    Text="Manage Subscription"
+                                    FontSize="24"
+                                    FontAttributes="Bold"
+                                    VerticalOptions="Center"
+                                    Margin="10,-3,0,0"
+                                    TextColor="{StaticResource ThemeClrMain}" />
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Grid.Row="1"
+                            Padding="15,0"
+                            Margin="0,0"
+                            Background="#ECE5DD">
+                            
+                            <Border
+                                Style="{StaticResource SettingsGroupContainerStyle}">
+                                <VerticalStackLayout>
+
+                                    <VerticalStackLayout
+                                        Spacing="15">
+
+                                        <Label
+                                            Text="Subscription Settings"
+                                            FontSize="16"
+                                            FontAttributes="Bold"
+                                            HorizontalOptions="Center" />
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}"
+                                            Margin="0,10,0,0" />
+
+                                        <Grid
+                                            ColumnDefinitions="*,*">
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="Join Date"
+                                                Style="{StaticResource FormLabelStyle}" />
+
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="{Binding JoinDate}"
+                                                TextColor="{StaticResource ThemeClr3}"
+                                                Style="{StaticResource FormLabelValueStyle}"
+                                                HorizontalOptions="End"
+                                                Padding="0,0,15,0" />
+
+                                        </Grid>
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}" />
+
+                                        <Grid
+                                            ColumnDefinitions="*,*"
+                                            Margin="0,0,0,0">
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="Last Payment Date"
+                                                Style="{StaticResource FormLabelStyle}" />
+
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="{Binding LastPaymentDate}"
+                                                TextColor="{StaticResource ThemeClr3}"
+                                                Style="{StaticResource FormLabelValueStyle}"
+                                                HorizontalOptions="End"
+                                                Padding="0,0,15,0" />
+
+                                        </Grid>
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}" />
+
+                                        <Grid
+                                            ColumnDefinitions="*,*"
+                                            Margin="0,0,0,0">
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="Next Payment Date"
+                                                Style="{StaticResource FormLabelStyle}" />
+
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="{Binding NextPaymentDate}"
+                                                TextColor="{StaticResource ThemeClr3}"
+                                                Style="{StaticResource FormLabelValueStyle}"
+                                                HorizontalOptions="End"
+                                                Padding="0,0,15,0" />
+
+                                        </Grid>
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}" />
+
+                                        <Grid
+                                            ColumnDefinitions="*,*"
+                                            Margin="0,0,0,0"
+                                            IsVisible="{Binding ShowCancellationDate}">
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="Cancellation Date"
+                                                Style="{StaticResource FormLabelStyle}" />
+
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="{Binding CancellationDate}"
+                                                TextColor="{StaticResource ThemeClr3}"
+                                                Style="{StaticResource FormLabelValueStyle}" />
+
+                                        </Grid>
+
+                                        <Border
+                                            IsVisible="{Binding ShowCancellationDate}"
+                                            Style="{StaticResource DetailsSeparator}" />
+
+                                        <Grid
+                                            ColumnDefinitions="*,*,Auto"
+                                            Margin="0,0,0,0">
+                                            <Label
+                                                Text="Status"
+                                                Style="{StaticResource FormLabelStyle}"
+                                                HorizontalOptions="End" />
+
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="{Binding SubscriptionStatus.Value}"
+                                                TextColor="{Binding SubscriptionStatus.Color}"
+                                                Style="{StaticResource FormLabelValueStyle}"
+                                                TextTransform="Uppercase" />
+
+                                        </Grid>
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}" />
+
+                                    </VerticalStackLayout>
+
+                                    <custButtons:GradientButton
+                                        Text="{Binding SubscriptionButton.Value}"
+                                        ButtonPadding="0,5"
+                                        FontSize="16"
+                                        Margin="0,10,0,0"
+                                        Padding="0"
+                                        WidthRequest="150"
+                                        Style="{StaticResource ChangeButtonStyle}"
+                                        GradientColorLeft="{Binding SubscriptionButton.Color}"
+                                        GradientColorRight="{Binding SubscriptionButton.Color2}"
+                                        HorizontalOptions="Center"
+                                        Tapped="UpdateMembershipStatus" />
+                                    
+                                </VerticalStackLayout>
+                            </Border>
+
+                        </VerticalStackLayout>
+
+                    </Grid>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="None" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:MultiPurposeChangeModal
+            x:Name="ChangeRequestModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <customCtrl:YearPicker
+            x:Name="MyYearPicker"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

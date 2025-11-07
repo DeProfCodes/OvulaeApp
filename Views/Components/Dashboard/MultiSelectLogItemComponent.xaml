@@ -1,0 +1,61 @@
+﻿<ContentView
+    x:Class="OvulaeApp.Views.Components.Dashboard.MultiSelectLogItemComponent"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="Root">
+
+    <VerticalStackLayout>
+        <Label
+            x:Name="TitleLabel"
+            FontSize="{Binding TitleFontSize, Source={x:Reference Root}}"
+            TextColor="{Binding TitleTextColor, Source={x:Reference Root}}"
+            FontAttributes="Bold"
+            Margin="0,0,0,5" />
+
+        <FlexLayout
+            x:Name="OptionsLayout"
+            Wrap="Wrap"
+            Direction="Row"
+            JustifyContent="Start"
+            AlignItems="Start"
+            BindableLayout.ItemsSource="{Binding Items, Source={x:Reference Root}}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        Padding="10,8"
+                        Margin="0,3,3,0"
+                        StrokeShape="RoundRectangle 8"
+                        Stroke="Transparent"
+                        Background="{Binding BackgroundColor}">
+                        <Grid
+                            ColumnDefinitions="*,Auto"
+                            VerticalOptions="FillAndExpand">
+                            <Label
+                                Grid.Column="0"
+                                Text="{Binding Text}"
+                                FontSize="{Binding ItemFontSize, Source={x:Reference Root}}"
+                                FontAttributes="{Binding FontAttributes}"
+                                TextColor="{Binding TextColor}"
+                                LineBreakMode="WordWrap"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Start"
+                                Padding="2,0"
+                                MaxLines="2" />
+                            <Image
+                                Grid.Column="1"
+                                Source="checked_icon.png"
+                                WidthRequest="14"
+                                Margin="8,0,0,0"
+                                IsVisible="{Binding IsSelected}"
+                                VerticalOptions="Center" />
+                        </Grid>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding ToggleCommand}" />
+                        </Border.GestureRecognizers>
+                    </Border>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </FlexLayout>
+    </VerticalStackLayout>
+</ContentView>

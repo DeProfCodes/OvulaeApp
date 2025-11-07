@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Settings.EditSettingsPages.GeneralSettings.EditSettingsPersonalInfoPage"
+    Background="White"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashModals="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:sharedComp="clr-namespace:OvulaeApp.Views.Components.Shared"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Settings"
+    x:DataType="vm:EditSettingsPersonalInfoViewModel">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style
+                x:Key="MenuDivider"
+                TargetType="Border">
+                <Setter
+                    Property="HeightRequest"
+                    Value="0.35" />
+                <Setter
+                    Property="Stroke"
+                    Value="{StaticResource ThemeClrMain}" />
+                <Setter
+                    Property="Opacity"
+                    Value="1" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="Fill" />
+                <Setter
+                    Property="Margin"
+                    Value="20,0,10,0" />
+            </Style>
+            <Style
+                x:Key="SettingsGroupContainerStyle"
+                TargetType="Border">
+                <Setter
+                    Property="BackgroundColor"
+                    Value="{StaticResource ThemeLightGray}" />
+                <Setter
+                    Property="Stroke"
+                    Value="Transparent" />
+                <Setter
+                    Property="Padding"
+                    Value="10,15,10,10" />
+                <Setter
+                    Property="Margin"
+                    Value="0,10,0,10" />
+                <Setter
+                    Property="StrokeShape">
+                    <Setter.Value>
+                        <RoundRectangle
+                            CornerRadius="10" />
+                    </Setter.Value>
+                </Setter>
+                <Setter
+                    Property="Shadow">
+                    <Setter.Value>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.3"
+                            Offset="0,4"
+                            Radius="6" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style
+                x:Key="DetailsSeparator"
+                TargetType="Border">
+                <Setter
+                    Property="HeightRequest"
+                    Value="0.3" />
+                <Setter
+                    Property="Stroke"
+                    Value="{StaticResource ThemeClr3}" />
+                <Setter
+                    Property="Background"
+                    Value="{StaticResource ThemeClr3}" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="Fill" />
+                <Setter
+                    Property="Opacity"
+                    Value="0.45" />
+            </Style>
+            <Style
+                x:Key="FormLabelStyle"
+                TargetType="Label">
+                <Setter
+                    Property="FontSize"
+                    Value="13" />
+                <Setter
+                    Property="TextColor"
+                    Value="{StaticResource Black}" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="HorizontalTextAlignment"
+                    Value="Center" />
+            </Style>
+            <Style
+                x:Key="ChangeButtonStyle"
+                TargetType="custButtons:GradientButton">
+                <Setter
+                    Property="FontAttributes"
+                    Value="Bold" />
+                <Setter
+                    Property="FontSize"
+                    Value="10" />
+                <Setter
+                    Property="ButtonPadding"
+                    Value="5,5" />
+                <Setter
+                    Property="Margin"
+                    Value="0,0,0,0" />
+                <Setter
+                    Property="Stroke"
+                    Value="Transparent" />
+                <Setter
+                    Property="StrokeThickness"
+                    Value="1.5" />
+                <Setter
+                    Property="CornerRadius"
+                    Value="5" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="End" />
+                <Setter
+                    Property="ShadowOpacity"
+                    Value="0.1" />
+                <Setter
+                    Property="ButtonTextColor"
+                    Value="White" />
+                <Setter
+                    Property="GradientColorLeft"
+                    Value="{StaticResource ThemeClr2}" />
+                <Setter
+                    Property="GradientColorRight"
+                    Value="{StaticResource ThemeClr2}" />
+            </Style>
+            <Style
+                x:Key="FormLabelValueStyle"
+                TargetType="Label">
+                <Setter
+                    Property="FontSize"
+                    Value="13" />
+                <Setter
+                    Property="FontAttributes"
+                    Value="Bold,Italic" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="HorizontalTextAlignment"
+                    Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+                        
+                    <Grid
+                        RowDefinitions="Auto,*"
+                        Background="whitesmoke">
+
+                        <!-- Page Title -->
+                        <VerticalStackLayout
+                            Grid.Row="0">
+                            <HorizontalStackLayout
+                                Padding="10,10">
+                                <Border
+                                    x:Name="BackBtnBorder"
+                                    Padding="5,5"
+                                    StrokeShape="RoundRectangle 10"
+                                    Background="Transparent"
+                                    Margin="0,0,0,0"
+                                    Stroke="Transparent">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="BackButtonTapped" />
+                                    </Border.GestureRecognizers>
+                                    <Image
+                                        Source="left_chev_edge.png"
+                                        WidthRequest="20"
+                                        HeightRequest="20"/>
+                                </Border>
+                                <Label
+                                    x:Name="PageTitleLabel"
+                                    Text="Edit Personal Details"
+                                    FontSize="24"
+                                    FontAttributes="Bold"
+                                    VerticalOptions="Center"
+                                    Margin="10,-3,0,0"
+                                    TextColor="{StaticResource ThemeClrMain}" />
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Grid.Row="1"
+                            Padding="15,0"
+                            Margin="0,0"
+                            Background="#ECE5DD">
+
+                            <Border
+                                Style="{StaticResource SettingsGroupContainerStyle}">
+                                <VerticalStackLayout>
+
+                                    <VerticalStackLayout
+                                        Spacing="8">
+
+                                        <Label
+                                            Text="Personal Information Settings"
+                                            FontSize="16"
+                                            FontAttributes="Bold"
+                                            HorizontalOptions="Center" />
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}" />
+
+                                        <Grid
+                                            ColumnDefinitions="*,*,*">
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="Firstname"
+                                                Style="{StaticResource FormLabelStyle}" />
+
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="{Binding FirstnameProp.Value}"
+                                                TextColor="{Binding FirstnameProp.Color}"
+                                                Style="{StaticResource FormLabelValueStyle}" />
+
+                                            <custButtons:GradientButton
+                                                Grid.Column="2"
+                                                Text="change"
+                                                Style="{StaticResource ChangeButtonStyle}"
+                                                TappedWithParameter="UpdateSingleItem"
+                                                CommandParameter="Firstname" />
+
+                                        </Grid>
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}" />
+
+                                        <Grid
+                                            ColumnDefinitions="*,*,*"
+                                            Margin="0,0,0,0">
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="Lastname"
+                                                Style="{StaticResource FormLabelStyle}" />
+
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="{Binding LastnameProp.Value}"
+                                                TextColor="{Binding LastnameProp.Color}"
+                                                Style="{StaticResource FormLabelValueStyle}" />
+
+                                            <custButtons:GradientButton
+                                                Grid.Column="2"
+                                                Text="change"
+                                                Style="{StaticResource ChangeButtonStyle}"
+                                                TappedWithParameter="UpdateSingleItem"
+                                                CommandParameter="Lastname" />
+
+                                        </Grid>
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}" />
+
+                                        <Grid
+                                            ColumnDefinitions="*,*,*"
+                                            Margin="0,0,0,0">
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="Birth Year"
+                                                Style="{StaticResource FormLabelStyle}" />
+
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="{Binding SelectedYear}"
+                                                TextColor="{Binding BirthYearProp.Color}"
+                                                Style="{StaticResource FormLabelValueStyle}" />
+
+                                            <custButtons:GradientButton
+                                                Grid.Column="2"
+                                                Text="change"
+                                                Style="{StaticResource ChangeButtonStyle}"
+                                                TappedWithParameter="UpdateSingleItem"
+                                                CommandParameter="BirthYear" />
+
+                                        </Grid>
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}" />
+
+                                    </VerticalStackLayout>
+
+                                    <custButtons:GradientButton
+                                        x:Name="EditDetailsBtn"
+                                        Text="Edit Details"
+                                        FontAttributes="Bold"
+                                        FontSize="13"
+                                        ButtonPadding="20,10"
+                                        Margin="0,10,0,0"
+                                        Stroke="Transparent"
+                                        StrokeThickness="1.5"
+                                        CornerRadius="25"
+                                        HorizontalOptions="Center"
+                                        ShadowOpacity="0.4"
+                                        ButtonTextColor="White"
+                                        GradientColorLeft="{StaticResource ThemeClr3}"
+                                        GradientColorRight="{StaticResource ThemeClr2}"
+                                        IsButtonEnabled="True"
+                                        Tapped="EditDetailsButtonTapped" />
+
+                                </VerticalStackLayout>
+                            </Border>
+
+                            <Border
+                                x:Name="FormBorder"
+                                Style="{StaticResource SettingsGroupContainerStyle}"
+                                IsVisible="False">
+
+                                <VerticalStackLayout>
+
+                                    <Grid
+                                        ColumnDefinitions="*,Auto">
+
+                                        <Label
+                                            Grid.Column="0"
+                                            Text="Edit Personal Info"
+                                            FontSize="15"
+                                            FontAttributes="Bold"
+                                            Margin="0,0,-30,0"
+                                            HorizontalOptions="Center"
+                                            TextColor="{StaticResource ThemeClrMain}" />
+
+                                        <custButtons:GradientButton
+                                            Text="X"
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            FontSize="10"
+                                            Padding="5,0"
+                                            Margin="0,0,0,0"
+                                            Stroke="Transparent"
+                                            StrokeThickness="1.5"
+                                            CornerRadius="5"
+                                            HorizontalOptions="End"
+                                            ShadowOpacity="0"
+                                            ButtonTextColor="White"
+                                            GradientColorLeft="{StaticResource ThemeClrMain}"
+                                            GradientColorRight="{StaticResource ThemeClrMain}"
+                                            IsButtonEnabled="True"
+                                            IsVisible="True"
+                                            Tapped="CloseModalPage" />
+                                    </Grid>
+
+                                    <VerticalStackLayout
+                                        Padding="5,0">
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}"
+                                            Margin="0,10,0,0" />
+
+                                        <Label
+                                            Text="*edit your personal details"
+                                            FontSize="12"
+                                            Margin="0,5,0,0"
+                                            HorizontalTextAlignment="Center"
+                                            TextColor="{StaticResource ThemeGray2}"
+                                            FontAttributes="Italic"/>
+                                        
+                                        <VerticalStackLayout
+                                            Margin="0,20,0,0"
+                                            x:Name="FirstnameEdit"
+                                            IsVisible="False">
+                                            <Label
+                                                Text="Enter your firstname"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <customCtrl:CustomEntry
+                                                Text="{Binding FirstnameProp.Value, Mode=TwoWay}"
+                                                Placeholder="firstname"
+                                                BorderStroke="{StaticResource ThemeClrMain}"
+                                                EntryTextColor="Black"
+                                                EntryFontSize="14"
+                                                EntryPadding="5"
+                                                BorderCornerRadius="4"
+                                                IsFullWidth="True"
+                                                BorderMargin="0,5,0,0" />
+
+                                        </VerticalStackLayout>
+
+                                        <VerticalStackLayout
+                                            Margin="0,20,0,0"
+                                            x:Name="LastnameEdit"
+                                            IsVisible="False">
+                                            <Label
+                                                Text="Enter your lastname"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <customCtrl:CustomEntry
+                                                Text="{Binding LastnameProp.Value, Mode=TwoWay}"
+                                                Placeholder="lastname"
+                                                BorderStroke="{StaticResource ThemeClrMain}"
+                                                EntryTextColor="Black"
+                                                EntryFontSize="14"
+                                                EntryPadding="5"
+                                                BorderCornerRadius="4"
+                                                IsFullWidth="True"
+                                                BorderMargin="0,5,0,0" />
+
+                                        </VerticalStackLayout>
+
+                                        <VerticalStackLayout
+                                            Margin="0,20,0,0"
+                                            x:Name="BirthYearEdit"
+                                            IsVisible="False">
+                                            <Label
+                                                Text="What year were you born"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <HorizontalStackLayout
+                                                Margin="10,10,0,0">
+                                                
+                                                <Label
+                                                    Text="Select Year"
+                                                    FontSize="12"
+                                                    TextColor="{StaticResource Black}" 
+                                                    VerticalOptions="Center"/>
+                                                
+                                                <custButtons:GradientButton
+                                                    Grid.Column="1"
+                                                    Text="{Binding SelectedYear}"
+                                                    FontAttributes="Bold"
+                                                    FontSize="13"
+                                                    Padding="10,5"
+                                                    Margin="0,0,0,0"
+                                                    Stroke="Transparent"
+                                                    StrokeThickness="1.5"
+                                                    CornerRadius="5"
+                                                    HorizontalOptions="Center"
+                                                    ShadowOpacity="0.0"
+                                                    HasImageIcon="True"
+                                                    ImageIconSource="TabsIcons/normal/calendar_icon.png"
+                                                    ButtonTextColor="Black"
+                                                    GradientColorLeft="{StaticResource ThemeClrMainDark}"
+                                                    GradientColorRight="{StaticResource ThemeClrMainDark}"
+                                                    IsButtonEnabled="True"
+                                                    HeightRequest="40"
+                                                    Tapped="SelectBirthYearTapped" />
+                                            </HorizontalStackLayout>
+
+                                        </VerticalStackLayout>
+
+                                        <Border
+                                            Margin="0,20,0,0"
+                                            Style="{StaticResource DetailsSeparator}" />
+
+                                        <custButtons:GradientButton
+                                            Grid.Column="1"
+                                            Text="Update Settings"
+                                            FontAttributes="Bold"
+                                            FontSize="13"
+                                            ButtonPadding="20,10"
+                                            Margin="0,10,0,0"
+                                            Stroke="Transparent"
+                                            StrokeThickness="1.5"
+                                            CornerRadius="5"
+                                            HorizontalOptions="Center"
+                                            ShadowOpacity="0.0"
+                                            ButtonTextColor="White"
+                                            GradientColorLeft="{StaticResource ThemeClrMain}"
+                                            GradientColorRight="{StaticResource ThemeClrMain}"
+                                            IsButtonEnabled="True"
+                                            Tapped="SaveButton_Clicked" />
+
+                                    </VerticalStackLayout>
+
+                                </VerticalStackLayout>
+                            </Border>
+                            
+                        </VerticalStackLayout>
+
+                    </Grid>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="None" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:MultiPurposeChangeModal
+            x:Name="ChangeRequestModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <customCtrl:YearPicker
+            x:Name="MyYearPicker"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

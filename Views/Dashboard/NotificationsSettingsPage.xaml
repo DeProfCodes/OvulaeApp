@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Dashboard.NotificationsSettingsPage"
+    Background="White"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:dashModals="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:models="clr-namespace:OvulaeApp.ViewModels.PregnancyTracker"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Calendar"
+    x:DataType="vm:CalendarPageViewModel">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+                    <VerticalStackLayout
+                        Padding="20,20">
+
+                        <HorizontalStackLayout
+                            HorizontalOptions="Center">
+                            <Label
+                                Text="Notification Center"
+                                FontSize="22"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                Margin="0,0,0,5" />
+                            <Image
+                                Source="bell.png"
+                                WidthRequest="20"
+                                Aspect="AspectFit"
+                                Margin="5,0,0,0"
+                                VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                        <VerticalStackLayout
+                            Spacing="20"
+                            Margin="10,20,0,0">
+
+                            <!-- Core Pregnancy Notifications -->
+                            <VerticalStackLayout
+                                Spacing="5">
+                                <Label
+                                    Text="Core Pregnancy Notifications"
+                                    FontSize="16"
+                                    TextColor="{StaticResource Black}"
+                                    FontAttributes="Bold"
+                                    FontFamily="Arial Black"
+                                    Margin="0,0,0,5" />
+
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Text="Weekly Updates"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black" />
+                                    <customCtrl:Switch
+                                        x:Name="NotificationWeeklyUpdates"
+                                        Grid.Column="1" />
+                                </Grid>
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Text="Log Symptoms"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black" />
+                                    <customCtrl:Switch
+                                        x:Name="NotificationLogSymptoms"
+                                        Grid.Column="1" />
+                                </Grid>
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Text="Educational Tips"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black" />
+                                    <customCtrl:Switch
+                                        x:Name="NotificationEduTips"
+                                        Grid.Column="1" />
+                                </Grid>
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Text="Appointment Reminders"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black" />
+                                    <customCtrl:Switch
+                                        x:Name="NotificationAppointments"
+                                        Grid.Column="1" />
+                                </Grid>
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Text="Daily Journal Reminder"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black" />
+                                    <customCtrl:Switch
+                                        x:Name="NotificationJournal"
+                                        Grid.Column="1" />
+                                </Grid>
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Text="Hydration Reminder"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black" />
+                                    <customCtrl:Switch
+                                        x:Name="NotificationHydration"
+                                        Grid.Column="1" />
+                                </Grid>
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Text="Prenatal Supplement Reminder"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black" />
+                                    <customCtrl:Switch
+                                        x:Name="NotificationSupplements"
+                                        Grid.Column="1" />
+                                </Grid>
+                            </VerticalStackLayout>
+
+                            <!-- Emotional & Motivational -->
+                            <VerticalStackLayout
+                                Spacing="5">
+                                <Label
+                                    Text="Emotional &amp; Motivational"
+                                    FontSize="16"
+                                    TextColor="{StaticResource Black}"
+                                    FontAttributes="Bold"
+                                    FontFamily="Arial Black"
+                                    Margin="0,0,0,5" />
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Text="Affirmations &amp; Positivity"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black" />
+                                    <customCtrl:Switch
+                                        x:Name="NotificationAffirmations"
+                                        Grid.Column="1" />
+                                </Grid>
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Text="Milestone Celebrations"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black" />
+                                    <customCtrl:Switch
+                                        x:Name="NotificationMilestones"
+                                        Grid.Column="1" />
+                                </Grid>
+                            </VerticalStackLayout>
+
+                            <!-- Baby Development -->
+                            <VerticalStackLayout
+                                Spacing="5">
+                                <Label
+                                    Text="Baby Development"
+                                    FontSize="16"
+                                    TextColor="{StaticResource Black}"
+                                    FontAttributes="Bold"
+                                    FontFamily="Arial Black"
+                                    Margin="0,0,0,5" />
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Text="Baby development highlights"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black" />
+                                    <customCtrl:Switch
+                                        x:Name="NotificationKickCount"
+                                        Grid.Column="1" />
+                                </Grid>
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Text="Baby sizes"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black" />
+                                    <customCtrl:Switch
+                                        x:Name="NotificationUltrasound"
+                                        Grid.Column="1" />
+                                </Grid>
+                            </VerticalStackLayout>
+                            <!-- Lifestyle & Community -->
+                            <VerticalStackLayout
+                                Spacing="5">
+                                <Label
+                                    Text="Lifestyle &amp; Community"
+                                    FontSize="16"
+                                    TextColor="{StaticResource Black}"
+                                    FontAttributes="Bold"
+                                    FontFamily="Arial Black"
+                                    Margin="0,0,0,5" />
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Text="Partner Insights"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black" />
+                                    <customCtrl:Switch
+                                        x:Name="NotificationPartnerTips"
+                                        Grid.Column="1" />
+                                </Grid>
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Text="Product Essentials &amp; Offers"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black" />
+                                    <customCtrl:Switch
+                                        x:Name="NotificationProductOffers"
+                                        Grid.Column="1" />
+                                </Grid>
+                                <Grid
+                                    ColumnDefinitions="*,Auto">
+                                    <Label
+                                        Text="Community &amp; Events"
+                                        Grid.Column="0"
+                                        FontSize="16"
+                                        VerticalOptions="Center"
+                                        TextColor="Black" />
+                                    <customCtrl:Switch
+                                        x:Name="NotificationCommunity"
+                                        Grid.Column="1" />
+                                </Grid>
+                            </VerticalStackLayout>
+
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="Alerts" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

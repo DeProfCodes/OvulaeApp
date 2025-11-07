@@ -1,0 +1,293 @@
+﻿<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Class="OvulaeApp.Views.Components.Modals.Dashboard.PregnancyCompleteModal"
+    x:Name="Root"
+    xmlns:sharedComp="clr-namespace:OvulaeApp.Views.Components.Shared"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:behaviors="clr-namespace:OvulaeApp.Helpers.UI.Behaviors"
+    Background="#80000000">
+
+    <!-- Fullscreen blocker -->
+    <Grid
+        BackgroundColor="#80000000"
+        InputTransparent="False"
+        HorizontalOptions="Fill"
+        VerticalOptions="Fill">
+        <Grid.Behaviors>
+            <behaviors:DismissKeyboardBehavior />
+        </Grid.Behaviors>
+        
+        <Border
+            x:Name="MainContainer"
+            Background="White"
+            Padding="0"
+            StrokeShape="RoundRectangle 16"
+            Stroke="{StaticResource ThemeClr2}"
+            StrokeThickness="2"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="320"
+            HeightRequest="230">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+                <Grid
+                    Grid.Row="0"
+                    ColumnDefinitions="*,Auto"
+                    Background="#FFF5FF"
+                    Padding="10">
+                    <Label
+                        Grid.Column="0"
+                        x:Name="ModalTitle"
+                        Text="Pregnancy Complete"
+                        Padding="4,0,0,0"
+                        TextColor="{StaticResource ThemeClrMain}"
+                        HorizontalTextAlignment="Center"
+                        FontSize="18"
+                        FontAttributes="Bold" />
+                    <Border
+                        Grid.Column="1"
+                        StrokeShape="RoundRectangle 5"
+                        Stroke="Transparent"
+                        Background="{StaticResource ThemeClrMain}"
+                        Padding="10,1,10,1"
+                        HeightRequest="25">
+                        <Label
+                            Text="X"
+                            TextColor="White"
+                            FontFamily="Arial Black"
+                            HorizontalTextAlignment="Start"
+                            FontSize="14"
+                            FontAttributes="Bold" />
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="CloseButton_Tapped" />
+                        </Border.GestureRecognizers>
+                    </Border>
+                </Grid>
+
+                <ScrollView
+                    Grid.Row="1">
+
+                    <VerticalStackLayout>
+
+                        <Label
+                            x:Name="MainTitle"
+                            Text="Pregnancy Completed ☑️"
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            Margin="0,5,0,0"
+                            HorizontalOptions="Center"
+                            TextColor="Black" />
+
+                        <Label
+                            x:Name="MainSubTitle"
+                            Text="Let us know how your pregnancy concluded so we can update your tracking and support you best in your next journey."
+                            FontSize="10"
+                            Margin="10,5,10,3"
+                            HorizontalTextAlignment="Center"
+                            TextColor="Black" />
+
+                        <!-- Intro -->
+                        <VerticalStackLayout
+                            x:Name="PregnancyEndQuestion">
+
+                            <Label
+                                Text="How did your pregnancy conclude?"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                Margin="10,5,10,0"
+                                HorizontalOptions="Center"
+                                TextColor="{StaticResource ThemeClrMain}" />
+
+                            <sharedComp:SelectComponent
+                                x:Name="PregnancyConclusionOption"
+                                OptionList="👶 I gave birth|💔 I had a miscarriage|💜 Prefer not to say"
+                                OptionSpacing="8"
+                                SelectionType="Single"
+                                Margin="55,20,55,20"
+                                SelectionChanged="PregnancyConclusionOption_SelectionChanged"/>
+
+                        </VerticalStackLayout>
+
+                        <!-- Given Birth -->
+                        <VerticalStackLayout
+                            x:Name="BirthOption"
+                            IsVisible="False">
+                            <Label
+                                Text="When did you give you birth?"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Center"
+                                TextColor="{StaticResource ThemeClr2}"
+                                Margin="0,20,0,20" />
+                            <HorizontalStackLayout
+                                HorizontalOptions="Center">
+                                <Label
+                                    Text="Select Date"
+                                    FontSize="14"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource Black}"
+                                    Margin="0,0,10,0" />
+
+                                <customCtrl:DatePicker
+                                    x:Name="BabyBirthDate"
+                                    DateColor="{StaticResource ThemeClrMain}"
+                                    FontSize="14" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+
+                        <!-- Gender -->
+                        <VerticalStackLayout
+                            x:Name="BabyGender"
+                            IsVisible="False">
+
+                            <Label
+                                Text="What is the baby's gender?"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                Margin="10,5,10,0"
+                                HorizontalOptions="Center"
+                                TextColor="{StaticResource ThemeClrMain}" />
+
+                            <sharedComp:SelectComponent
+                                x:Name="BabyGenderOption"
+                                OptionList="💙 It's a boy|🩷 It's a girl|💜 Prefer not to say"
+                                OptionSpacing="8"
+                                SelectionType="Single"
+                                Margin="55,10,55,0"/>
+
+                        </VerticalStackLayout>
+
+                        <!-- Baby Name -->
+                        <VerticalStackLayout
+                            x:Name="BabyNameQuestion"
+                            IsVisible="False">
+                            <Label
+                                Text="What is the baby's name😊 ?"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                Margin="10,30,10,0"
+                                HorizontalOptions="Center"
+                                TextColor="{StaticResource ThemeClrMain}" />
+                            <Border
+                                x:Name="BabysName"
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeShape="RoundRectangle 12"
+                                Margin="10,20,0,0"
+                                WidthRequest="250"
+                                HeightRequest="40"
+                                HorizontalOptions="Center">
+                                <Entry
+                                    x:Name="BabysNameEntry"
+                                    Margin="10,0"
+                                    TextColor="Black"
+                                    FontSize="14"
+                                    Placeholder="Enter baby's name" />
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <!-- Miscarriage date -->
+                        <VerticalStackLayout
+                            x:Name="MiscarriageDateOption"
+                            IsVisible="False">
+                            <Label
+                                Text="If you feel comfortable, please enter the date of your miscarriage 💔"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                TextColor="{StaticResource ThemeClr2}"
+                                Margin="10,20,10,30" />
+                            <Grid
+                                ColumnDefinitions="*,*">
+                                <Label
+                                    Grid.Column="0"
+                                    Text="Select Date"
+                                    FontSize="14"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource Black}"
+                                    Margin="0,0,0,0" />
+
+                                <customCtrl:DatePicker
+                                    Grid.Column="1"
+                                    x:Name="MiscarriageDate"
+                                    DateColor="{StaticResource ThemeClrMain}"
+                                    FontSize="14" />
+                            </Grid>
+                        </VerticalStackLayout>
+
+                        <!-- Outro -->
+                        <VerticalStackLayout
+                            x:Name="OutroOption"
+                            IsVisible="False">
+                            <Label
+                                Text="Thank you for information you provided. We have captured your information."
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Center"
+                                TextColor="{StaticResource ThemeClr2}"
+                                Margin="10,20,10,20" />
+
+                        </VerticalStackLayout>
+                        
+                    </VerticalStackLayout>
+
+                </ScrollView>
+
+                <Border
+                    Grid.Row="2"
+                    StrokeShape="RoundRectangle 5"
+                    Stroke="Transparent"
+                    Background="{StaticResource ThemeLightGray}"
+                    Margin="0,0,0,0">
+                    <HorizontalStackLayout
+                        HorizontalOptions="CenterAndExpand">
+                        <Border
+                            x:Name="BackBtnTxt"
+                            StrokeShape="RoundRectangle 5"
+                            HorizontalOptions="Center"
+                            IsVisible="False"
+                            Stroke="Transparent"
+                            Background="{StaticResource ThemeClrMain}"
+                            Padding="15,5,15,5"
+                            Margin="0,5,0,5">
+                            <Label
+                                Text="Back"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                FontFamily="Arial Black"
+                                TextColor="White" />
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="BackButtonTapped" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                        <Border
+                            StrokeShape="RoundRectangle 5"
+                            HorizontalOptions="Center"
+                            Stroke="Transparent"
+                            Background="{StaticResource ThemeClrMain}"
+                            Padding="15,5,15,5"
+                            Margin="5,5,0,5">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="NextButtonTapped" />
+                            </Border.GestureRecognizers>
+                            <Label
+                                x:Name="NextBtnTxt"
+                                Text="Next"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                FontFamily="Arial Black"
+                                TextColor="White" />
+                        </Border>
+                    </HorizontalStackLayout>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentView>

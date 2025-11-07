@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:local="clr-namespace:OvulaeApp.Helpers.UI.Convertors.Chat"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Chat"
+    x:Class="OvulaeApp.Views.About.HelpPage"
+    x:DataType="vm:OvulaeFAQChatPageViewModel"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:dashComp3="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    BackgroundColor="White"
+    Shell.NavBarIsVisible="False"
+    x:Name="Root">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:BoolSelectorConverter
+                x:Key="BoolToBubbleColorConverter"
+                TrueValue="#DCF8C6"
+                FalseValue="#FFFFFF" />
+            <local:BoolSelectorConverter
+                x:Key="BoolToBubbleAlignmentConverter"
+                TrueValue="{x:Static LayoutOptions.End}"
+                FalseValue="{x:Static LayoutOptions.Start}" />
+            <local:BoolSelectorConverter
+                x:Key="BoolToUserVisibility"
+                TrueValue="True"
+                FalseValue="False" />
+            <local:BoolSelectorConverter
+                x:Key="BoolToBotVisibility"
+                TrueValue="False"
+                FalseValue="True" />
+            <local:BoolSelectorConverter
+                x:Key="BoolToAskAnotherVisibility"
+                TrueValue="False"
+                FalseValue="True" />
+            <local:BoolSelectorConverter
+                x:Key="InverseBoolConverter"
+                TrueValue="False"
+                FalseValue="True" />
+            <local:FirstNItemsMultiConverter
+                x:Key="FirstNItemsMultiConverter" />
+            <local:ShowAskAnotherConverter
+                x:Key="ShowAskAnotherConverter" />
+            <local:ShowFAQExtrasVisibilityConverter
+                x:Key="ShowFAQExtrasVisibilityConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+
+        <!-- Main Grid -->
+        <Grid
+            RowDefinitions="Auto,*,Auto"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+
+            <!-- Header -->
+            <dashTabs:DashboardHeader
+                Grid.Row="0"
+                x:Name="Header"
+                LeftIconType="Menu" />
+
+            <!-- Body Grid -->
+            <Grid
+                Grid.Row="1"
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Chat Page Header -->
+                <Border
+                    Grid.Row="0"
+                    Stroke="Transparent"
+                    Margin="0,0,0,1"
+                    Background="{StaticResource ThemeLightGray}">
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.25"
+                            Offset="0,4"
+                            Radius="10" />
+                    </Border.Shadow>
+                    <VerticalStackLayout
+                        Padding="10,2,0,0">
+                        <!-- Message Text -->
+                        <Label
+                            Text="Ovulae Help Center 🌸"
+                            FontSize="25"
+                            FontFamily="FredokaBold"
+                            TextColor="{StaticResource ThemeClrMainDark}"
+                            HorizontalTextAlignment="Center"/>
+                        <Label
+                            Text="Ask your questions, track your journey, and get caring guidance here."
+                            FontSize="10"
+                            FontFamily="FredokaRegular"
+                            FontAttributes="Italic"
+                            TextColor="{StaticResource ThemeClr2}"
+                            HorizontalTextAlignment="Center"
+                            Margin="0,2,0,2" />
+                        <HorizontalStackLayout
+                            HorizontalOptions="Center"
+                            Margin="0,7,0,5">
+                            <Label
+                                Text="FAQ for Tracker: "
+                                FontSize="10"
+                                FontFamily="FredokaRegular"
+                                TextColor="{StaticResource Black}"
+                                VerticalOptions="Center"
+                                Margin="0,0,0,0" />
+                            <dashComp:CategorySelector
+                                x:Name="TrackerModule"
+                                CategoryString="All|Period|Ovulation|Pregnancy"
+                                Margin="0,0,0,0"
+                                FontSize="9"
+                                Padding="0,0,0,0"
+                                ItemSpacing="2"
+                                IsCategoryFilter="True"
+                                ActiveCategoryStrokeColor="{StaticResource ThemeClrMain}"
+                                ActiveCategoryBackgroundColor="{StaticResource ThemeClrMain}"
+                                ActiveCategoryTextColor="White"
+                                InActiveCategoryStrokeColor="{StaticResource ThemeClrMain}"
+                                InActiveCategoryTextColor="{StaticResource ThemeClrMain}"
+                                CategoryTappedCommand="{Binding OnTrackerTypeTappedCommand}" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+                <!-- Chat Section -->
+                <ScrollView
+                    Grid.Row="1">
+                    <Border
+                        Background="#ECE5DD"
+                        Stroke="Transparent">
+                        <VerticalStackLayout>
+
+                            <CollectionView
+                                x:Name="ChatCollection"
+                                ItemsSource="{Binding ChatMessages}"
+                                SelectionMode="None"
+                                VerticalOptions="FillAndExpand"
+                                ItemsUpdatingScrollMode="KeepLastItemInView"
+                                Margin="10">
+
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate
+                                        x:DataType="vm:ChatMessage">
+                                        <Grid
+                                            ColumnDefinitions="Auto, *, Auto"
+                                            Margin="6"
+                                            HorizontalOptions="{Binding IsUser, Converter={StaticResource BoolToBubbleAlignmentConverter}}">
+
+                                            <!-- Bot Avatar -->
+                                            <Image
+                                                Grid.Column="0"
+                                                Source="bot.png"
+                                                WidthRequest="30"
+                                                HeightRequest="30"
+                                                VerticalOptions="Start"
+                                                Margin="5"
+                                                IsVisible="{Binding IsUser, Converter={StaticResource BoolToBotVisibility}}" />
+
+                                            <!-- Message Bubble -->
+                                            <Border
+                                                Grid.Column="1"
+                                                Padding="12"
+                                                BackgroundColor="{Binding IsUser, Converter={StaticResource BoolToBubbleColorConverter}}"
+                                                Stroke="#DADADA"
+                                                StrokeShape="RoundRectangle 16">
+                                                <Border.Shadow>
+                                                    <Shadow
+                                                        Brush="Black"
+                                                        Opacity="0.15"
+                                                        Offset="2,2"
+                                                        Radius="4" />
+                                                </Border.Shadow>
+                                                <VerticalStackLayout
+                                                    Spacing="8">
+
+                                                    <!-- Message Text -->
+                                                    <Label
+                                                        Text="{Binding Text}"
+                                                        FontSize="14"
+                                                        TextColor="Black"
+                                                        LineBreakMode="WordWrap"
+                                                        IsVisible="{Binding IsTyping, Converter={StaticResource InverseBoolConverter}}" />
+
+                                                    <HorizontalStackLayout
+                                                        IsVisible="{Binding IsFAQVisible}"
+                                                        HorizontalOptions="Center">
+                                                        <!-- Message Text -->
+                                                        <Label
+                                                            Text="Showing FAQ for module: "
+                                                            FontSize="10"
+                                                            TextColor="Black"
+                                                            FontAttributes="Italic"/>
+                                                        <Label
+                                                            Text="{Binding FAQModuleType}"
+                                                            FontSize="10"
+                                                            FontAttributes="Bold, Italic"
+                                                            TextColor="{StaticResource ThemeClrMain}"
+                                                             />
+                                                    </HorizontalStackLayout>
+                                                    
+                                                    <!-- Typing Indicator -->
+                                                    <StackLayout
+                                                        Orientation="Horizontal"
+                                                        Spacing="2"
+                                                        HorizontalOptions="Start"
+                                                        IsVisible="{Binding IsTyping}">
+                                                        <Border
+                                                            x:Name="Dot1"
+                                                            Opacity="{Binding Source={x:Reference Root}, Path=BindingContext.DotOpacity1}"
+                                                            WidthRequest="15"
+                                                            HeightRequest="15"
+                                                            Background="{StaticResource ThemeClr2}"
+                                                            StrokeShape="RoundRectangle 10"
+                                                            Stroke="{StaticResource ThemeClr2}"/>
+                                                        <Border
+                                                            x:Name="Dot2"
+                                                            Opacity="{Binding Source={x:Reference Root}, Path=BindingContext.DotOpacity2}"
+                                                            WidthRequest="15"
+                                                            HeightRequest="15"
+                                                            Background="{StaticResource ThemeClrMain}"
+                                                            StrokeShape="RoundRectangle 10"
+                                                            Stroke="{StaticResource ThemeClrMain}" />
+                                                        <Border
+                                                            x:Name="Dot3"
+                                                            Opacity="{Binding Source={x:Reference Root}, Path=BindingContext.DotOpacity3}"
+                                                            WidthRequest="15"
+                                                            HeightRequest="15"
+                                                            Background="{StaticResource ThemeClrMainDark}"
+                                                            StrokeShape="RoundRectangle 10"
+                                                            Stroke="{StaticResource ThemeClrMainDark}" />
+                                                    </StackLayout>
+
+                                                    <!-- FAQ Chips -->
+                                                    <VerticalStackLayout
+                                                        Spacing="6"
+                                                        IsVisible="{Binding IsFAQVisible}">
+                                                        <BindableLayout.ItemsSource>
+                                                            <MultiBinding
+                                                                Converter="{StaticResource FirstNItemsMultiConverter}">
+                                                                <Binding
+                                                                    Source="{x:Reference ChatCollection}"
+                                                                    Path="BindingContext.FaqQuestions" />
+                                                                <Binding
+                                                                    Source="{x:Reference ChatCollection}"
+                                                                    Path="BindingContext.DisplayedFAQCount" />
+                                                            </MultiBinding>
+                                                        </BindableLayout.ItemsSource>
+                                                        <BindableLayout.ItemTemplate>
+                                                            <DataTemplate
+                                                                x:DataType="vm:ChatMessage">
+                                                                
+                                                                <custButtons:GradientButton
+                                                                    Text="{Binding Text}"
+                                                                    FontAttributes="Bold"
+                                                                    FontSize="13"
+                                                                    CornerRadius="20"
+                                                                    ButtonPadding="10,10"
+                                                                    IsVisible="True"
+                                                                    HasImageIcon="False"
+                                                                    ButtonTextColor="White"
+                                                                    GradientColorLeft="{StaticResource ThemeClrMain}"
+                                                                    GradientColorRight="{StaticResource ThemeClrMain}"
+                                                                    TapCommand="{Binding Source={x:Reference ChatCollection}, Path=BindingContext.SendFAQQuestionCommand}"
+                                                                    CommandParameter="{Binding .}"/>
+                                                                
+                                                            </DataTemplate>
+                                                        </BindableLayout.ItemTemplate>
+                                                    </VerticalStackLayout>
+
+                                                    <!-- Showing x of y -->
+                                                    <Label
+                                                        Text="{Binding ShowingRowsCount}"
+                                                        FontSize="10"
+                                                        TextColor="{StaticResource ThemeGray2}"
+                                                        FontAttributes="Italic"
+                                                        HorizontalOptions="End"
+                                                        Margin="0,-5,5,0">
+                                                        <Label.IsVisible>
+                                                            <Binding
+                                                                Path="IsFAQContainer" />
+                                                        </Label.IsVisible>
+                                                    </Label>
+                                                    
+                                                    <!-- Show More -->
+                                                    <Border
+                                                        HorizontalOptions="Center"
+                                                        Padding="15,3"
+                                                        Margin="0,0,0,0"
+                                                        StrokeShape="RoundRectangle 10"
+                                                        StrokeThickness="0"
+                                                        Background="{StaticResource ThemeClrPurple}"
+                                                        Stroke="Transparent">
+                                                        <Border.IsVisible>
+                                                            <MultiBinding
+                                                                Converter="{StaticResource ShowFAQExtrasVisibilityConverter}">
+                                                                <Binding
+                                                                    Path="IsFAQContainer" />
+                                                                <Binding
+                                                                    Path="ShowShowMoreButton" />
+                                                            </MultiBinding>
+                                                        </Border.IsVisible>
+                                                        <Border.GestureRecognizers>
+                                                            <TapGestureRecognizer
+                                                                Command="{Binding Source={x:Reference ChatCollection}, Path=BindingContext.ShowMoreFAQsCommand}" />
+                                                        </Border.GestureRecognizers>
+                                                        <Label
+                                                            Text="Show more..."
+                                                            FontSize="12"
+                                                            TextColor="{StaticResource Black}"
+                                                            FontAttributes="Italic"
+                                                            HorizontalOptions="Center" />
+                                                    </Border>
+                                                    
+                                                    <!-- Not finding your question? -->
+                                                    <Border
+                                                        HorizontalOptions="Center"
+                                                        Padding="15,2"
+                                                        Margin="0,0,0,0"
+                                                        StrokeShape="RoundRectangle 10"
+                                                        StrokeThickness="0"
+                                                        Background="{StaticResource ThemeClrLight2}"
+                                                        Stroke="Transparent">
+                                                        <Border.IsVisible>
+                                                            <Binding
+                                                                Path="IsFAQVisible" />
+                                                        </Border.IsVisible>
+                                                        <Border.GestureRecognizers>
+                                                            <TapGestureRecognizer
+                                                                Command="{Binding Source={x:Reference ChatCollection}, Path=BindingContext.ShowCustomInputBoxCommand}" />
+                                                        </Border.GestureRecognizers>
+                                                        <Label
+                                                            Text="Not finding your question?"
+                                                            FontSize="12"
+                                                            TextColor="{StaticResource Black}"
+                                                            FontAttributes="Italic"
+                                                            HorizontalOptions="Center"
+                                                            Margin="0,0,0,0"/>
+                                                    </Border>
+                                                    
+                                                    <!-- Ask Another -->
+                                                    <VerticalStackLayout>
+                                                        <VerticalStackLayout.IsVisible>
+                                                            <MultiBinding
+                                                                Converter="{StaticResource ShowAskAnotherConverter}">
+                                                                <Binding
+                                                                    Path="IsUser" />
+                                                                <Binding
+                                                                    Path="IsFAQVisible" />
+                                                                <Binding
+                                                                    Path="IsTyping" />
+                                                                <Binding
+                                                                    Path="IsFAQContainer" />
+                                                            </MultiBinding>
+                                                        </VerticalStackLayout.IsVisible>
+                                                        <BoxView
+                                                            HeightRequest="1"
+                                                            Color="{StaticResource ThemeClrMain}"
+                                                            HorizontalOptions="Fill" />
+                                                        <Border
+                                                            HorizontalOptions="Center"
+                                                            Padding="10,2"
+                                                            Margin="0,5,0,0"
+                                                            StrokeShape="RoundRectangle 10"
+                                                            StrokeThickness="0"
+                                                            Background="{StaticResource ThemeClrPurple}"
+                                                            Stroke="Transparent">
+                                                            <Border.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                    Command="{Binding Source={x:Reference ChatCollection}, Path=BindingContext.AskAnotherCommand}" />
+                                                            </Border.GestureRecognizers>
+                                                            <Label
+                                                                Text="Ask another question"
+                                                                FontSize="12"
+                                                                TextColor="{StaticResource Black}"
+                                                                FontAttributes="Italic"/>
+                                                        </Border>
+                                                    </VerticalStackLayout>
+
+                                                </VerticalStackLayout>
+                                            </Border>
+
+                                            <!-- User Avatar -->
+                                            <Image
+                                                Grid.Column="2"
+                                                Source="user.png"
+                                                WidthRequest="30"
+                                                HeightRequest="30"
+                                                VerticalOptions="Start"
+                                                Margin="5"
+                                                IsVisible="{Binding IsUser, Converter={StaticResource BoolToUserVisibility}}" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+                        </VerticalStackLayout>
+                    </Border>
+                </ScrollView>
+
+                <!-- User Input Section -->
+                <Grid
+                    Grid.Row="2"
+                    Padding="10,3"
+                    BackgroundColor="{StaticResource ThemeLightGray}"
+                    IsVisible="{Binding ShowCustomInputBox}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+                            Width="*" />
+                        <ColumnDefinition
+                            Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border
+                        Grid.Column="0"
+                        Stroke="{StaticResource ThemeClrMain}"
+                        StrokeShape="RoundRectangle 12"
+                        Padding="10,0,0,0"
+                        Margin="0,0,4,0"
+                        BackgroundColor="White">
+                        <Editor
+                            x:Name="UserInputEntry"
+                            Placeholder="Type your message..."
+                            FontSize="15"
+                            AutoSize="TextChanges"
+                            TextColor="{StaticResource ThemeClrMainDark}"
+                            Margin="0,0,5,0"
+                            MaximumHeightRequest="130" />
+                    </Border>
+
+                    <Border
+                        Grid.Column="1"
+                        BackgroundColor="{StaticResource ThemeClrMain}"
+                        StrokeShape="RoundRectangle 12"
+                        Stroke="Transparent"
+                        VerticalOptions="Center"
+                        Padding="10,10">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding SendCustomUserMessageCommand}"
+                                CommandParameter="{Binding Text, Source={x:Reference UserInputEntry}}" />
+                        </Border.GestureRecognizers>
+                        <Image
+                            Source="send_icon_white.png"
+                            WidthRequest="22"
+                            HeightRequest="22"
+                            VerticalOptions="Center"
+                            Margin="0" />
+                    </Border>
+                </Grid>
+            </Grid>
+
+            <!-- Bottom Tabs -->
+            <dashTabs:DashboardBottomTab
+                Grid.Row="2"
+                x:Name="BaseTabs"
+                Padding="0,0"
+                ActiveTab="None"
+                IsVisible="{Binding ShowTabs}" />
+
+        </Grid>
+
+        <!-- Loaders -->
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

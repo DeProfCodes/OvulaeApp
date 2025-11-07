@@ -1,0 +1,183 @@
+﻿<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Class="OvulaeApp.Views.Components.Modals.CurrencyExchangeModal"
+    x:Name="Root"
+    xmlns:sharedComp="clr-namespace:OvulaeApp.Views.Components.Shared"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    Background="#80000000"
+    ZIndex="250">
+
+    <!-- Fullscreen blocker -->
+    <Grid
+        BackgroundColor="#80000000"
+        InputTransparent="False"
+        HorizontalOptions="Fill"
+        VerticalOptions="Fill">
+
+        <Border
+            Background="White"
+            Padding="0"
+            StrokeShape="RoundRectangle 16"
+            Stroke="{StaticResource ThemeClr3}"
+            StrokeThickness="2"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="330"
+            HeightRequest="300">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+                <Grid
+                    Grid.Row="0"
+                    ColumnDefinitions="*,Auto"
+                    Background="{StaticResource ThemeClrPurple}"
+                    Padding="10">
+                    <Label
+                        Grid.Column="0"
+                        x:Name="ModalTitle"
+                        Text="Checkout – Priced in ZAR"
+                        Padding="4,0,0,0"
+                        TextColor="{StaticResource ThemeClr3}"
+                        HorizontalTextAlignment="Center"
+                        FontSize="18"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold" />
+                    <Border
+                        Grid.Column="1"
+                        StrokeShape="RoundRectangle 5"
+                        Stroke="Transparent"
+                        Background="{StaticResource ThemeClrMain}"
+                        Padding="10,1,10,1"
+                        HeightRequest="25">
+                        <Label
+                            Text="X"
+                            TextColor="White"
+                            FontFamily="Arial Black"
+                            HorizontalTextAlignment="Start"
+                            FontSize="14"
+                            FontAttributes="Bold" />
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="CloseButton_Tapped" />
+                        </Border.GestureRecognizers>
+                    </Border>
+                </Grid>
+
+                <VerticalStackLayout
+                    Grid.Row="1">
+
+                    <Label
+                        x:Name="IntroText"
+                        Text=""
+                        FontSize="14"
+                        Margin="20"
+                        TextColor="{StaticResource Black}"
+                        HorizontalTextAlignment="Center" />
+                    
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center">
+                        <Image
+                            Source="dollar_symbol_purple_icon.png"
+                            HeightRequest="23" />
+                        <Label
+                            x:Name="DollarAmount"
+                            Text="5.99"
+                            FontSize="26"
+                            Margin="5,-2,0,0"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource ThemeClrMain}"
+                            VerticalOptions="Center"
+                            HorizontalTextAlignment="Center" />
+                        
+                        <Image 
+                            Source="exchange_rate_arrow_purple_icon.png"
+                            WidthRequest="27"
+                            Margin="20,0,0,0"/>
+                        <Image
+                            Source="rand_symbol_purple_icon.png"
+                            HeightRequest="22"
+                            Margin="20,0,0,0"/>
+                        <Label
+                            x:Name="ZARAmount"
+                            Text="106.67"
+                            FontSize="26"
+                            Margin="2,-2,0,0"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource ThemeClrMain}"
+                            VerticalOptions="Center"
+                            HorizontalTextAlignment="Center" />
+                    </HorizontalStackLayout>
+
+                    <Label
+                        Text="*Ovulae uses South African Rand (ZAR) as our base currency, but your payment will be processed in USD at the current exchange rate."
+                        FontSize="10"
+                        FontAttributes="Italic"
+                        Margin="20,25,20,0"
+                        TextColor="{StaticResource ThemeClr3}"
+                        HorizontalTextAlignment="Center" />
+
+                    <Label
+                        Text="We do this to ensure secure and consistent billing for all our users worldwide. Thank you for your understanding!"
+                        FontSize="9"
+                        FontAttributes="Italic"
+                        Margin="20,10,20,0"
+                        TextColor="{StaticResource ThemeGray2}"
+                        HorizontalTextAlignment="Center" />
+
+                </VerticalStackLayout>
+
+                <Border
+                    Grid.Row="2"
+                    StrokeShape="RoundRectangle 5"
+                    Stroke="Transparent"
+                    Background="{StaticResource ThemeLightGray}"
+                    Margin="0,0,0,0">
+                    <HorizontalStackLayout
+                        HorizontalOptions="CenterAndExpand">
+                        <Border
+                            StrokeShape="RoundRectangle 5"
+                            HorizontalOptions="Center"
+                            Stroke="Transparent"
+                            Background="{StaticResource ThemeClr2}"
+                            Padding="15,5,15,5"
+                            WidthRequest="80"
+                            Margin="0,5,0,5">
+                            <Label
+                                Text="Cancel"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                HorizontalOptions="Center"
+                                FontFamily="Arial Black"
+                                TextColor="White" />
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="NoButtonTapped" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                        <Border
+                            StrokeShape="RoundRectangle 5"
+                            HorizontalOptions="Center"
+                            Stroke="Transparent"
+                            Background="{StaticResource ThemeClrMain}"
+                            Padding="15,5,15,5"
+                            WidthRequest="90"
+                            Margin="5,5,0,5">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="YesButtonTapped" />
+                            </Border.GestureRecognizers>
+                            <Label
+                                Text="Proceed"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                HorizontalOptions="Center"
+                                FontFamily="Arial Black"
+                                TextColor="White" />
+                        </Border>
+                    </HorizontalStackLayout>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentView>

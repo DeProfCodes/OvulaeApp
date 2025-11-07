@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="OvulaeApp.Views.Components.Controls.NumericStepper2"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:OvulaeApp.Views.Components.Controls"
+    x:Name="Root"
+    x:DataType="local:NumericStepper2">
+
+    <Border
+        HorizontalOptions="Center"
+        StrokeShape="RoundRectangle 5"
+        Padding="0"
+        HeightRequest="{Binding OuterHeight}"
+        WidthRequest="{Binding OuterWidth}"
+        BackgroundColor="{Binding OuterBackgroundColor}"
+        Stroke="{Binding OuterStrokeColor}">
+
+        <Grid
+            ColumnDefinitions="*,*,*">
+
+            <!-- Decrease -->
+            <Border
+                Grid.Column="0"
+                WidthRequest="{Binding ButtonWidth}"
+                StrokeShape="RoundRectangle 5"
+                Padding="{Binding ButtonPadding}"
+                BackgroundColor="{Binding DecreaseButtonBackground}"
+                Stroke="{Binding DecreaseButtonStroke}">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnDecreaseTapped" />
+                </Border.GestureRecognizers>
+                <Image
+                    Source="{Binding DecreaseIconSource}"
+                    WidthRequest="{Binding IconWidth}"
+                    Margin="0,4,0,0"
+                    VerticalOptions="Center"
+                    Aspect="AspectFit" />
+            </Border>
+
+            <!-- Entry -->
+            <Border
+                Grid.Column="1"
+                WidthRequest="{Binding EntryWidth}"
+                Padding="{Binding EntryPadding}"
+                BackgroundColor="{Binding EntryBackground}"
+                Stroke="{Binding EntryStrokeColor}">
+                <Entry
+                    x:Name="EntryField"
+                    Text="{Binding Value, Mode=TwoWay}"
+                    FontSize="{Binding FontSize}"
+                    FontAttributes="{Binding FontAttributes}"
+                    FontFamily="{Binding FontFamily}"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Keyboard="Numeric"
+                    TextChanged="EntryField_TextChanged"
+                    Unfocused="EntryField_Unfocused"
+                    TextColor="{Binding EntryTextColor}" />
+            </Border>
+
+            <!-- Increase -->
+            <Border
+                Grid.Column="2"
+                WidthRequest="{Binding ButtonWidth}"
+                StrokeShape="RoundRectangle 5"
+                Padding="{Binding RightButtonPadding}"
+                BackgroundColor="{Binding RightButtonBackground}"
+                Stroke="{Binding RightButtonStroke}">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnIncreaseTapped" />
+                </Border.GestureRecognizers>
+                <Image
+                    Source="{Binding IncreaseIconSource}"
+                    WidthRequest="{Binding IconWidth}"
+                    VerticalOptions="Center"
+                    Aspect="AspectFit" />
+            </Border>
+
+        </Grid>
+    </Border>
+</ContentView>

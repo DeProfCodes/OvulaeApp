@@ -1,0 +1,3572 @@
+﻿[
+    {
+        "tipsGroup": {
+            "id": 1,
+            "type": "Pregnancy",
+            "weeks": "1",
+            "status": 4,
+            "tipFromDoctor": "“Before pregnancy is confirmed, healthy habits matter. Treat your body like it's already nurturing life.”",
+            "createData": "2025-06-15T15:07:36.648253",
+            "lastUpdateDate": "2025-06-15T15:07:37.2975638"
+        },
+        "tipItems": [
+            {
+                "tipId": 1,
+                "tipGroupId": 1,
+                "title": "💤 Prioritize Rest",
+                "description": "Aim for 7–9 hours of quality sleep — your body may already be working overtime.",
+                "status": 4,
+                "createData": "2025-06-15T15:07:48.6062189",
+                "lastUpdateDate": "2025-06-15T15:07:48.6062253"
+            },
+            {
+                "tipId": 2,
+                "tipGroupId": 1,
+                "title": "🥬 Boost Folate",
+                "description": "Eat folate-rich foods like spinach or oranges — or begin a prenatal vitamin with folic acid.",
+                "status": 4,
+                "createData": "2025-06-15T15:07:48.6062259",
+                "lastUpdateDate": "2025-06-15T15:07:48.606226"
+            },
+            {
+                "tipId": 3,
+                "tipGroupId": 1,
+                "title": "🚫 Avoid Alcohol & Smoking",
+                "description": "If you’re trying to conceive, it’s safest to cut out harmful substances right away.",
+                "status": 4,
+                "createData": "2025-06-15T15:07:48.6062262",
+                "lastUpdateDate": "2025-06-15T15:07:48.6062263"
+            },
+            {
+                "tipId": 4,
+                "tipGroupId": 1,
+                "title": "🧘 Gentle Movement",
+                "description": "Light yoga or walking can ease stress and prep your body for pregnancy.",
+                "status": 4,
+                "createData": "2025-06-15T15:07:48.6062265",
+                "lastUpdateDate": "2025-06-15T15:07:48.6062265"
+            },
+            {
+                "tipId": 5,
+                "tipGroupId": 1,
+                "title": "💧 Stay Hydrated",
+                "description": "Start tracking water intake — aim for at least 8 glasses daily.",
+                "status": 4,
+                "createData": "2025-06-15T15:07:48.6062266",
+                "lastUpdateDate": "2025-06-15T15:07:48.6062267"
+            },
+            {
+                "tipId": 6,
+                "tipGroupId": 1,
+                "title": "📆 Track Your Cycle",
+                "description": "Knowing your ovulation window helps in planning or understanding early pregnancy symptoms.",
+                "status": 4,
+                "createData": "2025-06-15T15:07:48.6062268",
+                "lastUpdateDate": "2025-06-15T15:07:48.6062268"
+            },
+            {
+                "tipId": 7,
+                "tipGroupId": 1,
+                "title": "🧠 Learn About Early Signs",
+                "description": "Spotting, fatigue, or nausea? Start reading up on what may be coming next.",
+                "status": 4,
+                "createData": "2025-06-15T15:07:48.606227",
+                "lastUpdateDate": "2025-06-15T15:07:48.606227"
+            },
+            {
+                "tipId": 8,
+                "tipGroupId": 1,
+                "title": "💬 Share Intentions",
+                "description": "If you're comfortable, let your support circle in — it helps emotionally.",
+                "status": 4,
+                "createData": "2025-06-15T15:07:48.6062273",
+                "lastUpdateDate": "2025-06-15T15:07:48.6062274"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 2,
+            "type": "Pregnancy",
+            "weeks": "2",
+            "status": 4,
+            "tipFromDoctor": "“Week 2 is still part of your cycle, but it's a perfect time to prep your body for what's ahead.”",
+            "createData": "2025-06-15T15:08:05.5867567",
+            "lastUpdateDate": "2025-06-15T15:08:05.586757"
+        },
+        "tipItems": [
+            {
+                "tipId": 9,
+                "tipGroupId": 2,
+                "title": "🍳 Eat Protein at Breakfast",
+                "description": "Start your day with eggs, yogurt, or nuts — it helps balance energy and hormones.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.0140471",
+                "lastUpdateDate": "2025-06-15T15:08:06.0140474"
+            },
+            {
+                "tipId": 10,
+                "tipGroupId": 2,
+                "title": "🩺 Check Medications",
+                "description": "Review your prescriptions or supplements with a doctor to ensure pregnancy safety.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.0140477",
+                "lastUpdateDate": "2025-06-15T15:08:06.0140478"
+            },
+            {
+                "tipId": 11,
+                "tipGroupId": 2,
+                "title": "🏃 Gentle Cardio",
+                "description": "Go for a brisk 20-minute walk — it supports circulation and hormone balance.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.014048",
+                "lastUpdateDate": "2025-06-15T15:08:06.0140481"
+            },
+            {
+                "tipId": 12,
+                "tipGroupId": 2,
+                "title": "📱 Download a Tracker",
+                "description": "Use an app or journal to track symptoms, moods, and habits.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.0140483",
+                "lastUpdateDate": "2025-06-15T15:08:06.0140483"
+            },
+            {
+                "tipId": 13,
+                "tipGroupId": 2,
+                "title": "😌 Practice Gratitude",
+                "description": "Note 1–2 things you’re grateful for today — positivity supports emotional wellness.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.0140484",
+                "lastUpdateDate": "2025-06-15T15:08:06.0140485"
+            },
+            {
+                "tipId": 14,
+                "tipGroupId": 2,
+                "title": "🥤 Limit Caffeine",
+                "description": "Try to stay under 200mg of caffeine daily — that’s one cup of coffee.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.0140486",
+                "lastUpdateDate": "2025-06-15T15:08:06.0140487"
+            },
+            {
+                "tipId": 15,
+                "tipGroupId": 2,
+                "title": "🎧 Calming Playlist",
+                "description": "Play music that soothes your mind — mood regulation is key even before conception.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.0140488",
+                "lastUpdateDate": "2025-06-15T15:08:06.0140489"
+            },
+            {
+                "tipId": 16,
+                "tipGroupId": 2,
+                "title": "💡 Ask Questions",
+                "description": "Start listing things you’re curious about — prenatal care, symptoms, etc.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.014049",
+                "lastUpdateDate": "2025-06-15T15:08:06.014049"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 3,
+            "type": "Pregnancy",
+            "weeks": "3",
+            "status": 4,
+            "tipFromDoctor": "“Fertilization may occur now — keep your health habits strong and stress low.”",
+            "createData": "2025-06-15T15:08:06.4411638",
+            "lastUpdateDate": "2025-06-15T15:08:06.4411648"
+        },
+        "tipItems": [
+            {
+                "tipId": 17,
+                "tipGroupId": 3,
+                "title": "📚 Learn Fertilization Basics",
+                "description": "Understanding how life begins can bring peace and wonder to the process.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.8564196",
+                "lastUpdateDate": "2025-06-15T15:08:06.8564197"
+            },
+            {
+                "tipId": 18,
+                "tipGroupId": 3,
+                "title": "🛀 Relaxation Ritual",
+                "description": "Take a warm bath (not hot) and breathe — managing cortisol supports conception.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.8564199",
+                "lastUpdateDate": "2025-06-15T15:08:06.8564199"
+            },
+            {
+                "tipId": 19,
+                "tipGroupId": 3,
+                "title": "🍓 Snack Smart",
+                "description": "Eat whole foods every 3–4 hours to keep energy steady.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.85642",
+                "lastUpdateDate": "2025-06-15T15:08:06.8564201"
+            },
+            {
+                "tipId": 20,
+                "tipGroupId": 3,
+                "title": "🧴 Choose Safer Products",
+                "description": "Switch to gentler skincare and household products to reduce chemical exposure.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.8564201",
+                "lastUpdateDate": "2025-06-15T15:08:06.8564202"
+            },
+            {
+                "tipId": 21,
+                "tipGroupId": 3,
+                "title": "📆 Reflect on Your 'Why'",
+                "description": "Write why you’re on this journey — it’ll keep you grounded during uncertainty.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.8564203",
+                "lastUpdateDate": "2025-06-15T15:08:06.8564204"
+            },
+            {
+                "tipId": 22,
+                "tipGroupId": 3,
+                "title": "🦷 Oral Health Check",
+                "description": "Book a dental cleaning — gum health is connected to pregnancy outcomes.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.8564204",
+                "lastUpdateDate": "2025-06-15T15:08:06.8564205"
+            },
+            {
+                "tipId": 23,
+                "tipGroupId": 3,
+                "title": "☁️ Dream Journal",
+                "description": "Hormones might stir your mind — note recurring thoughts or dreams.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.856421",
+                "lastUpdateDate": "2025-06-15T15:08:06.856421"
+            },
+            {
+                "tipId": 24,
+                "tipGroupId": 3,
+                "title": "💬 Be Kind to Yourself",
+                "description": "Whether conception happens now or not — your body is doing its best.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:06.8564211",
+                "lastUpdateDate": "2025-06-15T15:08:06.8564211"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 4,
+            "type": "Pregnancy",
+            "weeks": "4",
+            "status": 4,
+            "tipFromDoctor": "“By now, implantation may have occurred. Early signs might appear, so listen closely to your body.”",
+            "createData": "2025-06-15T15:08:07.2871688",
+            "lastUpdateDate": "2025-06-15T15:08:07.2871695"
+        },
+        "tipItems": [
+            {
+                "tipId": 25,
+                "tipGroupId": 4,
+                "title": "🩸 Know Implantation Signs",
+                "description": "Light spotting or mild cramps? Totally normal in early pregnancy.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:07.7066893",
+                "lastUpdateDate": "2025-06-15T15:08:07.7066895"
+            },
+            {
+                "tipId": 26,
+                "tipGroupId": 4,
+                "title": "🍋 Sip Lemon Water",
+                "description": "It helps hydrate and may reduce early nausea or bloating.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:07.7066897",
+                "lastUpdateDate": "2025-06-15T15:08:07.7066898"
+            },
+            {
+                "tipId": 27,
+                "tipGroupId": 4,
+                "title": "📵 Digital Detox",
+                "description": "Unplug for an hour to rest your mind — peace helps hormonal balance.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:07.7066899",
+                "lastUpdateDate": "2025-06-15T15:08:07.70669"
+            },
+            {
+                "tipId": 28,
+                "tipGroupId": 4,
+                "title": "👟 Step Outside",
+                "description": "Even 10 minutes of sun supports vitamin D and mood.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:07.70669",
+                "lastUpdateDate": "2025-06-15T15:08:07.7066901"
+            },
+            {
+                "tipId": 29,
+                "tipGroupId": 4,
+                "title": "🗓️ Consider Taking a Test",
+                "description": "If you suspect pregnancy, wait until your missed period or use early detection kits.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:07.7066902",
+                "lastUpdateDate": "2025-06-15T15:08:07.7066905"
+            },
+            {
+                "tipId": 30,
+                "tipGroupId": 4,
+                "title": "🤗 Self-Compassion",
+                "description": "Emotions may rise — acknowledge them without judgment.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:07.7066906",
+                "lastUpdateDate": "2025-06-15T15:08:07.7066907"
+            },
+            {
+                "tipId": 31,
+                "tipGroupId": 4,
+                "title": "🎨 Gentle Creativity",
+                "description": "Paint, doodle, journal — it helps you connect inward.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:07.7066907",
+                "lastUpdateDate": "2025-06-15T15:08:07.7066908"
+            },
+            {
+                "tipId": 32,
+                "tipGroupId": 4,
+                "title": "🤝 Seek Support",
+                "description": "Call someone close — staying connected is calming in the unknown.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:07.7066908",
+                "lastUpdateDate": "2025-06-15T15:08:07.7066909"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 5,
+            "type": "Pregnancy",
+            "weeks": "5",
+            "status": 4,
+            "tipFromDoctor": "“Week 5 often brings the first confirmed pregnancy test. Embrace this new beginning gently.”",
+            "createData": "2025-06-15T15:08:08.1328911",
+            "lastUpdateDate": "2025-06-15T15:08:08.1328913"
+        },
+        "tipItems": [
+            {
+                "tipId": 33,
+                "tipGroupId": 5,
+                "title": "📞 Book a Prenatal Visit",
+                "description": "Schedule your first OB visit to start your care plan.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:08.5520954",
+                "lastUpdateDate": "2025-06-15T15:08:08.5520958"
+            },
+            {
+                "tipId": 34,
+                "tipGroupId": 5,
+                "title": "🥬 Eat Iron-Rich Foods",
+                "description": "Add spinach, lentils, or fortified cereals to support early blood volume increase.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:08.5520963",
+                "lastUpdateDate": "2025-06-15T15:08:08.5520966"
+            },
+            {
+                "tipId": 35,
+                "tipGroupId": 5,
+                "title": "🛌 Nap Guilt-Free",
+                "description": "Tiredness is normal — allow yourself a midday reset.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:08.552097",
+                "lastUpdateDate": "2025-06-15T15:08:08.5520972"
+            },
+            {
+                "tipId": 36,
+                "tipGroupId": 5,
+                "title": "🤒 Track Symptoms",
+                "description": "Note anything unusual like spotting or severe cramping — share with your doctor.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:08.5520976",
+                "lastUpdateDate": "2025-06-15T15:08:08.5520978"
+            },
+            {
+                "tipId": 37,
+                "tipGroupId": 5,
+                "title": "🎧 Guided Meditation",
+                "description": "Use a pregnancy-focused meditation to ease anxiety and promote calm.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:08.5520982",
+                "lastUpdateDate": "2025-06-15T15:08:08.5520985"
+            },
+            {
+                "tipId": 38,
+                "tipGroupId": 5,
+                "title": "🥤 Carry a Water Bottle",
+                "description": "It’ll help you remember to sip throughout the day.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:08.5520989",
+                "lastUpdateDate": "2025-06-15T15:08:08.552099"
+            },
+            {
+                "tipId": 39,
+                "tipGroupId": 5,
+                "title": "📘 Read Pregnancy Basics",
+                "description": "Spend 10 minutes today learning about your current week of development.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:08.5520997",
+                "lastUpdateDate": "2025-06-15T15:08:08.5520998"
+            },
+            {
+                "tipId": 40,
+                "tipGroupId": 5,
+                "title": "🧡 Celebrate Quietly",
+                "description": "Take a moment to recognize the incredible thing beginning inside you.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:08.5521",
+                "lastUpdateDate": "2025-06-15T15:08:08.5521001"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 6,
+            "type": "Pregnancy",
+            "weeks": "6",
+            "status": 4,
+            "tipFromDoctor": "“Morning sickness is common. Stay hydrated, eat small meals, and listen to your body.”",
+            "createData": "2025-06-15T15:08:08.9765292",
+            "lastUpdateDate": "2025-06-15T15:08:08.9765296"
+        },
+        "tipItems": [
+            {
+                "tipId": 41,
+                "tipGroupId": 6,
+                "title": "🍞 Snack Before Rising",
+                "description": "Keep crackers by your bed to settle your stomach before getting up.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:09.4155879",
+                "lastUpdateDate": "2025-06-15T15:08:09.4155881"
+            },
+            {
+                "tipId": 42,
+                "tipGroupId": 6,
+                "title": "🧃 Try Ginger Tea",
+                "description": "Ginger helps reduce nausea — sip it slowly during the day.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:09.4155884",
+                "lastUpdateDate": "2025-06-15T15:08:09.4155885"
+            },
+            {
+                "tipId": 43,
+                "tipGroupId": 6,
+                "title": "👂 Listen to Fatigue",
+                "description": "Your body is forming vital organs — rest is essential.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:09.4155887",
+                "lastUpdateDate": "2025-06-15T15:08:09.4155888"
+            },
+            {
+                "tipId": 44,
+                "tipGroupId": 6,
+                "title": "📸 Document the Start",
+                "description": "Take your first bump photo or jot down early thoughts in a journal.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:09.4155892",
+                "lastUpdateDate": "2025-06-15T15:08:09.4155893"
+            },
+            {
+                "tipId": 45,
+                "tipGroupId": 6,
+                "title": "🥗 Small, Frequent Meals",
+                "description": "Eat every 2–3 hours to keep blood sugar stable and nausea at bay.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:09.4155895",
+                "lastUpdateDate": "2025-06-15T15:08:09.4155896"
+            },
+            {
+                "tipId": 46,
+                "tipGroupId": 6,
+                "title": "💊 Take Prenatals with Food",
+                "description": "This helps reduce queasiness from iron or vitamins.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:09.4155897",
+                "lastUpdateDate": "2025-06-15T15:08:09.4155898"
+            },
+            {
+                "tipId": 47,
+                "tipGroupId": 6,
+                "title": "🎧 Calm Sounds",
+                "description": "Soft music or white noise can help with nausea and stress.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:09.4155899",
+                "lastUpdateDate": "2025-06-15T15:08:09.4155899"
+            },
+            {
+                "tipId": 48,
+                "tipGroupId": 6,
+                "title": "💬 Talk to Baby",
+                "description": "You’re officially pregnant — bonding starts now!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:09.4155901",
+                "lastUpdateDate": "2025-06-15T15:08:09.4155902"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 7,
+            "type": "Pregnancy",
+            "weeks": "7",
+            "status": 4,
+            "tipFromDoctor": "“Your uterus is doubling in size. You may feel bloated or crampy — it’s normal.”",
+            "createData": "2025-06-15T15:08:09.8342441",
+            "lastUpdateDate": "2025-06-15T15:08:09.8342447"
+        },
+        "tipItems": [
+            {
+                "tipId": 49,
+                "tipGroupId": 7,
+                "title": "🥤 Infused Water",
+                "description": "Try cucumber or lemon in water to ease bloating and encourage hydration.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:10.3327705",
+                "lastUpdateDate": "2025-06-15T15:08:10.3327706"
+            },
+            {
+                "tipId": 50,
+                "tipGroupId": 7,
+                "title": "🧘 Light Stretching",
+                "description": "Gentle stretches help with lower back tension and digestion.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:10.3327709",
+                "lastUpdateDate": "2025-06-15T15:08:10.3327709"
+            },
+            {
+                "tipId": 51,
+                "tipGroupId": 7,
+                "title": "👚 Wear Comfy Clothes",
+                "description": "Loose clothes help with bloating and breast tenderness.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:10.3327712",
+                "lastUpdateDate": "2025-06-15T15:08:10.3327713"
+            },
+            {
+                "tipId": 52,
+                "tipGroupId": 7,
+                "title": "📝 Start a Question List",
+                "description": "Write down things to ask your doctor — keep it handy.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:10.3327715",
+                "lastUpdateDate": "2025-06-15T15:08:10.3327716"
+            },
+            {
+                "tipId": 53,
+                "tipGroupId": 7,
+                "title": "🧼 Switch to Safe Cleaners",
+                "description": "Avoid strong fumes — go for natural or pregnancy-safe options.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:10.3327717",
+                "lastUpdateDate": "2025-06-15T15:08:10.3327718"
+            },
+            {
+                "tipId": 54,
+                "tipGroupId": 7,
+                "title": "💡 Limit Screen Time Before Bed",
+                "description": "Helps promote better sleep and reduce nausea triggers.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:10.332772",
+                "lastUpdateDate": "2025-06-15T15:08:10.3327721"
+            },
+            {
+                "tipId": 55,
+                "tipGroupId": 7,
+                "title": "📚 Read About Week 7",
+                "description": "Learn how your baby’s brain and limbs are forming now.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:10.3327723",
+                "lastUpdateDate": "2025-06-15T15:08:10.3327724"
+            },
+            {
+                "tipId": 56,
+                "tipGroupId": 7,
+                "title": "🛌 Build a Bedtime Routine",
+                "description": "Same sleep time, calming rituals — your body will thank you.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:10.3327725",
+                "lastUpdateDate": "2025-06-15T15:08:10.3327726"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 8,
+            "type": "Pregnancy",
+            "weeks": "8",
+            "status": 4,
+            "tipFromDoctor": "“Nausea and fatigue can peak around this time. Be gentle with yourself.”",
+            "createData": "2025-06-15T15:08:10.752735",
+            "lastUpdateDate": "2025-06-15T15:08:10.7527353"
+        },
+        "tipItems": [
+            {
+                "tipId": 57,
+                "tipGroupId": 8,
+                "title": "😌 Say No Guilt-Free",
+                "description": "It’s okay to cancel plans. Your energy is focused on growing a baby!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:11.1733775",
+                "lastUpdateDate": "2025-06-15T15:08:11.1733776"
+            },
+            {
+                "tipId": 58,
+                "tipGroupId": 8,
+                "title": "🍜 Keep Snacks Nearby",
+                "description": "Low-sugar granola bars or trail mix help manage nausea spikes.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:11.1733777",
+                "lastUpdateDate": "2025-06-15T15:08:11.1733778"
+            },
+            {
+                "tipId": 59,
+                "tipGroupId": 8,
+                "title": "🚿 Cool Showers",
+                "description": "Refreshing and soothing — especially if feeling flushed or tired.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:11.1733779",
+                "lastUpdateDate": "2025-06-15T15:08:11.1733779"
+            },
+            {
+                "tipId": 60,
+                "tipGroupId": 8,
+                "title": "👂 Ask for Help",
+                "description": "Let your partner or friends assist with errands or chores.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:11.173378",
+                "lastUpdateDate": "2025-06-15T15:08:11.173378"
+            },
+            {
+                "tipId": 61,
+                "tipGroupId": 8,
+                "title": "💌 Join a Community",
+                "description": "Online or local — talking to others helps you feel less alone.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:11.1733781",
+                "lastUpdateDate": "2025-06-15T15:08:11.1733782"
+            },
+            {
+                "tipId": 62,
+                "tipGroupId": 8,
+                "title": "📦 Prep a Nausea Kit",
+                "description": "Pack mints, crackers, tissues — keep it in your bag or car.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:11.1733782",
+                "lastUpdateDate": "2025-06-15T15:08:11.1733782"
+            },
+            {
+                "tipId": 63,
+                "tipGroupId": 8,
+                "title": "🎨 Gentle Craft Time",
+                "description": "Coloring, knitting, or journaling helps pass time and lift mood.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:11.1733783",
+                "lastUpdateDate": "2025-06-15T15:08:11.1733783"
+            },
+            {
+                "tipId": 64,
+                "tipGroupId": 8,
+                "title": "📱 Limit the Scroll",
+                "description": "Too much social media can overstimulate and drain — take breaks.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:11.1733784",
+                "lastUpdateDate": "2025-06-15T15:08:11.1733784"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 9,
+            "type": "Pregnancy",
+            "weeks": "9",
+            "status": 4,
+            "tipFromDoctor": "“Your baby is forming facial features. You may still feel tired, bloated, or emotional.”",
+            "createData": "2025-06-15T15:08:11.592933",
+            "lastUpdateDate": "2025-06-15T15:08:11.5929332"
+        },
+        "tipItems": [
+            {
+                "tipId": 65,
+                "tipGroupId": 9,
+                "title": "💦 Hydrate in Sips",
+                "description": "Small sips all day help with nausea better than large gulps.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.0155067",
+                "lastUpdateDate": "2025-06-15T15:08:12.0155069"
+            },
+            {
+                "tipId": 66,
+                "tipGroupId": 9,
+                "title": "📖 Track Your Wins",
+                "description": "Note one thing you're proud of each day, no matter how small.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.0155072",
+                "lastUpdateDate": "2025-06-15T15:08:12.0155073"
+            },
+            {
+                "tipId": 67,
+                "tipGroupId": 9,
+                "title": "🎧 Try a Podcast",
+                "description": "Pick a pregnancy series — learning makes you feel empowered.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.0155075",
+                "lastUpdateDate": "2025-06-15T15:08:12.0155076"
+            },
+            {
+                "tipId": 68,
+                "tipGroupId": 9,
+                "title": "🛋️ Prioritize Rest",
+                "description": "Lay down during the day — you’re building organs and limbs inside you!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.0155078",
+                "lastUpdateDate": "2025-06-15T15:08:12.0155078"
+            },
+            {
+                "tipId": 69,
+                "tipGroupId": 9,
+                "title": "🧴 Moisturize Gently",
+                "description": "Your skin may feel drier — choose unscented or natural lotions.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.0155079",
+                "lastUpdateDate": "2025-06-15T15:08:12.0155081"
+            },
+            {
+                "tipId": 70,
+                "tipGroupId": 9,
+                "title": "🎒 Organize a ‘Go’ Bag",
+                "description": "Not for labor yet — just snacks, wipes, and a water bottle for errands.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.0155082",
+                "lastUpdateDate": "2025-06-15T15:08:12.0155082"
+            },
+            {
+                "tipId": 71,
+                "tipGroupId": 9,
+                "title": "🍲 Try Warm Soups",
+                "description": "Easy on the stomach, full of nutrients, and comforting.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.0155085",
+                "lastUpdateDate": "2025-06-15T15:08:12.0155086"
+            },
+            {
+                "tipId": 72,
+                "tipGroupId": 9,
+                "title": "💬 Affirm Yourself",
+                "description": "Say: “My body knows what it’s doing.” You are enough.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.0155087",
+                "lastUpdateDate": "2025-06-15T15:08:12.0155088"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 10,
+            "type": "Pregnancy",
+            "weeks": "10",
+            "status": 4,
+            "tipFromDoctor": "“By Week 10, your baby is no longer an embryo — it’s officially a fetus!”",
+            "createData": "2025-06-15T15:08:12.4319425",
+            "lastUpdateDate": "2025-06-15T15:08:12.4319428"
+        },
+        "tipItems": [
+            {
+                "tipId": 73,
+                "tipGroupId": 10,
+                "title": "🧼 Clean Out Pantry",
+                "description": "Toss expired or unsafe foods — check for mercury or deli meats.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.8563037",
+                "lastUpdateDate": "2025-06-15T15:08:12.8563044"
+            },
+            {
+                "tipId": 74,
+                "tipGroupId": 10,
+                "title": "🥚 Increase Protein",
+                "description": "Eggs, yogurt, beans — protein supports growth and balances sugar levels.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.8563049",
+                "lastUpdateDate": "2025-06-15T15:08:12.856305"
+            },
+            {
+                "tipId": 75,
+                "tipGroupId": 10,
+                "title": "📷 Take a Bump Pic",
+                "description": "Even if you don’t see it — this is your first trimester memory!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.8563057",
+                "lastUpdateDate": "2025-06-15T15:08:12.8563058"
+            },
+            {
+                "tipId": 76,
+                "tipGroupId": 10,
+                "title": "📅 Set Next Appointment",
+                "description": "Stay on track with early screenings and prenatal checkups.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.856306",
+                "lastUpdateDate": "2025-06-15T15:08:12.8563062"
+            },
+            {
+                "tipId": 77,
+                "tipGroupId": 10,
+                "title": "🌙 Prep for Sleep",
+                "description": "Try a pregnancy pillow early to support side-sleeping comfort.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.8563067",
+                "lastUpdateDate": "2025-06-15T15:08:12.8563068"
+            },
+            {
+                "tipId": 78,
+                "tipGroupId": 10,
+                "title": "📖 Read About Fetal Milestones",
+                "description": "You’ll be amazed at how developed your baby already is!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.8563071",
+                "lastUpdateDate": "2025-06-15T15:08:12.8563072"
+            },
+            {
+                "tipId": 79,
+                "tipGroupId": 10,
+                "title": "🎁 Treat Yourself",
+                "description": "A tea mug, a comfy shirt — small joys go a long way.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.8563074",
+                "lastUpdateDate": "2025-06-15T15:08:12.8563076"
+            },
+            {
+                "tipId": 80,
+                "tipGroupId": 10,
+                "title": "🫶 Breathe Deeply",
+                "description": "Inhale calm, exhale tension. You’ve completed a major milestone!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:12.8563078",
+                "lastUpdateDate": "2025-06-15T15:08:12.8563079"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 11,
+            "type": "Pregnancy",
+            "weeks": "11",
+            "status": 4,
+            "tipFromDoctor": "“Your baby’s fingers and toes are separating. Stay consistent with hydration and movement.”",
+            "createData": "2025-06-15T15:08:13.2987947",
+            "lastUpdateDate": "2025-06-15T15:08:13.2987953"
+        },
+        "tipItems": [
+            {
+                "tipId": 81,
+                "tipGroupId": 11,
+                "title": "🚶 Gentle Walks Daily",
+                "description": "Boosts circulation, eases bloating, and helps regulate energy.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:13.7249918",
+                "lastUpdateDate": "2025-06-15T15:08:13.7249921"
+            },
+            {
+                "tipId": 82,
+                "tipGroupId": 11,
+                "title": "📅 Plan Something Fun",
+                "description": "A light outing or video call — joy lifts your mood and hormones.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:13.7249924",
+                "lastUpdateDate": "2025-06-15T15:08:13.7249925"
+            },
+            {
+                "tipId": 83,
+                "tipGroupId": 11,
+                "title": "📦 Declutter a Drawer",
+                "description": "Organizing can feel satisfying when other things feel out of control.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:13.7249928",
+                "lastUpdateDate": "2025-06-15T15:08:13.7249928"
+            },
+            {
+                "tipId": 84,
+                "tipGroupId": 11,
+                "title": "🧘 Try a Pregnancy Stretch",
+                "description": "Open your hips and chest with light stretches or prenatal yoga videos.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:13.724993",
+                "lastUpdateDate": "2025-06-15T15:08:13.7249931"
+            },
+            {
+                "tipId": 85,
+                "tipGroupId": 11,
+                "title": "💤 Nap if You Need",
+                "description": "Even 20 minutes can reset your day.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:13.7249933",
+                "lastUpdateDate": "2025-06-15T15:08:13.7249934"
+            },
+            {
+                "tipId": 86,
+                "tipGroupId": 11,
+                "title": "🍋 Flavor Your Water",
+                "description": "Citrus, mint, or cucumber makes hydration more enjoyable.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:13.7249935",
+                "lastUpdateDate": "2025-06-15T15:08:13.7249936"
+            },
+            {
+                "tipId": 87,
+                "tipGroupId": 11,
+                "title": "🎧 Listen to Baby-Related Podcasts",
+                "description": "Learn about what’s growing inside you — it’s amazing!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:13.7249937",
+                "lastUpdateDate": "2025-06-15T15:08:13.7249938"
+            },
+            {
+                "tipId": 88,
+                "tipGroupId": 11,
+                "title": "📖 Visualize the Future",
+                "description": "Think about names, the nursery, or your first family trip.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:13.7249939",
+                "lastUpdateDate": "2025-06-15T15:08:13.7249939"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 12,
+            "type": "Pregnancy",
+            "weeks": "12",
+            "status": 4,
+            "tipFromDoctor": "“The risk of miscarriage significantly drops after Week 12. Celebrate your journey.”",
+            "createData": "2025-06-15T15:08:14.1673502",
+            "lastUpdateDate": "2025-06-15T15:08:14.1673515"
+        },
+        "tipItems": [
+            {
+                "tipId": 89,
+                "tipGroupId": 12,
+                "title": "🎉 Celebrate the Milestone",
+                "description": "You made it to the end of the first trimester — enjoy a small treat!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:14.5986786",
+                "lastUpdateDate": "2025-06-15T15:08:14.598679"
+            },
+            {
+                "tipId": 90,
+                "tipGroupId": 12,
+                "title": "📷 Take a New Photo",
+                "description": "Your bump may start to show — time to document.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:14.5986794",
+                "lastUpdateDate": "2025-06-15T15:08:14.5986832"
+            },
+            {
+                "tipId": 91,
+                "tipGroupId": 12,
+                "title": "🧴 Moisturize Your Belly",
+                "description": "Start early to help reduce stretch marks and skin tightness.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:14.5986837",
+                "lastUpdateDate": "2025-06-15T15:08:14.5986839"
+            },
+            {
+                "tipId": 92,
+                "tipGroupId": 12,
+                "title": "📚 Skim a Pregnancy Book",
+                "description": "Read just 2 pages a day — consistent knowledge adds up.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:14.5986846",
+                "lastUpdateDate": "2025-06-15T15:08:14.5986848"
+            },
+            {
+                "tipId": 93,
+                "tipGroupId": 12,
+                "title": "🛒 Stock Up on Healthy Snacks",
+                "description": "Nuts, fruits, and yogurts — keep them handy for energy dips.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:14.598685",
+                "lastUpdateDate": "2025-06-15T15:08:14.5986851"
+            },
+            {
+                "tipId": 94,
+                "tipGroupId": 12,
+                "title": "🧘 Breathing Break",
+                "description": "3 minutes of deep breathing helps calm anxious thoughts.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:14.5986853",
+                "lastUpdateDate": "2025-06-15T15:08:14.5986854"
+            },
+            {
+                "tipId": 95,
+                "tipGroupId": 12,
+                "title": "🎶 Make a Baby Playlist",
+                "description": "Songs you’ll sing or dance to — connect emotionally early on.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:14.5986855",
+                "lastUpdateDate": "2025-06-15T15:08:14.5986856"
+            },
+            {
+                "tipId": 96,
+                "tipGroupId": 12,
+                "title": "📝 Update Your Journal",
+                "description": "How are you feeling? What surprised you this week?",
+                "status": 4,
+                "createData": "2025-06-15T15:08:14.5986858",
+                "lastUpdateDate": "2025-06-15T15:08:14.5986859"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 13,
+            "type": "Pregnancy",
+            "weeks": "13",
+            "status": 4,
+            "tipFromDoctor": "“Your baby’s vocal cords are forming. Keep talking, laughing, and connecting.”",
+            "createData": "2025-06-15T15:08:15.019723",
+            "lastUpdateDate": "2025-06-15T15:08:15.0197242"
+        },
+        "tipItems": [
+            {
+                "tipId": 97,
+                "tipGroupId": 13,
+                "title": "🗣️ Talk to Your Baby",
+                "description": "Even if it feels silly, it helps bonding — and your baby may start hearing vibrations soon.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:15.461289",
+                "lastUpdateDate": "2025-06-15T15:08:15.4612912"
+            },
+            {
+                "tipId": 98,
+                "tipGroupId": 13,
+                "title": "🥗 Prep a Balanced Plate",
+                "description": "Include protein, carbs, and healthy fat — baby needs all three.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:15.4612914",
+                "lastUpdateDate": "2025-06-15T15:08:15.4612914"
+            },
+            {
+                "tipId": 99,
+                "tipGroupId": 13,
+                "title": "📦 Clean a Small Area",
+                "description": "Decluttering can lift your spirits and prepare space mentally.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:15.4612916",
+                "lastUpdateDate": "2025-06-15T15:08:15.4612916"
+            },
+            {
+                "tipId": 100,
+                "tipGroupId": 13,
+                "title": "📖 Learn a Fun Fact",
+                "description": "This week: your baby has fingerprints now!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:15.4612917",
+                "lastUpdateDate": "2025-06-15T15:08:15.4612917"
+            },
+            {
+                "tipId": 101,
+                "tipGroupId": 13,
+                "title": "🧸 Plan a Tiny Gift",
+                "description": "Buy a small item — socks, a plushie — to celebrate new life.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:15.4612918",
+                "lastUpdateDate": "2025-06-15T15:08:15.4612918"
+            },
+            {
+                "tipId": 102,
+                "tipGroupId": 13,
+                "title": "📅 Book Your Second Trimester Visit",
+                "description": "Keep up with key checkups — they track both your and baby’s health.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:15.4612921",
+                "lastUpdateDate": "2025-06-15T15:08:15.4612922"
+            },
+            {
+                "tipId": 103,
+                "tipGroupId": 13,
+                "title": "💃 Gentle Dance",
+                "description": "Move with music — it boosts mood and blood flow.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:15.4612923",
+                "lastUpdateDate": "2025-06-15T15:08:15.4612923"
+            },
+            {
+                "tipId": 104,
+                "tipGroupId": 13,
+                "title": "🛏️ Wind Down Early",
+                "description": "Try a screen-free hour before sleep for deeper rest.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:15.4612924",
+                "lastUpdateDate": "2025-06-15T15:08:15.4612924"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 14,
+            "type": "Pregnancy",
+            "weeks": "14",
+            "status": 4,
+            "tipFromDoctor": "“Energy may return now. Enjoy it — just don’t overdo it.”",
+            "createData": "2025-06-15T15:08:15.9010215",
+            "lastUpdateDate": "2025-06-15T15:08:15.9010221"
+        },
+        "tipItems": [
+            {
+                "tipId": 105,
+                "tipGroupId": 14,
+                "title": "💪 Try Light Exercise",
+                "description": "Prenatal yoga or short walks help with stamina and mood.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:16.3403957",
+                "lastUpdateDate": "2025-06-15T15:08:16.340396"
+            },
+            {
+                "tipId": 106,
+                "tipGroupId": 14,
+                "title": "🍓 Add Iron-Rich Foods",
+                "description": "Spinach, beans, and lean meats support your baby’s blood development.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:16.3403964",
+                "lastUpdateDate": "2025-06-15T15:08:16.3403965"
+            },
+            {
+                "tipId": 107,
+                "tipGroupId": 14,
+                "title": "📱 Log Daily Wins",
+                "description": "One small thing each day that made you smile or feel capable.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:16.3403968",
+                "lastUpdateDate": "2025-06-15T15:08:16.3403969"
+            },
+            {
+                "tipId": 108,
+                "tipGroupId": 14,
+                "title": "👗 Try Maternity Styles",
+                "description": "Your bump may start to show — embrace comfort and confidence.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:16.3403971",
+                "lastUpdateDate": "2025-06-15T15:08:16.3403972"
+            },
+            {
+                "tipId": 109,
+                "tipGroupId": 14,
+                "title": "🎥 Watch a Pregnancy Video",
+                "description": "Seeing how baby grows can make the experience feel more real.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:16.3403973",
+                "lastUpdateDate": "2025-06-15T15:08:16.3403975"
+            },
+            {
+                "tipId": 110,
+                "tipGroupId": 14,
+                "title": "🛒 Start a Registry List",
+                "description": "No pressure — just begin listing essentials you may need.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:16.3403976",
+                "lastUpdateDate": "2025-06-15T15:08:16.3403977"
+            },
+            {
+                "tipId": 111,
+                "tipGroupId": 14,
+                "title": "📖 Read a Birth Story",
+                "description": "Gaining insights helps remove fear and builds excitement.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:16.3403979",
+                "lastUpdateDate": "2025-06-15T15:08:16.340398"
+            },
+            {
+                "tipId": 112,
+                "tipGroupId": 14,
+                "title": "🍵 Herbal Tea Time",
+                "description": "Choose pregnancy-safe options like rooibos or lemon balm for calm.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:16.3403982",
+                "lastUpdateDate": "2025-06-15T15:08:16.3403983"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 15,
+            "type": "Pregnancy",
+            "weeks": "15",
+            "status": 4,
+            "tipFromDoctor": "“Your baby may hear your heartbeat and voice. Talk, sing, and enjoy the moment.”",
+            "createData": "2025-06-15T15:08:16.7545682",
+            "lastUpdateDate": "2025-06-15T15:08:16.7545686"
+        },
+        "tipItems": [
+            {
+                "tipId": 113,
+                "tipGroupId": 15,
+                "title": "🗣️ Read Out Loud",
+                "description": "Pick a children’s book or article — let your voice be soothing.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:17.173089",
+                "lastUpdateDate": "2025-06-15T15:08:17.1730893"
+            },
+            {
+                "tipId": 114,
+                "tipGroupId": 15,
+                "title": "🧴 Massage Time",
+                "description": "Ask your partner or self-massage legs and back to relieve tension.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:17.1730895",
+                "lastUpdateDate": "2025-06-15T15:08:17.1730895"
+            },
+            {
+                "tipId": 115,
+                "tipGroupId": 15,
+                "title": "🥒 Hydration Snack",
+                "description": "Water-rich foods like cucumber or watermelon help hydration.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:17.1730896",
+                "lastUpdateDate": "2025-06-15T15:08:17.1730897"
+            },
+            {
+                "tipId": 116,
+                "tipGroupId": 15,
+                "title": "📓 Reflect on Your Journey",
+                "description": "Write about the biggest changes you’ve felt since Week 1.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:17.1730898",
+                "lastUpdateDate": "2025-06-15T15:08:17.1730898"
+            },
+            {
+                "tipId": 117,
+                "tipGroupId": 15,
+                "title": "🎵 Make a Calm Playlist",
+                "description": "Create music for relaxing, bonding, or sleeping better.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:17.17309",
+                "lastUpdateDate": "2025-06-15T15:08:17.17309"
+            },
+            {
+                "tipId": 118,
+                "tipGroupId": 15,
+                "title": "👟 Stretch Those Legs",
+                "description": "Stand and stretch often if you’re sitting a lot — improves blood flow.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:17.1730901",
+                "lastUpdateDate": "2025-06-15T15:08:17.1730901"
+            },
+            {
+                "tipId": 119,
+                "tipGroupId": 15,
+                "title": "🧠 Ask Yourself: What Do I Need?",
+                "description": "Emotional self-check-ins help reduce stress.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:17.1730902",
+                "lastUpdateDate": "2025-06-15T15:08:17.1730902"
+            },
+            {
+                "tipId": 120,
+                "tipGroupId": 15,
+                "title": "💬 Share a Moment with Baby",
+                "description": "Say hello, share how you feel, or sing softly — it builds connection.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:17.1730903",
+                "lastUpdateDate": "2025-06-15T15:08:17.1730903"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 16,
+            "type": "Pregnancy",
+            "weeks": "16",
+            "status": 4,
+            "tipFromDoctor": "“It’s normal to feel more tired. Don’t push — rest is part of growing a baby.”",
+            "createData": "2025-06-15T15:08:17.5985659",
+            "lastUpdateDate": "2025-06-15T15:08:17.5985667"
+        },
+        "tipItems": [
+            {
+                "tipId": 121,
+                "tipGroupId": 16,
+                "title": "🧘 Breathe & Stretch",
+                "description": "Take 5 minutes to stretch and breathe deeply. It helps reduce tension and boost oxygen flow.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.033848",
+                "lastUpdateDate": "2025-06-15T15:08:18.0338483"
+            },
+            {
+                "tipId": 122,
+                "tipGroupId": 16,
+                "title": "🥗 Eat a Colorful Meal",
+                "description": "Include at least 3 colors on your plate today — it boosts nutrition for you and baby.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.0338486",
+                "lastUpdateDate": "2025-06-15T15:08:18.0338487"
+            },
+            {
+                "tipId": 123,
+                "tipGroupId": 16,
+                "title": "🚶 Take a Gentle Walk",
+                "description": "A short walk helps circulation, reduces swelling, and uplifts your mood.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.0338489",
+                "lastUpdateDate": "2025-06-15T15:08:18.033849"
+            },
+            {
+                "tipId": 124,
+                "tipGroupId": 16,
+                "title": "📖 Learn One New Thing",
+                "description": "Read about a new week of pregnancy or baby care — small bits, daily.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.0338491",
+                "lastUpdateDate": "2025-06-15T15:08:18.0338492"
+            },
+            {
+                "tipId": 125,
+                "tipGroupId": 16,
+                "title": "💧 Hydration Check",
+                "description": "Aim for 8–10 glasses of water today — especially if it’s warm or you're more active.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.0338494",
+                "lastUpdateDate": "2025-06-15T15:08:18.0338494"
+            },
+            {
+                "tipId": 126,
+                "tipGroupId": 16,
+                "title": "📿 Emotional Check-In",
+                "description": "How are you feeling today? Journaling or talking to someone can bring clarity and calm.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.0338496",
+                "lastUpdateDate": "2025-06-15T15:08:18.0338497"
+            },
+            {
+                "tipId": 127,
+                "tipGroupId": 16,
+                "title": "📆 Plan a Moment for Joy",
+                "description": "Schedule something simple that makes you smile — a nap, a song, or a few pages of a book.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.0338498",
+                "lastUpdateDate": "2025-06-15T15:08:18.0338499"
+            },
+            {
+                "tipId": 128,
+                "tipGroupId": 16,
+                "title": "💬 Talk to Baby",
+                "description": "Your baby can start hearing soon. Talking helps bonding — even if it feels silly. 💖",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.03385",
+                "lastUpdateDate": "2025-06-15T15:08:18.0338501"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 17,
+            "type": "Pregnancy",
+            "weeks": "17",
+            "status": 4,
+            "tipFromDoctor": "“Your baby’s bones are hardening. Keep nourishing both body and mind.”",
+            "createData": "2025-06-15T15:08:18.4504371",
+            "lastUpdateDate": "2025-06-15T15:08:18.4504373"
+        },
+        "tipItems": [
+            {
+                "tipId": 129,
+                "tipGroupId": 17,
+                "title": "🦴 Add Calcium",
+                "description": "Dairy, fortified orange juice, or leafy greens — they support baby's growing bones.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.8741906",
+                "lastUpdateDate": "2025-06-15T15:08:18.8741908"
+            },
+            {
+                "tipId": 130,
+                "tipGroupId": 17,
+                "title": "📅 Set a Bedtime",
+                "description": "Consistent sleep helps your body adjust to the changes ahead.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.8741911",
+                "lastUpdateDate": "2025-06-15T15:08:18.8741912"
+            },
+            {
+                "tipId": 131,
+                "tipGroupId": 17,
+                "title": "🎶 Bond with Music",
+                "description": "Play calming tunes or sing aloud — your baby starts responding to sound soon.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.8741916",
+                "lastUpdateDate": "2025-06-15T15:08:18.8741917"
+            },
+            {
+                "tipId": 132,
+                "tipGroupId": 17,
+                "title": "🧦 Elevate Your Feet",
+                "description": "If swelling starts, short rests with feet up can bring relief.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.8741918",
+                "lastUpdateDate": "2025-06-15T15:08:18.8741919"
+            },
+            {
+                "tipId": 133,
+                "tipGroupId": 17,
+                "title": "🧴 Belly Massage",
+                "description": "Gently apply oil or lotion to keep skin soft and reduce itchiness.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.8741921",
+                "lastUpdateDate": "2025-06-15T15:08:18.8741921"
+            },
+            {
+                "tipId": 134,
+                "tipGroupId": 17,
+                "title": "📝 Track Your Moods",
+                "description": "A short daily note can reveal patterns and support emotional health.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.8741922",
+                "lastUpdateDate": "2025-06-15T15:08:18.8741923"
+            },
+            {
+                "tipId": 135,
+                "tipGroupId": 17,
+                "title": "🍲 Make a Freezer Meal",
+                "description": "Prepping ahead gives peace of mind for busier days later.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.8741924",
+                "lastUpdateDate": "2025-06-15T15:08:18.8741925"
+            },
+            {
+                "tipId": 136,
+                "tipGroupId": 17,
+                "title": "📖 Read a Baby Book",
+                "description": "Start learning newborn basics — sleep, feeding, or soothing techniques.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:18.8741926",
+                "lastUpdateDate": "2025-06-15T15:08:18.8741927"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 18,
+            "type": "Pregnancy",
+            "weeks": "18",
+            "status": 4,
+            "tipFromDoctor": "“You may start feeling baby flutters. Tune into your body’s subtle messages.”",
+            "createData": "2025-06-15T15:08:19.3171405",
+            "lastUpdateDate": "2025-06-15T15:08:19.3171411"
+        },
+        "tipItems": [
+            {
+                "tipId": 137,
+                "tipGroupId": 18,
+                "title": "👣 Feel the Flutters?",
+                "description": "Those gentle bubbles or tickles may be baby moving!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:19.7284759",
+                "lastUpdateDate": "2025-06-15T15:08:19.7284763"
+            },
+            {
+                "tipId": 138,
+                "tipGroupId": 18,
+                "title": "🔍 Track Baby Movements",
+                "description": "Jot down the first time you feel baby move — it’s a milestone!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:19.7284765",
+                "lastUpdateDate": "2025-06-15T15:08:19.7284766"
+            },
+            {
+                "tipId": 139,
+                "tipGroupId": 18,
+                "title": "🌬️ Practice Deep Breathing",
+                "description": "It reduces stress and gets oxygen to baby and brain.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:19.7284768",
+                "lastUpdateDate": "2025-06-15T15:08:19.7284769"
+            },
+            {
+                "tipId": 140,
+                "tipGroupId": 18,
+                "title": "🛏️ Take a Break Midday",
+                "description": "Even 15 minutes lying down can refresh your energy.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:19.7284773",
+                "lastUpdateDate": "2025-06-15T15:08:19.7284774"
+            },
+            {
+                "tipId": 141,
+                "tipGroupId": 18,
+                "title": "🎒 Review Birth Class Options",
+                "description": "Consider enrolling or bookmarking resources.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:19.7284776",
+                "lastUpdateDate": "2025-06-15T15:08:19.7284777"
+            },
+            {
+                "tipId": 142,
+                "tipGroupId": 18,
+                "title": "🥜 Pack a Snack Bag",
+                "description": "Having nuts, fruit, or crackers handy keeps energy up on the go.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:19.7284779",
+                "lastUpdateDate": "2025-06-15T15:08:19.728478"
+            },
+            {
+                "tipId": 143,
+                "tipGroupId": 18,
+                "title": "🧘 Join a Prenatal Class",
+                "description": "Movement + community = a great combo for wellness.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:19.7284781",
+                "lastUpdateDate": "2025-06-15T15:08:19.7284781"
+            },
+            {
+                "tipId": 144,
+                "tipGroupId": 18,
+                "title": "🧺 Prepare a Baby Space",
+                "description": "Pick one small area — drawer or basket — to start baby organizing.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:19.7284782",
+                "lastUpdateDate": "2025-06-15T15:08:19.7284783"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 19,
+            "type": "Pregnancy",
+            "weeks": "19",
+            "status": 4,
+            "tipFromDoctor": "“Halfway there! It’s time to begin visualizing your birth journey.”",
+            "createData": "2025-06-15T15:08:20.1532275",
+            "lastUpdateDate": "2025-06-15T15:08:20.153228"
+        },
+        "tipItems": [
+            {
+                "tipId": 145,
+                "tipGroupId": 19,
+                "title": "📚 Explore Birth Stories",
+                "description": "Reading different experiences can build confidence.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:20.5872183",
+                "lastUpdateDate": "2025-06-15T15:08:20.5872185"
+            },
+            {
+                "tipId": 146,
+                "tipGroupId": 19,
+                "title": "🎧 Try Guided Meditation",
+                "description": "Visualize peaceful birth or deep relaxation.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:20.5872188",
+                "lastUpdateDate": "2025-06-15T15:08:20.5872189"
+            },
+            {
+                "tipId": 147,
+                "tipGroupId": 19,
+                "title": "🖼️ Create a Vision Board",
+                "description": "Include words, colors, or photos that inspire your birth path.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:20.5872191",
+                "lastUpdateDate": "2025-06-15T15:08:20.5872193"
+            },
+            {
+                "tipId": 148,
+                "tipGroupId": 19,
+                "title": "💳 Check Insurance Coverage",
+                "description": "Clarify what’s covered for labor, delivery, and newborn care.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:20.5872195",
+                "lastUpdateDate": "2025-06-15T15:08:20.5872196"
+            },
+            {
+                "tipId": 149,
+                "tipGroupId": 19,
+                "title": "🛍️ Start a Maternity Bag List",
+                "description": "Even if early — list items for comfort and care.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:20.5872199",
+                "lastUpdateDate": "2025-06-15T15:08:20.58722"
+            },
+            {
+                "tipId": 150,
+                "tipGroupId": 19,
+                "title": "🥗 Try a New Healthy Recipe",
+                "description": "Keep variety in your meals to nourish both of you.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:20.5872202",
+                "lastUpdateDate": "2025-06-15T15:08:20.5872203"
+            },
+            {
+                "tipId": 151,
+                "tipGroupId": 19,
+                "title": "👂 Share Your Birth Preferences",
+                "description": "Start open talks with your partner or provider.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:20.5872206",
+                "lastUpdateDate": "2025-06-15T15:08:20.5872206"
+            },
+            {
+                "tipId": 152,
+                "tipGroupId": 19,
+                "title": "💬 Affirm Yourself",
+                "description": "Repeat: 'My body is strong, and I trust the process.'",
+                "status": 4,
+                "createData": "2025-06-15T15:08:20.5872207",
+                "lastUpdateDate": "2025-06-15T15:08:20.5872208"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 20,
+            "type": "Pregnancy",
+            "weeks": "20",
+            "status": 4,
+            "tipFromDoctor": "“You’re halfway through! It’s a great time to celebrate your strength and prepare intentionally.”",
+            "createData": "2025-06-15T15:08:21.0147668",
+            "lastUpdateDate": "2025-06-15T15:08:21.0147679"
+        },
+        "tipItems": [
+            {
+                "tipId": 153,
+                "tipGroupId": 20,
+                "title": "🎉 Celebrate the Halfway Mark",
+                "description": "You’ve come so far — acknowledge your journey!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:21.4314316",
+                "lastUpdateDate": "2025-06-15T15:08:21.431432"
+            },
+            {
+                "tipId": 154,
+                "tipGroupId": 20,
+                "title": "📸 Take a Belly Photo",
+                "description": "Document this special moment for your memory book.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:21.4314325",
+                "lastUpdateDate": "2025-06-15T15:08:21.4314327"
+            },
+            {
+                "tipId": 155,
+                "tipGroupId": 20,
+                "title": "📦 Organize Baby Items",
+                "description": "Even sorting onesies can help you mentally prepare.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:21.4314331",
+                "lastUpdateDate": "2025-06-15T15:08:21.4314333"
+            },
+            {
+                "tipId": 156,
+                "tipGroupId": 20,
+                "title": "🧘‍♀️ Restorative Movement",
+                "description": "Try cat-cow stretches or gentle spinal rolls to ease tension.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:21.4314336",
+                "lastUpdateDate": "2025-06-15T15:08:21.4314338"
+            },
+            {
+                "tipId": 157,
+                "tipGroupId": 20,
+                "title": "🧴 Hydrate + Moisturize",
+                "description": "Inside and out — drink water and apply lotion to growing skin.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:21.4314343",
+                "lastUpdateDate": "2025-06-15T15:08:21.4314344"
+            },
+            {
+                "tipId": 158,
+                "tipGroupId": 20,
+                "title": "🎧 Create a Labor Playlist",
+                "description": "Soft music or affirmations can be part of your birth space.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:21.4314347",
+                "lastUpdateDate": "2025-06-15T15:08:21.4314348"
+            },
+            {
+                "tipId": 159,
+                "tipGroupId": 20,
+                "title": "📝 Check-in With Emotions",
+                "description": "Speak with a trusted person or journal your thoughts.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:21.431435",
+                "lastUpdateDate": "2025-06-15T15:08:21.4314351"
+            },
+            {
+                "tipId": 160,
+                "tipGroupId": 20,
+                "title": "🍼 Learn About Feeding Options",
+                "description": "Start exploring breast or formula feeding plans — no pressure, just info.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:21.4314354",
+                "lastUpdateDate": "2025-06-15T15:08:21.4314355"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 21,
+            "type": "Pregnancy",
+            "weeks": "21",
+            "status": 4,
+            "tipFromDoctor": "“Baby’s senses are developing fast. Continue nurturing your own wellbeing too.”",
+            "createData": "2025-06-15T15:08:21.8596383",
+            "lastUpdateDate": "2025-06-15T15:08:21.8596389"
+        },
+        "tipItems": [
+            {
+                "tipId": 161,
+                "tipGroupId": 21,
+                "title": "👃 Smell Something Calming",
+                "description": "Lavender or citrus scents can ease tension and nausea.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:22.2755009",
+                "lastUpdateDate": "2025-06-15T15:08:22.2755012"
+            },
+            {
+                "tipId": 162,
+                "tipGroupId": 21,
+                "title": "🧴 Skin TLC",
+                "description": "Apply lotion to itchy areas, especially your belly and breasts.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:22.2755017",
+                "lastUpdateDate": "2025-06-15T15:08:22.275502"
+            },
+            {
+                "tipId": 163,
+                "tipGroupId": 21,
+                "title": "🍵 Try Herbal Tea",
+                "description": "Check with your provider, then enjoy calming teas like rooibos or ginger.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:22.2755024",
+                "lastUpdateDate": "2025-06-15T15:08:22.2755026"
+            },
+            {
+                "tipId": 164,
+                "tipGroupId": 21,
+                "title": "📝 Write a Letter to Baby",
+                "description": "Capture your thoughts and feelings for your little one to read one day.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:22.2755031",
+                "lastUpdateDate": "2025-06-15T15:08:22.2755033"
+            },
+            {
+                "tipId": 165,
+                "tipGroupId": 21,
+                "title": "🪞 Practice Positive Self-Talk",
+                "description": "Remind yourself: you are doing an amazing job.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:22.2755037",
+                "lastUpdateDate": "2025-06-15T15:08:22.2755039"
+            },
+            {
+                "tipId": 166,
+                "tipGroupId": 21,
+                "title": "📚 Read About Baby Sleep",
+                "description": "Learn tips now so you feel more ready later.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:22.2755044",
+                "lastUpdateDate": "2025-06-15T15:08:22.2755046"
+            },
+            {
+                "tipId": 167,
+                "tipGroupId": 21,
+                "title": "🚶 Walk With Support",
+                "description": "Use a belly band or walking buddy for longer strolls.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:22.275505",
+                "lastUpdateDate": "2025-06-15T15:08:22.2755053"
+            },
+            {
+                "tipId": 168,
+                "tipGroupId": 21,
+                "title": "🎨 Do Something Creative",
+                "description": "Painting, drawing, or doodling can soothe the mind.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:22.2755057",
+                "lastUpdateDate": "2025-06-15T15:08:22.2755059"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 22,
+            "type": "Pregnancy",
+            "weeks": "22",
+            "status": 4,
+            "tipFromDoctor": "“Stretch marks may begin to appear. Stay hydrated and nourish your skin.”",
+            "createData": "2025-06-15T15:08:22.6947068",
+            "lastUpdateDate": "2025-06-15T15:08:22.6947074"
+        },
+        "tipItems": [
+            {
+                "tipId": 169,
+                "tipGroupId": 22,
+                "title": "🧴 Moisturize Daily",
+                "description": "Apply lotion or oil after showers to soothe stretching skin.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.1130633",
+                "lastUpdateDate": "2025-06-15T15:08:23.1130636"
+            },
+            {
+                "tipId": 170,
+                "tipGroupId": 22,
+                "title": "💤 Prioritize Sleep",
+                "description": "Try side sleeping with a pillow between your knees.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.113064",
+                "lastUpdateDate": "2025-06-15T15:08:23.1130642"
+            },
+            {
+                "tipId": 171,
+                "tipGroupId": 22,
+                "title": "🎵 Sing to Baby",
+                "description": "Repetition helps your baby recognize your voice and favorite tunes.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.1130645",
+                "lastUpdateDate": "2025-06-15T15:08:23.1130647"
+            },
+            {
+                "tipId": 172,
+                "tipGroupId": 22,
+                "title": "🥬 Focus on Iron-Rich Foods",
+                "description": "Spinach, beans, and red meat help support your blood supply.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.113065",
+                "lastUpdateDate": "2025-06-15T15:08:23.1130652"
+            },
+            {
+                "tipId": 173,
+                "tipGroupId": 22,
+                "title": "🛁 Warm Bath Relaxation",
+                "description": "Soaking for 10–15 minutes can ease tension (avoid overheating).",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.1130655",
+                "lastUpdateDate": "2025-06-15T15:08:23.1130657"
+            },
+            {
+                "tipId": 174,
+                "tipGroupId": 22,
+                "title": "📆 Start Prenatal Visits Planning",
+                "description": "Make sure upcoming appointments are scheduled.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.113066",
+                "lastUpdateDate": "2025-06-15T15:08:23.1130662"
+            },
+            {
+                "tipId": 175,
+                "tipGroupId": 22,
+                "title": "🛏️ Rest Midday",
+                "description": "A short nap may improve energy and reduce swelling.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.1130665",
+                "lastUpdateDate": "2025-06-15T15:08:23.1130667"
+            },
+            {
+                "tipId": 176,
+                "tipGroupId": 22,
+                "title": "💬 Join a Pregnancy Group",
+                "description": "Connect with others going through the same stage.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.1130671",
+                "lastUpdateDate": "2025-06-15T15:08:23.1130672"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 23,
+            "type": "Pregnancy",
+            "weeks": "23",
+            "status": 4,
+            "tipFromDoctor": "“Your uterus continues to grow upward. Gentle stretching helps relieve tension.”",
+            "createData": "2025-06-15T15:08:23.562623",
+            "lastUpdateDate": "2025-06-15T15:08:23.5626233"
+        },
+        "tipItems": [
+            {
+                "tipId": 177,
+                "tipGroupId": 23,
+                "title": "🧘 Try Cat-Cow Stretch",
+                "description": "Loosens your spine and relieves back discomfort.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.9953888",
+                "lastUpdateDate": "2025-06-15T15:08:23.9953892"
+            },
+            {
+                "tipId": 178,
+                "tipGroupId": 23,
+                "title": "🍎 Eat a Fiber-Rich Snack",
+                "description": "Helps keep digestion smooth and reduces constipation.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.9953896",
+                "lastUpdateDate": "2025-06-15T15:08:23.9953897"
+            },
+            {
+                "tipId": 179,
+                "tipGroupId": 23,
+                "title": "🧂 Watch Salt Intake",
+                "description": "Too much can increase water retention and swelling.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.99539",
+                "lastUpdateDate": "2025-06-15T15:08:23.9953901"
+            },
+            {
+                "tipId": 180,
+                "tipGroupId": 23,
+                "title": "🧼 Wash Hands Often",
+                "description": "Your immune system is more sensitive — stay protected.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.9953903",
+                "lastUpdateDate": "2025-06-15T15:08:23.9953904"
+            },
+            {
+                "tipId": 181,
+                "tipGroupId": 23,
+                "title": "🎶 Make a Playlist for Baby",
+                "description": "Pick soothing songs you love — baby might too.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.9953906",
+                "lastUpdateDate": "2025-06-15T15:08:23.9953907"
+            },
+            {
+                "tipId": 182,
+                "tipGroupId": 23,
+                "title": "🛋️ Stretch Your Legs Hourly",
+                "description": "Helps prevent stiffness and improves circulation.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.9953909",
+                "lastUpdateDate": "2025-06-15T15:08:23.995391"
+            },
+            {
+                "tipId": 183,
+                "tipGroupId": 23,
+                "title": "👶 Peek at Baby Gear",
+                "description": "Start checking out car seats or bassinets — no rush.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.9953912",
+                "lastUpdateDate": "2025-06-15T15:08:23.9953913"
+            },
+            {
+                "tipId": 184,
+                "tipGroupId": 23,
+                "title": "📸 Capture Your Glow",
+                "description": "Snap a quick photo or write a journal entry.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:23.9953915",
+                "lastUpdateDate": "2025-06-15T15:08:23.9953916"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 24,
+            "type": "Pregnancy",
+            "weeks": "24",
+            "status": 4,
+            "tipFromDoctor": "“Your baby can now hear your voice clearly. Create calm moments with sound and rest.”",
+            "createData": "2025-06-15T15:08:24.4199965",
+            "lastUpdateDate": "2025-06-15T15:08:24.4199969"
+        },
+        "tipItems": [
+            {
+                "tipId": 185,
+                "tipGroupId": 24,
+                "title": "💬 Read Aloud",
+                "description": "Pick a children’s book and start a sweet new habit.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:24.8279138",
+                "lastUpdateDate": "2025-06-15T15:08:24.827914"
+            },
+            {
+                "tipId": 186,
+                "tipGroupId": 24,
+                "title": "🛏️ Recline With Support",
+                "description": "Place pillows behind your back and under knees when relaxing.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:24.8279142",
+                "lastUpdateDate": "2025-06-15T15:08:24.8279143"
+            },
+            {
+                "tipId": 187,
+                "tipGroupId": 24,
+                "title": "🧃 Add Smoothies",
+                "description": "A fun way to include greens, fruit, and healthy fats.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:24.8279145",
+                "lastUpdateDate": "2025-06-15T15:08:24.8279146"
+            },
+            {
+                "tipId": 188,
+                "tipGroupId": 24,
+                "title": "🌬️ Take Deep Breaths Outdoors",
+                "description": "Fresh air does wonders for body and mood.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:24.8279161",
+                "lastUpdateDate": "2025-06-15T15:08:24.8279162"
+            },
+            {
+                "tipId": 189,
+                "tipGroupId": 24,
+                "title": "🛍️ Prep a Minimal Hospital List",
+                "description": "Just the essentials: comfy clothes, documents, and baby basics.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:24.8279165",
+                "lastUpdateDate": "2025-06-15T15:08:24.8279165"
+            },
+            {
+                "tipId": 190,
+                "tipGroupId": 24,
+                "title": "🎥 Watch a Birth Video",
+                "description": "Educational, not scary — just one to start imagining your journey.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:24.8279166",
+                "lastUpdateDate": "2025-06-15T15:08:24.8279166"
+            },
+            {
+                "tipId": 191,
+                "tipGroupId": 24,
+                "title": "🧺 Declutter 10 Things",
+                "description": "Clear a drawer or surface to prepare space mentally and physically.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:24.8279167",
+                "lastUpdateDate": "2025-06-15T15:08:24.8279167"
+            },
+            {
+                "tipId": 192,
+                "tipGroupId": 24,
+                "title": "👂 Talk Openly With Partner",
+                "description": "Discuss fears, hopes, and practical roles for delivery and beyond.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:24.8279168",
+                "lastUpdateDate": "2025-06-15T15:08:24.8279169"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 25,
+            "type": "Pregnancy",
+            "weeks": "25",
+            "status": 4,
+            "tipFromDoctor": "“Sleep might be harder now. Prioritize comfort and relaxation at night.”",
+            "createData": "2025-06-15T15:08:25.2538384",
+            "lastUpdateDate": "2025-06-15T15:08:25.2538389"
+        },
+        "tipItems": [
+            {
+                "tipId": 193,
+                "tipGroupId": 25,
+                "title": "🛌 Use Extra Pillows",
+                "description": "Between knees, behind back — find what helps you sleep best.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:25.6988215",
+                "lastUpdateDate": "2025-06-15T15:08:25.6988216"
+            },
+            {
+                "tipId": 194,
+                "tipGroupId": 25,
+                "title": "🌙 Avoid Screens Before Bed",
+                "description": "Wind down with music or reading instead.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:25.6988219",
+                "lastUpdateDate": "2025-06-15T15:08:25.698822"
+            },
+            {
+                "tipId": 195,
+                "tipGroupId": 25,
+                "title": "🌿 Lavender Spray",
+                "description": "A spritz on your pillow can support calm rest.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:25.6988222",
+                "lastUpdateDate": "2025-06-15T15:08:25.6988223"
+            },
+            {
+                "tipId": 196,
+                "tipGroupId": 25,
+                "title": "🛁 Evening Warm Soak",
+                "description": "Soothes body aches and sets a bedtime mood.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:25.6988226",
+                "lastUpdateDate": "2025-06-15T15:08:25.6988226"
+            },
+            {
+                "tipId": 197,
+                "tipGroupId": 25,
+                "title": "🥣 Light Evening Snack",
+                "description": "Keep hunger from waking you — try a banana or yogurt.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:25.6988228",
+                "lastUpdateDate": "2025-06-15T15:08:25.6988229"
+            },
+            {
+                "tipId": 198,
+                "tipGroupId": 25,
+                "title": "📵 No Phone in Bed",
+                "description": "Try placing your phone on a dresser instead of your nightstand.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:25.6988231",
+                "lastUpdateDate": "2025-06-15T15:08:25.6988232"
+            },
+            {
+                "tipId": 199,
+                "tipGroupId": 25,
+                "title": "🧠 Gentle Mindfulness",
+                "description": "Count your breaths or list 3 things you're grateful for.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:25.6988233",
+                "lastUpdateDate": "2025-06-15T15:08:25.6988234"
+            },
+            {
+                "tipId": 200,
+                "tipGroupId": 25,
+                "title": "💤 Set a Sleep Routine",
+                "description": "Same bedtime and wind-down habits each night promote deeper rest.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:25.6988235",
+                "lastUpdateDate": "2025-06-15T15:08:25.6988236"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 26,
+            "type": "Pregnancy",
+            "weeks": "26",
+            "status": 4,
+            "tipFromDoctor": "“You’re in the home stretch of the second trimester — keep focusing on balance.”",
+            "createData": "2025-06-15T15:08:26.1216851",
+            "lastUpdateDate": "2025-06-15T15:08:26.1216852"
+        },
+        "tipItems": [
+            {
+                "tipId": 201,
+                "tipGroupId": 26,
+                "title": "🧘 Gentle Prenatal Yoga",
+                "description": "Supports posture and relieves tight muscles — even 10 minutes helps.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:26.847673",
+                "lastUpdateDate": "2025-06-15T15:08:26.8476732"
+            },
+            {
+                "tipId": 202,
+                "tipGroupId": 26,
+                "title": "📝 Track Baby Kicks",
+                "description": "Start noticing daily movement patterns — report changes to your provider.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:26.8476735",
+                "lastUpdateDate": "2025-06-15T15:08:26.8476736"
+            },
+            {
+                "tipId": 203,
+                "tipGroupId": 26,
+                "title": "🍳 Protein Power",
+                "description": "Eggs, beans, fish — protein supports baby's brain and tissue growth.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:26.8476738",
+                "lastUpdateDate": "2025-06-15T15:08:26.8476739"
+            },
+            {
+                "tipId": 204,
+                "tipGroupId": 26,
+                "title": "🛒 Plan a Weekly Grocery List",
+                "description": "Choose healthy go-tos to reduce daily decision fatigue.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:26.8476741",
+                "lastUpdateDate": "2025-06-15T15:08:26.8476742"
+            },
+            {
+                "tipId": 205,
+                "tipGroupId": 26,
+                "title": "🧦 Elevate Your Feet",
+                "description": "Relieve swelling and pressure by raising your legs during rest.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:26.8476744",
+                "lastUpdateDate": "2025-06-15T15:08:26.8476745"
+            },
+            {
+                "tipId": 206,
+                "tipGroupId": 26,
+                "title": "🎧 Listen to a Pregnancy Podcast",
+                "description": "Great for learning tips and connecting with others’ experiences.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:26.8476746",
+                "lastUpdateDate": "2025-06-15T15:08:26.8476747"
+            },
+            {
+                "tipId": 207,
+                "tipGroupId": 26,
+                "title": "📷 Capture Your Glow",
+                "description": "A selfie or bump photo marks this special milestone.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:26.8476748",
+                "lastUpdateDate": "2025-06-15T15:08:26.8476749"
+            },
+            {
+                "tipId": 208,
+                "tipGroupId": 26,
+                "title": "💌 Write a Note to Future You",
+                "description": "Encouragement or affirmations for delivery day and beyond.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:26.8476751",
+                "lastUpdateDate": "2025-06-15T15:08:26.8476752"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 27,
+            "type": "Pregnancy",
+            "weeks": "27",
+            "status": 4,
+            "tipFromDoctor": "“You may feel emotional or overwhelmed. That’s normal — seek rest and reassurance.”",
+            "createData": "2025-06-15T15:08:27.2709423",
+            "lastUpdateDate": "2025-06-15T15:08:27.2709425"
+        },
+        "tipItems": [
+            {
+                "tipId": 209,
+                "tipGroupId": 27,
+                "title": "🫂 Ask for Support",
+                "description": "Whether a hug, help, or talk — reach out to someone you trust.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:27.7024294",
+                "lastUpdateDate": "2025-06-15T15:08:27.7024296"
+            },
+            {
+                "tipId": 210,
+                "tipGroupId": 27,
+                "title": "🎨 Try Coloring or Doodling",
+                "description": "Art is a calming outlet — perfection not required.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:27.7024297",
+                "lastUpdateDate": "2025-06-15T15:08:27.7024298"
+            },
+            {
+                "tipId": 211,
+                "tipGroupId": 27,
+                "title": "💧 Flavor Your Water",
+                "description": "Add berries or cucumber to make hydration easier and tastier.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:27.70243",
+                "lastUpdateDate": "2025-06-15T15:08:27.7024301"
+            },
+            {
+                "tipId": 212,
+                "tipGroupId": 27,
+                "title": "🧺 Declutter a Small Space",
+                "description": "A tidy corner can bring surprising peace.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:27.7024302",
+                "lastUpdateDate": "2025-06-15T15:08:27.7024303"
+            },
+            {
+                "tipId": 213,
+                "tipGroupId": 27,
+                "title": "👣 Foot Massage",
+                "description": "Ask your partner or use a roller to ease tension and swelling.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:27.7024306",
+                "lastUpdateDate": "2025-06-15T15:08:27.7024306"
+            },
+            {
+                "tipId": 214,
+                "tipGroupId": 27,
+                "title": "📕 Read Birth Stories",
+                "description": "Helps mentally prepare — and know every journey is unique.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:27.7024308",
+                "lastUpdateDate": "2025-06-15T15:08:27.7024309"
+            },
+            {
+                "tipId": 215,
+                "tipGroupId": 27,
+                "title": "📱 Unplug for 1 Hour",
+                "description": "Protect your mental space and connect with the present.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:27.702431",
+                "lastUpdateDate": "2025-06-15T15:08:27.7024311"
+            },
+            {
+                "tipId": 216,
+                "tipGroupId": 27,
+                "title": "🌙 Create a Calming Night Routine",
+                "description": "A wind-down ritual signals your brain it’s time for sleep.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:27.7024313",
+                "lastUpdateDate": "2025-06-15T15:08:27.7024314"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 28,
+            "type": "Pregnancy",
+            "weeks": "28",
+            "status": 4,
+            "tipFromDoctor": "“Welcome to your third trimester! Keep moving gently and resting deeply.”",
+            "createData": "2025-06-15T15:08:28.1128395",
+            "lastUpdateDate": "2025-06-15T15:08:28.1128398"
+        },
+        "tipItems": [
+            {
+                "tipId": 217,
+                "tipGroupId": 28,
+                "title": "👟 Move Every Hour",
+                "description": "Even standing or stretching boosts circulation and reduces swelling risk.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:28.528262",
+                "lastUpdateDate": "2025-06-15T15:08:28.5282623"
+            },
+            {
+                "tipId": 218,
+                "tipGroupId": 28,
+                "title": "🛍️ Start Packing Hospital Bag",
+                "description": "A few essentials ready now saves stress later.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:28.5282627",
+                "lastUpdateDate": "2025-06-15T15:08:28.5282629"
+            },
+            {
+                "tipId": 219,
+                "tipGroupId": 28,
+                "title": "💬 Practice Saying No",
+                "description": "Protect your energy and schedule — it's okay to set boundaries.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:28.5282632",
+                "lastUpdateDate": "2025-06-15T15:08:28.5282634"
+            },
+            {
+                "tipId": 220,
+                "tipGroupId": 28,
+                "title": "📅 Check Upcoming Appointments",
+                "description": "Third trimester visits may increase — stay organized.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:28.5282637",
+                "lastUpdateDate": "2025-06-15T15:08:28.5282638"
+            },
+            {
+                "tipId": 221,
+                "tipGroupId": 28,
+                "title": "📖 Learn About Early Labor Signs",
+                "description": "Educating yourself now helps reduce anxiety later.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:28.5282642",
+                "lastUpdateDate": "2025-06-15T15:08:28.5282643"
+            },
+            {
+                "tipId": 222,
+                "tipGroupId": 28,
+                "title": "🪞 Celebrate Your Strength",
+                "description": "Look in the mirror and remind yourself: you're incredible.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:28.5282647",
+                "lastUpdateDate": "2025-06-15T15:08:28.5282648"
+            },
+            {
+                "tipId": 223,
+                "tipGroupId": 28,
+                "title": "🌼 Create a Calm Playlist",
+                "description": "Songs that soothe can become helpful during labor too.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:28.5282651",
+                "lastUpdateDate": "2025-06-15T15:08:28.5282653"
+            },
+            {
+                "tipId": 224,
+                "tipGroupId": 28,
+                "title": "🧦 Wear Compression Socks",
+                "description": "Support circulation — especially if you're on your feet often.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:28.5282657",
+                "lastUpdateDate": "2025-06-15T15:08:28.5282658"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 29,
+            "type": "Pregnancy",
+            "weeks": "29",
+            "status": 4,
+            "tipFromDoctor": "“You might feel heavier and more tired. Pacing yourself is essential.”",
+            "createData": "2025-06-15T15:08:28.9568951",
+            "lastUpdateDate": "2025-06-15T15:08:28.9568956"
+        },
+        "tipItems": [
+            {
+                "tipId": 225,
+                "tipGroupId": 29,
+                "title": "🍲 Batch Cook a Meal",
+                "description": "Make and freeze something now for future ease.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:29.399999",
+                "lastUpdateDate": "2025-06-15T15:08:29.3999995"
+            },
+            {
+                "tipId": 226,
+                "tipGroupId": 29,
+                "title": "🧘‍♀️ Deep Belly Breaths",
+                "description": "Relieves stress and helps oxygenate your body and baby.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:29.4000006",
+                "lastUpdateDate": "2025-06-15T15:08:29.400001"
+            },
+            {
+                "tipId": 227,
+                "tipGroupId": 29,
+                "title": "📖 Choose a Baby Book",
+                "description": "Start building your little one’s first library!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:29.4000017",
+                "lastUpdateDate": "2025-06-15T15:08:29.4000021"
+            },
+            {
+                "tipId": 228,
+                "tipGroupId": 29,
+                "title": "💡 Dim the Lights",
+                "description": "Soft lighting in the evening encourages melatonin production.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:29.4000028",
+                "lastUpdateDate": "2025-06-15T15:08:29.4000032"
+            },
+            {
+                "tipId": 229,
+                "tipGroupId": 29,
+                "title": "📔 Affirmations on the Mirror",
+                "description": "Daily boosts of confidence go a long way.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:29.4000038",
+                "lastUpdateDate": "2025-06-15T15:08:29.4000042"
+            },
+            {
+                "tipId": 230,
+                "tipGroupId": 29,
+                "title": "🫖 Warm Herbal Tea Break",
+                "description": "A mindful pause — check safe options with your doctor.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:29.4000049",
+                "lastUpdateDate": "2025-06-15T15:08:29.4000053"
+            },
+            {
+                "tipId": 231,
+                "tipGroupId": 29,
+                "title": "🧺 Set Up Baby Laundry Space",
+                "description": "Organizing now avoids last-minute rushes later.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:29.4000059",
+                "lastUpdateDate": "2025-06-15T15:08:29.4000063"
+            },
+            {
+                "tipId": 232,
+                "tipGroupId": 29,
+                "title": "🛋️ Rest Guilt-Free",
+                "description": "Even 15 minutes of feet-up time is valuable self-care.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:29.400007",
+                "lastUpdateDate": "2025-06-15T15:08:29.4000074"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 30,
+            "type": "Pregnancy",
+            "weeks": "30",
+            "status": 4,
+            "tipFromDoctor": "“Listen to your body — if it says slow down, do just that.”",
+            "createData": "2025-06-15T15:08:29.8114069",
+            "lastUpdateDate": "2025-06-15T15:08:29.8114072"
+        },
+        "tipItems": [
+            {
+                "tipId": 233,
+                "tipGroupId": 30,
+                "title": "📆 Countdown Check-In",
+                "description": "Just 10 weeks to go! Review your checklist calmly.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:30.2495638",
+                "lastUpdateDate": "2025-06-15T15:08:30.2495641"
+            },
+            {
+                "tipId": 234,
+                "tipGroupId": 30,
+                "title": "🛏️ Nap Without Guilt",
+                "description": "Fatigue is normal — rest is productive now.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:30.2495645",
+                "lastUpdateDate": "2025-06-15T15:08:30.2495647"
+            },
+            {
+                "tipId": 235,
+                "tipGroupId": 30,
+                "title": "💆 Gentle Neck Roll",
+                "description": "Relieves tension from poor sleep or posture.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:30.2495651",
+                "lastUpdateDate": "2025-06-15T15:08:30.2495653"
+            },
+            {
+                "tipId": 236,
+                "tipGroupId": 30,
+                "title": "🥒 Eat Light Before Bed",
+                "description": "Reduces reflux and supports deeper sleep.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:30.2495656",
+                "lastUpdateDate": "2025-06-15T15:08:30.2495658"
+            },
+            {
+                "tipId": 237,
+                "tipGroupId": 30,
+                "title": "📖 Learn About Perineal Massage",
+                "description": "Some start around this time — check with your provider.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:30.2495662",
+                "lastUpdateDate": "2025-06-15T15:08:30.2495663"
+            },
+            {
+                "tipId": 238,
+                "tipGroupId": 30,
+                "title": "👶 Choose a Pediatrician",
+                "description": "Research and shortlist providers nearby.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:30.2495667",
+                "lastUpdateDate": "2025-06-15T15:08:30.2495669"
+            },
+            {
+                "tipId": 239,
+                "tipGroupId": 30,
+                "title": "🧹 Light Nesting Task",
+                "description": "Wipe a shelf or fold baby blankets — nothing major.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:30.2495672",
+                "lastUpdateDate": "2025-06-15T15:08:30.2495674"
+            },
+            {
+                "tipId": 240,
+                "tipGroupId": 30,
+                "title": "📱 Limit News Intake",
+                "description": "Protect your mental space — peace matters.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:30.2495677",
+                "lastUpdateDate": "2025-06-15T15:08:30.2495679"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 31,
+            "type": "Pregnancy",
+            "weeks": "31",
+            "status": 4,
+            "tipFromDoctor": "“You're doing amazing. Keep your focus on rest, nutrition, and emotional well-being.”",
+            "createData": "2025-06-15T15:08:30.6751914",
+            "lastUpdateDate": "2025-06-15T15:08:30.6751918"
+        },
+        "tipItems": [
+            {
+                "tipId": 241,
+                "tipGroupId": 31,
+                "title": "📦 Finalize Nursery Setup",
+                "description": "Even small touches help you feel ready and connected.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.0915248",
+                "lastUpdateDate": "2025-06-15T15:08:31.0915249"
+            },
+            {
+                "tipId": 242,
+                "tipGroupId": 31,
+                "title": "🧘‍♀️ Practice Labor Breathing",
+                "description": "Controlled breathing lowers anxiety and prepares you mentally.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.091525",
+                "lastUpdateDate": "2025-06-15T15:08:31.091525"
+            },
+            {
+                "tipId": 243,
+                "tipGroupId": 31,
+                "title": "📝 Journal Your Feelings",
+                "description": "Write freely — this helps release tension and deepen awareness.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.0915252",
+                "lastUpdateDate": "2025-06-15T15:08:31.0915252"
+            },
+            {
+                "tipId": 244,
+                "tipGroupId": 31,
+                "title": "🥬 Iron Boost",
+                "description": "Eat spinach, lentils, or fortified cereals — iron supports oxygen flow.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.0915254",
+                "lastUpdateDate": "2025-06-15T15:08:31.0915254"
+            },
+            {
+                "tipId": 245,
+                "tipGroupId": 31,
+                "title": "🩺 Review Birth Plan",
+                "description": "Start thinking of preferences — flexible is okay too!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.0915255",
+                "lastUpdateDate": "2025-06-15T15:08:31.0915256"
+            },
+            {
+                "tipId": 246,
+                "tipGroupId": 31,
+                "title": "🎧 Guided Meditation",
+                "description": "Try 5–10 minutes to center your mind and prepare for birth.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.0915256",
+                "lastUpdateDate": "2025-06-15T15:08:31.0915257"
+            },
+            {
+                "tipId": 247,
+                "tipGroupId": 31,
+                "title": "🛀 Epsom Salt Soak",
+                "description": "Soothes sore muscles and can ease swelling (doctor-approved).",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.0915258",
+                "lastUpdateDate": "2025-06-15T15:08:31.0915259"
+            },
+            {
+                "tipId": 248,
+                "tipGroupId": 31,
+                "title": "🫂 Talk to Partner",
+                "description": "Check in emotionally — you’re a team in this journey.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.091526",
+                "lastUpdateDate": "2025-06-15T15:08:31.0915261"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 32,
+            "type": "Pregnancy",
+            "weeks": "32",
+            "status": 4,
+            "tipFromDoctor": "“Now’s a good time to slow down your pace and protect your sleep.”",
+            "createData": "2025-06-15T15:08:31.5190958",
+            "lastUpdateDate": "2025-06-15T15:08:31.5190965"
+        },
+        "tipItems": [
+            {
+                "tipId": 249,
+                "tipGroupId": 32,
+                "title": "🛏️ Sleep on Your Left Side",
+                "description": "Improves circulation and reduces pressure on key organs.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.932486",
+                "lastUpdateDate": "2025-06-15T15:08:31.9324861"
+            },
+            {
+                "tipId": 250,
+                "tipGroupId": 32,
+                "title": "🧴 Moisturize Belly",
+                "description": "Reduce itching and dryness — gentle massage can soothe too.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.9324863",
+                "lastUpdateDate": "2025-06-15T15:08:31.9324863"
+            },
+            {
+                "tipId": 251,
+                "tipGroupId": 32,
+                "title": "🍌 Magnesium Snacks",
+                "description": "Bananas and nuts help ease leg cramps at night.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.9324865",
+                "lastUpdateDate": "2025-06-15T15:08:31.9324865"
+            },
+            {
+                "tipId": 252,
+                "tipGroupId": 32,
+                "title": "📅 Confirm Leave Plans",
+                "description": "Ensure paperwork and timelines are clear with your employer.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.9324866",
+                "lastUpdateDate": "2025-06-15T15:08:31.9324867"
+            },
+            {
+                "tipId": 253,
+                "tipGroupId": 32,
+                "title": "👚 Wash Baby Clothes",
+                "description": "Use baby-safe detergent to prep the essentials.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.9324867",
+                "lastUpdateDate": "2025-06-15T15:08:31.9324868"
+            },
+            {
+                "tipId": 254,
+                "tipGroupId": 32,
+                "title": "🔔 Prenatal Class Check",
+                "description": "If you haven’t, book or complete any courses soon.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.9324869",
+                "lastUpdateDate": "2025-06-15T15:08:31.9324869"
+            },
+            {
+                "tipId": 255,
+                "tipGroupId": 32,
+                "title": "🪞 Body Appreciation Moment",
+                "description": "Pause and thank your body for carrying life — you’re incredible.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.9324871",
+                "lastUpdateDate": "2025-06-15T15:08:31.9324871"
+            },
+            {
+                "tipId": 256,
+                "tipGroupId": 32,
+                "title": "📞 Line Up Help",
+                "description": "List who to call if you need anything post-birth.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:31.9324872",
+                "lastUpdateDate": "2025-06-15T15:08:31.9324873"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 33,
+            "type": "Pregnancy",
+            "weeks": "33",
+            "status": 4,
+            "tipFromDoctor": "“Every day your body is preparing — keep nourishing it gently.”",
+            "createData": "2025-06-15T15:08:32.3558287",
+            "lastUpdateDate": "2025-06-15T15:08:32.3558292"
+        },
+        "tipItems": [
+            {
+                "tipId": 257,
+                "tipGroupId": 33,
+                "title": "🥤 Coconut Water Boost",
+                "description": "Hydrating and replenishing — great if you’re feeling sluggish.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:32.7664839",
+                "lastUpdateDate": "2025-06-15T15:08:32.766484"
+            },
+            {
+                "tipId": 258,
+                "tipGroupId": 33,
+                "title": "📖 Read Baby Care Basics",
+                "description": "Learn swaddling, feeding cues, and sleep safety.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:32.7664842",
+                "lastUpdateDate": "2025-06-15T15:08:32.7664843"
+            },
+            {
+                "tipId": 259,
+                "tipGroupId": 33,
+                "title": "🧦 Feet Up Break",
+                "description": "Take 15–30 minutes with feet elevated to reduce swelling.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:32.7664844",
+                "lastUpdateDate": "2025-06-15T15:08:32.7664845"
+            },
+            {
+                "tipId": 260,
+                "tipGroupId": 33,
+                "title": "📱 Set Up Emergency Contacts",
+                "description": "Have numbers saved and printed — just in case.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:32.7664846",
+                "lastUpdateDate": "2025-06-15T15:08:32.7664847"
+            },
+            {
+                "tipId": 261,
+                "tipGroupId": 33,
+                "title": "🎵 Create a Birth Playlist",
+                "description": "Choose calming, motivating, or joyful songs to bring with.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:32.7664848",
+                "lastUpdateDate": "2025-06-15T15:08:32.7664849"
+            },
+            {
+                "tipId": 262,
+                "tipGroupId": 33,
+                "title": "📝 Note Questions for Doctor",
+                "description": "Don’t rely on memory — jot them as they come.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:32.766485",
+                "lastUpdateDate": "2025-06-15T15:08:32.766485"
+            },
+            {
+                "tipId": 263,
+                "tipGroupId": 33,
+                "title": "🍽️ Eat Smaller Meals",
+                "description": "Reduces heartburn and supports digestion as baby grows.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:32.7664851",
+                "lastUpdateDate": "2025-06-15T15:08:32.7664852"
+            },
+            {
+                "tipId": 264,
+                "tipGroupId": 33,
+                "title": "🧹 Light Movement",
+                "description": "Tidying or walking releases endorphins and eases discomfort.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:32.7664853",
+                "lastUpdateDate": "2025-06-15T15:08:32.7664853"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 34,
+            "type": "Pregnancy",
+            "weeks": "34",
+            "status": 4,
+            "tipFromDoctor": "“Trust your instincts. You’re more prepared than you feel.”",
+            "createData": "2025-06-15T15:08:33.2151418",
+            "lastUpdateDate": "2025-06-15T15:08:33.215142"
+        },
+        "tipItems": [
+            {
+                "tipId": 265,
+                "tipGroupId": 34,
+                "title": "🧺 Pack Baby’s First Outfit",
+                "description": "Include onesie, socks, and a soft blanket.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:33.6504393",
+                "lastUpdateDate": "2025-06-15T15:08:33.6504397"
+            },
+            {
+                "tipId": 266,
+                "tipGroupId": 34,
+                "title": "📅 Schedule Final Ultrasound",
+                "description": "May be coming soon — stay informed on baby’s position.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:33.6504405",
+                "lastUpdateDate": "2025-06-15T15:08:33.6504409"
+            },
+            {
+                "tipId": 267,
+                "tipGroupId": 34,
+                "title": "👟 Gentle Stairs or Walking",
+                "description": "Encourages baby's downward position (check with provider).",
+                "status": 4,
+                "createData": "2025-06-15T15:08:33.6504415",
+                "lastUpdateDate": "2025-06-15T15:08:33.6504418"
+            },
+            {
+                "tipId": 268,
+                "tipGroupId": 34,
+                "title": "🛋️ Create a Nursing Spot",
+                "description": "Cozy corner with a pillow, water, and snacks.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:33.6504425",
+                "lastUpdateDate": "2025-06-15T15:08:33.6504429"
+            },
+            {
+                "tipId": 269,
+                "tipGroupId": 34,
+                "title": "📦 Finish Nursery Details",
+                "description": "You don’t need perfection — just love and safety.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:33.6504436",
+                "lastUpdateDate": "2025-06-15T15:08:33.6504439"
+            },
+            {
+                "tipId": 270,
+                "tipGroupId": 34,
+                "title": "🥣 Smoothie Time",
+                "description": "Blend fruits, yogurt, and greens for a quick nutrition boost.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:33.6504445",
+                "lastUpdateDate": "2025-06-15T15:08:33.6504448"
+            },
+            {
+                "tipId": 271,
+                "tipGroupId": 34,
+                "title": "🔄 Practice Shifting Positions",
+                "description": "Frequent posture changes ease pressure on hips and back.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:33.6504455",
+                "lastUpdateDate": "2025-06-15T15:08:33.6504458"
+            },
+            {
+                "tipId": 272,
+                "tipGroupId": 34,
+                "title": "📖 Revisit Birth Plan",
+                "description": "Review and share with partner or birth coach.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:33.6504464",
+                "lastUpdateDate": "2025-06-15T15:08:33.6504467"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 35,
+            "type": "Pregnancy",
+            "weeks": "35",
+            "status": 4,
+            "tipFromDoctor": "“You’re almost there! Focus on rest, clarity, and staying hydrated.”",
+            "createData": "2025-06-15T15:08:34.0820589",
+            "lastUpdateDate": "2025-06-15T15:08:34.0820591"
+        },
+        "tipItems": [
+            {
+                "tipId": 273,
+                "tipGroupId": 35,
+                "title": "🛁 Warm Bath Wind-Down",
+                "description": "Relaxes muscles and preps body for sleep (not too hot).",
+                "status": 4,
+                "createData": "2025-06-15T15:08:34.4886419",
+                "lastUpdateDate": "2025-06-15T15:08:34.4886423"
+            },
+            {
+                "tipId": 274,
+                "tipGroupId": 35,
+                "title": "📦 Pack Labor Snacks",
+                "description": "Granola bars, dried fruit, or electrolyte drinks — check hospital rules.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:34.4886426",
+                "lastUpdateDate": "2025-06-15T15:08:34.4886426"
+            },
+            {
+                "tipId": 275,
+                "tipGroupId": 35,
+                "title": "📱 Install Baby Monitor",
+                "description": "Do a quick test to check range and battery.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:34.4886428",
+                "lastUpdateDate": "2025-06-15T15:08:34.4886429"
+            },
+            {
+                "tipId": 276,
+                "tipGroupId": 35,
+                "title": "🎥 Watch a Birth Video",
+                "description": "See a variety of real experiences — every story is unique.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:34.4886431",
+                "lastUpdateDate": "2025-06-15T15:08:34.4886432"
+            },
+            {
+                "tipId": 277,
+                "tipGroupId": 35,
+                "title": "💤 Nap if Needed",
+                "description": "Daytime rest supports your changing body’s energy demands.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:34.4886433",
+                "lastUpdateDate": "2025-06-15T15:08:34.4886434"
+            },
+            {
+                "tipId": 278,
+                "tipGroupId": 35,
+                "title": "🩷 Affirm: I Am Ready",
+                "description": "Repeat confidence phrases aloud or in writing.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:34.4886435",
+                "lastUpdateDate": "2025-06-15T15:08:34.4886436"
+            },
+            {
+                "tipId": 279,
+                "tipGroupId": 35,
+                "title": "🚿 Shower Meditation",
+                "description": "Imagine tension washing away with each drop.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:34.4886457",
+                "lastUpdateDate": "2025-06-15T15:08:34.4886458"
+            },
+            {
+                "tipId": 280,
+                "tipGroupId": 35,
+                "title": "🗒️ Review Hospital Paperwork",
+                "description": "Have IDs, insurance, and forms ready in your bag.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:34.488646",
+                "lastUpdateDate": "2025-06-15T15:08:34.4886461"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 36,
+            "type": "Pregnancy",
+            "weeks": "36",
+            "status": 4,
+            "tipFromDoctor": "“Expect more pressure and fatigue — listen closely to your body.”",
+            "createData": "2025-06-15T15:08:34.9305333",
+            "lastUpdateDate": "2025-06-15T15:08:34.9305337"
+        },
+        "tipItems": [
+            {
+                "tipId": 281,
+                "tipGroupId": 36,
+                "title": "🎒 Finalize Hospital Bag",
+                "description": "Double-check you’ve packed essentials for baby, you, and your support person.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:35.3475433",
+                "lastUpdateDate": "2025-06-15T15:08:35.3475434"
+            },
+            {
+                "tipId": 282,
+                "tipGroupId": 36,
+                "title": "📞 Confirm Transport Plans",
+                "description": "Make sure your ride to the hospital is sorted, even in the middle of the night.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:35.3475436",
+                "lastUpdateDate": "2025-06-15T15:08:35.3475437"
+            },
+            {
+                "tipId": 283,
+                "tipGroupId": 36,
+                "title": "🪑 Sit on a Birth Ball",
+                "description": "Helps with comfort and can encourage baby’s position.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:35.3475438",
+                "lastUpdateDate": "2025-06-15T15:08:35.3475439"
+            },
+            {
+                "tipId": 284,
+                "tipGroupId": 36,
+                "title": "📆 Know Your Checkup Dates",
+                "description": "Appointments may become weekly now — don’t skip them!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:35.347544",
+                "lastUpdateDate": "2025-06-15T15:08:35.3475441"
+            },
+            {
+                "tipId": 285,
+                "tipGroupId": 36,
+                "title": "🧻 Watch for Discharge Changes",
+                "description": "Increased mucus or pink tinge may signal early labor.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:35.3475441",
+                "lastUpdateDate": "2025-06-15T15:08:35.3475442"
+            },
+            {
+                "tipId": 286,
+                "tipGroupId": 36,
+                "title": "🩲 Pad Up",
+                "description": "Panty liners can help with late-pregnancy discharge.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:35.3475443",
+                "lastUpdateDate": "2025-06-15T15:08:35.3475443"
+            },
+            {
+                "tipId": 287,
+                "tipGroupId": 36,
+                "title": "📸 Take a Belly Photo",
+                "description": "You’re almost there — document this beautiful strength.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:35.3475445",
+                "lastUpdateDate": "2025-06-15T15:08:35.3475445"
+            },
+            {
+                "tipId": 288,
+                "tipGroupId": 36,
+                "title": "📖 Review Baby Feeding Plans",
+                "description": "Breast or bottle — explore your preferences and get support info ready.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:35.3475446",
+                "lastUpdateDate": "2025-06-15T15:08:35.3475447"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 37,
+            "type": "Pregnancy",
+            "weeks": "37",
+            "status": 4,
+            "tipFromDoctor": "“Your baby is considered full term now. Stay calm and present.”",
+            "createData": "2025-06-15T15:08:35.774106",
+            "lastUpdateDate": "2025-06-15T15:08:35.7741062"
+        },
+        "tipItems": [
+            {
+                "tipId": 289,
+                "tipGroupId": 37,
+                "title": "📱 Keep Phone Charged",
+                "description": "You might need it for timing contractions or calling support.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:36.1911966",
+                "lastUpdateDate": "2025-06-15T15:08:36.1911969"
+            },
+            {
+                "tipId": 290,
+                "tipGroupId": 37,
+                "title": "🛏️ Prioritize Rest",
+                "description": "Every moment of rest supports your strength for labor.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:36.1911999",
+                "lastUpdateDate": "2025-06-15T15:08:36.1912002"
+            },
+            {
+                "tipId": 291,
+                "tipGroupId": 37,
+                "title": "🌮 Easy-to-Digest Meals",
+                "description": "Eat light meals with fiber — digestion may slow down now.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:36.1912008",
+                "lastUpdateDate": "2025-06-15T15:08:36.1912011"
+            },
+            {
+                "tipId": 292,
+                "tipGroupId": 37,
+                "title": "🧘 Gentle Hip Circles",
+                "description": "Do them on a ball or standing — helps ease pressure and open pelvis.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:36.1912019",
+                "lastUpdateDate": "2025-06-15T15:08:36.1912021"
+            },
+            {
+                "tipId": 293,
+                "tipGroupId": 37,
+                "title": "🎵 Labor Playlist Ready?",
+                "description": "Include calming, powerful, and joyful songs — whatever uplifts you.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:36.1912028",
+                "lastUpdateDate": "2025-06-15T15:08:36.1912031"
+            },
+            {
+                "tipId": 294,
+                "tipGroupId": 37,
+                "title": "📞 Talk to Birth Partner",
+                "description": "Run through roles, fears, and support strategies together.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:36.1912037",
+                "lastUpdateDate": "2025-06-15T15:08:36.191204"
+            },
+            {
+                "tipId": 295,
+                "tipGroupId": 37,
+                "title": "🕯️ Create a Calming Space",
+                "description": "Soft lights, scents, and peace — set up your labor zone if birthing at home.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:36.1912048",
+                "lastUpdateDate": "2025-06-15T15:08:36.1912051"
+            },
+            {
+                "tipId": 296,
+                "tipGroupId": 37,
+                "title": "💧 Watch for Leaking",
+                "description": "Water breaking might feel like a trickle or gush — contact your provider.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:36.1912057",
+                "lastUpdateDate": "2025-06-15T15:08:36.191206"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 38,
+            "type": "Pregnancy",
+            "weeks": "38",
+            "status": 4,
+            "tipFromDoctor": "“Each sensation is preparing you. Stay grounded and trust your body.”",
+            "createData": "2025-06-15T15:08:36.6189472",
+            "lastUpdateDate": "2025-06-15T15:08:36.6189475"
+        },
+        "tipItems": [
+            {
+                "tipId": 297,
+                "tipGroupId": 38,
+                "title": "🌬️ Practice Labor Breaths",
+                "description": "Inhale 4 counts, exhale 6 — great during early labor.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.0367271",
+                "lastUpdateDate": "2025-06-15T15:08:37.0367273"
+            },
+            {
+                "tipId": 298,
+                "tipGroupId": 38,
+                "title": "🚶‍♀️ Short Walks",
+                "description": "Keep moving — gentle walks can encourage labor to begin.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.0367278",
+                "lastUpdateDate": "2025-06-15T15:08:37.036728"
+            },
+            {
+                "tipId": 299,
+                "tipGroupId": 38,
+                "title": "📦 Freeze Some Meals",
+                "description": "Future-you will thank you — post-birth meals help ease the transition.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.0367285",
+                "lastUpdateDate": "2025-06-15T15:08:37.0367287"
+            },
+            {
+                "tipId": 300,
+                "tipGroupId": 38,
+                "title": "🛀 Relaxation Soak",
+                "description": "With permission from your doctor — warm baths help with tension.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.0367291",
+                "lastUpdateDate": "2025-06-15T15:08:37.0367292"
+            },
+            {
+                "tipId": 301,
+                "tipGroupId": 38,
+                "title": "🩺 Final Check-Up Questions",
+                "description": "Ask about signs of labor, induction, and when to head in.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.0367296",
+                "lastUpdateDate": "2025-06-15T15:08:37.0367297"
+            },
+            {
+                "tipId": 302,
+                "tipGroupId": 38,
+                "title": "🤝 Communicate with Support",
+                "description": "Make sure everyone knows your preferences and backup plans.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.0367301",
+                "lastUpdateDate": "2025-06-15T15:08:37.0367302"
+            },
+            {
+                "tipId": 303,
+                "tipGroupId": 38,
+                "title": "🪞 Reflect on Journey",
+                "description": "Write a note to your baby or yourself — you’re near the finish line.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.0367306",
+                "lastUpdateDate": "2025-06-15T15:08:37.0367307"
+            },
+            {
+                "tipId": 304,
+                "tipGroupId": 38,
+                "title": "📸 Capture the Moment",
+                "description": "Last bump photo? Capture your glow and strength.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.0367309",
+                "lastUpdateDate": "2025-06-15T15:08:37.0367311"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 39,
+            "type": "Pregnancy",
+            "weeks": "39",
+            "status": 4,
+            "tipFromDoctor": "“You may feel ready one minute and unsure the next. That’s okay.”",
+            "createData": "2025-06-15T15:08:37.4715322",
+            "lastUpdateDate": "2025-06-15T15:08:37.4715327"
+        },
+        "tipItems": [
+            {
+                "tipId": 305,
+                "tipGroupId": 39,
+                "title": "📱 Notify Your Doctor",
+                "description": "Let them know when contractions are regular or water breaks.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.8883888",
+                "lastUpdateDate": "2025-06-15T15:08:37.8883889"
+            },
+            {
+                "tipId": 306,
+                "tipGroupId": 39,
+                "title": "📦 Re-check Hospital Bag",
+                "description": "Add snacks, chargers, toiletries — last-minute comforts.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.8883893",
+                "lastUpdateDate": "2025-06-15T15:08:37.8883894"
+            },
+            {
+                "tipId": 307,
+                "tipGroupId": 39,
+                "title": "🧘 Visualization Exercise",
+                "description": "Picture your body opening, baby moving down — positive images matter.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.8883897",
+                "lastUpdateDate": "2025-06-15T15:08:37.8883899"
+            },
+            {
+                "tipId": 308,
+                "tipGroupId": 39,
+                "title": "💬 Share Fears",
+                "description": "Don’t hold it in — talk to someone or write it out.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.8883902",
+                "lastUpdateDate": "2025-06-15T15:08:37.8883903"
+            },
+            {
+                "tipId": 309,
+                "tipGroupId": 39,
+                "title": "🛑 Say No to Overexertion",
+                "description": "This is not the time to overdo errands — conserve energy.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.8883906",
+                "lastUpdateDate": "2025-06-15T15:08:37.8883907"
+            },
+            {
+                "tipId": 310,
+                "tipGroupId": 39,
+                "title": "🧼 Shower with Intention",
+                "description": "Use warm water and affirmations to feel refreshed and ready.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.8883911",
+                "lastUpdateDate": "2025-06-15T15:08:37.8883912"
+            },
+            {
+                "tipId": 311,
+                "tipGroupId": 39,
+                "title": "👶 Trust the Timing",
+                "description": "Baby’s arrival window varies — try not to compare with others.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.8883916",
+                "lastUpdateDate": "2025-06-15T15:08:37.8883917"
+            },
+            {
+                "tipId": 312,
+                "tipGroupId": 39,
+                "title": "🛏️ Rest Whenever You Can",
+                "description": "Labor might start anytime — rest is preparation.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:37.888392",
+                "lastUpdateDate": "2025-06-15T15:08:37.8883921"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 40,
+            "type": "Pregnancy",
+            "weeks": "40",
+            "status": 4,
+            "tipFromDoctor": "“You're full term. Let go of expectations and lean into the moment.”",
+            "createData": "2025-06-15T15:08:38.347962",
+            "lastUpdateDate": "2025-06-15T15:08:38.3479626"
+        },
+        "tipItems": [
+            {
+                "tipId": 313,
+                "tipGroupId": 40,
+                "title": "📅 Be Flexible",
+                "description": "Due dates aren’t expiration dates — baby may take their time.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:38.7750693",
+                "lastUpdateDate": "2025-06-15T15:08:38.7750695"
+            },
+            {
+                "tipId": 314,
+                "tipGroupId": 40,
+                "title": "🔔 Watch for Labor Signs",
+                "description": "Contractions, bloody show, or water breaking? Time to call your provider.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:38.7750713",
+                "lastUpdateDate": "2025-06-15T15:08:38.7750715"
+            },
+            {
+                "tipId": 315,
+                "tipGroupId": 40,
+                "title": "📖 Read Something Light",
+                "description": "Distract your mind with a fun read or podcast.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:38.775072",
+                "lastUpdateDate": "2025-06-15T15:08:38.7750722"
+            },
+            {
+                "tipId": 316,
+                "tipGroupId": 40,
+                "title": "💤 Nap Guilt-Free",
+                "description": "Fatigue is normal — rest when possible.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:38.7750727",
+                "lastUpdateDate": "2025-06-15T15:08:38.7750729"
+            },
+            {
+                "tipId": 317,
+                "tipGroupId": 40,
+                "title": "🤗 Gratitude Check-In",
+                "description": "Pause to reflect on the journey — the highs, lows, and growth.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:38.7750733",
+                "lastUpdateDate": "2025-06-15T15:08:38.7750735"
+            },
+            {
+                "tipId": 318,
+                "tipGroupId": 40,
+                "title": "🧘 Pelvic Tilts",
+                "description": "Support comfort and alignment (if approved by provider).",
+                "status": 4,
+                "createData": "2025-06-15T15:08:38.775074",
+                "lastUpdateDate": "2025-06-15T15:08:38.7750742"
+            },
+            {
+                "tipId": 319,
+                "tipGroupId": 40,
+                "title": "🗒️ Confirm Contacts",
+                "description": "Doctor, partner, caregiver — make sure everyone’s reachable.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:38.7750747",
+                "lastUpdateDate": "2025-06-15T15:08:38.7750749"
+            },
+            {
+                "tipId": 320,
+                "tipGroupId": 40,
+                "title": "🫶 Give Yourself Love",
+                "description": "You’ve made it. Honor the transformation — you’re incredible.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:38.7750754",
+                "lastUpdateDate": "2025-06-15T15:08:38.7750756"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 41,
+            "type": "Pregnancy",
+            "weeks": "41",
+            "status": 4,
+            "tipFromDoctor": "“Going beyond your due date is normal — stay in touch with your provider and trust the process.”",
+            "createData": "2025-06-15T15:08:39.2277258",
+            "lastUpdateDate": "2025-06-15T15:08:39.2277267"
+        },
+        "tipItems": [
+            {
+                "tipId": 321,
+                "tipGroupId": 41,
+                "title": "⏳ Be Patient",
+                "description": "It’s common to go past 40 weeks — baby might just need more time.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:39.6898532",
+                "lastUpdateDate": "2025-06-15T15:08:39.6898534"
+            },
+            {
+                "tipId": 322,
+                "tipGroupId": 41,
+                "title": "🩺 Monitor Movements",
+                "description": "Pay attention to baby's kicks and patterns — report any changes.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:39.6898535",
+                "lastUpdateDate": "2025-06-15T15:08:39.6898535"
+            },
+            {
+                "tipId": 323,
+                "tipGroupId": 41,
+                "title": "📞 Check In Regularly",
+                "description": "You may need extra checkups — stay updated with your provider.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:39.6898536",
+                "lastUpdateDate": "2025-06-15T15:08:39.6898537"
+            },
+            {
+                "tipId": 324,
+                "tipGroupId": 41,
+                "title": "🥗 Eat Light & Nutritious",
+                "description": "Stick to easy-to-digest, fiber-rich meals to stay energized.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:39.6898545",
+                "lastUpdateDate": "2025-06-15T15:08:39.6898545"
+            },
+            {
+                "tipId": 325,
+                "tipGroupId": 41,
+                "title": "🛁 Take a Relaxing Bath",
+                "description": "Help ease tension and discomfort while you wait.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:39.6898546",
+                "lastUpdateDate": "2025-06-15T15:08:39.6898546"
+            },
+            {
+                "tipId": 326,
+                "tipGroupId": 41,
+                "title": "📱 Stay Available",
+                "description": "Keep your phone nearby and charged — you may get a call for induction options.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:39.6898547",
+                "lastUpdateDate": "2025-06-15T15:08:39.6898547"
+            },
+            {
+                "tipId": 327,
+                "tipGroupId": 41,
+                "title": "🧘 Gentle Movement",
+                "description": "Prenatal yoga or walking may support baby’s descent naturally.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:39.6898548",
+                "lastUpdateDate": "2025-06-15T15:08:39.6898548"
+            },
+            {
+                "tipId": 328,
+                "tipGroupId": 41,
+                "title": "💖 Stay Positive",
+                "description": "Your body knows what it’s doing — your moment is coming soon!",
+                "status": 4,
+                "createData": "2025-06-15T15:08:39.6898548",
+                "lastUpdateDate": "2025-06-15T15:08:39.6898549"
+            }
+        ]
+    },
+    {
+        "tipsGroup": {
+            "id": 42,
+            "type": "Pregnancy",
+            "weeks": "42",
+            "status": 4,
+            "tipFromDoctor": "“This is called ‘post-term.’ Your healthcare team will guide next steps with care and attention.”",
+            "createData": "2025-06-15T15:08:40.1149781",
+            "lastUpdateDate": "2025-06-15T15:08:40.1149785"
+        },
+        "tipItems": [
+            {
+                "tipId": 329,
+                "tipGroupId": 42,
+                "title": "🧭 Discuss Induction Options",
+                "description": "Your provider may suggest ways to help labor start safely.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:40.5469864",
+                "lastUpdateDate": "2025-06-15T15:08:40.5469865"
+            },
+            {
+                "tipId": 330,
+                "tipGroupId": 42,
+                "title": "📊 Review Monitoring Plan",
+                "description": "You may have more frequent checks on baby's heart rate and amniotic fluid levels.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:40.5469884",
+                "lastUpdateDate": "2025-06-15T15:08:40.5469885"
+            },
+            {
+                "tipId": 331,
+                "tipGroupId": 42,
+                "title": "🧘 Visualize Meeting Baby",
+                "description": "Stay calm and focused — picture your baby in your arms soon.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:40.546989",
+                "lastUpdateDate": "2025-06-15T15:08:40.5469891"
+            },
+            {
+                "tipId": 332,
+                "tipGroupId": 42,
+                "title": "🧼 Stay Fresh",
+                "description": "Take a shower, freshen up, and prepare for the big day with love.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:40.5469893",
+                "lastUpdateDate": "2025-06-15T15:08:40.5469893"
+            },
+            {
+                "tipId": 333,
+                "tipGroupId": 42,
+                "title": "💬 Talk it Out",
+                "description": "Share worries or emotions with a friend, partner, or journal — don’t hold it in.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:40.5469895",
+                "lastUpdateDate": "2025-06-15T15:08:40.5469896"
+            },
+            {
+                "tipId": 334,
+                "tipGroupId": 42,
+                "title": "🎵 Gentle Music",
+                "description": "Soothing sounds can calm nerves and bring peace as labor nears.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:40.5469898",
+                "lastUpdateDate": "2025-06-15T15:08:40.5469899"
+            },
+            {
+                "tipId": 335,
+                "tipGroupId": 42,
+                "title": "📸 Final Bump Photo",
+                "description": "You’ve carried with strength — capture this final stretch moment.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:40.54699",
+                "lastUpdateDate": "2025-06-15T15:08:40.5469901"
+            },
+            {
+                "tipId": 336,
+                "tipGroupId": 42,
+                "title": "👶 Trust the Finish Line",
+                "description": "You’re here. You’re ready. The next chapter begins any moment now.",
+                "status": 4,
+                "createData": "2025-06-15T15:08:40.5469902",
+                "lastUpdateDate": "2025-06-15T15:08:40.5469903"
+            }
+        ]
+    }
+]

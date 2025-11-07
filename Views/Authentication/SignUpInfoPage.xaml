@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Authentication.SignUpInfoPage"
+    Background="White"
+    Shell.NavBarIsVisible="False"
+    xmlns:viewmodels="clr-namespace:OvulaeApp.ViewModels.Authentication"
+    xmlns:navVM="clr-namespace:OvulaeApp.ViewModels.Shared"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <viewmodels:PhoneEntryViewModel
+                x:Key="PhoneEntryViewModel" />
+            <navVM:NavigationsViewModel
+                x:Key="NavigationsVM" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*">
+                <!-- Header Content -->
+                <VerticalStackLayout
+                    Grid.Row="0"
+                    Padding="20,0">
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        Padding="0,25,0,0">
+                        <Border
+                            Stroke="Transparent"
+                            StrokeThickness="1"
+                            Padding="7,5,0,5"
+                            Margin="-7,-5,0,-5"
+                            Grid.Column="0"
+                            WidthRequest="40"
+                            HorizontalOptions="Start"
+                            BindingContext="{StaticResource NavigationsVM}">
+                            <Image
+                                Source="left_chev.png"
+                                WidthRequest="19"
+                                Aspect="AspectFit"
+                                HorizontalOptions="Start" />
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding GoBackCommand}" />
+                            </Border.GestureRecognizers>
+                        </Border>
+
+                        <Label
+                            Grid.Column="1"
+                            Text="LOGIN"
+                            FontSize="18"
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"
+                            VerticalOptions="Center"
+                            FontAttributes="Bold"
+                            FontFamily="Arial Black"
+                            TextColor="{StaticResource ThemeClr2}"
+                            BindingContext="{StaticResource NavigationsVM}"
+                            Padding="10,5,10,5"
+                            Margin="-10,-5,-10,-5">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding NavigateToLoginCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </VerticalStackLayout>
+                <!-- Scrollable Content -->
+                <ScrollView
+                    Grid.Row="1"
+                    Padding="20,0">
+                    <VerticalStackLayout
+                        Spacing="10">
+
+                        <Image
+                            Source="logo_main.png"
+                            WidthRequest="128"
+                            Aspect="AspectFit"
+                            HorizontalOptions="Center"
+                            Margin="0,20,0,10" />
+
+                        <Label
+                            Text="Create an account"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            HorizontalOptions="Center"
+                            FontFamily="Inter"
+                            Margin="0,0,0,10"
+                            TextColor="Black" />
+
+                        <VerticalStackLayout
+                            Spacing="10">
+                            <VerticalStackLayout>
+                                <Border
+                                    Stroke="{StaticResource ThemeClrMain}"
+                                    StrokeThickness="1"
+                                    StrokeShape="RoundRectangle 8"
+                                    Padding="10,2,10,2"
+                                    Margin="0">
+
+                                    <Entry
+                                        x:Name="Firstname"
+                                        TextChanged="OnFieldsChanged"
+                                        Placeholder="Enter your firstname"
+                                        TextColor="{StaticResource Black}"
+                                        FontSize="16" />
+                                </Border>
+                                <Label
+                                    x:Name="FirstnameValidation"
+                                    Text="*Please enter firstname"
+                                    Style="{StaticResource ValidationLabel}"
+                                    Padding="5,0,5,0"
+                                    IsVisible="False" />
+                            </VerticalStackLayout>
+                            <VerticalStackLayout>
+                                <Border
+                                    Stroke="{StaticResource ThemeClrMain}"
+                                    StrokeThickness="1"
+                                    StrokeShape="RoundRectangle 8"
+                                    Padding="10,2,10,2"
+                                    Margin="0">
+
+                                    <Entry
+                                        x:Name="Lastname"
+                                        TextChanged="OnFieldsChanged"
+                                        Placeholder="Enter your lastname"
+                                        TextColor="{StaticResource Black}"
+                                        FontSize="16" />
+                                </Border>
+                                <Label
+                                    x:Name="LastnameValidation"
+                                    Text="*Please enter lastname"
+                                    Style="{StaticResource ValidationLabel}"
+                                    Padding="5,0,5,0"
+                                    IsVisible="False" />
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout IsVisible="False">
+                                <Border
+                                    Stroke="{StaticResource ThemeClrMain}"
+                                    StrokeThickness="1"
+                                    StrokeShape="RoundRectangle 8"
+                                    Padding="10,2,10,2"
+                                    Margin="0">
+
+                                    <Entry
+                                        x:Name="ReferalCode"
+                                        Placeholder="Enter Referal code (Optional)"
+                                        TextColor="{StaticResource Black}"
+                                        FontSize="16" />
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout>
+                                <Border
+                                    Stroke="{StaticResource ThemeClrMain}"
+                                    StrokeThickness="1"
+                                    StrokeShape="RoundRectangle 8"
+                                    Padding="0,0">
+
+                                    <Grid
+                                        ColumnDefinitions="Auto,*"
+                                        VerticalOptions="Center"
+                                        Padding="0,0"
+                                        BindingContext="{StaticResource PhoneEntryViewModel}">
+                                        <!-- Country Code Picker -->
+                                        <Border
+                                            Background="{StaticResource ThemeGray}"
+                                            Stroke="Transparent"
+                                            Padding="4,0,2,0">
+                                            <Picker
+                                                x:Name="CountryCode"
+                                                ItemsSource="{Binding CountryCodes}"
+                                                SelectedItem="{Binding SelectedCountryCode}"
+                                                FontSize="16"
+                                                WidthRequest="70"
+                                                Title="Code"
+                                                TextColor="Black" />
+                                        </Border>
+                                        <!-- Phone Number Entry -->
+                                        <Entry
+                                            x:Name="PhoneNumber"
+                                            Grid.Column="1"
+                                            TextChanged="OnFieldsChanged"
+                                            Placeholder="Phone Number (Optional)"
+                                            Text="{Binding PhoneNumber}"
+                                            FontSize="16"
+                                            Keyboard="Telephone"
+                                            TextColor="Black"
+                                            BackgroundColor="Transparent"
+                                            Margin="5,0,0,0" />
+                                    </Grid>
+                                </Border>
+                                <Label
+                                    x:Name="PhoneNumberValidation"
+                                    Text="*Please valid Phone Number"
+                                    Style="{StaticResource ValidationLabel}"
+                                    Padding="5,0,5,0"
+                                    IsVisible="False" />
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout>
+                                <Border
+                                    Stroke="{StaticResource ThemeClrMain}"
+                                    StrokeThickness="1"
+                                    StrokeShape="RoundRectangle 8"
+                                    Padding="10,2,10,2"
+                                    Margin="0">
+
+                                    <Grid
+                                        ColumnDefinitions="*,Auto">
+                                        <Entry
+                                            Grid.Column="0"
+                                            x:Name="PasswordEntry"
+                                            Placeholder="Enter your password"
+                                            TextColor="Black"
+                                            FontSize="16"
+                                            IsPassword="True"
+                                            TextChanged="OnFieldsChanged" />
+                                        <Border
+                                            Grid.Column="1"
+                                            Margin="0,0,0,0"
+                                            Padding="5,0"
+                                            Stroke="Transparent">
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="TapGestureRecognizer_Tapped" />
+                                            </Border.GestureRecognizers>
+                                            <Image
+                                                x:Name="PasswordCover"
+                                                Source="eye_show.png"
+                                                HeightRequest="20" />
+                                        </Border>
+                                    </Grid>
+                                </Border>
+                                <VerticalStackLayout
+                                    Margin="5,0,0,0">
+                                    <Grid
+                                        ColumnDefinitions="Auto, *">
+                                        <Grid
+                                            Grid.Column="0"
+                                            WidthRequest="7"
+                                            HeightRequest="7"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Start"
+                                            Margin="0,4,5,0">
+
+                                            <!-- Background circle -->
+                                            <Ellipse
+                                                x:Name="EllipseLength"
+                                                Fill="Transparent"
+                                                Stroke="{StaticResource ThemeGray2}" />
+                                        </Grid>
+                                        <Label
+                                            x:Name="LabelLength"
+                                            Grid.Column="1"
+                                            Text="At least 8 Characters"
+                                            FontSize="10"
+                                            VerticalOptions="Center"
+                                            FontAttributes="Bold"
+                                            TextColor="#B8B6BE" />
+                                    </Grid>
+                                    <Grid
+                                        ColumnDefinitions="Auto, *">
+                                        <Grid
+                                            Grid.Column="0"
+                                            WidthRequest="7"
+                                            HeightRequest="7"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Start"
+                                            Margin="0,4,5,0">
+
+                                            <!-- Background circle -->
+                                            <Ellipse
+                                                x:Name="EllipseNumber"
+                                                Fill="Transparent"
+                                                Stroke="{StaticResource ThemeGray2}" />
+                                        </Grid>
+                                        <Label
+                                            x:Name="LabelNumber"
+                                            Grid.Column="1"
+                                            Text="Contains a number"
+                                            FontSize="10"
+                                            VerticalOptions="Center"
+                                            FontAttributes="Bold"
+                                            TextColor="#B8B6BE" />
+                                    </Grid>
+                                    <Grid
+                                        ColumnDefinitions="Auto, *">
+                                        <Grid
+                                            Grid.Column="0"
+                                            WidthRequest="7"
+                                            HeightRequest="7"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Start"
+                                            Margin="0,4,5,0">
+
+                                            <!-- Background circle -->
+                                            <Ellipse
+                                                x:Name="EllipseUpper"
+                                                Fill="Transparent"
+                                                Stroke="{StaticResource ThemeGray2}" />
+                                        </Grid>
+                                        <Label
+                                            x:Name="LabelUpper"
+                                            Grid.Column="1"
+                                            Text="Contains an uppercase letter"
+                                            FontSize="10"
+                                            VerticalOptions="Center"
+                                            FontAttributes="Bold"
+                                            TextColor="#B8B6BE" />
+                                    </Grid>
+                                    <Grid
+                                        ColumnDefinitions="Auto, *">
+                                        <Grid
+                                            Grid.Column="0"
+                                            WidthRequest="7"
+                                            HeightRequest="7"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Start"
+                                            Margin="0,4,5,0">
+
+                                            <!-- Background circle -->
+                                            <Ellipse
+                                                x:Name="EllipseLower"
+                                                Fill="Transparent"
+                                                Stroke="{StaticResource ThemeGray2}" />
+                                        </Grid>
+                                        <Label
+                                            x:Name="LabelLower"
+                                            Grid.Column="1"
+                                            Text="Contains a lowercase letter"
+                                            FontSize="10"
+                                            VerticalOptions="Center"
+                                            FontAttributes="Bold"
+                                            TextColor="#B8B6BE" />
+                                    </Grid>
+                                    <Grid
+                                        ColumnDefinitions="Auto, *">
+                                        <Grid
+                                            Grid.Column="0"
+                                            WidthRequest="7"
+                                            HeightRequest="7"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Start"
+                                            Margin="0,4,5,0">
+
+                                            <!-- Background circle -->
+                                            <Ellipse
+                                                x:Name="EllipseSpecial"
+                                                Fill="Transparent"
+                                                Stroke="{StaticResource ThemeGray2}" />
+                                        </Grid>
+                                        <Label
+                                            x:Name="LabelSpecial"
+                                            Grid.Column="1"
+                                            Text="Contains a special character"
+                                            FontSize="10"
+                                            VerticalOptions="Center"
+                                            FontAttributes="Bold"
+                                            TextColor="#B8B6BE" />
+                                    </Grid>
+                                </VerticalStackLayout>
+                                <VerticalStackLayout>
+                                    <Border
+                                        Stroke="{StaticResource ThemeClrMain}"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 8"
+                                        Padding="10,2,10,2"
+                                        Margin="0,10,0,0">
+
+                                        <Grid
+                                            ColumnDefinitions="*,Auto">
+                                            <Entry
+                                                Grid.Column="0"
+                                                x:Name="ConfirmPasswordEntry"
+                                                Placeholder="Confirm your password"
+                                                TextColor="Black"
+                                                TextChanged="OnFieldsChanged"
+                                                FontSize="16"
+                                                IsPassword="True" />
+                                            <Border
+                                                Grid.Column="1"
+                                                Margin="0,0,0,0"
+                                                Padding="5,0"
+                                                Stroke="Transparent">
+                                                <Border.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Tapped="TapGestureRecognizer_Tapped" />
+                                                </Border.GestureRecognizers>
+                                                <Image
+                                                    x:Name="PasswordCover2"
+                                                    Source="eye_show.png"
+                                                    HeightRequest="20" />
+                                            </Border>
+                                        </Grid>
+                                    </Border>
+                                    <Label
+                                        x:Name="PasswordValidation"
+                                        Text="*Passwords do not match!"
+                                        Style="{StaticResource ValidationLabel}"
+                                        Padding="5,0,5,0"
+                                        IsVisible="False" />
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+
+                            <!-- Bottom Button -->
+                            <Button
+                                x:Name="SignUpBtn"
+                                Opacity="0.3"
+                                IsEnabled="False"
+                                Grid.Row="2"
+                                Text="Sign up"
+                                Style="{StaticResource ThemeButton}"
+                                Margin="0,0,0,0"
+                                Clicked="SignUpBtn_Clicked" />
+
+                        </VerticalStackLayout>
+
+                        <Entry
+                            x:Name="HiddenUnfocusEntry"
+                            IsVisible="False"
+                            HeightRequest="1"
+                            WidthRequest="1" />
+
+                    </VerticalStackLayout>
+                </ScrollView>
+            </Grid>
+        </ContentView>
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,1947 @@
+﻿[
+    {
+        "pregnancyInfo": {
+            "id": 1,
+            "week": 1,
+            "weekDescription": "You're in Week 1 of your pregnancy",
+            "pregnancyHighlight": "Your pregnancy journey begins 🌱",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 1",
+            "description": "This week marks the beginning of your cycle — ovulation will occur soon.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:23.0017035",
+            "lastUpdateDate": "2025-06-15T18:15:23.0017038"
+        },
+        "babyDevelopmentDetails": {
+            "id": 1,
+            "title": "🧬 Week 1 Early Development",
+            "babyIntroInfoJson": "[\"No baby yet, but your body is preparing.\"]",
+            "featuresJson": "[\"🩸 Uterus is shedding its lining (menstrual period)\",\"🔄 Hormones are resetting for ovulation\"]",
+            "motherChangesJson": "[\"🩸 You may be having your period — rest and hydrate\",\"📅 Track your cycle if trying to conceive\"]",
+            "insightsJson": "[]",
+            "babySizeFruit": "",
+            "showDidYouKnow": false,
+            "pregnancyDataId": 1,
+            "status": 0,
+            "createData": "2025-06-15T18:15:24.3493998",
+            "lastUpdateDate": "2025-06-15T18:15:24.3494002",
+            "babyIntroInfo": [
+                "No baby yet, but your body is preparing."
+            ],
+            "features": [
+                "🩸 Uterus is shedding its lining (menstrual period)",
+                "🔄 Hormones are resetting for ovulation"
+            ],
+            "motherChanges": [
+                "🩸 You may be having your period — rest and hydrate",
+                "📅 Track your cycle if trying to conceive"
+            ],
+            "insights": []
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 2,
+            "week": 2,
+            "weekDescription": "You're in Week 2 of your pregnancy",
+            "pregnancyHighlight": "Ovulation may occur this week 🌸",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 2",
+            "description": "Your body is preparing to release an egg — conception may happen soon.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:24.8373636",
+            "lastUpdateDate": "2025-06-15T18:15:24.8373638"
+        },
+        "babyDevelopmentDetails": {
+            "id": 2,
+            "title": "🥚 Week 2 Ovulation Stage",
+            "babyIntroInfoJson": "[\"No fertilized egg yet.\"]",
+            "featuresJson": "[\"🧪 Hormones trigger an egg to mature in the ovaries\",\"💥 Ovulation typically occurs at the end of this week\"]",
+            "motherChangesJson": "[\"⚡ You may feel more energy or mild cramping during ovulation\",\"❤️ Increased libido and cervical mucus may occur\"]",
+            "insightsJson": "[\"Your chances of conceiving are highest around ovulation — usually Day 14 of a 28-day cycle.\"]",
+            "babySizeFruit": "",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 2,
+            "status": 0,
+            "createData": "2025-06-15T18:15:25.5056426",
+            "lastUpdateDate": "2025-06-15T18:15:25.5056429",
+            "babyIntroInfo": [
+                "No fertilized egg yet."
+            ],
+            "features": [
+                "🧪 Hormones trigger an egg to mature in the ovaries",
+                "💥 Ovulation typically occurs at the end of this week"
+            ],
+            "motherChanges": [
+                "⚡ You may feel more energy or mild cramping during ovulation",
+                "❤️ Increased libido and cervical mucus may occur"
+            ],
+            "insights": [
+                "Your chances of conceiving are highest around ovulation — usually Day 14 of a 28-day cycle."
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 3,
+            "week": 3,
+            "weekDescription": "You're in Week 3 of your pregnancy",
+            "pregnancyHighlight": "Fertilization occurs! 🧬",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 3",
+            "description": "A sperm has successfully met the egg. The resulting zygote is starting its journey to the uterus.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:25.917942",
+            "lastUpdateDate": "2025-06-15T18:15:25.9179423"
+        },
+        "babyDevelopmentDetails": {
+            "id": 3,
+            "title": "👶 Week 3 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Size: Microscopic — about the size of a pinhead\",\"Growth Note: A bundle of cells is dividing rapidly\"]",
+            "featuresJson": "[\"🧫 The fertilized egg is now a zygote\",\"🚶‍♂️ Begins moving down the fallopian tube\",\"🔄 Cell division intensifies as it becomes a blastocyst\"]",
+            "motherChangesJson": "[]",
+            "insightsJson": "[]",
+            "babySizeFruit": "",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 3,
+            "status": 0,
+            "createData": "2025-06-15T18:15:26.5572814",
+            "lastUpdateDate": "2025-06-15T18:15:26.5572823",
+            "babyIntroInfo": [
+                "Size: Microscopic — about the size of a pinhead",
+                "Growth Note: A bundle of cells is dividing rapidly"
+            ],
+            "features": [
+                "🧫 The fertilized egg is now a zygote",
+                "🚶‍♂️ Begins moving down the fallopian tube",
+                "🔄 Cell division intensifies as it becomes a blastocyst"
+            ],
+            "motherChanges": [],
+            "insights": []
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 4,
+            "week": 4,
+            "weekDescription": "You're in Week 4 of your pregnancy",
+            "pregnancyHighlight": "Implantation time! 🌟",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 4",
+            "description": "The fertilized egg implants itself into the uterus and officially becomes an embryo.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:27.0014527",
+            "lastUpdateDate": "2025-06-15T18:15:27.0014532"
+        },
+        "babyDevelopmentDetails": {
+            "id": 4,
+            "title": "👶 Week 4 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Size: Poppy seed ⚫\",\"Growth Note: Rapid development continues inside your womb\"]",
+            "featuresJson": "[\"🩸 Implantation bleeding may occur\",\"🧬 Cells are forming layers that will become organs\",\"🪢 The placenta begins forming\"]",
+            "motherChangesJson": "[\"🌟 Mild cramping or spotting may occur — implantation underway.\",\"🩸 hCG levels rising — a pregnancy test might turn positive soon.\"]",
+            "insightsJson": "[\"Some women experience light spotting due to implantation.\",\"Your hCG levels are rising — a positive pregnancy test is possible soon.\"]",
+            "babySizeFruit": "Poppy seed 🌱",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 4,
+            "status": 0,
+            "createData": "2025-06-15T18:15:27.684129",
+            "lastUpdateDate": "2025-06-15T18:15:27.6841297",
+            "babyIntroInfo": [
+                "Size: Poppy seed ⚫",
+                "Growth Note: Rapid development continues inside your womb"
+            ],
+            "features": [
+                "🩸 Implantation bleeding may occur",
+                "🧬 Cells are forming layers that will become organs",
+                "🪢 The placenta begins forming"
+            ],
+            "motherChanges": [
+                "🌟 Mild cramping or spotting may occur — implantation underway.",
+                "🩸 hCG levels rising — a pregnancy test might turn positive soon."
+            ],
+            "insights": [
+                "Some women experience light spotting due to implantation.",
+                "Your hCG levels are rising — a positive pregnancy test is possible soon."
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 5,
+            "week": 5,
+            "weekDescription": "You're in Week 5 of your pregnancy",
+            "pregnancyHighlight": "Heartbeat may begin 💓",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 5",
+            "description": "Major development begins as the embryo’s heart tube forms and brain starts to emerge.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:28.0992042",
+            "lastUpdateDate": "2025-06-15T18:15:28.0992046"
+        },
+        "babyDevelopmentDetails": {
+            "id": 5,
+            "title": "👶 Week 5 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~1.5–2 mm\",\"Weight: microscopic\",\"Growth Note: Heart tube forms — tiny heartbeat may be detectable\"]",
+            "featuresJson": "[\"💓 Heart tube begins to pump\",\"🧠 Neural tube (future brain & spine) starts closing\",\"🌱 Placenta and umbilical cord begin forming\"]",
+            "motherChangesJson": "[\"😴 Fatigue may increase as hormones surge.\",\"🤕 Sore breasts and mood swings may start.\",\"🚽 You may urinate more frequently.\"]",
+            "insightsJson": "[\"A strong folate intake now supports neural tube closure in early weeks.\"]",
+            "babySizeFruit": "Sesame seed",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 5,
+            "status": 0,
+            "createData": "2025-06-15T18:15:28.7377031",
+            "lastUpdateDate": "2025-06-15T18:15:28.7377034",
+            "babyIntroInfo": [
+                "Length: ~1.5–2 mm",
+                "Weight: microscopic",
+                "Growth Note: Heart tube forms — tiny heartbeat may be detectable"
+            ],
+            "features": [
+                "💓 Heart tube begins to pump",
+                "🧠 Neural tube (future brain & spine) starts closing",
+                "🌱 Placenta and umbilical cord begin forming"
+            ],
+            "motherChanges": [
+                "😴 Fatigue may increase as hormones surge.",
+                "🤕 Sore breasts and mood swings may start.",
+                "🚽 You may urinate more frequently."
+            ],
+            "insights": [
+                "A strong folate intake now supports neural tube closure in early weeks."
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 6,
+            "week": 6,
+            "weekDescription": "You're in Week 6 of your pregnancy",
+            "pregnancyHighlight": "Little arms and legs appear 🦵",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 6",
+            "description": "Limb buds start sprouting; facial features begin development.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:29.1613078",
+            "lastUpdateDate": "2025-06-15T18:15:29.161308"
+        },
+        "babyDevelopmentDetails": {
+            "id": 6,
+            "title": "👶 Week 6 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~4–6 mm\",\"Weight: ~2 mm embryo\",\"Growth Note: Limb buds sprout and facial features begin\"]",
+            "featuresJson": "[\"🦵 Arm and leg buds visible\",\"👁️ Eye pits and nostril depressions appear\",\"🧠 Brain rapid growth; brain flex and forebrain forming\"]",
+            "motherChangesJson": "[\"🤢 Morning sickness may intensify.\",\"💤 You might feel unusually tired.\",\"👃 Heightened sense of smell could cause nausea.\",\"👙 Breasts may feel fuller and more tender.\"]",
+            "insightsJson": "[\"Your baby is forming millions of brain cells every day — nourishing nutrition counts!\"]",
+            "babySizeFruit": "Lentil",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 6,
+            "status": 0,
+            "createData": "2025-06-15T18:15:29.835464",
+            "lastUpdateDate": "2025-06-15T18:15:29.8354646",
+            "babyIntroInfo": [
+                "Length: ~4–6 mm",
+                "Weight: ~2 mm embryo",
+                "Growth Note: Limb buds sprout and facial features begin"
+            ],
+            "features": [
+                "🦵 Arm and leg buds visible",
+                "👁️ Eye pits and nostril depressions appear",
+                "🧠 Brain rapid growth; brain flex and forebrain forming"
+            ],
+            "motherChanges": [
+                "🤢 Morning sickness may intensify.",
+                "💤 You might feel unusually tired.",
+                "👃 Heightened sense of smell could cause nausea.",
+                "👙 Breasts may feel fuller and more tender."
+            ],
+            "insights": [
+                "Your baby is forming millions of brain cells every day — nourishing nutrition counts!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 7,
+            "week": 7,
+            "weekDescription": "You're in Week 7 of your pregnancy",
+            "pregnancyHighlight": "Tiny hands and feet form ✋",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 7",
+            "description": "Arms and legs grow; fingers and toes begin to show webbing.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:30.2404108",
+            "lastUpdateDate": "2025-06-15T18:15:30.2404113"
+        },
+        "babyDevelopmentDetails": {
+            "id": 7,
+            "title": "👶 Week 7 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~1 cm\",\"Weight: ~0.5 g\",\"Growth Note: Hand and foot paddles developing\"]",
+            "featuresJson": "[\"✋ Webbed fingers and toes forming\",\"👂 Ear mound development begins\",\"🫁 Basic lung structure developing\"]",
+            "motherChangesJson": "[\"🤢 Nausea may intensify this week (morning sickness)\",\"😴 Fatigue continues due to rising progesterone\",\"🤰 Breasts may feel more tender and full\"]",
+            "insightsJson": "[\"Supporting protein and choline now helps brain and limb development.\"]",
+            "babySizeFruit": "Blueberry 🫐",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 7,
+            "status": 0,
+            "createData": "2025-06-15T18:15:30.8761052",
+            "lastUpdateDate": "2025-06-15T18:15:30.8761056",
+            "babyIntroInfo": [
+                "Length: ~1 cm",
+                "Weight: ~0.5 g",
+                "Growth Note: Hand and foot paddles developing"
+            ],
+            "features": [
+                "✋ Webbed fingers and toes forming",
+                "👂 Ear mound development begins",
+                "🫁 Basic lung structure developing"
+            ],
+            "motherChanges": [
+                "🤢 Nausea may intensify this week (morning sickness)",
+                "😴 Fatigue continues due to rising progesterone",
+                "🤰 Breasts may feel more tender and full"
+            ],
+            "insights": [
+                "Supporting protein and choline now helps brain and limb development."
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 8,
+            "week": 8,
+            "weekDescription": "You're in Week 8 of your pregnancy",
+            "pregnancyHighlight": "Eyes, ears, and form sharpen 👀",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 8",
+            "description": "Eyes, nose, ears are forming more distinctly; buds for teeth appear.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:31.3311532",
+            "lastUpdateDate": "2025-06-15T18:15:31.3311533"
+        },
+        "babyDevelopmentDetails": {
+            "id": 8,
+            "title": "👶 Week 8 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~1.6 cm\",\"Weight: ~1 g\",\"Growth Note: Teeth buds and eyelid formation\"]",
+            "featuresJson": "[\"👀 Eyes more defined; eyelids begin\",\"👂 Outer ear structures forming\",\"🦷 Tooth buds appear under gums\"]",
+            "motherChangesJson": "[\"🤢 Morning sickness and fatigue may still be strong\",\"🍽️ You might notice changes in appetite or food aversions\",\"🫁 Shortness of breath as body adjusts to increased blood flow\"]",
+            "insightsJson": "[\"Your baby's heart is beating around 150 bpm — double your resting rate!\"]",
+            "babySizeFruit": "Raspberry 🍓",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 8,
+            "status": 0,
+            "createData": "2025-06-15T18:15:32.00006",
+            "lastUpdateDate": "2025-06-15T18:15:32.0000604",
+            "babyIntroInfo": [
+                "Length: ~1.6 cm",
+                "Weight: ~1 g",
+                "Growth Note: Teeth buds and eyelid formation"
+            ],
+            "features": [
+                "👀 Eyes more defined; eyelids begin",
+                "👂 Outer ear structures forming",
+                "🦷 Tooth buds appear under gums"
+            ],
+            "motherChanges": [
+                "🤢 Morning sickness and fatigue may still be strong",
+                "🍽️ You might notice changes in appetite or food aversions",
+                "🫁 Shortness of breath as body adjusts to increased blood flow"
+            ],
+            "insights": [
+                "Your baby's heart is beating around 150 bpm — double your resting rate!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 9,
+            "week": 9,
+            "weekDescription": "You're in Week 9 of your pregnancy",
+            "pregnancyHighlight": "Tiny muscles begin to form 💪",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 9",
+            "description": "Facial features become more human-like; baby can make small, jerky movements.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:32.4200117",
+            "lastUpdateDate": "2025-06-15T18:15:32.4200121"
+        },
+        "babyDevelopmentDetails": {
+            "id": 9,
+            "title": "👶 Week 9 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~2.3 cm\",\"Weight: ~2 g\",\"Growth Note: Muscles form; spontaneous movements begin\"]",
+            "featuresJson": "[\"😊 Facial features more distinct\",\"💪 Small muscles forming — baby begins to move\",\"🖐️ Fingers and toes now more defined (still webbed)\",\"🧠 Major organs continue to develop\"]",
+            "motherChangesJson": "[\"🤕 Headaches or dizziness due to hormone changes\",\"🧴 Skin changes — may notice acne or oiliness\",\"🤰 Uterus continues to grow, though not yet visible\"]",
+            "insightsJson": "[\"Your baby may begin small reflexive movements — even though you can’t feel them yet.\"]",
+            "babySizeFruit": "Cherry 🍒",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 9,
+            "status": 0,
+            "createData": "2025-06-15T18:15:33.0853057",
+            "lastUpdateDate": "2025-06-15T18:15:33.0853062",
+            "babyIntroInfo": [
+                "Length: ~2.3 cm",
+                "Weight: ~2 g",
+                "Growth Note: Muscles form; spontaneous movements begin"
+            ],
+            "features": [
+                "😊 Facial features more distinct",
+                "💪 Small muscles forming — baby begins to move",
+                "🖐️ Fingers and toes now more defined (still webbed)",
+                "🧠 Major organs continue to develop"
+            ],
+            "motherChanges": [
+                "🤕 Headaches or dizziness due to hormone changes",
+                "🧴 Skin changes — may notice acne or oiliness",
+                "🤰 Uterus continues to grow, though not yet visible"
+            ],
+            "insights": [
+                "Your baby may begin small reflexive movements — even though you can’t feel them yet."
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 10,
+            "week": 10,
+            "weekDescription": "You're in Week 10 of your pregnancy",
+            "pregnancyHighlight": "Vital organs are fully formed 🫀",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 10",
+            "description": "All vital organs are in place and beginning to function.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:33.5248845",
+            "lastUpdateDate": "2025-06-15T18:15:33.5248847"
+        },
+        "babyDevelopmentDetails": {
+            "id": 10,
+            "title": "👶 Week 10 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~3.1 cm\",\"Weight: ~4 g\",\"Growth Note: Transition from embryo to fetus\"]",
+            "featuresJson": "[\"🫀 Heart now fully formed and beating strongly\",\"👃 Nose and upper lip are more prominent\",\"🖐️ Fingers and toes lose webbing\",\"🦴 Bones and cartilage begin to solidify\"]",
+            "motherChangesJson": "[\"🩹 Ligaments around your uterus may stretch, causing slight cramps\",\"🧘 Mood swings may ease as hormones begin to level out\",\"👗 Your waist may begin to feel tighter, even if not visibly pregnant yet\"]",
+            "insightsJson": "[\"The fetal period starts now — your baby will focus on growing and refining features.\"]",
+            "babySizeFruit": "Strawberry 🍓",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 10,
+            "status": 0,
+            "createData": "2025-06-15T18:15:34.1956803",
+            "lastUpdateDate": "2025-06-15T18:15:34.1956807",
+            "babyIntroInfo": [
+                "Length: ~3.1 cm",
+                "Weight: ~4 g",
+                "Growth Note: Transition from embryo to fetus"
+            ],
+            "features": [
+                "🫀 Heart now fully formed and beating strongly",
+                "👃 Nose and upper lip are more prominent",
+                "🖐️ Fingers and toes lose webbing",
+                "🦴 Bones and cartilage begin to solidify"
+            ],
+            "motherChanges": [
+                "🩹 Ligaments around your uterus may stretch, causing slight cramps",
+                "🧘 Mood swings may ease as hormones begin to level out",
+                "👗 Your waist may begin to feel tighter, even if not visibly pregnant yet"
+            ],
+            "insights": [
+                "The fetal period starts now — your baby will focus on growing and refining features."
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 11,
+            "week": 11,
+            "weekDescription": "You're in Week 11 of your pregnancy",
+            "pregnancyHighlight": "Baby is practicing breathing 🫁",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 11",
+            "description": "Baby practices breathing movements; tooth buds form under gums.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:34.6715943",
+            "lastUpdateDate": "2025-06-15T18:15:34.6715946"
+        },
+        "babyDevelopmentDetails": {
+            "id": 11,
+            "title": "👶 Week 11 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~4.1 cm\",\"Weight: ~7 g\",\"Growth Note: Body straightens, fingers curl and stretch\"]",
+            "featuresJson": "[\"🫁 Diaphragm develops — breathing-like motions begin\",\"🦷 Tooth buds and taste buds forming\",\"🧠 Head still large but more balanced with body\",\"🖐️ Hands open and close\"]",
+            "motherChangesJson": "[\"🌡️ Hormones still high — nausea may persist\",\"🧠 You might notice forgetfulness or 'pregnancy brain'\",\"💤 Fatigue remains common, but energy may begin to return soon\"]",
+            "insightsJson": "[\"Your baby is moving a lot — flipping, stretching, and kicking, even if you can't feel it yet!\"]",
+            "babySizeFruit": "Lime 🍈",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 11,
+            "status": 0,
+            "createData": "2025-06-15T18:15:35.3029288",
+            "lastUpdateDate": "2025-06-15T18:15:35.3029292",
+            "babyIntroInfo": [
+                "Length: ~4.1 cm",
+                "Weight: ~7 g",
+                "Growth Note: Body straightens, fingers curl and stretch"
+            ],
+            "features": [
+                "🫁 Diaphragm develops — breathing-like motions begin",
+                "🦷 Tooth buds and taste buds forming",
+                "🧠 Head still large but more balanced with body",
+                "🖐️ Hands open and close"
+            ],
+            "motherChanges": [
+                "🌡️ Hormones still high — nausea may persist",
+                "🧠 You might notice forgetfulness or 'pregnancy brain'",
+                "💤 Fatigue remains common, but energy may begin to return soon"
+            ],
+            "insights": [
+                "Your baby is moving a lot — flipping, stretching, and kicking, even if you can't feel it yet!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 12,
+            "week": 12,
+            "weekDescription": "You're in Week 12 of your pregnancy",
+            "pregnancyHighlight": "Fingernails appear 💅",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 12",
+            "description": "Refining features — eyes shift to the front of the face, ears take final shape.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:35.7358753",
+            "lastUpdateDate": "2025-06-15T18:15:35.7358756"
+        },
+        "babyDevelopmentDetails": {
+            "id": 12,
+            "title": "👶 Week 12 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~5.4 cm\",\"Weight: ~14 g\",\"Growth Note: Reflexes like sucking begin\"]",
+            "featuresJson": "[\"💅 Fingernails and toenails start to grow\",\"👀 Eyes move closer together\",\"👂 Ears reach their final position\",\"🦴 Skeleton begins hardening\"]",
+            "motherChangesJson": "[\"🧘 Nausea and fatigue may start easing\",\"👗 You may start to show a small baby bump\",\"💇 Hair may feel thicker and shinier due to hormone changes\"]",
+            "insightsJson": "[\"Your baby may already be sucking their thumb — the nervous system is working hard!\"]",
+            "babySizeFruit": "Plum 🟣",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 12,
+            "status": 0,
+            "createData": "2025-06-15T18:15:36.3944909",
+            "lastUpdateDate": "2025-06-15T18:15:36.3944913",
+            "babyIntroInfo": [
+                "Length: ~5.4 cm",
+                "Weight: ~14 g",
+                "Growth Note: Reflexes like sucking begin"
+            ],
+            "features": [
+                "💅 Fingernails and toenails start to grow",
+                "👀 Eyes move closer together",
+                "👂 Ears reach their final position",
+                "🦴 Skeleton begins hardening"
+            ],
+            "motherChanges": [
+                "🧘 Nausea and fatigue may start easing",
+                "👗 You may start to show a small baby bump",
+                "💇 Hair may feel thicker and shinier due to hormone changes"
+            ],
+            "insights": [
+                "Your baby may already be sucking their thumb — the nervous system is working hard!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 13,
+            "week": 13,
+            "weekDescription": "You're in Week 13 of your pregnancy",
+            "pregnancyHighlight": "Welcome to the 2nd trimester 🌈",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 13",
+            "description": "Your baby is developing unique fingerprints and gaining better body proportion.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:36.9019268",
+            "lastUpdateDate": "2025-06-15T18:15:36.901927"
+        },
+        "babyDevelopmentDetails": {
+            "id": 13,
+            "title": "👶 Week 13 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~7.4 cm\",\"Weight: ~23 g\",\"Growth Note: Baby’s body catches up in size with the head\"]",
+            "featuresJson": "[\"🌀 Fingerprints begin forming on tiny fingers\",\"🦴 Bones hardening further — especially in arms and legs\",\"🧠 Brain continues maturing rapidly\",\"💩 Baby starts producing meconium (first poop)\"]",
+            "motherChangesJson": "[\"🎉 Entering the second trimester — energy may return\",\"🧴 Skin changes like darkening around nipples (areolas) may occur\",\"💤 Sleep might improve as nausea eases\"]",
+            "insightsJson": "[\"Your baby is now making sucking motions and might even hiccup!\"]",
+            "babySizeFruit": "Peach 🍑",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 13,
+            "status": 0,
+            "createData": "2025-06-15T18:15:38.7536308",
+            "lastUpdateDate": "2025-06-15T18:15:38.7536312",
+            "babyIntroInfo": [
+                "Length: ~7.4 cm",
+                "Weight: ~23 g",
+                "Growth Note: Baby’s body catches up in size with the head"
+            ],
+            "features": [
+                "🌀 Fingerprints begin forming on tiny fingers",
+                "🦴 Bones hardening further — especially in arms and legs",
+                "🧠 Brain continues maturing rapidly",
+                "💩 Baby starts producing meconium (first poop)"
+            ],
+            "motherChanges": [
+                "🎉 Entering the second trimester — energy may return",
+                "🧴 Skin changes like darkening around nipples (areolas) may occur",
+                "💤 Sleep might improve as nausea eases"
+            ],
+            "insights": [
+                "Your baby is now making sucking motions and might even hiccup!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 14,
+            "week": 14,
+            "weekDescription": "You're in Week 14 of your pregnancy",
+            "pregnancyHighlight": "Facial expressions begin 😄",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 14",
+            "description": "Facial muscles are more refined — your baby’s expressions are taking shape.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:39.2793054",
+            "lastUpdateDate": "2025-06-15T18:15:39.279306"
+        },
+        "babyDevelopmentDetails": {
+            "id": 14,
+            "title": "👶 Week 14 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~8.7 cm\",\"Weight: ~43 g\",\"Growth Note: Lanugo (fine hair) begins covering the body\"]",
+            "featuresJson": "[\"😊 Baby may now smile, frown, or squint\",\"🧠 Brain signals facial muscles to move\",\"🦰 Lanugo (soft body hair) appears for warmth\",\"💪 Arms reach proportional length\"]",
+            "motherChangesJson": "[\"👕 Clothing may feel tighter — start of a baby bump\",\"😌 Nausea usually improves by now\",\"🍽️ Appetite might increase as energy returns\"]",
+            "insightsJson": "[\"Your baby’s liver starts making bile — a big digestive milestone!\"]",
+            "babySizeFruit": "Lemon 🍋",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 14,
+            "status": 0,
+            "createData": "2025-06-15T18:15:39.9883843",
+            "lastUpdateDate": "2025-06-15T18:15:39.9883847",
+            "babyIntroInfo": [
+                "Length: ~8.7 cm",
+                "Weight: ~43 g",
+                "Growth Note: Lanugo (fine hair) begins covering the body"
+            ],
+            "features": [
+                "😊 Baby may now smile, frown, or squint",
+                "🧠 Brain signals facial muscles to move",
+                "🦰 Lanugo (soft body hair) appears for warmth",
+                "💪 Arms reach proportional length"
+            ],
+            "motherChanges": [
+                "👕 Clothing may feel tighter — start of a baby bump",
+                "😌 Nausea usually improves by now",
+                "🍽️ Appetite might increase as energy returns"
+            ],
+            "insights": [
+                "Your baby’s liver starts making bile — a big digestive milestone!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 15,
+            "week": 15,
+            "weekDescription": "You're in Week 15 of your pregnancy",
+            "pregnancyHighlight": "Hearing develops — talk to your baby 👂",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 15",
+            "description": "Your baby may soon hear your voice and heartbeat. External sounds begin to register.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:40.5499445",
+            "lastUpdateDate": "2025-06-15T18:15:40.5499448"
+        },
+        "babyDevelopmentDetails": {
+            "id": 15,
+            "title": "👶 Week 15 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~10.1 cm\",\"Weight: ~70 g\",\"Growth Note: Skin is forming but still transparent\"]",
+            "featuresJson": "[\"👂 Inner ear bones continue to develop — hearing improves\",\"🧠 Nervous system fine-tunes for better control\",\"🖐️ Hands grasp and move more intentionally\",\"👃 Nose starts to function — baby practices ‘breathing’\"]",
+            "motherChangesJson": "[]",
+            "insightsJson": "[]",
+            "babySizeFruit": "Apple 🍎",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 15,
+            "status": 0,
+            "createData": "2025-06-15T18:15:41.2321978",
+            "lastUpdateDate": "2025-06-15T18:15:41.2321984",
+            "babyIntroInfo": [
+                "Length: ~10.1 cm",
+                "Weight: ~70 g",
+                "Growth Note: Skin is forming but still transparent"
+            ],
+            "features": [
+                "👂 Inner ear bones continue to develop — hearing improves",
+                "🧠 Nervous system fine-tunes for better control",
+                "🖐️ Hands grasp and move more intentionally",
+                "👃 Nose starts to function — baby practices ‘breathing’"
+            ],
+            "motherChanges": [],
+            "insights": []
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 16,
+            "week": 16,
+            "weekDescription": "You're in Week 16 of your pregnancy",
+            "pregnancyHighlight": "Your baby is the size of an avocado 🥑",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 16",
+            "description": "Often considered the “easiest” trimester—energy returns, baby grows rapidly, and your bump shows.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:41.6761775",
+            "lastUpdateDate": "2025-06-15T18:15:41.6761777"
+        },
+        "babyDevelopmentDetails": {
+            "id": 16,
+            "title": "👶 Week 16 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~11.6 cm (4.6 inches) from head to rump\",\"Weight: ~100 grams (3.5 ounces)\",\"Growth Note: ⚖️ in just the past few weeks, your baby has doubled in size!\"]",
+            "featuresJson": "[\"🦵 Legs are lengthening and becoming more proportionate\",\"🦴 Joints (knees, elbows) are now functioning\",\"👀 Eyes are moving slowly — side to side\",\"👂 Baby's ears are nearly in position\",\"😊 Tiny facial muscles are developing for expressions like frowns and squints\"]",
+            "motherChangesJson": "[\"🌞 Skin may appear more radiant — the 'pregnancy glow'\",\"🌬️ You may start feeling short of breath during activity\",\"🩺 A routine check-up might allow you to hear the baby's heartbeat with a Doppler\"]",
+            "insightsJson": "[\"Your baby might be listening soon — tiny bones in the ears are forming! Talk, sing, and connect.\",\"A protective layer called vernix caseosa is beginning to form — it helps shield your baby’s skin from the amniotic fluid.\"]",
+            "babySizeFruit": "Avocado 🥑",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 16,
+            "status": 0,
+            "createData": "2025-06-15T18:15:42.3271854",
+            "lastUpdateDate": "2025-06-15T18:15:42.3271857",
+            "babyIntroInfo": [
+                "Length: ~11.6 cm (4.6 inches) from head to rump",
+                "Weight: ~100 grams (3.5 ounces)",
+                "Growth Note: ⚖️ in just the past few weeks, your baby has doubled in size!"
+            ],
+            "features": [
+                "🦵 Legs are lengthening and becoming more proportionate",
+                "🦴 Joints (knees, elbows) are now functioning",
+                "👀 Eyes are moving slowly — side to side",
+                "👂 Baby's ears are nearly in position",
+                "😊 Tiny facial muscles are developing for expressions like frowns and squints"
+            ],
+            "motherChanges": [
+                "🌞 Skin may appear more radiant — the 'pregnancy glow'",
+                "🌬️ You may start feeling short of breath during activity",
+                "🩺 A routine check-up might allow you to hear the baby's heartbeat with a Doppler"
+            ],
+            "insights": [
+                "Your baby might be listening soon — tiny bones in the ears are forming! Talk, sing, and connect.",
+                "A protective layer called vernix caseosa is beginning to form — it helps shield your baby’s skin from the amniotic fluid."
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 17,
+            "week": 17,
+            "weekDescription": "You're in Week 17 of your pregnancy",
+            "pregnancyHighlight": "Your baby is the size of a Turnip 🥔",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 17",
+            "description": "Your baby is building fat and growing stronger bones. Movements may become more noticeable.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:42.7488455",
+            "lastUpdateDate": "2025-06-15T18:15:42.7488458"
+        },
+        "babyDevelopmentDetails": {
+            "id": 17,
+            "title": "👶 Week 17 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~13 cm\",\"Weight: ~140 g\",\"Growth Note: Fat stores begin and bones harden\"]",
+            "featuresJson": "[\"🦴 Cartilage is hardening into bone\",\"💪 Muscles strengthen and support larger movements\",\"🧠 Brain regulates heartbeat and basic functions\",\"🧽 Fat (brown adipose) begins to form under the skin\"]",
+            "motherChangesJson": "[\"💨 You might feel breathless more easily\",\"🛌 Sleep discomfort can start — try using a pillow for support\",\"🧴 Skin may feel dry or itchy due to stretching\"]",
+            "insightsJson": "[\"Your baby’s skeleton is transforming from soft cartilage to bone — calcium intake is key!\"]",
+            "babySizeFruit": "Turnip 🥔",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 17,
+            "status": 0,
+            "createData": "2025-06-15T18:15:43.4806956",
+            "lastUpdateDate": "2025-06-15T18:15:43.4806959",
+            "babyIntroInfo": [
+                "Length: ~13 cm",
+                "Weight: ~140 g",
+                "Growth Note: Fat stores begin and bones harden"
+            ],
+            "features": [
+                "🦴 Cartilage is hardening into bone",
+                "💪 Muscles strengthen and support larger movements",
+                "🧠 Brain regulates heartbeat and basic functions",
+                "🧽 Fat (brown adipose) begins to form under the skin"
+            ],
+            "motherChanges": [
+                "💨 You might feel breathless more easily",
+                "🛌 Sleep discomfort can start — try using a pillow for support",
+                "🧴 Skin may feel dry or itchy due to stretching"
+            ],
+            "insights": [
+                "Your baby’s skeleton is transforming from soft cartilage to bone — calcium intake is key!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 18,
+            "week": 18,
+            "weekDescription": "You're in Week 18 of your pregnancy",
+            "pregnancyHighlight": "Your baby is the size of a sweet potato 🍠",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 18",
+            "description": "Your baby may be able to hear your heartbeat and even loud noises from outside.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:43.9199431",
+            "lastUpdateDate": "2025-06-15T18:15:43.9199435"
+        },
+        "babyDevelopmentDetails": {
+            "id": 18,
+            "title": "👶 Week 18 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~14.2 cm\",\"Weight: ~190 g\",\"Growth Note: Yawning and hiccuping may start\"]",
+            "featuresJson": "[\"👂 Ears are in position and can detect sounds\",\"😴 Baby can yawn, hiccup, and move more freely\",\"👣 Footprints begin to form on soles\",\"🧠 Nerves are coated with myelin — key for reflexes\"]",
+            "motherChangesJson": "[\"🎧 You may notice baby react to loud noises\",\"🦵 Leg cramps or backaches may occur at night\",\"🍫 Food cravings might intensify\"]",
+            "insightsJson": "[\"Talking and playing music can be soothing — your baby may start recognizing your voice!\"]",
+            "babySizeFruit": "Sweet Potato 🍠",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 18,
+            "status": 0,
+            "createData": "2025-06-15T18:15:44.6555471",
+            "lastUpdateDate": "2025-06-15T18:15:44.6555474",
+            "babyIntroInfo": [
+                "Length: ~14.2 cm",
+                "Weight: ~190 g",
+                "Growth Note: Yawning and hiccuping may start"
+            ],
+            "features": [
+                "👂 Ears are in position and can detect sounds",
+                "😴 Baby can yawn, hiccup, and move more freely",
+                "👣 Footprints begin to form on soles",
+                "🧠 Nerves are coated with myelin — key for reflexes"
+            ],
+            "motherChanges": [
+                "🎧 You may notice baby react to loud noises",
+                "🦵 Leg cramps or backaches may occur at night",
+                "🍫 Food cravings might intensify"
+            ],
+            "insights": [
+                "Talking and playing music can be soothing — your baby may start recognizing your voice!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 19,
+            "week": 19,
+            "weekDescription": "You're in Week 19 of your pregnancy",
+            "pregnancyHighlight": "Your baby is the size of a mango 🥭",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 19",
+            "description": "Your baby’s senses are developing — they're learning to smell, taste, and touch inside the womb.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:45.0569247",
+            "lastUpdateDate": "2025-06-15T18:15:45.056925"
+        },
+        "babyDevelopmentDetails": {
+            "id": 19,
+            "title": "👶 Week 19 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~15.3 cm\",\"Weight: ~240 g\",\"Growth Note: Sensory areas in the brain are maturing\"]",
+            "featuresJson": "[\"🧴 Skin is covered in vernix (a creamy protective layer)\",\"👅 Taste buds begin working\",\"👃 Smell receptors forming in the nose\",\"🤚 Baby responds to touch\"]",
+            "motherChangesJson": "[\"🌡️ You may feel warmer due to increased blood flow\",\"🧘‍♀️ Round ligament pain may start\",\"📏 Your belly is visibly growing now\"]",
+            "insightsJson": "[\"Your baby swallows amniotic fluid — helping develop their digestive system and sense of taste!\"]",
+            "babySizeFruit": "Mango 🥭",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 19,
+            "status": 0,
+            "createData": "2025-06-15T18:15:45.7616726",
+            "lastUpdateDate": "2025-06-15T18:15:45.761673",
+            "babyIntroInfo": [
+                "Length: ~15.3 cm",
+                "Weight: ~240 g",
+                "Growth Note: Sensory areas in the brain are maturing"
+            ],
+            "features": [
+                "🧴 Skin is covered in vernix (a creamy protective layer)",
+                "👅 Taste buds begin working",
+                "👃 Smell receptors forming in the nose",
+                "🤚 Baby responds to touch"
+            ],
+            "motherChanges": [
+                "🌡️ You may feel warmer due to increased blood flow",
+                "🧘‍♀️ Round ligament pain may start",
+                "📏 Your belly is visibly growing now"
+            ],
+            "insights": [
+                "Your baby swallows amniotic fluid — helping develop their digestive system and sense of taste!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 20,
+            "week": 20,
+            "weekDescription": "You're in Week 20 — halfway there!",
+            "pregnancyHighlight": "Your baby is the size of a banana 🍌",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 20",
+            "description": "You've reached the halfway mark of pregnancy. Baby is more active and ultrasound reveals more details.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:46.1806656",
+            "lastUpdateDate": "2025-06-15T18:15:46.1806659"
+        },
+        "babyDevelopmentDetails": {
+            "id": 20,
+            "title": "👶 Week 20 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~16.4 cm\",\"Weight: ~300 g\",\"Growth Note: Hair and skin development progress\"]",
+            "featuresJson": "[\"👂 Hearing is well developed — baby hears voices and body sounds\",\"🧴 Skin thickens and develops more layers\",\"💇 Hair starts growing on the scalp\",\"🦵 Stronger kicks and stretches occur\"]",
+            "motherChangesJson": "[\"🩻 Anatomy scan may be scheduled this week\",\"🎈 You might feel more frequent baby movements\",\"🧴 Skin may become drier — stay hydrated and moisturized\"]",
+            "insightsJson": "[\"You’ve hit the halfway point! Your uterus is now at belly-button level.\"]",
+            "babySizeFruit": "Banana 🍌",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 20,
+            "status": 0,
+            "createData": "2025-06-15T18:15:46.9269362",
+            "lastUpdateDate": "2025-06-15T18:15:46.9269366",
+            "babyIntroInfo": [
+                "Length: ~16.4 cm",
+                "Weight: ~300 g",
+                "Growth Note: Hair and skin development progress"
+            ],
+            "features": [
+                "👂 Hearing is well developed — baby hears voices and body sounds",
+                "🧴 Skin thickens and develops more layers",
+                "💇 Hair starts growing on the scalp",
+                "🦵 Stronger kicks and stretches occur"
+            ],
+            "motherChanges": [
+                "🩻 Anatomy scan may be scheduled this week",
+                "🎈 You might feel more frequent baby movements",
+                "🧴 Skin may become drier — stay hydrated and moisturized"
+            ],
+            "insights": [
+                "You’ve hit the halfway point! Your uterus is now at belly-button level."
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 21,
+            "week": 21,
+            "weekDescription": "You're in Week 21 of your pregnancy",
+            "pregnancyHighlight": "Your baby is the size of a Carrot 🥕",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 21",
+            "description": "Your baby is more active and tasting what you eat via the amniotic fluid.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:47.3427818",
+            "lastUpdateDate": "2025-06-15T18:15:47.3427823"
+        },
+        "babyDevelopmentDetails": {
+            "id": 21,
+            "title": "👶 Week 21 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~26.7 cm (head to heel)\",\"Weight: ~350 g\",\"Growth Note: Baby can now taste the flavors of your meals!\"]",
+            "featuresJson": "[\"👅 Taste buds are fully developed\",\"🦵 Baby kicks and stretches more noticeably\",\"👂 Sound detection improves further\",\"🧠 Nerve connections increase in brain areas for senses\"]",
+            "motherChangesJson": "[\"🎯 Center of gravity may shift — balance might feel off\",\"🦶 Feet and ankles may swell\",\"🌙 Sleep disruptions may increase due to baby movements\"]",
+            "insightsJson": "[\"Your baby can now recognize strong flavors in the amniotic fluid — spicy or sweet!\"]",
+            "babySizeFruit": "Carrot 🥕",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 21,
+            "status": 0,
+            "createData": "2025-06-15T18:15:47.976992",
+            "lastUpdateDate": "2025-06-15T18:15:47.9769923",
+            "babyIntroInfo": [
+                "Length: ~26.7 cm (head to heel)",
+                "Weight: ~350 g",
+                "Growth Note: Baby can now taste the flavors of your meals!"
+            ],
+            "features": [
+                "👅 Taste buds are fully developed",
+                "🦵 Baby kicks and stretches more noticeably",
+                "👂 Sound detection improves further",
+                "🧠 Nerve connections increase in brain areas for senses"
+            ],
+            "motherChanges": [
+                "🎯 Center of gravity may shift — balance might feel off",
+                "🦶 Feet and ankles may swell",
+                "🌙 Sleep disruptions may increase due to baby movements"
+            ],
+            "insights": [
+                "Your baby can now recognize strong flavors in the amniotic fluid — spicy or sweet!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 22,
+            "week": 22,
+            "weekDescription": "You're in Week 22 of your pregnancy",
+            "pregnancyHighlight": "Your baby is the size of a papaya 🧡",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 22",
+            "description": "Baby's facial features are now fully formed. Eyelids and eyebrows are in place.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:48.4062978",
+            "lastUpdateDate": "2025-06-15T18:15:48.4062981"
+        },
+        "babyDevelopmentDetails": {
+            "id": 22,
+            "title": "👶 Week 22 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~27.8 cm\",\"Weight: ~430 g\",\"Growth Note: Baby’s features resemble a newborn\"]",
+            "featuresJson": "[\"😴 Sleep-wake cycles begin\",\"👁️ Eyelids, eyebrows, and lips are clearly formed\",\"🫁 Lung development continues with branching airways\",\"🦶 Legs are longer and more proportional\"]",
+            "motherChangesJson": "[\"🎨 Skin changes like linea nigra (dark line on belly) may appear\",\"💤 Baby kicks may interrupt your sleep\",\"👗 Maternity clothes may feel more essential\"]",
+            "insightsJson": "[\"Your baby sleeps up to 12–14 hours a day — often while you're active!\"]",
+            "babySizeFruit": "Papaya 🧡",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 22,
+            "status": 0,
+            "createData": "2025-06-15T18:15:49.0367035",
+            "lastUpdateDate": "2025-06-15T18:15:49.0367038",
+            "babyIntroInfo": [
+                "Length: ~27.8 cm",
+                "Weight: ~430 g",
+                "Growth Note: Baby’s features resemble a newborn"
+            ],
+            "features": [
+                "😴 Sleep-wake cycles begin",
+                "👁️ Eyelids, eyebrows, and lips are clearly formed",
+                "🫁 Lung development continues with branching airways",
+                "🦶 Legs are longer and more proportional"
+            ],
+            "motherChanges": [
+                "🎨 Skin changes like linea nigra (dark line on belly) may appear",
+                "💤 Baby kicks may interrupt your sleep",
+                "👗 Maternity clothes may feel more essential"
+            ],
+            "insights": [
+                "Your baby sleeps up to 12–14 hours a day — often while you're active!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 23,
+            "week": 23,
+            "weekDescription": "You're in Week 23 of your pregnancy",
+            "pregnancyHighlight": "Your baby is the size of an grapefruit 🍊",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 23",
+            "description": "Your baby's lungs and hearing continue to improve as the body builds strength and fat.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:49.5236344",
+            "lastUpdateDate": "2025-06-15T18:15:49.5236349"
+        },
+        "babyDevelopmentDetails": {
+            "id": 23,
+            "title": "👶 Week 23 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~28.9 cm\",\"Weight: ~500 g\",\"Growth Note: Skin thickens and is less see-through\"]",
+            "featuresJson": "[\"🧠 Brain and sensory development continues\",\"👂 Baby can hear your heartbeat and external sounds\",\"🫁 Lungs begin producing surfactant for breathing\",\"🦵 Muscle tone improves as movements strengthen\"]",
+            "motherChangesJson": "[\"🩸 Increased blood flow may cause nasal congestion or bleeding gums\",\"🧴 Skin may feel more dry or itchy\",\"🤕 Back pain or Braxton Hicks contractions may occur\"]",
+            "insightsJson": "[\"Your baby may respond to touch and sound — try playing music or gently tapping your belly!\"]",
+            "babySizeFruit": "Grapefruit 🍊",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 23,
+            "status": 0,
+            "createData": "2025-06-15T18:15:50.1796278",
+            "lastUpdateDate": "2025-06-15T18:15:50.1796285",
+            "babyIntroInfo": [
+                "Length: ~28.9 cm",
+                "Weight: ~500 g",
+                "Growth Note: Skin thickens and is less see-through"
+            ],
+            "features": [
+                "🧠 Brain and sensory development continues",
+                "👂 Baby can hear your heartbeat and external sounds",
+                "🫁 Lungs begin producing surfactant for breathing",
+                "🦵 Muscle tone improves as movements strengthen"
+            ],
+            "motherChanges": [
+                "🩸 Increased blood flow may cause nasal congestion or bleeding gums",
+                "🧴 Skin may feel more dry or itchy",
+                "🤕 Back pain or Braxton Hicks contractions may occur"
+            ],
+            "insights": [
+                "Your baby may respond to touch and sound — try playing music or gently tapping your belly!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 24,
+            "week": 24,
+            "weekDescription": "You're in Week 24 of your pregnancy",
+            "pregnancyHighlight": "Your baby is the size of a Cantaloupe 🍈",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 24",
+            "description": "Your baby is reaching the stage where survival outside the womb is possible with medical support.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:50.6169241",
+            "lastUpdateDate": "2025-06-15T18:15:50.6169243"
+        },
+        "babyDevelopmentDetails": {
+            "id": 24,
+            "title": "👶 Week 24 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~30 cm\",\"Weight: ~600 g\",\"Growth Note: Baby reaches viability stage\"]",
+            "featuresJson": "[\"🫁 Lungs continue developing — survival with NICU possible\",\"🧠 Brain is rapidly growing and forming sleep cycles\",\"👀 Eyelashes begin to form\",\"🦶 Stronger movements and coordination\"]",
+            "motherChangesJson": "[\"🧘‍♀️ You may feel pressure in the lower abdomen\",\"💧 Hydration is key — amniotic fluid replenishes often\",\"🛏️ You might need more pillows for sleeping comfortably\"]",
+            "insightsJson": "[\"Your baby now has a chance of surviving if born early — a huge milestone!\"]",
+            "babySizeFruit": "Cantaloupe 🍈",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 24,
+            "status": 0,
+            "createData": "2025-06-15T18:15:51.2806037",
+            "lastUpdateDate": "2025-06-15T18:15:51.2806043",
+            "babyIntroInfo": [
+                "Length: ~30 cm",
+                "Weight: ~600 g",
+                "Growth Note: Baby reaches viability stage"
+            ],
+            "features": [
+                "🫁 Lungs continue developing — survival with NICU possible",
+                "🧠 Brain is rapidly growing and forming sleep cycles",
+                "👀 Eyelashes begin to form",
+                "🦶 Stronger movements and coordination"
+            ],
+            "motherChanges": [
+                "🧘‍♀️ You may feel pressure in the lower abdomen",
+                "💧 Hydration is key — amniotic fluid replenishes often",
+                "🛏️ You might need more pillows for sleeping comfortably"
+            ],
+            "insights": [
+                "Your baby now has a chance of surviving if born early — a huge milestone!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 25,
+            "week": 25,
+            "weekDescription": "You're in Week 25 of your pregnancy",
+            "pregnancyHighlight": "Your baby is the size of a cauliflower 🥦",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 25",
+            "description": "Your baby may respond to loud noises and bright light. Lungs continue to mature.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:51.7207064",
+            "lastUpdateDate": "2025-06-15T18:15:51.7207067"
+        },
+        "babyDevelopmentDetails": {
+            "id": 25,
+            "title": "👶 Week 25 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~34.6 cm\",\"Weight: ~660 g\",\"Growth Note: Baby's reflexes and senses are sharpening\"]",
+            "featuresJson": "[\"👂 Hearing is more developed — baby may respond to familiar voices\",\"👁️ Pupils begin to respond to light\",\"🫁 Lungs continue developing surfactant\",\"💪 Baby shows startle reflex when startled\"]",
+            "motherChangesJson": "[\"🦶 Swelling in ankles and feet may begin\",\"😴 Sleep may become more difficult due to bump size\",\"🤰 Feeling heavier and more tired\"]",
+            "insightsJson": "[\"Playing music and talking to your baby helps with early brain stimulation.\"]",
+            "babySizeFruit": "Cauliflower 🥦",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 25,
+            "status": 0,
+            "createData": "2025-06-15T18:15:52.3812943",
+            "lastUpdateDate": "2025-06-15T18:15:52.3812948",
+            "babyIntroInfo": [
+                "Length: ~34.6 cm",
+                "Weight: ~660 g",
+                "Growth Note: Baby's reflexes and senses are sharpening"
+            ],
+            "features": [
+                "👂 Hearing is more developed — baby may respond to familiar voices",
+                "👁️ Pupils begin to respond to light",
+                "🫁 Lungs continue developing surfactant",
+                "💪 Baby shows startle reflex when startled"
+            ],
+            "motherChanges": [
+                "🦶 Swelling in ankles and feet may begin",
+                "😴 Sleep may become more difficult due to bump size",
+                "🤰 Feeling heavier and more tired"
+            ],
+            "insights": [
+                "Playing music and talking to your baby helps with early brain stimulation."
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 26,
+            "week": 26,
+            "weekDescription": "You're in Week 26 of your pregnancy",
+            "pregnancyHighlight": "Your baby is the size of a lettuce 🥗",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 26",
+            "description": "Baby’s eyes start to open. Brain is growing rapidly and lungs prepare for breathing.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:52.7972512",
+            "lastUpdateDate": "2025-06-15T18:15:52.7972516"
+        },
+        "babyDevelopmentDetails": {
+            "id": 26,
+            "title": "👶 Week 26 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~35.6 cm\",\"Weight: ~760 g\",\"Growth Note: Eyes are open and responsive to light\"]",
+            "featuresJson": "[\"👁️ Eyes open for the first time\",\"🧠 Brain activity detectable — sleep and wake cycles begin\",\"🫁 Lungs develop blood vessels\",\"🖐️ Hands begin to grip\"]",
+            "motherChangesJson": "[\"🛌 More fatigue and restless sleep\",\"🧼 Possible increase in vaginal discharge\",\"💡 May feel baby reacting to light and sound\"]",
+            "insightsJson": "[\"Your baby may begin to recognize your voice and react to it — a powerful bond forming already!\"]",
+            "babySizeFruit": "Lettuce 🥗",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 26,
+            "status": 0,
+            "createData": "2025-06-15T18:15:53.4650587",
+            "lastUpdateDate": "2025-06-15T18:15:53.4650596",
+            "babyIntroInfo": [
+                "Length: ~35.6 cm",
+                "Weight: ~760 g",
+                "Growth Note: Eyes are open and responsive to light"
+            ],
+            "features": [
+                "👁️ Eyes open for the first time",
+                "🧠 Brain activity detectable — sleep and wake cycles begin",
+                "🫁 Lungs develop blood vessels",
+                "🖐️ Hands begin to grip"
+            ],
+            "motherChanges": [
+                "🛌 More fatigue and restless sleep",
+                "🧼 Possible increase in vaginal discharge",
+                "💡 May feel baby reacting to light and sound"
+            ],
+            "insights": [
+                "Your baby may begin to recognize your voice and react to it — a powerful bond forming already!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 27,
+            "week": 27,
+            "weekDescription": "You're in Week 27 of your pregnancy",
+            "pregnancyHighlight": "Your baby is the size of a Cucumber 🥒",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 27",
+            "description": "You're in the home stretch! Baby’s brain and lungs are rapidly developing.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:53.8880271",
+            "lastUpdateDate": "2025-06-15T18:15:53.8880276"
+        },
+        "babyDevelopmentDetails": {
+            "id": 27,
+            "title": "👶 Week 27 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~36.6 cm\",\"Weight: ~875 g\",\"Growth Note: Third trimester begins with rapid brain and lung growth\"]",
+            "featuresJson": "[\"🧠 Brain tissue growing more complex\",\"🫁 Lungs practicing breathing more frequently\",\"💡 Baby can differentiate between day and night\",\"🖐️ More defined sleep and activity patterns\"]",
+            "motherChangesJson": "[\"📉 Shortness of breath may start\",\"🦶 Leg cramps and backaches are more common\",\"💭 You might experience vivid dreams\"]",
+            "insightsJson": "[\"Your baby now has a good chance of survival with medical help if born prematurely.\"]",
+            "babySizeFruit": "Cucumber 🥒",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 27,
+            "status": 0,
+            "createData": "2025-06-15T18:15:54.5806226",
+            "lastUpdateDate": "2025-06-15T18:15:54.5806229",
+            "babyIntroInfo": [
+                "Length: ~36.6 cm",
+                "Weight: ~875 g",
+                "Growth Note: Third trimester begins with rapid brain and lung growth"
+            ],
+            "features": [
+                "🧠 Brain tissue growing more complex",
+                "🫁 Lungs practicing breathing more frequently",
+                "💡 Baby can differentiate between day and night",
+                "🖐️ More defined sleep and activity patterns"
+            ],
+            "motherChanges": [
+                "📉 Shortness of breath may start",
+                "🦶 Leg cramps and backaches are more common",
+                "💭 You might experience vivid dreams"
+            ],
+            "insights": [
+                "Your baby now has a good chance of survival with medical help if born prematurely."
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 28,
+            "week": 28,
+            "weekDescription": "You're in Week 28 of your pregnancy",
+            "pregnancyHighlight": "Your baby is the size of an eggplant 🍆",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 28",
+            "description": "Baby is blinking, developing sleep cycles, and gaining fat rapidly.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:55.1152778",
+            "lastUpdateDate": "2025-06-15T18:15:55.1152787"
+        },
+        "babyDevelopmentDetails": {
+            "id": 28,
+            "title": "👶 Week 28 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~37.6 cm\",\"Weight: ~1 kg\",\"Growth Note: Eyelashes are now visible\"]",
+            "featuresJson": "[\"👁️ Eyes can blink, complete with eyelashes\",\"💤 Baby has REM sleep — possibly dreaming\",\"🫀 Heartbeat can be heard with a stethoscope\",\"🧠 Brain grooves and folds develop more\"]",
+            "motherChangesJson": "[\"💉 Time for glucose screening test (gestational diabetes check)\",\"🛌 Might feel more tired and need naps\",\"🧍‍♀️ May experience pelvic pressure\"]",
+            "insightsJson": "[\"Third-trimester prenatal visits may now become bi-weekly.\"]",
+            "babySizeFruit": "Eggplant 🍆",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 28,
+            "status": 0,
+            "createData": "2025-06-15T18:15:55.784186",
+            "lastUpdateDate": "2025-06-15T18:15:55.7841864",
+            "babyIntroInfo": [
+                "Length: ~37.6 cm",
+                "Weight: ~1 kg",
+                "Growth Note: Eyelashes are now visible"
+            ],
+            "features": [
+                "👁️ Eyes can blink, complete with eyelashes",
+                "💤 Baby has REM sleep — possibly dreaming",
+                "🫀 Heartbeat can be heard with a stethoscope",
+                "🧠 Brain grooves and folds develop more"
+            ],
+            "motherChanges": [
+                "💉 Time for glucose screening test (gestational diabetes check)",
+                "🛌 Might feel more tired and need naps",
+                "🧍‍♀️ May experience pelvic pressure"
+            ],
+            "insights": [
+                "Third-trimester prenatal visits may now become bi-weekly."
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 29,
+            "week": 29,
+            "weekDescription": "You're in Week 29 of your pregnancy",
+            "pregnancyHighlight": "Your baby is the size of a butternut squash 🎃",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 29",
+            "description": "Muscles are strengthening. Baby is practicing breathing and gaining weight steadily.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:56.2000047",
+            "lastUpdateDate": "2025-06-15T18:15:56.2000051"
+        },
+        "babyDevelopmentDetails": {
+            "id": 29,
+            "title": "👶 Week 29 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~38.6 cm\",\"Weight: ~1.15 kg\",\"Growth Note: Body fat increases to regulate temperature\"]",
+            "featuresJson": "[\"💪 Muscles and lungs are strengthening\",\"🧠 Brain activity increases — baby reacts more to stimuli\",\"🤸 Frequent kicks and stretches felt\",\"👂 Baby may respond to familiar songs\"]",
+            "motherChangesJson": "[\"🧘‍♀️ Braxton Hicks contractions may increase\",\"🤯 Possible mood swings or brain fog\",\"🛁 Need for rest and relaxation increases\"]",
+            "insightsJson": "[\"Playing a lullaby regularly now may help soothe your baby after birth!\"]",
+            "babySizeFruit": "Butternut squash 🎃",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 29,
+            "status": 0,
+            "createData": "2025-06-15T18:15:56.8581139",
+            "lastUpdateDate": "2025-06-15T18:15:56.8581143",
+            "babyIntroInfo": [
+                "Length: ~38.6 cm",
+                "Weight: ~1.15 kg",
+                "Growth Note: Body fat increases to regulate temperature"
+            ],
+            "features": [
+                "💪 Muscles and lungs are strengthening",
+                "🧠 Brain activity increases — baby reacts more to stimuli",
+                "🤸 Frequent kicks and stretches felt",
+                "👂 Baby may respond to familiar songs"
+            ],
+            "motherChanges": [
+                "🧘‍♀️ Braxton Hicks contractions may increase",
+                "🤯 Possible mood swings or brain fog",
+                "🛁 Need for rest and relaxation increases"
+            ],
+            "insights": [
+                "Playing a lullaby regularly now may help soothe your baby after birth!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 30,
+            "week": 30,
+            "weekDescription": "You're in Week 30 of your pregnancy",
+            "pregnancyHighlight": "Your baby is the size of a zucchini 🟢",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 30",
+            "description": "Your baby can follow light and is very responsive. Rapid growth continues.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:57.3015418",
+            "lastUpdateDate": "2025-06-15T18:15:57.3015424"
+        },
+        "babyDevelopmentDetails": {
+            "id": 30,
+            "title": "👶 Week 30 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~39.9 cm\",\"Weight: ~1.3 kg\",\"Growth Note: Baby may grow about half a pound per week\"]",
+            "featuresJson": "[\"👁️ Can track light moving across your belly\",\"🧠 Brain wrinkling increases for complex development\",\"💪 Arms and legs are chubbier and stronger\",\"🫁 Prepping lungs for first breath\"]",
+            "motherChangesJson": "[\"🦶 Swelling in feet and ankles more noticeable\",\"🥱 More frequent trips to the bathroom\",\"😮‍💨 Shortness of breath may increase as baby presses on lungs\"]",
+            "insightsJson": "[\"Baby’s bone marrow is now making red blood cells — a key milestone!\"]",
+            "babySizeFruit": "Zucchini 🟢",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 30,
+            "status": 0,
+            "createData": "2025-06-15T18:15:57.9392059",
+            "lastUpdateDate": "2025-06-15T18:15:57.9392065",
+            "babyIntroInfo": [
+                "Length: ~39.9 cm",
+                "Weight: ~1.3 kg",
+                "Growth Note: Baby may grow about half a pound per week"
+            ],
+            "features": [
+                "👁️ Can track light moving across your belly",
+                "🧠 Brain wrinkling increases for complex development",
+                "💪 Arms and legs are chubbier and stronger",
+                "🫁 Prepping lungs for first breath"
+            ],
+            "motherChanges": [
+                "🦶 Swelling in feet and ankles more noticeable",
+                "🥱 More frequent trips to the bathroom",
+                "😮‍💨 Shortness of breath may increase as baby presses on lungs"
+            ],
+            "insights": [
+                "Baby’s bone marrow is now making red blood cells — a key milestone!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 31,
+            "week": 31,
+            "weekDescription": "You're in Week 31 of your pregnancy",
+            "pregnancyHighlight": "Baby’s brain is developing rapidly 🧠",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 31",
+            "description": "Your baby's brain is developing at lightning speed, and their five senses are active.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:58.3584383",
+            "lastUpdateDate": "2025-06-15T18:15:58.3584386"
+        },
+        "babyDevelopmentDetails": {
+            "id": 31,
+            "title": "👶 Week 31 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~41 cm\",\"Weight: ~1.5 kg\",\"Growth Note: Brain connections multiplying rapidly\"]",
+            "featuresJson": "[\"🧠 Brain develops grooves and ridges\",\"👁️ Pupils react to light\",\"🖐️ Baby grasps hands and toes\",\"🫁 Lungs continue developing, preparing for breathing\"]",
+            "motherChangesJson": "[\"🩵 Shortness of breath may occur\",\"💤 Sleep discomfort increases\",\"🧘‍♀️ Practice calming techniques for labor prep\"]",
+            "insightsJson": "[\"Baby’s nervous system is nearly mature — and memory is developing!\"]",
+            "babySizeFruit": "Coconut 🥥",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 31,
+            "status": 0,
+            "createData": "2025-06-15T18:15:58.999291",
+            "lastUpdateDate": "2025-06-15T18:15:58.9992916",
+            "babyIntroInfo": [
+                "Length: ~41 cm",
+                "Weight: ~1.5 kg",
+                "Growth Note: Brain connections multiplying rapidly"
+            ],
+            "features": [
+                "🧠 Brain develops grooves and ridges",
+                "👁️ Pupils react to light",
+                "🖐️ Baby grasps hands and toes",
+                "🫁 Lungs continue developing, preparing for breathing"
+            ],
+            "motherChanges": [
+                "🩵 Shortness of breath may occur",
+                "💤 Sleep discomfort increases",
+                "🧘‍♀️ Practice calming techniques for labor prep"
+            ],
+            "insights": [
+                "Baby’s nervous system is nearly mature — and memory is developing!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 32,
+            "week": 32,
+            "weekDescription": "You're in Week 32 of your pregnancy",
+            "pregnancyHighlight": "Baby is gaining weight rapidly ⚖️",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 32",
+            "description": "Your baby is filling out — developing the fat needed to regulate temperature after birth.",
+            "status": 4,
+            "createData": "2025-06-15T18:15:59.4202676",
+            "lastUpdateDate": "2025-06-15T18:15:59.4202679"
+        },
+        "babyDevelopmentDetails": {
+            "id": 32,
+            "title": "👶 Week 32 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~42.4 cm\",\"Weight: ~1.7 kg\",\"Growth Note: Gaining ~200g per week now!\"]",
+            "featuresJson": "[\"⚖️ Fat accumulation continues\",\"🧠 Brain continues refining connections\",\"🦴 Bones harden, but skull remains soft\",\"👶 Baby moves into birth position\"]",
+            "motherChangesJson": "[\"🔥 Heartburn may intensify\",\"🌙 Frequent nighttime bathroom trips\",\"📦 Consider packing your hospital bag\"]",
+            "insightsJson": "[\"Your baby is beginning to sleep in cycles — including REM sleep!\"]",
+            "babySizeFruit": "Pumpkin 🎃",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 32,
+            "status": 0,
+            "createData": "2025-06-15T18:16:00.1068228",
+            "lastUpdateDate": "2025-06-15T18:16:00.1068232",
+            "babyIntroInfo": [
+                "Length: ~42.4 cm",
+                "Weight: ~1.7 kg",
+                "Growth Note: Gaining ~200g per week now!"
+            ],
+            "features": [
+                "⚖️ Fat accumulation continues",
+                "🧠 Brain continues refining connections",
+                "🦴 Bones harden, but skull remains soft",
+                "👶 Baby moves into birth position"
+            ],
+            "motherChanges": [
+                "🔥 Heartburn may intensify",
+                "🌙 Frequent nighttime bathroom trips",
+                "📦 Consider packing your hospital bag"
+            ],
+            "insights": [
+                "Your baby is beginning to sleep in cycles — including REM sleep!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 33,
+            "week": 33,
+            "weekDescription": "You're in Week 33 of your pregnancy",
+            "pregnancyHighlight": "Baby’s bones are hardening 🦴",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 33",
+            "description": "Your baby’s skeleton is hardening, though the skull remains soft for birth.",
+            "status": 4,
+            "createData": "2025-06-15T18:16:00.5197682",
+            "lastUpdateDate": "2025-06-15T18:16:00.5197684"
+        },
+        "babyDevelopmentDetails": {
+            "id": 33,
+            "title": "👶 Week 33 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~43.7 cm\",\"Weight: ~1.9 kg\",\"Growth Note: Skull stays flexible for delivery\"]",
+            "featuresJson": "[\"🦴 Bones continue to strengthen\",\"👶 Baby’s head may engage in pelvis soon\",\"👂 Senses like hearing are sharp\",\"🫁 Lungs still maturing\"]",
+            "motherChangesJson": "[\"🎈 Belly feels tighter and heavier\",\"🦵 Possible leg cramps or pelvic pressure\",\"🪑 Rest frequently — take the weight off\"]",
+            "insightsJson": "[\"Your baby can differentiate between voices now — yours is their favorite!\"]",
+            "babySizeFruit": "Pineapple 🍍",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 33,
+            "status": 0,
+            "createData": "2025-06-15T18:16:01.1757054",
+            "lastUpdateDate": "2025-06-15T18:16:01.1757059",
+            "babyIntroInfo": [
+                "Length: ~43.7 cm",
+                "Weight: ~1.9 kg",
+                "Growth Note: Skull stays flexible for delivery"
+            ],
+            "features": [
+                "🦴 Bones continue to strengthen",
+                "👶 Baby’s head may engage in pelvis soon",
+                "👂 Senses like hearing are sharp",
+                "🫁 Lungs still maturing"
+            ],
+            "motherChanges": [
+                "🎈 Belly feels tighter and heavier",
+                "🦵 Possible leg cramps or pelvic pressure",
+                "🪑 Rest frequently — take the weight off"
+            ],
+            "insights": [
+                "Your baby can differentiate between voices now — yours is their favorite!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 34,
+            "week": 34,
+            "weekDescription": "You're in Week 34 of your pregnancy",
+            "pregnancyHighlight": "Baby’s immune system is developing 🛡️",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 34",
+            "description": "Your baby is building immunity and getting ready to thrive outside the womb.",
+            "status": 4,
+            "createData": "2025-06-15T18:16:01.5770534",
+            "lastUpdateDate": "2025-06-15T18:16:01.5770536"
+        },
+        "babyDevelopmentDetails": {
+            "id": 34,
+            "title": "👶 Week 34 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~45 cm\",\"Weight: ~2.1 kg\",\"Growth Note: Final touches happening internally\"]",
+            "featuresJson": "[\"🛡️ Antibodies transferred for immune protection\",\"🧠 Nervous system nearing full maturity\",\"🫁 Lungs almost ready\",\"👀 Eyes can open and close\"]",
+            "motherChangesJson": "[\"🧼 Nesting instincts may begin\",\"🥱 Fatigue returns\",\"🛏️ Rest with feet elevated to reduce swelling\"]",
+            "insightsJson": "[\"Your baby has fingernails and might scratch their face in the womb!\"]",
+            "babySizeFruit": "Cantaloupe 🍈",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 34,
+            "status": 0,
+            "createData": "2025-06-15T18:16:02.2436366",
+            "lastUpdateDate": "2025-06-15T18:16:02.243637",
+            "babyIntroInfo": [
+                "Length: ~45 cm",
+                "Weight: ~2.1 kg",
+                "Growth Note: Final touches happening internally"
+            ],
+            "features": [
+                "🛡️ Antibodies transferred for immune protection",
+                "🧠 Nervous system nearing full maturity",
+                "🫁 Lungs almost ready",
+                "👀 Eyes can open and close"
+            ],
+            "motherChanges": [
+                "🧼 Nesting instincts may begin",
+                "🥱 Fatigue returns",
+                "🛏️ Rest with feet elevated to reduce swelling"
+            ],
+            "insights": [
+                "Your baby has fingernails and might scratch their face in the womb!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 35,
+            "week": 35,
+            "weekDescription": "You're in Week 35 of your pregnancy",
+            "pregnancyHighlight": "Almost full term! 🍼",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 35",
+            "description": "Your baby is getting chubbier and practicing breathing, blinking, and gripping.",
+            "status": 4,
+            "createData": "2025-06-15T18:16:02.7083542",
+            "lastUpdateDate": "2025-06-15T18:16:02.7083546"
+        },
+        "babyDevelopmentDetails": {
+            "id": 35,
+            "title": "👶 Week 35 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~46.2 cm\",\"Weight: ~2.4 kg\",\"Growth Note: Almost ready for life outside!\"]",
+            "featuresJson": "[\"🍼 Skin is smooth and pink\",\"🧠 Brain and lungs are maturing daily\",\"🖐️ Stronger grip reflex develops\",\"😴 Sleep patterns start resembling newborns\"]",
+            "motherChangesJson": "[\"🛌 Braxton Hicks contractions may increase\",\"📋 Finalize birth plan and pediatrician\",\"🧼 More nesting, less patience — it’s okay!\"]",
+            "insightsJson": "[\"Your baby’s head might be engaged — meaning labor is approaching soon!\"]",
+            "babySizeFruit": "Honeydew melon 🍈",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 35,
+            "status": 0,
+            "createData": "2025-06-15T18:16:03.3450825",
+            "lastUpdateDate": "2025-06-15T18:16:03.345083",
+            "babyIntroInfo": [
+                "Length: ~46.2 cm",
+                "Weight: ~2.4 kg",
+                "Growth Note: Almost ready for life outside!"
+            ],
+            "features": [
+                "🍼 Skin is smooth and pink",
+                "🧠 Brain and lungs are maturing daily",
+                "🖐️ Stronger grip reflex develops",
+                "😴 Sleep patterns start resembling newborns"
+            ],
+            "motherChanges": [
+                "🛌 Braxton Hicks contractions may increase",
+                "📋 Finalize birth plan and pediatrician",
+                "🧼 More nesting, less patience — it’s okay!"
+            ],
+            "insights": [
+                "Your baby’s head might be engaged — meaning labor is approaching soon!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 36,
+            "week": 36,
+            "weekDescription": "You're in Week 36 of your pregnancy",
+            "pregnancyHighlight": "Baby is shedding lanugo and vernix 🧼",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 36",
+            "description": "Your baby is nearly ready! Shedding of protective layers begins and lungs are almost fully mature.",
+            "status": 4,
+            "createData": "2025-06-15T18:16:03.7636884",
+            "lastUpdateDate": "2025-06-15T18:16:03.7636889"
+        },
+        "babyDevelopmentDetails": {
+            "id": 36,
+            "title": "👶 Week 36 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~47.4 cm\",\"Weight: ~2.6 kg\",\"Growth Note: Baby is practicing sucking, breathing, and blinking\"]",
+            "featuresJson": "[\"🧼 Shedding vernix (white coating) and lanugo (fine hair)\",\"🫁 Lungs nearly fully developed\",\"🧠 Brain still growing fast\",\"👶 Baby may drop lower into pelvis\"]",
+            "motherChangesJson": "[\"⬇️ Baby may ‘drop’ — less pressure on lungs, more on bladder\",\"🛏️ Disrupted sleep and increased pelvic pressure\",\"📦 Prepare hospital bag and car seat\"]",
+            "insightsJson": "[\"Your baby gains about 28 grams per day this week — mostly fat and brain growth!\"]",
+            "babySizeFruit": "Romaine lettuce 🥬",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 36,
+            "status": 0,
+            "createData": "2025-06-15T18:16:04.3999036",
+            "lastUpdateDate": "2025-06-15T18:16:04.399904",
+            "babyIntroInfo": [
+                "Length: ~47.4 cm",
+                "Weight: ~2.6 kg",
+                "Growth Note: Baby is practicing sucking, breathing, and blinking"
+            ],
+            "features": [
+                "🧼 Shedding vernix (white coating) and lanugo (fine hair)",
+                "🫁 Lungs nearly fully developed",
+                "🧠 Brain still growing fast",
+                "👶 Baby may drop lower into pelvis"
+            ],
+            "motherChanges": [
+                "⬇️ Baby may ‘drop’ — less pressure on lungs, more on bladder",
+                "🛏️ Disrupted sleep and increased pelvic pressure",
+                "📦 Prepare hospital bag and car seat"
+            ],
+            "insights": [
+                "Your baby gains about 28 grams per day this week — mostly fat and brain growth!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 37,
+            "week": 37,
+            "weekDescription": "You're in Week 37 of your pregnancy",
+            "pregnancyHighlight": "You’re now considered early term 🗓️",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 37",
+            "description": "Though still gaining fat, your baby is now considered full enough to thrive outside the womb.",
+            "status": 4,
+            "createData": "2025-06-15T18:16:04.8408002",
+            "lastUpdateDate": "2025-06-15T18:16:04.8408005"
+        },
+        "babyDevelopmentDetails": {
+            "id": 37,
+            "title": "👶 Week 37 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~48.6 cm\",\"Weight: ~2.9 kg\",\"Growth Note: Baby looks like a full-term newborn\"]",
+            "featuresJson": "[\"📦 Baby has reached early-term status\",\"🦴 Bones are hardening except the skull\",\"🧠 Brain and lungs continue final maturing\",\"👁️ Eyes can focus and track light\"]",
+            "motherChangesJson": "[\"📉 Belly may feel lower\",\"🧘‍♀️ Pelvic aches and more frequent Braxton Hicks\",\"🥱 Fatigue returns with increased anticipation\"]",
+            "insightsJson": "[\"Your baby is practicing sucking, blinking, and even grasping!\"]",
+            "babySizeFruit": "Swiss chard 🌿",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 37,
+            "status": 0,
+            "createData": "2025-06-15T18:16:05.4842481",
+            "lastUpdateDate": "2025-06-15T18:16:05.4842483",
+            "babyIntroInfo": [
+                "Length: ~48.6 cm",
+                "Weight: ~2.9 kg",
+                "Growth Note: Baby looks like a full-term newborn"
+            ],
+            "features": [
+                "📦 Baby has reached early-term status",
+                "🦴 Bones are hardening except the skull",
+                "🧠 Brain and lungs continue final maturing",
+                "👁️ Eyes can focus and track light"
+            ],
+            "motherChanges": [
+                "📉 Belly may feel lower",
+                "🧘‍♀️ Pelvic aches and more frequent Braxton Hicks",
+                "🥱 Fatigue returns with increased anticipation"
+            ],
+            "insights": [
+                "Your baby is practicing sucking, blinking, and even grasping!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 38,
+            "week": 38,
+            "weekDescription": "You're in Week 38 of your pregnancy",
+            "pregnancyHighlight": "Baby’s lanugo is mostly gone 🧽",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 38",
+            "description": "Your baby is nearly done growing and just adding the final layers of fat and muscle.",
+            "status": 4,
+            "createData": "2025-06-15T18:16:05.8973998",
+            "lastUpdateDate": "2025-06-15T18:16:05.8974003"
+        },
+        "babyDevelopmentDetails": {
+            "id": 38,
+            "title": "👶 Week 38 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~49.8 cm\",\"Weight: ~3.1 kg\",\"Growth Note: Baby practices reflexes and gains about 30g per day\"]",
+            "featuresJson": "[\"🖐️ Firm grasp develops\",\"🧠 Brain and nervous system complete final touches\",\"🛌 Sleep-wake cycles are set\",\"🧼 Vernix is mostly gone except in skin folds\"]",
+            "motherChangesJson": "[\"🛀 Some swelling in feet and ankles\",\"🧘‍♀️ Nesting instinct peaks\",\"📋 Final birth plan check\"]",
+            "insightsJson": "[\"Your baby’s toenails may reach the tip of their toes now!\"]",
+            "babySizeFruit": "Leek 🧅",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 38,
+            "status": 0,
+            "createData": "2025-06-15T18:16:06.5377357",
+            "lastUpdateDate": "2025-06-15T18:16:06.5377363",
+            "babyIntroInfo": [
+                "Length: ~49.8 cm",
+                "Weight: ~3.1 kg",
+                "Growth Note: Baby practices reflexes and gains about 30g per day"
+            ],
+            "features": [
+                "🖐️ Firm grasp develops",
+                "🧠 Brain and nervous system complete final touches",
+                "🛌 Sleep-wake cycles are set",
+                "🧼 Vernix is mostly gone except in skin folds"
+            ],
+            "motherChanges": [
+                "🛀 Some swelling in feet and ankles",
+                "🧘‍♀️ Nesting instinct peaks",
+                "📋 Final birth plan check"
+            ],
+            "insights": [
+                "Your baby’s toenails may reach the tip of their toes now!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 39,
+            "week": 39,
+            "weekDescription": "You're in Week 39 of your pregnancy",
+            "pregnancyHighlight": "You’re full term! 🎉",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 39",
+            "description": "Baby is done developing and now just waits to be born.",
+            "status": 4,
+            "createData": "2025-06-15T18:16:06.9647184",
+            "lastUpdateDate": "2025-06-15T18:16:06.9647185"
+        },
+        "babyDevelopmentDetails": {
+            "id": 39,
+            "title": "👶 Week 39 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~50.7 cm\",\"Weight: ~3.3 kg\",\"Growth Note: Organ systems are fully functioning\"]",
+            "featuresJson": "[\"💓 Heart is strong and ready\",\"🧠 Brain still refining, gaining 1/3 of adult size\",\"🦴 Skull bones remain flexible for delivery\",\"👃 Nose and lungs ready to breathe air\"]",
+            "motherChangesJson": "[\"🔁 Frequent Braxton Hicks contractions\",\"😴 Trouble sleeping and backaches\",\"⏳ Cervix may start effacing and dilating\"]",
+            "insightsJson": "[\"Most babies are born between Weeks 39 and 41 — you’re right on track!\"]",
+            "babySizeFruit": "Mini watermelon 🍉",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 39,
+            "status": 0,
+            "createData": "2025-06-15T18:16:07.5995324",
+            "lastUpdateDate": "2025-06-15T18:16:07.5995327",
+            "babyIntroInfo": [
+                "Length: ~50.7 cm",
+                "Weight: ~3.3 kg",
+                "Growth Note: Organ systems are fully functioning"
+            ],
+            "features": [
+                "💓 Heart is strong and ready",
+                "🧠 Brain still refining, gaining 1/3 of adult size",
+                "🦴 Skull bones remain flexible for delivery",
+                "👃 Nose and lungs ready to breathe air"
+            ],
+            "motherChanges": [
+                "🔁 Frequent Braxton Hicks contractions",
+                "😴 Trouble sleeping and backaches",
+                "⏳ Cervix may start effacing and dilating"
+            ],
+            "insights": [
+                "Most babies are born between Weeks 39 and 41 — you’re right on track!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 40,
+            "week": 40,
+            "weekDescription": "You're in Week 40 of your pregnancy",
+            "pregnancyHighlight": "Due date week! ⏰",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 40",
+            "description": "The finish line is here! If labor hasn’t started, it could be anytime now.",
+            "status": 4,
+            "createData": "2025-06-15T18:16:08.0191739",
+            "lastUpdateDate": "2025-06-15T18:16:08.0191743"
+        },
+        "babyDevelopmentDetails": {
+            "id": 40,
+            "title": "👶 Week 40 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~51.2 cm\",\"Weight: ~3.4 kg\",\"Growth Note: Baby is at peak development and ready for delivery\"]",
+            "featuresJson": "[\"👶 Baby’s skin is pink and smooth\",\"👁️ Fully developed senses\",\"🍼 Coordination for feeding\",\"🧠 Brain continues to grow post-birth\"]",
+            "motherChangesJson": "[\"⏰ Signs of labor may begin — contractions, mucus plug, water breaking\",\"🧼 Final nesting moments\",\"💖 Emotional anticipation\"]",
+            "insightsJson": "[\"Only 5% of babies are born exactly on their due date — be patient and flexible!\"]",
+            "babySizeFruit": "Pumpkin 🎃",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 40,
+            "status": 0,
+            "createData": "2025-06-15T18:16:08.6583439",
+            "lastUpdateDate": "2025-06-15T18:16:08.6583443",
+            "babyIntroInfo": [
+                "Length: ~51.2 cm",
+                "Weight: ~3.4 kg",
+                "Growth Note: Baby is at peak development and ready for delivery"
+            ],
+            "features": [
+                "👶 Baby’s skin is pink and smooth",
+                "👁️ Fully developed senses",
+                "🍼 Coordination for feeding",
+                "🧠 Brain continues to grow post-birth"
+            ],
+            "motherChanges": [
+                "⏰ Signs of labor may begin — contractions, mucus plug, water breaking",
+                "🧼 Final nesting moments",
+                "💖 Emotional anticipation"
+            ],
+            "insights": [
+                "Only 5% of babies are born exactly on their due date — be patient and flexible!"
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 41,
+            "week": 41,
+            "weekDescription": "You're in Week 41 of your pregnancy",
+            "pregnancyHighlight": "Post-due but still safe 🧘‍♀️",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 41",
+            "description": "Your baby is still doing well, but care providers may begin discussing induction.",
+            "status": 4,
+            "createData": "2025-06-15T18:16:09.1381244",
+            "lastUpdateDate": "2025-06-15T18:16:09.1381248"
+        },
+        "babyDevelopmentDetails": {
+            "id": 41,
+            "title": "👶 Week 41 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~51.5 cm\",\"Weight: ~3.5–3.7 kg\",\"Growth Note: Slight weight gain may continue\"]",
+            "featuresJson": "[\"📈 Baby’s nails may be long\",\"🧼 Skin may appear dry or peeling\",\"🧠 Continues practicing breathing and gripping\",\"🔁 Baby less active due to limited space\"]",
+            "motherChangesJson": "[\"🩺 More frequent monitoring from your provider\",\"🧘‍♀️ Focus on comfort and rest\",\"🕯️ Patience is key — you’re so close!\"]",
+            "insightsJson": "[\"Most babies born in Week 41 are healthy and do well — induction may be scheduled soon.\"]",
+            "babySizeFruit": "Jackfruit 🍈",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 41,
+            "status": 0,
+            "createData": "2025-06-15T18:16:09.8004879",
+            "lastUpdateDate": "2025-06-15T18:16:09.8004884",
+            "babyIntroInfo": [
+                "Length: ~51.5 cm",
+                "Weight: ~3.5–3.7 kg",
+                "Growth Note: Slight weight gain may continue"
+            ],
+            "features": [
+                "📈 Baby’s nails may be long",
+                "🧼 Skin may appear dry or peeling",
+                "🧠 Continues practicing breathing and gripping",
+                "🔁 Baby less active due to limited space"
+            ],
+            "motherChanges": [
+                "🩺 More frequent monitoring from your provider",
+                "🧘‍♀️ Focus on comfort and rest",
+                "🕯️ Patience is key — you’re so close!"
+            ],
+            "insights": [
+                "Most babies born in Week 41 are healthy and do well — induction may be scheduled soon."
+            ]
+        }
+    },
+    {
+        "pregnancyInfo": {
+            "id": 42,
+            "week": 42,
+            "weekDescription": "You're in Week 42 of your pregnancy",
+            "pregnancyHighlight": "Baby is officially overdue 📅",
+            "pregnancyKeyFeatures": "",
+            "title": "Week 42",
+            "description": "You’re now overdue, but that’s still within normal. Extra monitoring ensures baby’s well-being.",
+            "status": 4,
+            "createData": "2025-06-15T18:16:10.2414707",
+            "lastUpdateDate": "2025-06-15T18:16:10.2414708"
+        },
+        "babyDevelopmentDetails": {
+            "id": 42,
+            "title": "👶 Week 42 Fetus Size & Development",
+            "babyIntroInfoJson": "[\"Length: ~52.5 cm\",\"Weight: ~3.7–4 kg\",\"Growth Note: Baby’s skin may be wrinkled from time in the womb\"]",
+            "featuresJson": "[\"🩺 Continuous monitoring may occur\",\"🧠 Baby continues developing post-term\",\"🧼 Vernix and lanugo are fully gone\",\"📉 Amniotic fluid may decrease\"]",
+            "motherChangesJson": "[\"🧘‍♀️ Frequent checkups or induction planning\",\"⏰ May feel emotional or anxious\",\"🛌 Focus on relaxation, labor prep\"]",
+            "insightsJson": "[\"Most care providers recommend induction before the end of Week 42 to ensure safety.\"]",
+            "babySizeFruit": "Large watermelon 🍉",
+            "showDidYouKnow": true,
+            "pregnancyDataId": 42,
+            "status": 0,
+            "createData": "2025-06-15T18:16:10.880864",
+            "lastUpdateDate": "2025-06-15T18:16:10.8808644",
+            "babyIntroInfo": [
+                "Length: ~52.5 cm",
+                "Weight: ~3.7–4 kg",
+                "Growth Note: Baby’s skin may be wrinkled from time in the womb"
+            ],
+            "features": [
+                "🩺 Continuous monitoring may occur",
+                "🧠 Baby continues developing post-term",
+                "🧼 Vernix and lanugo are fully gone",
+                "📉 Amniotic fluid may decrease"
+            ],
+            "motherChanges": [
+                "🧘‍♀️ Frequent checkups or induction planning",
+                "⏰ May feel emotional or anxious",
+                "🛌 Focus on relaxation, labor prep"
+            ],
+            "insights": [
+                "Most care providers recommend induction before the end of Week 42 to ensure safety."
+            ]
+        }
+    }
+]

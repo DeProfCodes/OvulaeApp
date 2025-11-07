@@ -1,0 +1,2147 @@
+﻿[
+    {
+        "symptomsGroup": {
+            "id": 1,
+            "type": "Pregnancy",
+            "weeks": "1",
+            "title": "Early Hormonal Shifts 💫",
+            "description": "The first week marks the start of your menstrual cycle — your body is preparing for ovulation.",
+            "createDate": "2025-06-15T16:31:31.8123451",
+            "lastUpdateDate": "2025-06-15T16:31:31.8123454",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 1,
+                "symptomsGroupId": 1,
+                "title": "Mild Cramping ⚡",
+                "description": "Some women experience light cramps as menstruation begins.",
+                "createDate": "2025-06-15T16:31:32.5880508",
+                "lastUpdateDate": "2025-06-15T16:31:32.588051",
+                "status": 4
+            },
+            {
+                "id": 2,
+                "symptomsGroupId": 1,
+                "title": "Fatigue 😴",
+                "description": "Hormone fluctuations may make you feel more tired than usual.",
+                "createDate": "2025-06-15T16:31:32.5880512",
+                "lastUpdateDate": "2025-06-15T16:31:32.5880513",
+                "status": 4
+            },
+            {
+                "id": 3,
+                "symptomsGroupId": 1,
+                "title": "Mood Swings 🎭",
+                "description": "Shifting estrogen and progesterone can affect your emotions.",
+                "createDate": "2025-06-15T16:31:32.5880514",
+                "lastUpdateDate": "2025-06-15T16:31:32.5880514",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 2,
+            "type": "Pregnancy",
+            "weeks": "2",
+            "title": "Ovulation Approaching 🌸",
+            "description": "Your body gears up to release an egg — the time of highest fertility.",
+            "createDate": "2025-06-15T16:31:33.081626",
+            "lastUpdateDate": "2025-06-15T16:31:33.0816263",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 4,
+                "symptomsGroupId": 2,
+                "title": "Increased Cervical Mucus 💧",
+                "description": "Clear and stretchy mucus is common as ovulation nears.",
+                "createDate": "2025-06-15T16:31:33.5636693",
+                "lastUpdateDate": "2025-06-15T16:31:33.5636695",
+                "status": 4
+            },
+            {
+                "id": 5,
+                "symptomsGroupId": 2,
+                "title": "Mild Pelvic Discomfort ⚖️",
+                "description": "You might feel slight discomfort on one side — known as mittelschmerz.",
+                "createDate": "2025-06-15T16:31:33.5636696",
+                "lastUpdateDate": "2025-06-15T16:31:33.5636697",
+                "status": 4
+            },
+            {
+                "id": 6,
+                "symptomsGroupId": 2,
+                "title": "Heightened Senses 👃",
+                "description": "Smell and taste may be more sensitive due to hormonal surges.",
+                "createDate": "2025-06-15T16:31:33.5636698",
+                "lastUpdateDate": "2025-06-15T16:31:33.5636699",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 3,
+            "type": "Pregnancy",
+            "weeks": "3",
+            "title": "Fertilization Stage 🧬",
+            "description": "If conception occurred, a fertilized egg begins its journey to implant. Symptoms are subtle.",
+            "createDate": "2025-06-15T16:31:34.0002147",
+            "lastUpdateDate": "2025-06-15T16:31:34.000215",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 7,
+                "symptomsGroupId": 3,
+                "title": "Mild Spotting 🩸",
+                "description": "Some may notice light spotting due to implantation.",
+                "createDate": "2025-06-15T16:31:34.4328032",
+                "lastUpdateDate": "2025-06-15T16:31:34.4328033",
+                "status": 4
+            },
+            {
+                "id": 8,
+                "symptomsGroupId": 3,
+                "title": "Tender Breasts 🤕",
+                "description": "Hormonal changes might cause slight breast soreness.",
+                "createDate": "2025-06-15T16:31:34.4328035",
+                "lastUpdateDate": "2025-06-15T16:31:34.4328036",
+                "status": 4
+            },
+            {
+                "id": 9,
+                "symptomsGroupId": 3,
+                "title": "Bloating 💨",
+                "description": "Digestive slowdown begins — bloating may start.",
+                "createDate": "2025-06-15T16:31:34.4328037",
+                "lastUpdateDate": "2025-06-15T16:31:34.4328038",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 4,
+            "type": "Pregnancy",
+            "weeks": "4",
+            "title": "Implantation Phase 🌟",
+            "description": "The embryo implants into the uterus. hCG levels start rising — pregnancy may now be detected.",
+            "createDate": "2025-06-15T16:31:34.8544179",
+            "lastUpdateDate": "2025-06-15T16:31:34.8544181",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 10,
+                "symptomsGroupId": 4,
+                "title": "Nausea 🤢",
+                "description": "Morning sickness may start — triggered by hCG rise.",
+                "createDate": "2025-06-15T16:31:35.2685966",
+                "lastUpdateDate": "2025-06-15T16:31:35.2685967",
+                "status": 4
+            },
+            {
+                "id": 11,
+                "symptomsGroupId": 4,
+                "title": "Breast Tenderness 💥",
+                "description": "Increased blood flow may make breasts feel heavier.",
+                "createDate": "2025-06-15T16:31:35.2685969",
+                "lastUpdateDate": "2025-06-15T16:31:35.2685969",
+                "status": 4
+            },
+            {
+                "id": 12,
+                "symptomsGroupId": 4,
+                "title": "Frequent Urination 🚽",
+                "description": "Hormonal shifts cause increased urination frequency.",
+                "createDate": "2025-06-15T16:31:35.268597",
+                "lastUpdateDate": "2025-06-15T16:31:35.268597",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 5,
+            "type": "Pregnancy",
+            "weeks": "5",
+            "title": "Week 5 Symptoms",
+            "description": "Hormones surge and the embryo is forming — your body begins adapting.",
+            "createDate": "2025-06-15T16:31:35.6919998",
+            "lastUpdateDate": "2025-06-15T16:31:35.692",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 13,
+                "symptomsGroupId": 5,
+                "title": "Missed Period 📆",
+                "description": "Often the first sign of pregnancy — your cycle pauses as hormones shift.",
+                "createDate": "2025-06-15T16:31:36.1092443",
+                "lastUpdateDate": "2025-06-15T16:31:36.1092446",
+                "status": 4
+            },
+            {
+                "id": 14,
+                "symptomsGroupId": 5,
+                "title": "Breast Tenderness 🤕",
+                "description": "Hormonal changes cause swelling and sensitivity in your breasts.",
+                "createDate": "2025-06-15T16:31:36.1092447",
+                "lastUpdateDate": "2025-06-15T16:31:36.1092448",
+                "status": 4
+            },
+            {
+                "id": 15,
+                "symptomsGroupId": 5,
+                "title": "Fatigue 😴",
+                "description": "Your body is working hard — it’s normal to feel very tired.",
+                "createDate": "2025-06-15T16:31:36.1092449",
+                "lastUpdateDate": "2025-06-15T16:31:36.109245",
+                "status": 4
+            },
+            {
+                "id": 16,
+                "symptomsGroupId": 5,
+                "title": "Frequent Urination 💧",
+                "description": "Increased blood flow to kidneys results in more trips to the bathroom.",
+                "createDate": "2025-06-15T16:31:36.1092452",
+                "lastUpdateDate": "2025-06-15T16:31:36.1092453",
+                "status": 4
+            },
+            {
+                "id": 17,
+                "symptomsGroupId": 5,
+                "title": "Mood Swings 🎭",
+                "description": "Hormones can make emotions feel intense or unpredictable.",
+                "createDate": "2025-06-15T16:31:36.1092454",
+                "lastUpdateDate": "2025-06-15T16:31:36.1092455",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 6,
+            "type": "Pregnancy",
+            "weeks": "6",
+            "title": "Week 6 Symptoms",
+            "description": "Hormones continue to rise — early symptoms become stronger.",
+            "createDate": "2025-06-15T16:31:36.539008",
+            "lastUpdateDate": "2025-06-15T16:31:36.5390087",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 18,
+                "symptomsGroupId": 6,
+                "title": "Nausea 🤢",
+                "description": "Morning sickness often begins this week — keep snacks handy.",
+                "createDate": "2025-06-15T16:31:36.9517561",
+                "lastUpdateDate": "2025-06-15T16:31:36.9517562",
+                "status": 4
+            },
+            {
+                "id": 19,
+                "symptomsGroupId": 6,
+                "title": "Food Aversions 🚫🍗",
+                "description": "Previously loved foods may now turn your stomach.",
+                "createDate": "2025-06-15T16:31:36.9517564",
+                "lastUpdateDate": "2025-06-15T16:31:36.9517564",
+                "status": 4
+            },
+            {
+                "id": 20,
+                "symptomsGroupId": 6,
+                "title": "Bloating 🎈",
+                "description": "Progesterone slows digestion, causing bloating and gassiness.",
+                "createDate": "2025-06-15T16:31:36.9517566",
+                "lastUpdateDate": "2025-06-15T16:31:36.9517566",
+                "status": 4
+            },
+            {
+                "id": 21,
+                "symptomsGroupId": 6,
+                "title": "Heightened Smell 👃",
+                "description": "You may notice certain smells seem stronger — even overwhelming.",
+                "createDate": "2025-06-15T16:31:36.9517567",
+                "lastUpdateDate": "2025-06-15T16:31:36.9517567",
+                "status": 4
+            },
+            {
+                "id": 22,
+                "symptomsGroupId": 6,
+                "title": "Cramps & Spotting 💢",
+                "description": "Mild cramping and light spotting can occur as the uterus adjusts.",
+                "createDate": "2025-06-15T16:31:36.9517569",
+                "lastUpdateDate": "2025-06-15T16:31:36.9517569",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 7,
+            "type": "Pregnancy",
+            "weeks": "7",
+            "title": "Week 7 Symptoms",
+            "description": "The embryo is growing rapidly — and symptoms reflect that.",
+            "createDate": "2025-06-15T16:31:37.3736641",
+            "lastUpdateDate": "2025-06-15T16:31:37.3736644",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 23,
+                "symptomsGroupId": 7,
+                "title": "Increased Saliva 💦",
+                "description": "You might notice more saliva — a side effect of nausea.",
+                "createDate": "2025-06-15T16:31:37.8056383",
+                "lastUpdateDate": "2025-06-15T16:31:37.8056384",
+                "status": 4
+            },
+            {
+                "id": 24,
+                "symptomsGroupId": 7,
+                "title": "Breast Veins More Visible 🫀",
+                "description": "Increased blood volume makes veins more pronounced.",
+                "createDate": "2025-06-15T16:31:37.8056385",
+                "lastUpdateDate": "2025-06-15T16:31:37.8056386",
+                "status": 4
+            },
+            {
+                "id": 25,
+                "symptomsGroupId": 7,
+                "title": "Digestive Changes 🍽️",
+                "description": "Gas, heartburn, and slowed digestion can become more noticeable.",
+                "createDate": "2025-06-15T16:31:37.8056388",
+                "lastUpdateDate": "2025-06-15T16:31:37.8056388",
+                "status": 4
+            },
+            {
+                "id": 26,
+                "symptomsGroupId": 7,
+                "title": "Acne Breakouts 💥",
+                "description": "Hormonal shifts can increase oil production and cause pimples.",
+                "createDate": "2025-06-15T16:31:37.8056389",
+                "lastUpdateDate": "2025-06-15T16:31:37.805639",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 8,
+            "type": "Pregnancy",
+            "weeks": "8",
+            "title": "Week 8 Symptoms",
+            "description": "Hormones peak and your uterus continues expanding.",
+            "createDate": "2025-06-15T16:31:38.2368607",
+            "lastUpdateDate": "2025-06-15T16:31:38.2368612",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 27,
+                "symptomsGroupId": 8,
+                "title": "Morning Sickness 🤮",
+                "description": "Nausea may worsen this week — eat bland foods and stay hydrated.",
+                "createDate": "2025-06-15T16:31:38.6596582",
+                "lastUpdateDate": "2025-06-15T16:31:38.6596583",
+                "status": 4
+            },
+            {
+                "id": 28,
+                "symptomsGroupId": 8,
+                "title": "Tender Gums 🦷",
+                "description": "Gums may swell and bleed more easily — keep brushing gently.",
+                "createDate": "2025-06-15T16:31:38.6596584",
+                "lastUpdateDate": "2025-06-15T16:31:38.6596585",
+                "status": 4
+            },
+            {
+                "id": 29,
+                "symptomsGroupId": 8,
+                "title": "Excess Gas 💨",
+                "description": "Hormones cause digestive slowdown and more gas.",
+                "createDate": "2025-06-15T16:31:38.6596586",
+                "lastUpdateDate": "2025-06-15T16:31:38.6596586",
+                "status": 4
+            },
+            {
+                "id": 30,
+                "symptomsGroupId": 8,
+                "title": "Metallic Taste 🪙",
+                "description": "You may notice a strange taste in your mouth.",
+                "createDate": "2025-06-15T16:31:38.6596588",
+                "lastUpdateDate": "2025-06-15T16:31:38.6596588",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 9,
+            "type": "Pregnancy",
+            "weeks": "9",
+            "title": "Week 9 Symptoms",
+            "description": "Baby’s features are forming — your hormones are in full swing.",
+            "createDate": "2025-06-15T16:31:39.0737736",
+            "lastUpdateDate": "2025-06-15T16:31:39.0737739",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 31,
+                "symptomsGroupId": 9,
+                "title": "Breast Growth 🍈",
+                "description": "Your breasts may feel fuller and begin enlarging.",
+                "createDate": "2025-06-15T16:31:39.5115571",
+                "lastUpdateDate": "2025-06-15T16:31:39.5115572",
+                "status": 4
+            },
+            {
+                "id": 32,
+                "symptomsGroupId": 9,
+                "title": "Emotional Changes 😢😊",
+                "description": "You might cry more easily or feel very up-and-down.",
+                "createDate": "2025-06-15T16:31:39.5115573",
+                "lastUpdateDate": "2025-06-15T16:31:39.5115573",
+                "status": 4
+            },
+            {
+                "id": 33,
+                "symptomsGroupId": 9,
+                "title": "Headaches 🤕",
+                "description": "Hormonal and circulation changes can trigger occasional headaches.",
+                "createDate": "2025-06-15T16:31:39.5115574",
+                "lastUpdateDate": "2025-06-15T16:31:39.5115575",
+                "status": 4
+            },
+            {
+                "id": 34,
+                "symptomsGroupId": 9,
+                "title": "Fatigue Continues 🛌",
+                "description": "Rest is still essential — your body is using more energy.",
+                "createDate": "2025-06-15T16:31:39.5115576",
+                "lastUpdateDate": "2025-06-15T16:31:39.5115576",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 10,
+            "type": "Pregnancy",
+            "weeks": "10",
+            "title": "Week 10 Symptoms",
+            "description": "You’re nearing the end of the first trimester — symptoms may shift soon.",
+            "createDate": "2025-06-15T16:31:39.9338897",
+            "lastUpdateDate": "2025-06-15T16:31:39.93389",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 35,
+                "symptomsGroupId": 10,
+                "title": "Round Ligament Pain 🤰",
+                "description": "Stretching of ligaments can cause sharp or dull aches in your abdomen.",
+                "createDate": "2025-06-15T16:31:40.3474054",
+                "lastUpdateDate": "2025-06-15T16:31:40.3474055",
+                "status": 4
+            },
+            {
+                "id": 36,
+                "symptomsGroupId": 10,
+                "title": "Visible Veins 🩵",
+                "description": "Blood volume increases cause more visible veins, especially on breasts.",
+                "createDate": "2025-06-15T16:31:40.3474057",
+                "lastUpdateDate": "2025-06-15T16:31:40.3474057",
+                "status": 4
+            },
+            {
+                "id": 37,
+                "symptomsGroupId": 10,
+                "title": "Mild Dizziness 🌀",
+                "description": "Lower blood pressure can make you feel faint or lightheaded.",
+                "createDate": "2025-06-15T16:31:40.3474058",
+                "lastUpdateDate": "2025-06-15T16:31:40.3474059",
+                "status": 4
+            },
+            {
+                "id": 38,
+                "symptomsGroupId": 10,
+                "title": "Mood Fluctuations 🎢",
+                "description": "Mood swings may still come and go as hormones shift.",
+                "createDate": "2025-06-15T16:31:40.3474059",
+                "lastUpdateDate": "2025-06-15T16:31:40.347406",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 11,
+            "type": "Pregnancy",
+            "weeks": "11",
+            "title": "Week 11 Symptoms",
+            "description": "You're nearing the second trimester — some early symptoms may ease.",
+            "createDate": "2025-06-15T16:31:40.7762223",
+            "lastUpdateDate": "2025-06-15T16:31:40.7762227",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 39,
+                "symptomsGroupId": 11,
+                "title": "Less Nausea 🤞",
+                "description": "Morning sickness may start to fade for some women this week.",
+                "createDate": "2025-06-15T16:31:41.1946168",
+                "lastUpdateDate": "2025-06-15T16:31:41.194617",
+                "status": 4
+            },
+            {
+                "id": 40,
+                "symptomsGroupId": 11,
+                "title": "Increased Discharge 🌊",
+                "description": "More leukorrhea is normal — it protects the birth canal from infection.",
+                "createDate": "2025-06-15T16:31:41.1946172",
+                "lastUpdateDate": "2025-06-15T16:31:41.1946172",
+                "status": 4
+            },
+            {
+                "id": 41,
+                "symptomsGroupId": 11,
+                "title": "Bloating & Gas 💨",
+                "description": "Still common — hormonal effects on digestion persist.",
+                "createDate": "2025-06-15T16:31:41.1946173",
+                "lastUpdateDate": "2025-06-15T16:31:41.1946173",
+                "status": 4
+            },
+            {
+                "id": 42,
+                "symptomsGroupId": 11,
+                "title": "Skin Changes 🌟",
+                "description": "Your skin may become more oily or glow — thanks to hormones and blood flow.",
+                "createDate": "2025-06-15T16:31:41.1946175",
+                "lastUpdateDate": "2025-06-15T16:31:41.1946175",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 12,
+            "type": "Pregnancy",
+            "weeks": "12",
+            "title": "Week 12 Symptoms",
+            "description": "Your baby bump may start to show — and digestion begins shifting.",
+            "createDate": "2025-06-15T16:31:41.6158362",
+            "lastUpdateDate": "2025-06-15T16:31:41.6158365",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 43,
+                "symptomsGroupId": 12,
+                "title": "Visible Baby Bump 🤰",
+                "description": "Your uterus is rising and may begin to show as a bump.",
+                "createDate": "2025-06-15T16:31:42.0480765",
+                "lastUpdateDate": "2025-06-15T16:31:42.0480766",
+                "status": 4
+            },
+            {
+                "id": 44,
+                "symptomsGroupId": 12,
+                "title": "Constipation 🚽",
+                "description": "Hormones slow down digestion — drink water and eat fiber.",
+                "createDate": "2025-06-15T16:31:42.0480767",
+                "lastUpdateDate": "2025-06-15T16:31:42.0480768",
+                "status": 4
+            },
+            {
+                "id": 45,
+                "symptomsGroupId": 12,
+                "title": "Dizziness 🌀",
+                "description": "Lower blood pressure can cause occasional lightheadedness.",
+                "createDate": "2025-06-15T16:31:42.0480769",
+                "lastUpdateDate": "2025-06-15T16:31:42.0480769",
+                "status": 4
+            },
+            {
+                "id": 46,
+                "symptomsGroupId": 12,
+                "title": "Breast Changes Continue 🍈",
+                "description": "Nipples and areolas may darken; veins become more visible.",
+                "createDate": "2025-06-15T16:31:42.048077",
+                "lastUpdateDate": "2025-06-15T16:31:42.0480771",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 13,
+            "type": "Pregnancy",
+            "weeks": "13",
+            "title": "Week 13 Symptoms",
+            "description": "You’ve entered the 2nd trimester — many women feel more energetic.",
+            "createDate": "2025-06-15T16:31:42.4729851",
+            "lastUpdateDate": "2025-06-15T16:31:42.4729853",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 47,
+                "symptomsGroupId": 13,
+                "title": "Increased Energy ⚡",
+                "description": "Fatigue starts to fade for many as hormone levels balance.",
+                "createDate": "2025-06-15T16:31:42.8921469",
+                "lastUpdateDate": "2025-06-15T16:31:42.892147",
+                "status": 4
+            },
+            {
+                "id": 48,
+                "symptomsGroupId": 13,
+                "title": "Stretching Sensation 🧘",
+                "description": "As the uterus grows, you might feel a stretching or pulling in your belly.",
+                "createDate": "2025-06-15T16:31:42.8921471",
+                "lastUpdateDate": "2025-06-15T16:31:42.8921471",
+                "status": 4
+            },
+            {
+                "id": 49,
+                "symptomsGroupId": 13,
+                "title": "Nasal Congestion 🤧",
+                "description": "Extra blood flow and hormones can cause stuffy nose or mild nosebleeds.",
+                "createDate": "2025-06-15T16:31:42.8921472",
+                "lastUpdateDate": "2025-06-15T16:31:42.8921473",
+                "status": 4
+            },
+            {
+                "id": 50,
+                "symptomsGroupId": 13,
+                "title": "Visible Belly Line ➖",
+                "description": "Linea nigra — a dark vertical line on the belly — may begin appearing.",
+                "createDate": "2025-06-15T16:31:42.8921474",
+                "lastUpdateDate": "2025-06-15T16:31:42.8921474",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 14,
+            "type": "Pregnancy",
+            "weeks": "14",
+            "title": "Week 14 Symptoms",
+            "description": "Second trimester brings relief for many — but new changes begin too.",
+            "createDate": "2025-06-15T16:31:43.3199981",
+            "lastUpdateDate": "2025-06-15T16:31:43.3199984",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 51,
+                "symptomsGroupId": 14,
+                "title": "Rounder Belly 🫃",
+                "description": "Your growing baby makes your bump more noticeable.",
+                "createDate": "2025-06-15T16:31:43.7415338",
+                "lastUpdateDate": "2025-06-15T16:31:43.7415341",
+                "status": 4
+            },
+            {
+                "id": 52,
+                "symptomsGroupId": 14,
+                "title": "Varicose Veins 🟣",
+                "description": "Increased blood pressure in veins can cause mild varicosities.",
+                "createDate": "2025-06-15T16:31:43.7415343",
+                "lastUpdateDate": "2025-06-15T16:31:43.7415344",
+                "status": 4
+            },
+            {
+                "id": 53,
+                "symptomsGroupId": 14,
+                "title": "Leg Cramps 🦵",
+                "description": "Muscle cramps, especially at night, can start in this trimester.",
+                "createDate": "2025-06-15T16:31:43.7415345",
+                "lastUpdateDate": "2025-06-15T16:31:43.7415345",
+                "status": 4
+            },
+            {
+                "id": 54,
+                "symptomsGroupId": 14,
+                "title": "Skin Darkening 🌗",
+                "description": "Melasma or blotchy dark spots can appear on cheeks or forehead.",
+                "createDate": "2025-06-15T16:31:43.7415346",
+                "lastUpdateDate": "2025-06-15T16:31:43.7415347",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 15,
+            "type": "Pregnancy",
+            "weeks": "15",
+            "title": "Week 15 Symptoms",
+            "description": "Baby’s hearing develops — and your body continues to adapt.",
+            "createDate": "2025-06-15T16:31:44.1487277",
+            "lastUpdateDate": "2025-06-15T16:31:44.1487281",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 55,
+                "symptomsGroupId": 15,
+                "title": "Backaches 😣",
+                "description": "A growing uterus can shift posture — causing back discomfort.",
+                "createDate": "2025-06-15T16:31:44.5667153",
+                "lastUpdateDate": "2025-06-15T16:31:44.5667157",
+                "status": 4
+            },
+            {
+                "id": 56,
+                "symptomsGroupId": 15,
+                "title": "Mood Swings 💫",
+                "description": "Hormonal surges may still cause emotional ups and downs.",
+                "createDate": "2025-06-15T16:31:44.5667158",
+                "lastUpdateDate": "2025-06-15T16:31:44.5667158",
+                "status": 4
+            },
+            {
+                "id": 57,
+                "symptomsGroupId": 15,
+                "title": "Increased Appetite 🍽️",
+                "description": "You may start feeling hungrier as your baby grows rapidly.",
+                "createDate": "2025-06-15T16:31:44.5667159",
+                "lastUpdateDate": "2025-06-15T16:31:44.5667159",
+                "status": 4
+            },
+            {
+                "id": 58,
+                "symptomsGroupId": 15,
+                "title": "Fuller Hair 💇‍♀️",
+                "description": "Hair may feel thicker due to slower hair loss during pregnancy.",
+                "createDate": "2025-06-15T16:31:44.5667161",
+                "lastUpdateDate": "2025-06-15T16:31:44.5667161",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 16,
+            "type": "Pregnancy",
+            "weeks": "16",
+            "title": "Week 16 Symptoms",
+            "description": "You’re showing more visibly — and may start feeling new physical sensations.",
+            "createDate": "2025-06-15T16:31:45.0193124",
+            "lastUpdateDate": "2025-06-15T16:31:45.0193126",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 59,
+                "symptomsGroupId": 16,
+                "title": "Growing Belly 🤰",
+                "description": "Your uterus is expanding — you may notice your belly starting to pop!",
+                "createDate": "2025-06-15T16:31:45.4484265",
+                "lastUpdateDate": "2025-06-15T16:31:45.4484266",
+                "status": 4
+            },
+            {
+                "id": 60,
+                "symptomsGroupId": 16,
+                "title": "Shortness of Breath 🌬️",
+                "description": "As your baby grows, your lungs may have slightly less room to expand.",
+                "createDate": "2025-06-15T16:31:45.4484267",
+                "lastUpdateDate": "2025-06-15T16:31:45.4484268",
+                "status": 4
+            },
+            {
+                "id": 61,
+                "symptomsGroupId": 16,
+                "title": "Increased Discharge 🌊",
+                "description": "More vaginal discharge (milky white) is normal — it helps prevent infection.",
+                "createDate": "2025-06-15T16:31:45.4484269",
+                "lastUpdateDate": "2025-06-15T16:31:45.4484269",
+                "status": 4
+            },
+            {
+                "id": 62,
+                "symptomsGroupId": 16,
+                "title": "Fatigue 😴",
+                "description": "You may still feel tired as your body works hard growing your baby.",
+                "createDate": "2025-06-15T16:31:45.4484271",
+                "lastUpdateDate": "2025-06-15T16:31:45.4484271",
+                "status": 4
+            },
+            {
+                "id": 63,
+                "symptomsGroupId": 16,
+                "title": "Forgetfulness 🧠",
+                "description": "Hormonal changes can affect memory and focus temporarily.",
+                "createDate": "2025-06-15T16:31:45.4484272",
+                "lastUpdateDate": "2025-06-15T16:31:45.4484273",
+                "status": 4
+            },
+            {
+                "id": 64,
+                "symptomsGroupId": 16,
+                "title": "Back or Hip Aches 💆",
+                "description": "Your ligaments are stretching — gentle movement or massage can help.",
+                "createDate": "2025-06-15T16:31:45.4484274",
+                "lastUpdateDate": "2025-06-15T16:31:45.4484274",
+                "status": 4
+            },
+            {
+                "id": 65,
+                "symptomsGroupId": 16,
+                "title": "Swollen Feet 🦶",
+                "description": "Extra blood flow and fluid retention can cause mild swelling.",
+                "createDate": "2025-06-15T16:31:45.4484276",
+                "lastUpdateDate": "2025-06-15T16:31:45.4484276",
+                "status": 4
+            },
+            {
+                "id": 66,
+                "symptomsGroupId": 16,
+                "title": "Increased Appetite 🍽️",
+                "description": "Your baby’s growth spurt may make you feel hungrier — eat nutritious meals.",
+                "createDate": "2025-06-15T16:31:45.4484277",
+                "lastUpdateDate": "2025-06-15T16:31:45.4484277",
+                "status": 4
+            },
+            {
+                "id": 67,
+                "symptomsGroupId": 16,
+                "title": "Heartburn 🔥",
+                "description": "Common as your uterus presses against the stomach — smaller meals help.",
+                "createDate": "2025-06-15T16:31:45.4484278",
+                "lastUpdateDate": "2025-06-15T16:31:45.4484279",
+                "status": 4
+            },
+            {
+                "id": 68,
+                "symptomsGroupId": 16,
+                "title": "Frequent Urination 💧",
+                "description": "Your uterus sits lower, adding pressure to your bladder again.",
+                "createDate": "2025-06-15T16:31:45.4484279",
+                "lastUpdateDate": "2025-06-15T16:31:45.4484279",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 17,
+            "type": "Pregnancy",
+            "weeks": "17",
+            "title": "Week 17 Symptoms",
+            "description": "Your baby is growing fast — and your body’s adjusting in kind.",
+            "createDate": "2025-06-15T16:31:45.8786056",
+            "lastUpdateDate": "2025-06-15T16:31:45.878606",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 69,
+                "symptomsGroupId": 17,
+                "title": "Round Ligament Pain 🧵",
+                "description": "Stretching ligaments can cause sharp or pulling sensations on either side of your belly.",
+                "createDate": "2025-06-15T16:31:46.2878205",
+                "lastUpdateDate": "2025-06-15T16:31:46.2878206",
+                "status": 4
+            },
+            {
+                "id": 70,
+                "symptomsGroupId": 17,
+                "title": "Mild Swelling 💧",
+                "description": "Swelling in hands, feet, and ankles may increase — elevate legs when possible.",
+                "createDate": "2025-06-15T16:31:46.2878208",
+                "lastUpdateDate": "2025-06-15T16:31:46.2878209",
+                "status": 4
+            },
+            {
+                "id": 71,
+                "symptomsGroupId": 17,
+                "title": "Visible Veins 🩸",
+                "description": "Increased blood volume makes veins more noticeable, especially on breasts and legs.",
+                "createDate": "2025-06-15T16:31:46.287821",
+                "lastUpdateDate": "2025-06-15T16:31:46.287821",
+                "status": 4
+            },
+            {
+                "id": 72,
+                "symptomsGroupId": 17,
+                "title": "Itchy Belly 🪶",
+                "description": "Skin is stretching — use gentle moisturizers to reduce dryness or itchiness.",
+                "createDate": "2025-06-15T16:31:46.2878212",
+                "lastUpdateDate": "2025-06-15T16:31:46.2878212",
+                "status": 4
+            },
+            {
+                "id": 73,
+                "symptomsGroupId": 17,
+                "title": "Stronger Hair & Nails 💅",
+                "description": "Hormones may lead to thicker hair and faster-growing nails.",
+                "createDate": "2025-06-15T16:31:46.2878213",
+                "lastUpdateDate": "2025-06-15T16:31:46.2878214",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 18,
+            "type": "Pregnancy",
+            "weeks": "18",
+            "title": "Week 18 Symptoms",
+            "description": "You’re nearing the halfway point — more noticeable sensations begin.",
+            "createDate": "2025-06-15T16:31:46.7119804",
+            "lastUpdateDate": "2025-06-15T16:31:46.7119808",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 74,
+                "symptomsGroupId": 18,
+                "title": "Baby Flutters 🦋",
+                "description": "You might feel your baby’s first movements, like bubbles or flutters.",
+                "createDate": "2025-06-15T16:31:47.1508275",
+                "lastUpdateDate": "2025-06-15T16:31:47.1508275",
+                "status": 4
+            },
+            {
+                "id": 75,
+                "symptomsGroupId": 18,
+                "title": "Dizzy Spells 🌀",
+                "description": "Standing up too quickly can make you feel dizzy — rise slowly.",
+                "createDate": "2025-06-15T16:31:47.1508276",
+                "lastUpdateDate": "2025-06-15T16:31:47.1508277",
+                "status": 4
+            },
+            {
+                "id": 76,
+                "symptomsGroupId": 18,
+                "title": "Nasal Stuffiness 🤧",
+                "description": "Hormones and blood flow may cause congestion or mild nosebleeds.",
+                "createDate": "2025-06-15T16:31:47.1508279",
+                "lastUpdateDate": "2025-06-15T16:31:47.150828",
+                "status": 4
+            },
+            {
+                "id": 77,
+                "symptomsGroupId": 18,
+                "title": "Frequent Hunger 🍔",
+                "description": "With rapid baby growth, your appetite may increase again.",
+                "createDate": "2025-06-15T16:31:47.150828",
+                "lastUpdateDate": "2025-06-15T16:31:47.150828",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 19,
+            "type": "Pregnancy",
+            "weeks": "19",
+            "title": "Week 19 Symptoms",
+            "description": "As your belly expands, so do sensations like kicking and stretching.",
+            "createDate": "2025-06-15T16:31:47.567609",
+            "lastUpdateDate": "2025-06-15T16:31:47.5676092",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 78,
+                "symptomsGroupId": 19,
+                "title": "Increased Baby Movement 🤸",
+                "description": "Movements may feel more like soft kicks or rolls now.",
+                "createDate": "2025-06-15T16:31:47.9877948",
+                "lastUpdateDate": "2025-06-15T16:31:47.9877949",
+                "status": 4
+            },
+            {
+                "id": 79,
+                "symptomsGroupId": 19,
+                "title": "Skin Sensitivity 🌞",
+                "description": "Your skin may react more strongly to sun or products — stay protected.",
+                "createDate": "2025-06-15T16:31:47.987795",
+                "lastUpdateDate": "2025-06-15T16:31:47.9877951",
+                "status": 4
+            },
+            {
+                "id": 80,
+                "symptomsGroupId": 19,
+                "title": "Stretch Marks 🌈",
+                "description": "You may begin to see light lines on the belly, breasts, or thighs.",
+                "createDate": "2025-06-15T16:31:47.9877952",
+                "lastUpdateDate": "2025-06-15T16:31:47.9877952",
+                "status": 4
+            },
+            {
+                "id": 81,
+                "symptomsGroupId": 19,
+                "title": "Tingling Hands 🤲",
+                "description": "Pressure on nerves can lead to tingling or numbness, especially at night.",
+                "createDate": "2025-06-15T16:31:47.9877953",
+                "lastUpdateDate": "2025-06-15T16:31:47.9877954",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 20,
+            "type": "Pregnancy",
+            "weeks": "20",
+            "title": "Week 20 Symptoms",
+            "description": "Halfway there! You may notice both excitement and physical demands growing.",
+            "createDate": "2025-06-15T16:31:48.4278456",
+            "lastUpdateDate": "2025-06-15T16:31:48.4278472",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 82,
+                "symptomsGroupId": 20,
+                "title": "Stronger Kicks 👣",
+                "description": "Baby’s kicks and jabs are now more distinct — especially when you're resting.",
+                "createDate": "2025-06-15T16:31:48.8674224",
+                "lastUpdateDate": "2025-06-15T16:31:48.8674226",
+                "status": 4
+            },
+            {
+                "id": 83,
+                "symptomsGroupId": 20,
+                "title": "Lower Back Pain 🪑",
+                "description": "Your center of gravity is shifting — support your posture and rest often.",
+                "createDate": "2025-06-15T16:31:48.8674228",
+                "lastUpdateDate": "2025-06-15T16:31:48.8674228",
+                "status": 4
+            },
+            {
+                "id": 84,
+                "symptomsGroupId": 20,
+                "title": "Dry Eyes 👁️",
+                "description": "Hormonal changes can reduce tear production — artificial tears may help.",
+                "createDate": "2025-06-15T16:31:48.8674229",
+                "lastUpdateDate": "2025-06-15T16:31:48.8674229",
+                "status": 4
+            },
+            {
+                "id": 85,
+                "symptomsGroupId": 20,
+                "title": "More Frequent Urination 💦",
+                "description": "Your uterus is pressing more on the bladder — restroom breaks are common.",
+                "createDate": "2025-06-15T16:31:48.867423",
+                "lastUpdateDate": "2025-06-15T16:31:48.8674231",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 21,
+            "type": "Pregnancy",
+            "weeks": "21",
+            "title": "Week 21 Symptoms",
+            "description": "Your baby is getting bigger — and so is your bump!",
+            "createDate": "2025-06-15T16:31:49.3132777",
+            "lastUpdateDate": "2025-06-15T16:31:49.313278",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 86,
+                "symptomsGroupId": 21,
+                "title": "Braxton Hicks Contractions 🤰",
+                "description": "Mild, irregular tightening of your uterus as it practices for labor.",
+                "createDate": "2025-06-15T16:31:49.7270898",
+                "lastUpdateDate": "2025-06-15T16:31:49.7270899",
+                "status": 4
+            },
+            {
+                "id": 87,
+                "symptomsGroupId": 21,
+                "title": "Dry or Itchy Skin 🧴",
+                "description": "Stretching skin can feel dry — moisturizing can help.",
+                "createDate": "2025-06-15T16:31:49.72709",
+                "lastUpdateDate": "2025-06-15T16:31:49.72709",
+                "status": 4
+            },
+            {
+                "id": 88,
+                "symptomsGroupId": 21,
+                "title": "Restless Legs 🦵",
+                "description": "You might feel twitchy legs, especially when trying to sleep.",
+                "createDate": "2025-06-15T16:31:49.7270902",
+                "lastUpdateDate": "2025-06-15T16:31:49.7270902",
+                "status": 4
+            },
+            {
+                "id": 89,
+                "symptomsGroupId": 21,
+                "title": "Gas and Bloating 💨",
+                "description": "Hormonal changes slow digestion, leading to more gas.",
+                "createDate": "2025-06-15T16:31:49.7270903",
+                "lastUpdateDate": "2025-06-15T16:31:49.7270904",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 22,
+            "type": "Pregnancy",
+            "weeks": "22",
+            "title": "Week 22 Symptoms",
+            "description": "Your baby’s features are more defined — and your body keeps adjusting.",
+            "createDate": "2025-06-15T16:31:50.1521098",
+            "lastUpdateDate": "2025-06-15T16:31:50.1521103",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 90,
+                "symptomsGroupId": 22,
+                "title": "Swollen Gums 🦷",
+                "description": "Hormones can make gums bleed more easily — brush gently.",
+                "createDate": "2025-06-15T16:31:50.5881624",
+                "lastUpdateDate": "2025-06-15T16:31:50.5881625",
+                "status": 4
+            },
+            {
+                "id": 91,
+                "symptomsGroupId": 22,
+                "title": "Stretch Marks 🌈",
+                "description": "You might notice new marks appearing as your belly expands.",
+                "createDate": "2025-06-15T16:31:50.5881627",
+                "lastUpdateDate": "2025-06-15T16:31:50.5881628",
+                "status": 4
+            },
+            {
+                "id": 92,
+                "symptomsGroupId": 22,
+                "title": "Snoring 😴",
+                "description": "Nasal passages may swell, leading to snoring while sleeping.",
+                "createDate": "2025-06-15T16:31:50.5881629",
+                "lastUpdateDate": "2025-06-15T16:31:50.588163",
+                "status": 4
+            },
+            {
+                "id": 93,
+                "symptomsGroupId": 22,
+                "title": "Mild Cramps ⚡",
+                "description": "Growing uterus and ligaments can cause light aches or tugs.",
+                "createDate": "2025-06-15T16:31:50.5881632",
+                "lastUpdateDate": "2025-06-15T16:31:50.5881632",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 23,
+            "type": "Pregnancy",
+            "weeks": "23",
+            "title": "Week 23 Symptoms",
+            "description": "You may feel more confident in your pregnancy body — and your baby is active.",
+            "createDate": "2025-06-15T16:31:51.0137865",
+            "lastUpdateDate": "2025-06-15T16:31:51.0137868",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 94,
+                "symptomsGroupId": 23,
+                "title": "Swelling in Ankles and Feet 🧦",
+                "description": "Circulation changes can cause puffiness, especially after long days.",
+                "createDate": "2025-06-15T16:31:51.4330468",
+                "lastUpdateDate": "2025-06-15T16:31:51.433047",
+                "status": 4
+            },
+            {
+                "id": 95,
+                "symptomsGroupId": 23,
+                "title": "Mood Swings 🎭",
+                "description": "Hormonal changes continue to affect your mood and emotions.",
+                "createDate": "2025-06-15T16:31:51.4330486",
+                "lastUpdateDate": "2025-06-15T16:31:51.4330487",
+                "status": 4
+            },
+            {
+                "id": 96,
+                "symptomsGroupId": 23,
+                "title": "Leg Cramps 🦵",
+                "description": "Sudden cramps, especially at night — stretch and hydrate well.",
+                "createDate": "2025-06-15T16:31:51.4330488",
+                "lastUpdateDate": "2025-06-15T16:31:51.4330488",
+                "status": 4
+            },
+            {
+                "id": 97,
+                "symptomsGroupId": 23,
+                "title": "Thicker Hair 💇",
+                "description": "You might notice fuller, shinier hair thanks to hormone shifts.",
+                "createDate": "2025-06-15T16:31:51.433049",
+                "lastUpdateDate": "2025-06-15T16:31:51.433049",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 24,
+            "type": "Pregnancy",
+            "weeks": "24",
+            "title": "Week 24 Symptoms",
+            "description": "Your baby is gaining fat — and you might feel more hungry too.",
+            "createDate": "2025-06-15T16:31:51.8596909",
+            "lastUpdateDate": "2025-06-15T16:31:51.8596911",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 98,
+                "symptomsGroupId": 24,
+                "title": "Increased Appetite 🍕",
+                "description": "You may be hungrier — fuel with nutrient-rich snacks.",
+                "createDate": "2025-06-15T16:31:52.2696584",
+                "lastUpdateDate": "2025-06-15T16:31:52.2696587",
+                "status": 4
+            },
+            {
+                "id": 99,
+                "symptomsGroupId": 24,
+                "title": "Pelvic Pressure ⚖️",
+                "description": "Your growing uterus can create pressure lower in your belly.",
+                "createDate": "2025-06-15T16:31:52.2696589",
+                "lastUpdateDate": "2025-06-15T16:31:52.269659",
+                "status": 4
+            },
+            {
+                "id": 100,
+                "symptomsGroupId": 24,
+                "title": "Darkening Skin (Linea Nigra) 🟤",
+                "description": "A dark line may appear on your belly — it’s totally normal.",
+                "createDate": "2025-06-15T16:31:52.2696592",
+                "lastUpdateDate": "2025-06-15T16:31:52.2696593",
+                "status": 4
+            },
+            {
+                "id": 101,
+                "symptomsGroupId": 24,
+                "title": "Mild Dizziness 🌀",
+                "description": "Blood pressure shifts may cause dizziness — sit or lie down if needed.",
+                "createDate": "2025-06-15T16:31:52.2696594",
+                "lastUpdateDate": "2025-06-15T16:31:52.2696595",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 25,
+            "type": "Pregnancy",
+            "weeks": "25",
+            "title": "Week 25 Symptoms",
+            "description": "You're approaching the third trimester — strength and support are key now.",
+            "createDate": "2025-06-15T16:31:52.7123253",
+            "lastUpdateDate": "2025-06-15T16:31:52.712326",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 102,
+                "symptomsGroupId": 25,
+                "title": "Backaches 🪑",
+                "description": "Your posture and weight distribution are changing — try pregnancy-safe stretches.",
+                "createDate": "2025-06-15T16:31:53.1330667",
+                "lastUpdateDate": "2025-06-15T16:31:53.133067",
+                "status": 4
+            },
+            {
+                "id": 103,
+                "symptomsGroupId": 25,
+                "title": "Frequent Urination 💧",
+                "description": "Baby’s position may cause more pressure on the bladder.",
+                "createDate": "2025-06-15T16:31:53.1330673",
+                "lastUpdateDate": "2025-06-15T16:31:53.1330674",
+                "status": 4
+            },
+            {
+                "id": 104,
+                "symptomsGroupId": 25,
+                "title": "Insomnia 🌙",
+                "description": "Difficulty sleeping may increase — find comfort with pillows and routines.",
+                "createDate": "2025-06-15T16:31:53.1330676",
+                "lastUpdateDate": "2025-06-15T16:31:53.1330678",
+                "status": 4
+            },
+            {
+                "id": 105,
+                "symptomsGroupId": 25,
+                "title": "Clumsiness 🤕",
+                "description": "A changing center of gravity can affect your balance — move slowly.",
+                "createDate": "2025-06-15T16:31:53.1330679",
+                "lastUpdateDate": "2025-06-15T16:31:53.133068",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 26,
+            "type": "Pregnancy",
+            "weeks": "26",
+            "title": "Week 26 Symptoms",
+            "description": "Your baby’s eyes may start to open — and your symptoms may shift.",
+            "createDate": "2025-06-15T16:31:53.5548046",
+            "lastUpdateDate": "2025-06-15T16:31:53.5548051",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 106,
+                "symptomsGroupId": 26,
+                "title": "Swollen Hands 🤲",
+                "description": "Mild hand swelling can occur — remove tight rings and stretch your fingers.",
+                "createDate": "2025-06-15T16:31:53.971235",
+                "lastUpdateDate": "2025-06-15T16:31:53.9712351",
+                "status": 4
+            },
+            {
+                "id": 107,
+                "symptomsGroupId": 26,
+                "title": "Braxton Hicks Contractions 🤰",
+                "description": "Practice contractions may feel like tightness or pressure in your belly.",
+                "createDate": "2025-06-15T16:31:53.9712354",
+                "lastUpdateDate": "2025-06-15T16:31:53.9712355",
+                "status": 4
+            },
+            {
+                "id": 108,
+                "symptomsGroupId": 26,
+                "title": "Tingling Limbs ⚡",
+                "description": "Nerve compression can cause tingling in hands or legs — rest helps.",
+                "createDate": "2025-06-15T16:31:53.9712357",
+                "lastUpdateDate": "2025-06-15T16:31:53.9712358",
+                "status": 4
+            },
+            {
+                "id": 109,
+                "symptomsGroupId": 26,
+                "title": "Increased Vaginal Discharge 🌊",
+                "description": "A thin, white discharge is normal and helps prevent infection.",
+                "createDate": "2025-06-15T16:31:53.9712359",
+                "lastUpdateDate": "2025-06-15T16:31:53.971236",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 27,
+            "type": "Pregnancy",
+            "weeks": "27",
+            "title": "Week 27 Symptoms",
+            "description": "You're officially entering the third trimester!",
+            "createDate": "2025-06-15T16:31:54.40014",
+            "lastUpdateDate": "2025-06-15T16:31:54.4001403",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 110,
+                "symptomsGroupId": 27,
+                "title": "Heartburn 🔥",
+                "description": "Hormones relax digestive muscles, causing acid reflux — small meals help.",
+                "createDate": "2025-06-15T16:31:54.8528093",
+                "lastUpdateDate": "2025-06-15T16:31:54.8528096",
+                "status": 4
+            },
+            {
+                "id": 111,
+                "symptomsGroupId": 27,
+                "title": "Itchy Belly 🧴",
+                "description": "Stretching skin can become dry or itchy — moisturize often.",
+                "createDate": "2025-06-15T16:31:54.8528099",
+                "lastUpdateDate": "2025-06-15T16:31:54.8528099",
+                "status": 4
+            },
+            {
+                "id": 112,
+                "symptomsGroupId": 27,
+                "title": "Shortness of Breath 🌬️",
+                "description": "Your growing uterus may press against your lungs.",
+                "createDate": "2025-06-15T16:31:54.8528101",
+                "lastUpdateDate": "2025-06-15T16:31:54.8528101",
+                "status": 4
+            },
+            {
+                "id": 113,
+                "symptomsGroupId": 27,
+                "title": "Emotional Changes 🎢",
+                "description": "Hormonal shifts may cause anxiety or mood swings — self-care matters.",
+                "createDate": "2025-06-15T16:31:54.8528105",
+                "lastUpdateDate": "2025-06-15T16:31:54.8528105",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 28,
+            "type": "Pregnancy",
+            "weeks": "28",
+            "title": "Week 28 Symptoms",
+            "description": "Your baby’s brain is developing fast — and you might feel bigger changes too.",
+            "createDate": "2025-06-15T16:31:55.2730553",
+            "lastUpdateDate": "2025-06-15T16:31:55.2730556",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 114,
+                "symptomsGroupId": 28,
+                "title": "Lower Back Pain 🧍‍♀️",
+                "description": "Postural shifts and baby’s weight may strain your lower back.",
+                "createDate": "2025-06-15T16:31:55.6940313",
+                "lastUpdateDate": "2025-06-15T16:31:55.6940317",
+                "status": 4
+            },
+            {
+                "id": 115,
+                "symptomsGroupId": 28,
+                "title": "Frequent Urination 🚽",
+                "description": "Increased pressure on your bladder returns — bathroom breaks may rise.",
+                "createDate": "2025-06-15T16:31:55.694032",
+                "lastUpdateDate": "2025-06-15T16:31:55.6940321",
+                "status": 4
+            },
+            {
+                "id": 116,
+                "symptomsGroupId": 28,
+                "title": "Breast Changes 🍼",
+                "description": "Breasts may leak colostrum — a sign of preparation for nursing.",
+                "createDate": "2025-06-15T16:31:55.6940324",
+                "lastUpdateDate": "2025-06-15T16:31:55.6940325",
+                "status": 4
+            },
+            {
+                "id": 117,
+                "symptomsGroupId": 28,
+                "title": "Leg Swelling 🦵",
+                "description": "Standing too long or heat may worsen puffiness — elevate your feet.",
+                "createDate": "2025-06-15T16:31:55.6940327",
+                "lastUpdateDate": "2025-06-15T16:31:55.6940328",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 29,
+            "type": "Pregnancy",
+            "weeks": "29",
+            "title": "Week 29 Symptoms",
+            "description": "You may feel more connected with your baby’s patterns and movement.",
+            "createDate": "2025-06-15T16:31:56.1122349",
+            "lastUpdateDate": "2025-06-15T16:31:56.1122354",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 118,
+                "symptomsGroupId": 29,
+                "title": "Pelvic Discomfort ⚖️",
+                "description": "Baby may shift downward, causing pressure or soreness in your hips and pelvis.",
+                "createDate": "2025-06-15T16:31:56.541025",
+                "lastUpdateDate": "2025-06-15T16:31:56.5410253",
+                "status": 4
+            },
+            {
+                "id": 119,
+                "symptomsGroupId": 29,
+                "title": "Forgetfulness 🧠",
+                "description": "Pregnancy brain can continue — jot things down to stay organized.",
+                "createDate": "2025-06-15T16:31:56.5410259",
+                "lastUpdateDate": "2025-06-15T16:31:56.541026",
+                "status": 4
+            },
+            {
+                "id": 120,
+                "symptomsGroupId": 29,
+                "title": "Constipation 🚽",
+                "description": "Slow digestion and iron supplements may make bowel movements less frequent.",
+                "createDate": "2025-06-15T16:31:56.5410263",
+                "lastUpdateDate": "2025-06-15T16:31:56.5410264",
+                "status": 4
+            },
+            {
+                "id": 121,
+                "symptomsGroupId": 29,
+                "title": "Increased Fetal Movement 🤸‍♂️",
+                "description": "You might feel rolling, kicking, or hiccups — your baby is active!",
+                "createDate": "2025-06-15T16:31:56.5410267",
+                "lastUpdateDate": "2025-06-15T16:31:56.5410267",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 30,
+            "type": "Pregnancy",
+            "weeks": "30",
+            "title": "Week 30 Symptoms",
+            "description": "Your body and mind are preparing for labor — it’s okay to rest more.",
+            "createDate": "2025-06-15T16:31:56.975157",
+            "lastUpdateDate": "2025-06-15T16:31:56.9751574",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 122,
+                "symptomsGroupId": 30,
+                "title": "Trouble Sleeping 🌙",
+                "description": "Discomfort and an active mind can make sleep tricky — try a routine.",
+                "createDate": "2025-06-15T16:31:57.3922023",
+                "lastUpdateDate": "2025-06-15T16:31:57.3922025",
+                "status": 4
+            },
+            {
+                "id": 123,
+                "symptomsGroupId": 30,
+                "title": "Fatigue 😴",
+                "description": "You may feel tired easily — pace yourself and rest often.",
+                "createDate": "2025-06-15T16:31:57.3922027",
+                "lastUpdateDate": "2025-06-15T16:31:57.3922028",
+                "status": 4
+            },
+            {
+                "id": 124,
+                "symptomsGroupId": 30,
+                "title": "Mild Swelling 🧦",
+                "description": "Your feet and ankles may swell — compression socks can help.",
+                "createDate": "2025-06-15T16:31:57.3922029",
+                "lastUpdateDate": "2025-06-15T16:31:57.3922029",
+                "status": 4
+            },
+            {
+                "id": 125,
+                "symptomsGroupId": 30,
+                "title": "Tight Belly Sensation 🤰",
+                "description": "Your uterus continues practice contractions — monitor for patterns.",
+                "createDate": "2025-06-15T16:31:57.3922033",
+                "lastUpdateDate": "2025-06-15T16:31:57.3922034",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 31,
+            "type": "Pregnancy",
+            "weeks": "31",
+            "title": "Week 31 Symptoms",
+            "description": "Your baby is gaining weight quickly — and your body feels the effects.",
+            "createDate": "2025-06-15T16:31:57.8092588",
+            "lastUpdateDate": "2025-06-15T16:31:57.8092593",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 126,
+                "symptomsGroupId": 31,
+                "title": "Leaky Breasts 🍼",
+                "description": "You may notice small leaks of colostrum — the first milk for baby.",
+                "createDate": "2025-06-15T16:31:58.2339821",
+                "lastUpdateDate": "2025-06-15T16:31:58.2339823",
+                "status": 4
+            },
+            {
+                "id": 127,
+                "symptomsGroupId": 31,
+                "title": "Back Pain 🪑",
+                "description": "Supportive pillows and better posture can ease your aching back.",
+                "createDate": "2025-06-15T16:31:58.2339825",
+                "lastUpdateDate": "2025-06-15T16:31:58.2339826",
+                "status": 4
+            },
+            {
+                "id": 128,
+                "symptomsGroupId": 31,
+                "title": "Insomnia 🌙",
+                "description": "Your growing bump and active baby might disrupt your sleep.",
+                "createDate": "2025-06-15T16:31:58.2339828",
+                "lastUpdateDate": "2025-06-15T16:31:58.2339829",
+                "status": 4
+            },
+            {
+                "id": 129,
+                "symptomsGroupId": 31,
+                "title": "Frequent Urination 💧",
+                "description": "Your baby is pressing more on the bladder — keep hydrated.",
+                "createDate": "2025-06-15T16:31:58.2339831",
+                "lastUpdateDate": "2025-06-15T16:31:58.2339832",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 32,
+            "type": "Pregnancy",
+            "weeks": "32",
+            "title": "Week 32 Symptoms",
+            "description": "With just 2 months to go, your body is preparing for labor slowly.",
+            "createDate": "2025-06-15T16:31:58.651936",
+            "lastUpdateDate": "2025-06-15T16:31:58.6519366",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 130,
+                "symptomsGroupId": 32,
+                "title": "Braxton Hicks Contractions 🤰",
+                "description": "Mild, irregular tightening of the uterus — your body is rehearsing.",
+                "createDate": "2025-06-15T16:31:59.1024049",
+                "lastUpdateDate": "2025-06-15T16:31:59.1024053",
+                "status": 4
+            },
+            {
+                "id": 131,
+                "symptomsGroupId": 32,
+                "title": "Shortness of Breath 🌬️",
+                "description": "Baby’s position might reduce lung space — take it slow.",
+                "createDate": "2025-06-15T16:31:59.1024055",
+                "lastUpdateDate": "2025-06-15T16:31:59.1024055",
+                "status": 4
+            },
+            {
+                "id": 132,
+                "symptomsGroupId": 32,
+                "title": "Pelvic Pressure ⚖️",
+                "description": "As baby drops lower, your pelvis may feel heavy or sore.",
+                "createDate": "2025-06-15T16:31:59.1024057",
+                "lastUpdateDate": "2025-06-15T16:31:59.1024058",
+                "status": 4
+            },
+            {
+                "id": 133,
+                "symptomsGroupId": 32,
+                "title": "Stretch Marks 🌈",
+                "description": "Rapid skin expansion may cause visible lines on your belly, hips, or breasts.",
+                "createDate": "2025-06-15T16:31:59.1024059",
+                "lastUpdateDate": "2025-06-15T16:31:59.102406",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 33,
+            "type": "Pregnancy",
+            "weeks": "33",
+            "title": "Week 33 Symptoms",
+            "description": "Your baby is getting stronger — and your body’s gearing up for delivery.",
+            "createDate": "2025-06-15T16:31:59.5135563",
+            "lastUpdateDate": "2025-06-15T16:31:59.513557",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 134,
+                "symptomsGroupId": 33,
+                "title": "Clumsiness 🫢",
+                "description": "A shifting center of gravity can make movement awkward — be careful.",
+                "createDate": "2025-06-15T16:31:59.9798696",
+                "lastUpdateDate": "2025-06-15T16:31:59.9798698",
+                "status": 4
+            },
+            {
+                "id": 135,
+                "symptomsGroupId": 33,
+                "title": "Vivid Dreams 🌌",
+                "description": "Hormones and anticipation may bring strong, memorable dreams.",
+                "createDate": "2025-06-15T16:31:59.9798701",
+                "lastUpdateDate": "2025-06-15T16:31:59.9798702",
+                "status": 4
+            },
+            {
+                "id": 136,
+                "symptomsGroupId": 33,
+                "title": "Leaky Bladder 💦",
+                "description": "Sneezing, laughing, or coughing might cause slight leaks — pelvic floor exercises can help.",
+                "createDate": "2025-06-15T16:31:59.9798704",
+                "lastUpdateDate": "2025-06-15T16:31:59.9798704",
+                "status": 4
+            },
+            {
+                "id": 137,
+                "symptomsGroupId": 33,
+                "title": "Lower Back and Hip Pain 🧍‍♀️",
+                "description": "Relaxin hormone softens joints — support your body with rest and stretches.",
+                "createDate": "2025-06-15T16:31:59.9798707",
+                "lastUpdateDate": "2025-06-15T16:31:59.9798707",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 34,
+            "type": "Pregnancy",
+            "weeks": "34",
+            "title": "Week 34 Symptoms",
+            "description": "Your baby is almost full-term — things are getting real.",
+            "createDate": "2025-06-15T16:32:00.3970028",
+            "lastUpdateDate": "2025-06-15T16:32:00.3970031",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 138,
+                "symptomsGroupId": 34,
+                "title": "Swelling 😮‍💨",
+                "description": "Feet, ankles, and even hands might swell — elevate and hydrate.",
+                "createDate": "2025-06-15T16:32:00.8142891",
+                "lastUpdateDate": "2025-06-15T16:32:00.8142893",
+                "status": 4
+            },
+            {
+                "id": 139,
+                "symptomsGroupId": 34,
+                "title": "Nesting Instinct 🧹",
+                "description": "You might feel a strong urge to organize or prepare your home for baby.",
+                "createDate": "2025-06-15T16:32:00.8142895",
+                "lastUpdateDate": "2025-06-15T16:32:00.8142896",
+                "status": 4
+            },
+            {
+                "id": 140,
+                "symptomsGroupId": 34,
+                "title": "Fatigue 😴",
+                "description": "Physical strain and mental preparation can leave you exhausted.",
+                "createDate": "2025-06-15T16:32:00.8142898",
+                "lastUpdateDate": "2025-06-15T16:32:00.8142899",
+                "status": 4
+            },
+            {
+                "id": 141,
+                "symptomsGroupId": 34,
+                "title": "Hemorrhoids 🍇",
+                "description": "Pressure on rectal veins may lead to discomfort — increase fiber and fluids.",
+                "createDate": "2025-06-15T16:32:00.81429",
+                "lastUpdateDate": "2025-06-15T16:32:00.81429",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 35,
+            "type": "Pregnancy",
+            "weeks": "35",
+            "title": "Week 35 Symptoms",
+            "description": "Your baby is almost ready to meet the world — and your body’s signs say so.",
+            "createDate": "2025-06-15T16:32:01.2403146",
+            "lastUpdateDate": "2025-06-15T16:32:01.2403151",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 142,
+                "symptomsGroupId": 35,
+                "title": "Pelvic Pain ⚖️",
+                "description": "Baby’s head may be engaged, causing pressure in your pelvis or groin.",
+                "createDate": "2025-06-15T16:32:01.6510935",
+                "lastUpdateDate": "2025-06-15T16:32:01.6510937",
+                "status": 4
+            },
+            {
+                "id": 143,
+                "symptomsGroupId": 35,
+                "title": "Frequent Bathroom Trips 🚽",
+                "description": "Bladder pressure continues — go when you need to.",
+                "createDate": "2025-06-15T16:32:01.651094",
+                "lastUpdateDate": "2025-06-15T16:32:01.651094",
+                "status": 4
+            },
+            {
+                "id": 144,
+                "symptomsGroupId": 35,
+                "title": "Backaches 🔙",
+                "description": "Good posture and support can help ease the discomfort.",
+                "createDate": "2025-06-15T16:32:01.6510942",
+                "lastUpdateDate": "2025-06-15T16:32:01.6510943",
+                "status": 4
+            },
+            {
+                "id": 145,
+                "symptomsGroupId": 35,
+                "title": "Trouble Sleeping 💤",
+                "description": "Use pillows and find positions that ease pressure on your hips and back.",
+                "createDate": "2025-06-15T16:32:01.6510945",
+                "lastUpdateDate": "2025-06-15T16:32:01.6510946",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 36,
+            "type": "Pregnancy",
+            "weeks": "36",
+            "title": "Week 36 Symptoms",
+            "description": "You're officially full term next week — the countdown begins!",
+            "createDate": "2025-06-15T16:32:02.1083947",
+            "lastUpdateDate": "2025-06-15T16:32:02.1083951",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 146,
+                "symptomsGroupId": 36,
+                "title": "Lightening ⚖️",
+                "description": "Baby drops lower into the pelvis — you may breathe easier but feel pelvic pressure.",
+                "createDate": "2025-06-15T16:32:02.5233511",
+                "lastUpdateDate": "2025-06-15T16:32:02.5233512",
+                "status": 4
+            },
+            {
+                "id": 147,
+                "symptomsGroupId": 36,
+                "title": "Increased Vaginal Discharge 💧",
+                "description": "Thicker discharge or mucus plug may appear as labor nears.",
+                "createDate": "2025-06-15T16:32:02.5233514",
+                "lastUpdateDate": "2025-06-15T16:32:02.5233514",
+                "status": 4
+            },
+            {
+                "id": 148,
+                "symptomsGroupId": 36,
+                "title": "Back and Pelvic Pain 🔙",
+                "description": "Discomfort intensifies as joints loosen in preparation for birth.",
+                "createDate": "2025-06-15T16:32:02.5233516",
+                "lastUpdateDate": "2025-06-15T16:32:02.5233516",
+                "status": 4
+            },
+            {
+                "id": 149,
+                "symptomsGroupId": 36,
+                "title": "Frequent Urination 🚽",
+                "description": "Baby’s head presses more firmly against your bladder.",
+                "createDate": "2025-06-15T16:32:02.5233518",
+                "lastUpdateDate": "2025-06-15T16:32:02.5233519",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 37,
+            "type": "Pregnancy",
+            "weeks": "37",
+            "title": "Week 37 Symptoms",
+            "description": "You’re full term — baby could arrive anytime!",
+            "createDate": "2025-06-15T16:32:02.9447497",
+            "lastUpdateDate": "2025-06-15T16:32:02.9447504",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 150,
+                "symptomsGroupId": 37,
+                "title": "Braxton Hicks Increase ⏳",
+                "description": "Practice contractions may become more frequent and intense.",
+                "createDate": "2025-06-15T16:32:03.3502461",
+                "lastUpdateDate": "2025-06-15T16:32:03.3502462",
+                "status": 4
+            },
+            {
+                "id": 151,
+                "symptomsGroupId": 37,
+                "title": "Pelvic Pressure 🔽",
+                "description": "The baby may be 'engaged' — ready for labor.",
+                "createDate": "2025-06-15T16:32:03.3502463",
+                "lastUpdateDate": "2025-06-15T16:32:03.3502464",
+                "status": 4
+            },
+            {
+                "id": 152,
+                "symptomsGroupId": 37,
+                "title": "Nipple Leaking 🍼",
+                "description": "More colostrum may leak as your body prepares for breastfeeding.",
+                "createDate": "2025-06-15T16:32:03.3502465",
+                "lastUpdateDate": "2025-06-15T16:32:03.3502465",
+                "status": 4
+            },
+            {
+                "id": 153,
+                "symptomsGroupId": 37,
+                "title": "Digestive Changes 🥴",
+                "description": "Heartburn or nausea may return due to uterine pressure on your stomach.",
+                "createDate": "2025-06-15T16:32:03.3502467",
+                "lastUpdateDate": "2025-06-15T16:32:03.3502467",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 38,
+            "type": "Pregnancy",
+            "weeks": "38",
+            "title": "Week 38 Symptoms",
+            "description": "You're nearing the finish line — every sign matters.",
+            "createDate": "2025-06-15T16:32:03.7897394",
+            "lastUpdateDate": "2025-06-15T16:32:03.7897397",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 154,
+                "symptomsGroupId": 38,
+                "title": "Increased Pelvic Pain 🦴",
+                "description": "Baby's weight shifts more downward, affecting your hips and legs.",
+                "createDate": "2025-06-15T16:32:04.2096519",
+                "lastUpdateDate": "2025-06-15T16:32:04.2096521",
+                "status": 4
+            },
+            {
+                "id": 155,
+                "symptomsGroupId": 38,
+                "title": "Loose Joints 🧍‍♀️",
+                "description": "Your body produces relaxin to ease labor — which can make you feel wobbly.",
+                "createDate": "2025-06-15T16:32:04.2096522",
+                "lastUpdateDate": "2025-06-15T16:32:04.2096523",
+                "status": 4
+            },
+            {
+                "id": 156,
+                "symptomsGroupId": 38,
+                "title": "Vaginal Pressure 🧷",
+                "description": "Sharp, quick pain down low may signal baby’s head nudging nerves.",
+                "createDate": "2025-06-15T16:32:04.2096524",
+                "lastUpdateDate": "2025-06-15T16:32:04.2096525",
+                "status": 4
+            },
+            {
+                "id": 157,
+                "symptomsGroupId": 38,
+                "title": "Fatigue 😴",
+                "description": "Rest becomes challenging — try short naps when possible.",
+                "createDate": "2025-06-15T16:32:04.2096526",
+                "lastUpdateDate": "2025-06-15T16:32:04.2096526",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 39,
+            "type": "Pregnancy",
+            "weeks": "39",
+            "title": "Week 39 Symptoms",
+            "description": "Baby is considered full term — you may notice signs of labor.",
+            "createDate": "2025-06-15T16:32:04.6348421",
+            "lastUpdateDate": "2025-06-15T16:32:04.6348426",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 158,
+                "symptomsGroupId": 39,
+                "title": "Mucus Plug Loss 🧼",
+                "description": "A thick discharge or spotting could be the plug coming loose — labor may be near.",
+                "createDate": "2025-06-15T16:32:05.0712178",
+                "lastUpdateDate": "2025-06-15T16:32:05.071218",
+                "status": 4
+            },
+            {
+                "id": 159,
+                "symptomsGroupId": 39,
+                "title": "Cervical Dilation ⚖️",
+                "description": "Your cervix may begin dilating — your provider may check at appointments.",
+                "createDate": "2025-06-15T16:32:05.0712182",
+                "lastUpdateDate": "2025-06-15T16:32:05.0712182",
+                "status": 4
+            },
+            {
+                "id": 160,
+                "symptomsGroupId": 39,
+                "title": "Stronger Contractions 🤰",
+                "description": "Timeable contractions may signal early labor — monitor their frequency.",
+                "createDate": "2025-06-15T16:32:05.0712184",
+                "lastUpdateDate": "2025-06-15T16:32:05.0712184",
+                "status": 4
+            },
+            {
+                "id": 161,
+                "symptomsGroupId": 39,
+                "title": "Nesting Energy 🧹",
+                "description": "A sudden burst of energy and urge to prepare is common now.",
+                "createDate": "2025-06-15T16:32:05.0712185",
+                "lastUpdateDate": "2025-06-15T16:32:05.0712185",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 40,
+            "type": "Pregnancy",
+            "weeks": "40",
+            "title": "Week 40 Symptoms",
+            "description": "Your due date is here — stay calm and monitor signs of labor.",
+            "createDate": "2025-06-15T16:32:05.5168162",
+            "lastUpdateDate": "2025-06-15T16:32:05.5168168",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 162,
+                "symptomsGroupId": 40,
+                "title": "Contractions ⏱️",
+                "description": "True labor contractions are regular, intense, and increase in frequency.",
+                "createDate": "2025-06-15T16:32:06.0095543",
+                "lastUpdateDate": "2025-06-15T16:32:06.0095544",
+                "status": 4
+            },
+            {
+                "id": 163,
+                "symptomsGroupId": 40,
+                "title": "Water Breaking 💧",
+                "description": "A gush or trickle of fluid could mean your amniotic sac has ruptured.",
+                "createDate": "2025-06-15T16:32:06.0095558",
+                "lastUpdateDate": "2025-06-15T16:32:06.009556",
+                "status": 4
+            },
+            {
+                "id": 164,
+                "symptomsGroupId": 40,
+                "title": "Pelvic Pressure 🔽",
+                "description": "The baby's head presses even lower as labor nears.",
+                "createDate": "2025-06-15T16:32:06.0095561",
+                "lastUpdateDate": "2025-06-15T16:32:06.0095562",
+                "status": 4
+            },
+            {
+                "id": 165,
+                "symptomsGroupId": 40,
+                "title": "Lower Back Pain 🔙",
+                "description": "Persistent backache may be a labor sign — especially if rhythmic.",
+                "createDate": "2025-06-15T16:32:06.0095565",
+                "lastUpdateDate": "2025-06-15T16:32:06.0095566",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 41,
+            "type": "Pregnancy",
+            "weeks": "41",
+            "title": "Week 41 Symptoms",
+            "description": "You're past your due date — induction may be discussed soon.",
+            "createDate": "2025-06-15T16:32:06.4387602",
+            "lastUpdateDate": "2025-06-15T16:32:06.4387609",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 166,
+                "symptomsGroupId": 41,
+                "title": "Swelling 😮‍💨",
+                "description": "Your feet and ankles may feel especially puffy — elevate when possible.",
+                "createDate": "2025-06-15T16:32:06.8783122",
+                "lastUpdateDate": "2025-06-15T16:32:06.8783123",
+                "status": 4
+            },
+            {
+                "id": 167,
+                "symptomsGroupId": 41,
+                "title": "Frequent Monitoring 🩺",
+                "description": "Expect more checkups to monitor baby’s health and movement.",
+                "createDate": "2025-06-15T16:32:06.8783139",
+                "lastUpdateDate": "2025-06-15T16:32:06.878314",
+                "status": 4
+            },
+            {
+                "id": 168,
+                "symptomsGroupId": 41,
+                "title": "Mood Swings 🎭",
+                "description": "You may feel frustrated, anxious, or extra tired — totally normal.",
+                "createDate": "2025-06-15T16:32:06.8783143",
+                "lastUpdateDate": "2025-06-15T16:32:06.8783143",
+                "status": 4
+            },
+            {
+                "id": 169,
+                "symptomsGroupId": 41,
+                "title": "Increased Discomfort 😵",
+                "description": "Sleeping and walking may feel more difficult at this stage.",
+                "createDate": "2025-06-15T16:32:06.8783144",
+                "lastUpdateDate": "2025-06-15T16:32:06.8783145",
+                "status": 4
+            }
+        ]
+    },
+    {
+        "symptomsGroup": {
+            "id": 42,
+            "type": "Pregnancy",
+            "weeks": "42",
+            "title": "Week 42 Symptoms",
+            "description": "Post-term pregnancy — your care team may recommend induction.",
+            "createDate": "2025-06-15T16:32:07.2927461",
+            "lastUpdateDate": "2025-06-15T16:32:07.2927464",
+            "status": 4
+        },
+        "symptomItems": [
+            {
+                "id": 170,
+                "symptomsGroupId": 42,
+                "title": "Very Low Baby Movements 🤱",
+                "description": "Movement might slow, but should still be regular — track closely.",
+                "createDate": "2025-06-15T16:32:07.7091435",
+                "lastUpdateDate": "2025-06-15T16:32:07.7091436",
+                "status": 4
+            },
+            {
+                "id": 171,
+                "symptomsGroupId": 42,
+                "title": "Increased Pelvic Pain 🦴",
+                "description": "More pressure from baby’s position can strain joints and muscles.",
+                "createDate": "2025-06-15T16:32:07.7091452",
+                "lastUpdateDate": "2025-06-15T16:32:07.7091452",
+                "status": 4
+            },
+            {
+                "id": 172,
+                "symptomsGroupId": 42,
+                "title": "Cervical Checks 🧪",
+                "description": "Your provider may check for dilation and effacement more frequently.",
+                "createDate": "2025-06-15T16:32:07.7091454",
+                "lastUpdateDate": "2025-06-15T16:32:07.7091454",
+                "status": 4
+            },
+            {
+                "id": 173,
+                "symptomsGroupId": 42,
+                "title": "Possible Induction Discussion 💉",
+                "description": "If labor hasn’t started, medical induction may be planned soon.",
+                "createDate": "2025-06-15T16:32:07.7091456",
+                "lastUpdateDate": "2025-06-15T16:32:07.7091457",
+                "status": 4
+            }
+        ]
+    }
+]

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.GoalSetting.GoalSettingPage"
+    Background="White"
+    xmlns:viewmodels="clr-namespace:OvulaeApp.ViewModels.Shared"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <viewmodels:NavigationsViewModel
+                x:Key="NavigationsVM" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <BoxView
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <BoxView.Background>
+                <LinearGradientBrush
+                    StartPoint="0,0"
+                    EndPoint="1,1">
+                    <GradientStop
+                        Color="{StaticResource ThemeClrPurple}"
+                        Offset="0.4" />
+                    <GradientStop
+                        Color="{StaticResource ThemeClrMainLight}"
+                        Offset="0.5" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*">
+                <Border
+                    Grid.Row="0"
+                    Stroke="Transparent"
+                    Background="{StaticResource ThemeClrMainLight}">
+                    <VerticalStackLayout
+                        Spacing="4"
+                        Padding="20,10,20,0">
+                        <Label
+                            Text="What brings you to Ovulae?"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource ThemeClr3}"
+                            FontFamily="Montserrat-SemiBold" 
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"/>
+
+                            <!-- Decorative underline -->
+                            <BoxView
+                                HeightRequest="4"
+                                WidthRequest="80"
+                                Margin="0,5,0,0"
+                                Color="{StaticResource ThemeClr3}"
+                                HorizontalOptions="Center"
+                                CornerRadius="1" />
+                    </VerticalStackLayout>
+                </Border>
+                
+                <ScrollView
+                    Grid.Row="1">
+                    <VerticalStackLayout
+                        Spacing="0"
+                        Padding="20">
+
+                        <VerticalStackLayout
+                            Spacing="5">
+
+                            <Border
+                                HeightRequest="160"
+                                Margin="0,0,0,10"
+                                StrokeShape="RoundRectangle 12"
+                                Stroke="Transparent"
+                                HorizontalOptions="Center">
+                                <Border.Shadow>
+                                    <Shadow
+                                        Brush="Black"
+                                        Opacity="0.4"
+                                        Offset="0,3"
+                                        Radius="6" />
+                                </Border.Shadow>
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="PeriodTrackerTapped" />
+                                </Border.GestureRecognizers>
+                                <Image
+                                    Grid.Row="1"
+                                    Source="period_tracker"
+                                    Aspect="Fill" />
+                            </Border>
+                            
+                            <Border
+                                HeightRequest="160"
+                                Margin="0,0,0,10"
+                                StrokeShape="RoundRectangle 12"
+                                Stroke="Transparent"
+                                HorizontalOptions="Center">
+                                <Border.Shadow>
+                                    <Shadow
+                                        Brush="Black"
+                                        Opacity="0.4"
+                                        Offset="0,3"
+                                        Radius="6" />
+                                </Border.Shadow>
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="OvulationTrackerTapped" />
+                                </Border.GestureRecognizers>
+                                <Image
+                                    Grid.Row="1"
+                                    Source="ovulation_tracker.png"
+                                    Aspect="Fill" />
+                            </Border>
+
+                            <Border
+                                HeightRequest="160"
+                                Margin="0,0,0,10"
+                                StrokeShape="RoundRectangle 12"
+                                Stroke="Transparent"
+                                HorizontalOptions="Center">
+                                <Border.Shadow>
+                                    <Shadow
+                                        Brush="Black"
+                                        Opacity="0.4"
+                                        Offset="0,3"
+                                        Radius="6" />
+                                </Border.Shadow>
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="PregnancyTrackerTapped" />
+                                </Border.GestureRecognizers>
+                                <Image
+                                    Grid.Row="1"
+                                    Source="pregnancy_tracker.png"
+                                    Aspect="Fill" />
+                            </Border>
+                            
+                            <Border
+                                HeightRequest="160"
+                                Margin="0,0,0,10"
+                                StrokeShape="RoundRectangle 12"
+                                Stroke="Transparent"
+                                HorizontalOptions="Center">
+                                <Border.Shadow>
+                                    <Shadow
+                                        Brush="Black"
+                                        Opacity="0.4"
+                                        Offset="0,3"
+                                        Radius="6" />
+                                </Border.Shadow>
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="MenopauseTrackerTapped" />
+                                </Border.GestureRecognizers>
+                                <Image
+                                    Grid.Row="1"
+                                    Source="menopause_goal.png"
+                                    Aspect="Fill" />
+                            </Border>
+
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </ScrollView>
+            </Grid>
+        </ContentView>
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

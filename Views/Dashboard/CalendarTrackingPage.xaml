@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Dashboard.CalendarTrackingPage"
+    Background="White"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:models="clr-namespace:OvulaeApp.ViewModels.Calendar"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Calendar"
+    x:DataType="vm:CalendarPageViewModel">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+                    <VerticalStackLayout
+                        Background="{StaticResource ThemeLightGray}">
+
+                        <Grid
+                            ColumnDefinitions="Auto,*,Auto"
+                            Margin="10,20,10,5">
+                            <Border
+                                Grid.Column="0"
+                                Padding="15,5"
+                                HorizontalOptions="Start"
+                                Stroke="Transparent">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="PreviousMonth_Tapped" />
+                                </Border.GestureRecognizers>
+                                <Image
+                                    x:Name="LeftIconImage"
+                                    Source="left_chev_edge.png"
+                                    WidthRequest="20"
+                                    Aspect="AspectFit"
+                                    HorizontalOptions="Start">
+                                </Image>
+                            </Border>
+                            <Label
+                                Grid.Column="1"
+                                Text="{Binding CurrentMonthTitle}"
+                                TextTransform="Uppercase"
+                                FontSize="22"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Margin="0,0,0,0" />
+                            <Border
+                                Grid.Column="2"
+                                Padding="15,5"
+                                HorizontalOptions="End"
+                                Stroke="Transparent">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="NextMonth_Tapped" />
+                                </Border.GestureRecognizers>
+                                <Image
+                                    x:Name="RightIconImage"
+                                    Source="right_chev_edge.png"
+                                    WidthRequest="20"
+                                    Aspect="AspectFit"
+                                    HorizontalOptions="End">
+                                </Image>
+                            </Border>
+                        </Grid>
+
+                        <Grid
+                            Margin="0,20,0,0"
+                            ColumnDefinitions="*,*,*,*,*,*,*">
+                            <Label
+                                Grid.Column="0"
+                                Text="S"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center" />
+                            <Label
+                                Grid.Column="1"
+                                Text="M"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center" />
+                            <Label
+                                Grid.Column="2"
+                                Text="T"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center" />
+                            <Label
+                                Grid.Column="3"
+                                Text="W"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center" />
+                            <Label
+                                Grid.Column="4"
+                                Text="T"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center" />
+                            <Label
+                                Grid.Column="5"
+                                Text="F"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center" />
+                            <Label
+                                Grid.Column="6"
+                                Text="S"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Center"
+                                HorizontalOptions="Center" />
+                        </Grid>
+
+                        <Border
+                            Stroke="Transparent"
+                            Margin="0,0,0,0"
+                            Padding="10,0,10,0"
+                            Background="{StaticResource ThemeLightGray}">
+                            <CollectionView
+                                ItemsSource="{Binding CurrentMonth.Rows}"
+                                SelectionMode="None">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate
+                                        x:DataType="models:CalendarRowViewModel">
+                                        <HorizontalStackLayout
+                                            BindableLayout.ItemsSource="{Binding Cells}"
+                                            Spacing="3"
+                                            Padding="0,4">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate
+                                                    x:DataType="models:CalendarDayViewModel">
+                                                    <Border
+                                                        Stroke="{Binding EventBorderColor}"
+                                                        Background="{Binding BackgroundColor}"
+                                                        StrokeShape="RoundRectangle 5"
+                                                        Padding="5"
+                                                        WidthRequest="45"
+                                                        HeightRequest="48">
+                                                        <Border.GestureRecognizers>
+                                                            <TapGestureRecognizer
+                                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:CalendarPageViewModel}}, Path=SelectDayCommand}"
+                                                                CommandParameter="{Binding}" />
+                                                        </Border.GestureRecognizers>
+                                                        <VerticalStackLayout
+                                                            Spacing="2"
+                                                            HorizontalOptions="Center"
+                                                            VerticalOptions="Center">
+                                                            <Label
+                                                                Text="{Binding DayNumber}"
+                                                                FontSize="12"
+                                                                FontAttributes="Bold"
+                                                                HorizontalOptions="Center" />
+                                                            <Image
+                                                                Source="{Binding EventIcon}"
+                                                                WidthRequest="16"
+                                                                HeightRequest="16"
+                                                                IsVisible="{Binding HasEvent}" />
+                                                        </VerticalStackLayout>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </HorizontalStackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </Border>
+
+                        <Label
+                            x:Name="DayData"
+                            Text="{Binding SelectedDayDetailText}"
+                            FontSize="16"
+                            Margin="0,20,0,0"
+                            TextColor="{StaticResource ThemeClr2}"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center" />
+
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="Track" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

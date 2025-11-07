@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.PregnancyTracker.Onboarding.PregnancyOnboardFinishPage"
+    Background="White"
+    xmlns:viewmodels="clr-namespace:OvulaeApp.ViewModels.Shared"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    Shell.NavBarIsVisible="False">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Title -->
+                <VerticalStackLayout
+                    Grid.Row="0"
+                    Padding="20,0"
+                    Margin="0,20,0,0">
+                    <Label
+                        Text="Creating Your Pregnancy Experience..."
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        FontSize="17"
+                        FontFamily="Arial Black"
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        Margin="0,10,0,0" />
+                </VerticalStackLayout>
+
+                <!-- Body -->
+                <VerticalStackLayout
+                    Grid.Row="1"
+                    Spacing="15"
+                    Padding="20">
+
+                    <Border
+                        Margin="0,-10,0,0"
+                        StrokeShape="RoundRectangle 20"
+                        Stroke="Transparent"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        HeightRequest="350">
+                        <Image
+                            Source="splash_preg.png"
+                            Aspect="AspectFit" />
+                    </Border>
+
+                    <Label
+                        Text="Hang tight! We’re setting things up just for you."
+                        FontSize="12"
+                        HorizontalOptions="Center"
+                        TextColor="{StaticResource ThemeGray2}"
+                        Margin="0,0,0,0" />
+
+                    <Label
+                        Text="Ovulae is building your weekly updates, trimester milestones, and symptom support based on the info you shared."
+                        FontSize="14"
+                        HorizontalTextAlignment="Center"
+                        TextColor="Black"
+                        Margin="0,0,0,0" />
+
+                </VerticalStackLayout>
+                <VerticalStackLayout
+                    Grid.Row="2"
+                    Margin="0,0,0,25">
+                    <ActivityIndicator
+                        IsRunning="True"
+                        Color="{StaticResource ThemeClrMain}"
+                        WidthRequest="100"
+                        HeightRequest="100"
+                        Margin="0,0,0,10">
+                        <ActivityIndicator.Scale>
+                            <OnPlatform
+                                x:TypeArguments="x:Double">
+                                <On
+                                    Platform="iOS"
+                                    Value="3" />
+                                <On
+                                    Platform="Android"
+                                    Value="1" />
+                            </OnPlatform>
+                        </ActivityIndicator.Scale>
+                    </ActivityIndicator>
+                    <Label
+                        Text="Analyzing your inputs..."
+                        FontSize="16"
+                        TextColor="{StaticResource ThemeClrMain}"
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="Center"
+                        FontFamily="Arial Black"
+                        Margin="0,0,0,0" />
+                </VerticalStackLayout>
+
+            </Grid>
+        </ContentView>
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Subscription.PaymentFailedPage"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    Shell.NavBarIsVisible="False"
+    Title="Payment Issue">
+
+    <AbsoluteLayout>
+        <!-- Softer Medical Gradient -->
+        <BoxView
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <BoxView.Background>
+                <LinearGradientBrush
+                    StartPoint="1,0"
+                    EndPoint="0,1">
+                    <GradientStop
+                        Color="#f7f0ff"
+                        Offset="0.6" />
+                    <GradientStop
+                        Color="{StaticResource ThemeClrPurple}"
+                        Offset="0.4" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+
+        <Grid
+            RowDefinitions="Auto,*,Auto"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+
+            <ScrollView
+                Grid.Row="1"
+                Padding="20,10">
+                <VerticalStackLayout
+                    Spacing="20">
+                    <!-- Error Header -->
+                    <VerticalStackLayout
+                        HorizontalOptions="Center"
+                        Spacing="15">
+                        <Image
+                            Source="payment_error_icon.png"
+                            HeightRequest="80"
+                            HorizontalOptions="Center" />
+
+                        <Label
+                            Text="Oops! Payment Issue"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            TextColor="{StaticResource ThemeClrMainDark}" />
+
+                        <Label
+                            Text="We couldn't process your payment"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            TextColor="#666" />
+                    </VerticalStackLayout>
+
+                    <!-- Error Details Card -->
+                    <Border
+                        StrokeShape="RoundRectangle 15"
+                        Padding="20"
+                        BackgroundColor="#FFF5F5"
+                        Stroke="{StaticResource ThemeClrMain}"
+                        StrokeThickness="0.5">
+                        <VerticalStackLayout
+                            Spacing="8">
+                            <HorizontalStackLayout
+                                Spacing="10">
+                                <Image
+                                    Source="warning_icon.png"
+                                    HeightRequest="24" />
+                                <Label
+                                    Text="What happened?"
+                                    FontAttributes="Bold"
+                                    FontSize="16" />
+                            </HorizontalStackLayout>
+
+                            <VerticalStackLayout
+                                Spacing="5">
+                                <Label
+                                    Text="• Your subscription payment failed"
+                                    FontSize="12" />
+                                <Label
+                                    Text="• Your access to premium features has been paused"
+                                    FontSize="12" />
+                                <Label
+                                    Text="• Don't worry, your data is safe and waiting for you"
+                                    FontSize="12" />
+                            </VerticalStackLayout>
+
+                            <BoxView
+                                HeightRequest="1"
+                                BackgroundColor="{StaticResource ThemeClrMain}"
+                                Margin="0,10" />
+
+                            <VerticalStackLayout
+                                Spacing="5">
+                                <Label
+                                    Text="Possible reasons:"
+                                    FontAttributes="Italic"
+                                    FontSize="13"
+                                    TextColor="#666" />
+                                <Label
+                                    Text="• Expired or declined card"
+                                    FontSize="12" />
+                                <Label
+                                    Text="• Insufficient funds"
+                                    FontSize="12" />
+                                <Label
+                                    Text="• Temporary bank issue"
+                                    FontSize="12" />
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- How to Fix -->
+                    <Border
+                        StrokeShape="RoundRectangle 15"
+                        Padding="20"
+                        BackgroundColor="#F5F9FF"
+                        Stroke="{StaticResource ThemeClrMain}"
+                        StrokeThickness="0.5">
+                        <VerticalStackLayout
+                            Spacing="10">
+                            <HorizontalStackLayout
+                                Spacing="10">
+                                <Image
+                                    Source="green_tick_icon.png"
+                                    HeightRequest="24" />
+                                <Label
+                                    Text="How to fix this"
+                                    FontAttributes="Bold"
+                                    FontSize="16" />
+                            </HorizontalStackLayout>
+
+                            <VerticalStackLayout
+                                Spacing="5">
+                                <Label
+                                    Text="1. Check your payment method details"
+                                    FontSize="12" />
+                                <Label
+                                    Text="2. Ensure you have sufficient funds"
+                                    FontSize="12" />
+                                <Label
+                                    Text="3. Try again with a different payment method"
+                                    FontSize="12" />
+                            </VerticalStackLayout>
+                            
+                            <custButtons:GradientButton
+                                Text="Retry Payment Now"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                CornerRadius="10"
+                                HeightRequest="50"
+                                Margin="0,15,0,0"
+                                ButtonTextColor="White"
+                                HasImageIcon="True"
+                                ImageIconWidth="20"
+                                ImageIconHeight="20"
+                                ImageIconSource="retry_white_icon.png"
+                                GradientColorLeft="{StaticResource ThemeClr3}"
+                                GradientColorRight="{StaticResource ThemeClr2}"
+                                Tapped="RetryPaymentTapped" />
+
+                            <custButtons:GradientButton
+                                x:Name="UpdateCardDetailsBtn"
+                                Text="Update Card Details"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                CornerRadius="10"
+                                HeightRequest="50"
+                                Margin="0,15,0,0"
+                                IsVisible="False"
+                                HasImageIcon="True"
+                                ImageIconWidth="20"
+                                ImageIconHeight="20"
+                                ImageIconSource="edit_white_icon.png"
+                                ButtonTextColor="White"
+                                GradientColorLeft="DarkGreen"
+                                GradientColorRight="SpringGreen"
+                                Tapped="UpdateCardDetailsPaymentTapped" />
+
+                            <Label
+                                Text="or update card details, or contact support if the issue persists"
+                                FontSize="12"
+                                HorizontalTextAlignment="Center"
+                                TextColor="#666"
+                                Margin="0,5,0,0" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Support Option -->
+                    <Border
+                        StrokeShape="RoundRectangle 10"
+                        Padding="15"
+                        BackgroundColor="White"
+                        Stroke="{StaticResource ThemeClrMain}"
+                        StrokeThickness="0.5">
+                        <VerticalStackLayout
+                            HorizontalOptions="Center">
+                            <Label
+                                Text="Need help with payment?"
+                                FontAttributes="Bold" />
+                            <Label
+                                Text="Contact our support team for assistance"
+                                FontSize="12"
+                                TextColor="#666" />
+                            <custButtons:GradientButton
+                                Text="Contact Support"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                CornerRadius="10"
+                                HeightRequest="45"
+                                Margin="0,15,0,0"
+                                IsVisible="True"
+                                HasImageIcon="True"
+                                ImageIconWidth="20"
+                                ImageIconHeight="20"
+                                ImageIconSource="mail_purple_icon.png"
+                                Stroke="{StaticResource ThemeClrMain}"
+                                ButtonTextColor="{StaticResource ThemeClrMain}"
+                                GradientColorLeft="Transparent"
+                                GradientColorRight="Transparent"
+                                Tapped="ContactSupportClicked" />
+                            
+                            <custButtons:GradientButton
+                                Text="BACK TO LOGIN"
+                                FontSize="14"
+                                Margin="0,10,0,0"
+                                CornerRadius="10"
+                                HeightRequest="32"
+                                WidthRequest="150"
+                                ButtonTextColor="{StaticResource White}"
+                                FontAttributes="Bold"
+                                GradientColorLeft="{StaticResource ThemeClrMain}"
+                                GradientColorRight="{StaticResource ThemeClrMain}"
+                                Tapped="BackToLoginTapped" />
+
+                            <custButtons:GradientButton
+                                Text="DELETE YOUR ACCOUNT NOW"
+                                FontSize="14"
+                                CornerRadius="10"
+                                HeightRequest="35"
+                                Stroke="Crimson"
+                                ButtonTextColor="Crimson"
+                                GradientColorLeft="Transparent"
+                                GradientColorRight="Transparent"
+                                Tapped="DeleteMyAccountTapped" />
+                        </VerticalStackLayout>
+                    </Border>
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <!-- Footer -->
+            <Grid
+                Grid.Row="2"
+                Padding="20,10"
+                BackgroundColor="#F5F5F5">
+                <Label
+                    Text="Your data remains secure. We'll keep your information for 30 days."
+                    FontSize="12"
+                    HorizontalOptions="Center"
+                    TextColor="#666" />
+            </Grid>
+        </Grid>
+
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:CurrencyExchangeModal
+            x:Name="CurrencyExchangeModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

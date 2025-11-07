@@ -1,0 +1,23 @@
+﻿<ContentView
+    x:Class="OvulaeApp.Views.Components.Controls.CustomProgressBar"
+    x:Name="Root"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Border
+        Background="{StaticResource ThemeGray}"
+        Stroke="Transparent"
+        StrokeShape="RoundRectangle 10"
+        HeightRequest="15"
+        x:Name="TrackBar">
+
+        <Border
+            x:Name="FillBar"
+            Background="{StaticResource ThemeClr2}"
+            Stroke="Transparent"
+            StrokeShape="RoundRectangle 10"
+            HeightRequest="15"
+            HorizontalOptions="Start"
+            WidthRequest="0" />
+    </Border>
+</ContentView>

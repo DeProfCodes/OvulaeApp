@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Authentication.SignUpEmailPage"
+    Background="White"
+    xmlns:viewmodels="clr-namespace:OvulaeApp.ViewModels.Shared"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <viewmodels:NavigationsViewModel
+                x:Key="NavigationsVM" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <ScrollView>
+                <VerticalStackLayout
+                    Spacing="30"
+                    Padding="20,0">
+                    <!-- Bottom Logo -->
+                    <Image
+                        Source="logo_main.png"
+                        WidthRequest="128"
+                        Aspect="AspectFit"
+                        HorizontalOptions="Center"
+                        Margin="0,40,0,0" />
+
+                    <VerticalStackLayout>
+                        <Label
+                            Text="Create an account"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            HorizontalOptions="Center"
+                            FontFamily="Inter"
+                            TextColor="Black" />
+                        <Label
+                            Text="Enter your email to sign up for this app"
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            TextColor="Black"
+                            Margin="0,7,0,7" />
+
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout
+                        Spacing="10">
+                        <VerticalStackLayout>
+                            <Border
+                                Stroke="{StaticResource ThemeClrMain}"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 8"
+                                Padding="10,2"
+                                Margin="0">
+
+                                <Entry
+                                    x:Name="EmailEntry"
+                                    Placeholder="Enter your email"
+                                    TextColor="Black"
+                                    TextChanged="OnFieldsChanged"
+                                    FontSize="16" />
+                            </Border>
+                            <Label
+                                x:Name="EmailValidation"
+                                Text="*Email is not in correct format!"
+                                Style="{StaticResource ValidationLabel}"
+                                Padding="5,0,5,0"
+                                IsVisible="False" />
+                        </VerticalStackLayout>
+
+                        <!-- Bottom Button -->
+                        <Button
+                            x:Name="SignUpBtn1"
+                            Grid.Row="2"
+                            Text="Continue"
+                            Style="{StaticResource ThemeButton}"
+                            Margin="0,0,0,10"
+                            IsEnabled="False"
+                            Opacity="0.3"
+                            Clicked="SignUpBtn1_Clicked" />
+
+                        <HorizontalStackLayout
+                            HorizontalOptions="Center">
+                            <Label
+                                Text="Don't have account yet?"
+                                FontSize="14"
+                                TextColor="Black"
+                                VerticalOptions="Center"/>
+                            <Label
+                                Text="LOGIN"
+                                FontSize="14"
+                                FontAttributes="Bold,Italic"
+                                FontFamily="Arial Black"
+                                TextColor="{StaticResource ThemeClr2}"
+                                Margin="-5,-8,-10,-10"
+                                Padding="10,10,10,10"
+                                BindingContext="{StaticResource NavigationsVM}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding NavigateToLoginCommand}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <HorizontalStackLayout
+                        IsVisible="False">
+                        <Line
+                            StrokeThickness="1"
+                            X1="0"
+                            X2="145"
+                            Stroke="{StaticResource ThemeGray}"
+                            VerticalOptions="Center" />
+                        <Label
+                            Text="or"
+                            FontSize="14"
+                            TextColor="{StaticResource ThemeGray}"
+                            Margin="5,-2,5,0" />
+                        <Line
+                            StrokeThickness="1"
+                            X1="0"
+                            X2="145"
+                            Stroke="{StaticResource ThemeGray}"
+                            VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+
+                    <VerticalStackLayout
+                        IsVisible="False"
+                        Margin="0,-15"
+                        Spacing="10">
+                        <Border
+                            Background="{StaticResource ThemeLightGray}"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 8"
+                            Padding="13"
+                            Margin="0">
+                            <HorizontalStackLayout
+                                HorizontalOptions="Center">
+                                <Image
+                                    Source="google_icon.png"
+                                    WidthRequest="20"
+                                    HeightRequest="20"
+                                    Aspect="AspectFit"
+                                    Margin="0,0,0,0" />
+                                <Label
+                                    Text="Sign up with Google"
+                                    FontSize="14"
+                                    VerticalOptions="Center"
+                                    TextColor="Black"
+                                    Margin="10,0,0,0" />
+                            </HorizontalStackLayout>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="GoogleSignUpBtn_Tapped" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                        <Border
+                            Background="{StaticResource ThemeLightGray}"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 8"
+                            Padding="13"
+                            Margin="0">
+
+                            <HorizontalStackLayout
+                                HorizontalOptions="Center">
+                                <Image
+                                    Source="apple_icon.png"
+                                    WidthRequest="20"
+                                    HeightRequest="20"
+                                    Aspect="AspectFit"
+                                    Margin="0,0,0,0" />
+                                <Label
+                                    Text="Sign up with Apple"
+                                    FontSize="14"
+                                    VerticalOptions="Center"
+                                    TextColor="Black"
+                                    Margin="10,0,0,0" />
+                            </HorizontalStackLayout>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="AppleSignUpBtn_Tapped" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </ContentView>
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

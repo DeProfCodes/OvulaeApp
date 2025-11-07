@@ -1,0 +1,1938 @@
+﻿[
+    {
+        "group": {
+            "id": 1,
+            "title": "Green Veg.",
+            "type": "Pregnancy",
+            "coverImageSrc": "green_veg_cover.png",
+            "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:05.1886917",
+            "lastUpdateDate": "2025-06-15T16:49:05.1886921",
+            "dietItems": [
+                {
+                    "id": 1,
+                    "dietGroupId": 1,
+                    "fullHeading": "Leafy Greens & Vegetables (Daily)",
+                    "subHeading": "High in folate, iron, and antioxidants",
+                    "imageSrc": "green_veg.png",
+                    "importance": "Folate supports cell division and reduces the risk of neural tube defects in early pregnancy.",
+                    "dietListDetails": [
+                        "Spinach, kale, Swiss chard, romaine.",
+                        "Broccoli, asparagus, zucchini, sweet potato",
+                        "Beets (great for uterine blood flow)"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 2,
+                    "dietGroupId": 1,
+                    "fullHeading": "Leafy Greens & Vegetables (Daily)",
+                    "subHeading": "High in folate, iron, and antioxidants",
+                    "imageSrc": "green_veg.png",
+                    "importance": "Folate supports cell division and reduces the risk of neural tube defects in early pregnancy.",
+                    "dietListDetails": [
+                        "Spinach, kale, Swiss chard, romaine.",
+                        "Broccoli, asparagus, zucchini, sweet potato",
+                        "Beets (great for uterine blood flow)"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:10.9454497",
+                    "lastUpdateDate": "2025-06-15T16:49:10.94545"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 1,
+                "dietGroupId": 1,
+                "fullHeading": "Leafy Greens & Vegetables (Daily)",
+                "subHeading": "High in folate, iron, and antioxidants",
+                "imageSrc": "green_veg.png",
+                "importance": "Folate supports cell division and reduces the risk of neural tube defects in early pregnancy.",
+                "dietListDetails": [
+                    "Spinach, kale, Swiss chard, romaine.",
+                    "Broccoli, asparagus, zucchini, sweet potato",
+                    "Beets (great for uterine blood flow)"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 2,
+                "dietGroupId": 1,
+                "fullHeading": "Leafy Greens & Vegetables (Daily)",
+                "subHeading": "High in folate, iron, and antioxidants",
+                "imageSrc": "green_veg.png",
+                "importance": "Folate supports cell division and reduces the risk of neural tube defects in early pregnancy.",
+                "dietListDetails": [
+                    "Spinach, kale, Swiss chard, romaine.",
+                    "Broccoli, asparagus, zucchini, sweet potato",
+                    "Beets (great for uterine blood flow)"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:10.9454497",
+                "lastUpdateDate": "2025-06-15T16:49:10.94545"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 2,
+            "title": "Proteins",
+            "type": "Pregnancy",
+            "coverImageSrc": "proteins_cover.png",
+            "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:11.1930079",
+            "lastUpdateDate": "2025-06-15T16:49:11.1930082",
+            "dietItems": [
+                {
+                    "id": 3,
+                    "dietGroupId": 2,
+                    "fullHeading": "Proteins",
+                    "subHeading": "Supports cell growth, hormone health, and uterine lining",
+                    "imageSrc": "proteins.png",
+                    "importance": "Balanced protein helps build tissues necessary for a healthy pregnancy.",
+                    "dietListDetails": [
+                        "Eggs (esp. yolks)",
+                        "Chicken, turkey",
+                        "Grass-fed beef or bison",
+                        "Lentils, chickpeas, black beans",
+                        "Greek yogurt, kefir (if tolerated)"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 4,
+                    "dietGroupId": 2,
+                    "fullHeading": "Proteins",
+                    "subHeading": "Supports cell growth, hormone health, and uterine lining",
+                    "imageSrc": "proteins.png",
+                    "importance": "Balanced protein helps build tissues necessary for a healthy pregnancy.",
+                    "dietListDetails": [
+                        "Eggs (esp. yolks)",
+                        "Chicken, turkey",
+                        "Grass-fed beef or bison",
+                        "Lentils, chickpeas, black beans",
+                        "Greek yogurt, kefir (if tolerated)"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:12.0609644",
+                    "lastUpdateDate": "2025-06-15T16:49:12.0609645"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 3,
+                "dietGroupId": 2,
+                "fullHeading": "Proteins",
+                "subHeading": "Supports cell growth, hormone health, and uterine lining",
+                "imageSrc": "proteins.png",
+                "importance": "Balanced protein helps build tissues necessary for a healthy pregnancy.",
+                "dietListDetails": [
+                    "Eggs (esp. yolks)",
+                    "Chicken, turkey",
+                    "Grass-fed beef or bison",
+                    "Lentils, chickpeas, black beans",
+                    "Greek yogurt, kefir (if tolerated)"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 4,
+                "dietGroupId": 2,
+                "fullHeading": "Proteins",
+                "subHeading": "Supports cell growth, hormone health, and uterine lining",
+                "imageSrc": "proteins.png",
+                "importance": "Balanced protein helps build tissues necessary for a healthy pregnancy.",
+                "dietListDetails": [
+                    "Eggs (esp. yolks)",
+                    "Chicken, turkey",
+                    "Grass-fed beef or bison",
+                    "Lentils, chickpeas, black beans",
+                    "Greek yogurt, kefir (if tolerated)"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:12.0609644",
+                "lastUpdateDate": "2025-06-15T16:49:12.0609645"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 3,
+            "title": "Carbs.",
+            "type": "Pregnancy",
+            "coverImageSrc": "carbs_cover.png",
+            "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:12.289669",
+            "lastUpdateDate": "2025-06-15T16:49:12.2896691",
+            "dietItems": [
+                {
+                    "id": 5,
+                    "dietGroupId": 3,
+                    "fullHeading": "Complex Carbohydrates (Moderate)",
+                    "subHeading": "Keeps blood sugar stable, supports ovulation",
+                    "imageSrc": "carbs.png",
+                    "importance": "Stable insulin levels support healthy hormonal communication and reduce PCOS-related symptoms.",
+                    "dietListDetails": [
+                        "Quinoa, oats, brown rice, barley",
+                        "Sweet potatoes, butternut squash",
+                        "Legumes and lentils"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 6,
+                    "dietGroupId": 3,
+                    "fullHeading": "Complex Carbohydrates (Moderate)",
+                    "subHeading": "Keeps blood sugar stable, supports ovulation",
+                    "imageSrc": "carbs.png",
+                    "importance": "Stable insulin levels support healthy hormonal communication and reduce PCOS-related symptoms.",
+                    "dietListDetails": [
+                        "Quinoa, oats, brown rice, barley",
+                        "Sweet potatoes, butternut squash",
+                        "Legumes and lentils"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:13.1397563",
+                    "lastUpdateDate": "2025-06-15T16:49:13.1397563"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 5,
+                "dietGroupId": 3,
+                "fullHeading": "Complex Carbohydrates (Moderate)",
+                "subHeading": "Keeps blood sugar stable, supports ovulation",
+                "imageSrc": "carbs.png",
+                "importance": "Stable insulin levels support healthy hormonal communication and reduce PCOS-related symptoms.",
+                "dietListDetails": [
+                    "Quinoa, oats, brown rice, barley",
+                    "Sweet potatoes, butternut squash",
+                    "Legumes and lentils"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 6,
+                "dietGroupId": 3,
+                "fullHeading": "Complex Carbohydrates (Moderate)",
+                "subHeading": "Keeps blood sugar stable, supports ovulation",
+                "imageSrc": "carbs.png",
+                "importance": "Stable insulin levels support healthy hormonal communication and reduce PCOS-related symptoms.",
+                "dietListDetails": [
+                    "Quinoa, oats, brown rice, barley",
+                    "Sweet potatoes, butternut squash",
+                    "Legumes and lentils"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:13.1397563",
+                "lastUpdateDate": "2025-06-15T16:49:13.1397563"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 4,
+            "title": "Others",
+            "type": "Pregnancy",
+            "coverImageSrc": "other_cover.png",
+            "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:13.3729001",
+            "lastUpdateDate": "2025-06-15T16:49:13.3729004",
+            "dietItems": [
+                {
+                    "id": 7,
+                    "dietGroupId": 4,
+                    "fullHeading": "Full-Fat Dairy (2–3x/week)",
+                    "subHeading": "May reduce risk of ovulatory infertility (unless lactose intolerant)",
+                    "imageSrc": "",
+                    "importance": "Studies suggest full-fat dairy is more supportive of fertility than low-fat.",
+                    "dietListDetails": [
+                        "Plain Greek yogurt",
+                        "Whole milk",
+                        "Cheese (in moderation)"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 8,
+                    "dietGroupId": 4,
+                    "fullHeading": "Antioxidant-Rich Foods (Daily)",
+                    "subHeading": "Protect eggs and sperm from oxidative stress",
+                    "imageSrc": "",
+                    "importance": "Free radical damage can affect egg quality; antioxidants fight this",
+                    "dietListDetails": [
+                        "Berries (blueberries, strawberries, raspberries)",
+                        "Pomegranate",
+                        "Dark chocolate (70%+ cocoa)",
+                        "Artichokes, red cabbage, carrots"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 9,
+                    "dietGroupId": 4,
+                    "fullHeading": "Healthy Fats (Daily)",
+                    "subHeading": "Boosts hormone production and egg health",
+                    "imageSrc": "",
+                    "importance": "Omega-3s support ovulation, reduce inflammation, and help regulate cycles.",
+                    "dietListDetails": [
+                        "Avocados",
+                        "Olive oil",
+                        "Nuts (especially walnuts, almonds)",
+                        "Seeds (flax, pumpkin, chia, sunflower)",
+                        "Fatty fish (salmon, sardines, mackerel – 2–3x/week)"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 10,
+                    "dietGroupId": 4,
+                    "fullHeading": "Full-Fat Dairy (2–3x/week)",
+                    "subHeading": "May reduce risk of ovulatory infertility (unless lactose intolerant)",
+                    "imageSrc": "",
+                    "importance": "Studies suggest full-fat dairy is more supportive of fertility than low-fat.",
+                    "dietListDetails": [
+                        "Plain Greek yogurt",
+                        "Whole milk",
+                        "Cheese (in moderation)"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:14.3254896",
+                    "lastUpdateDate": "2025-06-15T16:49:14.3254896"
+                },
+                {
+                    "id": 11,
+                    "dietGroupId": 4,
+                    "fullHeading": "Antioxidant-Rich Foods (Daily)",
+                    "subHeading": "Protect eggs and sperm from oxidative stress",
+                    "imageSrc": "",
+                    "importance": "Free radical damage can affect egg quality; antioxidants fight this",
+                    "dietListDetails": [
+                        "Berries (blueberries, strawberries, raspberries)",
+                        "Pomegranate",
+                        "Dark chocolate (70%+ cocoa)",
+                        "Artichokes, red cabbage, carrots"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:14.3254897",
+                    "lastUpdateDate": "2025-06-15T16:49:14.3254898"
+                },
+                {
+                    "id": 12,
+                    "dietGroupId": 4,
+                    "fullHeading": "Healthy Fats (Daily)",
+                    "subHeading": "Boosts hormone production and egg health",
+                    "imageSrc": "",
+                    "importance": "Omega-3s support ovulation, reduce inflammation, and help regulate cycles.",
+                    "dietListDetails": [
+                        "Avocados",
+                        "Olive oil",
+                        "Nuts (especially walnuts, almonds)",
+                        "Seeds (flax, pumpkin, chia, sunflower)",
+                        "Fatty fish (salmon, sardines, mackerel – 2–3x/week)"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:14.3254899",
+                    "lastUpdateDate": "2025-06-15T16:49:14.32549"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 7,
+                "dietGroupId": 4,
+                "fullHeading": "Full-Fat Dairy (2–3x/week)",
+                "subHeading": "May reduce risk of ovulatory infertility (unless lactose intolerant)",
+                "imageSrc": "",
+                "importance": "Studies suggest full-fat dairy is more supportive of fertility than low-fat.",
+                "dietListDetails": [
+                    "Plain Greek yogurt",
+                    "Whole milk",
+                    "Cheese (in moderation)"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 8,
+                "dietGroupId": 4,
+                "fullHeading": "Antioxidant-Rich Foods (Daily)",
+                "subHeading": "Protect eggs and sperm from oxidative stress",
+                "imageSrc": "",
+                "importance": "Free radical damage can affect egg quality; antioxidants fight this",
+                "dietListDetails": [
+                    "Berries (blueberries, strawberries, raspberries)",
+                    "Pomegranate",
+                    "Dark chocolate (70%+ cocoa)",
+                    "Artichokes, red cabbage, carrots"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 9,
+                "dietGroupId": 4,
+                "fullHeading": "Healthy Fats (Daily)",
+                "subHeading": "Boosts hormone production and egg health",
+                "imageSrc": "",
+                "importance": "Omega-3s support ovulation, reduce inflammation, and help regulate cycles.",
+                "dietListDetails": [
+                    "Avocados",
+                    "Olive oil",
+                    "Nuts (especially walnuts, almonds)",
+                    "Seeds (flax, pumpkin, chia, sunflower)",
+                    "Fatty fish (salmon, sardines, mackerel – 2–3x/week)"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 10,
+                "dietGroupId": 4,
+                "fullHeading": "Full-Fat Dairy (2–3x/week)",
+                "subHeading": "May reduce risk of ovulatory infertility (unless lactose intolerant)",
+                "imageSrc": "",
+                "importance": "Studies suggest full-fat dairy is more supportive of fertility than low-fat.",
+                "dietListDetails": [
+                    "Plain Greek yogurt",
+                    "Whole milk",
+                    "Cheese (in moderation)"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:14.3254896",
+                "lastUpdateDate": "2025-06-15T16:49:14.3254896"
+            },
+            {
+                "id": 11,
+                "dietGroupId": 4,
+                "fullHeading": "Antioxidant-Rich Foods (Daily)",
+                "subHeading": "Protect eggs and sperm from oxidative stress",
+                "imageSrc": "",
+                "importance": "Free radical damage can affect egg quality; antioxidants fight this",
+                "dietListDetails": [
+                    "Berries (blueberries, strawberries, raspberries)",
+                    "Pomegranate",
+                    "Dark chocolate (70%+ cocoa)",
+                    "Artichokes, red cabbage, carrots"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:14.3254897",
+                "lastUpdateDate": "2025-06-15T16:49:14.3254898"
+            },
+            {
+                "id": 12,
+                "dietGroupId": 4,
+                "fullHeading": "Healthy Fats (Daily)",
+                "subHeading": "Boosts hormone production and egg health",
+                "imageSrc": "",
+                "importance": "Omega-3s support ovulation, reduce inflammation, and help regulate cycles.",
+                "dietListDetails": [
+                    "Avocados",
+                    "Olive oil",
+                    "Nuts (especially walnuts, almonds)",
+                    "Seeds (flax, pumpkin, chia, sunflower)",
+                    "Fatty fish (salmon, sardines, mackerel – 2–3x/week)"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:14.3254899",
+                "lastUpdateDate": "2025-06-15T16:49:14.32549"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 5,
+            "title": "Green Veg.",
+            "type": "Pregnancy",
+            "coverImageSrc": "green_veg_cover.png",
+            "weeks": [
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:14.5521065",
+            "lastUpdateDate": "2025-06-15T16:49:14.5521067",
+            "dietItems": [
+                {
+                    "id": 13,
+                    "dietGroupId": 5,
+                    "fullHeading": "Leafy Greens & Vegetables (Daily)",
+                    "subHeading": "Rich in folate, calcium, and fiber",
+                    "imageSrc": "green_veg.png",
+                    "importance": "Supports baby's spine and brain development while easing digestion.",
+                    "dietListDetails": [
+                        "Spinach, bok choy, kale",
+                        "Green beans, cucumbers, carrots",
+                        "Sweet potatoes and pumpkin"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 14,
+                    "dietGroupId": 5,
+                    "fullHeading": "Leafy Greens & Vegetables (Daily)",
+                    "subHeading": "Rich in folate, calcium, and fiber",
+                    "imageSrc": "green_veg.png",
+                    "importance": "Supports baby's spine and brain development while easing digestion.",
+                    "dietListDetails": [
+                        "Spinach, bok choy, kale",
+                        "Green beans, cucumbers, carrots",
+                        "Sweet potatoes and pumpkin"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:15.3943265",
+                    "lastUpdateDate": "2025-06-15T16:49:15.3943266"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 13,
+                "dietGroupId": 5,
+                "fullHeading": "Leafy Greens & Vegetables (Daily)",
+                "subHeading": "Rich in folate, calcium, and fiber",
+                "imageSrc": "green_veg.png",
+                "importance": "Supports baby's spine and brain development while easing digestion.",
+                "dietListDetails": [
+                    "Spinach, bok choy, kale",
+                    "Green beans, cucumbers, carrots",
+                    "Sweet potatoes and pumpkin"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 14,
+                "dietGroupId": 5,
+                "fullHeading": "Leafy Greens & Vegetables (Daily)",
+                "subHeading": "Rich in folate, calcium, and fiber",
+                "imageSrc": "green_veg.png",
+                "importance": "Supports baby's spine and brain development while easing digestion.",
+                "dietListDetails": [
+                    "Spinach, bok choy, kale",
+                    "Green beans, cucumbers, carrots",
+                    "Sweet potatoes and pumpkin"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:15.3943265",
+                "lastUpdateDate": "2025-06-15T16:49:15.3943266"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 6,
+            "title": "Proteins",
+            "type": "Pregnancy",
+            "coverImageSrc": "proteins_cover.png",
+            "weeks": [
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:15.6367201",
+            "lastUpdateDate": "2025-06-15T16:49:15.6367204",
+            "dietItems": [
+                {
+                    "id": 15,
+                    "dietGroupId": 6,
+                    "fullHeading": "Protein Variety (Every Meal)",
+                    "subHeading": "Essential for baby's muscle and tissue development",
+                    "imageSrc": "proteins.png",
+                    "importance": "Amino acids from protein are the building blocks for baby's growth.",
+                    "dietListDetails": [
+                        "Eggs, cottage cheese",
+                        "Grilled chicken or tofu",
+                        "Fish like salmon (2x/week)",
+                        "Lentils, black beans, hummus"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 16,
+                    "dietGroupId": 6,
+                    "fullHeading": "Protein Variety (Every Meal)",
+                    "subHeading": "Essential for baby's muscle and tissue development",
+                    "imageSrc": "proteins.png",
+                    "importance": "Amino acids from protein are the building blocks for baby's growth.",
+                    "dietListDetails": [
+                        "Eggs, cottage cheese",
+                        "Grilled chicken or tofu",
+                        "Fish like salmon (2x/week)",
+                        "Lentils, black beans, hummus"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:16.5019395",
+                    "lastUpdateDate": "2025-06-15T16:49:16.5019395"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 15,
+                "dietGroupId": 6,
+                "fullHeading": "Protein Variety (Every Meal)",
+                "subHeading": "Essential for baby's muscle and tissue development",
+                "imageSrc": "proteins.png",
+                "importance": "Amino acids from protein are the building blocks for baby's growth.",
+                "dietListDetails": [
+                    "Eggs, cottage cheese",
+                    "Grilled chicken or tofu",
+                    "Fish like salmon (2x/week)",
+                    "Lentils, black beans, hummus"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 16,
+                "dietGroupId": 6,
+                "fullHeading": "Protein Variety (Every Meal)",
+                "subHeading": "Essential for baby's muscle and tissue development",
+                "imageSrc": "proteins.png",
+                "importance": "Amino acids from protein are the building blocks for baby's growth.",
+                "dietListDetails": [
+                    "Eggs, cottage cheese",
+                    "Grilled chicken or tofu",
+                    "Fish like salmon (2x/week)",
+                    "Lentils, black beans, hummus"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:16.5019395",
+                "lastUpdateDate": "2025-06-15T16:49:16.5019395"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 7,
+            "title": "Carbs.",
+            "type": "Pregnancy",
+            "coverImageSrc": "carbs_cover.png",
+            "weeks": [
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:16.7242687",
+            "lastUpdateDate": "2025-06-15T16:49:16.7242689",
+            "dietItems": [
+                {
+                    "id": 17,
+                    "dietGroupId": 7,
+                    "fullHeading": "Healthy Carbs (Moderate)",
+                    "subHeading": "Provides lasting energy and supports fetal growth",
+                    "imageSrc": "carbs.png",
+                    "importance": "Carbohydrates fuel your body and help in nutrient absorption.",
+                    "dietListDetails": [
+                        "Oats, brown rice, whole grain pasta",
+                        "Sweet potatoes, corn, quinoa",
+                        "Bananas, apples, pears"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 18,
+                    "dietGroupId": 7,
+                    "fullHeading": "Healthy Carbs (Moderate)",
+                    "subHeading": "Provides lasting energy and supports fetal growth",
+                    "imageSrc": "carbs.png",
+                    "importance": "Carbohydrates fuel your body and help in nutrient absorption.",
+                    "dietListDetails": [
+                        "Oats, brown rice, whole grain pasta",
+                        "Sweet potatoes, corn, quinoa",
+                        "Bananas, apples, pears"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:17.5752908",
+                    "lastUpdateDate": "2025-06-15T16:49:17.575291"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 17,
+                "dietGroupId": 7,
+                "fullHeading": "Healthy Carbs (Moderate)",
+                "subHeading": "Provides lasting energy and supports fetal growth",
+                "imageSrc": "carbs.png",
+                "importance": "Carbohydrates fuel your body and help in nutrient absorption.",
+                "dietListDetails": [
+                    "Oats, brown rice, whole grain pasta",
+                    "Sweet potatoes, corn, quinoa",
+                    "Bananas, apples, pears"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 18,
+                "dietGroupId": 7,
+                "fullHeading": "Healthy Carbs (Moderate)",
+                "subHeading": "Provides lasting energy and supports fetal growth",
+                "imageSrc": "carbs.png",
+                "importance": "Carbohydrates fuel your body and help in nutrient absorption.",
+                "dietListDetails": [
+                    "Oats, brown rice, whole grain pasta",
+                    "Sweet potatoes, corn, quinoa",
+                    "Bananas, apples, pears"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:17.5752908",
+                "lastUpdateDate": "2025-06-15T16:49:17.575291"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 8,
+            "title": "Others",
+            "type": "Pregnancy",
+            "coverImageSrc": "other_cover.png",
+            "weeks": [
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:17.8033273",
+            "lastUpdateDate": "2025-06-15T16:49:17.8033276",
+            "dietItems": [
+                {
+                    "id": 19,
+                    "dietGroupId": 8,
+                    "fullHeading": "Dairy & Calcium-Rich Foods (2–3x/day)",
+                    "subHeading": "Supports bone and teeth development",
+                    "imageSrc": "",
+                    "importance": "Calcium helps build strong bones and regulates heartbeat for mom and baby.",
+                    "dietListDetails": [
+                        "Milk, yogurt, hard cheeses",
+                        "Almond milk (calcium-fortified)",
+                        "Sardines (with bones)"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 20,
+                    "dietGroupId": 8,
+                    "fullHeading": "Hydration & Electrolytes (Daily)",
+                    "subHeading": "Essential for blood volume and amniotic fluid levels",
+                    "imageSrc": "",
+                    "importance": "Staying hydrated supports digestion and reduces swelling.",
+                    "dietListDetails": [
+                        "Water (8–10 glasses)",
+                        "Coconut water",
+                        "Herbal teas (like ginger or mint)"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 21,
+                    "dietGroupId": 8,
+                    "fullHeading": "Iron-Rich Foods (Daily)",
+                    "subHeading": "Supports oxygen transport and prevents anemia",
+                    "imageSrc": "",
+                    "importance": "Iron needs increase in second trimester — helps prevent fatigue.",
+                    "dietListDetails": [
+                        "Red meat, chicken liver (limit to 1x/week)",
+                        "Spinach, lentils, pumpkin seeds",
+                        "Iron-fortified cereals"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 22,
+                    "dietGroupId": 8,
+                    "fullHeading": "Dairy & Calcium-Rich Foods (2–3x/day)",
+                    "subHeading": "Supports bone and teeth development",
+                    "imageSrc": "",
+                    "importance": "Calcium helps build strong bones and regulates heartbeat for mom and baby.",
+                    "dietListDetails": [
+                        "Milk, yogurt, hard cheeses",
+                        "Almond milk (calcium-fortified)",
+                        "Sardines (with bones)"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:18.698002",
+                    "lastUpdateDate": "2025-06-15T16:49:18.6980021"
+                },
+                {
+                    "id": 23,
+                    "dietGroupId": 8,
+                    "fullHeading": "Hydration & Electrolytes (Daily)",
+                    "subHeading": "Essential for blood volume and amniotic fluid levels",
+                    "imageSrc": "",
+                    "importance": "Staying hydrated supports digestion and reduces swelling.",
+                    "dietListDetails": [
+                        "Water (8–10 glasses)",
+                        "Coconut water",
+                        "Herbal teas (like ginger or mint)"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:18.6980022",
+                    "lastUpdateDate": "2025-06-15T16:49:18.6980023"
+                },
+                {
+                    "id": 24,
+                    "dietGroupId": 8,
+                    "fullHeading": "Iron-Rich Foods (Daily)",
+                    "subHeading": "Supports oxygen transport and prevents anemia",
+                    "imageSrc": "",
+                    "importance": "Iron needs increase in second trimester — helps prevent fatigue.",
+                    "dietListDetails": [
+                        "Red meat, chicken liver (limit to 1x/week)",
+                        "Spinach, lentils, pumpkin seeds",
+                        "Iron-fortified cereals"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:18.6980025",
+                    "lastUpdateDate": "2025-06-15T16:49:18.6980025"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 19,
+                "dietGroupId": 8,
+                "fullHeading": "Dairy & Calcium-Rich Foods (2–3x/day)",
+                "subHeading": "Supports bone and teeth development",
+                "imageSrc": "",
+                "importance": "Calcium helps build strong bones and regulates heartbeat for mom and baby.",
+                "dietListDetails": [
+                    "Milk, yogurt, hard cheeses",
+                    "Almond milk (calcium-fortified)",
+                    "Sardines (with bones)"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 20,
+                "dietGroupId": 8,
+                "fullHeading": "Hydration & Electrolytes (Daily)",
+                "subHeading": "Essential for blood volume and amniotic fluid levels",
+                "imageSrc": "",
+                "importance": "Staying hydrated supports digestion and reduces swelling.",
+                "dietListDetails": [
+                    "Water (8–10 glasses)",
+                    "Coconut water",
+                    "Herbal teas (like ginger or mint)"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 21,
+                "dietGroupId": 8,
+                "fullHeading": "Iron-Rich Foods (Daily)",
+                "subHeading": "Supports oxygen transport and prevents anemia",
+                "imageSrc": "",
+                "importance": "Iron needs increase in second trimester — helps prevent fatigue.",
+                "dietListDetails": [
+                    "Red meat, chicken liver (limit to 1x/week)",
+                    "Spinach, lentils, pumpkin seeds",
+                    "Iron-fortified cereals"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 22,
+                "dietGroupId": 8,
+                "fullHeading": "Dairy & Calcium-Rich Foods (2–3x/day)",
+                "subHeading": "Supports bone and teeth development",
+                "imageSrc": "",
+                "importance": "Calcium helps build strong bones and regulates heartbeat for mom and baby.",
+                "dietListDetails": [
+                    "Milk, yogurt, hard cheeses",
+                    "Almond milk (calcium-fortified)",
+                    "Sardines (with bones)"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:18.698002",
+                "lastUpdateDate": "2025-06-15T16:49:18.6980021"
+            },
+            {
+                "id": 23,
+                "dietGroupId": 8,
+                "fullHeading": "Hydration & Electrolytes (Daily)",
+                "subHeading": "Essential for blood volume and amniotic fluid levels",
+                "imageSrc": "",
+                "importance": "Staying hydrated supports digestion and reduces swelling.",
+                "dietListDetails": [
+                    "Water (8–10 glasses)",
+                    "Coconut water",
+                    "Herbal teas (like ginger or mint)"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:18.6980022",
+                "lastUpdateDate": "2025-06-15T16:49:18.6980023"
+            },
+            {
+                "id": 24,
+                "dietGroupId": 8,
+                "fullHeading": "Iron-Rich Foods (Daily)",
+                "subHeading": "Supports oxygen transport and prevents anemia",
+                "imageSrc": "",
+                "importance": "Iron needs increase in second trimester — helps prevent fatigue.",
+                "dietListDetails": [
+                    "Red meat, chicken liver (limit to 1x/week)",
+                    "Spinach, lentils, pumpkin seeds",
+                    "Iron-fortified cereals"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:18.6980025",
+                "lastUpdateDate": "2025-06-15T16:49:18.6980025"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 9,
+            "title": "Green Veg.",
+            "type": "Pregnancy",
+            "coverImageSrc": "green_veg_cover.png",
+            "weeks": [
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:18.9705996",
+            "lastUpdateDate": "2025-06-15T16:49:18.9706001",
+            "dietItems": [
+                {
+                    "id": 25,
+                    "dietGroupId": 9,
+                    "fullHeading": "Dark Leafy Greens & Veggies (Daily)",
+                    "subHeading": "Packed with iron, magnesium, and fiber",
+                    "imageSrc": "green_veg.png",
+                    "importance": "Iron supports increased blood volume and prevents fatigue.",
+                    "dietListDetails": [
+                        "Kale, collard greens, mustard greens",
+                        "Green peas, cucumbers, asparagus",
+                        "Sweet potatoes and carrots"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 26,
+                    "dietGroupId": 9,
+                    "fullHeading": "Dark Leafy Greens & Veggies (Daily)",
+                    "subHeading": "Packed with iron, magnesium, and fiber",
+                    "imageSrc": "green_veg.png",
+                    "importance": "Iron supports increased blood volume and prevents fatigue.",
+                    "dietListDetails": [
+                        "Kale, collard greens, mustard greens",
+                        "Green peas, cucumbers, asparagus",
+                        "Sweet potatoes and carrots"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:19.8356291",
+                    "lastUpdateDate": "2025-06-15T16:49:19.8356293"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 25,
+                "dietGroupId": 9,
+                "fullHeading": "Dark Leafy Greens & Veggies (Daily)",
+                "subHeading": "Packed with iron, magnesium, and fiber",
+                "imageSrc": "green_veg.png",
+                "importance": "Iron supports increased blood volume and prevents fatigue.",
+                "dietListDetails": [
+                    "Kale, collard greens, mustard greens",
+                    "Green peas, cucumbers, asparagus",
+                    "Sweet potatoes and carrots"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 26,
+                "dietGroupId": 9,
+                "fullHeading": "Dark Leafy Greens & Veggies (Daily)",
+                "subHeading": "Packed with iron, magnesium, and fiber",
+                "imageSrc": "green_veg.png",
+                "importance": "Iron supports increased blood volume and prevents fatigue.",
+                "dietListDetails": [
+                    "Kale, collard greens, mustard greens",
+                    "Green peas, cucumbers, asparagus",
+                    "Sweet potatoes and carrots"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:19.8356291",
+                "lastUpdateDate": "2025-06-15T16:49:19.8356293"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 10,
+            "title": "Proteins",
+            "type": "Pregnancy",
+            "coverImageSrc": "proteins_cover.png",
+            "weeks": [
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:20.0625633",
+            "lastUpdateDate": "2025-06-15T16:49:20.0625634",
+            "dietItems": [
+                {
+                    "id": 27,
+                    "dietGroupId": 10,
+                    "fullHeading": "High-Quality Proteins",
+                    "subHeading": "Supports baby's rapid brain growth",
+                    "imageSrc": "proteins.png",
+                    "importance": "Protein helps with hormone production and tissue repair.",
+                    "dietListDetails": [
+                        "Eggs, turkey, fish (mercury-safe)",
+                        "Quinoa, beans, lentils",
+                        "Plain Greek yogurt, tofu"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 28,
+                    "dietGroupId": 10,
+                    "fullHeading": "High-Quality Proteins",
+                    "subHeading": "Supports baby's rapid brain growth",
+                    "imageSrc": "proteins.png",
+                    "importance": "Protein helps with hormone production and tissue repair.",
+                    "dietListDetails": [
+                        "Eggs, turkey, fish (mercury-safe)",
+                        "Quinoa, beans, lentils",
+                        "Plain Greek yogurt, tofu"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:20.9144552",
+                    "lastUpdateDate": "2025-06-15T16:49:20.9144553"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 27,
+                "dietGroupId": 10,
+                "fullHeading": "High-Quality Proteins",
+                "subHeading": "Supports baby's rapid brain growth",
+                "imageSrc": "proteins.png",
+                "importance": "Protein helps with hormone production and tissue repair.",
+                "dietListDetails": [
+                    "Eggs, turkey, fish (mercury-safe)",
+                    "Quinoa, beans, lentils",
+                    "Plain Greek yogurt, tofu"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 28,
+                "dietGroupId": 10,
+                "fullHeading": "High-Quality Proteins",
+                "subHeading": "Supports baby's rapid brain growth",
+                "imageSrc": "proteins.png",
+                "importance": "Protein helps with hormone production and tissue repair.",
+                "dietListDetails": [
+                    "Eggs, turkey, fish (mercury-safe)",
+                    "Quinoa, beans, lentils",
+                    "Plain Greek yogurt, tofu"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:20.9144552",
+                "lastUpdateDate": "2025-06-15T16:49:20.9144553"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 11,
+            "title": "Carbs.",
+            "type": "Pregnancy",
+            "coverImageSrc": "carbs_cover.png",
+            "weeks": [
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:21.1509521",
+            "lastUpdateDate": "2025-06-15T16:49:21.1509524",
+            "dietItems": [
+                {
+                    "id": 29,
+                    "dietGroupId": 11,
+                    "fullHeading": "Complex Carbs for Energy",
+                    "subHeading": "Keeps energy stable and supports fetal fat accumulation",
+                    "imageSrc": "carbs.png",
+                    "importance": "Carbs prevent ketone production, which can affect fetal development.",
+                    "dietListDetails": [
+                        "Brown rice, oats, millet",
+                        "Whole grain toast, buckwheat",
+                        "Pumpkin, potatoes, bananas"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 30,
+                    "dietGroupId": 11,
+                    "fullHeading": "Complex Carbs for Energy",
+                    "subHeading": "Keeps energy stable and supports fetal fat accumulation",
+                    "imageSrc": "carbs.png",
+                    "importance": "Carbs prevent ketone production, which can affect fetal development.",
+                    "dietListDetails": [
+                        "Brown rice, oats, millet",
+                        "Whole grain toast, buckwheat",
+                        "Pumpkin, potatoes, bananas"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:21.9996894",
+                    "lastUpdateDate": "2025-06-15T16:49:21.9996896"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 29,
+                "dietGroupId": 11,
+                "fullHeading": "Complex Carbs for Energy",
+                "subHeading": "Keeps energy stable and supports fetal fat accumulation",
+                "imageSrc": "carbs.png",
+                "importance": "Carbs prevent ketone production, which can affect fetal development.",
+                "dietListDetails": [
+                    "Brown rice, oats, millet",
+                    "Whole grain toast, buckwheat",
+                    "Pumpkin, potatoes, bananas"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 30,
+                "dietGroupId": 11,
+                "fullHeading": "Complex Carbs for Energy",
+                "subHeading": "Keeps energy stable and supports fetal fat accumulation",
+                "imageSrc": "carbs.png",
+                "importance": "Carbs prevent ketone production, which can affect fetal development.",
+                "dietListDetails": [
+                    "Brown rice, oats, millet",
+                    "Whole grain toast, buckwheat",
+                    "Pumpkin, potatoes, bananas"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:21.9996894",
+                "lastUpdateDate": "2025-06-15T16:49:21.9996896"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 12,
+            "title": "Others",
+            "type": "Pregnancy",
+            "coverImageSrc": "other_cover.png",
+            "weeks": [
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:22.224242",
+            "lastUpdateDate": "2025-06-15T16:49:22.2242423",
+            "dietItems": [
+                {
+                    "id": 31,
+                    "dietGroupId": 12,
+                    "fullHeading": "Magnesium-Rich Foods",
+                    "subHeading": "Prevents leg cramps and supports bone health",
+                    "imageSrc": "",
+                    "importance": "Magnesium helps with muscle function and reduces preterm labor risk.",
+                    "dietListDetails": [
+                        "Almonds, cashews",
+                        "Dark chocolate (in moderation)",
+                        "Avocados, bananas"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 32,
+                    "dietGroupId": 12,
+                    "fullHeading": "Healthy Fats & DHA",
+                    "subHeading": "Supports brain and eye development",
+                    "imageSrc": "",
+                    "importance": "DHA is critical during the third trimester for baby’s brain.",
+                    "dietListDetails": [
+                        "Salmon, sardines",
+                        "Chia seeds, flaxseeds, walnuts",
+                        "Olive oil, avocado"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 33,
+                    "dietGroupId": 12,
+                    "fullHeading": "Calcium & Vitamin D Sources",
+                    "subHeading": "Helps bones harden and reduces risk of gestational hypertension",
+                    "imageSrc": "",
+                    "importance": "Calcium and Vitamin D support skeletal development.",
+                    "dietListDetails": [
+                        "Cheese, yogurt",
+                        "Sardines with bones",
+                        "Sunlight (10–15 min daily), fortified plant milk"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 34,
+                    "dietGroupId": 12,
+                    "fullHeading": "Magnesium-Rich Foods",
+                    "subHeading": "Prevents leg cramps and supports bone health",
+                    "imageSrc": "",
+                    "importance": "Magnesium helps with muscle function and reduces preterm labor risk.",
+                    "dietListDetails": [
+                        "Almonds, cashews",
+                        "Dark chocolate (in moderation)",
+                        "Avocados, bananas"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:23.1082503",
+                    "lastUpdateDate": "2025-06-15T16:49:23.1082506"
+                },
+                {
+                    "id": 35,
+                    "dietGroupId": 12,
+                    "fullHeading": "Healthy Fats & DHA",
+                    "subHeading": "Supports brain and eye development",
+                    "imageSrc": "",
+                    "importance": "DHA is critical during the third trimester for baby’s brain.",
+                    "dietListDetails": [
+                        "Salmon, sardines",
+                        "Chia seeds, flaxseeds, walnuts",
+                        "Olive oil, avocado"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:23.1082508",
+                    "lastUpdateDate": "2025-06-15T16:49:23.108251"
+                },
+                {
+                    "id": 36,
+                    "dietGroupId": 12,
+                    "fullHeading": "Calcium & Vitamin D Sources",
+                    "subHeading": "Helps bones harden and reduces risk of gestational hypertension",
+                    "imageSrc": "",
+                    "importance": "Calcium and Vitamin D support skeletal development.",
+                    "dietListDetails": [
+                        "Cheese, yogurt",
+                        "Sardines with bones",
+                        "Sunlight (10–15 min daily), fortified plant milk"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:23.1082513",
+                    "lastUpdateDate": "2025-06-15T16:49:23.1082514"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 31,
+                "dietGroupId": 12,
+                "fullHeading": "Magnesium-Rich Foods",
+                "subHeading": "Prevents leg cramps and supports bone health",
+                "imageSrc": "",
+                "importance": "Magnesium helps with muscle function and reduces preterm labor risk.",
+                "dietListDetails": [
+                    "Almonds, cashews",
+                    "Dark chocolate (in moderation)",
+                    "Avocados, bananas"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 32,
+                "dietGroupId": 12,
+                "fullHeading": "Healthy Fats & DHA",
+                "subHeading": "Supports brain and eye development",
+                "imageSrc": "",
+                "importance": "DHA is critical during the third trimester for baby’s brain.",
+                "dietListDetails": [
+                    "Salmon, sardines",
+                    "Chia seeds, flaxseeds, walnuts",
+                    "Olive oil, avocado"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 33,
+                "dietGroupId": 12,
+                "fullHeading": "Calcium & Vitamin D Sources",
+                "subHeading": "Helps bones harden and reduces risk of gestational hypertension",
+                "imageSrc": "",
+                "importance": "Calcium and Vitamin D support skeletal development.",
+                "dietListDetails": [
+                    "Cheese, yogurt",
+                    "Sardines with bones",
+                    "Sunlight (10–15 min daily), fortified plant milk"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 34,
+                "dietGroupId": 12,
+                "fullHeading": "Magnesium-Rich Foods",
+                "subHeading": "Prevents leg cramps and supports bone health",
+                "imageSrc": "",
+                "importance": "Magnesium helps with muscle function and reduces preterm labor risk.",
+                "dietListDetails": [
+                    "Almonds, cashews",
+                    "Dark chocolate (in moderation)",
+                    "Avocados, bananas"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:23.1082503",
+                "lastUpdateDate": "2025-06-15T16:49:23.1082506"
+            },
+            {
+                "id": 35,
+                "dietGroupId": 12,
+                "fullHeading": "Healthy Fats & DHA",
+                "subHeading": "Supports brain and eye development",
+                "imageSrc": "",
+                "importance": "DHA is critical during the third trimester for baby’s brain.",
+                "dietListDetails": [
+                    "Salmon, sardines",
+                    "Chia seeds, flaxseeds, walnuts",
+                    "Olive oil, avocado"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:23.1082508",
+                "lastUpdateDate": "2025-06-15T16:49:23.108251"
+            },
+            {
+                "id": 36,
+                "dietGroupId": 12,
+                "fullHeading": "Calcium & Vitamin D Sources",
+                "subHeading": "Helps bones harden and reduces risk of gestational hypertension",
+                "imageSrc": "",
+                "importance": "Calcium and Vitamin D support skeletal development.",
+                "dietListDetails": [
+                    "Cheese, yogurt",
+                    "Sardines with bones",
+                    "Sunlight (10–15 min daily), fortified plant milk"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:23.1082513",
+                "lastUpdateDate": "2025-06-15T16:49:23.1082514"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 13,
+            "title": "Green Veg.",
+            "type": "Pregnancy",
+            "coverImageSrc": "green_veg_cover.png",
+            "weeks": [
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:23.3276473",
+            "lastUpdateDate": "2025-06-15T16:49:23.3276481",
+            "dietItems": [
+                {
+                    "id": 37,
+                    "dietGroupId": 13,
+                    "fullHeading": "Greens & Iron-Rich Veggies (Daily)",
+                    "subHeading": "Supports energy and prepares body for labor",
+                    "imageSrc": "green_veg.png",
+                    "importance": "Iron and fiber reduce constipation and support blood health before delivery.",
+                    "dietListDetails": [
+                        "Spinach, broccoli, beet greens",
+                        "Brussels sprouts, asparagus",
+                        "Pumpkin and squash"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 38,
+                    "dietGroupId": 13,
+                    "fullHeading": "Greens & Iron-Rich Veggies (Daily)",
+                    "subHeading": "Supports energy and prepares body for labor",
+                    "imageSrc": "green_veg.png",
+                    "importance": "Iron and fiber reduce constipation and support blood health before delivery.",
+                    "dietListDetails": [
+                        "Spinach, broccoli, beet greens",
+                        "Brussels sprouts, asparagus",
+                        "Pumpkin and squash"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:24.1747471",
+                    "lastUpdateDate": "2025-06-15T16:49:24.1747472"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 37,
+                "dietGroupId": 13,
+                "fullHeading": "Greens & Iron-Rich Veggies (Daily)",
+                "subHeading": "Supports energy and prepares body for labor",
+                "imageSrc": "green_veg.png",
+                "importance": "Iron and fiber reduce constipation and support blood health before delivery.",
+                "dietListDetails": [
+                    "Spinach, broccoli, beet greens",
+                    "Brussels sprouts, asparagus",
+                    "Pumpkin and squash"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 38,
+                "dietGroupId": 13,
+                "fullHeading": "Greens & Iron-Rich Veggies (Daily)",
+                "subHeading": "Supports energy and prepares body for labor",
+                "imageSrc": "green_veg.png",
+                "importance": "Iron and fiber reduce constipation and support blood health before delivery.",
+                "dietListDetails": [
+                    "Spinach, broccoli, beet greens",
+                    "Brussels sprouts, asparagus",
+                    "Pumpkin and squash"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:24.1747471",
+                "lastUpdateDate": "2025-06-15T16:49:24.1747472"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 14,
+            "title": "Proteins",
+            "type": "Pregnancy",
+            "coverImageSrc": "proteins_cover.png",
+            "weeks": [
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:24.4119249",
+            "lastUpdateDate": "2025-06-15T16:49:24.4119253",
+            "dietItems": [
+                {
+                    "id": 39,
+                    "dietGroupId": 14,
+                    "fullHeading": "Labor-Strengthening Proteins",
+                    "subHeading": "Promotes stamina and tissue repair",
+                    "imageSrc": "proteins.png",
+                    "importance": "Protein keeps strength up during final stages of pregnancy.",
+                    "dietListDetails": [
+                        "Lean beef or lamb",
+                        "Eggs and legumes",
+                        "Tofu, lentils, cottage cheese"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 40,
+                    "dietGroupId": 14,
+                    "fullHeading": "Labor-Strengthening Proteins",
+                    "subHeading": "Promotes stamina and tissue repair",
+                    "imageSrc": "proteins.png",
+                    "importance": "Protein keeps strength up during final stages of pregnancy.",
+                    "dietListDetails": [
+                        "Lean beef or lamb",
+                        "Eggs and legumes",
+                        "Tofu, lentils, cottage cheese"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:25.2947714",
+                    "lastUpdateDate": "2025-06-15T16:49:25.2947715"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 39,
+                "dietGroupId": 14,
+                "fullHeading": "Labor-Strengthening Proteins",
+                "subHeading": "Promotes stamina and tissue repair",
+                "imageSrc": "proteins.png",
+                "importance": "Protein keeps strength up during final stages of pregnancy.",
+                "dietListDetails": [
+                    "Lean beef or lamb",
+                    "Eggs and legumes",
+                    "Tofu, lentils, cottage cheese"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 40,
+                "dietGroupId": 14,
+                "fullHeading": "Labor-Strengthening Proteins",
+                "subHeading": "Promotes stamina and tissue repair",
+                "imageSrc": "proteins.png",
+                "importance": "Protein keeps strength up during final stages of pregnancy.",
+                "dietListDetails": [
+                    "Lean beef or lamb",
+                    "Eggs and legumes",
+                    "Tofu, lentils, cottage cheese"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:25.2947714",
+                "lastUpdateDate": "2025-06-15T16:49:25.2947715"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 15,
+            "title": "Carbs.",
+            "type": "Pregnancy",
+            "coverImageSrc": "carbs_cover.png",
+            "weeks": [
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:25.5233863",
+            "lastUpdateDate": "2025-06-15T16:49:25.5233866",
+            "dietItems": [
+                {
+                    "id": 41,
+                    "dietGroupId": 15,
+                    "fullHeading": "Energy-Boosting Carbs",
+                    "subHeading": "Fuel for early labor and metabolic demands",
+                    "imageSrc": "carbs.png",
+                    "importance": "Carbohydrates fuel muscles — including the uterus.",
+                    "dietListDetails": [
+                        "Brown rice, oats, quinoa",
+                        "Sweet potatoes, corn, barley",
+                        "Whole grain toast or crackers"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 42,
+                    "dietGroupId": 15,
+                    "fullHeading": "Energy-Boosting Carbs",
+                    "subHeading": "Fuel for early labor and metabolic demands",
+                    "imageSrc": "carbs.png",
+                    "importance": "Carbohydrates fuel muscles — including the uterus.",
+                    "dietListDetails": [
+                        "Brown rice, oats, quinoa",
+                        "Sweet potatoes, corn, barley",
+                        "Whole grain toast or crackers"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:26.3982965",
+                    "lastUpdateDate": "2025-06-15T16:49:26.3982965"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 41,
+                "dietGroupId": 15,
+                "fullHeading": "Energy-Boosting Carbs",
+                "subHeading": "Fuel for early labor and metabolic demands",
+                "imageSrc": "carbs.png",
+                "importance": "Carbohydrates fuel muscles — including the uterus.",
+                "dietListDetails": [
+                    "Brown rice, oats, quinoa",
+                    "Sweet potatoes, corn, barley",
+                    "Whole grain toast or crackers"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 42,
+                "dietGroupId": 15,
+                "fullHeading": "Energy-Boosting Carbs",
+                "subHeading": "Fuel for early labor and metabolic demands",
+                "imageSrc": "carbs.png",
+                "importance": "Carbohydrates fuel muscles — including the uterus.",
+                "dietListDetails": [
+                    "Brown rice, oats, quinoa",
+                    "Sweet potatoes, corn, barley",
+                    "Whole grain toast or crackers"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:26.3982965",
+                "lastUpdateDate": "2025-06-15T16:49:26.3982965"
+            }
+        ]
+    },
+    {
+        "group": {
+            "id": 16,
+            "title": "Others",
+            "type": "Pregnancy",
+            "coverImageSrc": "other_cover.png",
+            "weeks": [
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42
+            ],
+            "status": 4,
+            "createData": "2025-06-15T16:49:26.6346786",
+            "lastUpdateDate": "2025-06-15T16:49:26.6346789",
+            "dietItems": [
+                {
+                    "id": 43,
+                    "dietGroupId": 16,
+                    "fullHeading": "Labor-Preparing Foods",
+                    "subHeading": "May support cervical ripening and easier labor",
+                    "imageSrc": "",
+                    "importance": "Some studies suggest dates may reduce labor duration and interventions.",
+                    "dietListDetails": [
+                        "Dates (6 daily from Week 36)",
+                        "Red raspberry leaf tea (consult OB)",
+                        "Pineapple, papaya (in moderation)"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 44,
+                    "dietGroupId": 16,
+                    "fullHeading": "Hydrating & Calming",
+                    "subHeading": "Supports amniotic fluid and stress balance",
+                    "imageSrc": "",
+                    "importance": "Hydration helps prevent cramps and keeps contractions effective.",
+                    "dietListDetails": [
+                        "Water (2.5+ liters daily)",
+                        "Coconut water",
+                        "Herbal teas (mint, chamomile)"
+                    ],
+                    "status": 0,
+                    "createData": "2025-06-15T16:34:19.67769",
+                    "lastUpdateDate": "2025-06-15T16:34:19.67769"
+                },
+                {
+                    "id": 45,
+                    "dietGroupId": 16,
+                    "fullHeading": "Labor-Preparing Foods",
+                    "subHeading": "May support cervical ripening and easier labor",
+                    "imageSrc": "",
+                    "importance": "Some studies suggest dates may reduce labor duration and interventions.",
+                    "dietListDetails": [
+                        "Dates (6 daily from Week 36)",
+                        "Red raspberry leaf tea (consult OB)",
+                        "Pineapple, papaya (in moderation)"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:27.5279665",
+                    "lastUpdateDate": "2025-06-15T16:49:27.5279667"
+                },
+                {
+                    "id": 46,
+                    "dietGroupId": 16,
+                    "fullHeading": "Hydrating & Calming",
+                    "subHeading": "Supports amniotic fluid and stress balance",
+                    "imageSrc": "",
+                    "importance": "Hydration helps prevent cramps and keeps contractions effective.",
+                    "dietListDetails": [
+                        "Water (2.5+ liters daily)",
+                        "Coconut water",
+                        "Herbal teas (mint, chamomile)"
+                    ],
+                    "status": 4,
+                    "createData": "2025-06-15T16:49:27.5279669",
+                    "lastUpdateDate": "2025-06-15T16:49:27.527967"
+                }
+            ]
+        },
+        "items": [
+            {
+                "id": 43,
+                "dietGroupId": 16,
+                "fullHeading": "Labor-Preparing Foods",
+                "subHeading": "May support cervical ripening and easier labor",
+                "imageSrc": "",
+                "importance": "Some studies suggest dates may reduce labor duration and interventions.",
+                "dietListDetails": [
+                    "Dates (6 daily from Week 36)",
+                    "Red raspberry leaf tea (consult OB)",
+                    "Pineapple, papaya (in moderation)"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 44,
+                "dietGroupId": 16,
+                "fullHeading": "Hydrating & Calming",
+                "subHeading": "Supports amniotic fluid and stress balance",
+                "imageSrc": "",
+                "importance": "Hydration helps prevent cramps and keeps contractions effective.",
+                "dietListDetails": [
+                    "Water (2.5+ liters daily)",
+                    "Coconut water",
+                    "Herbal teas (mint, chamomile)"
+                ],
+                "status": 0,
+                "createData": "2025-06-15T16:34:19.67769",
+                "lastUpdateDate": "2025-06-15T16:34:19.67769"
+            },
+            {
+                "id": 45,
+                "dietGroupId": 16,
+                "fullHeading": "Labor-Preparing Foods",
+                "subHeading": "May support cervical ripening and easier labor",
+                "imageSrc": "",
+                "importance": "Some studies suggest dates may reduce labor duration and interventions.",
+                "dietListDetails": [
+                    "Dates (6 daily from Week 36)",
+                    "Red raspberry leaf tea (consult OB)",
+                    "Pineapple, papaya (in moderation)"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:27.5279665",
+                "lastUpdateDate": "2025-06-15T16:49:27.5279667"
+            },
+            {
+                "id": 46,
+                "dietGroupId": 16,
+                "fullHeading": "Hydrating & Calming",
+                "subHeading": "Supports amniotic fluid and stress balance",
+                "imageSrc": "",
+                "importance": "Hydration helps prevent cramps and keeps contractions effective.",
+                "dietListDetails": [
+                    "Water (2.5+ liters daily)",
+                    "Coconut water",
+                    "Herbal teas (mint, chamomile)"
+                ],
+                "status": 4,
+                "createData": "2025-06-15T16:49:27.5279669",
+                "lastUpdateDate": "2025-06-15T16:49:27.527967"
+            }
+        ]
+    }
+]

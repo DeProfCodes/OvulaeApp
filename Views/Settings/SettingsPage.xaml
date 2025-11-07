@@ -1,0 +1,850 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Settings.SettingsPage"
+    Background="White"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:dashModals="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Settings"
+    x:DataType="vm:SettingsViewModel">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style
+                x:Key="SettingsMenuItem"
+                TargetType="Border">
+                <Setter
+                    Property="BackgroundColor"
+                    Value="Transparent" />
+                <Setter
+                    Property="StrokeShape"
+                    Value="RoundRectangle 10" />
+                <Setter
+                    Property="Padding"
+                    Value="5,10" />
+                <Setter
+                    Property="Stroke"
+                    Value="Transparent" />
+                <Setter
+                    Property="Margin"
+                    Value="0,5,0,0" />
+            </Style>
+            <Style
+                x:Key="MenuDivider"
+                TargetType="Border">
+                <Setter
+                    Property="HeightRequest"
+                    Value="0.35" />
+                <Setter
+                    Property="Background"
+                    Value="{StaticResource Black}" />
+                <Setter
+                    Property="Opacity"
+                    Value="0.5" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="Fill" />
+                <Setter
+                    Property="Margin"
+                    Value="35,0,10,0" />
+            </Style>
+            <Style
+                x:Key="SettingsIconStyle"
+                TargetType="Image">
+                <Setter
+                    Property="WidthRequest"
+                    Value="18" />
+                <Setter
+                    Property="HeightRequest"
+                    Value="18" />
+                <Setter
+                    Property="Aspect"
+                    Value="AspectFit" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="Grid.Column"
+                    Value="0" />
+            </Style>
+            <Style
+                x:Key="ChevronIconStyle"
+                TargetType="Image">
+                <Setter
+                    Property="Grid.Column"
+                    Value="2" />
+                <Setter
+                    Property="Source"
+                    Value="right_chev_thin.png" />
+                <Setter
+                    Property="WidthRequest"
+                    Value="14" />
+                <Setter
+                    Property="HeightRequest"
+                    Value="14" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="End" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="Aspect"
+                    Value="AspectFit" />
+            </Style>
+            <Style
+                x:Key="SettingsLabelStyle"
+                TargetType="Label">
+                <Setter
+                    Property="Grid.Column"
+                    Value="1" />
+                <Setter
+                    Property="Margin"
+                    Value="10,-2,0,0" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="FontSize"
+                    Value="16" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+                    <VerticalStackLayout
+                        Padding="15,0">
+
+                        <!-- PROFILE HEADER -->
+                        <Label
+                            Text="Manage Settings"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            TextColor="{x:StaticResource ThemeClr3}"
+                            Margin="10,10,0,10"
+                            HorizontalOptions="Start" />
+
+                        <Border
+                            BackgroundColor="{StaticResource ThemeClrMain}"
+                            Stroke="Transparent"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="10,20">
+                            <HorizontalStackLayout
+                                Spacing="20"
+                                VerticalOptions="Center">
+                                <Image
+                                    Source="user.png"
+                                    WidthRequest="40"
+                                    HeightRequest="40"
+                                    Aspect="AspectFill" />
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="{Binding FullName}"
+                                        FontSize="20"
+                                        FontAttributes="Bold"
+                                        TextColor="White" />
+                                    <Label
+                                        Text="{Binding Email}"
+                                        FontSize="16"
+                                        TextColor="{StaticResource Gray600}" />
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                        </Border>
+
+                        <!-- GENERAL SETTINGS -->
+                        <Border
+                            BackgroundColor="{StaticResource ThemeLightGray}"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="10,15"
+                            Stroke="Transparent"
+                            Margin="0,10,0,10">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.3"
+                                    Offset="0,4"
+                                    Radius="6" />
+                            </Border.Shadow>
+                            <VerticalStackLayout
+                                Spacing="0">
+                                <Label
+                                    Text="General Settings"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    TextColor="{StaticResource ThemeClrMainDark}" />
+
+                                <!-- Personal Info -->
+                                <Border
+                                    x:Name="PersonalInfoBorder"
+                                    Style="{StaticResource SettingsMenuItem}"
+                                    StyleId="PersonalInfo">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="settings_profile.png"
+                                            Style="{StaticResource SettingsIconStyle}"
+                                            />
+                                        <Label
+                                            Text="Personal Information"
+                                            Style="{StaticResource SettingsLabelStyle}"  />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference PersonalInfoBorder}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                                
+                                <Border
+                                    Style="{StaticResource MenuDivider}" />
+
+                                <!-- Health Profile -->
+                                <Border
+                                    x:Name="HealthProfileBorder"
+                                    Style="{StaticResource SettingsMenuItem}"
+                                    StyleId="HealthProfile">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="settings_health.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Health Profile"
+                                            Style="{StaticResource SettingsLabelStyle}"  />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference HealthProfileBorder}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+
+                                <Border
+                                    Style="{StaticResource MenuDivider}" />
+
+                                <!-- Premium -->
+                                <Border
+                                    x:Name="PremiumBorder"
+                                    Style="{StaticResource SettingsMenuItem}"
+                                    StyleId="Premium">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="settings_membership.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Premium Membership"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference PremiumBorder}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                                
+                                <Border
+                                    Style="{StaticResource MenuDivider}" />
+
+                                <!-- Affiliate -->
+                                <Border
+                                    x:Name="AffiliateBorder"
+                                    Style="{StaticResource SettingsMenuItem}"
+                                    StyleId="Affiliate">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="settings_affiliate.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Affiliate Settings"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference AffiliateBorder}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+
+                                <Border
+                                    Style="{StaticResource MenuDivider}" />
+
+                                <!-- Partner Sharing -->
+                                <Border
+                                    x:Name="PartnerSharingBorder"
+                                    Style="{StaticResource SettingsMenuItem}"
+                                    StyleId="PartnerSharing">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="partner_sharing_purple_icon.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Partner Sharing"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference PartnerSharingBorder}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- PREGNANCY SETTINGS -->
+                        <Border
+                            BackgroundColor="{StaticResource ThemeLightGray}"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="10,10"
+                            Stroke="Transparent"
+                            Margin="0,10,0,0"
+                            IsVisible="{Binding ShowPregnancySettings}">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.3"
+                                    Offset="0,4"
+                                    Radius="6" />
+                            </Border.Shadow>
+                            <VerticalStackLayout
+                                Spacing="0">
+                                <Label
+                                    Text="Pregnancy Settings"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    TextColor="{StaticResource ThemeClrMainDark}"
+                                    Padding="5,0,0,0" />
+
+                                <Border
+                                    x:Name="PregnancyProfileBorder"
+                                    Style="{StaticResource SettingsMenuItem}"
+                                    StyleId="PregnancyProfile">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="settings_pregnancy_profile.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Pregnancy Profile"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference PregnancyProfileBorder}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                                
+                                <Border
+                                    Style="{StaticResource MenuDivider}" 
+                                    IsVisible="False"/>
+
+                                <Border
+                                    x:Name="PregnancyBabyInfoBorder"
+                                    Style="{StaticResource SettingsMenuItem}"
+                                    StyleId="PregnancyBabyInfo"
+                                    IsVisible="False">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="settings_pregnancy_baby.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Baby Details"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference PregnancyBabyInfoBorder}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                                
+                                <Border
+                                    Style="{StaticResource MenuDivider}" />
+
+                                <Border
+                                    x:Name="PregnancyNotificationsBorder"
+                                    Style="{StaticResource SettingsMenuItem}"
+                                    StyleId="PregnancyNotifications">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="bell.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Pregnancy Notifications"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference PregnancyNotificationsBorder}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- PERIOD SETTINGS -->
+                        <Border
+                            BackgroundColor="{StaticResource ThemeLightGray}"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="10"
+                            Stroke="Transparent"
+                            IsVisible="{Binding ShowPeriodSettings}"
+                            Margin="0,10,0,0">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.3"
+                                    Offset="0,4"
+                                    Radius="6" />
+                            </Border.Shadow>
+                            <VerticalStackLayout
+                                Spacing="0">
+                                <Label
+                                    Text="Period Tracker"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    TextColor="{StaticResource ThemeClrMainDark}"
+                                    Margin="5,0" />
+
+                                <Border
+                                    x:Name="PeriodCycleInfoItem"
+                                    StyleId="PeriodCycleInfo"
+                                    Style="{StaticResource SettingsMenuItem}">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="calendar.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Cycle Information"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference PeriodCycleInfoItem}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                                
+                                <Border
+                                    Style="{StaticResource MenuDivider}" />
+
+                                <Border
+                                    x:Name="PeriodNotificationsBorder"
+                                    Style="{StaticResource SettingsMenuItem}"
+                                    StyleId="PeriodNotifications">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="bell.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Pregnancy Notifications"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference PeriodNotificationsBorder}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                               
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- OVULATION SETTINGS -->
+                        <Border
+                            BackgroundColor="{StaticResource ThemeLightGray}"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="10"
+                            Stroke="Transparent"
+                            IsVisible="{Binding ShowOvulationSettings}"
+                            Margin="0,10,0,0">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.3"
+                                    Offset="0,4"
+                                    Radius="6" />
+                            </Border.Shadow>
+                            <VerticalStackLayout
+                                Spacing="0">
+                                <Label
+                                    Text="Ovulation Tracker"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    TextColor="{StaticResource ThemeClrMainDark}"
+                                    Margin="5,0" />
+
+                                <Border
+                                    x:Name="OvulationCycleInfoItem"
+                                    StyleId="OvulationCycleInfo"
+                                    Style="{StaticResource SettingsMenuItem}">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="calendar.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Cycle Information"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference OvulationCycleInfoItem}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                                <Border
+                                    Style="{StaticResource MenuDivider}" />
+
+                                <Border
+                                    x:Name="OvulationNotificationsBorder"
+                                    Style="{StaticResource SettingsMenuItem}"
+                                    StyleId="OvulationNotifications">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="bell.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Pregnancy Notifications"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference OvulationNotificationsBorder}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- MENOPAUSE SETTINGS -->
+                        <Border
+                            IsVisible="{Binding ShowMenopauseSettings}"
+                            BackgroundColor="{StaticResource ThemeLightGray}"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="10,10"
+                            Stroke="Transparent"
+                            Margin="0,10,0,0">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.3"
+                                    Offset="0,4"
+                                    Radius="6" />
+                            </Border.Shadow>
+                            <VerticalStackLayout
+                                Spacing="0">
+                                <Label
+                                    Text="Menopause Settings"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    TextColor="{StaticResource ThemeClrMainDark}"
+                                    Padding="5,0,0,0" />
+
+                                <!-- Menopause Profile -->
+                                <Border
+                                    x:Name="MenopauseProfileBorder"
+                                    Style="{StaticResource SettingsMenuItem}"
+                                    StyleId="MenopauseProfile">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="menopause_icon.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Menopause Profile"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference MenopauseProfileBorder}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+
+                                <Border
+                                    Style="{StaticResource MenuDivider}" />
+
+                                <!-- Menopause Notifications -->
+                                <Border
+                                    x:Name="MenopauseNotificationsBorder"
+                                    Style="{StaticResource SettingsMenuItem}"
+                                    StyleId="MenopauseNotifications">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="bell.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Menopause Notifications"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference MenopauseNotificationsBorder}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                            </VerticalStackLayout>
+                        </Border>
+                        
+                        <!-- MORE SETTINGS -->
+                        <Border
+                            BackgroundColor="{StaticResource ThemeLightGray}"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="10"
+                            Stroke="Transparent"
+                            Margin="0,20,0,10">
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity="0.2"
+                                    Offset="0,4"
+                                    Radius="6" />
+                            </Border.Shadow>
+                            <VerticalStackLayout
+                                Spacing="0">
+                                <Label
+                                    Text="More Settings"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    TextColor="{StaticResource ThemeClrMainDark}"
+                                    Margin="5,0" />
+
+                                <Border
+                                    x:Name="SecurityItem"
+                                    StyleId="Security"
+                                    Style="{StaticResource SettingsMenuItem}">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="settings_security.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Privacy &amp; Security"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference SecurityItem}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                                <Border
+                                    Style="{StaticResource MenuDivider}" />
+
+                                <Border
+                                    x:Name="TermsItem"
+                                    StyleId="Terms"
+                                    Style="{StaticResource SettingsMenuItem}">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="settings_terms.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Terms of use"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference TermsItem}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                                
+                                <Border
+                                    Style="{StaticResource MenuDivider}" />
+
+                                <Border
+                                    x:Name="AboutItem"
+                                    StyleId="About"
+                                    Style="{StaticResource SettingsMenuItem}">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="about_purple_icon.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="About"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference AboutItem}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                                
+                                <Border
+                                    Style="{StaticResource MenuDivider}" />
+
+                                <Border
+                                    x:Name="HelpItem"
+                                    StyleId="Help"
+                                    Style="{StaticResource SettingsMenuItem}">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="help_purple_icon.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Help"
+                                            Style="{StaticResource SettingsLabelStyle}" />
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NavigateToSettingCommand}"
+                                            CommandParameter="{x:Reference HelpItem}" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+
+                                <Border
+                                    Style="{StaticResource MenuDivider}" />
+
+                                <Border
+                                    x:Name="LogoutItem"
+                                    Style="{StaticResource SettingsMenuItem}">
+                                    <Grid
+                                        ColumnDefinitions="Auto,*,Auto">
+                                        <Image
+                                            Source="settings_logout.png"
+                                            Style="{StaticResource SettingsIconStyle}" />
+                                        <Label
+                                            Text="Log Out"
+                                            Style="{StaticResource SettingsLabelStyle}"
+                                            TextColor="DarkRed"
+                                            FontAttributes="Bold"/>
+                                        <Image
+                                            Style="{StaticResource ChevronIconStyle}" />
+                                    </Grid>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="LogoutTapped" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                            </VerticalStackLayout>
+                        </Border>
+
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="None" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

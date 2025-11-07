@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Splashscreen"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    x:Class="OvulaeApp.Views.Splashscreen.SplashscreenRenderPage"
+    Shell.NavBarIsVisible="False"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    x:DataType="vm:SplashscreenViewModel">
+
+    <ContentPage.Background>
+        <LinearGradientBrush
+            StartPoint="1,0"
+            EndPoint="0,1">
+            <GradientStop
+                Color="{StaticResource ThemeClrMainLight}"
+                Offset="0.4" />
+            <GradientStop
+                Color="{StaticResource ThemeClrPurple}"
+                Offset="0.7" />
+            <!-- Soft pink -->
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    
+    <AbsoluteLayout>
+
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="*,Auto,Auto"
+                Padding="20,30,20,0">
+
+                <!-- Scrollable Content -->
+                <ScrollView
+                    Grid.Row="0">
+                    <VerticalStackLayout
+                        Spacing="25">
+                        <Label
+                            Text="{Binding Title}"
+                            Style="{StaticResource SubHeadline}"
+                            TextColor="{StaticResource ThemeClrMainDark}"
+                            SemanticProperties.HeadingLevel="Level1" />
+
+                        <Label
+                            Text="{Binding Subtitle}"
+                            Style="{StaticResource MediumText}"
+                            FontAttributes="Italic"
+                            LineHeight="1.2"
+                            HorizontalOptions="CenterAndExpand"
+                            HorizontalTextAlignment="Center" />
+
+                        <Border
+                            StrokeShape="RoundRectangle 20"
+                            Background="Transparent"
+                            Stroke="Transparent"
+                            Padding="20"
+                            HorizontalOptions="Center">
+                            <Image
+                                Source="{Binding Image}"
+                                Aspect="AspectFit" />
+                        </Border>
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <customCtrl:DotSlider
+                    DotCount="{Binding TotalSteps}"
+                    ActiveIndex="{Binding CurrentIndex}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    VisualMode="Loader"
+                    InactiveDotSize="25"
+                    LoaderHeight="3"
+                    ActiveDotColor="{StaticResource ThemeClr3}"
+                    InactiveDotColor="{StaticResource Gray200}"
+                    Margin="0,0,0,20" />
+
+                <!-- Bottom Button -->
+                <VerticalStackLayout
+                    Grid.Row="2">
+                    <Button
+                        Text="Next"
+                        Style="{StaticResource ThemeButton}"
+                        Margin="0,0,0,10"
+                        Command="{Binding NextCommand}"
+                        IsVisible="False"/>
+                    <custButtons:GradientButton
+                        Text="NEXT"
+                        Grid.Row="2"
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        IsFullWidth="True"
+                        ButtonPadding="20,13"
+                        Margin="0,0,0,10"
+                        Stroke="Transparent"
+                        StrokeThickness="1.5"
+                        CornerRadius="15"
+                        ShadowOpacity="0.4"
+                        ButtonTextColor="White"
+                        GradientColorLeft="{StaticResource ThemeClr3}"
+                        GradientColorRight="{StaticResource ThemeClr2}"
+                        Tapped="NextButtonTapped"/>
+
+                    <Label
+                        Text="Login"
+                        Style="{StaticResource NavigationLabel}"
+                        TextColor="{StaticResource ThemeClr3}"
+                        FontAttributes="Bold"
+                        Margin="-20,-5,-20,10"
+                        Padding="20,5,20,1">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding NavigateToLoginCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </VerticalStackLayout>
+
+            </Grid>
+        </ContentView>
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

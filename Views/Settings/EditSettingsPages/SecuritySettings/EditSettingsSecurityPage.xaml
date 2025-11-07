@@ -1,0 +1,1134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Settings.EditSettingsPages.SecuritySettings.EditSettingsSecurityPage"
+    Background="White"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashModals="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:sharedComp="clr-namespace:OvulaeApp.Views.Components.Shared"
+    xmlns:viewmodels="clr-namespace:OvulaeApp.ViewModels.Authentication"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Settings">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <viewmodels:PhoneEntryViewModel
+                x:Key="PhoneEntryViewModel" />
+            <Style
+                x:Key="MenuDivider"
+                TargetType="Border">
+                <Setter
+                    Property="HeightRequest"
+                    Value="0.35" />
+                <Setter
+                    Property="Stroke"
+                    Value="{StaticResource ThemeClrMain}" />
+                <Setter
+                    Property="Opacity"
+                    Value="1" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="Fill" />
+                <Setter
+                    Property="Margin"
+                    Value="20,0,10,0" />
+            </Style>
+            <Style
+                x:Key="SettingsGroupContainerStyle"
+                TargetType="Border">
+                <Setter
+                    Property="BackgroundColor"
+                    Value="{StaticResource ThemeLightGray}" />
+                <Setter
+                    Property="Stroke"
+                    Value="Transparent" />
+                <Setter
+                    Property="Padding"
+                    Value="10,15,10,10" />
+                <Setter
+                    Property="Margin"
+                    Value="0,10,0,10" />
+                <Setter
+                    Property="StrokeShape">
+                    <Setter.Value>
+                        <RoundRectangle
+                            CornerRadius="10" />
+                    </Setter.Value>
+                </Setter>
+                <Setter
+                    Property="Shadow">
+                    <Setter.Value>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.3"
+                            Offset="0,4"
+                            Radius="6" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style
+                x:Key="DetailsSeparator"
+                TargetType="Border">
+                <Setter
+                    Property="HeightRequest"
+                    Value="0.3" />
+                <Setter
+                    Property="Stroke"
+                    Value="{StaticResource ThemeClr3}" />
+                <Setter
+                    Property="Background"
+                    Value="{StaticResource ThemeClr3}" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="Fill" />
+                <Setter
+                    Property="Opacity"
+                    Value="0.45" />
+            </Style>
+            <Style
+                x:Key="FormLabelStyle"
+                TargetType="Label">
+                <Setter
+                    Property="FontSize"
+                    Value="13" />
+                <Setter
+                    Property="TextColor"
+                    Value="{StaticResource Black}" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="HorizontalTextAlignment"
+                    Value="Center" />
+            </Style>
+            <Style
+                x:Key="ChangeButtonStyle"
+                TargetType="custButtons:GradientButton">
+                <Setter
+                    Property="FontAttributes"
+                    Value="Bold" />
+                <Setter
+                    Property="FontSize"
+                    Value="10" />
+                <Setter
+                    Property="ButtonPadding"
+                    Value="5,5" />
+                <Setter
+                    Property="Margin"
+                    Value="0,0,0,0" />
+                <Setter
+                    Property="Stroke"
+                    Value="Transparent" />
+                <Setter
+                    Property="StrokeThickness"
+                    Value="1.5" />
+                <Setter
+                    Property="CornerRadius"
+                    Value="5" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="End" />
+                <Setter
+                    Property="ShadowOpacity"
+                    Value="0.1" />
+                <Setter
+                    Property="ButtonTextColor"
+                    Value="White" />
+                <Setter
+                    Property="GradientColorLeft"
+                    Value="{StaticResource ThemeClr2}" />
+                <Setter
+                    Property="GradientColorRight"
+                    Value="{StaticResource ThemeClr2}" />
+            </Style>
+            <Style
+                x:Key="FormLabelValueStyle"
+                TargetType="Label">
+                <Setter
+                    Property="FontSize"
+                    Value="13" />
+                <Setter
+                    Property="FontAttributes"
+                    Value="Bold,Italic" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="HorizontalTextAlignment"
+                    Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+
+                    <Grid
+                        RowDefinitions="Auto,*"
+                        Background="whitesmoke">
+
+                        <!-- Page Title -->
+                        <VerticalStackLayout
+                            Grid.Row="0">
+                            <HorizontalStackLayout
+                                Padding="10,10">
+                                <Border
+                                    x:Name="BackBtnBorder"
+                                    Padding="5,5"
+                                    StrokeShape="RoundRectangle 10"
+                                    Background="Transparent"
+                                    Margin="0,0,0,0"
+                                    Stroke="Transparent">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="BackButtonTapped" />
+                                    </Border.GestureRecognizers>
+                                    <Image
+                                        Source="left_chev_edge.png"
+                                        WidthRequest="20"
+                                        HeightRequest="20" />
+                                </Border>
+                                <Label
+                                    x:Name="PageTitleLabel"
+                                    Text="Security &amp; Privacy"
+                                    FontSize="24"
+                                    FontAttributes="Bold"
+                                    VerticalOptions="Center"
+                                    Margin="10,-3,0,0"
+                                    TextColor="{StaticResource ThemeClrMain}" />
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Grid.Row="1"
+                            Padding="15,0"
+                            Margin="0,0"
+                            Background="#ECE5DD">
+
+                            <Border
+                                Style="{StaticResource SettingsGroupContainerStyle}">
+                                <VerticalStackLayout
+                                    Spacing="12"
+                                    Padding="10,10,10,20">
+
+                                    <Label
+                                        Text="Privacy &amp; Security"
+                                        FontSize="18"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center" />
+
+                                    <Label
+                                        Text="Manage how we protect your account and personal information."
+                                        FontSize="13"
+                                        TextColor="Gray"
+                                        HorizontalTextAlignment="Center"
+                                        Margin="10,0,10,0" />
+
+                                    <custButtons:GradientButton
+                                        Text="Change Your Password"
+                                        FontAttributes="Bold"
+                                        Margin="0,25,0,0"
+                                        FontSize="14"
+                                        ButtonPadding="0,12"
+                                        Stroke="Transparent"
+                                        StrokeThickness="1.5"
+                                        CornerRadius="25"
+                                        WidthRequest="270"
+                                        HorizontalOptions="Center"
+                                        ShadowOpacity="0.4"
+                                        IsFullWidth="True"
+                                        ButtonTextColor="White"
+                                        GradientColorLeft="{StaticResource ThemeClr3}"
+                                        GradientColorRight="{StaticResource ThemeClr2}"
+                                        TappedWithParameter="RequestSecurityChange"
+                                        CommandParameter="Password" />
+
+                                    <custButtons:GradientButton
+                                        Text="Change Your Phone Number"
+                                        FontAttributes="Bold"
+                                        FontSize="14"
+                                        ButtonPadding="0,12"
+                                        Stroke="Transparent"
+                                        StrokeThickness="1.5"
+                                        CornerRadius="25"
+                                        WidthRequest="270"
+                                        Background="Transparent"
+                                        HorizontalOptions="Center"
+                                        ShadowOpacity="0.4"
+                                        ButtonTextColor="White"
+                                        Margin="0,5,0,0"
+                                        GradientColorLeft="{StaticResource ThemeClr3}"
+                                        GradientColorRight="{StaticResource ThemeClr2}"
+                                        TappedWithParameter="RequestSecurityChange"
+                                        CommandParameter="Mobile" />
+
+                                    <custButtons:GradientButton
+                                        Text="Enable Two-Factor Authentication"
+                                        FontAttributes="Bold"
+                                        FontSize="14"
+                                        ButtonPadding="0,12"
+                                        Stroke="Transparent"
+                                        StrokeThickness="1.5"
+                                        CornerRadius="25"
+                                        WidthRequest="270"
+                                        HorizontalOptions="Center"
+                                        ShadowOpacity="0.4"
+                                        Margin="0,5,0,0"
+                                        ButtonTextColor="White"
+                                        GradientColorLeft="{StaticResource ThemeClr3}"
+                                        GradientColorRight="{StaticResource ThemeClr2}"
+                                        IsEnabled="False"
+                                        IsVisible="False" />
+
+                                    <custButtons:GradientButton
+                                        Text="DELETE MY ACCOUNT"
+                                        FontAttributes="Bold"
+                                        FontSize="14"
+                                        ButtonPadding="0,12"
+                                        Stroke="Transparent"
+                                        StrokeThickness="1.5"
+                                        CornerRadius="25"
+                                        WidthRequest="270"
+                                        HorizontalOptions="Center"
+                                        ShadowOpacity="0.4"
+                                        Margin="0,5,0,0"
+                                        ButtonTextColor="White"
+                                        GradientColorLeft="Crimson"
+                                        GradientColorRight="Tomato"
+                                        IsEnabled="True"
+                                        Tapped="DeleteMyAccountTapped"/>
+
+                                    <custButtons:GradientButton
+                                        Text="View our Privacy Policy"
+                                        FontAttributes="Bold"
+                                        FontSize="14"
+                                        ButtonPadding="5,5"
+                                        Stroke="Transparent"
+                                        StrokeThickness="1.5"
+                                        CornerRadius="5"
+                                        HorizontalOptions="Center"
+                                        ShadowOpacity="0.0"
+                                        Margin="0,0,0,0"
+                                        ButtonTextColor="{StaticResource ThemeClrMainDark}"
+                                        GradientColorLeft="Transparent"
+                                        GradientColorRight="Transparent"
+                                        Tapped="OpenPrivacyPolicy" />
+
+                                </VerticalStackLayout>
+                            </Border>
+
+                            <Border
+                                x:Name="FormBorder"
+                                Style="{StaticResource SettingsGroupContainerStyle}"
+                                IsVisible="False">
+
+                                <VerticalStackLayout>
+
+                                    <Grid
+                                        ColumnDefinitions="*,Auto">
+
+                                        <Label
+                                            Grid.Column="0"
+                                            Text="Edit Security Details"
+                                            FontSize="16"
+                                            FontAttributes="Bold"
+                                            VerticalOptions="Center"
+                                            Margin="0,0,-30,0"
+                                            HorizontalOptions="Center"
+                                            TextColor="{StaticResource ThemeClrMain}" />
+
+                                        <custButtons:GradientButton
+                                            Text="X"
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            FontSize="10"
+                                            Padding="5,0"
+                                            Margin="0,0,0,0"
+                                            Stroke="Transparent"
+                                            StrokeThickness="1.5"
+                                            CornerRadius="5"
+                                            HorizontalOptions="End"
+                                            ShadowOpacity="0"
+                                            ButtonTextColor="White"
+                                            GradientColorLeft="{StaticResource ThemeClrMain}"
+                                            GradientColorRight="{StaticResource ThemeClrMain}"
+                                            IsButtonEnabled="True"
+                                            IsVisible="True"
+                                            Tapped="CloseModalPage" />
+                                    </Grid>
+
+                                    <VerticalStackLayout
+                                        Padding="5,0">
+
+                                        <Border
+                                            Style="{StaticResource DetailsSeparator}"
+                                            Margin="0,10,0,0" />
+
+                                        <VerticalStackLayout
+                                            Margin="0,20,0,0"
+                                            x:Name="PasswordChangeEdit"
+                                            IsVisible="False">
+
+                                            <Label
+                                                Text="How would you like to receive password reset OTP?"
+                                                FontSize="14"
+                                                FontAttributes="Bold"
+                                                HorizontalTextAlignment="Center"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <HorizontalStackLayout
+                                                Margin="0,20,0,0"
+                                                HorizontalOptions="Center">
+                                                <Label
+                                                    Text="Please Select"
+                                                    FontSize="12"
+                                                    VerticalOptions="Center"
+                                                    TextColor="{StaticResource Black}" />
+
+                                                <sharedComp:SelectComponent2
+                                                    x:Name="MessageOTPType"
+                                                    OptionList="Email|SMS"
+                                                    SelectionChanged="MessageOTPType_SelectionChanged"
+                                                    IsHorizontal="True"
+                                                    OptionSpacing="4"
+                                                    EnableWrapping="True"
+                                                    OptionFontSize="14"
+                                                    BorderPadding="15,5"
+                                                    SelectionType="Single"
+                                                    OptionCornerRadius="5"
+                                                    Margin="10,0,0,0" />
+                                            </HorizontalStackLayout>
+
+                                            <Label
+                                                x:Name="MessageMethodHint"
+                                                Text=""
+                                                FontSize="14"
+                                                FontAttributes="Bold,Italic"
+                                                HorizontalTextAlignment="Center"
+                                                Margin="0,20,0,10"
+                                                TextColor="{StaticResource ThemeClr3}" />
+
+                                            <custButtons:GradientButton
+                                                Text="Send OTP"
+                                                FontAttributes="Bold"
+                                                FontSize="13"
+                                                ButtonPadding="30,8"
+                                                Margin="0,5,0,10"
+                                                Stroke="Transparent"
+                                                StrokeThickness="1.5"
+                                                CornerRadius="25"
+                                                HorizontalOptions="Center"
+                                                ShadowOpacity="0.4"
+                                                ButtonTextColor="White"
+                                                GradientColorLeft="{StaticResource ThemeClr3}"
+                                                GradientColorRight="{StaticResource ThemeClr2}"
+                                                TappedWithParameter="SendSecurityReset"
+                                                CommandParameter="Password" />
+
+                                        </VerticalStackLayout>
+
+                                        <VerticalStackLayout
+                                            x:Name="MobileChangeEdit"
+                                            IsVisible="False">
+
+                                            <Label
+                                                Text="You will receive OTP on your email reset code to change you mobile number"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                Margin="0,15,0,20"
+                                                HorizontalTextAlignment="Center"
+                                                TextColor="{StaticResource Black}" />
+
+                                            <custButtons:GradientButton
+                                                Text="Send OTP"
+                                                FontAttributes="Bold"
+                                                FontSize="13"
+                                                ButtonPadding="25,10"
+                                                Margin="0,5,0,10"
+                                                Stroke="Transparent"
+                                                StrokeThickness="1.5"
+                                                CornerRadius="25"
+                                                HorizontalOptions="Center"
+                                                ShadowOpacity="0.4"
+                                                ButtonTextColor="White"
+                                                GradientColorLeft="{StaticResource ThemeClr3}"
+                                                GradientColorRight="{StaticResource ThemeClr2}"
+                                                IsButtonEnabled="{Binding SaveButtonEnabled}"
+                                                TappedWithParameter="SendSecurityReset"
+                                                CommandParameter="Password" />
+                                        </VerticalStackLayout>
+
+                                        <VerticalStackLayout
+                                            x:Name="ResetOTP"
+                                            IsVisible="False">
+
+                                            <VerticalStackLayout
+                                                x:Name="OTPResetGroup"
+                                                IsVisible="False"
+                                                Margin="0,10,0,0">
+
+                                                <Label
+                                                    Text="Enter OTP below"
+                                                    FontSize="12"
+                                                    FontAttributes="Bold"
+                                                    TextColor="{StaticResource Black}" />
+
+                                                <HorizontalStackLayout
+                                                    Spacing="6"
+                                                    HorizontalOptions="Center"
+                                                    Margin="0,5,0,0">
+                                                    <Border
+                                                        Stroke="{StaticResource ThemeClrMain}"
+                                                        StrokeThickness="1"
+                                                        StrokeShape="RoundRectangle 8"
+                                                        Padding="10,0,10,0"
+                                                        Margin="0"
+                                                        WidthRequest="45"
+                                                        HeightRequest="45">
+
+                                                        <Entry
+                                                            x:Name="Otp1"
+                                                            MaxLength="6"
+                                                            TextChanged="OtpEntry_TextChanged"
+                                                            Keyboard="Numeric"
+                                                            Placeholder=""
+                                                            TextColor="{StaticResource ThemeClrMain}"
+                                                            Margin="0,0,0,-4"
+                                                            FontSize="25"
+                                                            FontAttributes="Bold"
+                                                            HorizontalTextAlignment="Center" />
+                                                    </Border>
+                                                    <Border
+                                                        Stroke="{StaticResource ThemeClrMain}"
+                                                        StrokeThickness="1"
+                                                        StrokeShape="RoundRectangle 8"
+                                                        Padding="10,0,10,0"
+                                                        Margin="0"
+                                                        WidthRequest="45"
+                                                        HeightRequest="45">
+
+                                                        <Entry
+                                                            x:Name="Otp2"
+                                                            MaxLength="1"
+                                                            TextChanged="OtpEntry_TextChanged"
+                                                            Keyboard="Numeric"
+                                                            Placeholder=""
+                                                            TextColor="{StaticResource ThemeClrMain}"
+                                                            Margin="0,0,0,-4"
+                                                            FontSize="25"
+                                                            FontAttributes="Bold"
+                                                            HorizontalTextAlignment="Center" />
+                                                    </Border>
+                                                    <Border
+                                                        Stroke="{StaticResource ThemeClrMain}"
+                                                        StrokeThickness="1"
+                                                        StrokeShape="RoundRectangle 8"
+                                                        Padding="10,0,10,0"
+                                                        Margin="0"
+                                                        WidthRequest="45"
+                                                        HeightRequest="45">
+
+                                                        <Entry
+                                                            x:Name="Otp3"
+                                                            MaxLength="1"
+                                                            TextChanged="OtpEntry_TextChanged"
+                                                            Keyboard="Numeric"
+                                                            Placeholder=""
+                                                            TextColor="{StaticResource ThemeClrMain}"
+                                                            Margin="0,0,0,-4"
+                                                            FontSize="25"
+                                                            FontAttributes="Bold"
+                                                            HorizontalTextAlignment="Center" />
+                                                    </Border>
+                                                    <Border
+                                                        Stroke="{StaticResource ThemeClrMain}"
+                                                        StrokeThickness="1"
+                                                        StrokeShape="RoundRectangle 8"
+                                                        Padding="10,0,10,0"
+                                                        Margin="0"
+                                                        WidthRequest="45"
+                                                        HeightRequest="45">
+
+                                                        <Entry
+                                                            x:Name="Otp4"
+                                                            MaxLength="1"
+                                                            TextChanged="OtpEntry_TextChanged"
+                                                            Keyboard="Numeric"
+                                                            Placeholder=""
+                                                            TextColor="{StaticResource ThemeClrMain}"
+                                                            Margin="0,0,0,-4"
+                                                            FontSize="25"
+                                                            FontAttributes="Bold"
+                                                            HorizontalTextAlignment="Center" />
+                                                    </Border>
+                                                    <Border
+                                                        Stroke="{StaticResource ThemeClrMain}"
+                                                        StrokeThickness="1"
+                                                        StrokeShape="RoundRectangle 8"
+                                                        Padding="10,0,10,0"
+                                                        Margin="0"
+                                                        WidthRequest="45"
+                                                        HeightRequest="45">
+
+                                                        <Entry
+                                                            x:Name="Otp5"
+                                                            MaxLength="1"
+                                                            TextChanged="OtpEntry_TextChanged"
+                                                            Keyboard="Numeric"
+                                                            Placeholder=""
+                                                            TextColor="{StaticResource ThemeClrMain}"
+                                                            Margin="0,0,0,-4"
+                                                            FontSize="25"
+                                                            FontAttributes="Bold"
+                                                            HorizontalTextAlignment="Center" />
+                                                    </Border>
+                                                    <Border
+                                                        Stroke="{StaticResource ThemeClrMain}"
+                                                        StrokeThickness="1"
+                                                        StrokeShape="RoundRectangle 8"
+                                                        Padding="10,0,10,0"
+                                                        Margin="0"
+                                                        WidthRequest="45"
+                                                        HeightRequest="45">
+
+                                                        <Entry
+                                                            x:Name="Otp6"
+                                                            Visual="Default"
+                                                            MaxLength="1"
+                                                            TextChanged="OtpEntry_TextChanged"
+                                                            Keyboard="Numeric"
+                                                            Placeholder=""
+                                                            TextColor="{StaticResource ThemeClrMain}"
+                                                            Margin="0,0,0,-4"
+                                                            FontSize="25"
+                                                            FontAttributes="Bold"
+                                                            HorizontalTextAlignment="Center" />
+                                                    </Border>
+                                                </HorizontalStackLayout>
+
+                                                <HorizontalStackLayout
+                                                    HorizontalOptions="Center"
+                                                    Margin="0,20,0,0">
+                                                    <Label
+                                                        Text="Didn't receive OTP? "
+                                                        FontSize="12"
+                                                        FontAttributes="Bold"
+                                                        TextColor="{StaticResource Black}" />
+                                                    <custButtons:GradientButton
+                                                        Text="RE-SEND OTP"
+                                                        FontAttributes="Bold"
+                                                        FontSize="13"
+                                                        ButtonPadding="5,3"
+                                                        Margin="0,-5,0,0"
+                                                        Stroke="Transparent"
+                                                        StrokeThickness="1.5"
+                                                        CornerRadius="0"
+                                                        HorizontalOptions="Center"
+                                                        ShadowOpacity="0.0"
+                                                        ButtonTextColor="{StaticResource ThemeClr2}"
+                                                        GradientColorLeft="Transparent"
+                                                        GradientColorRight="Transparent"
+                                                        Tapped="ResendOTPButton_Tapped" />
+                                                </HorizontalStackLayout>
+
+                                                <custButtons:GradientButton
+                                                    x:Name="ConfirmOTPBtn"
+                                                    Text="Confirm OTP"
+                                                    FontAttributes="Bold"
+                                                    FontSize="13"
+                                                    ButtonPadding="20,10"
+                                                    Margin="0,15,0,0"
+                                                    Stroke="Transparent"
+                                                    StrokeThickness="1.5"
+                                                    CornerRadius="25"
+                                                    HorizontalOptions="Center"
+                                                    IsVisible="True"
+                                                    ShadowOpacity="0.4"
+                                                    ButtonTextColor="White"
+                                                    GradientColorLeft="{StaticResource ThemeClr3}"
+                                                    GradientColorRight="{StaticResource ThemeClr2}"
+                                                    IsButtonEnabled="False"
+                                                    Tapped="ConfirmOTPBtn_Tapped" />
+
+                                            </VerticalStackLayout>
+
+                                            <VerticalStackLayout
+                                                x:Name="NewPasswordReset"
+                                                IsVisible="False">
+
+                                                <VerticalStackLayout
+                                                    Margin="0,10,0,0">
+                                                    <VerticalStackLayout>
+                                                        <Label
+                                                            Text="Reset Password"
+                                                            FontAttributes="Bold"
+                                                            FontSize="16"
+                                                            HorizontalOptions="Center"
+                                                            FontFamily="Inter"
+                                                            TextColor="Black" />
+                                                        <Label
+                                                            Text="Set the new password for your account"
+                                                            FontSize="12"
+                                                            HorizontalOptions="Center"
+                                                            TextColor="Black"
+                                                            Margin="0,7,0,7" />
+
+                                                    </VerticalStackLayout>
+                                                    <VerticalStackLayout
+                                                        Margin="0,10,0,0">
+                                                        <Border
+                                                            Stroke="{StaticResource ThemeClrMain}"
+                                                            StrokeThickness="2"
+                                                            StrokeShape="RoundRectangle 8"
+                                                            Padding="10,0,10,2"
+                                                            HeightRequest="45"
+                                                            Margin="0">
+
+                                                            <Grid
+                                                                ColumnDefinitions="*,Auto"
+                                                                Padding="0,0,0,0">
+                                                                <Entry
+                                                                    x:Name="NewPasswordEntry"
+                                                                    Placeholder="Enter your password"
+                                                                    TextColor="{StaticResource ThemeGray2}"
+                                                                    FontSize="14"
+                                                                    IsPassword="True"
+                                                                    TextChanged="OnPasswordTextChanged" />
+                                                                <Border
+                                                                    Grid.Column="1"
+                                                                    Margin="0,0,0,0"
+                                                                    Padding="5,0"
+                                                                    Stroke="Transparent">
+                                                                    <Border.GestureRecognizers>
+                                                                        <TapGestureRecognizer
+                                                                            Tapped="TogglePasswordVisibilityTapped" />
+                                                                    </Border.GestureRecognizers>
+                                                                    <Image
+                                                                        x:Name="PasswordCover"
+                                                                        Source="eye_show.png"
+                                                                        HeightRequest="16" />
+                                                                </Border>
+                                                            </Grid>
+                                                        </Border>
+                                                        <VerticalStackLayout
+                                                            Margin="5,0,0,0">
+                                                            <Grid
+                                                                ColumnDefinitions="Auto, *">
+                                                                <Grid
+                                                                    Grid.Column="0"
+                                                                    WidthRequest="7"
+                                                                    HeightRequest="7"
+                                                                    HorizontalOptions="Start"
+                                                                    VerticalOptions="Start"
+                                                                    Margin="0,4,5,0">
+
+                                                                    <!-- Background circle -->
+                                                                    <Ellipse
+                                                                        x:Name="EllipseLength"
+                                                                        Fill="Transparent"
+                                                                        Stroke="{StaticResource ThemeGray2}" />
+                                                                </Grid>
+                                                                <Label
+                                                                    x:Name="LabelLength"
+                                                                    Grid.Column="1"
+                                                                    Text="At least 8 Characters"
+                                                                    FontSize="10"
+                                                                    VerticalOptions="Center"
+                                                                    FontAttributes="Bold"
+                                                                    TextColor="#B8B6BE" />
+                                                            </Grid>
+                                                            <Grid
+                                                                ColumnDefinitions="Auto, *">
+                                                                <Grid
+                                                                    Grid.Column="0"
+                                                                    WidthRequest="7"
+                                                                    HeightRequest="7"
+                                                                    HorizontalOptions="Start"
+                                                                    VerticalOptions="Start"
+                                                                    Margin="0,4,5,0">
+
+                                                                    <!-- Background circle -->
+                                                                    <Ellipse
+                                                                        x:Name="EllipseNumber"
+                                                                        Fill="Transparent"
+                                                                        Stroke="{StaticResource ThemeGray2}" />
+                                                                </Grid>
+                                                                <Label
+                                                                    x:Name="LabelNumber"
+                                                                    Grid.Column="1"
+                                                                    Text="Contains a number"
+                                                                    FontSize="10"
+                                                                    VerticalOptions="Center"
+                                                                    FontAttributes="Bold"
+                                                                    TextColor="#B8B6BE" />
+                                                            </Grid>
+                                                            <Grid
+                                                                ColumnDefinitions="Auto, *">
+                                                                <Grid
+                                                                    Grid.Column="0"
+                                                                    WidthRequest="7"
+                                                                    HeightRequest="7"
+                                                                    HorizontalOptions="Start"
+                                                                    VerticalOptions="Start"
+                                                                    Margin="0,4,5,0">
+
+                                                                    <!-- Background circle -->
+                                                                    <Ellipse
+                                                                        x:Name="EllipseUpper"
+                                                                        Fill="Transparent"
+                                                                        Stroke="{StaticResource ThemeGray2}" />
+                                                                </Grid>
+                                                                <Label
+                                                                    x:Name="LabelUpper"
+                                                                    Grid.Column="1"
+                                                                    Text="Contains an uppercase letter"
+                                                                    FontSize="10"
+                                                                    VerticalOptions="Center"
+                                                                    FontAttributes="Bold"
+                                                                    TextColor="#B8B6BE" />
+                                                            </Grid>
+                                                            <Grid
+                                                                ColumnDefinitions="Auto, *">
+                                                                <Grid
+                                                                    Grid.Column="0"
+                                                                    WidthRequest="7"
+                                                                    HeightRequest="7"
+                                                                    HorizontalOptions="Start"
+                                                                    VerticalOptions="Start"
+                                                                    Margin="0,4,5,0">
+
+                                                                    <!-- Background circle -->
+                                                                    <Ellipse
+                                                                        x:Name="EllipseLower"
+                                                                        Fill="Transparent"
+                                                                        Stroke="{StaticResource ThemeGray2}" />
+                                                                </Grid>
+                                                                <Label
+                                                                    x:Name="LabelLower"
+                                                                    Grid.Column="1"
+                                                                    Text="Contains a lowercase letter"
+                                                                    FontSize="10"
+                                                                    VerticalOptions="Center"
+                                                                    FontAttributes="Bold"
+                                                                    TextColor="#B8B6BE" />
+                                                            </Grid>
+                                                            <Grid
+                                                                ColumnDefinitions="Auto, *">
+                                                                <Grid
+                                                                    Grid.Column="0"
+                                                                    WidthRequest="7"
+                                                                    HeightRequest="7"
+                                                                    HorizontalOptions="Start"
+                                                                    VerticalOptions="Start"
+                                                                    Margin="0,4,5,0">
+
+                                                                    <!-- Background circle -->
+                                                                    <Ellipse
+                                                                        x:Name="EllipseSpecial"
+                                                                        Fill="Transparent"
+                                                                        Stroke="{StaticResource ThemeGray2}" />
+                                                                </Grid>
+                                                                <Label
+                                                                    x:Name="LabelSpecial"
+                                                                    Grid.Column="1"
+                                                                    Text="Contains a special character"
+                                                                    FontSize="10"
+                                                                    VerticalOptions="Center"
+                                                                    FontAttributes="Bold"
+                                                                    TextColor="#B8B6BE" />
+                                                            </Grid>
+                                                        </VerticalStackLayout>
+                                                        <VerticalStackLayout>
+                                                            <Border
+                                                                Stroke="{StaticResource ThemeClrMain}"
+                                                                StrokeThickness="2"
+                                                                StrokeShape="RoundRectangle 8"
+                                                                Padding="10,2,10,2"
+                                                                Margin="0,10,0,0"
+                                                                HeightRequest="45">
+
+                                                                <Grid
+                                                                    ColumnDefinitions="*,Auto">
+                                                                    <Entry
+                                                                        x:Name="ConfirmPasswordEntry"
+                                                                        Placeholder="Confirm your password"
+                                                                        TextColor="{StaticResource ThemeGray2}"
+                                                                        FontSize="14"
+                                                                        IsPassword="True"
+                                                                        TextChanged="OnPasswordConfirmTextChanged" />
+                                                                    <Border
+                                                                        Grid.Column="1"
+                                                                        Margin="0,0,0,0"
+                                                                        Padding="5,0"
+                                                                        Stroke="Transparent">
+                                                                        <Border.GestureRecognizers>
+                                                                            <TapGestureRecognizer
+                                                                                Tapped="TogglePasswordVisibilityTapped" />
+                                                                        </Border.GestureRecognizers>
+                                                                        <Image
+                                                                            x:Name="PasswordCover2"
+                                                                            Source="eye_show.png"
+                                                                            HeightRequest="20" />
+                                                                    </Border>
+                                                                </Grid>
+                                                            </Border>
+                                                            <Label
+                                                                x:Name="PasswordValidation"
+                                                                Text="*Passwords do not match!"
+                                                                Style="{StaticResource ValidationLabel}"
+                                                                Padding="5,0,5,0"
+                                                                IsVisible="False" />
+                                                        </VerticalStackLayout>
+                                                    </VerticalStackLayout>
+
+                                                </VerticalStackLayout>
+
+                                            </VerticalStackLayout>
+
+                                            <VerticalStackLayout
+                                                x:Name="PhoneNumberChange"
+                                                IsVisible="False"
+                                                Margin="0,15,0,0">
+                                                <Label
+                                                    Text="Enter new Phone Number"
+                                                    TextColor="Black"
+                                                    FontSize="16"
+                                                    FontAttributes="Bold"
+                                                    HorizontalTextAlignment="Center"
+                                                    Margin="0,0,0,20"
+                                                    Padding="5,0,5,0" />
+                                                <Border
+                                                    Stroke="{StaticResource ThemeClrMain}"
+                                                    StrokeThickness="1"
+                                                    StrokeShape="RoundRectangle 8"
+                                                    Padding="0,0"
+                                                    HeightRequest="45">
+
+                                                    <Grid
+                                                        ColumnDefinitions="Auto,*"
+                                                        VerticalOptions="Center"
+                                                        Padding="0,0"
+                                                        BindingContext="{StaticResource PhoneEntryViewModel}">
+                                                        <!-- Country Code Picker -->
+                                                        <Border
+                                                            Background="{StaticResource ThemeGray}"
+                                                            Stroke="Transparent"
+                                                            Padding="5,0,0,0">
+                                                            <Picker
+                                                                x:Name="CountryCode"
+                                                                ItemsSource="{Binding CountryCodes}"
+                                                                SelectedItem="{Binding SelectedCountryCode}"
+                                                                FontSize="12"
+                                                                WidthRequest="60"
+                                                                Title="Code"
+                                                                TextColor="Black" />
+                                                        </Border>
+                                                        <!-- Phone Number Entry -->
+                                                        <Entry
+                                                            x:Name="PhoneNumberEntry"
+                                                            Grid.Column="1"
+                                                            Placeholder="Phone Number"
+                                                            Text="{Binding PhoneNumber}"
+                                                            FontSize="14"
+                                                            Keyboard="Telephone"
+                                                            MaxLength="15"
+                                                            TextColor="Black"
+                                                            BackgroundColor="Transparent"
+                                                            Margin="5,0,0,0"
+                                                            TextChanged="PhoneNumberEntry_TextChanged" />
+                                                    </Grid>
+                                                </Border>
+                                                <Label
+                                                    Grid.Column="0"
+                                                    x:Name="PhoneValidationLabel"
+                                                    Text="*Enter a valid number"
+                                                    Style="{StaticResource ValidationLabel}"
+                                                    Padding="5,0,5,0"
+                                                    IsVisible="False" />
+                                            </VerticalStackLayout>
+
+                                            <Border
+                                                Margin="0,20,0,0"
+                                                Style="{StaticResource DetailsSeparator}" />
+
+                                            <custButtons:GradientButton
+                                                x:Name="UpdateSecurityBtn"
+                                                Text="Update Settings"
+                                                FontAttributes="Bold"
+                                                FontSize="13"
+                                                ButtonPadding="20,10"
+                                                Margin="0,10,0,10"
+                                                Stroke="Transparent"
+                                                StrokeThickness="1.5"
+                                                CornerRadius="5"
+                                                HorizontalOptions="Center"
+                                                ShadowOpacity="0.0"
+                                                ButtonTextColor="White"
+                                                GradientColorLeft="{StaticResource ThemeClrMain}"
+                                                GradientColorRight="{StaticResource ThemeClrMain}"
+                                                IsButtonEnabled="False"
+                                                IsVisible="False"
+                                                Tapped="UpdateSecurityBtn_Tapped" />
+
+                                        </VerticalStackLayout>
+
+                                        <VerticalStackLayout
+                                            x:Name="DeleteMyAccount"
+                                            IsVisible="False">
+
+                                            <VerticalStackLayout>
+                                                <Label
+                                                    Text="Delete My Account"
+                                                    FontAttributes="Bold"
+                                                    FontSize="16"
+                                                    HorizontalOptions="Center"
+                                                    FontFamily="Inter"
+                                                    TextColor="Black" />
+                                                <Label
+                                                    Text="Onnce deleted cannot be revived@!"
+                                                    FontSize="12"
+                                                    HorizontalOptions="Center"
+                                                    TextColor="Black"
+                                                    Margin="0,7,0,7" />
+
+                                            </VerticalStackLayout>
+                                            <VerticalStackLayout
+                                                Margin="0,10,0,0">
+                                                <Label
+                                                    Text="Enter your password to confirm Delete"
+                                                    FontSize="12"
+                                                    HorizontalOptions="Center"
+                                                    TextColor="Black"
+                                                    Margin="0,7,0,7" />
+                                                <Border
+                                                    Stroke="{StaticResource ThemeClrMain}"
+                                                    StrokeThickness="2"
+                                                    StrokeShape="RoundRectangle 8"
+                                                    Padding="10,0,10,2"
+                                                    HeightRequest="45"
+                                                    Margin="0">
+
+                                                    <Entry
+                                                        x:Name="Password"
+                                                        Placeholder="Type your password"
+                                                        TextColor="{StaticResource ThemeGray2}"
+                                                        FontSize="14" />
+                                                </Border>
+                                            </VerticalStackLayout>
+
+                                            <Border
+                                                Margin="0,20,0,0"
+                                                Style="{StaticResource DetailsSeparator}" />
+
+                                            <custButtons:GradientButton
+                                                Text="Confirm DELETE account"
+                                                FontAttributes="Bold"
+                                                FontSize="13"
+                                                ButtonPadding="20,10"
+                                                Margin="0,10,0,10"
+                                                Stroke="Transparent"
+                                                StrokeThickness="1.5"
+                                                CornerRadius="5"
+                                                HorizontalOptions="Center"
+                                                ShadowOpacity="0.0"
+                                                ButtonTextColor="White"
+                                                GradientColorLeft="{StaticResource ThemeClrMain}"
+                                                GradientColorRight="{StaticResource ThemeClrMain}"
+                                                IsButtonEnabled="False"
+                                                IsVisible="False"
+                                                Tapped="DeleteMyAccountTapped" />
+
+                                        </VerticalStackLayout>
+
+                                    </VerticalStackLayout>
+
+                                </VerticalStackLayout>
+
+                            </Border>
+
+                        </VerticalStackLayout>
+
+                    </Grid>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="None" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:MultiPurposeChangeModal
+            x:Name="ChangeRequestModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+
+</ContentPage>

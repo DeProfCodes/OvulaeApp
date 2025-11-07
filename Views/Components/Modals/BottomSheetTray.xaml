@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Components.Modals.BottomSheetTray"
+    IsVisible="False"
+    BackgroundColor="#80000000">
+    <!-- Semi-transparent backdrop -->
+
+    <Grid
+        VerticalOptions="End"
+        x:Name="TrayContainer"
+        TranslationY="500">
+        <!-- Off-screen initially -->
+
+        <Border
+            StrokeShape="RoundRectangle 30,30,0,0"
+            Padding="10"
+            Margin="0,0,0,-2"
+            MaximumHeightRequest="330">
+            <!-- adjust to taste -->
+            <Border.Shadow>
+                <Shadow
+                    Brush="Black"
+                    Opacity="0.25"
+                    Offset="0,4"
+                    Radius="10" />
+            </Border.Shadow>
+            <Border.Background>
+                <LinearGradientBrush
+                    StartPoint="0,0"
+                    EndPoint="1,1">
+                    <GradientStop
+                        Color="#f8f1fc"
+                        Offset="0.0" />
+                    <GradientStop
+                        Color="{StaticResource ThemeClrPurple}"
+                        Offset="1.0" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition
+                        Height="Auto" />
+                    <RowDefinition
+                        Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border
+                    Stroke="Transparent">
+                    <!-- Drag Handle -->
+                    <Grid ColumnDefinitions="*,Auto">
+                        <BoxView
+                            Grid.Column="0"
+                            HeightRequest="5"
+                            WidthRequest="40"
+                            Color="{StaticResource ThemeClr2}"
+                            CornerRadius="2.5"
+                            HorizontalOptions="Center"
+                            Margin="20,5,0,10" />
+                        <Border
+                            Grid.Column="1"
+                            Padding="6,3"
+                            StrokeShape="RoundRectangle 6"
+                            Stroke="Transparent"
+                            Background="{StaticResource ThemeClrMain}">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="CloseTrayTapped" />
+                            </Border.GestureRecognizers>
+                            <Label
+                                Text="X"
+                                FontSize="8"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                />
+                        </Border>
+                    </Grid>
+                </Border>
+                
+                <!-- Content Slot -->
+                <ContentPresenter
+                    Grid.Row="1"
+                    x:Name="ContentSlot" />
+            </Grid>
+        </Border>
+    </Grid>
+</ContentView>

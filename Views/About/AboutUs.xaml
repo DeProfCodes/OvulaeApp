@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.About.AboutUsPage"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp3="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    BackgroundColor="White"
+    Shell.NavBarIsVisible="False">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <Grid
+            RowDefinitions="Auto,*,Auto"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+
+            <!-- Header -->
+            <dashTabs:DashboardHeader
+                Grid.Row="0"
+                x:Name="Header"
+                LeftIconType="Menu" />
+
+            <!-- Body -->
+            <ScrollView
+                Padding="20"
+                Grid.Row="1">
+                <VerticalStackLayout
+                    Spacing="20">
+
+                    <!-- Title -->
+                    <Label
+                        Text="💜 About Ovulae"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+
+                    <!-- Subtitle -->
+                    <Label
+                        Text="Empowering Your Wellness Journey"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#B5A4DE" />
+
+                    <!-- Introduction -->
+                    <Label
+                        Text="Ovulae is a smart, comprehensive mobile app designed to support women at every stage of their reproductive health journey — from menstruation and fertility tracking to pregnancy guidance, symptom logging, and perimenopause support."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <!-- Key Pillars -->
+                    <Label
+                        Text="What We Stand For 🌸"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+
+                    <VerticalStackLayout
+                        Spacing="5">
+                        <Label
+                            Text="🔒 Privacy-first design — your data, your control."
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="👩‍⚕️ Science-backed insights and daily guidance."
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="💡 Simple, elegant, and intuitive interface."
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="🤝 Community-driven support and education."
+                            FontSize="14"
+                            TextColor="Black" />
+                    </VerticalStackLayout>
+
+                    <!-- Mission -->
+                    <Label
+                        Text="Our Mission ✨"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+
+                    <Label
+                        Text="To empower women globally by providing intelligent tools to understand their bodies, improve wellness, and confidently navigate all phases of reproductive health."
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <!-- Core Features -->
+                    <Label
+                        Text="Key Features of Ovulae 📱"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+
+                    <VerticalStackLayout
+                        Spacing="5">
+                        <Label
+                            Text="📆 Track periods, ovulation, and pregnancy with confidence."
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="📊 Log symptoms, moods, and wellness daily."
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="👩‍⚕️ Export health data for your doctor easily."
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="💞 Share your journey securely with your partner."
+                            FontSize="14"
+                            TextColor="Black" />
+                        <Label
+                            Text="🔔 Receive personalized insights and reminders."
+                            FontSize="14"
+                            TextColor="Black" />
+                    </VerticalStackLayout>
+
+                    <!-- Contact -->
+                    <Label
+                        Text="Contact Us 📬"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#805AD5" />
+
+                    <Label
+                        Text="Have questions, feedback, or need support? We’d love to hear from you!"
+                        FontSize="14"
+                        TextColor="Black" />
+
+                    <Border
+                        Stroke="#E0DFF3"
+                        StrokeThickness="1"
+                        BackgroundColor="#F5F3FF"
+                        Padding="15"
+                        StrokeShape="RoundRectangle 10">
+                        <VerticalStackLayout
+                            Spacing="5">
+                            <HorizontalStackLayout>
+                                <Label
+                                    Text="📧 Email: "
+                                    FontSize="14"
+                                    TextColor="Black" />
+                                <Label
+                                    Text="support@ovulae.com"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource ThemeClr2}"
+                                    TextDecorations="Underline">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="OnEmailTapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout
+                                Margin="0,8,0,0">
+                                <Label
+                                    Text="🌐 Website: "
+                                    FontSize="14"
+                                    TextColor="Black" />
+                                <Label
+                                    Text="https://ovulae.com"
+                                    FontSize="14"
+                                    FontAttributes="Italic"
+                                    TextDecorations="Underline"
+                                    TextColor="{StaticResource ThemeClr2}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="OnWebsiteTapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Logo -->
+                    <Image
+                        Source="logo_icon.png"
+                        WidthRequest="50"
+                        Aspect="AspectFit"
+                        HorizontalOptions="Center"
+                        Margin="0,20,0,0" />
+                </VerticalStackLayout>
+            </ScrollView>
+            <!-- Bottom Tabs -->
+            <dashTabs:DashboardBottomTab
+                Grid.Row="2"
+                x:Name="BaseTabs"
+                Padding="0,0"
+                ActiveTab="None"
+                IsVisible="{Binding ShowTabs}" />
+        </Grid>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp3:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.PregnancyTracker.Dashboard.PregnancyDashboardBabyInfoPage"
+    Background="White"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.PregnancyTracker"
+    x:DataType="vm:PregnancyBabyDevelopmentViewModel">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="*,Auto">
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="0">
+                    <VerticalStackLayout>
+
+                        <Border
+                            Margin="0,-1"
+                            Padding="0,0"
+                            HeightRequest="300">
+                            <Border.Background>
+                                <RadialGradientBrush
+                                    Center="0.5,0.5"
+                                    Radius="0.5">
+                                    <GradientStop
+                                        Color="#72231d"
+                                        Offset="0.0" />
+                                    <GradientStop
+                                        Color="#c2422b"
+                                        Offset="0.5" />
+                                    <GradientStop
+                                        Color="#72231d"
+                                        Offset="1.0" />
+                                </RadialGradientBrush>
+                            </Border.Background>
+                            <VerticalStackLayout>
+                                <!-- Weeks Nav Border -->
+                                <Border
+                                    Background="Transparent"
+                                    Margin="0,3,0,0"
+                                    ZIndex="1000"
+                                    Stroke="Transparent"
+                                    Padding="5,3">
+                                    <Grid
+                                        ColumnDefinitions="*,Auto,*">
+                                        <VerticalStackLayout
+                                            x:Name="PrevWeekBtn"
+                                            Grid.Column="0"
+                                            HorizontalOptions="Start">
+                                            <Border
+                                                x:Name="PrevWeekBtnBrd"
+                                                HeightRequest="35"
+                                                WidthRequest="35"
+                                                Stroke="White"
+                                                StrokeThickness="2"
+                                                Padding="2,4"
+                                                Margin="0,0,0,0"
+                                                StrokeShape="RoundRectangle 8">
+                                                <Border.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Tapped="NavigateWeeks_Tapped" />
+                                                </Border.GestureRecognizers>
+                                                <Image
+                                                    Source="left_chev_white.png"
+                                                    Aspect="AspectFit"
+                                                    HorizontalOptions="CenterAndExpand" />
+                                            </Border>
+                                            <Label
+                                                x:Name="PrevWeekText"
+                                                FontSize="10"
+                                                HorizontalTextAlignment="Center"
+                                                FontAttributes="Italic"
+                                                TextTransform="Uppercase"
+                                                TextColor="white"
+                                                Margin="0,0,0,0" />
+                                        </VerticalStackLayout>
+                                        <Label
+                                            x:Name="CurrentWeek"
+                                            Grid.Column="1"
+                                            FontSize="35"
+                                            FontAttributes="Bold"
+                                            FontFamily="FredokaBold"
+                                            HorizontalTextAlignment="Center"
+                                            TextTransform="Uppercase"
+                                            VerticalOptions="Center"
+                                            TextColor="white"
+                                            Margin="0,0,0,0" />
+                                        <VerticalStackLayout
+                                            Grid.Column="2"
+                                            x:Name="NextWeekBtn"
+                                            HorizontalOptions="End">
+                                            <Border
+                                                x:Name="NextWeekBtnBrd"
+                                                HeightRequest="35"
+                                                WidthRequest="35"
+                                                Stroke="White"
+                                                StrokeThickness="2"
+                                                Padding="2,4"
+                                                StrokeShape="RoundRectangle 8">
+                                                <Border.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Tapped="NavigateWeeks_Tapped" />
+                                                </Border.GestureRecognizers>
+                                                <Image
+                                                    Source="right_chev_white.png"
+                                                    Aspect="AspectFit"
+                                                    HorizontalOptions="CenterAndExpand" />
+                                            </Border>
+                                            <Label
+                                                x:Name="NextWeekText"
+                                                FontSize="10"
+                                                HorizontalTextAlignment="Center"
+                                                FontAttributes="Italic"
+                                                TextTransform="Uppercase"
+                                                TextColor="white"
+                                                Margin="0,0,0,0" />
+                                        </VerticalStackLayout>
+                                    </Grid>
+                                </Border>
+                                <!-- Dashboard Image -->
+
+                                <Image
+                                    Source="{Binding HeroImage}"
+                                    Aspect="AspectFit"
+                                    HeightRequest="250"
+                                    HorizontalOptions="CenterAndExpand" />
+
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- Baby Size -->
+                        <VerticalStackLayout
+                            Margin="0,20,0,0">
+                            <Label
+                                Text="{Binding MainData.Title}"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                Margin="20,0,20,10" />
+
+                            <HorizontalStackLayout
+                                HorizontalOptions="Center"
+                                Margin="0,0,0,10">
+                                <Label
+                                    Text="{Binding BabySize}"
+                                    FontSize="12"
+                                    TextColor="Black"
+                                    FontAttributes="Italic"
+                                    Margin="0,0,0,0" />
+                            </HorizontalStackLayout>
+
+                            <Border
+                                Padding="20,13"
+                                Margin="0,5,0,0"
+                                Background="{StaticResource ThemeLightGray}"
+                                Stroke="Transparent">
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="About Baby"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center"
+                                        TextColor="{StaticResource ThemeClr2}"
+                                        Margin="0,0,0,20" />
+                                    <!-- Baby Intro Information -->
+                                    <CollectionView
+                                        ItemsSource="{Binding MainData.BabyIntroInfo}">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate
+                                                x:DataType="x:String">
+                                                <Label
+                                                    Text="{Binding .}"
+                                                    FontSize="12"
+                                                    LineBreakMode="WordWrap"
+                                                    TextColor="{StaticResource Black}"
+                                                    Margin="0,0,0,15" />
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+
+                                    <!-- Key Features -->
+                                    <VerticalStackLayout
+                                        Margin="0,10,0,0">
+                                        <Label
+                                            Text="Key Features This Week:"
+                                            FontSize="14"
+                                            FontAttributes="Bold"
+                                            TextColor="black"
+                                            Margin="0,0,0,0" />
+                                        <CollectionView
+                                            ItemsSource="{Binding MainData.Features}"
+                                            Margin="0,10,0,0">
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate
+                                                    x:DataType="x:String">
+                                                    <Label
+                                                        Text="{Binding .}"
+                                                        FontSize="12"
+                                                        LineBreakMode="WordWrap"
+                                                        TextColor="{StaticResource ThemeGray2}"
+                                                        Margin="0,0,0,10" />
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                    </VerticalStackLayout>
+
+
+
+
+                                </VerticalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <!-- Mother Changes -->
+                        <Border
+                            Padding="20,13"
+                            Margin="0,-3,0,0"
+                            Background="{StaticResource ThemeClrLight2}"
+                            Stroke="Transparent">
+                            <VerticalStackLayout
+                                Margin="0,0,0,10">
+                                <Label
+                                    Text="Mother Changes"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="Center"
+                                    TextColor="{StaticResource Black}"
+                                    Margin="0,0,0,0" />
+                                <CollectionView
+                                    ItemsSource="{Binding MotherChanges}"
+                                    Margin="0,10,0,0">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate
+                                            x:DataType="x:String">
+                                            <Label
+                                                Text="{Binding .}"
+                                                FontSize="12"
+                                                LineBreakMode="WordWrap"
+                                                TextColor="{StaticResource ThemeGray2}"
+                                                Margin="0,0,0,10" />
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- Did you know?  -->
+                        <VerticalStackLayout
+                            Margin="20,20,20,0"
+                            IsVisible="{Binding MainData.ShowDidYouKnow}">
+                            <Label
+                                Text="🧠 Did You Know?"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                Margin="0,0,20,0" />
+
+                            <!-- Baby Insights Information -->
+                            <CollectionView
+                                ItemsSource="{Binding MainData.Insights}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate
+                                        x:DataType="x:String">
+                                        <Label
+                                            Text="{Binding .}"
+                                            FontSize="12"
+                                            FontAttributes="Italic"
+                                            TextColor="{StaticResource ThemeGray2}"
+                                            Margin="0,20,20,0" />
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+                        </VerticalStackLayout>
+
+
+                        <!-- Information Approved  -->
+                        <VerticalStackLayout
+                            Margin="20,40,20,0"
+                            IsVisible="False">
+                            <Label
+                                Text="✅ This information has been reviewed and approved by:"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                FontFamily="Arial Black"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                Margin="0,0,20,0" />
+
+                            <Label
+                                Text="{Binding OurGynacologist}"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                TextColor="Black"
+                                Margin="0,20,20,0" />
+
+                            <Label
+                                Text="(Specialist in Maternal &amp; Fetal Health)"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                TextColor="Black"
+                                Margin="0,5,0,20" />
+
+                            <Image
+                                Source="logo_icon.png"
+                                WidthRequest="45"
+                                Aspect="AspectFit"
+                                Margin="0,20,0,20" />
+
+
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="1"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="Learn" />
+
+            </Grid>
+        </ContentView>
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashComp:DietDetailsModal
+            x:Name="DietModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

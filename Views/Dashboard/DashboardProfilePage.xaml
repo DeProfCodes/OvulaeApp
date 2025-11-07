@@ -1,0 +1,854 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Dashboard.DashboardProfilePage"
+    Background="White"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
+    xmlns:dashModals="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Shared"
+    x:DataType="vm:UserProfileViewModel">
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="Auto,*,Auto">
+
+                <!-- Header -->
+                <dashTabs:DashboardHeader
+                    Grid.Row="0"
+                    x:Name="Header"
+                    LeftIconType="Menu" />
+
+                <!-- Body -->
+                <ScrollView
+                    Grid.Row="1">
+                    <VerticalStackLayout
+                        BackgroundColor="{StaticResource ThemeLightGray}"
+                        Padding="10,0">
+
+                        <!-- PROFILE HEADER -->
+                        <Border
+                            BackgroundColor="{StaticResource ThemeLightGray}"
+                            Stroke="Transparent"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="0,20">
+                            <HorizontalStackLayout
+                                Spacing="20"
+                                VerticalOptions="Center">
+                                <Image
+                                    Source="profile2_icon.png"
+                                    WidthRequest="60"
+                                    HeightRequest="60"
+                                    Aspect="AspectFill" />
+                                <VerticalStackLayout>
+                                    <Label
+                                        x:Name="ProfileName"
+                                        Text="{Binding FullName}"
+                                        FontSize="24"
+                                        FontAttributes="Bold"
+                                        TextColor="Black" />
+                                    <Label
+                                        x:Name="ProfileEmail"
+                                        Text="{Binding Email}"
+                                        FontSize="16"
+                                        TextColor="Gray" />
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                        </Border>
+
+                        <!-- PREMIUM CARD -->
+                        <Border
+                            Background="{StaticResource ThemeClrMain}"
+                            Stroke="{StaticResource ThemeClr3}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 15"
+                            Padding="20,20,20,15"
+                            Margin="0,0,0,0">
+                            <VerticalStackLayout
+                                Spacing="5">
+                                <Label
+                                    Text="🌟 Premium Member"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource ThemeClr3}" />
+                                <Label
+                                    Text="Access to all features, priority support, and more."
+                                    FontSize="13"
+                                    TextColor="Black" />
+                                <Border
+                                    HorizontalOptions="Center"
+                                    Margin="0,15,0,0"
+                                    Stroke="{StaticResource ThemeClrPurple}"
+                                    StrokeThickness="1"
+                                    Background="{StaticResource ThemeClrPurple}"
+                                    StrokeShape="RoundRectangle 8"
+                                    Padding="10,5">
+                                    <HorizontalStackLayout>
+                                        <Image
+                                            Source="share_icon.png"
+                                            WidthRequest="14"
+                                            HeightRequest="14"
+                                            Aspect="AspectFill" />
+                                        <Label
+                                            Text="Share App"
+                                            FontSize="14"
+                                            Margin="5,0,0,0"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            TextColor="Black" />
+                                    </HorizontalStackLayout>
+                                </Border>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- DOCTOR AFFILIATE CARD -->
+                        <Border
+                            x:Name="DrCar"
+                            Background="#E6F0FA"
+                            Stroke="#3C82F0"
+                            StrokeThickness="2"
+                            StrokeShape="RoundRectangle 15"
+                            Padding="20"
+                            IsVisible="False">
+                            <VerticalStackLayout
+                                Spacing="5">
+                                <Label
+                                    Text="👨‍⚕️ Doctor Affiliate"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    TextColor="#3C82F0" />
+                                <Label
+                                    Text="Certified doctor partnered with Ovulae."
+                                    FontSize="13"
+                                    TextColor="Black" />
+
+                                <Label
+                                    Text="You have 17 Sub Affiliates"
+                                    FontSize="10"
+                                    FontAttributes="Italic"
+                                    TextColor="{StaticResource ThemeGray2}" />
+
+                                <HorizontalStackLayout
+                                    HorizontalOptions="Center">
+                                    <Border
+                                        HorizontalOptions="Center"
+                                        Margin="0,10,0,0"
+                                        Stroke="{StaticResource ThemeClr2}"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 8"
+                                        Padding="10,5">
+                                        <HorizontalStackLayout>
+                                            <Image
+                                                Source="share_icon.png"
+                                                WidthRequest="14"
+                                                HeightRequest="14"
+                                                Aspect="AspectFill" />
+                                            <Label
+                                                Text="Share App"
+                                                FontSize="16"
+                                                Margin="5,0,0,0"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Center"
+                                                TextColor="{StaticResource ThemeClr2}" />
+                                        </HorizontalStackLayout>
+                                    </Border>
+                                    <Border
+                                        HorizontalOptions="Center"
+                                        Margin="10,10,0,0"
+                                        Background="DeepSkyBlue"
+                                        Stroke="Transparent"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 8"
+                                        Padding="10,5">
+                                        <HorizontalStackLayout>
+                                            <Image
+                                                Source="TabsIcons/normal/profile_icon"
+                                                WidthRequest="15"
+                                                HeightRequest="15"
+                                                Aspect="AspectFill" />
+                                            <Label
+                                                Text="View Network"
+                                                FontSize="14"
+                                                Margin="5,0,0,0"
+                                                HorizontalOptions="Center"
+                                                TextColor="white" />
+                                        </HorizontalStackLayout>
+                                    </Border>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- AFFILIATE PARTNER CARD -->
+                        <Border
+                            x:Name="AffCard"
+                            Background="#EBFAF1"
+                            Stroke="#1DB954"
+                            StrokeThickness="2"
+                            StrokeShape="RoundRectangle 15"
+                            Padding="20"
+                            IsVisible="False">
+                            <VerticalStackLayout
+                                Spacing="5">
+                                <Label
+                                    Text="🤝 Affiliate Partner"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    TextColor="#1DB954" />
+                                <Label
+                                    Text="Helping others discover Ovulae. Earn rewards!"
+                                    FontSize="13"
+                                    TextColor="Black" />
+
+
+                                <Label
+                                    Text="You have 17 Sub Affiliates"
+                                    FontSize="10"
+                                    FontAttributes="Italic"
+                                    TextColor="{StaticResource ThemeGray2}" />
+
+                                <HorizontalStackLayout
+                                    HorizontalOptions="Center">
+                                    <Border
+                                        HorizontalOptions="Center"
+                                        Margin="0,10,0,0"
+                                        Stroke="{StaticResource ThemeClr2}"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 8"
+                                        Padding="10,5">
+                                        <HorizontalStackLayout>
+                                            <Image
+                                                Source="share_icon.png"
+                                                WidthRequest="14"
+                                                HeightRequest="14"
+                                                Aspect="AspectFill" />
+                                            <Label
+                                                Text="Share App"
+                                                FontSize="16"
+                                                Margin="5,0,0,0"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Center"
+                                                TextColor="{StaticResource ThemeClr2}" />
+                                        </HorizontalStackLayout>
+                                    </Border>
+                                    <Border
+                                        HorizontalOptions="Center"
+                                        Margin="10,10,0,0"
+                                        Background="SpringGreen"
+                                        Stroke="Transparent"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 8"
+                                        Padding="10,5">
+                                        <HorizontalStackLayout>
+                                            <Image
+                                                Source="profile_icon"
+                                                WidthRequest="15"
+                                                HeightRequest="15"
+                                                Aspect="AspectFill" />
+                                            <Label
+                                                Text="View Network"
+                                                FontSize="14"
+                                                Margin="5,0,0,0"
+                                                HorizontalOptions="Center"
+                                                TextColor="Black" />
+                                        </HorizontalStackLayout>
+                                    </Border>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- PERSONAL INFORMATION -->
+                        <Border
+                            x:Name="PregnancyInfo"
+                            IsVisible="False"
+                            BackgroundColor="White"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="15"
+                            Stroke="{StaticResource ThemeClrMain}"
+                            Margin="0,15,0,0">
+                            <VerticalStackLayout
+                                Spacing="10">
+                                <Label
+                                    Text="Personal Information"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    TextColor="Black" />
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Birth Year"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        x:Name="BirthYear"
+                                        Text="{Binding BirthYear}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Country"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        x:Name="Country"
+                                        Text="{Binding Country}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- CYCLE INFO -->
+                        <Border
+                            BackgroundColor="White"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="15"
+                            Stroke="{StaticResource ThemeClrMain}"
+                            Margin="0,20,0,10"
+                            IsVisible="{Binding ShowPeriodTrackerInfo}">
+                            <VerticalStackLayout
+                                Spacing="10">
+                                <Label
+                                    Text="Cycle Information"
+                                    FontAttributes="Bold"
+                                    FontSize="14"
+                                    TextColor="Black" />
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Text="Last Period"
+                                        Grid.Column="0"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        x:Name="LastPeriod"
+                                        Text="01 June 2025"
+                                        Grid.Column="1"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Text="Cycle Length"
+                                        Grid.Column="0"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        x:Name="CycleLength"
+                                        Text="28 Days"
+                                        Grid.Column="1"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Text="Period Duration"
+                                        Grid.Column="0"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        x:Name="PeriodLength"
+                                        Text="5 Days"
+                                        Grid.Column="1"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- Ovulation Info -->
+                        <Border
+                            StrokeShape="RoundRectangle 10"
+                            Padding="15"
+                            Stroke="{StaticResource ThemeClrMain}"
+                            BackgroundColor="White"
+                            Margin="0,20,0,15"
+                            IsVisible="{Binding ShowOvulationInfo}">
+                            <VerticalStackLayout
+                                Spacing="10">
+                                <Label
+                                    Text="Ovulation Tracker"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    TextColor="Black" />
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Trying to Conceive?"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="Yes"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Last Period"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding LastPeriodDate}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Cycle Length"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding CycleLength}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Fertile Window"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        x:Name="FertileWindow"
+                                        Grid.Column="1"
+                                        Text="{Binding FertileWindow}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Primary Goal"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        x:Name="PrimaryGoal"
+                                        Grid.Column="1"
+                                        Text="{Binding PrimaryGoal}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+                                
+                            </VerticalStackLayout>
+                        </Border>
+                        
+                        <!-- PREGNANCY PROFILE -->
+                        <Border
+                            x:Name="PregnancyProfile"
+                            BackgroundColor="White"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="15"
+                            Stroke="{StaticResource ThemeClrMain}"
+                            Margin="0,10,0,0"
+                            IsVisible="{Binding ShowPregnancyInfo}">
+                            <VerticalStackLayout
+                                Spacing="10">
+                                <Label
+                                    Text="Pregnancy Profile"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    TextColor="Black" />
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Gestational Age"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding GestationalAge}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Due Date"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding DueDate}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*"
+                                    IsVisible="False">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Baby Gender"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding BabyGender}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- MENOPAUSE PROFILE -->
+                        <Border
+                            x:Name="MenopauseProfile"
+                            BackgroundColor="White"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="15"
+                            Stroke="{StaticResource ThemeClrMain}"
+                            Margin="0,10,0,0"
+                            IsVisible="{Binding ShowMenopauseInfo}">
+                            <VerticalStackLayout
+                                Spacing="10">
+
+                                <Label
+                                    Text="Menopause Profile"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    TextColor="Black" />
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Text="Last Period"
+                                        Grid.Column="0"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding LastPeriodDate}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Text="Age"
+                                        Grid.Column="0"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        x:Name="MenopauseAge"
+                                        Grid.Column="1"
+                                        Text="{Binding BirthYear}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Text="Using Hormonal Treatment"
+                                        Grid.Column="0"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding HormonalTreatment}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Text="Irregular Periods"
+                                        Grid.Column="0"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding IrregularPeriods}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Text="Skipped Periods"
+                                        Grid.Column="0"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding SkippedPeriods}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Text="Hot Flashes"
+                                        Grid.Column="0"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding HotFlashes}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Text="Night Sweats"
+                                        Grid.Column="0"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding NightSweats}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Text="Mood Swings"
+                                        Grid.Column="0"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding MoodSwings}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+
+                            </VerticalStackLayout>
+                        </Border>
+                        
+                        <!-- HEALTH PROFILE -->
+                        <Border
+                            BackgroundColor="White"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="15"
+                            Stroke="{StaticResource ThemeClrMain}"
+                            Margin="0,10,0,20">
+                            <VerticalStackLayout
+                                Spacing="10">
+                                <Label
+                                    Text="Health Info"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    TextColor="Black" />
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Weight"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <HorizontalStackLayout
+                                        Grid.Column="1">
+                                        <Label
+                                            Text="{Binding Weight}"
+                                            FontSize="13"
+                                            TextColor="Black" />
+                                        <Label
+                                            Text="{Binding WeightMeasure}"
+                                            FontSize="13"
+                                            Margin="2,0,0,0"
+                                            TextColor="Black" />
+                                    </HorizontalStackLayout>
+
+                                </Grid>
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Height"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <HorizontalStackLayout
+                                        Grid.Column="1">
+                                        <Label
+                                            Text="{Binding Height}"
+                                            FontSize="13"
+                                            TextColor="Black" />
+                                        <Label
+                                            Text="{Binding HeightMeasure}"
+                                            Margin="2,0,0,0"
+                                            FontSize="13"
+                                            TextColor="Black" />
+                                    </HorizontalStackLayout>
+
+                                </Grid>
+
+                                <Grid
+                                    ColumnDefinitions="*,*">
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="Blood Group"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding BloodGroup}"
+                                        FontSize="13"
+                                        TextColor="Black" />
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- ACTIONS -->
+                        <Button
+                            Text="Edit Personal Details"
+                            BackgroundColor="{StaticResource ThemeClrMain}"
+                            TextColor="White"
+                            CornerRadius="10"
+                            FontAttributes="Bold"
+                            HeightRequest="45" 
+                            Clicked="EditPersonalDetailsTapped"/>
+                        <Button
+                            Text="Settings"
+                            BackgroundColor="White"
+                            BorderColor="Gold"
+                            BorderWidth="2"
+                            TextColor="Black"
+                            CornerRadius="10"
+                            Margin="0,10,0,0"
+                            HeightRequest="45"
+                            Clicked="SettingsTapped"/>
+                        <Button
+                            Text="Log Out"
+                            Margin="0,10,0,40"
+                            BackgroundColor="DarkRed"
+                            TextColor="White"
+                            CornerRadius="10"
+                            HeightRequest="45"
+                            Clicked="LogoutButtonTapped" />
+
+                        <!-- Legal Links -->
+                        <VerticalStackLayout
+                            HorizontalOptions="Center"
+                            Margin="0,-20,0,20"
+                            Spacing="15">
+
+                            <Label
+                                Text="Privacy Policy"
+                                FontSize="15"
+                                TextColor="DarkSlateBlue"
+                                TextDecorations="Underline"
+                                HorizontalOptions="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="OnPrivacyTapped" />
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Label
+                                Text="Terms of Use"
+                                FontSize="15"
+                                Margin="0,0,0,20"
+                                TextColor="DarkSlateBlue"
+                                TextDecorations="Underline"
+                                HorizontalOptions="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="OnTermsTapped" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                </ScrollView>
+
+                <!-- Bottom Tabs -->
+                <dashTabs:DashboardBottomTab
+                    Grid.Row="2"
+                    x:Name="BaseTabs"
+                    Padding="0,0"
+                    ActiveTab="Profile" />
+
+            </Grid>
+        </ContentView>
+        <dashTabs:DashboardSideMenu
+            x:Name="SideMenu"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:BrandedLoader
+            x:Name="AppLoader"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:TrackerSwitcher
+            x:Name="ModuleTrackerSwitch"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyCompleteModal
+            x:Name="PregnancyComplete"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PregnancyTrackerOnboardModal
+            x:Name="PregnancyTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:PeriodTrackerOnboardModal
+            x:Name="PeriodTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <dashModals:MenopauseTrackerOnboardModal
+            x:Name="MenopauseTrackerOnBoard"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <components:YesNoAlertModal
+            x:Name="YesNoModal"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

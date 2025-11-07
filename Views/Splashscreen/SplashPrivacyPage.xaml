@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:OvulaeApp.Helpers.UI.Convertors"
+    xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    x:Class="OvulaeApp.Views.Splashscreen.SplashPrivacyPage"
+    Background="{StaticResource ThemeLightGray}"
+    Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:CheckBoolToColorConverter
+                x:Key="BoolToColorConverter" />
+            <!-- Your other resources -->
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <!-- Scrollable Content -->
+        <ContentView
+            x:Name="MainPageContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <Grid
+                RowDefinitions="*,Auto,Auto"
+                Padding="20,0,20,0">
+
+                <!-- Scrollable Content -->
+                <ScrollView
+                    Grid.Row="0"
+                    Padding="0,30,0,0">
+                    <VerticalStackLayout
+                        Spacing="10">
+                        <Label
+                            Text="Your Privacy Comes First"
+                            Style="{StaticResource SubHeadline}"
+                            TextColor="{StaticResource ThemeClrMainDark}"
+                            SemanticProperties.HeadingLevel="Level1" />
+
+                        <Label
+                            Text="Ovulae respects your personal data. To use the app, please review and confirm the settings below."
+                            Style="{StaticResource MediumText}"
+                            HorizontalOptions="CenterAndExpand"
+                            HorizontalTextAlignment="Center"
+                            Margin="0,10,0,10" />
+
+                        <StackLayout
+                            Spacing="5">
+                            <Grid
+                                ColumnDefinitions="Auto, *"
+                                Margin="0,5">
+
+                                <customCtrl:Checkbox
+                                    x:Name="PrivacyPolicyTerms"
+                                    Grid.Column="0"
+                                    WidthRequest="16"
+                                    HeightRequest="16"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Start"
+                                    Margin="0,4,10,0"
+                                    CheckedChanged="ChecksTerms_CheckedChanged" />
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    VerticalOptions="Start">
+                                    <HorizontalStackLayout>
+                                        <Label
+                                            Text="I agree to the "
+                                            LineBreakMode="WordWrap"
+                                            HorizontalTextAlignment="Start"
+                                            FontSize="13"
+                                            TextColor="Black">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="PolicyLineTapped" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <Label
+                                            Text="Privacy Policy"
+                                            LineBreakMode="WordWrap"
+                                            HorizontalTextAlignment="Start"
+                                            FontSize="13"
+                                            Margin="2,0,3,0"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeClr2}">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="PrivacyLink_Tapped" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <Label
+                                            Text="and"
+                                            LineBreakMode="WordWrap"
+                                            HorizontalTextAlignment="Start"
+                                            FontSize="13"
+                                            Margin="2,0,2,0"
+                                            TextColor="Black">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="PolicyLineTapped" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <Label
+                                            Text="Terms of Use"
+                                            LineBreakMode="WordWrap"
+                                            HorizontalTextAlignment="Start"
+                                            FontSize="13"
+                                            Margin="2,0,3,0"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeClr2}">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="TermsOfUseLink_Tapped" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </HorizontalStackLayout>
+                                    <Label
+                                        Text="*required"
+                                        FontSize="11"
+                                        FontAttributes="Bold, Italic"
+                                        TextColor="{StaticResource ThemeClrMain}">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="PolicyLineTapped" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </VerticalStackLayout>
+                            </Grid>
+                            <Grid
+                                ColumnDefinitions="Auto, *"
+                                Margin="0,10">
+                                <customCtrl:Checkbox
+                                    x:Name="ConsentDataSharingTerms"
+                                    Grid.Column="0"
+                                    WidthRequest="16"
+                                    HeightRequest="16"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Start"
+                                    Margin="0,4,10,0"
+                                    CheckedChanged="ChecksTerms_CheckedChanged" />
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    VerticalOptions="Start">
+                                    <Label
+                                        Text="I consent to Ovulae processing my personal and health information to provide core features (cycle, fertility, and symptom tracking). Not used for advertising or cross-app tracking."
+                                        LineBreakMode="WordWrap"
+                                        HorizontalTextAlignment="Start"
+                                        FontSize="13"
+                                        TextColor="Black">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="TermsCheckTapped" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label
+                                        Text="*required"
+                                        FontSize="11"
+                                        FontAttributes="Bold, Italic"
+                                        TextColor="{StaticResource ThemeClrMain}">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="TermsCheckTapped" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </VerticalStackLayout>
+                            </Grid>
+                            <Grid
+                                ColumnDefinitions="Auto, *"
+                                Margin="0,5">
+                                <customCtrl:Checkbox
+                                    x:Name="ConsentDataSharing2Terms"
+                                    Grid.Column="0"
+                                    WidthRequest="16"
+                                    HeightRequest="16"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Start"
+                                    Margin="0,4,10,0"
+                                    CheckedChanged="ChecksTerms_CheckedChanged" />
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    VerticalOptions="Start">
+                                    <Label
+                                        Text="I allow Ovulae to collect technical and usage data (e.g., crash reports, performance metrics) to fix bugs and improve app quality. Not used for advertising or cross-app tracking."
+                                        LineBreakMode="WordWrap"
+                                        HorizontalTextAlignment="Start"
+                                        FontSize="13"
+                                        TextColor="Black">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="TermsCheckTapped2" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label
+                                        Text="optional"
+                                        FontSize="11"
+                                        FontAttributes="Bold, Italic"
+                                        TextColor="#B8B6BE">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="TermsCheckTapped2" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </VerticalStackLayout>
+                            </Grid>
+                            <Grid
+                                ColumnDefinitions="Auto, *"
+                                Margin="0,5">
+                                <customCtrl:Checkbox
+                                    x:Name="ConsentDataSharing3Terms"
+                                    Grid.Column="0"
+                                    WidthRequest="16"
+                                    HeightRequest="16"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Start"
+                                    Margin="0,4,10,0"
+                                    CheckedChanged="ChecksTerms_CheckedChanged" />
+
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    VerticalOptions="Start">
+                                    <Label
+                                        Text="Receive occasional product updates, tips, and offers via email or push. You can opt out anytime in Settings. No health data is shared for advertising or cross-app tracking."
+                                        LineBreakMode="WordWrap"
+                                        HorizontalTextAlignment="Start"
+                                        FontSize="13"
+                                        TextColor="Black">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="TermsCheckTapped3" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label
+                                        Text="optional"
+                                        FontSize="11"
+                                        FontAttributes="Bold, Italic"
+                                        TextColor="#B8B6BE">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="TermsCheckTapped3" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <Label
+                    Grid.Row="1"
+                    Text="Accept all"
+                    Style="{StaticResource NavigationLabel}"
+                    Margin="0,0,0,20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="OnAcceptAllTermsTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <custButtons:GradientButton
+                    x:Name="AcceptBtn"
+                    Text="ACCEPT &amp; CONTINUE"
+                    Grid.Row="2"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    IsFullWidth="True"
+                    ButtonPadding="20,13"
+                    Margin="0,0,0,20"
+                    Stroke="Transparent"
+                    StrokeThickness="1.5"
+                    CornerRadius="15"
+                    ShadowOpacity="0.4"
+                    IsButtonEnabled="False"
+                    ButtonTextColor="White"
+                    GradientColorLeft="{StaticResource ThemeClr3}"
+                    GradientColorRight="{StaticResource ThemeClr2}"
+                    Tapped="AcceptAndContinueClicked" />
+
+                <!-- Gesture Handler -->
+                <Grid.GestureRecognizers>
+                    <PanGestureRecognizer
+                        PanUpdated="OnPanUpdated" />
+                </Grid.GestureRecognizers>
+            </Grid>
+        </ContentView>
+        <components:SpinnerLoader
+            x:Name="Spinner"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

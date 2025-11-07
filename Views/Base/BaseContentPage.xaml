@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Base.BaseContentPage"
+    xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
+    xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
+    xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
+    xmlns:models="clr-namespace:OvulaeApp.Models.Dashboard.Education"
+    xmlns:dietModel="clr-namespace:OvulaeShared.ViewModel.Diet;assembly=OvulaeShared"
+    xmlns:dashComp2="clr-namespace:OvulaeApp.Views.Components.Dashboard">
+
+    <AbsoluteLayout>
+
+        <!-- Main Content Placeholder -->
+        <ContentView
+            x:Name="PageContentContainer"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+
+        <!-- Input Blocker Overlay -->
+        <Border
+            x:Name="OverlayBlocker"
+            BackgroundColor="#80000000"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+
+        <!-- Global Modals -->
+        <components:BrandedLoader
+            x:Name="AppLoaderField"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+
+        <components:SpinnerLoader
+            x:Name="SpinnerField"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+
+        <components:YesNoAlertModal
+            x:Name="YesNoPopupField"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+
+        <dashComp:DietDetailsModal
+            x:Name="DietModalField"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+
+        <dashComp:PregnancyCompleteModal
+            x:Name="PregnancyCompleteField"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+
+        <components:YesNoAlertModal
+            x:Name="YesNoModalField"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+
+    </AbsoluteLayout>
+
+</ContentPage>
