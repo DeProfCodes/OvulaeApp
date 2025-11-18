@@ -1,6 +1,7 @@
 ﻿using OvulaeApp.Helpers.Enums;
 using OvulaeApp.Models.Notifications;
 using OvulaeApp.ViewModels.Module;
+using OvulaeShared.Models.Notifications;
 
 namespace OvulaeApp.Services.LocalDataService.MenopauseServices
 {

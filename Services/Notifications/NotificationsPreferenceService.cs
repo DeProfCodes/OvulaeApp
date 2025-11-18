@@ -9,6 +9,7 @@ using OvulaeApp.Services.LocalDataService.TipsServices;
 using OvulaeApp.Services.LocalDataService.UsersServices;
 using OvulaeShared.Enums.App;
 using OvulaeShared.Helpers.CommonFunctions;
+using OvulaeShared.Models.Notifications;
 
 namespace OvulaeApp.Services.Notifications
 {
@@ -91,10 +92,6 @@ namespace OvulaeApp.Services.Notifications
                 await _cycleServ.LoadCycleDataAsync();
                 var plan = _cycleServ.BuildDayPlan(DateTime.Today, newPreferences);
                 await _notificationSchedulerService.SchedulePlanAsync(plan);
-
-                #if ANDROID
-                    OvulaeApp.Platforms.Android.Helpers.AlarmScheduler.ScheduleDailyAlarm(newPreferences.PreferredNotificationTime);
-                #endif
             }
 
             return saved;
@@ -136,10 +133,6 @@ namespace OvulaeApp.Services.Notifications
 
                 var plan = pregHelper.BuildFullWeekPlan(DateTime.Today, userCycle.LastPeriodDate, newPreferences, pregData, education, symptoms, tips);
                 await _notificationSchedulerService.SchedulePlanAsync(plan);
-
-                #if ANDROID
-                    OvulaeApp.Platforms.Android.Helpers.AlarmScheduler.ScheduleDailyAlarm(newPreferences.PreferredNotificationTime);
-                #endif
             }
 
             return saved;
@@ -164,10 +157,6 @@ namespace OvulaeApp.Services.Notifications
 
                 var plan = _menopauseServ.BuildDayPlan(DateTime.Today, newPreferences);
                 await _notificationSchedulerService.SchedulePlanAsync(plan);
-
-                #if ANDROID
-                    OvulaeApp.Platforms.Android.Helpers.AlarmScheduler.ScheduleDailyAlarm(newPreferences.PreferredNotificationTime);
-                #endif
             }
 
             return saved;
@@ -188,7 +177,6 @@ namespace OvulaeApp.Services.Notifications
                 var prefs = await GetPregnancyNotifications();
 
                 return pregHelper.BuildFullWeekPlan(DateTime.Today, userCycle.LastPeriodDate, prefs, pregData, education, symptoms, tips);
-                //await _notificationSchedulerService.SchedulePlanAsync(plan);
             }
             catch
             {

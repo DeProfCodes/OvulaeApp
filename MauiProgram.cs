@@ -40,6 +40,8 @@ using OvulaeApp.Services.LocalDataService.Subscription;
 using OvulaeShared.Services.APIs.Interface;
 using OvulaeApp.Services.Payments;
 using Microsoft.Maui.LifecycleEvents;
+using OneSignalSDK.DotNet;
+
 
 
 
@@ -139,7 +141,7 @@ namespace OvulaeApp
             builder.Services.AddSingleton<IModuleLogsService, ModuleLogsService>();
             builder.Services.AddSingleton<ISubscriptionService, SubscriptionService>();
 
-            builder.Services.AddSingleton<IFcmNotificationService, FcmNotificationService>();
+            builder.Services.AddSingleton<IOneSignalNotificationService, OneSignalNotificationService>();
             //ios
             builder.Services.AddSingleton<ISubscriptionPaymentService, SubscriptionPaymentService>();
 #if IOS
@@ -240,6 +242,9 @@ namespace OvulaeApp
                 e.SetObserved();
             };
             */
+
+            OneSignal.Initialize("740b7148-dfdb-4ad6-964b-e4414b304e41");
+
             var app = builder.Build();
 
             // Set the service provider globally

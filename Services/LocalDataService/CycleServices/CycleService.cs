@@ -6,6 +6,7 @@ using OvulaeApp.Models.Notifications;
 using OvulaeApp.Services.LocalDataService.PeriodTrackerServices;
 using OvulaeApp.Services.LocalDataService.OvulationServices;
 using OvulaeShared.Models.User;
+using OvulaeShared.Models.Notifications;
 
 namespace OvulaeApp.Services.LocalDataService.CycleServices
 {

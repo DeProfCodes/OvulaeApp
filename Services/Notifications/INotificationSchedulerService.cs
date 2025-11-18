@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Maui.Storage;
 using OvulaeApp.Models.Notifications;
+using OvulaeShared.Models.Notifications;
 using Plugin.LocalNotification;
 
 namespace OvulaeApp.Services.Notifications
@@ -16,6 +17,8 @@ namespace OvulaeApp.Services.Notifications
         Task SendNowAsync(NotificationRequest request);
 
         public Task SchedulePlanAsync(List<ScheduledNotification> plan);
+
+        Task SendNowOrScheduleAsync(ScheduledNotification notif);
 
         public void ClearScheduledNotifications();
 

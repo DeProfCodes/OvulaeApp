@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OvulaeApp.Models.Notifications;
 using OvulaeApp.Services.Notifications;
+using OvulaeShared.Models.Notifications;
 
 namespace OvulaeApp.ViewModels.MenopauseTracker
 {

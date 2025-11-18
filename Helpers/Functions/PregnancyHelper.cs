@@ -2,6 +2,7 @@
 using OvulaeApp.Models.Dashboard.Education;
 using OvulaeApp.Models.Notifications;
 using OvulaeApp.Services.LocalDataService.UsersServices;
+using OvulaeShared.Models.Notifications;
 using OvulaeShared.Models.Pregnancy;
 using OvulaeShared.ViewModel.Pregnancy;
 using OvulaeShared.ViewModel.Symptoms;

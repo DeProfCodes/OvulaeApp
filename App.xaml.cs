@@ -18,13 +18,13 @@ namespace OvulaeApp
 {
     public partial class App : Application
     {
-        private readonly IFcmNotificationService _fcmService;
+        private readonly IOneSignalNotificationService _fcmService;
         private readonly IUsersApi _usersApi;
         private readonly IUserLocalService _usersServ;
         private readonly ISubscriptionService _subscriptionServ;
         private readonly IPaystackApi _paystackApi;
 
-        public App(IUsersApi usersApi, IUserLocalService usersServ, ISubscriptionService subscriptionServ, IPaystackApi paystackApi, IFcmNotificationService fcmService)
+        public App(IUsersApi usersApi, IUserLocalService usersServ, ISubscriptionService subscriptionServ, IPaystackApi paystackApi, IOneSignalNotificationService fcmService)
         {
             InitializeComponent();
 

@@ -187,6 +187,9 @@ namespace OvulaeApp.Views.PeriodTracker.Onboarding
                     var atLeastOneOptionSelected = selectCheck.SelectedItems.Count > 0;
                     vm.CurrentSlide.IsNextEnabled = atLeastOneOptionSelected; 
                 }
+
+                HPVExtras.IsVisible = HpvVaccineOption.SelectedIndex == 0;
+                VaccineName.IsVisible = HpvVaccineTypeOption.SelectedIndex == 4;
             }
             catch (Exception ex)
             {
@@ -265,6 +268,9 @@ namespace OvulaeApp.Views.PeriodTracker.Onboarding
                     LocalStorageService.PeriodTrackerSet = true;
 
                     LocalStorageService.UserCycleProfile.UsedHPVvaccine = HpvVaccineOption.SelectedIndex == 0;
+                    LocalStorageService.UserCycleProfile.HPVName = HpvVaccineOption.SelectedIndex != 4 ? HpvVaccineOption.SelectedValue : HPVCustomName?.Text;
+                    LocalStorageService.UserCycleProfile.HPVDate = HPVDate.SelectedDate;
+
                     LocalStorageService.UserCycleProfile.UsingTampon = TamponsOption.SelectedValue;
                     
                     LocalStorageService.UserCycleProfile.PCOSYears = (PcosDurationYear.Value > 0 || PcosDurationMonth.Value > 0) ? PcosDurationYear.Value : null;

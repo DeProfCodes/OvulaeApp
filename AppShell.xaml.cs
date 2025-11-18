@@ -122,6 +122,7 @@ namespace OvulaeApp
             Routing.RegisterRoute(nameof(NotificationsSettingsPage), typeof(NotificationsSettingsPage));
             Routing.RegisterRoute(nameof(DashboardProfilePage), typeof(DashboardProfilePage));
             Routing.RegisterRoute(nameof(PartnerSharingPage), typeof(PartnerSharingPage));
+            Routing.RegisterRoute(nameof(NotificationAppLoad), typeof(NotificationAppLoad));
 
             //Settings
             Routing.RegisterRoute(nameof(SettingsPage), typeof(SettingsPage));

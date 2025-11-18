@@ -1,4 +1,5 @@
 ﻿using OvulaeApp.Models.Notifications;
+using OvulaeShared.Models.Notifications;
 
 namespace OvulaeApp.Helpers.Functions.Notifications
 {

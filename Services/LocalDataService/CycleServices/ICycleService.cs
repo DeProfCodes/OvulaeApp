@@ -1,6 +1,7 @@
 ﻿using OvulaeApp.Helpers.Enums;
 using OvulaeApp.Models.Notifications;
 using OvulaeShared.Enums.App;
+using OvulaeShared.Models.Notifications;
 using OvulaeShared.Models.User;
 
 namespace OvulaeApp.Services.LocalDataService.CycleServices

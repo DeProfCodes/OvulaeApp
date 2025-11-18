@@ -8,6 +8,7 @@ using OvulaeApp.Helpers.Pages.Authentication;
 using OvulaeApp.Helpers.UI;
 using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Services.LocalDataService.UsersServices;
+using OvulaeApp.Services.Notifications;
 using OvulaeApp.Services.UserInterface.Components;
 using OvulaeApp.ViewModels.Shared;
 using OvulaeApp.Views.Components.Modals;
@@ -29,8 +30,9 @@ namespace OvulaeApp.Views.Authentication
     {
         private readonly IAuthenticationApi _api;
         private readonly IUserLocalService _usersServ;
+        private readonly IOneSignalNotificationService _oneSignalService;
 
-        public LoginPage(IAuthenticationApi api, IUserLocalService usersServ)
+        public LoginPage(IAuthenticationApi api, IUserLocalService usersServ, IOneSignalNotificationService oneSignalService)
         {
             InitializeComponent();
 
@@ -41,6 +43,7 @@ namespace OvulaeApp.Views.Authentication
 
             _api = api;
             _usersServ = usersServ;
+            _oneSignalService = oneSignalService;
 
             if (Resources["NavigationsVM"] is NavigationsViewModel vm)
             {
@@ -222,6 +225,7 @@ namespace OvulaeApp.Views.Authentication
                         if (isActiveSubscription || isFreeTrial)
                         {
                             LocalStorageService.Authenticated = true;
+                            await _oneSignalService.InitializeOneSignal();
 
                             var dashboardPage = NavigationsHelper.GetDashboardPageNameFromModule(LocalStorageService.AppPrimaryGoal);
                             await Shell.Current.GoToAsync(dashboardPage);

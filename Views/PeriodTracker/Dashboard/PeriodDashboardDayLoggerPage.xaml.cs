@@ -9,6 +9,7 @@ using OvulaeApp.Views.Components.Modals;
 using OvulaeShared.Enums.App;
 using OvulaeShared.Helpers.CommonFunctions;
 using OvulaeShared.Helpers.ModuleHelpers.DayLogging;
+using System.Threading.Tasks;
 
 namespace OvulaeApp.Views.PeriodTracker.Dashboard
 {
@@ -37,27 +38,16 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
             _cycleService = cycleService;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
-            LoadExistingLog();
+            await LoadExistingLog();
         }
 
-        private void LoadExistingLog()
+        private async Task LoadExistingLog()
         {
             try
             {
-                viewModel = new PeriodLoggerViewModel(_moduleLogsService);
-                BindingContext = viewModel;
-
-                if (EntryId > 0)
-                {
-                    viewModel.CurrentLogEntry = _moduleLogsService.GetPeriodLogByEntryId(EntryId);
-                }
-
-                UpdateDayNavigationButtons();
-                LoadCurrentLogData();
-
                 BaseTabs.SetLoaders(Spinner, AppLoader);
                 SideMenu.ConfigureComponents(
                     Spinner, AppLoader, PregnancyTrackerOnBoard, PeriodTrackerOnBoard, ModuleTrackerSwitch,
@@ -66,11 +56,31 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
 
                 Header.SetLoaders(Spinner, AppLoader);
                 Header.OpenSideMenuCommand = new Command(async () => await SideMenu.OpenAsync());
+
+                viewModel = new PeriodLoggerViewModel(_moduleLogsService);
+                BindingContext = viewModel;
+
+                await Spinner.ShowSpinnerAsync();
+
+                if (EntryId > 0)
+                {
+                    await _moduleLogsService.LoadPeriodLogs(LocalStorageService.UserDetails.UserId);
+                    viewModel.CurrentLogEntry = _moduleLogsService.GetPeriodLogByEntryId(EntryId);
+                    viewModel.CurrentDate = viewModel.CurrentLogEntry?.LogDate ?? DateTime.Today;
+                }
+
+                UpdateDayNavigationButtons();
+                LoadCurrentLogData();
+
+                await Spinner.HideSpinnerAsync();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error loading log: {ex.Message}");
-                Shell.Current.CurrentPage.ShowPopup(new BrandedAlertPopup("Error", "Failed to load your data", "OK"));
+                UpdateDayNavigationButtons();
+                LoadCurrentLogData();
+
+                await Spinner.HideSpinnerAsync();
             }
         }
 
@@ -125,7 +135,8 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
                 DayLoggerHelper.PopulateMultiSelectComponent(BowelMovementsExistComponent, CycleTrackerDayLogItems.HadPeriodBowelMovementOptions, hadBowelMovements);
                 DayLoggerHelper.PopulateMultiSelectComponent(BowelMovementsRegularityComponent, CycleTrackerDayLogItems.PeriodBowelMovementIrregularityOptions, todayLog.BowelMovementsRegularity);
                 DayLoggerHelper.PopulateMultiSelectComponent(BowelMovementsFrequencyComponent, CycleTrackerDayLogItems.PeriodBowelMovementFrequencyOptions, todayLog.BowelMovementsFrequency);
-                
+                DayLoggerHelper.PopulateMultiSelectComponent(MedAndSupplementComponent, MedicationSupplementDayLogItems.PeriodTrackerMedications, todayLog.SupplementsAndMedication);
+
                 MoodRating.SelectedRating = DefaultValueHelper.GetIntValueOrDefault(todayLog.MoodsRating);
                 SymptomsRating.SelectedRating = DefaultValueHelper.GetIntValueOrDefault(todayLog.SymptomsRating);
                 EmotionsRating.SelectedRating = DefaultValueHelper.GetIntValueOrDefault(todayLog.EmotionsRating);
@@ -143,6 +154,7 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
                 MedicationNotes.Text = DefaultValueHelper.GetStringValueOrDefault(todayLog.MedicationMethodNotes);
                 ContraceptionNotes.Text = DefaultValueHelper.GetStringValueOrDefault(todayLog.ContraceptionsMethodNotes);
                 BreastTendernessNotes.Text = DefaultValueHelper.GetStringValueOrDefault(todayLog.BreastTendernessNotes);
+                MedicationAndSupplementsNotes.Text = todayLog.MedicationNotes;
 
                 ReflectionText.Text = todayLog.Notes;
 
@@ -271,6 +283,8 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
             todayLog.IntercourseNotes = IntercourseNotes.Text;
             todayLog.MedicationMethodNotes = MedicationNotes.Text;
             todayLog.ContraceptionsMethodNotes = ContraceptionNotes.Text;
+            todayLog.MedicationNotes = MedicationAndSupplementsNotes.Text;
+            todayLog.SupplementsAndMedication = MedAndSupplementComponent.SelectedItems.ToList();
 
             DefaultValueHelper.SetDefaults(todayLog);
         }

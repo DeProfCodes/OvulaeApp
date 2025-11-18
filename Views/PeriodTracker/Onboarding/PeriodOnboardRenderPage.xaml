@@ -424,6 +424,91 @@
                                 SelectionChanged="MultiSelect_SelectionChanged"
                                 Margin="0,20,0,0" />
 
+                            <VerticalStackLayout
+                                x:Name="HPVExtras"
+                                IsVisible="False">
+
+                                <Label
+                                    Text="Which vaccination did you get?"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource Black}" />
+                                
+                                <sharedComp:SelectComponent
+                                    x:Name="HpvVaccineTypeOption"
+                                    OptionList="Gardasil|Gardasil 9|Cervaix|Not Sure|Other"
+                                    OptionSpacing="4"
+                                    FontSize="14"
+                                    SelectionType="Single"
+                                    SelectionChanged="MultiSelect_SelectionChanged"
+                                    Margin="0,20,0,0" />
+
+                                <VerticalStackLayout
+                                    x:Name="VaccineName"
+                                    IsVisible="False">
+                                    <Label
+                                        Text="Enter the vaccine name?"
+                                        FontSize="14"
+                                        TextColor="Black"
+                                        FontAttributes="Bold"
+                                        FontFamily="Arial Black"
+                                        Margin="0,0,0,20" />
+                                    <Border
+                                        Stroke="{StaticResource ThemeClrMain}"
+                                        StrokeShape="RoundRectangle 8"
+                                        Margin="0,10,0,0"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="Start"
+                                        Padding="5">
+                                        <Editor
+                                            x:Name="HPVCustomName"
+                                            Margin="10,0"
+                                            TextColor="Black"
+                                            Text=""
+                                            FontSize="14"
+                                            AutoSize="TextChanges"
+                                            Placeholder="Enter vaccine name..." />
+                                    </Border>
+                                </VerticalStackLayout>
+                                
+                                 <!-- When did you last period start ? -->
+                                <VerticalStackLayout
+                                    Margin="0,30">
+                                    <Label
+                                        Text="When did you take it?"
+                                        FontSize="14"
+                                        TextColor="Black"
+                                        FontAttributes="Bold"
+                                        FontFamily="Arial Black"
+                                        Margin="0,0,0,20" />
+                                    <Grid
+                                        ColumnDefinitions="*,*">
+                                        <Label
+                                            Grid.Column="0"
+                                            Text="Select Date"
+                                            FontSize="16"
+                                            HorizontalTextAlignment="Center"
+                                            VerticalOptions="Center"
+                                            TextColor="{StaticResource ThemeGray2}"
+                                            Margin="0,0,0,0" />
+
+                                        <customCtrl:DatePicker
+                                            Grid.Column="1"
+                                            x:Name="HPVDate"
+                                            HorizontalOptions="Start"
+                                            DateColor="{StaticResource ThemeClrMain}"
+                                            FontSize="16" />
+                                    </Grid>
+                                    <Label
+                                        Text="*Dont worry if you are not sure"
+                                        FontSize="12"
+                                        TextColor="{StaticResource ThemeGray2}"
+                                        FontFamily="Arial Black"
+                                        FontAttributes="Italic"
+                                        HorizontalOptions="Center"
+                                        Margin="0,15,0,5" />
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
                         </VerticalStackLayout>
 
                         <!-- Tampons -->
@@ -607,7 +692,7 @@
                                     SelectionType="Single"
                                     Margin="0,20,0,0" />
                             </VerticalStackLayout>
-
+                            
                         </VerticalStackLayout>
 
                         <!-- ENDO -->

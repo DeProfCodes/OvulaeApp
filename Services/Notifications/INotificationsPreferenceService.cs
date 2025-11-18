@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OvulaeApp.Models.Notifications;
+using OvulaeShared.Models.Notifications;
 
 namespace OvulaeApp.Services.Notifications
 {

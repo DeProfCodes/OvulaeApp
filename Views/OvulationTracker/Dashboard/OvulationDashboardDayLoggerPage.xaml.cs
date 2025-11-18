@@ -34,28 +34,16 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
             _cycleService = cycleService;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
-            LoadExistingLog();
+            await LoadExistingLog();
         }
 
-        private void LoadExistingLog()
+        private async Task LoadExistingLog()
         {
             try
             {
-                // Initialize view model
-                viewModel = new OvulationLoggerViewModel(_moduleLogsService);
-                BindingContext = viewModel;
-
-                if (EntryId > 0)
-                {
-                    viewModel.CurrentLogEntry = _moduleLogsService.GetOvulationLogByEntryId(EntryId);
-                }
-
-                UpdateDayNavigationButtons();
-                LoadCurrentLogData();
-
                 // Initialize loaders
                 BaseTabs.SetLoaders(Spinner, AppLoader);
                 SideMenu.ConfigureComponents(Spinner, AppLoader, PregnancyTrackerOnBoard, PeriodTrackerOnBoard, ModuleTrackerSwitch, YesNoPopup, MenopauseTrackerOnBoard);
@@ -65,11 +53,34 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
                 {
                     await SideMenu.OpenAsync();
                 });
+
+                // Initialize view model
+                viewModel = new OvulationLoggerViewModel(_moduleLogsService);
+                BindingContext = viewModel;
+
+                await Spinner.ShowSpinnerAsync();
+
+                if (EntryId > 0)
+                {
+                    await _moduleLogsService.LoadOvulationLogs(LocalStorageService.UserDetails.UserId);
+                    viewModel.CurrentLogEntry = _moduleLogsService.GetOvulationLogByEntryId(EntryId);
+                    viewModel.CurrentDate = viewModel.CurrentLogEntry?.LogDate ?? DateTime.Today;
+                }
+
+                UpdateDayNavigationButtons();
+                LoadCurrentLogData();
+
+                await Spinner.HideSpinnerAsync();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error loading log: {ex.Message}");
                 Shell.Current.CurrentPage.ShowPopup(new BrandedAlertPopup("Error", "Failed to load your data", "OK"));
+
+                UpdateDayNavigationButtons();
+                LoadCurrentLogData();
+
+                await Spinner.HideSpinnerAsync();
             }
         }
 
@@ -115,6 +126,7 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
                 DayLoggerHelper.PopulateMultiSelectComponent(BloodColorComponent, CycleTrackerDayLogItems.BloodColorOptions, todayLog.BleedingColor);
                 DayLoggerHelper.PopulateMultiSelectComponent(FlowIntensityComponent, CycleTrackerDayLogItems.FlowIntensityOptions, todayLog.FlowIntensity);
                 DayLoggerHelper.PopulateMultiSelectComponent(PainLevelComponent, CycleTrackerDayLogItems.PainLevelOptions, todayLog.PainLevel);
+                DayLoggerHelper.PopulateMultiSelectComponent(MedAndSupplementComponent, MedicationSupplementDayLogItems.OvulationTrackerMedications, todayLog.SupplementsAndMedication);
 
                 var hadBowelMovements = todayLog.HadBowelMovements != null ?
                                         (todayLog.HadBowelMovements.Value ? CycleTrackerDayLogItems.HadPeriodBowelMovementOptions[0] :
@@ -140,6 +152,7 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
                 EnergyNotes.Text = DefaultValueHelper.GetStringValueOrDefault(todayLog.EnergyNotes);
                 LifestyleNotes.Text = DefaultValueHelper.GetStringValueOrDefault(todayLog.LifestyleNotes);
                 BreastTendernessNotes.Text = DefaultValueHelper.GetStringValueOrDefault(todayLog.BreastTendernessNotes);
+                MedicationAndSupplementsNotes.Text= todayLog.MedicationNotes;
 
                 ReflectionText.Text = todayLog.Notes;
 
@@ -262,6 +275,9 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
             todayLog.EnergyRating = EnergyComponent.SelectedItems.Count() > 0 ? EnergyRating.SelectedRating : 0;
             todayLog.LifestyleRating = LifestyleComponent.SelectedItems.Count() > 0 ? LifestyleRating.SelectedRating : 0;
             todayLog.BreastTendernessRating = BreastTendernessRating.SelectedRating;
+
+            todayLog.SupplementsAndMedication = MedAndSupplementComponent.SelectedItems.ToList();
+            todayLog.MedicationNotes = MedicationAndSupplementsNotes.Text;
 
             // Set notes
             todayLog.MoodsNotes = MoodNotes.Text;
