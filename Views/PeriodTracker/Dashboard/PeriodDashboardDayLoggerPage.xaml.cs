@@ -40,40 +40,40 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
             _cycleService = cycleService;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
-            LoadExistingLog();
+            await LoadExistingLog();
         }
 
-        private void LoadExistingLog()
+        private async Task LoadExistingLog()
         {
             try
             {
                 viewModel = new PeriodLoggerViewModel(_moduleLogsService);
                 BindingContext = viewModel;
 
+                await Spinner.ShowSpinnerAsync();
+
                 if (EntryId > 0)
                 {
+                    await _moduleLogsService.LoadPeriodLogs(LocalStorageService.UserDetails.UserId);
                     viewModel.CurrentLogEntry = _moduleLogsService.GetPeriodLogByEntryId(EntryId);
+                    viewModel.CurrentDate = viewModel.CurrentLogEntry?.LogDate ?? DateTime.Today;
                 }
 
                 UpdateDayNavigationButtons();
                 LoadCurrentLogData();
 
-                BaseTabs.SetLoaders(Spinner, AppLoader);
-                SideMenu.ConfigureComponents(
-                    Spinner, AppLoader, PregnancyTrackerOnBoard, PeriodTrackerOnBoard, ModuleTrackerSwitch,
-                    YesNoModal, MenopauseTrackerOnBoard
-                );
-
-                Header.SetLoaders(Spinner, AppLoader);
-                Header.OpenSideMenuCommand = new Command(async () => await SideMenu.OpenAsync());
+                await Spinner.HideSpinnerAsync();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error loading log: {ex.Message}");
-                Shell.Current.CurrentPage.ShowPopup(new BrandedAlertPopup("Error", "Failed to load your data", "OK"));
+                UpdateDayNavigationButtons();
+                LoadCurrentLogData();
+
+                await Spinner.HideSpinnerAsync();
             }
         }
 

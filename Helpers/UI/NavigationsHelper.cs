@@ -164,6 +164,24 @@ namespace OvulaeApp.Helpers.UI
             }
         }
 
+        public static string GetDayLogPageNameFromModuleName(string moduleName)
+        {
+            var moduleType = EnumHelper.GetEnumValueFromName<ModuleType>(moduleName);
+            return GetDayLogPageNameFromModuleType(moduleType);
+        }
+
+        public static string GetDayLogPageNameFromModuleType(ModuleType moduleType)
+        {
+            switch (moduleType)
+            {
+                case ModuleType.Pregnancy: return nameof(PregnancyDashboardDayLoggerPage);
+                case ModuleType.Ovulation: return nameof(OvulationDashboardDayLoggerPage);
+                case ModuleType.PeriodTracker: return nameof(PeriodDashboardDayLoggerPage);
+                case ModuleType.MenopauseTracker: return nameof(MenopauseDashboardDayLoggerPage);
+                default: return nameof(LoginPage);
+            }
+        }
+
         public static string GetDashboardPageName(string appPrimaryGoal)
         {
             var moduleType = appPrimaryGoal != null ? EnumHelper.GetEnumValueFromName<ModuleType>(appPrimaryGoal) : ModuleType.PeriodTracker;

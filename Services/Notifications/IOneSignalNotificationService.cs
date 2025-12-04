@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace OvulaeApp.Services.Notifications
 {
-    public interface IFcmNotificationService
+    public interface IOneSignalNotificationService
     {
-        public Task InitializeFirebase();
+        public Task InitializeOneSignal();
     }
 }

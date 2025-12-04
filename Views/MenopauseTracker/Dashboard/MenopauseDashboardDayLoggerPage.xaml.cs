@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Maui.Views;
+using Microsoft.Extensions.Logging.Abstractions;
 using OvulaeApp.Helpers.Pages.DayLogging;
+using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Services.LocalDataService.MenopauseServices;
 using OvulaeApp.Services.LocalDataService.ModuleServices;
 using OvulaeApp.Services.LocalDataService.UsersServices;
@@ -9,6 +11,7 @@ using OvulaeShared.Enums;
 using OvulaeShared.Helpers.CommonFunctions;
 using OvulaeShared.Helpers.ModuleHelpers.DayLogging;
 using OvulaeShared.Models.Menopause;
+using System.Threading.Tasks;
 
 namespace OvulaeApp.Views.MenopauseTracker.Dashboard
 {
@@ -39,24 +42,12 @@ namespace OvulaeApp.Views.MenopauseTracker.Dashboard
             LogManualSymptom.IsVisible = ManualSymptomsSwitch.IsToggled;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
             try
             {
-                // Initialize view model
-                viewModel = new MenopauseLoggerViewModel(_moduleLogsServ);
-                BindingContext = viewModel;
-
-                if (EntryId > 0)
-                {
-                    viewModel.CurrentLogEntry = _moduleLogsServ.GetMenopauseLogByEntryId(EntryId);
-                }
-
-                UpdateDayNavigationButtons();
-                LoadCurrentLogData();
-
                 BaseTabs.SetLoaders(Spinner, AppLoader);
                 SideMenu.ConfigureComponents(
                     Spinner, AppLoader, PregnancyTrackerOnBoard, PeriodTrackerOnBoard, ModuleTrackerSwitch, YesNoPopup
@@ -67,11 +58,32 @@ namespace OvulaeApp.Views.MenopauseTracker.Dashboard
                 {
                     await SideMenu.OpenAsync();
                 });
+
+                // Initialize view model
+                viewModel = new MenopauseLoggerViewModel(_moduleLogsServ);
+                BindingContext = viewModel;
+
+                await Spinner.ShowSpinnerAsync();
+
+                if (EntryId > 0)
+                {
+                    await _moduleLogsServ.LoadMenopauseLogs(LocalStorageService.UserDetails.UserId);
+                    viewModel.CurrentLogEntry = _moduleLogsServ.GetMenopauseLogByEntryId(EntryId);
+                    viewModel.CurrentDate = viewModel.CurrentLogEntry?.LogDate ?? DateTime.Today;
+                }
+
+                UpdateDayNavigationButtons();
+                LoadCurrentLogData();
+
+                await Spinner.HideSpinnerAsync();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Failed to open menopause logger page, error: {ex.Message}");
-                Shell.Current.CurrentPage.ShowPopup(new BrandedAlertPopup("Error", "Something went wrong while opening menopause logger page.", "OK"));
+                UpdateDayNavigationButtons();
+                LoadCurrentLogData();
+
+                await Spinner.HideSpinnerAsync();
             }
         }
 

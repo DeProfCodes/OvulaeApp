@@ -1,5 +1,6 @@
 ﻿using OvulaeApp.Models.Notifications;
 using OvulaeApp.Services.Notifications;
+using OvulaeShared.Models.Notifications;
 
 namespace OvulaeApp.ViewModels.Shared
 {

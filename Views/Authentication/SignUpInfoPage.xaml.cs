@@ -5,6 +5,7 @@ using OvulaeApp.Helpers.Pages.Authentication;
 using OvulaeApp.Helpers.UI;
 using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Services.LocalDataService.UsersServices;
+using OvulaeApp.Services.Notifications;
 using OvulaeApp.Services.Payments;
 using OvulaeApp.Services.UserInterface.Components;
 using OvulaeApp.ViewModels.Shared;
@@ -29,8 +30,9 @@ namespace OvulaeApp.Views.Authentication
         private readonly IUsersApi _userApi;
         private readonly IUserLocalService _usersServ;
         private readonly ISubscriptionPaymentService _applePay;
+        private readonly IOneSignalNotificationService _oneSignalService;
 
-        public SignUpInfoPage(IAuthenticationApi authApi, IUsersApi userApi, IUserLocalService usersServ, ISubscriptionPaymentService applePay)
+        public SignUpInfoPage(IAuthenticationApi authApi, IUsersApi userApi, IUserLocalService usersServ, ISubscriptionPaymentService applePay, IOneSignalNotificationService oneSignalService)
         {
             InitializeComponent();
 
@@ -38,6 +40,7 @@ namespace OvulaeApp.Views.Authentication
             _userApi = userApi;
             _usersServ = usersServ;
             _applePay = applePay;
+            _oneSignalService = oneSignalService;
 
             if (Resources["NavigationsVM"] is NavigationsViewModel vm)
             {
@@ -204,6 +207,7 @@ namespace OvulaeApp.Views.Authentication
                     LocalStorageService.AppPrimaryGoal = appPrimaryGoal;
                     LocalStorageService.Authenticated = true;
 
+                    _oneSignalService.InitializeOneSignal();
 #if ANDROID
                     await Shell.Current.GoToAsync(nameof(PaymentWallPage));
 #elif IOS
@@ -220,7 +224,7 @@ namespace OvulaeApp.Views.Authentication
                     }
                     else
                     {
-                        await Shell.Current.CurrentPage.ShowPopupAsync(new BrandedAlertPopup("Sign Up Error", "Could not create user account."));
+                      await Shell.Current.CurrentPage.ShowPopupAsync(new BrandedAlertPopup("Sign Up Error", "Could not create user account."));
                     }
                 }
             }

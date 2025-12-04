@@ -43,24 +43,12 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
             LogManualSymptom.IsVisible = ManualSymptomsSwitch.IsToggled;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
             try
             {
-                // Initialize view model
-                viewModel = new PregnancyLoggerViewModel(_moduleLogsServ);
-                BindingContext = viewModel;
-
-                if (EntryId > 0)
-                {
-                    viewModel.CurrentLogEntry = _moduleLogsServ.GetPregnancyLogByEntryId(EntryId);
-                }
-
-                UpdateDayNavigationButtons();
-                LoadCurrentLogData();
-
                 BaseTabs.SetLoaders(Spinner, AppLoader);
                 SideMenu.ConfigureComponents(
                     Spinner, AppLoader, PregnancyTrackerOnBoard, PeriodTrackerOnBoard, PregnancyComplete, ModuleTrackerSwitch,
@@ -69,10 +57,33 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
 
                 Header.SetLoaders(Spinner, AppLoader);
                 Header.OpenSideMenuCommand = new Command(async () => await SideMenu.OpenAsync());
+
+                // Initialize view model
+                viewModel = new PregnancyLoggerViewModel(_moduleLogsServ);
+                BindingContext = viewModel;
+
+                await Spinner.ShowSpinnerAsync();
+
+                if (EntryId > 0)
+                {
+                    await _moduleLogsServ.LoadPregnancyLogs(LocalStorageService.UserDetails.UserId);
+                    viewModel.CurrentLogEntry = _moduleLogsServ.GetPregnancyLogByEntryId(EntryId);
+                    viewModel.CurrentDate = viewModel.CurrentLogEntry?.LogDate ?? DateTime.Today; 
+                }
+
+                UpdateDayNavigationButtons();
+                LoadCurrentLogData();
+
+                await Spinner.HideSpinnerAsync();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Failed to open pregnancy logger page, error: {ex.Message}");
+
+                UpdateDayNavigationButtons();
+                LoadCurrentLogData();
+
+                await Spinner.HideSpinnerAsync();
             }
         }
 
@@ -80,7 +91,7 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
         {
             try
             {
-                var logEntry = viewModel.CurrentLogEntry;
+                var logEntry = viewModel.CurrentLogEntry ?? new();
 
                 // Populate all components with current log data
                 DayLoggerHelper.PopulateMultiSelectComponent(MoodsComponent, PregnancyDayLogItems.Moods, logEntry.Moods);
@@ -105,6 +116,7 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
                 DayLoggerHelper.PopulateMultiSelectComponent(BloodPressureMedicationComponent, DayLoggerHelper.YesNoOption, "");
                 DayLoggerHelper.PopulateMultiSelectComponent(BrestFeelingComponent, PregnancyDayLogItems.BrestFeeeling, logEntry.BrestFeeling);
                 DayLoggerHelper.PopulateMultiSelectComponent(NightUrinationComponent, PregnancyDayLogItems.NightUrination, logEntry.NighlyUrination);
+                DayLoggerHelper.PopulateMultiSelectComponent(MedAndSupplementComponent, MedicationSupplementDayLogItems.PregnancyTrackerMedications, logEntry.SupplementsAndMedication);
 
                 MedicationComponent?.LoadMedications(logEntry.Medication);
 
@@ -160,11 +172,18 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
 
         private void UpdateDayNavigationButtons()
         {
-            // Hide next day button if we're already at today
-            NextDayBtn.IsVisible = viewModel.CurrentDate < DateTime.Today;
+            try
+            {
+                // Hide next day button if we're already at today
+                NextDayBtn.IsVisible = viewModel.CurrentDate < DateTime.Today;
 
-            // Always show previous day button (unless you want to limit how far back they can go)
-            PrevDayBtn.IsVisible = true;
+                // Always show previous day button (unless you want to limit how far back they can go)
+                PrevDayBtn.IsVisible = true;
+            }
+            catch
+            {
+                
+            }
         }
 
         private async void NavigateDays_Tapped(object sender, TappedEventArgs e)

@@ -34,13 +34,13 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
             _cycleService = cycleService;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
-            LoadExistingLog();
+            await LoadExistingLog();
         }
 
-        private void LoadExistingLog()
+        private async Task LoadExistingLog()
         {
             try
             {
@@ -48,28 +48,29 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
                 viewModel = new OvulationLoggerViewModel(_moduleLogsService);
                 BindingContext = viewModel;
 
+                await Spinner.ShowSpinnerAsync();
+
                 if (EntryId > 0)
                 {
+                    await _moduleLogsService.LoadOvulationLogs(LocalStorageService.UserDetails.UserId);
                     viewModel.CurrentLogEntry = _moduleLogsService.GetOvulationLogByEntryId(EntryId);
+                    viewModel.CurrentDate = viewModel.CurrentLogEntry?.LogDate ?? DateTime.Today;
                 }
 
                 UpdateDayNavigationButtons();
                 LoadCurrentLogData();
 
-                // Initialize loaders
-                BaseTabs.SetLoaders(Spinner, AppLoader);
-                SideMenu.ConfigureComponents(Spinner, AppLoader, PregnancyTrackerOnBoard, PeriodTrackerOnBoard, ModuleTrackerSwitch, YesNoPopup, MenopauseTrackerOnBoard);
-                Header.SetLoaders(Spinner, AppLoader);
-
-                Header.OpenSideMenuCommand = new Command(async () =>
-                {
-                    await SideMenu.OpenAsync();
-                });
+                await Spinner.HideSpinnerAsync();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error loading log: {ex.Message}");
                 Shell.Current.CurrentPage.ShowPopup(new BrandedAlertPopup("Error", "Failed to load your data", "OK"));
+
+                UpdateDayNavigationButtons();
+                LoadCurrentLogData();
+
+                await Spinner.HideSpinnerAsync();
             }
         }
 

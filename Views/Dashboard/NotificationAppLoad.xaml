@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OvulaeApp.Views.Dashboard.NotificationAppLoad"
+    Background="{StaticResource ThemeClrPurple}"
+    xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
+    Shell.NavBarIsVisible="False">
+
+    <AbsoluteLayout>
+        <BoxView
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <BoxView.Background>
+                <LinearGradientBrush
+                    StartPoint="1,0"
+                    EndPoint="0,1">
+                    <GradientStop
+                        Color="{StaticResource ThemeClrMainLight}"
+                        Offset="0.4" />
+                    <GradientStop
+                        Color="{StaticResource ThemeClrPurple}"
+                        Offset="0.7" />
+                    <!-- Soft pink -->
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+        <Grid
+            RowDefinitions="Auto,*,Auto"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            Padding="20">
+
+            <Image
+                Source="logo_main.png"
+                WidthRequest="150"
+                HeightRequest="150"
+                Margin="0,60,0,0"
+                HorizontalOptions="Center"
+                Grid.Row="0" />
+
+            <!-- Main content with light card style -->
+            <Border
+                Grid.Row="1"
+                StrokeShape="RoundRectangle 20"
+                BackgroundColor="Transparent"
+                Padding="0"
+                Stroke="Transparent"
+                Margin="0,0,0,0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+
+                <VerticalStackLayout
+                    Spacing="20">
+                    <!-- Verified badge with accent color -->
+                    <HorizontalStackLayout
+                        Spacing="10"
+                        HorizontalOptions="Center">
+                        <Image
+                            Source="verified_icon2.png"
+                            HeightRequest="30"
+                            WidthRequest="30" />
+                        <Label
+                            Text="OB-GYN APPROVED"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource ThemeClrMainDark}" />
+                    </HorizontalStackLayout>
+
+                    <!-- Medical disclaimer -->
+                    <Label
+                        Text="• Expert-reviewed by a certified OB-GYN&#10;• Evidence-based women's health content&#10;"
+                        FontSize="14"
+                        TextColor="#555555"
+                        LineBreakMode="WordWrap"
+                        LineHeight="1.3"
+                        HorizontalTextAlignment="Center" />
+
+                    <HorizontalStackLayout
+                        Spacing="10"
+                        HorizontalOptions="Center"
+                        IsVisible="False">
+                        <Image
+                            Source="femaile_dr_icon.png"
+                            HeightRequest="30"
+                            WidthRequest="30" />
+                        <Label
+                            Text="Approved by Dr E Wypkema"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource ThemeClr3}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Margin="0,0,0,0" />
+                    </HorizontalStackLayout>
+                    
+                    
+                    <!-- Small purple accent line -->
+                    <BoxView
+                        HeightRequest="2"
+                        WidthRequest="80"
+                        Color="{StaticResource ThemeClrMainDark}"
+                        HorizontalOptions="Center"
+                        Margin="0,10" />
+
+                    <!-- Call to action -->
+                    <Label
+                        Text="Loading →"
+                        FontSize="14"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource ThemeClrMainDark}"
+                        HorizontalOptions="Center" />
+
+                    <ActivityIndicator
+                        IsRunning="True"
+                        Color="{StaticResource ThemeClrMainDark}"
+                        Margin="0,10,0,0"
+                        HorizontalOptions="Center"
+                        WidthRequest="50"
+                        HeightRequest="50">
+                        <ActivityIndicator.Scale>
+                            <OnPlatform
+                                x:TypeArguments="x:Double">
+                                <On
+                                    Platform="iOS"
+                                    Value="2" />
+                                <On
+                                    Platform="Android"
+                                    Value="1" />
+                            </OnPlatform>
+                        </ActivityIndicator.Scale>
+                    </ActivityIndicator>
+
+                    <!-- Trust Badges -->
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center"
+                        Spacing="20"
+                        Margin="0,30,0,0"
+                        IsVisible="False">
+
+                        <custButtons:GradientButton
+                            CornerRadius="50"
+                            Margin="0,0,0,0"
+                            HasImageIcon="True"
+                            ImageIconWidth="40"
+                            ImageIconHeight="40"
+                            ButtonPadding="10"
+                            IconMargin="5,0,0,0"
+                            ImageIconSource="no_data_selling_icon.png"
+                            ButtonTextColor="White"
+                            GradientColorLeft="{StaticResource ThemeClrMainDark}"
+                            GradientColorRight="{StaticResource ThemeClrMainDark}"/>
+
+                        <custButtons:GradientButton
+                            CornerRadius="50"
+                            Margin="0,0,0,0"
+                            HasImageIcon="True"
+                            ImageIconWidth="40"
+                            ImageIconHeight="40"
+                            ButtonPadding="10"
+                            ImageIconSource="femaile_dr_icon.png"
+                            ButtonTextColor="White"
+                            GradientColorLeft="{StaticResource ThemeClrMain}"
+                            GradientColorRight="{StaticResource ThemeClrMain}" />
+
+                        <custButtons:GradientButton
+                            CornerRadius="50"
+                            Margin="0,0,0,0"
+                            HasImageIcon="True"
+                            ImageIconWidth="40"
+                            ImageIconHeight="40"
+                            ButtonPadding="10"
+                            IconMargin="5,0,0,0"
+                            ImageIconSource="popia_gdpr_icon.png"
+                            ButtonTextColor="White"
+                            GradientColorLeft="{StaticResource ThemeClrMain}"
+                            GradientColorRight="{StaticResource ThemeClrMain}" />
+                        
+                    </HorizontalStackLayout>
+                    
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Footer note -->
+            <Label
+                Text="Not a substitute for professional medical care"
+                FontSize="12"
+                TextColor="#888888"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Grid.Row="2"
+                Margin="0,0,0,30" />
+        </Grid>
+    </AbsoluteLayout>
+</ContentPage> 

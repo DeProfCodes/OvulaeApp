@@ -1,20 +1,10 @@
-﻿using System.Security.Cryptography;
+﻿using OvulaeApp.Helpers.Notifications;
 using OvulaeApp.Helpers.UI;
 using OvulaeApp.Services;
-using OvulaeApp.Services.Jobs;
 using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Services.Notifications;
 using OvulaeApp.Views.Authentication;
-using OvulaeApp.Views.GoalSetting;
-using OvulaeApp.Views.MenopauseTracker.Dashboard;
-using OvulaeApp.Views.OvulationTracker.Onboarding;
-using OvulaeApp.Views.PeriodTracker.Dashboard;
-using OvulaeApp.Views.PeriodTracker.Onboarding;
-using OvulaeApp.Views.PregnancyTracker.Dashboard;
 using OvulaeApp.Views.Splashscreen;
-using OvulaeApp.Views.Subscription;
-using OvulaeShared.Enums;
-using OvulaeShared.Enums.App;
 using OvulaeShared.Enums.Status;
 
 namespace OvulaeApp
@@ -22,7 +12,7 @@ namespace OvulaeApp
     public partial class MainPage : ContentPage
     {
         private ILocalDbService _localDbServ => ServiceHelper.GetService<ILocalDbService>();
-        private IFcmNotificationService _fcmService => ServiceHelper.GetService<IFcmNotificationService>();
+        private IOneSignalNotificationService _oneSignalService => ServiceHelper.GetService<IOneSignalNotificationService>();
 
         public MainPage()
         {
@@ -43,56 +33,60 @@ namespace OvulaeApp
             try
             {
                 var loadDataStatus = await _localDbServ.LoadStartupData();
-               
-                await _fcmService.InitializeFirebase();
-                //await Shell.Current.GoToAsync(nameof(PregnancyDashboardDayLoggerPage));
 
-                //return;
-
-                //await Task.Delay(2000);
-
-                if (loadDataStatus)
-                {
-                    var subscription = LocalStorageService.UserSubscription;
-                    var userDetails = LocalStorageService.UserDetails;
-                    if (userDetails != null && !string.IsNullOrEmpty(userDetails.UserId))
-                    {
-                        if (subscription == null)
-                        {
-                            await Shell.Current.GoToAsync(nameof(SplashWelcomePage));
-                        }
-                        else 
-                        {
-                            var isActiveSubscription = subscription.Status == StatusType.Active && subscription.NextPaymentDate > DateTime.Now;
-                            var isFreeTrial = subscription.Status == StatusType.Open && subscription.NextPaymentDate > DateTime.Now;
-
-                            if (isActiveSubscription || isFreeTrial)
-                            {
-                                LocalStorageService.Authenticated = true;
-
-                                var dashboardPage = NavigationsHelper.GetDashboardPageNameFromModule(LocalStorageService.AppPrimaryGoal);
-                                await Shell.Current.GoToAsync(dashboardPage);
-                            }
-                            else
-                            {
-                                //var hasNeverSubscribed = subscription.ActiveDate == DateTime.MinValue && string.IsNullOrEmpty(subscription.AuthorizationCode);
-                                //var page = hasNeverSubscribed ? nameof(PaymentWallPage) : nameof(PaymentFailedPage);
-                                await Shell.Current.GoToAsync(nameof(LoginPage));
-                            }
-                        }
-                    }
-                    else
-                    {
-                        var page = (subscription == null || subscription.Id == 0) ? nameof(SplashWelcomePage) : nameof(LoginPage);
-                        await Shell.Current.GoToAsync(page);
-                    }
-                }
-                else
+                //Cannot load data | Splash
+                if (!loadDataStatus)
                 {
                     await Shell.Current.GoToAsync(nameof(SplashWelcomePage));
+                    return;
                 }
+
+                var subscription = LocalStorageService.UserSubscription;
+                var userDetails = LocalStorageService.UserDetails;
+
+                // No user details loaded | Splash | Login
+                if (userDetails == null || string.IsNullOrEmpty(userDetails.UserId))
+                {
+                    var page = (subscription == null || subscription.Id == 0) ? nameof(SplashWelcomePage) : nameof(LoginPage);
+                    await Shell.Current.GoToAsync(page);
+                    return;
+                }
+
+                // No subscription found | Splash
+                if (subscription == null)
+                {
+                    await Shell.Current.GoToAsync(nameof(SplashWelcomePage));
+                    return;
+                }
+
+                var isActiveSubscription = subscription.Status == StatusType.Active && subscription.NextPaymentDate > DateTime.Now;
+                var isFreeTrial = subscription.Status == StatusType.Open && subscription.NextPaymentDate > DateTime.Now;
+
+                // Expired subscription & no free trial | Login
+                if (!isActiveSubscription && !isFreeTrial)
+                {
+                    await Shell.Current.GoToAsync(nameof(LoginPage));
+                    return;
+                }
+
+                LocalStorageService.Authenticated = true;
+                await _oneSignalService.InitializeOneSignal();
+
+                // App booting from notification tap | DayLogger
+                var pending = PendingNavigationCache.Consume();
+                if (pending != null)
+                {
+                    var route = NavigationsHelper.GetDayLogPageNameFromModuleName(pending.Value.module);
+                    await Shell.Current.GoToAsync($"{route}?entryId={pending.Value.entryId}");
+                    return;
+                }
+
+                // Normal app load | Dashboard
+                var dashboardPage = NavigationsHelper.GetDashboardPageNameFromModule(LocalStorageService.AppPrimaryGoal);
+                await Shell.Current.GoToAsync(dashboardPage);
+
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 await Shell.Current.GoToAsync(nameof(SplashWelcomePage));
             }
