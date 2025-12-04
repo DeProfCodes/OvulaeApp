@@ -39,6 +39,8 @@ using Microsoft.Maui.LifecycleEvents;
 using OvulaeShared.Services.Module.OvulationServices;
 using OvulaeShared.Services.Module.PeriodTrackerServices;
 using OvulaeShared.Services.Module.CycleServices;
+using OneSignalSDK.DotNet;
+
 
 
 #if ANDROID

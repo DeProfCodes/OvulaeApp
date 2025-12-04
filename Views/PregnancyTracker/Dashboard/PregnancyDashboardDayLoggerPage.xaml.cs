@@ -116,8 +116,7 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
                 DayLoggerHelper.PopulateMultiSelectComponent(BloodPressureMedicationComponent, DayLoggerHelper.YesNoOption, "");
                 DayLoggerHelper.PopulateMultiSelectComponent(BrestFeelingComponent, PregnancyDayLogItems.BrestFeeeling, logEntry.BrestFeeling);
                 DayLoggerHelper.PopulateMultiSelectComponent(NightUrinationComponent, PregnancyDayLogItems.NightUrination, logEntry.NighlyUrination);
-                DayLoggerHelper.PopulateMultiSelectComponent(MedAndSupplementComponent, MedicationSupplementDayLogItems.PregnancyTrackerMedications, logEntry.SupplementsAndMedication);
-
+                
                 MedicationComponent?.LoadMedications(logEntry.Medication);
 
                 // Set ratings

@@ -2,6 +2,7 @@
 using OvulaeApp.Models.Notifications;
 using OvulaeApp.ViewModels.Module;
 using OvulaeShared.Enums.ModuleEnums;
+using OvulaeShared.Models.Notifications;
 using OvulaeShared.ViewModel.Module;
 
 namespace OvulaeApp.Services.LocalDataService.MenopauseServices
