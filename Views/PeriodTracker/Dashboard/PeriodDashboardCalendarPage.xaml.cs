@@ -1,17 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
-using CommunityToolkit.Maui.Views;
-using Microsoft.Maui.Controls;
+﻿using CommunityToolkit.Maui.Views;
 using OvulaeApp.Helpers.Enums;
-using OvulaeApp.Helpers.Functions;
 using OvulaeApp.Services.LocalDataService;
-using OvulaeApp.Services.LocalDataService.CycleServices;
-using OvulaeApp.Services.LocalDataService.PeriodTrackerServices;
 using OvulaeApp.Services.LocalDataService.UsersServices;
-using OvulaeApp.ViewModels.PeriodTracker;
 using OvulaeApp.ViewModels.Shared;
 using OvulaeApp.Views.Components.Modals;
 using OvulaeShared.Enums.App;
+using OvulaeShared.Services.Module.CycleServices;
+using OvulaeShared.Services.Module.PeriodTrackerServices;
 
 namespace OvulaeApp.Views.PeriodTracker.Dashboard
 {

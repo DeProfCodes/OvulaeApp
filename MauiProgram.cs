@@ -6,16 +6,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using OvulaeApp.Helpers.UI;
 using OvulaeApp.Services.Jobs;
-using OvulaeApp.Services.Jobs.Daily;
 using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Services.LocalDataService.ChatBot;
-using OvulaeApp.Services.LocalDataService.CycleServices;
 using OvulaeApp.Services.LocalDataService.DietServices;
 using OvulaeApp.Services.LocalDataService.EducationServices;
 using OvulaeApp.Services.LocalDataService.MenopauseServices;
 using OvulaeApp.Services.LocalDataService.ModuleServices;
-using OvulaeApp.Services.LocalDataService.OvulationServices;
-using OvulaeApp.Services.LocalDataService.PeriodTrackerServices;
 using OvulaeApp.Services.LocalDataService.PregnancyServices;
 using OvulaeApp.Services.LocalDataService.SymptomsServices;
 using OvulaeApp.Services.LocalDataService.TipsServices;
@@ -40,9 +36,9 @@ using OvulaeApp.Services.LocalDataService.Subscription;
 using OvulaeShared.Services.APIs.Interface;
 using OvulaeApp.Services.Payments;
 using Microsoft.Maui.LifecycleEvents;
-
-
-
+using OvulaeShared.Services.Module.OvulationServices;
+using OvulaeShared.Services.Module.PeriodTrackerServices;
+using OvulaeShared.Services.Module.CycleServices;
 
 
 #if ANDROID
@@ -55,6 +51,7 @@ using Android.Content.Res;
 using UIKit;
 using OvulaeApp.Services.Payments;
 using Microsoft.Maui.Handlers;
+
 #endif
 
 namespace OvulaeApp
@@ -101,7 +98,6 @@ namespace OvulaeApp
 
 
             //Jobs
-            builder.Services.AddSingleton<IShinyStartupTask, DailyNotificationStartupTask>();
             
             /*
             builder.Services.UseJobs();
@@ -134,8 +130,6 @@ namespace OvulaeApp
             builder.Services.AddSingleton<IUserLocalService, UserLocalService>();
             builder.Services.AddSingleton<IChatBotService, ChatBotService>();
             builder.Services.AddSingleton<ICycleService, CycleService>();
-            builder.Services.AddSingleton<INotificationsPreferenceService, NotificationsPreferenceService>();
-            builder.Services.AddSingleton<INotificationSchedulerService, NotificationSchedulerService>();
             builder.Services.AddSingleton<IModuleLogsService, ModuleLogsService>();
             builder.Services.AddSingleton<ISubscriptionService, SubscriptionService>();
 

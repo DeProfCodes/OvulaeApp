@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using OvulaeApp.Helpers.Enums;
 using OvulaeApp.ViewModels.Module;
+using OvulaeShared.Enums.ModuleEnums;
+using OvulaeShared.ViewModel.Module;
 
 namespace OvulaeApp.ViewModels.Shared
 {

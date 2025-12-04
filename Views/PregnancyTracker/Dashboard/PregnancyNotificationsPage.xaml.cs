@@ -7,19 +7,13 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
 {
     public partial class PregnancyNotificationsPage : ContentPage
     {
-        private readonly INotificationsPreferenceService _notificationsPrefServ;
-        private readonly INotificationSchedulerService _notificationsSendServ;
-
         private PregnancyNotificationsViewModel vm;
 
         public bool _isNavigating { get; set; }
 
-        public PregnancyNotificationsPage(INotificationsPreferenceService notificationsPrefServ, INotificationSchedulerService notificationsSendServ)
+        public PregnancyNotificationsPage()
         {
             InitializeComponent();
-
-            _notificationsPrefServ = notificationsPrefServ;
-            _notificationsSendServ = notificationsSendServ;
         }
 
         protected override void OnAppearing()
@@ -37,7 +31,7 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
                 await SideMenu.OpenAsync();
             });
 
-            vm = new PregnancyNotificationsViewModel(_notificationsPrefServ);
+            vm = new PregnancyNotificationsViewModel();
             BindingContext = vm;
 
             base.OnAppearing();
@@ -56,7 +50,7 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
                 await AppLoader.ShowAsync("Saving your preferences...");
 
                 vm.Notifications.UseOwnTime = vm.ShowManualTime;
-                var success = await _notificationsPrefServ.UpdatePregnancyNotifications(vm.Notifications);
+                var success = true;// await _notificationsPrefServ.UpdatePregnancyNotifications(vm.Notifications);
 
                 if (success)
                 {

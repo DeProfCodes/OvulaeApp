@@ -1,11 +1,8 @@
 ﻿using CommunityToolkit.Maui.Views;
 using OvulaeApp.Helpers.Enums;
-using OvulaeApp.Models.Dashboard.Education;
 using OvulaeApp.Services.LocalDataService;
-using OvulaeApp.Services.LocalDataService.CycleServices;
 using OvulaeApp.Services.LocalDataService.EducationServices;
 using OvulaeApp.Services.LocalDataService.MenopauseServices;
-using OvulaeApp.Services.LocalDataService.PeriodTrackerServices;
 using OvulaeApp.Services.LocalDataService.UsersServices;
 using OvulaeApp.ViewModels.MenopauseTracker;
 using OvulaeApp.ViewModels.Module;
@@ -18,6 +15,8 @@ using OvulaeApp.Views.PeriodTracker.Dashboard;
 using OvulaeApp.Views.PregnancyTracker.Dashboard;
 using OvulaeShared.Enums;
 using OvulaeShared.Enums.App;
+using OvulaeShared.ViewModel.Education;
+using OvulaeShared.ViewModel.Module;
 
 namespace OvulaeApp.Views.MenopauseTracker.Dashboard
 {

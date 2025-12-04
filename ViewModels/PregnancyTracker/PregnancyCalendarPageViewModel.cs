@@ -13,9 +13,9 @@ using OvulaeApp.ViewModels.Calendar;
 using OvulaeShared.Models.Pregnancy;
 using OvulaeShared.Models.Symptoms;
 using OvulaeShared.Models.Tips;
-using static OvulaeApp.Helpers.Functions.SharedCommonFunctions;
 using System.Threading.Tasks;
 using OvulaeApp.Views.Components.Modals;
+using OvulaeShared.Helpers.ModuleHelpers;
 
 namespace OvulaeApp.ViewModels.PregnancyTracker
 {

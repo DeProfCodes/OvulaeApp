@@ -1,13 +1,13 @@
 ﻿using OvulaeApp.Helpers.Functions;
-using OvulaeApp.Models.Dashboard.Education;
 using OvulaeApp.Services.LocalDataService;
-using OvulaeApp.Services.LocalDataService.DietServices;
 using OvulaeApp.Services.LocalDataService.EducationServices;
 using OvulaeApp.Services.LocalDataService.PregnancyServices;
 using OvulaeShared.Enums.App;
 using OvulaeShared.Enums.User;
+using OvulaeShared.Helpers.ModuleHelpers;
 using OvulaeShared.Models.Pregnancy;
 using OvulaeShared.ViewModel.Diet;
+using OvulaeShared.ViewModel.Education;
 
 namespace OvulaeApp.ViewModels.PregnancyTracker
 {

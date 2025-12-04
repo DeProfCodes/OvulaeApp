@@ -11,6 +11,8 @@ using OvulaeApp.Services.LocalDataService.MenopauseServices;
 using OvulaeApp.ViewModels.Calendar;
 using OvulaeApp.ViewModels.Module;
 using OvulaeApp.Views.Components.Modals;
+using OvulaeShared.Enums.ModuleEnums;
+using OvulaeShared.ViewModel.Module;
 
 namespace OvulaeApp.ViewModels.MenopauseTracker
 {

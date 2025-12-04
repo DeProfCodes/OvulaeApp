@@ -5,6 +5,8 @@ using OvulaeApp.ViewModels.MenopauseTracker;
 using OvulaeApp.ViewModels.Module;
 using OvulaeShared.Enums;
 using OvulaeShared.Enums.HealthProfile;
+using OvulaeShared.Enums.ModuleEnums;
+using OvulaeShared.ViewModel.Module;
 
 namespace OvulaeApp.Services.LocalDataService.MenopauseServices
 {

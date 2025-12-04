@@ -8,7 +8,7 @@
     xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
     xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
     xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
-    xmlns:models="clr-namespace:OvulaeApp.Models.Dashboard.Education"
+    xmlns:models="clr-namespace:OvulaeShared.ViewModel.Education;assembly=OvulaeShared"
     xmlns:dietModel="clr-namespace:OvulaeShared.ViewModel.Diet;assembly=OvulaeShared"
     xmlns:dashComp2="clr-namespace:OvulaeApp.Views.Components.Dashboard"
     xmlns:dashComp3="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"

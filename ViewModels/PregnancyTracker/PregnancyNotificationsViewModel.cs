@@ -28,12 +28,8 @@ namespace OvulaeApp.ViewModels.PregnancyTracker
             }
         }
 
-        private readonly INotificationsPreferenceService _notificationsPrefServ;
-
-        public PregnancyNotificationsViewModel(INotificationsPreferenceService notificationsPrefServ)
+        public PregnancyNotificationsViewModel()
         {
-            _notificationsPrefServ = notificationsPrefServ;
-
             LoadNotificationsData();
         }
 
@@ -41,7 +37,7 @@ namespace OvulaeApp.ViewModels.PregnancyTracker
         {
             try
             {
-                Notifications = await _notificationsPrefServ.GetPregnancyNotifications();
+                Notifications = new();
                 ShowManualTime = Notifications?.UseOwnTime ?? false;
             }
             catch

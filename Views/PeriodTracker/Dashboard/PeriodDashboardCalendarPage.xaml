@@ -9,7 +9,7 @@
     xmlns:dashComp3="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
     xmlns:models="clr-namespace:OvulaeApp.ViewModels.Calendar"
     xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Shared"
-    xmlns:dashCard="clr-namespace:OvulaeApp.ViewModels.Module"
+    xmlns:dashCard="clr-namespace:OvulaeShared.ViewModel.Module;assembly=OvulaeShared"
     xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
     x:DataType="vm:PeriodOvulationCalendarPageViewModel">
 

@@ -7,17 +7,11 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
 {
     public partial class OvulationNotificationsPage : ContentPage
     {
-        private readonly INotificationsPreferenceService _notificationsPrefServ;
-        private readonly INotificationSchedulerService _notificationsSendServ;
-
         private PeriodOvulationNotificationsViewModel vm;
 
-        public OvulationNotificationsPage(INotificationsPreferenceService notificationsPrefServ, INotificationSchedulerService notificationsSendServ)
+        public OvulationNotificationsPage()
         {
             InitializeComponent();
-
-            _notificationsPrefServ = notificationsPrefServ;
-            _notificationsSendServ = notificationsSendServ;
         }
 
         protected override void OnAppearing()
@@ -31,7 +25,7 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
                 await SideMenu.OpenAsync();
             });
 
-            vm = new PeriodOvulationNotificationsViewModel(_notificationsPrefServ);
+            vm = new PeriodOvulationNotificationsViewModel();
             BindingContext = vm;
 
             base.OnAppearing();
@@ -44,7 +38,7 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
                 await AppLoader.ShowAsync("Saving your preferences...");
 
                 vm.Notifications.UseOwnTime = vm.ShowManualTime;
-                var success = await _notificationsPrefServ.UpdatePeriodOvulationNotifications(vm.Notifications);
+                var success = true;// await _notificationsPrefServ.UpdatePeriodOvulationNotifications(vm.Notifications);
 
                 if (success)
                 {

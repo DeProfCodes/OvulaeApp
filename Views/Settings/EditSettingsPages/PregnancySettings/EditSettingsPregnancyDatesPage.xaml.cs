@@ -6,6 +6,7 @@ using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Services.LocalDataService.UsersServices;
 using OvulaeApp.ViewModels.Settings;
 using OvulaeApp.Views.Components.Modals;
+using OvulaeShared.Helpers.ModuleHelpers;
 
 namespace OvulaeApp.Views.Settings.EditSettingsPages.PregnancySettings
 {

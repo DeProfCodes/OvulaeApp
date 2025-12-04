@@ -5,7 +5,7 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Shapes;
 using OvulaeApp.Helpers.Styles;
 using OvulaeApp.Models;
-using OvulaeApp.Models.Dashboard.Education;
+using OvulaeShared.ViewModel.Education;
 
 namespace OvulaeApp.Views.Components.Dashboard;
 

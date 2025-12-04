@@ -5,14 +5,13 @@ using Microsoft.Maui.Controls;
 using OvulaeApp.Helpers.Enums;
 using OvulaeApp.Helpers.Functions;
 using OvulaeApp.Services.LocalDataService;
-using OvulaeApp.Services.LocalDataService.CycleServices;
-using OvulaeApp.Services.LocalDataService.OvulationServices;
-using OvulaeApp.Services.LocalDataService.PeriodTrackerServices;
 using OvulaeApp.Services.LocalDataService.UsersServices;
 using OvulaeApp.ViewModels.PeriodTracker;
 using OvulaeApp.ViewModels.Shared;
 using OvulaeApp.Views.Components.Modals;
 using OvulaeShared.Enums.App;
+using OvulaeShared.Services.Module.CycleServices;
+using OvulaeShared.Services.Module.OvulationServices;
 
 namespace OvulaeApp.Views.OvulationTracker.Dashboard
 {

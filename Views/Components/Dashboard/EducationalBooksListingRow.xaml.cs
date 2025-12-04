@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.Shapes;
-using OvulaeApp.Helpers.Styles;
-using OvulaeApp.Models;
-using OvulaeApp.Models.Dashboard.Education;
+﻿using OvulaeApp.Helpers.Styles;
+using OvulaeShared.ViewModel.Education;
 
 namespace OvulaeApp.Views.Components.Dashboard;
 

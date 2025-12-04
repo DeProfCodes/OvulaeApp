@@ -35,26 +35,6 @@ namespace OvulaeApp
         {
             base.OnAppearing();
 
-#if ANDROID
-            try
-            {
-                var notifPrefService = AppServiceHelper.Services.GetService<INotificationsPreferenceService>();
-                if (notifPrefService != null)
-                {
-                    var prefs = await notifPrefService.GetPeriodOvulationNotifications();
-
-                    if (prefs.PreferredNotificationTime > TimeSpan.Zero && prefs.PreferredNotificationTime < TimeSpan.FromDays(1))
-                    {
-                        Platforms.Android.Helpers.AlarmScheduler.ScheduleDailyAlarm(prefs.PreferredNotificationTime);
-                    }
-                }
-            }
-            catch
-            {
-                
-            }
-            #endif
-
             await NavigateToStartupPage();
         }
 

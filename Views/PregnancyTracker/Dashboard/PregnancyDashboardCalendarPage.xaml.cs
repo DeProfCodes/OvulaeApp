@@ -9,6 +9,7 @@ using OvulaeApp.Services.LocalDataService.UsersServices;
 using OvulaeApp.ViewModels.PregnancyTracker;
 using OvulaeApp.Views.Components.Modals;
 using OvulaeShared.Enums.App;
+using OvulaeShared.Helpers.ModuleHelpers;
 
 namespace OvulaeApp.Views.PregnancyTracker.Dashboard
 {

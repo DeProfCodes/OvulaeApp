@@ -1,6 +1,5 @@
 ﻿using System.Net;
 using OvulaeApp.Helpers.Functions;
-using OvulaeApp.Services.LocalDataService.CycleServices;
 using OvulaeApp.Services.LocalDataService.Updates;
 using OvulaeShared.Enums;
 using OvulaeShared.Enums.App;
@@ -10,6 +9,7 @@ using OvulaeShared.Models.Pregnancy;
 using OvulaeShared.Models.User;
 using OvulaeShared.Models.WebApi;
 using OvulaeShared.Services.APIs.Interface;
+using OvulaeShared.Services.Module.CycleServices;
 using OvulaeShared.ViewModel.Pregnancy;
 
 namespace OvulaeApp.Services.LocalDataService.PregnancyServices

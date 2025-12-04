@@ -12,7 +12,7 @@
     xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
     xmlns:custButtons="clr-namespace:OvulaeApp.Views.Components.Controls.Buttons"
     xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
-    xmlns:models="clr-namespace:OvulaeApp.Models.Dashboard.Education"
+    xmlns:models="clr-namespace:OvulaeShared.ViewModel.Education;assembly=OvulaeShared"
     xmlns:conv="clr-namespace:OvulaeApp.Helpers.UI.Convertors"
     x:DataType="vm:EducationCoverViewModel">
 

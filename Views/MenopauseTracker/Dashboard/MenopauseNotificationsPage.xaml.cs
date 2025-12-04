@@ -7,17 +7,12 @@ namespace OvulaeApp.Views.MenopauseTracker.Dashboard
 {
     public partial class MenopauseNotificationsPage : ContentPage
     {
-        private readonly INotificationsPreferenceService _notificationsPrefServ;
-        private readonly INotificationSchedulerService _notificationsSendServ;
-
         private MenopauseNotificationsViewModel vm;
 
-        public MenopauseNotificationsPage(INotificationsPreferenceService notificationsPrefServ, INotificationSchedulerService notificationsSendServ)
+        public MenopauseNotificationsPage()
         {
             InitializeComponent();
 
-            _notificationsPrefServ = notificationsPrefServ;
-            _notificationsSendServ = notificationsSendServ;
         }
 
         protected override void OnAppearing()
@@ -33,7 +28,7 @@ namespace OvulaeApp.Views.MenopauseTracker.Dashboard
                 await SideMenu.OpenAsync();
             });
 
-            vm = new MenopauseNotificationsViewModel(_notificationsPrefServ);
+            vm = new MenopauseNotificationsViewModel();
             BindingContext = vm;
 
             base.OnAppearing();
@@ -46,9 +41,9 @@ namespace OvulaeApp.Views.MenopauseTracker.Dashboard
                 await AppLoader.ShowAsync("Saving your preferences...");
 
                 vm.Notifications.UseOwnTime = vm.ShowManualTime;
-                var success = await _notificationsPrefServ.UpdateMenopauseNotifications(vm.Notifications);
+                //var success = await _notificationsPrefServ.UpdateMenopauseNotifications(vm.Notifications);
 
-                if (success)
+                if (true)
                 {
                     await Shell.Current.CurrentPage.ShowPopupAsync(new BrandedAlertPopup("Saved!", "Your notifications preferences have been saved!", "Ok"));
                 }

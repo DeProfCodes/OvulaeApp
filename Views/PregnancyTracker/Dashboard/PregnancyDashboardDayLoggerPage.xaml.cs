@@ -1,5 +1,4 @@
-﻿using System;
-using CommunityToolkit.Maui.Views;
+﻿using CommunityToolkit.Maui.Views;
 using OvulaeApp.Helpers.Enums;
 using OvulaeApp.Helpers.Pages.DayLogging;
 using OvulaeApp.Services.LocalDataService;
@@ -7,6 +6,7 @@ using OvulaeApp.Services.LocalDataService.ModuleServices;
 using OvulaeApp.Services.LocalDataService.PregnancyServices;
 using OvulaeApp.Services.LocalDataService.UsersServices;
 using OvulaeApp.ViewModels.PregnancyTracker;
+using OvulaeApp.Views.Components.Dashboard;
 using OvulaeApp.Views.Components.Modals;
 using OvulaeApp.Views.PeriodTracker.Dashboard;
 using OvulaeShared.Enums.App;
@@ -14,6 +14,8 @@ using OvulaeShared.Helpers.CommonFunctions;
 using OvulaeShared.Helpers.ModuleHelpers.DayLogging;
 using OvulaeShared.Models.PeriodTracker;
 using OvulaeShared.Models.Pregnancy;
+using OvulaeShared.Models.Shared.Logs;
+using System;
 using static OvulaeShared.Helpers.API.OvulaeApiEndPoints;
 
 namespace OvulaeApp.Views.PregnancyTracker.Dashboard
@@ -104,6 +106,8 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
                 DayLoggerHelper.PopulateMultiSelectComponent(BrestFeelingComponent, PregnancyDayLogItems.BrestFeeeling, logEntry.BrestFeeling);
                 DayLoggerHelper.PopulateMultiSelectComponent(NightUrinationComponent, PregnancyDayLogItems.NightUrination, logEntry.NighlyUrination);
 
+                MedicationComponent?.LoadMedications(logEntry.Medication);
+
                 // Set ratings
                 MoodRating.SelectedRating = DefaultValueHelper.GetIntValueOrDefault(logEntry.MoodsRating);
                 SymptomsRating.SelectedRating = DefaultValueHelper.GetIntValueOrDefault(logEntry.SymptomsRating);
@@ -133,6 +137,7 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
                 DiscomfortNotes.Text = logEntry.DiscomfortNotes;
                 BleedingNotes.Text = logEntry.BleedingNotes;
                 BrestFeelingNotes.Text = logEntry.BrestFeelingNotes;
+                MedicationNotes.Text = logEntry.MedicationNotes;
 
                 ReflectionText.Text = logEntry.Reflection;
 
@@ -271,6 +276,7 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
             logEntry.BowelMovementsFrequency = BowelMovementsFrequencyComponent.SelectedItems.FirstOrDefault();
             logEntry.NighlyUrination = NightUrinationComponent.SelectedItems.FirstOrDefault();
             logEntry.BrestFeeling = BrestFeelingComponent.SelectedItems.FirstOrDefault();
+            logEntry.Medication = MedicationComponent?.Medications ?? new ();
 
             // Update ratings
             logEntry.MoodsRating = MoodsComponent.SelectedItems.Count() > 0 ? MoodRating.SelectedRating : null;
@@ -301,6 +307,7 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
             logEntry.DiscomfortNotes = DiscomfortNotes.Text;
             logEntry.BleedingNotes = BleedingNotes.Text;
             logEntry.BrestFeelingNotes = BrestFeelingNotes.Text;
+            logEntry.MedicationNotes = MedicationNotes.Text;
 
             DefaultValueHelper.SetDefaults(logEntry);
         }

@@ -28,12 +28,8 @@ namespace OvulaeApp.ViewModels.Shared
             }
         }
 
-        private readonly INotificationsPreferenceService _notificationsPrefServ;
-
-        public PeriodOvulationNotificationsViewModel(INotificationsPreferenceService notificationsPrefServ)
+        public PeriodOvulationNotificationsViewModel()
         {
-            _notificationsPrefServ = notificationsPrefServ;
-
             LoadNotificationsData();
         }
 
@@ -41,7 +37,7 @@ namespace OvulaeApp.ViewModels.Shared
         {
             try
             {
-                Notifications = await _notificationsPrefServ.GetPeriodOvulationNotifications();
+                Notifications = new();
                 ShowManualTime = Notifications?.UseOwnTime ?? false;
             }
             catch

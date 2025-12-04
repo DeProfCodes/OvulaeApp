@@ -1,5 +1,4 @@
 ﻿using OvulaeApp.Helpers.Enums;
-using OvulaeApp.Models.Dashboard.Education;
 using OvulaeShared.Enums.App;
 using OvulaeShared.Models.Education;
 using OvulaeShared.ViewModel.Education;

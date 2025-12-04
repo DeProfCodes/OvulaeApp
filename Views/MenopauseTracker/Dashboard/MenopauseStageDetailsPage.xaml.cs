@@ -2,6 +2,7 @@
 using OvulaeApp.Services.LocalDataService.MenopauseServices;
 using OvulaeApp.ViewModels.Module;
 using OvulaeShared.Enums;
+using OvulaeShared.Enums.ModuleEnums;
 
 namespace OvulaeApp.Views.MenopauseTracker.Dashboard
 {

@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Windows.Input;
 using OvulaeApp.Helpers.Enums;
 using OvulaeApp.Helpers.Functions;
-using OvulaeApp.Models.Dashboard.Education;
 using OvulaeApp.Services.LocalDataService;
-using OvulaeApp.Services.LocalDataService.CycleServices;
 using OvulaeApp.Services.LocalDataService.EducationServices;
-using OvulaeApp.Services.LocalDataService.OvulationServices;
 using OvulaeApp.ViewModels.Module;
 using OvulaeApp.Views.Components.Modals;
 using OvulaeShared.Enums.App;
+using OvulaeShared.Enums.ModuleEnums;
 using OvulaeShared.Enums.User;
+using OvulaeShared.Services.Module.CycleServices;
+using OvulaeShared.ViewModel.Education;
+using OvulaeShared.ViewModel.Module;
 
 namespace OvulaeApp.ViewModels.Shared
 {

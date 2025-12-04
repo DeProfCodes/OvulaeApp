@@ -1,5 +1,6 @@
 ﻿using OvulaeApp.Helpers.Functions;
 using OvulaeApp.Services.LocalDataService;
+using OvulaeShared.Helpers.ModuleHelpers;
 
 namespace OvulaeApp.ViewModels.Settings
 {    

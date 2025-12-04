@@ -169,6 +169,8 @@ namespace OvulaeApp.Views.MenopauseTracker.Dashboard
             DayLoggerHelper.PopulateMultiSelectComponent(BloodPressureMedicationComponent, DayLoggerHelper.YesNoOption, "");
             DayLoggerHelper.PopulateMultiSelectComponent(BlemishesComponent, DayLoggerHelper.YesNoOption, "");
 
+            MedicationComponent?.LoadMedications(TodayMenopauseLog.Medications);
+
             var bp = !string.IsNullOrEmpty(TodayMenopauseLog.BloodPressureReadings) ? TodayMenopauseLog.BloodPressureReadings.Split('/') : new string[] { "80", "50" };
             BpSystolicValue.Value = Convert.ToInt32(bp[0]);
             BpDiastolicValue.Value = Convert.ToInt32(bp[1]);
@@ -184,6 +186,7 @@ namespace OvulaeApp.Views.MenopauseTracker.Dashboard
             BladderPainNotes.Text = DefaultValueHelper.GetStringValueOrDefault(TodayMenopauseLog.BladderPainNotes);
             HairLossNotes.Text = DefaultValueHelper.GetStringValueOrDefault(TodayMenopauseLog.HairLossNotes);
             WeightGainNotes.Text = DefaultValueHelper.GetStringValueOrDefault(TodayMenopauseLog.WeightGainNotes);
+            MedicationNotes.Text = MedicationNotes.Text;
 
             UrinationRating.SelectedRating = DefaultValueHelper.GetIntValueOrDefault(TodayMenopauseLog.UrinationRating);
             BreastTendernessRating.SelectedRating = DefaultValueHelper.GetIntValueOrDefault(TodayMenopauseLog.BreastTendernessRating);
@@ -244,6 +247,7 @@ namespace OvulaeApp.Views.MenopauseTracker.Dashboard
             TodayMenopauseLog.WeightFluctuateNormal = DayLoggerHelper.GetBooleanFromYesNoSelection(WeightFluctuateNormalComponent, TodayMenopauseLog.WeightFluctuateNormal);
             TodayMenopauseLog.BloodPressureDaily = DayLoggerHelper.GetBooleanFromYesNoSelection(BloodPressureDailyComponent, TodayMenopauseLog.BloodPressureDaily);
             TodayMenopauseLog.BlemishShowing = DayLoggerHelper.GetBooleanFromYesNoSelection(BlemishesComponent, TodayMenopauseLog.BlemishShowing);
+            TodayMenopauseLog.Medications = MedicationComponent?.Medications ?? new();
 
             TodayMenopauseLog.CoughWeeNotes = CoughWeeNotes.Text;
             TodayMenopauseLog.SneezeWeeNotes = SneezeWeeNotes.Text;
@@ -251,6 +255,7 @@ namespace OvulaeApp.Views.MenopauseTracker.Dashboard
             TodayMenopauseLog.BladderPainNotes = BladderPainNotes.Text;
             TodayMenopauseLog.HairLossNotes = HairLossNotes.Text;
             TodayMenopauseLog.WeightGainNotes = WeightGainNotes.Text;
+            TodayMenopauseLog.MedicationNotes = MedicationNotes.Text;
 
             TodayMenopauseLog.UrinationRating = UrinationRating.SelectedRating;
             TodayMenopauseLog.BreastTendernessRating = BreastTendernessRating.SelectedRating;

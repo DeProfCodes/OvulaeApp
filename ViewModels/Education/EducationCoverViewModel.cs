@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OvulaeApp.Models.Dashboard.Education;
 using OvulaeApp.Services.LocalDataService.EducationServices;
 using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Views.Components.Modals;
 using OvulaeShared.Enums.App;
 using OvulaeApp.Views.Education;
+using OvulaeShared.ViewModel.Education;
 
 namespace OvulaeApp.ViewModels.Education
 {

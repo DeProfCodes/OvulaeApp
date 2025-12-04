@@ -1,13 +1,13 @@
 ﻿using CommunityToolkit.Maui.Views;
 using OvulaeApp.Helpers.Pages.DayLogging;
 using OvulaeApp.Services.LocalDataService;
-using OvulaeApp.Services.LocalDataService.CycleServices;
 using OvulaeApp.Services.LocalDataService.ModuleServices;
 using OvulaeApp.Services.LocalDataService.UsersServices;
 using OvulaeApp.ViewModels.OvulationTracker;
 using OvulaeApp.Views.Components.Modals;
 using OvulaeShared.Helpers.CommonFunctions;
 using OvulaeShared.Helpers.ModuleHelpers.DayLogging;
+using OvulaeShared.Services.Module.CycleServices;
 
 namespace OvulaeApp.Views.OvulationTracker.Dashboard
 {
@@ -123,6 +123,8 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
                 DayLoggerHelper.PopulateMultiSelectComponent(BowelMovementsRegularityComponent, CycleTrackerDayLogItems.PeriodBowelMovementIrregularityOptions, todayLog.BowelMovementsRegularity);
                 DayLoggerHelper.PopulateMultiSelectComponent(BowelMovementsFrequencyComponent, CycleTrackerDayLogItems.PeriodBowelMovementFrequencyOptions, todayLog.BowelMovementsFrequency);
 
+                MedicationComponent?.LoadMedications(todayLog.Medications);
+
                 // Set ratings
                 MoodRating.SelectedRating = DefaultValueHelper.GetIntValueOrDefault(todayLog.MoodsRating);
                 SymptomsRating.SelectedRating = DefaultValueHelper.GetIntValueOrDefault(todayLog.SymptomsRating);
@@ -140,6 +142,7 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
                 EnergyNotes.Text = DefaultValueHelper.GetStringValueOrDefault(todayLog.EnergyNotes);
                 LifestyleNotes.Text = DefaultValueHelper.GetStringValueOrDefault(todayLog.LifestyleNotes);
                 BreastTendernessNotes.Text = DefaultValueHelper.GetStringValueOrDefault(todayLog.BreastTendernessNotes);
+                MedicationNotes.Text = todayLog.MedicationNotes;
 
                 ReflectionText.Text = todayLog.Notes;
 
@@ -253,6 +256,7 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
 
             todayLog.BowelMovementsRegularity = BowelMovementsRegularityComponent.SelectedItems.FirstOrDefault();
             todayLog.BowelMovementsFrequency = BowelMovementsFrequencyComponent.SelectedItems.FirstOrDefault();
+            todayLog.Medications = MedicationComponent?.Medications ?? new();
 
             // Set ratings
             todayLog.MoodsRating = MoodsComponent.SelectedItems.Count() > 0 ? MoodRating.SelectedRating : 0;
@@ -271,6 +275,7 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
             todayLog.EnergyNotes = EnergyNotes.Text;
             todayLog.LifestyleNotes = LifestyleNotes.Text;
             todayLog.BreastTendernessNotes = BreastTendernessNotes.Text;
+            todayLog.MedicationNotes = MedicationNotes.Text;
         }
 
         private async void SaveTodaysLogs_Clicked(object sender, EventArgs e)

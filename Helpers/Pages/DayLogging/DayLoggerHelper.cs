@@ -1,10 +1,11 @@
-﻿using System;
+﻿using OvulaeApp.ViewModels.Dashboard;
+using OvulaeApp.Views.Components.Dashboard;
+using OvulaeShared.Models.Shared.Logs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OvulaeApp.ViewModels.Dashboard;
-using OvulaeApp.Views.Components.Dashboard;
 using static OvulaeShared.Helpers.API.OvulaeApiEndPoints;
 
 namespace OvulaeApp.Helpers.Pages.DayLogging
@@ -74,6 +75,23 @@ namespace OvulaeApp.Helpers.Pages.DayLogging
             bool sameItems = list1.Count == list2.Count && !list1.Except(list2).Any(); 
 
             return sameItems;
+        }
+
+        public static void PopulateMedicationComponent(MedicationEntryComponent component, List<MedicationModel> medications)
+        {
+            if (component == null) return;
+
+            component.ClearEntries();
+
+            if (medications != null && medications.Any())
+            {
+                component.LoadMedications(medications);
+            }
+            else
+            {
+                // Ensure there's at least one empty entry
+                component.ClearEntries();
+            }
         }
     }
 }

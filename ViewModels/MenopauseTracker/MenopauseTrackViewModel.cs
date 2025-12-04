@@ -1,7 +1,6 @@
 ﻿using System.Windows.Input;
 using CommunityToolkit.Maui.Views;
 using OvulaeApp.Helpers.Enums;
-using OvulaeApp.Models.Dashboard.Education;
 using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Services.LocalDataService.EducationServices;
 using OvulaeApp.Services.LocalDataService.MenopauseServices;
@@ -9,7 +8,10 @@ using OvulaeApp.ViewModels.Module;
 using OvulaeApp.Views.Components.Modals;
 using OvulaeShared.Enums;
 using OvulaeShared.Enums.App;
+using OvulaeShared.Enums.ModuleEnums;
 using OvulaeShared.Enums.User;
+using OvulaeShared.ViewModel.Education;
+using OvulaeShared.ViewModel.Module;
 
 namespace OvulaeApp.ViewModels.MenopauseTracker
 {

@@ -1,15 +1,15 @@
 ﻿using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Windows.Input;
-using OvulaeApp.Helpers.Functions;
 using OvulaeApp.Helpers.Styles;
 using OvulaeApp.ViewModels.Calendar;
 using OvulaeApp.Views.Components.Modals;
 using OvulaeApp.ViewModels.Module;
-using OvulaeApp.Helpers.Enums;
 using OvulaeApp.Services.LocalDataService;
 using OvulaeShared.Enums.App;
-using OvulaeApp.Services.LocalDataService.CycleServices;
+using OvulaeShared.Services.Module.CycleServices;
+using OvulaeShared.ViewModel.Module;
+using OvulaeShared.Enums.ModuleEnums;
 
 namespace OvulaeApp.ViewModels.Shared
 {

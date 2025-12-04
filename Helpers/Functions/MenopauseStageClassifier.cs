@@ -1,5 +1,6 @@
 ﻿using OvulaeApp.Helpers.Enums;
 using OvulaeApp.ViewModels.MenopauseTracker;
+using OvulaeShared.Enums.ModuleEnums;
 
 namespace OvulaeApp.Helpers.Functions
 {

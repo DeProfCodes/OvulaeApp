@@ -1,6 +1,6 @@
 ﻿using Microsoft.Maui.Controls;
 using Microsoft.Maui.Graphics;
-using OvulaeApp.Models.Dashboard.Education;
+using OvulaeShared.ViewModel.Education;
 using System.Windows.Input;
 
 namespace OvulaeApp.Views.Components.Dashboard

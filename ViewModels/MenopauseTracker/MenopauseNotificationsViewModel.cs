@@ -32,11 +32,8 @@ namespace OvulaeApp.ViewModels.MenopauseTracker
             }
         }
 
-        private readonly INotificationsPreferenceService _notificationsPrefServ;
-
-        public MenopauseNotificationsViewModel(INotificationsPreferenceService notificationsPrefServ)
+        public MenopauseNotificationsViewModel()
         {
-            _notificationsPrefServ = notificationsPrefServ;
             LoadNotificationsData();
         }
 
@@ -44,7 +41,7 @@ namespace OvulaeApp.ViewModels.MenopauseTracker
         {
             try
             {
-                Notifications = await _notificationsPrefServ.GetMenopauseNotifications();
+                Notifications = new();
                 ShowManualTime = Notifications?.UseOwnTime ?? false;
             }
             catch

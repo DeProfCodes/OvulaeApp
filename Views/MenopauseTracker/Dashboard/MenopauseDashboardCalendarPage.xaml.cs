@@ -1,11 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.Maui.Controls;
-using OvulaeApp.Helpers.Functions;
-using OvulaeApp.Services.LocalDataService;
-using OvulaeApp.Services.LocalDataService.CycleServices;
-using OvulaeApp.Services.LocalDataService.MenopauseServices;
-using OvulaeApp.Services.LocalDataService.PeriodTrackerServices;
+﻿using OvulaeApp.Services.LocalDataService.MenopauseServices;
 using OvulaeApp.ViewModels.MenopauseTracker;
 using OvulaeApp.ViewModels.PeriodTracker;
 using OvulaeApp.ViewModels.Shared;

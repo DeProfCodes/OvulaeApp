@@ -1,12 +1,13 @@
 ﻿using System.Diagnostics.Metrics;
 using OvulaeApp.Helpers.Functions;
 using OvulaeApp.Services.LocalDataService;
-using OvulaeApp.Services.LocalDataService.CycleServices;
 using OvulaeApp.ViewModels.Authentication;
 using OvulaeShared.Enums;
 using OvulaeShared.Enums.App;
 using OvulaeShared.Enums.HealthProfile;
 using OvulaeShared.Enums.User;
+using OvulaeShared.Helpers.ModuleHelpers;
+using OvulaeShared.Services.Module.CycleServices;
 
 namespace OvulaeApp.ViewModels.Shared
 {

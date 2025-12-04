@@ -1,6 +1,5 @@
 ﻿using OvulaeApp.Helpers.Enums;
 using OvulaeApp.Helpers.Functions;
-using OvulaeApp.Models.Dashboard.Education;
 using OvulaeApp.Services.LocalDataService.Updates;
 using OvulaeShared.Enums;
 using OvulaeShared.Enums.App;

@@ -4,6 +4,7 @@ using OvulaeApp.Helpers.Functions;
 using OvulaeApp.Helpers.Styles;
 using OvulaeApp.Helpers.UI;
 using OvulaeApp.Services.LocalDataService;
+using OvulaeShared.Helpers.ModuleHelpers;
 using OvulaeShared.Models.Diet;
 
 namespace OvulaeApp.Views.Components.Modals.Dashboard

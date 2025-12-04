@@ -1,8 +1,5 @@
-﻿using OvulaeApp.Services.LocalDataService.CycleServices;
-using OvulaeApp.Services.LocalDataService.EducationServices;
-using OvulaeApp.Services.LocalDataService.MenopauseServices;
+﻿using OvulaeApp.Services.LocalDataService.EducationServices;
 using OvulaeApp.Services.LocalDataService.ModuleServices;
-using OvulaeApp.Services.LocalDataService.PeriodTrackerServices;
 using OvulaeApp.Services.LocalDataService.PregnancyServices;
 using OvulaeApp.Services.LocalDataService.Subscription;
 using OvulaeApp.Services.LocalDataService.SymptomsServices;

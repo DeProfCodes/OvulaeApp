@@ -4,13 +4,13 @@
     x:Class="OvulaeApp.Views.OvulationTracker.Dashboard.OvulationDashboardHomePage"
     Background="White"
     xmlns:vm="clr-namespace:OvulaeApp.ViewModels.Shared"
-    xmlns:moduleVm="clr-namespace:OvulaeApp.ViewModels.Module"
+    xmlns:moduleVm="clr-namespace:OvulaeShared.ViewModel.Module;assembly=OvulaeShared"
     xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
     xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
     xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
     xmlns:dashComp2="clr-namespace:OvulaeApp.Views.Components.Dashboard"
     xmlns:dashComp3="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
-    xmlns:models="clr-namespace:OvulaeApp.Models.Dashboard.Education"
+    xmlns:models="clr-namespace:OvulaeShared.ViewModel.Education;assembly=OvulaeShared"
     x:DataType="vm:PeriodOvulationTrackViewModel">
 
     <AbsoluteLayout>

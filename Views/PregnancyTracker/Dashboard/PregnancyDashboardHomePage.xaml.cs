@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Maui.Views;
 using OvulaeApp.Helpers.Enums;
-using OvulaeApp.Models.Dashboard.Education;
 using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Services.LocalDataService.DietServices;
 using OvulaeApp.Services.LocalDataService.EducationServices;
@@ -14,6 +13,7 @@ using OvulaeApp.Views.PeriodTracker.Dashboard;
 using OvulaeShared.Enums.App;
 using OvulaeShared.Models.Diet;
 using OvulaeShared.ViewModel.Diet;
+using OvulaeShared.ViewModel.Education;
 
 namespace OvulaeApp.Views.PregnancyTracker.Dashboard
 {

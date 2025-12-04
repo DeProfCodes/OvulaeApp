@@ -1055,6 +1055,9 @@
 		<Compile Update="Views\Components\Dashboard\DashboardTrackerHeroView.xaml.cs">
 			<DependentUpon>OvulationHeroView.xaml</DependentUpon>
 		</Compile>
+		<Compile Update="Views\Components\Dashboard\MedicationEntryComponent.xaml.cs">
+		  <DependentUpon>MedicationEntryComponent.xaml</DependentUpon>
+		</Compile>
 		<Compile Update="Views\Components\Dashboard\EducationCoverItem.xaml.cs">
 			<DependentUpon>EducationCoverItem.xaml</DependentUpon>
 		</Compile>
@@ -1406,6 +1409,9 @@
 		<MauiXaml Update="Views\Components\Controls\NumericStepper.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+		<MauiXaml Update="Views\Components\Dashboard\MedicationEntryComponent.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="Views\Components\Dashboard\EducationCoverItem.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
@@ -1722,7 +1728,10 @@
 
 	<ItemGroup>
 		<Folder Include="Helpers\UI\CustomControls\" />
+		<Folder Include="Models\Dashboard\" />
 		<Folder Include="Platforms\Android\Handlers\" />
+		<Folder Include="Platforms\Android\Helpers\" />
+		<Folder Include="Platforms\Android\Receivers\" />
 		<Folder Include="Platforms\iOS\Handlers\" />
 		<Folder Include="Services\Platform\Android\" />
 		<Folder Include="ViewModels\IOS\" />

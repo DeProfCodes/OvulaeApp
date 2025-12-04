@@ -1,7 +1,6 @@
-﻿using OvulaeApp.Helpers.Enums;
-using OvulaeApp.Services.LocalDataService.OvulationServices;
-using OvulaeApp.Services.LocalDataService.PeriodTrackerServices;
-using OvulaeShared.Enums;
+﻿using OvulaeShared.Enums;
+using OvulaeShared.Enums.ModuleEnums;
+using OvulaeShared.Services.Module.PeriodTrackerServices;
 
 namespace OvulaeApp.Views.PeriodTracker.Dashboard
 {

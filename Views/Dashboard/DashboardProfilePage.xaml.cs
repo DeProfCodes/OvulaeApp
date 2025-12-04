@@ -3,8 +3,6 @@ using System.Threading.Tasks;
 using CommunityToolkit.Maui.Views;
 using OvulaeApp.Helpers.Enums;
 using OvulaeApp.Helpers.UI;
-using OvulaeApp.Services.LocalDataService;
-using OvulaeApp.Services.LocalDataService.CycleServices;
 using OvulaeApp.Services.LocalDataService.TipsServices;
 using OvulaeApp.Services.LocalDataService.UsersServices;
 using OvulaeApp.ViewModels.Shared;
@@ -16,6 +14,7 @@ using OvulaeApp.Views.Settings;
 using OvulaeApp.Views.Settings.EditSettingsPages.GeneralSettings;
 using OvulaeShared.Enums;
 using OvulaeShared.Enums.User;
+using OvulaeShared.Services.Module.CycleServices;
 
 namespace OvulaeApp.Views.Dashboard
 {

@@ -3,12 +3,12 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="OvulaeApp.Views.MenopauseTracker.Dashboard.MenopauseStageDetailsPage"
-    xmlns:viewmodels="clr-namespace:OvulaeApp.ViewModels.Module"
+    xmlns:viewmodels="clr-namespace:OvulaeShared.ViewModel.Module;assembly=OvulaeShared"
     xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
     xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
     xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
     xmlns:dashComp2="clr-namespace:OvulaeApp.Views.Components.Dashboard"
-    xmlns:models="clr-namespace:OvulaeApp.Models.Dashboard.Education"
+    xmlns:models="clr-namespace:OvulaeShared.ViewModel.Education;assembly=OvulaeShared"
     x:DataType="viewmodels:ModulePhaseDetailsViewModel"
     Background="White">
 

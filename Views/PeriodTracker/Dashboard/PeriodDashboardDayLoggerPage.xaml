@@ -937,22 +937,26 @@
                                 Margin="20,20,20,0" />
 
                         </VerticalStackLayout>
+                        
+                         <!-- Medication -->
+                        <VerticalStackLayout Margin="20,25,20,0">
 
-                        <!-- Medications -->
-                        <VerticalStackLayout>
-                            <dashComp:MultiSelectLogItemComponent
-                                x:Name="MedicationsComponent"
-                                Title="Medications used today"
-                                SelectedColor="{StaticResource ThemeClrLight2}"
-                                ItemFontSize="12"
-                                Margin="20,20,20,0" />
+                            <Label
+                                Text="Medication taken today?"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                TextColor="Black"
+                                Margin="0,0,0,10" />
 
+                            <dashComp:MedicationEntryComponent
+                                x:Name="MedicationComponent"
+                                AddButtonText="Add Medication"
+                                Margin="0,0,0,0" />
+                            
                             <Border
-                                x:Name="MedicationNotesContainer"
-                                IsVisible="False"
                                 Stroke="{StaticResource ThemeClrMain}"
                                 StrokeShape="RoundRectangle 8"
-                                Margin="0,10,0,0"
+                                Margin="0,0,0,0"
                                 HorizontalOptions="FillAndExpand"
                                 VerticalOptions="Start"
                                 Padding="5">
@@ -965,6 +969,7 @@
                                     AutoSize="TextChanges"
                                     Placeholder="Enter anything to add..." />
                             </Border>
+
                         </VerticalStackLayout>
                         
                         <!-- Contraception Method -->
@@ -1002,6 +1007,618 @@
                             
                         </VerticalStackLayout>
                         
+                        <!-- PCOS Tracking Section -->
+                        <VerticalStackLayout Margin="20,25,20,0">
+                            
+                            <Border
+                                Stroke="{StaticResource ThemeClrPurple}"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 8"
+                                Background="{StaticResource ThemeClrPurpleLight}"
+                                Padding="15,10">
+                                
+                                <HorizontalStackLayout>
+                                    <Label
+                                        Text="PCOS Tracking"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource ThemeClrPurpleDark}"
+                                        VerticalOptions="Center" />
+                                    
+                                    <Label
+                                        x:Name="PcosSectionToggle"
+                                        Text="▼"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource ThemeClrPurpleDark}"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="EndAndExpand">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TogglePcosSection_Tapped" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </HorizontalStackLayout>
+                            </Border>
+                            
+                            <VerticalStackLayout 
+                                x:Name="PcosSectionContent"
+                                IsVisible="False"
+                                Spacing="15"
+                                Margin="0,10,0,0">
+                                
+                                <!-- PCOS Medication -->
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="What medication are you taking for PCOS?"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        Margin="0,0,0,10" />
+                                    
+                                    <dashComp:MedicationEntryComponent
+                                        x:Name="PcosMedicationComponent"
+                                        AddButtonText="Add PCOS Medication"
+                                        Margin="0,0,0,0" />
+                                </VerticalStackLayout>
+                                
+                                <!-- Waist-to-Hip Ratio / Waist Circumference -->
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="Waist-to-hip ratio or waist circumference"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        Margin="0,0,0,5" />
+                                    
+                                    <Label
+                                        Text="(abdominal fat is a key PCOS marker)"
+                                        FontSize="11"
+                                        FontAttributes="Italic"
+                                        TextColor="{StaticResource ThemeGray2}"
+                                        Margin="0,0,0,10" />
+                                    
+                                    <Grid ColumnDefinitions="*,Auto,*" ColumnSpacing="10">
+                                        <!-- Waist Measurement -->
+                                        <VerticalStackLayout Grid.Column="0">
+                                            <Label
+                                                Text="Waist (cm)"
+                                                FontSize="11"
+                                                FontAttributes="Italic"
+                                                TextColor="{StaticResource ThemeGray2}"
+                                                Margin="0,0,0,2" />
+                                            <Border
+                                                Stroke="{StaticResource ThemeClrMain}"
+                                                StrokeThickness="1"
+                                                StrokeShape="RoundRectangle 8"
+                                                Padding="10">
+                                                <Entry
+                                                    x:Name="PcosWaistMeasurement"
+                                                    Text=""
+                                                    Placeholder="e.g., 85"
+                                                    FontSize="14"
+                                                    TextColor="Black"
+                                                    Keyboard="Numeric"
+                                                    PlaceholderColor="{StaticResource ThemeGray2}" />
+                                            </Border>
+                                        </VerticalStackLayout>
+                                        
+                                        <Label
+                                            Grid.Column="1"
+                                            Text="/"
+                                            FontSize="20"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeClrMain}"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Center" />
+                                        
+                                        <!-- Hip Measurement -->
+                                        <VerticalStackLayout Grid.Column="2">
+                                            <Label
+                                                Text="Hip (cm)"
+                                                FontSize="11"
+                                                FontAttributes="Italic"
+                                                TextColor="{StaticResource ThemeGray2}"
+                                                Margin="0,0,0,2" />
+                                            <Border
+                                                Stroke="{StaticResource ThemeClrMain}"
+                                                StrokeThickness="1"
+                                                StrokeShape="RoundRectangle 8"
+                                                Padding="10">
+                                                <Entry
+                                                    x:Name="PcosHipMeasurement"
+                                                    Text=""
+                                                    Placeholder="e.g., 100"
+                                                    FontSize="14"
+                                                    TextColor="Black"
+                                                    Keyboard="Numeric"
+                                                    PlaceholderColor="{StaticResource ThemeGray2}" />
+                                            </Border>
+                                        </VerticalStackLayout>
+                                    </Grid>
+                                    
+                                    <!-- Ratio Display -->
+                                    <Label
+                                        x:Name="PcosWaistHipRatio"
+                                        Text="Ratio: --"
+                                        FontSize="12"
+                                        FontAttributes="Italic"
+                                        TextColor="{StaticResource ThemeClrPurpleDark}"
+                                        Margin="0,10,0,0"
+                                        HorizontalOptions="Center" />
+                                    
+                                    <!-- Or Waist Circumference Only -->
+                                    <VerticalStackLayout Margin="0,15,0,0">
+                                        <Label
+                                            Text="Or Waist Circumference Only:"
+                                            FontSize="12"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeGray2}"
+                                            Margin="0,0,0,5" />
+                                        
+                                        <Border
+                                            Stroke="{StaticResource ThemeClrMain}"
+                                            StrokeThickness="1"
+                                            StrokeShape="RoundRectangle 8"
+                                            Padding="10">
+                                            <Entry
+                                                x:Name="PcosWaistOnly"
+                                                Text=""
+                                                Placeholder="Waist circumference in cm"
+                                                FontSize="14"
+                                                TextColor="Black"
+                                                Keyboard="Numeric"
+                                                PlaceholderColor="{StaticResource ThemeGray2}" />
+                                        </Border>
+                                    </VerticalStackLayout>
+                                </VerticalStackLayout>
+                                
+                                <!-- Monthly Weight Tracking -->
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="Monthly Weight Tracking"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        Margin="0,0,0,10" />
+                                    
+                                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                                        <Border
+                                            Grid.Column="0"
+                                            Stroke="{StaticResource ThemeClrMain}"
+                                            StrokeThickness="1"
+                                            StrokeShape="RoundRectangle 8"
+                                            Padding="10">
+                                            <Entry
+                                                x:Name="PcosWeight"
+                                                Text=""
+                                                Placeholder="Weight (kg)"
+                                                FontSize="14"
+                                                TextColor="Black"
+                                                Keyboard="Numeric"
+                                                PlaceholderColor="{StaticResource ThemeGray2}" />
+                                        </Border>
+                                        
+                                        <VerticalStackLayout Grid.Column="1">
+                                            <Label
+                                                Text="Date"
+                                                FontSize="11"
+                                                FontAttributes="Italic"
+                                                TextColor="{StaticResource ThemeGray2}"
+                                                Margin="0,0,0,2" />
+                                            <Border
+                                                Stroke="{StaticResource ThemeClrMain}"
+                                                StrokeThickness="1"
+                                                StrokeShape="RoundRectangle 8"
+                                                Padding="10">
+                                                <DatePicker
+                                                    x:Name="PcosWeightDate"
+                                                    Date="{Binding DisplayDate}"
+                                                    Format="dd/MM/yyyy"
+                                                    FontSize="14"
+                                                    TextColor="Black"
+                                                    HorizontalOptions="FillAndExpand" />
+                                            </Border>
+                                        </VerticalStackLayout>
+                                    </Grid>
+                                    
+                                    <!-- Weight Notes -->
+                                    <Border
+                                        Stroke="{StaticResource ThemeClrMain}"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 8"
+                                        Margin="0,10,0,0"
+                                        Padding="5">
+                                        <Editor
+                                            x:Name="PcosWeightNotes"
+                                            Text=""
+                                            FontSize="14"
+                                            TextColor="Black"
+                                            AutoSize="TextChanges"
+                                            Placeholder="Any notes about weight changes..."
+                                            Margin="10,0" />
+                                    </Border>
+                                </VerticalStackLayout>
+                                
+                                <!-- PCOS Physical Symptoms -->
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="PCOS Physical Symptoms"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        Margin="0,0,0,10" />
+                                    
+                                    <!-- Multi-select for PCOS Symptoms -->
+                                    <dashComp:MultiSelectLogItemComponent
+                                        x:Name="PcosSymptomsComponent"
+                                        Title="Select PCOS symptoms experienced today:"
+                                        SelectedColor="{StaticResource ThemeClrPurpleLight}"
+                                        SelectedTextColor="Black"
+                                        UnselectedTextColor="Black"
+                                        UnselectedColor="{StaticResource ThemeGray}"
+                                        ItemFontSize="12" />
+                                    
+                                    <!-- Additional Symptoms -->
+                                    <VerticalStackLayout
+                                        x:Name="PcosAdditionalSymptomsContainer"
+                                        IsVisible="False"
+                                        Margin="0,10,0,0"
+                                        Spacing="10">
+                                        
+                                        <Label
+                                            Text="Hair loss/thinning, hair growth over body, Skin tags, or darkened patches"
+                                            FontSize="12"
+                                            FontAttributes="Italic"
+                                            TextColor="{StaticResource ThemeGray2}"
+                                            Margin="0,0,0,5" />
+                                        
+                                        <Border
+                                            Stroke="{StaticResource ThemeClrMain}"
+                                            StrokeThickness="1"
+                                            StrokeShape="RoundRectangle 8"
+                                            Padding="5">
+                                            <Editor
+                                                x:Name="PcosAdditionalSymptomsNotes"
+                                                Text=""
+                                                FontSize="14"
+                                                TextColor="Black"
+                                                AutoSize="TextChanges"
+                                                Placeholder="Describe specific symptoms..."
+                                                Margin="10,0" />
+                                        </Border>
+                                    </VerticalStackLayout>
+                                </VerticalStackLayout>
+                                
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                        
+                        <!-- Endometriosis Tracking Section -->
+                        <VerticalStackLayout Margin="20,25,20,0">
+                            
+                            <Border
+                                Stroke="{StaticResource ThemeClrRed}"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 8"
+                                Background="{StaticResource ThemeClrRedLight}"
+                                Padding="15,10">
+                                
+                                <HorizontalStackLayout>
+                                    <Label
+                                        Text="Endometriosis Tracking"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource ThemeClrRedDark}"
+                                        VerticalOptions="Center" />
+                                    
+                                    <Label
+                                        x:Name="EndoSectionToggle"
+                                        Text="▼"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource ThemeClrRedDark}"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="EndAndExpand">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="ToggleEndoSection_Tapped" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </HorizontalStackLayout>
+                            </Border>
+                            
+                            <VerticalStackLayout 
+                                x:Name="EndoSectionContent"
+                                IsVisible="False"
+                                Spacing="15"
+                                Margin="0,10,0,0">
+                                
+                                <!-- Endo Medication -->
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="What medication are you taking for ENDO?"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        Margin="0,0,0,10" />
+
+                                    <dashComp:MedicationEntryComponent
+                                        x:Name="EndoMedicationComponent"
+                                        AddButtonText="Add Endo Medication"
+                                        Margin="0,0,0,0" />
+                                </VerticalStackLayout>
+                                
+                                <!-- Pain Tracking -->
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="Pain Tracking"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        Margin="0,0,0,10" />
+                                    
+                                    <!-- Pain Rating -->
+                                    <VerticalStackLayout Margin="0,0,0,15">
+                                        <Label
+                                            Text="Pain Intensity (1-10)"
+                                            FontSize="12"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource Black}"
+                                            Margin="0,0,0,5" />
+                                        
+                                        <custCtrl:Ratings
+                                            x:Name="EndoPainRating"
+                                            Margin="0,0,0,0"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center" />
+                                    </VerticalStackLayout>
+                                    
+                                    <!-- Pain Comment Section -->
+                                    <Border
+                                        Stroke="{StaticResource ThemeClrMain}"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 8"
+                                        Padding="5">
+                                        <Editor
+                                            x:Name="EndoPainComments"
+                                            Text=""
+                                            FontSize="14"
+                                            TextColor="Black"
+                                            AutoSize="TextChanges"
+                                            Placeholder="Describe your pain..."
+                                            Margin="10,0" />
+                                    </Border>
+                                </VerticalStackLayout>
+                                
+                                <!-- Location of Pain -->
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="Location of Pain"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        Margin="0,0,0,10" />
+                                    
+                                    <Border
+                                        Stroke="{StaticResource ThemeClrMain}"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 8"
+                                        Padding="5">
+                                        <Editor
+                                            x:Name="EndoPainLocation"
+                                            Text=""
+                                            FontSize="14"
+                                            TextColor="Black"
+                                            AutoSize="TextChanges"
+                                            Placeholder="Where is the pain located? (e.g., lower abdomen, back, pelvis)..."
+                                            Margin="10,0" />
+                                    </Border>
+                                </VerticalStackLayout>
+                                
+                                <!-- Duration of Pain -->
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="Duration of Pain"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        Margin="0,0,0,10" />
+                                    
+                                    <Border
+                                        Stroke="{StaticResource ThemeClrMain}"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 8"
+                                        Padding="5">
+                                        <Editor
+                                            x:Name="EndoPainDuration"
+                                            Text=""
+                                            FontSize="14"
+                                            TextColor="Black"
+                                            AutoSize="TextChanges"
+                                            Placeholder="How long did the pain last? (e.g., 2 hours, all day)..."
+                                            Margin="10,0" />
+                                    </Border>
+                                </VerticalStackLayout>
+                                
+                                <!-- Waist-to-Hip Ratio / Waist Circumference (Endo) -->
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="Waist-to-hip ratio or waist circumference"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        Margin="0,0,0,5" />
+                                    
+                                    <Label
+                                        Text="(abdominal fat monitoring for Endo)"
+                                        FontSize="11"
+                                        FontAttributes="Italic"
+                                        TextColor="{StaticResource ThemeGray2}"
+                                        Margin="0,0,0,10" />
+                                    
+                                    <Grid ColumnDefinitions="*,Auto,*" ColumnSpacing="10">
+                                        <!-- Waist Measurement -->
+                                        <VerticalStackLayout Grid.Column="0">
+                                            <Label
+                                                Text="Waist (cm)"
+                                                FontSize="11"
+                                                FontAttributes="Italic"
+                                                TextColor="{StaticResource ThemeGray2}"
+                                                Margin="0,0,0,2" />
+                                            <Border
+                                                Stroke="{StaticResource ThemeClrMain}"
+                                                StrokeThickness="1"
+                                                StrokeShape="RoundRectangle 8"
+                                                Padding="10">
+                                                <Entry
+                                                    x:Name="EndoWaistMeasurement"
+                                                    Text=""
+                                                    Placeholder="e.g., 85"
+                                                    FontSize="14"
+                                                    TextColor="Black"
+                                                    Keyboard="Numeric"
+                                                    PlaceholderColor="{StaticResource ThemeGray2}" />
+                                            </Border>
+                                        </VerticalStackLayout>
+                                        
+                                        <Label
+                                            Grid.Column="1"
+                                            Text="/"
+                                            FontSize="20"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeClrMain}"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Center" />
+                                        
+                                        <!-- Hip Measurement -->
+                                        <VerticalStackLayout Grid.Column="2">
+                                            <Label
+                                                Text="Hip (cm)"
+                                                FontSize="11"
+                                                FontAttributes="Italic"
+                                                TextColor="{StaticResource ThemeGray2}"
+                                                Margin="0,0,0,2" />
+                                            <Border
+                                                Stroke="{StaticResource ThemeClrMain}"
+                                                StrokeThickness="1"
+                                                StrokeShape="RoundRectangle 8"
+                                                Padding="10">
+                                                <Entry
+                                                    x:Name="EndoHipMeasurement"
+                                                    Text=""
+                                                    Placeholder="e.g., 100"
+                                                    FontSize="14"
+                                                    TextColor="Black"
+                                                    Keyboard="Numeric"
+                                                    PlaceholderColor="{StaticResource ThemeGray2}" />
+                                            </Border>
+                                        </VerticalStackLayout>
+                                    </Grid>
+                                    
+                                    <!-- Ratio Display -->
+                                    <Label
+                                        x:Name="EndoWaistHipRatio"
+                                        Text="Ratio: --"
+                                        FontSize="12"
+                                        FontAttributes="Italic"
+                                        TextColor="{StaticResource ThemeClrRedDark}"
+                                        Margin="0,10,0,0"
+                                        HorizontalOptions="Center" />
+                                    
+                                    <!-- Or Waist Circumference Only -->
+                                    <VerticalStackLayout Margin="0,15,0,0">
+                                        <Label
+                                            Text="Or Waist Circumference Only:"
+                                            FontSize="12"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeGray2}"
+                                            Margin="0,0,0,5" />
+                                        
+                                        <Border
+                                            Stroke="{StaticResource ThemeClrMain}"
+                                            StrokeThickness="1"
+                                            StrokeShape="RoundRectangle 8"
+                                            Padding="10">
+                                            <Entry
+                                                x:Name="EndoWaistOnly"
+                                                Text=""
+                                                Placeholder="Waist circumference in cm"
+                                                FontSize="14"
+                                                TextColor="Black"
+                                                Keyboard="Numeric"
+                                                PlaceholderColor="{StaticResource ThemeGray2}" />
+                                        </Border>
+                                    </VerticalStackLayout>
+                                </VerticalStackLayout>
+                                
+                                <!-- Monthly Weight Tracking (Endo) -->
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="Monthly Weight Tracking"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        Margin="0,0,0,10" />
+                                    
+                                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                                        <Border
+                                            Grid.Column="0"
+                                            Stroke="{StaticResource ThemeClrMain}"
+                                            StrokeThickness="1"
+                                            StrokeShape="RoundRectangle 8"
+                                            Padding="10">
+                                            <Entry
+                                                x:Name="EndoWeight"
+                                                Text=""
+                                                Placeholder="Weight (kg)"
+                                                FontSize="14"
+                                                TextColor="Black"
+                                                Keyboard="Numeric"
+                                                PlaceholderColor="{StaticResource ThemeGray2}" />
+                                        </Border>
+                                        
+                                        <VerticalStackLayout Grid.Column="1">
+                                            <Label
+                                                Text="Date"
+                                                FontSize="11"
+                                                FontAttributes="Italic"
+                                                TextColor="{StaticResource ThemeGray2}"
+                                                Margin="0,0,0,2" />
+                                            <Border
+                                                Stroke="{StaticResource ThemeClrMain}"
+                                                StrokeThickness="1"
+                                                StrokeShape="RoundRectangle 8"
+                                                Padding="10">
+                                                <DatePicker
+                                                    x:Name="EndoWeightDate"
+                                                    Date="{Binding DisplayDate}"
+                                                    Format="dd/MM/yyyy"
+                                                    FontSize="14"
+                                                    TextColor="Black"
+                                                    HorizontalOptions="FillAndExpand" />
+                                            </Border>
+                                        </VerticalStackLayout>
+                                    </Grid>
+                                    
+                                    <!-- Weight Notes -->
+                                    <Border
+                                        Stroke="{StaticResource ThemeClrMain}"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 8"
+                                        Margin="0,10,0,0"
+                                        Padding="5">
+                                        <Editor
+                                            x:Name="EndoWeightNotes"
+                                            Text=""
+                                            FontSize="14"
+                                            TextColor="Black"
+                                            AutoSize="TextChanges"
+                                            Placeholder="Any notes about weight changes..."
+                                            Margin="10,0" />
+                                    </Border>
+                                </VerticalStackLayout>
+                                
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                                                
                         <Button
                             Margin="20,40,20,30"
                             Style="{StaticResource ThemeButton}"
