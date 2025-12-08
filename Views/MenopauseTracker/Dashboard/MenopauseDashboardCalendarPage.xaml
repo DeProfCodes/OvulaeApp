@@ -295,6 +295,139 @@
                                 </VerticalStackLayout>
                             </Border>
                         </HorizontalStackLayout>
+                        
+                        <!-- Next Appointment Section -->
+                        <Border
+                            Margin="20,20,20,10"
+                            Padding="15"
+                            Stroke="{StaticResource ThemeClrMain}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 12"
+                            Background="{StaticResource ThemeGrayLight}">
+                        
+                            <VerticalStackLayout Spacing="10">
+                        
+                                <Label 
+                                    Text="🏥 Next Appointment" 
+                                    FontSize="16" 
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource ThemeClrMain}"
+                                    VerticalOptions="Center" />
+                                
+                                <!-- Appointment Details (shown when appointment exists) -->
+                                <VerticalStackLayout x:Name="AppointmentDetailsContainer" Spacing="10">
+                                    <!-- Date Row -->
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label 
+                                            Text="Date:" 
+                                            FontSize="14" 
+                                            TextColor="{StaticResource ThemeGray2}"
+                                            VerticalOptions="Center" />
+                                        
+                                        <!-- Date Picker (hidden by default) -->
+                                        <Border 
+                                            x:Name="AppDateContainer"
+                                            Stroke="{StaticResource ThemeClrMain}"
+                                            StrokeThickness="1"
+                                            StrokeShape="RoundRectangle 8"
+                                            Padding="10"
+                                            IsVisible="False">
+                                            
+                                            <DatePicker 
+                                                x:Name="AppDatePicker"
+                                                Format="D"
+                                                FontSize="14"
+                                                TextColor="Black" />
+                                        </Border>
+                                        
+                                        <!-- Date Display (shown by default) -->
+                                        <Label 
+                                            x:Name="AppDateDisplay"
+                                            FontSize="14"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeClrMainDark}"
+                                            VerticalOptions="Center" />
+                                    </HorizontalStackLayout>
+                                    
+                                    <!-- Time Row -->
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label 
+                                            Text="Time:" 
+                                            FontSize="14" 
+                                            TextColor="{StaticResource ThemeGray2}"
+                                            VerticalOptions="Center" />
+                                        
+                                        <!-- Time Picker (hidden by default) -->
+                                        <Border 
+                                            x:Name="AppTimeContainer"
+                                            Stroke="{StaticResource ThemeClrMain}"
+                                            StrokeThickness="1"
+                                            StrokeShape="RoundRectangle 8"
+                                            Padding="10"
+                                            IsVisible="False">
+                                            
+                                            <TimePicker 
+                                                x:Name="AppTimePicker"
+                                                Format="HH:mm"
+                                                FontSize="14"
+                                                TextColor="Black" />
+                                        </Border>
+                                        
+                                        <!-- Time Display (shown when time exists) -->
+                                        <Label 
+                                            x:Name="AppTimeDisplay"
+                                            FontSize="14"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource ThemeClrMainDark}"
+                                            VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                    
+                                    <!-- Action Buttons Row -->
+                                    <HorizontalStackLayout Spacing="10" HorizontalOptions="End">
+                                        <Button 
+                                            x:Name="AddEditAppDateBtn"
+                                            Text="Edit"
+                                            BackgroundColor="{StaticResource ThemeClrMain}"
+                                            TextColor="White"
+                                            FontSize="12"
+                                            Padding="15,8" />
+                                        
+                                        <Button 
+                                            x:Name="RemoveAppDateBtn"
+                                            Text="Remove"
+                                            BackgroundColor="{StaticResource ThemeClrRed}"
+                                            TextColor="White"
+                                            FontSize="12"
+                                            Padding="15,8" />
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                                
+                                <!-- No Appointment Set -->
+                                <VerticalStackLayout 
+                                    x:Name="NoAppSet"
+                                    Spacing="10"
+                                    IsVisible="False">
+                                    
+                                    <Label 
+                                        Text="No appointment scheduled"
+                                        FontSize="14"
+                                        FontAttributes="Italic"
+                                        TextColor="{StaticResource ThemeGray2}"
+                                        HorizontalOptions="Center" />
+                                    
+                                    <Button 
+                                        x:Name="AddNewAppDateBtn"
+                                        Text="Add Appointment"
+                                        BackgroundColor="{StaticResource ThemeClrMain}"
+                                        TextColor="White"
+                                        FontSize="12"
+                                        Padding="15,8"
+                                        HorizontalOptions="Center" />
+                                </VerticalStackLayout>
+                        
+                            </VerticalStackLayout>
+                        </Border>
+                        
                         <Label
                             Text="{Binding FooterMessage}"
                             FontSize="14"

@@ -9,6 +9,7 @@ using OvulaeApp.ViewModels.MenopauseTracker;
 using OvulaeApp.Views.Components.Modals;
 using OvulaeShared.Enums;
 using OvulaeShared.Helpers.CommonFunctions;
+using OvulaeShared.Helpers.ModuleHelpers;
 using OvulaeShared.Helpers.ModuleHelpers.DayLogging;
 using OvulaeShared.Models.Menopause;
 using System.Threading.Tasks;
@@ -336,6 +337,13 @@ namespace OvulaeApp.Views.MenopauseTracker.Dashboard
         private void BpValue_ValueChanged(object sender, int e)
         {
             BpText.Text = $"*This reads {BpSystolicValue.Value}/{BpDiastolicValue.Value} mmHg";
+        }
+
+        private void TimePicker_TimeSelected(object sender, TimeChangedEventArgs e)
+        {
+            var duration = SleepCalculator.CalculateSleepDuration(SleepTime.Time, WakeUpTime.Time);
+
+            TimeSleptLabel.Text = $"Slept for {duration.Hours}h {duration.Minutes}m";
         }
     }
 }

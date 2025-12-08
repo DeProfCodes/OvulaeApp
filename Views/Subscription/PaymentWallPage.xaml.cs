@@ -59,7 +59,7 @@ namespace OvulaeApp.Views.Subscription
             try
             {
                 var isZA = LocalStorageService.UserDetails.CountryCode == "+27";
-                var isFreeTrial = LocalStorageService.UserSubscription.Status == StatusType.Pending && FreeTrialOption.IsChecked;
+                var isFreeTrial = false;// LocalStorageService.UserSubscription.Status == StatusType.Pending && FreeTrialOption.IsChecked;
 
                 double amount = isFreeTrial ? 0.06 : 5.99;
 

@@ -1,8 +1,9 @@
-﻿using System.Collections.ObjectModel;
+﻿using Microsoft.Maui.Controls;
+using Newtonsoft.Json;
+using OvulaeShared.Models.Shared.Logs;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Microsoft.Maui.Controls;
-using OvulaeShared.Models.Shared.Logs;
 
 namespace OvulaeApp.Views.Components.Dashboard;
 
@@ -38,14 +39,28 @@ public partial class MedicationEntryComponent : ContentView, INotifyPropertyChan
     // Public property to get all medication entries
     public List<MedicationModel> Medications
     {
-        get => MedicationEntries
-            .Where(m => !string.IsNullOrWhiteSpace(m.MedicationName) || !string.IsNullOrWhiteSpace(m.Dosage))
-            .Select(m => new MedicationModel
+        get
+        {
+            var result = new List<MedicationModel>();
+
+            foreach (var entry in MedicationEntries)
             {
-                Name = m.MedicationName,
-                Dosage = m.Dosage
-            })
-            .ToList();
+                // Check if entry has any data
+                bool hasName = !string.IsNullOrWhiteSpace(entry.MedicationName);
+                bool hasDosage = !string.IsNullOrWhiteSpace(entry.Dosage);
+
+                if (hasName || hasDosage)
+                {
+                    result.Add(new MedicationModel
+                    {
+                        Name = entry.MedicationName ?? string.Empty,
+                        Dosage = entry.Dosage ?? string.Empty
+                    });
+                }
+            }
+
+            return result;
+        }
     }
 
     public MedicationEntryComponent()
@@ -94,6 +109,12 @@ public partial class MedicationEntryComponent : ContentView, INotifyPropertyChan
 
     private void MedicationEntry_Completed(object sender, EventArgs e)
     {
+        // Force update of bindings
+        if (sender is Entry entry)
+        {
+            entry.Unfocus(); // This should trigger binding update
+        }
+
         // Notify that medications have changed when user finishes editing
         OnPropertyChanged(nameof(Medications));
     }
@@ -138,6 +159,63 @@ public partial class MedicationEntryComponent : ContentView, INotifyPropertyChan
         // Always add one empty entry at the end
         AddNewEntry();
     }
+
+    private void OnMedicationTextChanged(object sender, TextChangedEventArgs e)
+    {
+        // Force update when text changes
+        if (sender is Entry entry && entry.BindingContext is MedicationEntry medicationEntry)
+        {
+            // Force property change
+            medicationEntry.OnPropertyChanged(nameof(medicationEntry.MedicationName));
+            medicationEntry.OnPropertyChanged(nameof(medicationEntry.Dosage));
+
+            // Update the Medications property
+            OnPropertyChanged(nameof(Medications));
+        }
+    }
+
+    public void ForceUpdateBindings()
+    {
+        // Force property change notifications
+        OnPropertyChanged(nameof(MedicationEntries));
+        OnPropertyChanged(nameof(Medications));
+
+        // Force each entry to update
+        foreach (var entry in MedicationEntries)
+        {
+            entry.OnPropertyChanged(nameof(entry.MedicationName));
+            entry.OnPropertyChanged(nameof(entry.Dosage));
+        }
+    }
+
+    public void DebugComponent()
+    {
+        Console.WriteLine("=== MedicationEntryComponent Debug ===");
+        Console.WriteLine($"MedicationEntries count: {MedicationEntries?.Count}");
+
+        if (MedicationEntries != null)
+        {
+            for (int i = 0; i < MedicationEntries.Count; i++)
+            {
+                var entry = MedicationEntries[i];
+                Console.WriteLine($"Entry {i}: Name='{entry.MedicationName ?? "[null]"}', Dosage='{entry.Dosage ?? "[null]"}'");
+            }
+        }
+
+        var meds = Medications;
+        Console.WriteLine($"Medications property count: {meds?.Count}");
+        if (meds != null)
+        {
+            foreach (var med in meds)
+            {
+                Console.WriteLine($"Med: Name='{med.Name ?? "[null]"}', Dosage='{med.Dosage ?? "[null]"}'");
+            }
+        }
+
+        // Also serialize to see what JSON would look like
+        var json = JsonConvert.SerializeObject(Medications);
+        Console.WriteLine($"Medications JSON: {json}");
+    }
 }
 
 // ViewModel for individual medication entry
@@ -170,10 +248,12 @@ public class MedicationEntry : INotifyPropertyChanged
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    public void OnPropertyChanged([CallerMemberName] string propertyName = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
+
+
 }
 
 // Model for medication data

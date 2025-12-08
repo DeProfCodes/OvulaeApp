@@ -33,12 +33,12 @@
                                     TextColor="{StaticResource ThemeGray2}"
                                     Margin="0,0,0,2" />
                                 <Entry
-                                    Text="{Binding MedicationName}"
+                                    Text="{Binding MedicationName, Mode=TwoWay}"
                                     Placeholder="e.g., Ozempic"
                                     FontSize="14"
                                     TextColor="Black"
-                                    PlaceholderColor="{StaticResource ThemeGray2}"
-                                    Completed="MedicationEntry_Completed" />
+                                    TextChanged="OnMedicationTextChanged"
+                                    PlaceholderColor="{StaticResource ThemeGray2}"/>
                                 <Border 
                                     Stroke="{StaticResource ThemeClrMainDark}"/>
                             </VerticalStackLayout>
@@ -52,14 +52,14 @@
                                     TextColor="{StaticResource ThemeGray2}"
                                     Margin="0,0,0,2" />
                                 <Entry
-                                    Text="{Binding Dosage}"
+                                    Text="{Binding Dosage, Mode=TwoWay}"
                                     Placeholder="e.g., 1.5mg"
                                     FontSize="14"
                                     TextColor="Black"
-                                    PlaceholderColor="{StaticResource ThemeGray2}"
-                                    Completed="MedicationEntry_Completed" />
+                                    TextChanged="OnMedicationTextChanged"
+                                    PlaceholderColor="{StaticResource ThemeGray2}"/>
                                 <Border 
-                                    Stroke="{StaticResource ThemeClrMainDark}"/>
+                                    Stroke="{StaticResource ThemeGray2}"/>
                             </VerticalStackLayout>
 
                             <!-- Remove Button -->
@@ -94,10 +94,10 @@
 
         <!-- Add Medication Button -->
         <Border
-            Stroke="{StaticResource ThemeClrMain}"
+            Stroke="{StaticResource ThemeClr2}"
             StrokeThickness="1"
             StrokeShape="RoundRectangle 12"
-            Background="Transparent"
+            Background="{StaticResource ThemeClrMain}"
             Padding="15,10"
             Margin="0,10,0,0">
 
@@ -111,7 +111,7 @@
                 VerticalOptions="Center">
 
                 <Image
-                    Source="add_icon.png"
+                    Source="edit_white_icon.png"
                     WidthRequest="20"
                     HeightRequest="20"
                     VerticalOptions="Center" />
@@ -119,9 +119,9 @@
                 <Label
                     x:Name="AddButtonLabel"
                     Text="Add Medication"
-                    FontSize="14"
+                    FontSize="16"
                     FontAttributes="Bold"
-                    TextColor="{StaticResource ThemeClrMain}"
+                    TextColor="{StaticResource White}"
                     VerticalOptions="Center" />
 
             </HorizontalStackLayout>

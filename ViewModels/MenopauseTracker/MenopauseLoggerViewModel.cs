@@ -1,5 +1,6 @@
 ﻿using OvulaeApp.Services.LocalDataService.ModuleServices;
 using OvulaeShared.Helpers.CommonFunctions;
+using OvulaeShared.Helpers.ModuleHelpers;
 using OvulaeShared.Models.Menopause;
 
 namespace OvulaeApp.ViewModels.MenopauseTracker
@@ -35,6 +36,27 @@ namespace OvulaeApp.ViewModels.MenopauseTracker
         public string DisplayDate => CurrentDate.ToString("dd/MM/yyyy");
         public string PreviousDateText => CurrentDate.AddDays(-1).ToString("dd/MM");
         public string NextDateText => CurrentDate.AddDays(1).ToString("dd/MM");
+
+        public string SleepDurationText
+        {
+            get
+            {
+                if (CurrentLogEntry?.SleepTime.HasValue == true &&
+                    CurrentLogEntry?.WakeTime.HasValue == true)
+                {
+                    var duration = SleepCalculator.CalculateSleepDuration(
+                        CurrentLogEntry.SleepTime.Value,
+                        CurrentLogEntry.WakeTime.Value);
+
+                    return $"Slept for {duration.Hours}h {duration.Minutes}m";
+                }
+                return "";
+            }
+        }
+
+        public bool HasSleepData =>
+            CurrentLogEntry?.SleepTime.HasValue == true &&
+            CurrentLogEntry?.WakeTime.HasValue == true;
 
         private readonly IModuleLogsService _moduleLogsServ;
 

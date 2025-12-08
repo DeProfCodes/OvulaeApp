@@ -1,12 +1,17 @@
 ﻿using CommunityToolkit.Maui.Views;
+using OvulaeApp.Helpers.Functions.Modules;
 using OvulaeApp.Helpers.Pages.DayLogging;
 using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Services.LocalDataService.ModuleServices;
 using OvulaeApp.Services.LocalDataService.UsersServices;
 using OvulaeApp.ViewModels.OvulationTracker;
+using OvulaeApp.Views.Components.Dashboard;
 using OvulaeApp.Views.Components.Modals;
 using OvulaeShared.Helpers.CommonFunctions;
 using OvulaeShared.Helpers.ModuleHelpers.DayLogging;
+using OvulaeShared.Models.Ovulation;
+using OvulaeShared.Models.PeriodTracker;
+using OvulaeShared.Models.Shared.Logs;
 using OvulaeShared.Services.Module.CycleServices;
 
 namespace OvulaeApp.Views.OvulationTracker.Dashboard
@@ -44,6 +49,15 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
         {
             try
             {
+                BaseTabs.SetLoaders(Spinner, AppLoader);
+                SideMenu.ConfigureComponents(Spinner, AppLoader, PregnancyTrackerOnBoard, PeriodTrackerOnBoard, ModuleTrackerSwitch, YesNoPopup, MenopauseTrackerOnBoard);
+                Header.SetLoaders(Spinner, AppLoader);
+
+                Header.OpenSideMenuCommand = new Command(async () =>
+                {
+                    await SideMenu.OpenAsync();
+                });
+
                 // Initialize view model
                 viewModel = new OvulationLoggerViewModel(_moduleLogsService);
                 BindingContext = viewModel;
@@ -152,6 +166,9 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
                 PeriodFlowData.IsVisible = isPeriodDay;
                 CustomLMPContainer.IsVisible = isPeriodDay && PeriodLMPComponent.SelectedItems.Contains("🗓️ Different date...");
 
+                LoadPcosData(todayLog);
+                LoadEndoData(todayLog);
+
                 UpdateRatingContainersVisibility();
             }
             catch (Exception ex)
@@ -222,6 +239,30 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
             LogManualSymptom.IsVisible = ManualSymptomsSwitch.IsToggled;
         }
 
+        private List<MedicationModel> GetMedicationsFromComponent(MedicationEntryComponent component)
+        {
+            if (component == null) return new List<MedicationModel>();
+
+            var result = new List<MedicationModel>();
+
+            foreach (var entry in component.MedicationEntries)
+            {
+                var name = entry.MedicationName?.Trim();
+                var dosage = entry.Dosage?.Trim();
+
+                if (!string.IsNullOrWhiteSpace(name) || !string.IsNullOrWhiteSpace(dosage))
+                {
+                    result.Add(new MedicationModel
+                    {
+                        Name = name ?? string.Empty,
+                        Dosage = dosage ?? string.Empty
+                    });
+                }
+            }
+
+            return result;
+        }
+
         private void UpdateLogEntryFromUI()
         {
             var todayLog = viewModel.CurrentLogEntry;
@@ -277,6 +318,60 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
             todayLog.LifestyleNotes = LifestyleNotes.Text;
             todayLog.BreastTendernessNotes = BreastTendernessNotes.Text;
             todayLog.MedicationNotes = MedicationNotes.Text;
+
+            // Get medications DIRECTLY from entries (bypassing the property)
+            todayLog.Medications = GetMedicationsFromComponent(MedicationComponent);
+            todayLog.PcosMedications = GetMedicationsFromComponent(PcosMedicationComponent);
+            todayLog.EndoMedications = GetMedicationsFromComponent(EndoMedicationComponent);
+
+            // Waist/Hip measurements
+            if (double.TryParse(PcosWaistMeasurement.Text, out double pcosWaist))
+                todayLog.PcosWaistMeasurement = pcosWaist;
+
+            if (double.TryParse(PcosHipMeasurement.Text, out double pcosHip))
+                todayLog.PcosHipMeasurement = pcosHip;
+
+            if (double.TryParse(PcosWaistOnly.Text, out double pcosWaistOnly))
+                todayLog.PcosWaistCircumference = pcosWaistOnly;
+
+            // Weight tracking
+            if (double.TryParse(PcosWeight.Text, out double pcosWeight))
+                todayLog.PcosWeight = pcosWeight;
+
+            todayLog.PcosWeightDate = PcosWeightDate.Date;
+            todayLog.PcosWeightNotes = PcosWeightNotes.Text;
+
+            // PCOS Symptoms
+            todayLog.PcosSymptoms = PcosSymptomsComponent?.SelectedItems?.ToList() ?? new();
+            todayLog.PcosAdditionalSymptomsNotes = PcosAdditionalSymptomsNotes.Text;
+            todayLog.PcosSymptomsNotes = PcosAdditionalSymptomsNotes.Text; // Using same field for now
+            todayLog.PcosSymptomsRating = PcosSymptomsComponent?.SelectedItems?.Any() == true ? 1 : 0; // Simple rating
+
+            // =========== ENDOMETRIOSIS TRACKING ===========
+            todayLog.EndoMedications = EndoMedicationComponent?.Medications ?? new();
+
+            // Pain tracking
+            todayLog.EndoPainRating = EndoPainRating.SelectedRating;
+            todayLog.EndoPainComments = EndoPainComments.Text;
+            todayLog.EndoPainLocation = EndoPainLocation.Text;
+            todayLog.EndoPainDuration = EndoPainDuration.Text;
+
+            // Waist/Hip measurements
+            if (double.TryParse(EndoWaistMeasurement.Text, out double endoWaist))
+                todayLog.EndoWaistMeasurement = endoWaist;
+
+            if (double.TryParse(EndoHipMeasurement.Text, out double endoHip))
+                todayLog.EndoHipMeasurement = endoHip;
+
+            if (double.TryParse(EndoWaistOnly.Text, out double endoWaistOnly))
+                todayLog.EndoWaistCircumference = endoWaistOnly;
+
+            // Weight tracking
+            if (double.TryParse(EndoWeight.Text, out double endoWeight))
+                todayLog.EndoWeight = endoWeight;
+
+            todayLog.EndoWeightDate = EndoWeightDate.Date;
+            todayLog.EndoWeightNotes = EndoWeightNotes.Text;
         }
 
         private async void SaveTodaysLogs_Clicked(object sender, EventArgs e)
@@ -352,6 +447,159 @@ namespace OvulaeApp.Views.OvulationTracker.Dashboard
         private void SelectComponent_SelectionChanged(object sender, IEnumerable<string> e)
         {
             UpdateRatingContainersVisibility();
+        }
+
+        private void LoadPcosData(OvulationCycleLog logEntry)
+        {
+            try
+            {
+                var allLogs = _moduleLogsService.GetAllPeriodLogs();
+
+                // PCOS Medication
+                DayLoggerHelper.PopulateMedicationComponent(PcosMedicationComponent, logEntry.PcosMedications);
+
+                // Waist/Hip Measurements
+                PcosWaistMeasurement.Text = logEntry.PcosWaistMeasurement > 0 ? logEntry.PcosWaistMeasurement.ToString() : "";
+                PcosHipMeasurement.Text = logEntry.PcosHipMeasurement > 0 ? logEntry.PcosHipMeasurement.ToString() : "";
+                PcosWaistOnly.Text = logEntry.PcosWaistCircumference > 0 ? logEntry.PcosWaistCircumference.ToString() : "";
+
+                // Weight Tracking
+                PcosWeightContainer.IsVisible = PcosEndoHelperFunctions.HasPcosWeightRecordedThisMonth(allLogs);
+                PcosWeight.Text = logEntry.PcosWeight > 0 ? logEntry.PcosWeight.ToString() : "";
+                PcosWeightDate.Date = logEntry.PcosWeightDate != default ? logEntry.PcosWeightDate : DateTime.Today;
+                PcosWeightNotes.Text = logEntry.PcosWeightNotes ?? "";
+
+                // PCOS Symptoms
+                DayLoggerHelper.PopulateMultiSelectComponent(PcosSymptomsComponent,
+                    GetPcosSymptomsList(), logEntry.PcosSymptoms);
+
+                // Additional Symptoms Notes
+                PcosAdditionalSymptomsNotes.Text = logEntry.PcosAdditionalSymptomsNotes ?? "";
+                PcosAdditionalSymptomsContainer.IsVisible = !string.IsNullOrEmpty(logEntry.PcosAdditionalSymptomsNotes);
+
+                // Calculate ratio
+                CalculateWaistHipRatios();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading PCOS data: {ex.Message}");
+            }
+        }
+
+        private void LoadEndoData(OvulationCycleLog logEntry)
+        {
+            try
+            {
+                var allLogs = _moduleLogsService.GetAllPeriodLogs();
+
+                // Endo Medication
+                DayLoggerHelper.PopulateMedicationComponent(EndoMedicationComponent, logEntry.EndoMedications);
+
+                // Pain Tracking
+                EndoPainRating.SelectedRating = logEntry.EndoPainRating;
+                EndoPainComments.Text = logEntry.EndoPainComments ?? "";
+                EndoPainLocation.Text = logEntry.EndoPainLocation ?? "";
+                EndoPainDuration.Text = logEntry.EndoPainDuration ?? "";
+
+                // Waist/Hip Measurements
+                EndoWaistMeasurement.Text = logEntry.EndoWaistMeasurement > 0 ? logEntry.EndoWaistMeasurement.ToString() : "";
+                EndoHipMeasurement.Text = logEntry.EndoHipMeasurement > 0 ? logEntry.EndoHipMeasurement.ToString() : "";
+                EndoWaistOnly.Text = logEntry.EndoWaistCircumference > 0 ? logEntry.EndoWaistCircumference.ToString() : "";
+
+                // Weight Tracking
+                EndoWeightContainer.IsVisible = PcosEndoHelperFunctions.HasEndoWeightRecordedThisMonth(allLogs);
+                EndoWeight.Text = logEntry.EndoWeight > 0 ? logEntry.EndoWeight.ToString() : "";
+                EndoWeightDate.Date = logEntry.EndoWeightDate != default ? logEntry.EndoWeightDate : DateTime.Today;
+                EndoWeightNotes.Text = logEntry.EndoWeightNotes ?? "";
+
+                // Calculate ratio
+                CalculateWaistHipRatios();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading Endo data: {ex.Message}");
+            }
+        }
+
+        private void CalculateWaistHipRatios()
+        {
+            // PCOS Ratio Calculation
+            if (double.TryParse(PcosWaistMeasurement.Text, out double pcosWaist) &&
+                double.TryParse(PcosHipMeasurement.Text, out double pcosHip) &&
+                pcosHip > 0)
+            {
+                double ratio = Math.Round(pcosWaist / pcosHip, 2);
+                PcosWaistHipRatio.Text = $"{ratio}";
+                //PcosWaistHipRatio.TextColor = ratio > 0.85 ? Color.FromArgb("#FF0000") : Color.FromArgb("#008000");
+            }
+            else
+            {
+                PcosWaistHipRatio.Text = "--";
+            }
+
+            // Endo Ratio Calculation
+            if (double.TryParse(EndoWaistMeasurement.Text, out double endoWaist) &&
+                double.TryParse(EndoHipMeasurement.Text, out double endoHip) &&
+                endoHip > 0)
+            {
+                double ratio = Math.Round(endoWaist / endoHip, 2);
+                EndoWaistHipRatio.Text = $"{ratio}";
+                //EndoWaistHipRatio.TextColor = ratio > 0.85 ? Color.FromArgb("#FF0000") : Color.FromArgb("#008000");
+            }
+            else
+            {
+                EndoWaistHipRatio.Text = "--";
+            }
+        }
+
+        // Helper method for PCOS symptoms list
+        private List<string> GetPcosSymptomsList()
+        {
+            return new List<string>
+            {
+                "Irregular periods",
+                "Heavy bleeding",
+                "Acne",
+                "Oily skin",
+                "Weight gain",
+                "Difficulty losing weight",
+                "Male-pattern hair growth",
+                "Thinning hair",
+                "Skin darkening",
+                "Skin tags",
+                "Headaches",
+                "Mood changes",
+                "Pelvic pain",
+                "Sleep problems"
+            };
+        }
+
+        private double GetDoubleQuick(Entry value)
+        {
+            return Convert.ToDouble(value.Text);
+        }
+
+        private void RatioMeasurementChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(PcosWaistMeasurement.Text) && !string.IsNullOrEmpty(PcosHipMeasurement.Text))
+            {
+                var ratio = Math.Round(GetDoubleQuick(PcosWaistMeasurement) / GetDoubleQuick(PcosHipMeasurement), 1);
+                PcosWaistHipRatio.Text = "" + ratio;
+            }
+            else
+            {
+                PcosWaistHipRatio.Text = "";
+            }
+
+            if (!string.IsNullOrEmpty(EndoWaistMeasurement.Text) && !string.IsNullOrEmpty(EndoHipMeasurement.Text))
+            {
+                var ratio = Math.Round(GetDoubleQuick(EndoWaistMeasurement) / GetDoubleQuick(EndoHipMeasurement), 1);
+                EndoWaistHipRatio.Text = "" + ratio;
+            }
+            else
+            {
+                EndoWaistHipRatio.Text = "";
+            }
         }
     }
 }

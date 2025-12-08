@@ -4,13 +4,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="OvulaeApp.Views.MenopauseTracker.Dashboard.MenopauseDashboardDayLoggerPage"
     Background="White"
-    xmlns:viewmodels="clr-namespace:OvulaeApp.ViewModels.Shared"
+    xmlns:viewmodels="clr-namespace:OvulaeApp.ViewModels.MenopauseTracker"
     xmlns:components="clr-namespace:OvulaeApp.Views.Components.Modals"
     xmlns:customCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
     xmlns:dashComp="clr-namespace:OvulaeApp.Views.Components.Dashboard"
     xmlns:dashComp3="clr-namespace:OvulaeApp.Views.Components.Modals.Dashboard"
     xmlns:dashTabs="clr-namespace:OvulaeApp.Views.Components.Tabs"
-    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls">
+    xmlns:custCtrl="clr-namespace:OvulaeApp.Views.Components.Controls"
+    x:DataType="viewmodels:MenopauseLoggerViewModel">
 
     <AbsoluteLayout>
         <!-- Scrollable Content -->
@@ -936,7 +937,7 @@
                             <Border
                                 Stroke="{StaticResource ThemeClrMain}"
                                 StrokeShape="RoundRectangle 8"
-                                Margin="0,0,0,0"
+                                Margin="0,10,0,0"
                                 HorizontalOptions="FillAndExpand"
                                 VerticalOptions="Start"
                                 Padding="5">
@@ -949,6 +950,82 @@
                                     AutoSize="TextChanges"
                                     Placeholder="Enter anything to add..." />
                             </Border>
+                        </VerticalStackLayout>
+
+                        <!-- In your Menopause Day Logger XAML -->
+                        <VerticalStackLayout 
+                            Spacing="10" 
+                            Margin="20,30,20,0">
+
+                            <!-- Sleep Tracker Header -->
+                            <Label Text="Sleep Times" FontSize="16" FontAttributes="Bold" />
+
+                            <!-- Sleep Time -->
+                            <VerticalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label 
+                                        Margin="0,10,0,0"
+                                        Text="Time you fell asleep:" 
+                                        FontSize="14" />
+
+                                    <Border
+                                        Background="{StaticResource ThemeClr3}"
+                                        Stroke="{StaticResource ThemeClr3}"
+                                        StrokeShape="RoundRectangle 8"
+                                        Padding="10,0"
+                                        HeightRequest="38"
+                                        Margin="8,0,0,0">
+                                        <TimePicker 
+                                            x:Name="SleepTime"
+                                            Time="{Binding CurrentLogEntry.SleepTime}"
+                                            Format="HH:mm"
+                                            FontAttributes="Bold"
+                                            Margin="0,-3,0,0"
+                                            FontSize="16"
+                                            TimeSelected="TimePicker_TimeSelected"
+                                            Background="Transparent"/>
+                                    </Border>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+
+                            <!-- Sleep Time -->
+                            <VerticalStackLayout>
+                            
+                                <HorizontalStackLayout>
+                                    <Label 
+                                        Margin="0,10,0,0"
+                                        Text="Time you woke up:" 
+                                        FontSize="14" />
+                            
+                                    <Border
+                                        Background="{StaticResource ThemeClr3}"
+                                        Stroke="{StaticResource ThemeClr3}"
+                                        StrokeShape="RoundRectangle 8"
+                                        Padding="10,0"
+                                        HeightRequest="38"
+                                        Margin="8,0,0,0">
+                                        <TimePicker 
+                                            x:Name="WakeUpTime"
+                                            Time="{Binding CurrentLogEntry.WakeTime}"
+                                            Format="HH:mm"
+                                            FontAttributes="Bold"
+                                            Margin="0,-3,0,0"
+                                            FontSize="16"
+                                            TimeSelected="TimePicker_TimeSelected"
+                                            Background="Transparent"/>
+                                    </Border>
+                                </HorizontalStackLayout>
+                                
+                            </VerticalStackLayout>
+
+                            <!-- Display calculated sleep -->
+                            <Label 
+                                x:Name="TimeSleptLabel"
+                                Text="{Binding SleepDurationText}"
+                                FontSize="14"
+                                TextColor="{StaticResource ThemeClrMain}"
+                                IsVisible="{Binding HasSleepData}" />
+
                         </VerticalStackLayout>
 
                         <!-- Enter Message -->

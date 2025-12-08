@@ -1,9 +1,11 @@
-﻿using OvulaeShared.Models.Menopause;
+﻿using Newtonsoft.Json;
+using OvulaeShared.Models.Menopause;
 using OvulaeShared.Models.Ovulation;
 using OvulaeShared.Models.PeriodTracker;
 using OvulaeShared.Models.Pregnancy;
 using OvulaeShared.Models.WebApi;
 using OvulaeShared.Services.APIs.ModuleServices;
+using static OvulaeShared.Helpers.API.OvulaeApiEndPoints;
 
 namespace OvulaeApp.Services.LocalDataService.ModuleServices
 {
@@ -125,6 +127,21 @@ namespace OvulaeApp.Services.LocalDataService.ModuleServices
             return false;
         }
 
+        public List<PeriodLogEntry> GetAllPeriodLogs()
+        {
+            try
+            {
+                if (PeriodLogs != null && PeriodLogs.Id > 0)
+                {
+                    return PeriodLogs.Logs;
+                }
+            }
+            catch
+            {
+            }
+            return null;
+        }
+
         public PeriodLogEntry GetTodayPeriodLog()
         {
             try
@@ -180,6 +197,13 @@ namespace OvulaeApp.Services.LocalDataService.ModuleServices
         {
             try
             {
+                SecureApiRequest dto = new SecureApiRequest
+                {
+                    UserId = UserID,
+                    ModelData = updateTodayLog
+                };
+                var json = JsonConvert.SerializeObject(dto);
+
                 updateTodayLog.PeriodTrackerLogId = (PeriodLogs != null) ? PeriodLogs.Id : 0;
                 var updateRes = await _moduleLogsApi.UpdatePeriodLogEntry(UserID, updateTodayLog);
 

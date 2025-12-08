@@ -20,6 +20,8 @@ namespace OvulaeApp.Services.LocalDataService.ModuleServices
 
         public Task<bool> LoadPeriodLogs(string userId);
 
+        public List<PeriodLogEntry> GetAllPeriodLogs();
+
         public PeriodLogEntry GetTodayPeriodLog();
 
         public PeriodLogEntry GetPeriodLogByDate(DateTime date);

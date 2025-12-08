@@ -1,16 +1,20 @@
 ﻿using CommunityToolkit.Maui.Views;
 using Microsoft.Extensions.Logging.Abstractions;
+using Newtonsoft.Json;
+using OvulaeApp.Helpers.Functions.Modules;
 using OvulaeApp.Helpers.Pages.DayLogging;
 using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Services.LocalDataService.ModuleServices;
 using OvulaeApp.Services.LocalDataService.UsersServices;
 using OvulaeApp.ViewModels.PeriodTracker;
+using OvulaeApp.Views.Components.Dashboard;
 using OvulaeApp.Views.Components.Modals;
 using OvulaeShared.Enums.App;
 using OvulaeShared.Helpers.CommonFunctions;
 using OvulaeShared.Helpers.ModuleHelpers.DayLogging;
 using OvulaeShared.Models.PeriodTracker;
 using OvulaeShared.Models.Shared.Logs;
+using OvulaeShared.Models.User;
 using OvulaeShared.Services.Module.CycleServices;
 
 namespace OvulaeApp.Views.PeriodTracker.Dashboard
@@ -29,6 +33,8 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
         public string DateString => $"Date: {DateTime.Now:dd/MM/yyyy}";
 
         public bool _isNavigating { get; set; }
+
+        
 
         public PeriodDashboardDayLoggerPage(IModuleLogsService moduleLogsService, IUserLocalService userServ, ICycleService cycleService)
         {
@@ -50,6 +56,15 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
         {
             try
             {
+                BaseTabs.SetLoaders(Spinner, AppLoader);
+                SideMenu.ConfigureComponents(Spinner, AppLoader, PregnancyTrackerOnBoard, PeriodTrackerOnBoard, ModuleTrackerSwitch, YesNoPopup, MenopauseTrackerOnBoard);
+                Header.SetLoaders(Spinner, AppLoader);
+
+                Header.OpenSideMenuCommand = new Command(async () =>
+                {
+                    await SideMenu.OpenAsync();
+                });
+
                 viewModel = new PeriodLoggerViewModel(_moduleLogsService);
                 BindingContext = viewModel;
 
@@ -228,9 +243,39 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
             LogManualSymptom.IsVisible = ManualSymptomsSwitch.IsToggled;
         }
 
+
+        private List<MedicationModel> GetMedicationsFromComponent(MedicationEntryComponent component)
+        {
+            if (component == null) return new List<MedicationModel>();
+
+            var result = new List<MedicationModel>();
+
+            foreach (var entry in component.MedicationEntries)
+            {
+                var name = entry.MedicationName?.Trim();
+                var dosage = entry.Dosage?.Trim();
+
+                if (!string.IsNullOrWhiteSpace(name) || !string.IsNullOrWhiteSpace(dosage))
+                {
+                    result.Add(new MedicationModel
+                    {
+                        Name = name ?? string.Empty,
+                        Dosage = dosage ?? string.Empty
+                    });
+                }
+            }
+
+            return result;
+        }
+
         private void UpdateLogEntryFromUI()
         {
             var todayLog = viewModel.CurrentLogEntry;
+
+            // Get medications DIRECTLY from entries (bypassing the property)
+            todayLog.Medications = GetMedicationsFromComponent(MedicationComponent);
+            todayLog.PcosMedications = GetMedicationsFromComponent(PcosMedicationComponent);
+            todayLog.EndoMedications = GetMedicationsFromComponent(EndoMedicationComponent);
 
             // Update model from UI
             todayLog.Moods = MoodsComponent.SelectedItems.ToList();
@@ -261,7 +306,7 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
 
             todayLog.BowelMovementsRegularity = BowelMovementsRegularityComponent.SelectedItems.FirstOrDefault();
             todayLog.BowelMovementsFrequency = BowelMovementsFrequencyComponent.SelectedItems.FirstOrDefault();
-            todayLog.Medications = MedicationComponent?.Medications ?? new();
+            
 
             todayLog.MoodsRating = MoodsComponent.SelectedItems.Count() > 0 ? MoodRating.SelectedRating : 0;
             todayLog.SymptomsRating = SymptomsComponent.SelectedItems.Count() > 0 ? SymptomsRating.SelectedRating : 0;
@@ -346,6 +391,38 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
 
                 UpdateLogEntryFromUI();
 
+                // Get the complete object that will be sent
+                var logToSave = viewModel.CurrentLogEntry;
+
+                // DEBUG: Serialize and check the JSON
+                var settings = new JsonSerializerSettings
+                {
+                    Formatting = Formatting.Indented,
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                };
+
+                var json = JsonConvert.SerializeObject(logToSave, settings);
+                Console.WriteLine("=== COMPLETE JSON TO SEND ===");
+                Console.WriteLine(json);
+
+                // Check for the problematic string
+                if (json.Contains("🌿") || json.Contains("Herbal Remedies"))
+                {
+                    Console.WriteLine("⚠️ ⚠️ ⚠️ FOUND '🌿 Herbal Remedies' IN JSON!");
+
+                    // Find exact position
+                    int index = json.IndexOf("🌿");
+                    if (index == -1) index = json.IndexOf("Herbal Remedies");
+
+                    if (index > 0)
+                    {
+                        Console.WriteLine($"Position in JSON: {index}");
+                        int start = Math.Max(0, index - 100);
+                        int end = Math.Min(json.Length, index + 100);
+                        Console.WriteLine($"Context:\n...{json.Substring(start, end - start)}...");
+                    }
+                }
+
                 // Save through viewModel
                 var success = await viewModel.SaveCurrentLog();
                 
@@ -418,38 +495,12 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
             UpdateRatingContainersVisibility();
         }
 
-        private void TogglePcosSection_Tapped(object sender, EventArgs e)
-        {
-            if (PcosSectionContent.IsVisible)
-            {
-                PcosSectionContent.IsVisible = false;
-                PcosSectionToggle.Text = "▼";
-            }
-            else
-            {
-                PcosSectionContent.IsVisible = true;
-                PcosSectionToggle.Text = "▲";
-            }
-        }
-
-        private void ToggleEndoSection_Tapped(object sender, EventArgs e)
-        {
-            if (EndoSectionContent.IsVisible)
-            {
-                EndoSectionContent.IsVisible = false;
-                EndoSectionToggle.Text = "▼";
-            }
-            else
-            {
-                EndoSectionContent.IsVisible = true;
-                EndoSectionToggle.Text = "▲";
-            }
-        }
-
         private void LoadPcosData(PeriodLogEntry logEntry)
         {
             try
             {
+                var allLogs = _moduleLogsService.GetAllPeriodLogs();
+
                 // PCOS Medication
                 DayLoggerHelper.PopulateMedicationComponent(PcosMedicationComponent, logEntry.PcosMedications);
 
@@ -459,6 +510,7 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
                 PcosWaistOnly.Text = logEntry.PcosWaistCircumference > 0 ? logEntry.PcosWaistCircumference.ToString() : "";
 
                 // Weight Tracking
+                PcosWeightContainer.IsVisible = PcosEndoHelperFunctions.HasPcosWeightRecordedThisMonth(allLogs);
                 PcosWeight.Text = logEntry.PcosWeight > 0 ? logEntry.PcosWeight.ToString() : "";
                 PcosWeightDate.Date = logEntry.PcosWeightDate != default ? logEntry.PcosWeightDate : DateTime.Today;
                 PcosWeightNotes.Text = logEntry.PcosWeightNotes ?? "";
@@ -484,6 +536,8 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
         {
             try
             {
+                var allLogs = _moduleLogsService.GetAllPeriodLogs();
+
                 // Endo Medication
                 DayLoggerHelper.PopulateMedicationComponent(EndoMedicationComponent, logEntry.EndoMedications);
 
@@ -499,6 +553,7 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
                 EndoWaistOnly.Text = logEntry.EndoWaistCircumference > 0 ? logEntry.EndoWaistCircumference.ToString() : "";
 
                 // Weight Tracking
+                EndoWeightContainer.IsVisible = PcosEndoHelperFunctions.HasEndoWeightRecordedThisMonth(allLogs);
                 EndoWeight.Text = logEntry.EndoWeight > 0 ? logEntry.EndoWeight.ToString() : "";
                 EndoWeightDate.Date = logEntry.EndoWeightDate != default ? logEntry.EndoWeightDate : DateTime.Today;
                 EndoWeightNotes.Text = logEntry.EndoWeightNotes ?? "";
@@ -520,12 +575,12 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
                 pcosHip > 0)
             {
                 double ratio = Math.Round(pcosWaist / pcosHip, 2);
-                PcosWaistHipRatio.Text = $"Waist-to-Hip Ratio: {ratio}";
-                PcosWaistHipRatio.TextColor = ratio > 0.85 ? Color.FromArgb("#FF0000") : Color.FromArgb("#008000");
+                PcosWaistHipRatio.Text = $"{ratio}";
+                //PcosWaistHipRatio.TextColor = ratio > 0.85 ? Color.FromArgb("#FF0000") : Color.FromArgb("#008000");
             }
             else
             {
-                PcosWaistHipRatio.Text = "Ratio: --";
+                PcosWaistHipRatio.Text = "--";
             }
 
             // Endo Ratio Calculation
@@ -534,12 +589,12 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
                 endoHip > 0)
             {
                 double ratio = Math.Round(endoWaist / endoHip, 2);
-                EndoWaistHipRatio.Text = $"Waist-to-Hip Ratio: {ratio}";
-                EndoWaistHipRatio.TextColor = ratio > 0.85 ? Color.FromArgb("#FF0000") : Color.FromArgb("#008000");
+                EndoWaistHipRatio.Text = $"{ratio}";
+                //EndoWaistHipRatio.TextColor = ratio > 0.85 ? Color.FromArgb("#FF0000") : Color.FromArgb("#008000");
             }
             else
             {
-                EndoWaistHipRatio.Text = "Ratio: --";
+                EndoWaistHipRatio.Text = "--";
             }
         }
 
@@ -563,6 +618,34 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
                 "Pelvic pain",
                 "Sleep problems"
             };
+        }
+
+        private double GetDoubleQuick(Entry value)
+        {
+            return Convert.ToDouble(value.Text);
+        }
+
+        private void RatioMeasurementChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(PcosWaistMeasurement.Text) && !string.IsNullOrEmpty(PcosHipMeasurement.Text))
+            {
+                var ratio = Math.Round(GetDoubleQuick(PcosWaistMeasurement) / GetDoubleQuick(PcosHipMeasurement), 1);
+                PcosWaistHipRatio.Text = "" + ratio;
+            }
+            else
+            {
+                PcosWaistHipRatio.Text = "";
+            }
+
+            if (!string.IsNullOrEmpty(EndoWaistMeasurement.Text) && !string.IsNullOrEmpty(EndoHipMeasurement.Text))
+            {
+                var ratio = Math.Round(GetDoubleQuick(EndoWaistMeasurement) / GetDoubleQuick(EndoHipMeasurement), 1);
+                EndoWaistHipRatio.Text = "" + ratio;
+            }
+            else
+            {
+                EndoWaistHipRatio.Text = "";
+            }
         }
     }
 }
