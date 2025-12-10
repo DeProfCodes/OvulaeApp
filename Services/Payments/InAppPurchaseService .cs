@@ -95,7 +95,11 @@ namespace OvulaeApp.Services.Payments
     {
         private static PaymentObserver _sharedObserver;     // <— shared for whole app
         private TaskCompletionSource<SKPaymentTransaction> _purchaseTcs;
-        private readonly List<string> _productIds = new() { "com.ovulae.org.ovulaeapp.monthlypremium.v3" };
+        private readonly List<string> _productIds = new() 
+        { 
+            "com.ovulae.org.ovulaeapp.monthlypremium",
+            "com.ovulae.org.ovulaeapp.monthlypremium.v3"
+        };
 
         public InAppPurchaseService()
         {

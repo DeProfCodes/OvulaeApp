@@ -68,7 +68,7 @@ namespace OvulaeApp.Views.Subscription
                 viewModel.DailyPrice = "";
                 SubscriptionAmount.Text = $"{price}/month";
 
-                IsEligibleForFreeTrial = LocalStorageService.UserSubscription.Status == StatusType.Pending;
+                IsEligibleForFreeTrial = false;// LocalStorageService.UserSubscription.Status == StatusType.Pending;
                 CheckoutBtn.Text = IsEligibleForFreeTrial ? "START FREE TRIAL" : "PAY NOW";
             }
             catch(Exception ex)
@@ -108,7 +108,7 @@ namespace OvulaeApp.Views.Subscription
                     Email = LocalStorageService.UserDetails.Email,
                     ReceiptBase64 = receiptBase64,
                     SubscriptionAmount = amount,
-                    ProductId = "com.ovulae.org.ovulaeapp.monthlypremium.v3",
+                    ProductId = "com.ovulae.org.ovulaeapp.monthlypremium",
                     Platform = "ios"
                 });
 

@@ -6,6 +6,7 @@ using OvulaeApp.Helpers.Pages.DayLogging;
 using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Services.LocalDataService.ModuleServices;
 using OvulaeApp.Services.LocalDataService.UsersServices;
+using OvulaeApp.ViewModels;
 using OvulaeApp.ViewModels.PeriodTracker;
 using OvulaeApp.Views.Components.Dashboard;
 using OvulaeApp.Views.Components.Modals;
@@ -38,18 +39,58 @@ namespace OvulaeApp.Views.PeriodTracker.Dashboard
 
         public PeriodDashboardDayLoggerPage(IModuleLogsService moduleLogsService, IUserLocalService userServ, ICycleService cycleService)
         {
-            InitializeComponent();
-            BindingContext = this;
+            try
+            {
+                System.Diagnostics.Debug.WriteLine($"[MAUI] {DateTime.Now}: Page constructor started");
 
-            _moduleLogsService = moduleLogsService;
-            _userService = userServ;
-            _cycleService = cycleService;
+                Console.WriteLine("DEBUG: Page constructor started");
+                Console.WriteLine($"DEBUG: moduleLogsService: {moduleLogsService != null}");
+                Console.WriteLine($"DEBUG: userServ: {userServ != null}");
+                Console.WriteLine($"DEBUG: cycleService: {cycleService != null}");
+
+                InitializeComponent();
+                BindingContext = this;
+
+                _moduleLogsService = moduleLogsService;
+                _userService = userServ;
+                _cycleService = cycleService;
+
+                Console.WriteLine("DEBUG: Page constructor completed");
+                System.Diagnostics.Debug.WriteLine($"[MAUI] {DateTime.Now}: InitializeComponent completed");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"[MAUI] {DateTime.Now}: InitializeComponent ERROR: {ex}");
+                Console.WriteLine($"DEBUG: Constructor error: {ex}");
+                throw;
+            }
         }
 
         protected override async void OnAppearing()
         {
-            base.OnAppearing();
-            await LoadExistingLog();
+            try
+            {
+                Console.WriteLine("DEBUG: OnAppearing started");
+                base.OnAppearing();
+                await LoadExistingLog();
+                Console.WriteLine("DEBUG: OnAppearing completed");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"DEBUG: OnAppearing error: {ex}");
+                // Log to file for Release mode
+                LogToFile($"OnAppearing error: {ex}");
+            }
+        }
+
+        private void LogToFile(string message)
+        {
+            try
+            {
+                var path = Path.Combine(FileSystem.AppDataDirectory, "release_errors.txt");
+                File.AppendAllText(path, $"{DateTime.Now}: {message}\n");
+            }
+            catch { }
         }
 
         private async Task LoadExistingLog()

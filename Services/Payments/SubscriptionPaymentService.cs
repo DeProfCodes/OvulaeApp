@@ -23,7 +23,7 @@ namespace OvulaeApp.Services.Payments
         {
             try
             {
-                var productId = "com.ovulae.org.ovulaeapp.monthlypremium.v3";
+                var productId = "com.ovulae.org.ovulaeapp.monthlypremium";
                 string price = "";
                 string currency = "";
 #if IOS
@@ -57,7 +57,7 @@ namespace OvulaeApp.Services.Payments
         {
             try
             {
-                var productId = "com.ovulae.org.ovulaeapp.monthlypremium.v3";
+                var productId = "com.ovulae.org.ovulaeapp.monthlypremium";
                 bool success = false;
 #if IOS
                 success = await _iapService.PurchaseSubscription(productId);

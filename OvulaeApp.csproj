@@ -18,8 +18,8 @@
 		<ApplicationId>com.ovulae.org.ovulaeapp</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.0.12</ApplicationDisplayVersion>
-		<ApplicationVersion>12</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.15</ApplicationDisplayVersion>
+		<ApplicationVersion>15</ApplicationVersion>
 
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
 		<WindowsPackageType>None</WindowsPackageType>
@@ -79,8 +79,10 @@
 		<UseInterpreter>true</UseInterpreter>
 		<EnableHotReload>true</EnableHotReload>
 		<RunAOTCompilation>false</RunAOTCompilation>
-		<PublishTrimmed>true</PublishTrimmed>
+		<PublishTrimmed>false</PublishTrimmed>
 	</PropertyGroup>
+
+	
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|iPhone'">
 		<!-- From your security find-identity output -->
@@ -88,7 +90,7 @@
 
 		<CodesignProvision>Ovulae_Release_2025</CodesignProvision>
 	</PropertyGroup>
-
+	
 	<PropertyGroup>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>

@@ -20,7 +20,7 @@
                         StrokeThickness="1"
                         StrokeShape="RoundRectangle 8"
                         Padding="15,10"
-                        Background="{StaticResource ThemeGrayLight}">
+                        Background="{StaticResource ThemeGray}">
 
                         <Grid ColumnDefinitions="*,*,Auto" ColumnSpacing="10">
 
@@ -65,8 +65,8 @@
                             <!-- Remove Button -->
                             <Border
                                 Grid.Column="2"
-                                Stroke="Transparent"
-                                Background="{StaticResource ThemeClrRedLight}"
+                                Stroke="{StaticResource ThemeClrMain}"
+                                Background="Transparent"
                                 StrokeShape="RoundRectangle 8"
                                 WidthRequest="40"
                                 HeightRequest="40"

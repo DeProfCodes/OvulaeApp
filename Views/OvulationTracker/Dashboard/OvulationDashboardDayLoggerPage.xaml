@@ -1164,7 +1164,7 @@
                                     <dashComp:MultiSelectLogItemComponent
                                         x:Name="PcosSymptomsComponent"
                                         Title="Select PCOS symptoms experienced today:"
-                                        SelectedColor="{StaticResource ThemeClrPurpleLight}"
+                                        SelectedColor="{StaticResource ThemeClrPurple}"
                                         SelectedTextColor="Black"
                                         UnselectedTextColor="Black"
                                         UnselectedColor="{StaticResource ThemeGray}"

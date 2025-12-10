@@ -147,6 +147,13 @@ namespace OvulaeApp
 #endif
 
 #if ANDROID
+
+            builder.Services.AddLogging(configure =>
+            {
+                configure.AddDebug(); // Logs to Debug output
+                configure.SetMinimumLevel(LogLevel.Debug);
+            });
+
             EntryHandler.Mapper.AppendToMapping("NoUnderline", (handler, view) =>
             {
                 handler.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
