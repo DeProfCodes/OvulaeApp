@@ -1,6 +1,6 @@
-﻿using Com.OneSignal; // Android binding namespace
+﻿//using Com.OneSignal; // Android binding namespace
 using Newtonsoft.Json;
-using OneSignalSDK.DotNet;
+//using OneSignalSDK.DotNet;
 using OvulaeApp.Models.Notifications;
 
 namespace OvulaeApp.Services.Notifications

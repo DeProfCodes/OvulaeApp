@@ -5,7 +5,6 @@ using Android.OS;
 using Android.Util;
 using Android.Views;
 using CommunityToolkit.Maui.Views;
-using OneSignalSDK.DotNet;
 using OvulaeApp.Helpers.Notifications;
 using OvulaeApp.Services.LocalDataService;
 using OvulaeApp.Services.Platform;

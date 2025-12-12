@@ -39,7 +39,7 @@ using Microsoft.Maui.LifecycleEvents;
 using OvulaeShared.Services.Module.OvulationServices;
 using OvulaeShared.Services.Module.PeriodTrackerServices;
 using OvulaeShared.Services.Module.CycleServices;
-using OneSignalSDK.DotNet;
+//using OneSignalSDK.DotNet;
 
 
 
@@ -244,7 +244,7 @@ namespace OvulaeApp
             };
             */
 
-            OneSignal.Initialize("740b7148-dfdb-4ad6-964b-e4414b304e41");
+            //OneSignal.Initialize("740b7148-dfdb-4ad6-964b-e4414b304e41");
 
             var app = builder.Build();
 

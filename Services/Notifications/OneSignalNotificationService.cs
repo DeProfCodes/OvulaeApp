@@ -1,4 +1,4 @@
-﻿using OneSignalSDK.DotNet;
+﻿//using OneSignalSDK.DotNet;
 using OvulaeApp.Helpers.Functions.Notifications;
 using OvulaeApp.Helpers.Notifications;
 using OvulaeApp.Helpers.UI;
@@ -25,9 +25,9 @@ namespace OvulaeApp.Services.Notifications
             try
             {
                 await RegisterOneSignalUser(LocalStorageService.UserDetails.UserId);
-                var notifications = OneSignal.Notifications;
+                //var notifications = OneSignal.Notifications;
 
-                // Foreground notification
+                /* Foreground notification
                 notifications.WillDisplay += (sender, args) =>
                 {
                     var notification = args.Notification;
@@ -70,6 +70,7 @@ namespace OvulaeApp.Services.Notifications
                         MainThread.BeginInvokeOnMainThread(async () => await HandleNotification(data, tapped: true));
                     }
                 };
+                */
 
             }
             catch
@@ -93,8 +94,8 @@ namespace OvulaeApp.Services.Notifications
             }
             if (!string.IsNullOrEmpty(userId))
             {
-                OneSignal.User.AddAlias("user_id", userId);
-                OneSignal.Login(userId); 
+                //OneSignal.User.AddAlias("user_id", userId);
+                //OneSignal.Login(userId); 
             }
         }
 
