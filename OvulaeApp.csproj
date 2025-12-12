@@ -19,8 +19,9 @@
 		<ApplicationId>com.ovulae.org.ovulaeapp</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.0.15</ApplicationDisplayVersion>
-		<ApplicationVersion>15</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.16</ApplicationDisplayVersion>
+		<ApplicationVersion>16</ApplicationVersion>
+
 
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
 		<WindowsPackageType>None</WindowsPackageType>
@@ -31,6 +32,19 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net9.0-ios'">
+		<PublishTrimmed>true</PublishTrimmed>
+		<TrimMode>link</TrimMode>
+		<MtouchLink>None</MtouchLink>
+		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
+		<ArchiveOnBuild>true</ArchiveOnBuild>
+		
+		<CodesignKey>Apple Distribution: Ovulae (Pty) Ltd (497CX883RP)</CodesignKey>
+		<CodesignProvision>Ovulae_PushNotif_2025</CodesignProvision>
+
+		<CodesignEntitlements>Platforms/iOS/Entitlements.plist</CodesignEntitlements>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android|AnyCPU'">
@@ -80,30 +94,11 @@
 		<UseInterpreter>true</UseInterpreter>
 		<EnableHotReload>true</EnableHotReload>
 		<RunAOTCompilation>false</RunAOTCompilation>
-		<PublishTrimmed>false</PublishTrimmed>
 	</PropertyGroup>
 
-	
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|iPhone'">
-		<!-- From your security find-identity output -->
-		<CodesignKey>Apple Distribution: Ovulae (Pty) Ltd (497CX883RP)</CodesignKey>
-
-		<CodesignProvision>Ovulae_Release_2025</CodesignProvision>
-	</PropertyGroup>
-	
 	<PropertyGroup>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(TargetFramework)'=='net9.0-ios'">
-		<CodesignKey>Apple Development: Created via API (93WZ4XZFZ2)</CodesignKey>
-		<CodesignProvision>VS: com.ovulae.org.ovulaeapp Development</CodesignProvision>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(TargetFramework)'=='net9.0-ios'">
-		<CodesignEntitlements>Platforms/iOS/Entitlements.plist</CodesignEntitlements>
 	</PropertyGroup>
 
 	<ItemGroup>
