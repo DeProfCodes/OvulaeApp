@@ -312,7 +312,7 @@
                             Stroke="{StaticResource ThemeClrMain}"
                             StrokeThickness="1"
                             StrokeShape="RoundRectangle 12"
-                            Background="{StaticResource ThemeGrayLight}">
+                            Background="{StaticResource ThemeLightGray}">
 
                             <VerticalStackLayout Spacing="10">
 
@@ -324,7 +324,9 @@
                                     VerticalOptions="Center" />
 
                                 <!-- Appointment Details (shown when appointment exists) -->
-                                <VerticalStackLayout x:Name="AppointmentDetailsContainer" Spacing="10">
+                                <VerticalStackLayout 
+                                    x:Name="AppointmentDetailsContainer" 
+                                    Spacing="10">
                                     <!-- Date Row -->
                                     <HorizontalStackLayout Spacing="10">
                                         <Label 
@@ -404,7 +406,7 @@
                                         <Button 
                                             x:Name="RemoveAppDateBtn"
                                             Text="Remove"
-                                            BackgroundColor="{StaticResource ThemeClrRed}"
+                                            BackgroundColor="Crimson"
                                             TextColor="White"
                                             FontSize="12"
                                             Padding="15,8" />

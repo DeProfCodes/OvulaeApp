@@ -39,6 +39,8 @@ using Microsoft.Maui.LifecycleEvents;
 using OvulaeShared.Services.Module.OvulationServices;
 using OvulaeShared.Services.Module.PeriodTrackerServices;
 using OvulaeShared.Services.Module.CycleServices;
+using OvulaeShared.Services.APIs.App;
+
 //using OneSignalSDK.DotNet;
 
 
@@ -53,6 +55,7 @@ using Android.Content.Res;
 using UIKit;
 using OvulaeApp.Services.Payments;
 using Microsoft.Maui.Handlers;
+using OvulaeShared.Services.APIs.App;
 
 #endif
 
@@ -134,6 +137,8 @@ namespace OvulaeApp
             builder.Services.AddSingleton<ICycleService, CycleService>();
             builder.Services.AddSingleton<IModuleLogsService, ModuleLogsService>();
             builder.Services.AddSingleton<ISubscriptionService, SubscriptionService>();
+            builder.Services.AddSingleton<IAppService, AppService>();
+
 
             builder.Services.AddSingleton<IOneSignalNotificationService, OneSignalNotificationService>();
             //ios

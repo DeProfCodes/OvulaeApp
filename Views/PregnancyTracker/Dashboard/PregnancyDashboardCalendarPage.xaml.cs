@@ -93,6 +93,8 @@ namespace OvulaeApp.Views.PregnancyTracker.Dashboard
 
                 DayDetailsTray.BindingContext = viewModel;
 
+                LoadAppointmentData(); 
+
                 base.OnAppearing();
             }
             catch
